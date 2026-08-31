@@ -1,0 +1,67 @@
+name: 发布网页到 yuashie.cn
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: yuashie-production-web
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.repository == 'southkite2023/Netweb'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: 读取源码
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: 准备 Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22.23.2'
+          cache: npm
+
+      - name: 构建网页
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('dist/deploy-version.json').write_text(json.dumps({
+              'commit': os.environ['GITHUB_SHA'],
+              'version': json.loads(Path('package.json').read_text())['version'],
+          }) + '\n')
+          PY
+          tar -czf "$RUNNER_TEMP/yuashie-frontend.tar.gz" -C dist .
+
+      - name: 安全上传、备份和发布
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: bash scripts/github-upload-frontend.sh
+
+      - name: 检查公网版本
+        run: |
+          curl --fail --silent --show-error --retry 3 --retry-delay 2 \
+            --connect-timeout 10 --max-time 30 \
+            "https://yuashie.cn/deploy-version.json?commit=$GITHUB_SHA" \
+            --output "$RUNNER_TEMP/deployed-version.json"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          actual = json.loads((Path(os.environ['RUNNER_TEMP']) / 'deployed-version.json').read_text())
+          if actual.get('commit') != os.environ['GITHUB_SHA']:
+              raise SystemExit('公网版本不一致，请检查 CDN / 缓存；服务器本地检查已完成。')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write('网页发布成功：[打开 yuashie.cn](https://yuashie.cn)\n\n')
+              f.write('本次仅更新前端，没有修改服务器环境配置、后台代码、数据库或用户上传文件。\n')
+          PY
