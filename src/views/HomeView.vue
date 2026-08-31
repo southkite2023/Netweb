@@ -1,25 +1,13 @@
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onBeforeUnmount, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { changeLanguage } from '../i18n'
 import SiteFooter from '../components/SiteFooter.vue'
+import SiteNav from '../components/SiteNav.vue'
+import { localizedField, projects } from '../data/projects'
 
 const { t, locale } = useI18n()
-
-const isLightMode = ref(localStorage.getItem('theme') === 'light')
+const featuredProjects = projects.slice(0, 3)
 let observer
-
-function applyTheme() {
-  document.documentElement.dataset.theme = isLightMode.value ? 'light' : 'dark'
-}
-
-function toggleTheme() {
-  isLightMode.value = !isLightMode.value
-  localStorage.setItem('theme', isLightMode.value ? 'light' : 'dark')
-  applyTheme()
-}
-
-applyTheme()
 
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -46,77 +34,8 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="home-page">
-
     <div class="container">
-      <nav>
-        <div class="brand-cluster">
-          <RouterLink to="/" class="brand">
-            <span class="brand-mark"></span>
-            <span>YUASHIE</span>
-          </RouterLink>
-
-          <button
-            class="theme-toggle"
-            type="button"
-            :aria-label="isLightMode ? 'Switch to dark mode' : 'Switch to light mode'"
-            :title="isLightMode ? 'Dark mode' : 'Light mode'"
-            :aria-pressed="isLightMode"
-            @click="toggleTheme"
-          >
-            <span aria-hidden="true">{{ isLightMode ? '🌙' : '☀️' }}</span>
-          </button>
-        </div>
-
-        <div class="nav-right">
-          <RouterLink class="nav-link" to="/projects">
-            {{ t('nav.projects') }}
-          </RouterLink>
-
-          <RouterLink class="nav-link" to="/about">
-            {{ t('nav.about') }}
-          </RouterLink>
-
-          <RouterLink class="nav-link" to="/vip">
-            {{ t('nav.vip') }}
-          </RouterLink>
-
-          <RouterLink class="nav-link" to="/login">
-            {{ t('nav.login') }}
-          </RouterLink>
-
-          <div class="language-switcher">
-            <button
-              :class="{ active: locale === 'zh' }"
-              @click="changeLanguage('zh')"
-            >
-              简体中文
-            </button>
-
-            <span>/</span>
-
-            <button
-              :class="{ active: locale === 'en' }"
-              @click="changeLanguage('en')"
-            >
-              English
-            </button>
-
-            <span>/</span>
-
-            <button
-              :class="{ active: locale === 'ja' }"
-              @click="changeLanguage('ja')"
-            >
-              日本語
-            </button>
-          </div>
-
-          <div class="status">
-            <span class="status-dot"></span>
-            {{ t('terminal.online') }}
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       <main class="hero">
         <div>
@@ -225,38 +144,28 @@ onBeforeUnmount(() => {
           01 / {{ t('projects.title') }}
         </div>
 
-        <div class="grid">
-          <RouterLink class="card reveal" to="/projects">
-            <span class="card-index">001</span>
+        <div class="home-project-grid">
+          <RouterLink
+            v-for="project in featuredProjects"
+            :key="project.id"
+            class="home-project-card reveal"
+            :to="`/projects/${project.id}`"
+          >
+            <img
+              class="home-project-image"
+              :src="project.image"
+              :alt="localizedField(project, 'title', locale)"
+            >
 
-            <div>
-              <h3>{{ t('projects.aiTitle') }}</h3>
-              <p>{{ t('projects.aiText') }}</p>
+            <div class="home-project-shade" aria-hidden="true"></div>
+
+            <div class="home-project-copy">
+              <span>PROJECT / {{ project.id }}</span>
+              <h3>{{ localizedField(project, 'title', locale) }}</h3>
+              <p>{{ localizedField(project, 'summary', locale) }}</p>
             </div>
 
-            <span class="arrow">→</span>
-          </RouterLink>
-
-          <RouterLink class="card reveal" to="/projects">
-            <span class="card-index">002</span>
-
-            <div>
-              <h3>{{ t('projects.softwareTitle') }}</h3>
-              <p>{{ t('projects.softwareText') }}</p>
-            </div>
-
-            <span class="arrow">→</span>
-          </RouterLink>
-
-          <RouterLink class="card reveal" to="/projects">
-            <span class="card-index">003</span>
-
-            <div>
-              <h3>{{ t('projects.archiveTitle') }}</h3>
-              <p>{{ t('projects.archiveText') }}</p>
-            </div>
-
-            <span class="arrow">→</span>
+            <span class="home-project-arrow" aria-hidden="true">↗</span>
           </RouterLink>
         </div>
       </div>
@@ -285,6 +194,5 @@ onBeforeUnmount(() => {
     </section>
 
     <SiteFooter />
-
   </div>
 </template>

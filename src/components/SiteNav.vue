@@ -6,6 +6,7 @@ import { auth } from '../lib/auth'
 
 const { t, locale } = useI18n()
 const isLightMode = ref(localStorage.getItem('theme') === 'light')
+const mobileMenuOpen = ref(false)
 
 function applyTheme() {
   document.documentElement.dataset.theme = isLightMode.value ? 'light' : 'dark'
@@ -17,13 +18,25 @@ function toggleTheme() {
   applyTheme()
 }
 
+function toggleMobileMenu() {
+  mobileMenuOpen.value = !mobileMenuOpen.value
+}
+
+function closeMobileMenu() {
+  mobileMenuOpen.value = false
+}
+
+function onLanguageChange(event) {
+  changeLanguage(event.target.value)
+}
+
 applyTheme()
 </script>
 
 <template>
-  <nav>
+  <nav class="site-nav" :class="{ 'menu-open': mobileMenuOpen }">
     <div class="brand-cluster">
-      <RouterLink to="/" class="brand">
+      <RouterLink to="/" class="brand" @click="closeMobileMenu">
         <span class="brand-mark"></span>
         <span>YUASHIE</span>
       </RouterLink>
@@ -33,22 +46,33 @@ applyTheme()
       </button>
     </div>
 
-    <div class="nav-right">
-      <RouterLink class="nav-link" to="/projects">{{ t('nav.projects') }}</RouterLink>
-      <RouterLink class="nav-link" to="/radio">{{ t('nav.radio') }}</RouterLink>
-      <RouterLink class="nav-link" to="/about">{{ t('nav.about') }}</RouterLink>
-      <RouterLink class="nav-link" to="/vip">{{ t('nav.vip') }}</RouterLink>
-      <RouterLink class="nav-link" to="/feedback">{{ t('nav.feedback') }}</RouterLink>
-      <RouterLink v-if="auth.user" class="nav-link account-link" :to="`/u/${auth.user.username}`">@{{ auth.user.username }}</RouterLink>
-      <RouterLink v-else class="nav-link" to="/login">{{ t('nav.login') }}</RouterLink>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      :aria-expanded="mobileMenuOpen"
+      aria-label="Toggle navigation"
+      @click="toggleMobileMenu"
+    >
+      <span aria-hidden="true">{{ mobileMenuOpen ? '×' : '☰' }}</span>
+    </button>
 
-      <div class="language-switcher">
-        <button :class="{ active: locale === 'zh' }" @click="changeLanguage('zh')">简体中文</button>
-        <span>/</span>
-        <button :class="{ active: locale === 'en' }" @click="changeLanguage('en')">English</button>
-        <span>/</span>
-        <button :class="{ active: locale === 'ja' }" @click="changeLanguage('ja')">日本語</button>
-      </div>
+    <div class="nav-right" :class="{ 'is-open': mobileMenuOpen }">
+      <RouterLink class="nav-link" to="/projects" @click="closeMobileMenu">{{ t('nav.projects') }}</RouterLink>
+      <RouterLink class="nav-link" to="/radio" @click="closeMobileMenu">{{ t('nav.radio') }}</RouterLink>
+      <RouterLink class="nav-link" to="/about" @click="closeMobileMenu">{{ t('nav.about') }}</RouterLink>
+      <RouterLink class="nav-link" to="/vip" @click="closeMobileMenu">{{ t('nav.vip') }}</RouterLink>
+      <RouterLink class="nav-link" to="/feedback" @click="closeMobileMenu">{{ t('nav.feedback') }}</RouterLink>
+      <RouterLink v-if="auth.user" class="nav-link account-link" :to="`/u/${auth.user.username}`" @click="closeMobileMenu">@{{ auth.user.username }}</RouterLink>
+      <RouterLink v-else class="nav-link" to="/login" @click="closeMobileMenu">{{ t('nav.login') }}</RouterLink>
+
+      <label class="language-switcher" title="Language">
+        <span class="language-icon" aria-hidden="true">文</span>
+        <select :value="locale" aria-label="Language" @change="onLanguageChange">
+          <option value="zh">简体中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </label>
 
       <div class="status"><span class="status-dot"></span>{{ t('terminal.online') }}</div>
     </div>
