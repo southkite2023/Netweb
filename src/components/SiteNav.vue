@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { changeLanguage } from '../i18n'
 import { auth } from '../lib/auth'
 
 const { t, locale } = useI18n()
@@ -16,14 +17,7 @@ function toggleTheme() {
   applyTheme()
 }
 
-function changeLanguage(lang) {
-  locale.value = lang
-  localStorage.setItem('language', lang)
-  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en'
-}
-
 applyTheme()
-changeLanguage(locale.value)
 </script>
 
 <template>
@@ -41,6 +35,7 @@ changeLanguage(locale.value)
 
     <div class="nav-right">
       <RouterLink class="nav-link" to="/projects">{{ t('nav.projects') }}</RouterLink>
+      <RouterLink class="nav-link" to="/radio">{{ t('nav.radio') }}</RouterLink>
       <RouterLink class="nav-link" to="/about">{{ t('nav.about') }}</RouterLink>
       <RouterLink class="nav-link" to="/vip">{{ t('nav.vip') }}</RouterLink>
       <RouterLink class="nav-link" to="/feedback">{{ t('nav.feedback') }}</RouterLink>

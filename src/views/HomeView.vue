@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { changeLanguage } from '../i18n'
 import beianIcon from '../assets/beian-icon.png'
 
 const { t, locale } = useI18n()
@@ -20,18 +21,7 @@ function toggleTheme() {
 
 applyTheme()
 
-function changeLanguage(lang) {
-  locale.value = lang
-  localStorage.setItem('language', lang)
-  document.documentElement.lang =
-    lang === 'zh' ? 'zh-CN' :
-    lang === 'ja' ? 'ja-JP' :
-    'en'
-}
-
 onMounted(() => {
-  changeLanguage(locale.value)
-
   observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -200,7 +190,7 @@ onBeforeUnmount(() => {
 
             <div>
               {{ t('terminal.version') }}&nbsp;&nbsp;&nbsp;
-              <span class="terminal-white">0.2.4</span>
+              <span class="terminal-white">0.3.1</span>
             </div>
 
             <br>

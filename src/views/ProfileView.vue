@@ -41,9 +41,9 @@ const copy = computed(() => ({
 }[locale.value]))
 
 const descriptions = computed(() => ({
-  zh: { bug_hunter: '提交 5 个有效 Bug', thinker: '5 个建议被采用', minecraft_pioneer: 'Minecraft Server 成员', founding_member: '网站 Beta 阶段注册（2026.12.31 前）', contribution_1000: '贡献值达到 1000' },
-  en: { bug_hunter: 'Submit 5 valid bugs', thinker: 'Have 5 suggestions adopted', minecraft_pioneer: 'Minecraft Server member', founding_member: 'Register during website Beta (before 2026-12-31)', contribution_1000: 'Reach 1,000 Contribution' },
-  ja: { bug_hunter: '有効なBugを5件報告', thinker: '提案が5件採用される', minecraft_pioneer: 'Minecraft Server メンバー', founding_member: 'サイトBeta期間中に登録（2026.12.31まで）', contribution_1000: '貢献値1000に到達' },
+  zh: { bug_hunter: '提交 5 个有效 Bug', thinker: '5 个建议被采用', minecraft_pioneer: 'Minecraft Server 成员', founding_member: '网站 Beta 阶段注册（2026.12.31 前）', contribution_1000: '贡献值达到 1000', radio_operator: '绑定业余无线电呼号' },
+  en: { bug_hunter: 'Submit 5 valid bugs', thinker: 'Have 5 suggestions adopted', minecraft_pioneer: 'Minecraft Server member', founding_member: 'Register during website Beta (before 2026-12-31)', contribution_1000: 'Reach 1,000 Contribution', radio_operator: 'Bind an amateur-radio callsign' },
+  ja: { bug_hunter: '有効なBugを5件報告', thinker: '提案が5件採用される', minecraft_pioneer: 'Minecraft Server メンバー', founding_member: 'サイトBeta期間中に登録（2026.12.31まで）', contribution_1000: '貢献値1000に到達', radio_operator: 'アマチュア無線コールサインを登録' },
 }[locale.value]))
 
 const mine = computed(() => auth.user?.username === user.value?.username)
@@ -149,6 +149,7 @@ watch(() => route.params.username, load)
             <div class="auth-kicker">// PUBLIC IDENTITY · {{ user.role.toUpperCase() }}</div>
             <div class="profile-name-line">
               <h1>{{ user.displayName }}</h1>
+              <RouterLink v-if="user.radioProfile" class="radio-identity-badge" :to="`/radio/${user.radioProfile.callsign}`" :title="`Radio operator · Class ${user.radioProfile.operatorClass}`">📻 {{ user.radioProfile.callsign }}<span v-if="user.radioProfile.verificationStatus === 'verified'"> ✓</span></RouterLink>
               <span v-if="user.equippedBadge" class="equipped-badge" :title="badgeDescription(user.equippedBadge)"><span aria-hidden="true">{{ user.equippedBadge.emoji }}</span>{{ user.equippedBadge.name }}</span>
             </div>
             <p>@{{ user.username }}</p>

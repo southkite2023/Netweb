@@ -25,3 +25,15 @@ dist-ssr
 
 # OpenAI local files
 .openai/
+
+# Local secrets and persistent production data
+.env
+.env.*
+!.env.example
+user-content/
+backups/
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key

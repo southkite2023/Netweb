@@ -1,5 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
-  <title id="title">YUASHIE Personal Site</title><desc id="desc">Abstract personal node in cyan and green.</desc>
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081313"/><stop offset="1" stop-color="#0d0b17"/></linearGradient><radialGradient id="g"><stop stop-color="#66f2b4" stop-opacity=".32"/><stop offset="1" stop-color="#66f2b4" stop-opacity="0"/></radialGradient></defs>
-  <rect width="1200" height="800" fill="url(#bg)"/><circle cx="600" cy="390" r="390" fill="url(#g)"/><g fill="none" stroke="#66f2b4"><circle cx="600" cy="390" r="230" stroke-opacity=".22"/><circle cx="600" cy="390" r="145" stroke-opacity=".42"/><path d="M600 70v640M280 390h640" stroke-opacity=".14"/><rect x="525" y="315" width="150" height="150" transform="rotate(45 600 390)" fill="#0d1d1a" stroke-opacity=".8"/></g><rect x="574" y="364" width="52" height="52" transform="rotate(45 600 390)" fill="#66f2b4"/><g fill="#66f2b4"><circle cx="600" cy="160" r="8"/><circle cx="830" cy="390" r="8"/><circle cx="600" cy="620" r="8"/><circle cx="370" cy="390" r="8"/></g><text x="66" y="718" fill="#66f2b4" font-family="monospace" font-size="24" letter-spacing="8">PERSONAL NODE / 003</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Yuashie Radio</title><desc id="desc">Abstract amateur radio project artwork</desc>
+  <rect width="1200" height="720" fill="#08090c"/>
+  <g fill="none" stroke="#77e1ff" stroke-opacity=".18"><path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M0 600h1200"/><path d="M120 0v720M240 0v720M360 0v720M480 0v720M600 0v720M720 0v720M840 0v720M960 0v720M1080 0v720"/></g>
+  <circle cx="600" cy="340" r="210" fill="none" stroke="#77e1ff" stroke-width="2" stroke-opacity=".35"/>
+  <circle cx="600" cy="340" r="138" fill="none" stroke="#77e1ff" stroke-width="2" stroke-opacity=".5"/>
+  <circle cx="600" cy="340" r="16" fill="#77e1ff"/>
+  <path d="M600 340L824 186" stroke="#77e1ff" stroke-width="5" stroke-linecap="square"/>
+  <path d="M600 115v-54M600 619v-54M375 340h-54M879 340h-54" stroke="#a78bfa" stroke-width="3"/>
+  <path d="M130 565c72-72 144-72 216 0s144 72 216 0 144-72 216 0 144 72 292-18" fill="none" stroke="#66f2b4" stroke-width="4" stroke-opacity=".7"/>
+  <text x="70" y="90" fill="#77e1ff" font-family="monospace" font-size="24" letter-spacing="6">PROJECT / 003</text>
+  <text x="70" y="650" fill="#f5f7fa" font-family="Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-3">YUASHIE RADIO</text>
+  <text x="882" y="90" fill="#8d94a1" font-family="monospace" font-size="20">QSO · eQSL · 📻</text>
 </svg>

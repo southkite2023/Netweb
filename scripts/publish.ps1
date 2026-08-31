@@ -74,7 +74,7 @@ rm -rf "`$server_tmp"
 rm -f '$remoteServerArchive'
 
 # All migrations are idempotent. Apply them in filename order so both existing
-# installations and fresh servers converge to the same 0.2.4 schema.
+# installations and fresh servers converge to the same current schema.
 set -a
 . '$appDir/server/.env'
 set +a
@@ -82,11 +82,11 @@ for migration in '$appDir/server'/sql/*.sql; do
   psql "`$DATABASE_URL" -v ON_ERROR_STOP=1 -f "`$migration"
 done
 
-# Avatars live outside the deployed source tree so frontend/API updates never
-# overwrite user content. The API service runs as www-data.
-mkdir -p '$appDir/user-content/avatars'
+# User uploads live outside the deployed source tree so frontend/API updates never
+# overwrite avatars or QSL artwork. The API service runs as www-data.
+mkdir -p '$appDir/user-content/avatars' '$appDir/user-content/qsl'
 chown -R www-data:www-data '$appDir/user-content'
-chmod 750 '$appDir/user-content' '$appDir/user-content/avatars'
+chmod 750 '$appDir/user-content' '$appDir/user-content/avatars' '$appDir/user-content/qsl'
 
 if ! systemctl restart yuashie-api; then
   echo 'API restart failed; restoring previous API source.' >&2

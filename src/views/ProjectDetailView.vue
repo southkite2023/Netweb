@@ -5,6 +5,8 @@ import { useRoute } from 'vue-router'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteNav from '../components/SiteNav.vue'
 import CommentSection from '../components/CommentSection.vue'
+import MinecraftWhitelistPanel from '../components/MinecraftWhitelistPanel.vue'
+import RadioProjectPanel from '../components/RadioProjectPanel.vue'
 import { localizedField, projects } from '../data/projects'
 
 const route = useRoute()
@@ -47,6 +49,9 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
             <p class="detail-note">{{ t('projectArchive.moreSoon') }}</p>
           </div>
         </section>
+
+        <MinecraftWhitelistPanel v-if="project.id === '002'" />
+        <RadioProjectPanel v-if="project.id === '003'" />
 
         <CommentSection :project-id="project.id" />
 
