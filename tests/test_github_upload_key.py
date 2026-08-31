@@ -18,6 +18,9 @@ class UploadKeyHandling(unittest.TestCase):
         subprocess.run(['ssh-keygen', '-q', '-t', 'ed25519', '-N', '', '-f', str(self.key)], check=True)
         self.raw = self.key.read_text()
         self.single_line = base64.b64encode(self.key.read_bytes()).decode()
+        self.server_key = self.root / 'server-key'
+        subprocess.run(['ssh-keygen', '-q', '-t', 'ed25519', '-N', '', '-f', str(self.server_key)], check=True)
+        self.host_public_key = self.server_key.with_suffix('.pub').read_text().strip()
         bin_dir = self.root / 'bin'
         bin_dir.mkdir()
         ssh = bin_dir / 'ssh'
@@ -25,10 +28,14 @@ class UploadKeyHandling(unittest.TestCase):
 set -euo pipefail
 while (($#)); do
   if [[ $1 == -i ]]; then key=$2; shift; fi
+  if [[ $1 == UserKnownHostsFile=* ]]; then hosts=${1#UserKnownHostsFile=}; fi
+  if [[ $1 == StrictHostKeyChecking=yes ]]; then strict=yes; fi
   shift
 done
 [[ $(stat -c %a "$key") == 600 ]]
 [[ $(ssh-keygen -y -P '' -f "$key") == $(ssh-keygen -y -P '' -f "$EXPECTED_KEY") ]]
+[[ ${strict:-} == yes ]]
+[[ $(ssh-keygen -l -f "$hosts" | awk '{print $2}') == $(ssh-keygen -l -f "$EXPECTED_SERVER_KEY" | awk '{print $2}') ]]
 touch "$CONTACT_MARKER"
 cat >/dev/null
 ''')
@@ -36,9 +43,10 @@ cat >/dev/null
         (self.root / 'yuashie-frontend.tar.gz').write_bytes(b'test archive')
         self.env = dict(os.environ, PATH=str(bin_dir) + ':' + os.environ['PATH'],
                         DEPLOY_HOST='example.com', DEPLOY_PORT='22',
-                        DEPLOY_KNOWN_HOSTS='example.com ssh-ed25519 test-placeholder',
+                        DEPLOY_KNOWN_HOSTS='example.com ' + self.host_public_key,
                         GITHUB_SHA='a' * 40, RUNNER_TEMP=str(self.root),
-                        EXPECTED_KEY=str(self.key), CONTACT_MARKER=str(self.root / 'contacted'))
+                        EXPECTED_KEY=str(self.key), EXPECTED_SERVER_KEY=str(self.server_key.with_suffix('.pub')),
+                        CONTACT_MARKER=str(self.root / 'contacted'))
 
     def run_key(self, value, accepted):
         result = subprocess.run(['bash', str(SCRIPT)], env=dict(self.env, DEPLOY_SSH_KEY=value),
@@ -69,6 +77,36 @@ cat >/dev/null
 
     def test_base64_non_key_never_connects(self):
         self.run_key(base64.b64encode(b'not a private key').decode(), False)
+
+    def test_raw_trusted_host_public_key(self):
+        self.env['DEPLOY_KNOWN_HOSTS'] = self.host_public_key
+        self.run_key(self.single_line, True)
+
+    def test_host_public_key_with_surrounding_whitespace(self):
+        self.env['DEPLOY_KNOWN_HOSTS'] = '\r\n  ' + self.host_public_key + '\r\n'
+        self.run_key(self.single_line, True)
+
+    def test_raw_host_key_with_custom_port(self):
+        self.env['DEPLOY_KNOWN_HOSTS'] = self.host_public_key
+        self.env['DEPLOY_PORT'] = '02222'
+        self.run_key(self.single_line, True)
+
+    def test_full_entry_custom_port(self):
+        self.env['DEPLOY_KNOWN_HOSTS'] = '[example.com]:2222 ' + self.host_public_key
+        self.env['DEPLOY_PORT'] = '2222'
+        self.run_key(self.single_line, True)
+
+    def test_other_hostname_is_not_silently_rebound(self):
+        self.env['DEPLOY_KNOWN_HOSTS'] = 'different.example.com ' + self.host_public_key
+        self.run_key(self.single_line, False)
+
+    def test_wrong_port_never_connects(self):
+        self.env['DEPLOY_PORT'] = '2222'
+        self.run_key(self.single_line, False)
+
+    def test_malformed_host_key_never_connects(self):
+        self.env['DEPLOY_KNOWN_HOSTS'] = 'ssh-ed25519 not-a-key'
+        self.run_key(self.single_line, False)
 
 
 if __name__ == '__main__':
