@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import PrivacyNotice from '../components/PrivacyNotice.vue'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import RadioSubnav from '../components/RadioSubnav.vue'
@@ -50,6 +51,7 @@ onMounted(load)
   <div class="radio-page"><div class="container"><SiteNav/><RadioSubnav/>
     <main class="radio-main radio-form-main">
       <header class="radio-hero compact"><p class="auth-kicker">{{ copy.kicker }}</p><h1>{{ copy.title }}</h1><p>{{ copy.intro }}</p></header>
+<PrivacyNotice kind="radioProfile" />
       <p v-if="error" class="form-error">{{ error }}</p><p v-if="success" class="form-success">{{ success }}</p>
       <section class="radio-form-panel">
         <div class="radio-form-grid">

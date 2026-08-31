@@ -1,6 +1,6 @@
-# 用手机从 GitHub 发布网页
+# 从 GitHub 自动发布网页
 
-本流程只发布前端，适用于 0.3.1 的评论成功窗口、路由回顶、TOP 按钮和默认中文，以及后续只改界面的版本。它不更新后台代码、不执行数据库迁移、不重启 API，也不覆盖服务器的 `.env`、头像和 QSL 图片。后端接口或数据库结构变化时，仍需使用原有完整发布流程，不能仅点击此按钮。
+本流程只发布前端，适用于 0.3.1 的界面修复、0.3.2 的 About / 协议页面，以及后续仅修改前端的版本。它不更新后台代码、不执行数据库迁移、不重启 API，也不覆盖服务器的 `.env`、头像和 QSL 图片。后端接口或数据库结构变化时，仍需使用原有完整发布流程，不能仅点击此按钮。
 
 ## 一次性服务器设置
 
@@ -38,7 +38,15 @@ Base64 只是将多行转换为一行，**不是加密**，仍必须作为私钥
 
 安全组及服务器防火墙需要允许执行发布的 GitHub runner 访问实际 SSH 端口。若连接超时，先检查 IP、端口及现有规则，不要关闭整个防火墙。GitHub 托管 runner 的出口 IP 可能变化；严格 IP 白名单环境建议另行采用受控 runner / 专用网络。
 
-## 每次发布怎么点
+## 默认流程：同步后自动发布
+
+自 2026.08.31 起，按站主要求，常规更新默认完成“修改与验证 → 同步 GitHub main → 发布 yuashie.cn → 核验上线版本”，无需每次重新确认。
+
+`main` 的前端源码、静态资源、前端依赖或此工作流发生更新时，Actions 自动构建并发布。只有文档变化不会触发上线，其他分支不会发布。仍可使用下方的手动入口，但不要与正在运行的自动发布重复执行。
+
+自动发布会读取公网 `deploy-version.json`，并比较该提交到本次提交之间的后端、数据库、Minecraft 插件及服务器接收程序。若有变化、版本未知或历史不相容，则在接触部署密钥前停止。先通过受支持的完整发布方式完成相关升级并验证，再使用手动发布恢复前端版本标记；不要为通过检查而伪造标记或删除安全检查。
+
+## 手动发布入口
 
 1. 打开 [发布网页工作流](https://github.com/southkite2023/Netweb/actions/workflows/deploy-web.yml)。
 2. 如果 GitHub 提示启用 Actions，先启用。手机看不到按钮可在浏览器菜单选择「请求桌面网站」。
@@ -46,7 +54,7 @@ Base64 只是将多行转换为一行，**不是加密**，仍必须作为私钥
 4. 点开最新运行记录。绿色勾表示构建、服务器发布检查和公网版本检查都通过。
 5. 打开 [yuashie.cn](https://yuashie.cn)，刷新网页。手机和电脑同步生效，不需要开着 Windows 电脑。
 
-只有手动点击才发布，更新 main 不会自动上线；其他分支不能运行发布任务。不要同时运行桌面的 Yuashie Publish。后台发生变化时先完成完整发布，确保 API 与前端兼容。
+符合前端路径条件的 main 更新会自动上线；其他分支不能运行发布任务。不要同时运行桌面的 Yuashie Publish。后台发生变化时先完成完整发布，确保 API 与前端兼容。
 
 ## 备份、失败与范围
 
@@ -65,3 +73,5 @@ Base64 只是将多行转换为一行，**不是加密**，仍必须作为私钥
 执行 `python3 -m unittest discover -s tests -p 'test_github_frontend_deploy.py' -v`。这些测试使用临时目录，覆盖成功发布、备份、健康检查失败恢复、切换失败恢复、中断、路径越界、链接、重复路径、后台路径与提交编号校验，不连接生产服务器。
 
 参考：[GitHub 手动运行工作流](https://docs.github.com/actions/managing-workflow-runs/manually-running-a-workflow)、[GitHub Secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets)、[OpenSSH authorized_keys](https://man.openbsd.org/sshd.8)。
+
+自动触发配置参考：[GitHub 工作流分支与路径筛选](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions)。

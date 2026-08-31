@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import ProjectsView from '../views/ProjectsView.vue'
 import ProjectDetailView from '../views/ProjectDetailView.vue'
 import AboutView from '../views/AboutView.vue'
+import LegalView from '../views/LegalView.vue'
 import VipView from '../views/VipView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
@@ -48,6 +49,9 @@ const router = createRouter({
       name: 'about',
       component: AboutView,
     },
+    { path: '/terms', name: 'terms', component: LegalView, props: { documentId: 'terms' } },
+    { path: '/privacy', name: 'privacy', component: LegalView, props: { documentId: 'privacy' } },
+    { path: '/works', name: 'works', component: LegalView, props: { documentId: 'works' } },
     {
       path: '/vip',
       name: 'vip',

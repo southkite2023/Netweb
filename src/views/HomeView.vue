@@ -2,7 +2,7 @@
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { changeLanguage } from '../i18n'
-import beianIcon from '../assets/beian-icon.png'
+import SiteFooter from '../components/SiteFooter.vue'
 
 const { t, locale } = useI18n()
 
@@ -190,7 +190,7 @@ onBeforeUnmount(() => {
 
             <div>
               {{ t('terminal.version') }}&nbsp;&nbsp;&nbsp;
-              <span class="terminal-white">0.3.1</span>
+              <span class="terminal-white">0.3.2</span>
             </div>
 
             <br>
@@ -284,45 +284,7 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <footer>
-      <div class="container footer-content">
-        <div class="footer-main">
-          <span>
-            Copyright © 2026-至今 北住孤居
-          </span>
-
-          <span>
-            {{ t('footer.status') }}
-          </span>
-        </div>
-
-        <div class="filing-links">
-          <a
-            class="filing-link"
-            href="https://beian.miit.gov.cn/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            蜀ICP备2026050398号-1
-          </a>
-
-          <a
-            class="filing-link public-security-link"
-            href="https://beian.mps.gov.cn/#/query/webSearch?code=51050202000608"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              class="beian-icon"
-              :src="beianIcon"
-              alt=""
-              aria-hidden="true"
-            >
-            <span>川公网安备51050202000608号</span>
-          </a>
-        </div>
-      </div>
-    </footer>
+    <SiteFooter />
 
   </div>
 </template>

@@ -1,4 +1,6 @@
-# Yuashie Personal Site · 0.3.1
+# Yuashie Personal Site · 0.3.2
+
+Version 0.3.2 rebuilds About as a changelog and adds Terms of Service, Privacy Policy and Content Usage Terms. See `UPDATE-0.3.2.md`.
 
 Vue 3 + Vite frontend with a Fastify + PostgreSQL account/community API.
 
@@ -26,6 +28,8 @@ QSL images and QSO metadata remain separate: QSO details are overlaid dynamicall
 See `RADIO-SYSTEM-0.3.0.md` for the implementation and schema notes.
 
 ## Deployment
+
+Default workflow: validate changes, sync `southkite2023/Netweb` `main`, publish to `yuashie.cn`, and verify the exact deployed commit. Frontend changes automatically trigger GitHub Actions; backend/schema changes require a coordinated full deployment. See `docs/GITHUB-DEPLOY.md` and `AGENTS.md`.
 
 The desktop `Yuashie Publish` flow builds the frontend, uploads the API, applies every SQL migration in `server/sql` in filename order, creates persistent avatar/QSL content directories, restarts the API, performs a health check, and then swaps the frontend build.
 

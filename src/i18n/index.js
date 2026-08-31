@@ -58,7 +58,7 @@ const messages = {
     },
     membership: {
       title: '会员机制',
-      status: '0.3.1 / Yuashie Radio Beta 已上线',
+      status: '0.3.2 / 持续构建中',
       intro: '这里不是付费墙，而是一个记录支持、参与与共同成长的长期协议。',
       principleLabel: '设计原则',
       principleTitle: '支持不应被立即兑换成特权。',
@@ -178,7 +178,7 @@ const messages = {
     },
     membership: {
       title: 'MEMBERSHIP',
-      status: '0.3.1 / YUASHIE RADIO BETA LIVE',
+      status: '0.3.2 / CONTINUOUSLY EVOLVING',
       intro: 'This is not a paywall. It is a long-term protocol for recognizing support, participation and shared growth.',
       principleLabel: 'DESIGN PRINCIPLE',
       principleTitle: 'Support should not be instantly converted into privilege.',
@@ -298,7 +298,7 @@ const messages = {
     },
     membership: {
       title: 'メンバーシップ',
-      status: '0.3.1 / Yuashie Radio Beta公開中',
+      status: '0.3.2 / 継続開発中',
       intro: 'これはペイウォールではありません。応援、参加、そして共に成長する過程を記録するための長期的な仕組みです。',
       principleLabel: '設計原則',
       principleTitle: '応援を、すぐに特権へ変えるべきではない。',

@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import PrivacyNotice from '../components/PrivacyNotice.vue'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import RadioSubnav from '../components/RadioSubnav.vue'
@@ -26,7 +27,8 @@ onMounted(load)
 </script>
 
 <template><div class="radio-page"><div class="container"><SiteNav/><RadioSubnav/><main class="radio-main">
-<header class="radio-hero compact"><p class="auth-kicker">{{copy.kicker}}</p><h1>{{copy.title}}</h1><p>{{copy.intro}}</p></header><p v-if="error" class="form-error">{{error}}</p><p v-if="notice" class="form-success">{{notice}}</p>
+<header class="radio-hero compact"><p class="auth-kicker">{{copy.kicker}}</p><h1>{{copy.title}}</h1><p>{{copy.intro}}</p></header>
+<PrivacyNotice kind="radioQsl" /><p v-if="error" class="form-error">{{error}}</p><p v-if="notice" class="form-success">{{notice}}</p>
 <section class="radio-section"><div class="radio-section-head"><span>QSL / TEMPLATE LIBRARY</span><h2>{{copy.templates}}</h2></div>
 <div class="qsl-template-layout"><form class="qsl-upload-panel" @submit.prevent="saveTemplate"><h3>{{copy.upload}}</h3><label><span>{{copy.name}}</span><input v-model="upload.name" maxlength="80" required></label><label class="qsl-file-button"><input type="file" accept="image/png,image/jpeg,image/webp" @change="pickFile"><span>{{copy.pick}}</span><small>{{upload.fileName||copy.hint}}</small></label><div v-if="upload.preview" class="qsl-upload-preview"><img :src="upload.preview" alt="QSL preview"></div><button class="primary-action" :disabled="busy==='upload'||!upload.dataUrl" type="submit">{{copy.save}}</button></form>
 <div class="qsl-template-grid"><article v-for="item in templates" :key="item.id" class="qsl-template-card"><img :src="item.imageUrl" :alt="item.name"><div><strong>{{item.name}}</strong><span v-if="item.isDefault">{{copy.default}}</span></div><div class="radio-row-actions"><button v-if="!item.isDefault" :disabled="busy===`def${item.id}`" @click="setDefault(item)">{{copy.setDefault}}</button><button :disabled="busy===`del${item.id}`" @click="remove(item)">{{copy.remove}}</button></div></article><p v-if="!templates.length" class="comment-empty">{{copy.hint}}</p></div></div></section>

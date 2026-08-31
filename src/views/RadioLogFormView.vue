@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import PrivacyNotice from '../components/PrivacyNotice.vue'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import RadioSubnav from '../components/RadioSubnav.vue'
@@ -53,6 +54,7 @@ onMounted(load)
 <template>
 <div class="radio-page"><div class="container"><SiteNav/><RadioSubnav/><main class="radio-main radio-form-main">
 <header class="radio-hero compact"><p class="auth-kicker">{{copy.kicker}}</p><h1>{{copy.title}}</h1><p>{{copy.intro}}</p></header>
+<PrivacyNotice kind="radioLog" />
 <p v-if="error" class="form-error">{{error}}</p>
 <form class="radio-form-panel" @submit.prevent="save">
 <section class="radio-fieldset"><h2>{{copy.basic}}</h2><div class="radio-form-grid">

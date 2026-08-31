@@ -1,6 +1,17 @@
 name: 发布网页到 yuashie.cn
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.*'
+      - '.github/workflows/deploy-web.yml'
+      - 'scripts/check-frontend-scope.py'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +31,16 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
+          fetch-depth: 0
+
+      - name: 确认自动发布仅涉及前端
+        if: github.event_name == 'push'
+        run: |
+          curl --fail --silent --show-error --retry 3 --retry-delay 2 \
+            --connect-timeout 10 --max-time 30 \
+            "https://yuashie.cn/deploy-version.json?check=$GITHUB_SHA" \
+            --output "$RUNNER_TEMP/previous-deploy-version.json"
+          python3 scripts/check-frontend-scope.py "$RUNNER_TEMP/previous-deploy-version.json" "$GITHUB_SHA"
 
       - name: 准备 Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -40,6 +61,11 @@ jobs:
           }) + '\n')
           PY
           tar -czf "$RUNNER_TEMP/yuashie-frontend.tar.gz" -C dist .
+
+      - name: 验证页面与部署边界
+        run: |
+          python3 -m unittest discover -s tests -p 'test_github*.py' -v
+          python3 -m unittest discover -s tests -p 'test_frontend_scope.py' -v
 
       - name: 安全上传、备份和发布
         env:

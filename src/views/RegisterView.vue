@@ -2,6 +2,8 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
+import LegalLinks from '../components/LegalLinks.vue'
+import PrivacyNotice from '../components/PrivacyNotice.vue'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import { api } from '../lib/api'
@@ -53,7 +55,7 @@ async function submit() {
     <SiteNav />
     <main class="auth-shell">
       <section class="auth-panel">
-        <div class="auth-kicker">// YUASHIE ACCOUNT · 0.3.1</div>
+        <div class="auth-kicker">// YUASHIE ACCOUNT · 0.3.2</div>
         <h1>{{ copy[0] }}</h1>
         <p class="auth-lead">{{ copy[1] }}</p>
         <form class="auth-form" @submit.prevent="submit">
@@ -63,6 +65,8 @@ async function submit() {
           <label>{{ copy[5] }}<input v-model="form.password" type="password" autocomplete="new-password" required minlength="6"></label>
           <label>{{ copy[6] }}<input v-model="form.confirm" type="password" autocomplete="new-password" required minlength="6"></label>
           <p class="form-hint">{{ copy[9] }}</p>
+          <PrivacyNotice kind="beforeRegister" />
+          <LegalLinks />
           <p v-if="error" class="form-error">{{ error }}</p>
           <button class="primary-action" :disabled="busy">{{ busy ? '...' : copy[7] }}</button>
         </form>
