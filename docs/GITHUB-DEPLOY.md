@@ -26,9 +26,13 @@
 | `DEPLOY_HOST` | 安装脚本输出的公网 IPv4 或域名，不加协议和端口 |
 | `DEPLOY_PORT` | 安装脚本输出的实际 SSH 端口，通常为 `22` |
 | `DEPLOY_KNOWN_HOSTS` | 安装脚本输出的整行 SSH 主机公钥，包含主机名和 `ssh-ed25519 ...` |
-| `DEPLOY_SSH_KEY` | 在自己的服务器终端运行 `sudo cat /root/.ssh/yuashie-github-frontend`，复制完整私钥，包含 BEGIN / END 两行 |
+| `DEPLOY_SSH_KEY` | 推荐在自己的服务器终端运行 `sudo base64 -w 0 /root/.ssh/yuashie-github-frontend`，复制输出的完整单行字符；也兼容原来的完整多行私钥 |
 
 **私钥只粘贴到 GitHub 的 Secret 输入框，不要提交成文件、不要发给聊天助手、不要分享含私钥的截图。** 安装脚本默认只显示主机公钥，不显示私钥。不要用网上临时扫描到的公钥替换服务器终端输出的可信主机公钥。
+
+Base64 只是将多行转换为一行，**不是加密**，仍必须作为私钥保密。命令输出完毕后，可单独执行 `echo` 将终端提示符移到下一行；复制时不要包含命令、`root@...` 提示符或 `DEPLOY_SSH_KEY =`。如果提示找不到文件，不要自行生成一把未授权的新密钥，应先完成服务器安装步骤。
+
+若日志显示 `error in libcrypto` 或「部署私钥格式不正确」，更新此 Secret。切换到本次新增的 Base64 格式后，要通过发布页面 **Run workflow → main** 新建运行，不能重跑使用旧脚本提交的失败记录。已安装的服务器接收程序无需重装。
 
 安全组及服务器防火墙需要允许执行发布的 GitHub runner 访问实际 SSH 端口。若连接超时，先检查 IP、端口及现有规则，不要关闭整个防火墙。GitHub 托管 runner 的出口 IP 可能变化；严格 IP 白名单环境建议另行采用受控 runner / 专用网络。
 

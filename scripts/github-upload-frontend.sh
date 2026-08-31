@@ -16,7 +16,16 @@ DEPLOY_PORT=${DEPLOY_PORT:-22}
 umask 077
 key_dir=$(mktemp -d "$RUNNER_TEMP/yuashie-ssh.XXXXXXXX")
 trap 'rm -rf -- "$key_dir"' EXIT
-printf '%s\n' "$DEPLOY_SSH_KEY" | tr -d '\r' > "$key_dir/key"
+# Accept the original multiline OpenSSH key or a single-line Base64 copy.
+# Base64 avoids mobile clipboard line-break corruption; it is still a secret.
+if [[ $DEPLOY_SSH_KEY == *'-----BEGIN '* ]]; then
+  printf '%s\n' "$DEPLOY_SSH_KEY" | tr -d '\r' > "$key_dir/key"
+else
+  if ! printf '%s' "$DEPLOY_SSH_KEY" | tr -d '[:space:]' | base64 --decode > "$key_dir/key"; then
+    echo '::error::DEPLOY_SSH_KEY 不是完整私钥或有效的 Base64 私钥，请按部署说明重新复制。'
+    exit 1
+  fi
+fi
 printf '%s\n' "$DEPLOY_KNOWN_HOSTS" | tr -d '\r' > "$key_dir/known_hosts"
 unset DEPLOY_SSH_KEY DEPLOY_KNOWN_HOSTS
 ssh-keygen -y -P '' -f "$key_dir/key" > /dev/null || { echo '::error::部署私钥格式不正确或带有口令。'; exit 1; }
