@@ -1,12 +1,17 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 import { changeLanguage } from '../i18n'
 import { auth } from '../lib/auth'
 
 const { t, locale } = useI18n()
+const router = useRouter()
 const isLightMode = ref(localStorage.getItem('theme') === 'light')
 const mobileMenuOpen = ref(false)
+const brandGlitch = ref(false)
+let brandClicks = 0
+let brandClickTimer
 
 function applyTheme() {
   document.documentElement.dataset.theme = isLightMode.value ? 'light' : 'dark'
@@ -26,6 +31,36 @@ function closeMobileMenu() {
   mobileMenuOpen.value = false
 }
 
+function handleBrandClick(event) {
+  closeMobileMenu()
+
+  // The hidden archive can only be discovered by repeatedly clicking the
+  // YUASHIE mark while already on the home page.
+  if (router.currentRoute.value.path !== '/') return
+
+  brandClicks += 1
+  window.clearTimeout(brandClickTimer)
+
+  if (brandClicks === 4) {
+    brandGlitch.value = true
+    window.setTimeout(() => {
+      brandGlitch.value = false
+    }, 260)
+  }
+
+  if (brandClicks >= 5) {
+    event.preventDefault()
+    brandClicks = 0
+    brandGlitch.value = true
+    window.setTimeout(() => router.push('/projects/000'), 180)
+    return
+  }
+
+  brandClickTimer = window.setTimeout(() => {
+    brandClicks = 0
+  }, 1800)
+}
+
 function onLanguageChange(event) {
   changeLanguage(event.target.value)
 }
@@ -36,7 +71,7 @@ applyTheme()
 <template>
   <nav class="site-nav" :class="{ 'menu-open': mobileMenuOpen }">
     <div class="brand-cluster">
-      <RouterLink to="/" class="brand" @click="closeMobileMenu">
+      <RouterLink to="/" class="brand" :class="{ 'archive-glitch': brandGlitch }" @click="handleBrandClick">
         <span class="brand-mark"></span>
         <span>YUASHIE</span>
       </RouterLink>
@@ -78,3 +113,21 @@ applyTheme()
     </div>
   </nav>
 </template>
+
+<style scoped>
+.archive-glitch {
+  animation: archive-brand-glitch .22s steps(2, end);
+}
+
+@keyframes archive-brand-glitch {
+  0% { transform: translate(0); filter: none; }
+  25% { transform: translate(2px, -1px); filter: contrast(1.8); }
+  50% { transform: translate(-3px, 1px); opacity: .72; }
+  75% { transform: translate(2px, 0); }
+  100% { transform: translate(0); filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive-glitch { animation: none; }
+}
+</style>
