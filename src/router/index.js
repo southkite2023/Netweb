@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProjectsView from '../views/ProjectsView.vue'
 import ProjectDetailView from '../views/ProjectDetailView.vue'
+import Archive000View from '../views/Archive000View.vue'
+import IdentityBackupView from '../views/IdentityBackupView.vue'
 import AboutView from '../views/AboutView.vue'
 import LegalView from '../views/LegalView.vue'
 import VipView from '../views/VipView.vue'
@@ -38,6 +40,16 @@ const router = createRouter({
       path: '/projects',
       name: 'projects',
       component: ProjectsView,
+    },
+    {
+      path: '/projects/000',
+      name: 'archive-000',
+      component: Archive000View,
+    },
+    {
+      path: '/projects/000/identity',
+      name: 'identity-backup',
+      component: IdentityBackupView,
     },
     {
       path: '/projects/:id',
