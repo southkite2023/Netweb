@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteNav from '../components/SiteNav.vue'
 import { archiveCopy, releases } from '../data/siteRecords'
+import { SITE_VERSION } from '../data/version'
 import { legalCopy, legalDocuments, legalPaths } from '../data/legal'
 
 const { locale } = useI18n()
@@ -28,8 +29,8 @@ const uiFollowup = {
   ],
 }
 
-const displayReleases = computed(() => releases.map((release, index) => {
-  if (index !== 0) return release
+const displayReleases = computed(() => releases.map((release) => {
+  if (release.version !== '0.3.2') return release
   const currentLang = lang.value
   return {
     ...release,
@@ -46,7 +47,7 @@ const displayReleases = computed(() => releases.map((release, index) => {
     <main class="archive-main" :lang="lang === 'zh' ? 'zh-CN' : lang">
       <header class="archive-heading">
         <p class="eyebrow">// YUASHIE · SITE ARCHIVE</p>
-        <div class="archive-title-row"><h1>{{ copy.title }}</h1><span class="archive-version">V0.3.2</span></div>
+        <div class="archive-title-row"><h1>{{ copy.title }}</h1><span class="archive-version">V{{ SITE_VERSION }}</span></div>
         <p class="archive-intro">{{ copy.intro }}</p>
       </header>
       <nav class="legal-entry-grid" :aria-label="legalCopy[lang].navigation">

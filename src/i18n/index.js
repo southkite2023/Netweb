@@ -381,6 +381,7 @@ const i18n = createI18n({
 })
 
 function applyDocumentLanguage(lang) {
+  if (typeof document === 'undefined') return
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en'
 }
 

@@ -1,24 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { nextTick } from 'vue'
+import { navigationPending, navigationError, failedPath } from '../lib/navigation'
 
-import HomeView from '../views/HomeView.vue'
-import ProjectsView from '../views/ProjectsView.vue'
-import ProjectDetailView from '../views/ProjectDetailView.vue'
-import Archive000View from '../views/Archive000View.vue'
-import IdentityBackupView from '../views/IdentityBackupView.vue'
-import AboutView from '../views/AboutView.vue'
-import LegalView from '../views/LegalView.vue'
-import VipView from '../views/VipView.vue'
-import LoginView from '../views/LoginView.vue'
-import RegisterView from '../views/RegisterView.vue'
-import ProfileView from '../views/ProfileView.vue'
-import FeedbackView from '../views/FeedbackView.vue'
-import AdminFeedbackView from '../views/AdminFeedbackView.vue'
-import RadioHomeView from '../views/RadioHomeView.vue'
-import RadioLogView from '../views/RadioLogView.vue'
-import RadioLogFormView from '../views/RadioLogFormView.vue'
-import RadioQslView from '../views/RadioQslView.vue'
-import RadioStationEditView from '../views/RadioStationEditView.vue'
-import RadioStationView from '../views/RadioStationView.vue'
+const HomeView = () => import('../views/HomeView.vue')
+const ProjectsView = () => import('../views/ProjectsView.vue')
+const ProjectDetailView = () => import('../views/ProjectDetailView.vue')
+const Archive000View = () => import('../views/Archive000View.vue')
+const IdentityBackupView = () => import('../views/IdentityBackupView.vue')
+const AboutView = () => import('../views/AboutView.vue')
+const LegalView = () => import('../views/LegalView.vue')
+const VipView = () => import('../views/VipView.vue')
+const LoginView = () => import('../views/LoginView.vue')
+const RegisterView = () => import('../views/RegisterView.vue')
+const ProfileView = () => import('../views/ProfileView.vue')
+const FeedbackView = () => import('../views/FeedbackView.vue')
+const AdminFeedbackView = () => import('../views/AdminFeedbackView.vue')
+const RadioHomeView = () => import('../views/RadioHomeView.vue')
+const RadioLogView = () => import('../views/RadioLogView.vue')
+const RadioLogFormView = () => import('../views/RadioLogFormView.vue')
+const RadioQslView = () => import('../views/RadioQslView.vue')
+const RadioStationEditView = () => import('../views/RadioStationEditView.vue')
+const RadioStationView = () => import('../views/RadioStationView.vue')
 
 const router = createRouter({
   history: createWebHistory(),
@@ -27,6 +29,8 @@ const router = createRouter({
     return { top: 0, left: 0, behavior: 'instant' }
   },
   routes: [
+    { path: '/explore', name: 'explore', component: () => import('../views/ExploreView.vue') },
+    { path: '/lab', name: 'signal-lab', component: () => import('../views/SignalLabView.vue') },
     {
       path: '/',
       name: 'home',
@@ -81,7 +85,24 @@ const router = createRouter({
     { path: '/radio/qsl', name: 'radio-qsl', component: RadioQslView },
     { path: '/radio/station', name: 'radio-station-edit', component: RadioStationEditView },
     { path: '/radio/:callsign', name: 'radio-station', component: RadioStationView },
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('../views/NotFoundView.vue') },
   ],
+})
+
+router.beforeEach(() => { navigationPending.value = true; navigationError.value = false })
+router.afterEach(async (to, from, failure) => {
+  navigationPending.value = false
+  if (failure) return
+  await nextTick()
+  const main = document.querySelector('main')
+  if (main) { main.id = 'main-content'; main.setAttribute('tabindex', '-1') }
+  if (from.name && to.path !== from.path) main?.focus({ preventScroll: true })
+})
+router.onError((error, to) => {
+  navigationPending.value = false
+  navigationError.value = true
+  failedPath.value = to?.fullPath || ''
+  console.error('Route load failed:', error)
 })
 
 export default router

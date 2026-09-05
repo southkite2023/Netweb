@@ -64,6 +64,7 @@ jobs:
 
       - name: 验证页面与部署边界
         run: |
+          npm test
           python3 -m unittest discover -s tests -p 'test_github*.py' -v
           python3 -m unittest discover -s tests -p 'test_frontend_scope.py' -v
 

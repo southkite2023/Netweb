@@ -53,7 +53,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
         <MinecraftWhitelistPanel v-if="project.id === '002'" />
         <RadioProjectPanel v-if="project.id === '003'" />
 
-        <CommentSection :project-id="project.id" />
+        <CommentSection :key="project.id" :project-id="project.id" />
 
         <nav class="project-pagination" aria-label="Project navigation">
           <RouterLink to="/projects">{{ t('projectArchive.allProjects') }}</RouterLink>

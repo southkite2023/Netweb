@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { api } from '../lib/api'
 import { auth } from '../lib/auth'
+import { writePreference } from '../lib/preferences'
 import { localizedField, projects } from '../data/projects'
 
 const { locale } = useI18n()
@@ -77,7 +78,7 @@ function loadReadState() {
 
 function saveReadState(next) {
   readIds.value = new Set(next)
-  if (readKey.value) localStorage.setItem(readKey.value, JSON.stringify([...readIds.value].slice(-1000)))
+  if (readKey.value) writePreference(readKey.value, JSON.stringify([...readIds.value].slice(-1000)))
 }
 
 function markRead(item) {
@@ -134,13 +135,16 @@ function feedbackMessage(item) {
 }
 
 async function refresh() {
-  if (!auth.user || loading.value) return
+  if (!auth.user || loading.value || document.hidden) return
+  const username = auth.user.username
   loading.value = true
   error.value = ''
   try {
     const projectIds = projects.map(project => project.id)
     const requests = [api.comments(BROADCAST_PROJECT), api.myFeedback(), api.me(), ...projectIds.map(id => api.comments(id))]
     const results = await Promise.allSettled(requests)
+    if (auth.user?.username !== username) return
+    if (results.every(result => result.status === 'rejected')) throw results[0].reason
     const next = []
 
     const broadcastResult = results[0]
@@ -168,6 +172,7 @@ async function refresh() {
 
     const meResult = results[2]
     if (meResult.status === 'fulfilled') {
+      if (!meResult.value.user) { auth.user = null; return }
       auth.user = meResult.value.user
       for (const badge of meResult.value.user?.badges || []) {
         next.push({

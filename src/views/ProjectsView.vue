@@ -24,7 +24,7 @@ const { t, locale } = useI18n()
         <div class="projects-grid" aria-label="Project list">
           <RouterLink v-for="project in projects" :key="project.id" class="project-tile" :to="`/projects/${project.id}`">
             <div class="project-image-wrap">
-              <img class="project-image" :src="project.image" :alt="localizedField(project, 'title', locale)">
+              <img class="project-image" loading="lazy" decoding="async" width="640" height="400" :src="project.image" :alt="localizedField(project, 'title', locale)">
               <span class="project-number">{{ project.id }}</span>
             </div>
 

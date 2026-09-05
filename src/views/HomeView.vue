@@ -1,35 +1,18 @@
 <script setup>
-import { onBeforeUnmount, onMounted } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteNav from '../components/SiteNav.vue'
 import { localizedField, projects } from '../data/projects'
+import { experienceCopy } from '../data/experience'
+import { latestRelease } from '../data/latestRelease'
+import { SITE_VERSION } from '../data/version'
+import { openCommands } from '../lib/navigation'
 
 const { t, locale } = useI18n()
 const featuredProjects = projects.slice(0, 3)
-let observer
-
-onMounted(() => {
-  observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible')
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.12 }
-  )
-
-  document.querySelectorAll('.reveal').forEach(el => {
-    observer.observe(el)
-  })
-})
-
-onBeforeUnmount(() => {
-  observer?.disconnect()
-})
+const c = computed(() => experienceCopy[locale.value] || experienceCopy.zh)
+const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
 </script>
 
 <template>
@@ -37,122 +20,60 @@ onBeforeUnmount(() => {
     <div class="container">
       <SiteNav />
 
-      <main class="hero">
+      <main class="hero home-hero">
         <div>
-          <div class="eyebrow reveal">
+          <div class="eyebrow">
             {{ t('hero.eyebrow') }}
           </div>
 
-          <h1 class="reveal">
+          <h1>
             {{ t('hero.line1') }}<br>
             {{ t('hero.line2') }}<br>
             <span>{{ t('hero.line3') }}</span>
           </h1>
 
-          <p class="intro reveal">
+          <p class="intro">
             {{ t('hero.intro') }}
           </p>
 
-          <div class="hero-actions reveal">
+          <div class="hero-actions">
             <RouterLink class="btn btn-primary" to="/projects">
               {{ t('hero.projects') }}
               <span>→</span>
             </RouterLink>
 
-            <RouterLink class="btn btn-secondary" to="/about">
-              {{ t('hero.about') }}
+            <RouterLink class="btn btn-secondary" to="/explore">
+              {{ c.explore }}
             </RouterLink>
           </div>
         </div>
 
-        <div class="terminal reveal">
-          <div class="terminal-top">
-            <div class="dots">
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-
-            <span class="terminal-title">
-              yuashie@node
-            </span>
+        <aside class="terminal node-panel">
+          <div class="terminal-top"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span class="terminal-title">yuashie / personal-node</span></div>
+          <div class="node-body">
+            <p class="node-command"><span>$</span> cat ./readme</p>
+            <h2>{{ c.nodeTitle }}</h2><p class="node-description">{{ c.nodeText }}</p>
+            <dl class="node-facts"><div><dt>{{ c.version }}</dt><dd>v{{ SITE_VERSION }}</dd></div><div><dt>{{ c.projects }}</dt><dd>{{ String(projects.length).padStart(2, '0') }}</dd></div><div><dt>{{ c.languages }}</dt><dd>ZH / EN / JA</dd></div></dl>
+            <button class="node-search" type="button" @click="openCommands"><span>{{ c.search }}</span><kbd>⌘ / Ctrl K</kbd></button>
           </div>
-
-          <div class="terminal-body">
-            <div>
-              <span class="prompt">$</span>
-              systemctl status yuashie
-            </div>
-
-            <div class="terminal-green">
-              ● yuashie.service - Personal Node
-            </div>
-
-            <br>
-
-            <div>
-              {{ t('terminal.status') }}&nbsp;&nbsp;&nbsp;&nbsp;
-              <span class="terminal-white">
-                {{ t('terminal.online') }}
-              </span>
-            </div>
-
-            <div>
-              {{ t('terminal.protocol') }}&nbsp;&nbsp;
-              <span class="terminal-white">HTTPS</span>
-            </div>
-
-            <div>
-              {{ t('terminal.region') }}&nbsp;&nbsp;&nbsp;&nbsp;
-              <span class="terminal-white">CN</span>
-            </div>
-
-            <div>
-              {{ t('terminal.version') }}&nbsp;&nbsp;&nbsp;
-              <span class="terminal-white">0.3.2</span>
-            </div>
-
-            <br>
-
-            <div>
-              <span class="prompt">$</span>
-              cat ./about.txt
-            </div>
-
-            <div class="terminal-white terminal-about">
-              <p>{{ t('terminal.about.greeting') }}</p>
-              <p>{{ t('terminal.about.curious') }}</p>
-              <p>{{ t('terminal.about.description') }}</p>
-              <p>{{ t('terminal.about.welcome') }}</p>
-              <p>{{ t('terminal.about.developing') }}</p>
-            </div>
-
-            <br>
-
-            <div>
-              <span class="prompt">$</span>
-              <span class="cursor"></span>
-            </div>
-          </div>
-        </div>
+        </aside>
       </main>
     </div>
 
     <section>
       <div class="container">
-        <div class="section-label reveal">
-          01 / {{ t('projects.title') }}
-        </div>
+        <div class="section-heading"><div><p class="section-label">01 / SELECTED PROJECTS</p><h2>{{ c.featured }}</h2><p>{{ c.featuredIntro }}</p></div><RouterLink to="/explore">{{ c.explore }} ↗</RouterLink></div>
 
         <div class="home-project-grid">
           <RouterLink
             v-for="project in featuredProjects"
             :key="project.id"
-            class="home-project-card reveal"
+            class="home-project-card"
             :to="`/projects/${project.id}`"
           >
             <img
               class="home-project-image"
+              loading="lazy" decoding="async" width="640" height="480"
               :src="project.image"
               :alt="localizedField(project, 'title', locale)"
             >
@@ -171,18 +92,20 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
+    <section class="home-discovery"><div class="container discovery-duo"><RouterLink class="lab-invitation" to="/lab"><span class="section-label">02 / SIGNAL LAB</span><span class="lab-glyph" aria-hidden="true">−·−·  −−·−</span><h2>{{ c.enterLab }}</h2><p>{{ c.labIntro }}</p><span class="inline-link">{{ c.lab }} ↗</span></RouterLink><RouterLink class="release-invitation" to="/about"><span class="section-label">{{ c.latest }}</span><span class="release-number">v{{ SITE_VERSION }}</span><h2>{{ latest.title }}</h2><time :datetime="latestRelease.date">{{ latestRelease.date }}</time><span class="inline-link">{{ c.release }} ↗</span></RouterLink></div></section>
+
     <section>
       <div class="container">
-        <div class="section-label reveal">
-          02 / {{ t('manifesto.title') }}
+        <div class="section-label">
+          03 / {{ t('manifesto.title') }}
         </div>
 
         <div class="quote">
-          <h2 class="reveal">
+          <h2>
             {{ t('manifesto.quote') }}
           </h2>
 
-          <div class="quote-side reveal">
+          <div class="quote-side">
             <p>{{ t('manifesto.p1') }}</p>
 
             <br>

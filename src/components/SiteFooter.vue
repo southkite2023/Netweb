@@ -1,9 +1,8 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
 import LegalLinks from './LegalLinks.vue'
+import { SITE_VERSION } from '../data/version'
 import beianIcon from '../assets/beian-icon.png'
 
-const { t } = useI18n()
 </script>
 
 <template>
@@ -11,7 +10,7 @@ const { t } = useI18n()
     <div class="container footer-content">
       <div class="footer-main">
         <span>Copyright © 2026-至今 北住孤居</span>
-        <span>{{ t('footer.status') }}</span>
+        <RouterLink to="/about">YUASHIE · v{{ SITE_VERSION }}</RouterLink>
       </div>
       <LegalLinks />
       <div class="filing-links">
