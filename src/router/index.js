@@ -29,6 +29,7 @@ const router = createRouter({
     return { top: 0, left: 0, behavior: 'instant' }
   },
   routes: [
+    { path: '/play', name: 'playroom', component: () => import('../views/PlayroomView.vue') },
     { path: '/explore', name: 'explore', component: () => import('../views/ExploreView.vue') },
     { path: '/lab', name: 'signal-lab', component: () => import('../views/SignalLabView.vue') },
     {

@@ -142,7 +142,7 @@ kbd { font: .75rem/1.4 ui-monospace,monospace; padding:4px 6px; border:1px solid
 .route-error p { font-size:.9375rem; line-height:1.7; }
 @keyframes route-loading { 0%{transform:scaleX(.05)} 70%{transform:scaleX(.8)} 100%{transform:scaleX(.98);opacity:.3} }
 @keyframes signal-pulse { 50%{opacity:.3} }
-@media(max-width:1140px) {
+@media(max-width:1280px) {
   .site-nav { display:grid; grid-template-columns:minmax(0,1fr) auto; height:auto; min-height:72px; padding:14px; }
   .site-nav .nav-utility { grid-column:2; grid-row:1; }
   .site-nav .mobile-nav-toggle { display:grid; }

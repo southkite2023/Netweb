@@ -1,0 +1,43 @@
+YUASHIE PLAYROOM — THIRD-PARTY NOTICES
+
+This page adapts the following projects. The site is not affiliated with their
+authors. The original projects and their licenses remain separately attributed.
+
+1. Bongo Cat
+   https://github.com/Externalizable/bongo.cat
+   Source commit: 591940644775d7cfd5167eceeeb6b97a1f9aadd4
+   Copyright (c) 2018 Eric Huber — MIT
+   Full license: https://yuashie.cn/licenses/bongo-cat.txt
+   Cat drawing: StrayRogue. Original meme idea: DitzyFlama.
+   Website and source project: Externalizable / Eric Huber.
+   Source README records StrayRogue's permission to Externalizable for the
+   original Bongo Cat website, dated 15 September 2018.
+   Reused unmodified sprites: cat.png, mouth.png, paw-left.png, paw-right.png,
+   bongo.png. We retained the source project's sprite layering and frame layout.
+   The Vue interactions and synthesized percussion are new implementations.
+   No original sound samples, analytics, jQuery, lowLag or Flash player are used.
+
+2. 2048
+   https://github.com/gabrielecirulli/2048
+   Source commit: 478b6ec346e3787f589e4af751378d06ded4cbbc
+   Copyright (c) 2014 Gabriele Cirulli — MIT
+   Full license: https://yuashie.cn/licenses/2048.txt
+   Our functional game engine adapts the original directional sliding and
+   single-merge-per-move rules. The Vue UI, input handling and local save format
+   are new implementations. Original project's further acknowledgements:
+   1024 by Veewo Studio and Threes by Asher Vollmer.
+
+3. canvas-confetti v1.9.4
+   https://github.com/catdad/canvas-confetti
+   Copyright (c) 2020 Kiril Vatev — ISC
+   Full license: https://yuashie.cn/licenses/canvas-confetti.txt
+   Installed at an exact version, with the package lock retaining integrity.
+
+Privacy and runtime behavior
+   No third-party CDN scripts, iframe games, analytics or external audio calls
+   are added by the Playroom. The cat sprites are served from this site.
+   Game progress, best score and companion preference are browser-local only.
+   Clearing browser data resets them. Private/restricted storage may not save.
+   Sound is opt-in per component session. No global keystrokes are collected.
+   Keyboard handlers operate only while the corresponding game is focused.
+   Confetti is lazy-loaded and honors the system reduced-motion setting.

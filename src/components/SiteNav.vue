@@ -7,6 +7,7 @@ import { auth } from '../lib/auth'
 import { isLightMode, toggleTheme } from '../lib/theme'
 import { openCommands } from '../lib/navigation'
 import { experienceCopy } from '../data/experience'
+import { playroomCopy } from '../data/playroom'
 const MailboxPanel = defineAsyncComponent(() => import('./MailboxPanel.vue'))
 const { t, locale } = useI18n()
 const c = computed(() => experienceCopy[locale.value] || experienceCopy.zh)
@@ -60,6 +61,7 @@ onBeforeUnmount(() => { timers.forEach(clearTimeout) })
     <div id="primary-navigation" class="nav-right" :class="{ 'is-open': mobileMenuOpen }">
       <RouterLink class="nav-link" to="/projects" @click="closeMobileMenu">{{ t('nav.projects') }}</RouterLink>
       <RouterLink class="nav-link" to="/explore" @click="closeMobileMenu">{{ c.explore }}</RouterLink>
+      <RouterLink class="nav-link" to="/play" @click="closeMobileMenu">{{ (playroomCopy[locale] || playroomCopy.zh).title }}</RouterLink>
       <RouterLink class="nav-link" to="/radio" @click="closeMobileMenu">{{ t('nav.radio') }}</RouterLink>
       <RouterLink class="nav-link" to="/about" @click="closeMobileMenu">{{ t('nav.about') }}</RouterLink>
       <RouterLink class="nav-link" to="/vip" @click="closeMobileMenu">{{ t('nav.vip') }}</RouterLink>

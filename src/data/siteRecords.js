@@ -1,4 +1,5 @@
 import { latestRelease } from './latestRelease'
+import { release040 } from './release040'
 // Beijing dates; same-version follow-ups grouped. No invented release numbers.
 export const archiveCopy = {
   zh: { title: '关于本站', intro: '这里记录 Yuashie 从一个想法，逐渐成为个人空间与兴趣社区的过程。每一次更新，都留下一个可回看的坐标。', log: '更新日志', order: '由新到旧 / UTC+8', latest: '本次更新', note: '根据开发对话与留存版本说明整理，日期按北京时间记录。同一版本的补充调整合并列出；未单独编号的阶段不补造版本号。日志记录功能开发，不代表每次服务器部署均已成功。', originTitle: '从第一个页面开始', origin: '完成网站基础部署、域名与 HTTPS 配置，搭建 Vue 页面框架，逐步确定首页、项目、关于等路由。此阶段未留存可核对的独立版本号。' },
@@ -8,6 +9,7 @@ export const archiveCopy = {
 const release = (version, date, zh, en, ja) => ({ version, date, zh: { title: zh[0], items: zh.slice(1) }, en: { title: en[0], items: en.slice(1) }, ja: { title: ja[0], items: ja.slice(1) } })
 export const releases = [
   latestRelease,
+  release040,
   release('0.3.2', '2026-08-31',
     ['站点档案与使用规则', '重构 About 页面，以时间线整理网站历次更新。', '新增用户服务条款、用户隐私协议和作品使用条款，提供独立页面与全站页脚入口。', '补充注册及无线电相关页面的协议、公开范围提示；新增内容同步支持中文、英文和日文。'],
     ['Site archive and policies', 'Rebuilt About as a timeline of documented website updates.', 'Added separate Terms of Service, Privacy Policy and Content Usage Terms pages, accessible from the site footer.', 'Added policy and visibility notices to registration and radio pages in Chinese, English and Japanese.'],
