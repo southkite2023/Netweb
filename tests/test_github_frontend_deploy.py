@@ -64,6 +64,25 @@ class DeploymentSafety(unittest.TestCase):
         self.assertEqual((self.app / 'dist').stat().st_mode & 0o777, 0o755)
         self.assert_protected()
 
+    def test_real_build_respects_static_archive_policy(self):
+        dist = Path(__file__).parents[1] / 'dist'
+        if not (dist / 'index.html').is_file():
+            self.skipTest('Run the production build first.')
+        stream = io.BytesIO()
+        with tarfile.open(fileobj=stream, mode='w:gz') as archive:
+            for path in sorted(dist.rglob('*')):
+                if path.is_file() and path.name != 'deploy-version.json':
+                    archive.add(path, arcname=str(path.relative_to(dist)))
+            data = json.dumps({'commit': COMMIT}).encode()
+            marker = tarfile.TarInfo('deploy-version.json')
+            marker.size = len(data)
+            archive.addfile(marker, io.BytesIO(data))
+        destination = Path(self.temp.name) / 'archive-check'
+        destination.mkdir()
+        receiver.unpack(stream.getvalue(), destination, COMMIT)
+        self.assertTrue((destination / 'index.html').is_file())
+        self.assert_protected()
+
     def test_health_failure_restores_previous_site(self):
         def check(_):
             raise RuntimeError('health check failed')

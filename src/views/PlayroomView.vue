@@ -143,7 +143,7 @@ onBeforeUnmount(() => {
           <p id="game-instructions" class="play-note">{{ c.controls }}</p><p class="play-note">{{ c.local }}</p><p v-if="storageError" class="play-feedback" role="status">{{ c.storageError }}</p>
         </section>
       </div>
-      <details class="play-credits"><summary>{{ c.credits }}</summary><p>{{ c.creditIntro }}</p><ul><li><a href="https://github.com/Externalizable/bongo.cat" target="_blank" rel="noopener noreferrer">Bongo Cat</a> · MIT · Eric Huber / StrayRogue / DitzyFlama</li><li><a href="https://github.com/gabrielecirulli/2048" target="_blank" rel="noopener noreferrer">2048</a> · MIT · Gabriele Cirulli</li><li><a href="https://github.com/catdad/canvas-confetti" target="_blank" rel="noopener noreferrer">canvas-confetti</a> · ISC · Kiril Vatev</li></ul><a href="/licenses/playroom-notices.txt" target="_blank" rel="noopener">{{ c.license }} ↗</a></details>
+      <details class="play-credits"><summary>{{ c.credits }}</summary><p>{{ c.creditIntro }}</p><ul><li><a href="https://github.com/Externalizable/bongo.cat" target="_blank" rel="noopener noreferrer">Bongo Cat</a> · MIT · Eric Huber / StrayRogue / DitzyFlama</li><li><a href="https://github.com/gabrielecirulli/2048" target="_blank" rel="noopener noreferrer">2048</a> · MIT · Gabriele Cirulli</li><li><a href="https://github.com/catdad/canvas-confetti" target="_blank" rel="noopener noreferrer">canvas-confetti</a> · ISC · Kiril Vatev</li></ul><a href="/assets/licenses/playroom-notices.txt" target="_blank" rel="noopener">{{ c.license }} ↗</a></details>
     </main>
   </div><SiteFooter /></div>
 </template>

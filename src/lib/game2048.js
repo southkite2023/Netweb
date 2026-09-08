@@ -1,5 +1,5 @@
 // A functional adaptation of Gabriele Cirulli's 2048 (MIT).
-// Attribution and original license: /licenses/2048.txt.
+// Attribution and original license: /assets/licenses/2048.txt.
 export const DIRECTIONS = ['up', 'right', 'down', 'left']
 export function slide(board, direction) {
   if (!DIRECTIONS.includes(direction)) throw new Error('Invalid direction')
