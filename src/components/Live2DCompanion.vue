@@ -76,6 +76,7 @@ onBeforeUnmount(destroy)
 </script>
 
 <template>
+  <!-- Live2D v1 production sync: 2026-09-22 -->
   <aside v-if="visible" class="live2d-companion" aria-label="Yuashie Live2D companion">
     <button class="live2d-close" type="button" aria-label="隐藏 Live2D" @click="hide">×</button>
     <div v-if="ready" class="live2d-bubble" aria-live="polite">{{ message }}</div>
