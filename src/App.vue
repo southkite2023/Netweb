@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import BackToTop from './components/BackToTop.vue'
 import CompanionDock from './components/CompanionDock.vue'
+import Live2DCompanion from './components/Live2DCompanion.vue'
 import { experienceCopy } from './data/experience'
 import { directoryEntries } from './data/directory'
 import { commandOpen, openCommands, navigationPending, navigationError, failedPath } from './lib/navigation'
@@ -52,4 +53,5 @@ onBeforeUnmount(() => {
   <CommandPalette v-if="commandOpen" />
   <BackToTop />
   <CompanionDock />
+  <Live2DCompanion />
 </template>
