@@ -10,7 +10,7 @@ const message = ref('晚上好。要一起看看今天的网站吗？')
 let app = null
 let model = null
 let resizeObserver = null
-const MODEL_URL = '/live2d/yuashie/Yuashie_Live2D_layered_starter.model3.json'
+const MODEL_URL = '/assets/live2d/yuashie/Yuashie_Live2D_layered_starter.model3.json'
 const lines = ['欢迎来到 YUASHIE。','别一直盯着我看啦。','项目还在持续更新中。','今天也要无限进步。','点击右上角可以暂时把我藏起来。']
 
 function waitForRuntime(timeout = 12000) {
