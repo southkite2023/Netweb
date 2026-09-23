@@ -1,9 +1,9 @@
 <script setup>
-import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { nextTick, onBeforeUnmount, ref } from 'vue'
 
 const canvas = ref(null)
 const host = ref(null)
-const visible = ref(localStorage.getItem('yuashie-live2d-hidden') !== '1')
+const visible = ref(false)
 const ready = ref(false)
 const failed = ref(false)
 const message = ref('晚上好。要一起看看今天的网站吗？')
@@ -69,14 +69,13 @@ function destroy() {
   app = null
   ready.value = false
 }
-function hide() { visible.value = false; localStorage.setItem('yuashie-live2d-hidden', '1'); destroy() }
-async function show() { visible.value = true; localStorage.removeItem('yuashie-live2d-hidden'); await init() }
-onMounted(init)
+function hide() { visible.value = false; destroy() }
+async function show() { visible.value = true; await init() }
 onBeforeUnmount(destroy)
 </script>
 
 <template>
-  <!-- Live2D v1 production sync: 2026-09-22 -->
+  <!-- Live2D defaults to hidden on each fresh page load. -->
   <aside v-if="visible" class="live2d-companion" aria-label="Yuashie Live2D companion">
     <button class="live2d-close" type="button" aria-label="隐藏 Live2D" @click="hide">×</button>
     <div v-if="ready" class="live2d-bubble" aria-live="polite">{{ message }}</div>
