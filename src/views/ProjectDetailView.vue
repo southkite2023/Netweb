@@ -46,7 +46,8 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
           <div class="detail-description">
             <p class="section-label">01 / {{ t('projectArchive.overview') }}</p>
             <p>{{ localizedField(project, 'description', locale) }}</p>
-            <p class="detail-note">{{ t('projectArchive.moreSoon') }}</p>
+            <p class="detail-note">{{ project.note ? localizedField(project, 'note', locale) : t('projectArchive.moreSoon') }}</p>
+            <a v-if="project.repository" class="btn btn-primary" :href="project.repository" target="_blank" rel="noopener noreferrer">{{ localizedField(project, 'repositoryLabel', locale) }} ↗</a>
           </div>
         </section>
 
