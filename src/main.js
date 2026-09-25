@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import './glass-ui.css'
 import './experience.css'
+import './moe-ui.css'
 import { applyTheme } from './lib/theme'
 import App from './App.vue'
 import router from './router'
@@ -15,4 +16,3 @@ createApp(App)
   .use(router)
   .use(i18n)
   .mount('#app')
-
