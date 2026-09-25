@@ -59,6 +59,7 @@ onBeforeUnmount(() => { timers.forEach(clearTimeout) })
       <button ref="menuButton" class="mobile-nav-toggle" type="button" :aria-expanded="mobileMenuOpen" aria-controls="primary-navigation" :aria-label="mobileMenuOpen ? c.close : c.menu" @click="mobileMenuOpen = !mobileMenuOpen"><span aria-hidden="true">{{ mobileMenuOpen ? '×' : '☰' }}</span></button>
     </div>
     <div id="primary-navigation" class="nav-right" :class="{ 'is-open': mobileMenuOpen }">
+      <RouterLink class="nav-link" to="/" @click="closeMobileMenu">{{ c.home }}</RouterLink>
       <RouterLink class="nav-link" to="/projects" @click="closeMobileMenu">{{ t('nav.projects') }}</RouterLink>
       <RouterLink class="nav-link" to="/explore" @click="closeMobileMenu">{{ c.explore }}</RouterLink>
       <RouterLink class="nav-link" to="/play" @click="closeMobileMenu">{{ (playroomCopy[locale] || playroomCopy.zh).title }}</RouterLink>

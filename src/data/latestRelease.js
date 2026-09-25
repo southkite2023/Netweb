@@ -1,27 +1,21 @@
 export const latestRelease = {
-  version: '0.5.0', date: '2026-09-08',
-  zh: { title: '猫猫与游乐室', items: [
-    '新增游乐室 /play：Bongo Cat 互动打鼓、2048 小游戏与星光礼花。',
-    '猫猫支持点击、A / D 键和可选鼓声；可以带到其他页面，随时收起或关闭，默认不自动播放声音。',
-    '2048 支持方向键、WASD、触屏滑动、方向按钮、撤回一步，以及当前浏览器内的进度和最高分保存。',
-    '合成 2048 时触发礼花，也可手动庆祝；尊重减少动态效果设置，页面关闭时清理动画和音频。',
-    '首页、导航、探索和快捷搜索加入游乐室入口；新增功能覆盖中英日与深浅主题。',
-    '互动素材由本站提供，礼花按需加载；保留 GitHub 项目来源、原作者及 MIT / ISC 许可。',
+  version: '0.6.0', date: '2026-09-25',
+  zh: { title: '个人节点 · 模块化重绘', items: [
+    '重绘首页：图文主卡、个人信息侧栏、独立项目封面与状态标签，建立清晰的内容层级。',
+    '统一石墨色与浅色面板、细边框、间距和荧光绿强调色，保留赛博工业风与既有项目素材。',
+    '统一导航与功能面板，增加首页入口，修复手机展开菜单链接被旧样式隐藏的问题。',
+    '保留全部路由、账号、电台、实验室、游乐室与快捷搜索功能；默认中文，兼容中英日、明暗主题和减少动态效果设置。',
   ] },
-  en: { title: 'Cats & the Playroom', items: [
-    'Added /play with interactive Bongo Cat drums, 2048 and a starlight celebration.',
-    'Play the drums with taps or A / D, with optional sound. Bring the cat to other pages, minimize it or dismiss it; sound never starts automatically.',
-    '2048 supports arrows, WASD, swipes, direction buttons, one-step undo and browser-local progress and best scores.',
-    'Celebrate reaching 2048 or launch a burst manually. Effects respect reduced motion and clean up on leaving the page.',
-    'Added Playroom links to the homepage, navigation, Explore and quick search, in Chinese, English and Japanese with both themes.',
-    'Companion assets are served locally; confetti loads on demand. GitHub sources, authors and MIT / ISC licenses are retained.',
+  en: { title: 'A modular personal space', items: [
+    'Redesigned the homepage with a feature panel, personal sidebar, separate project covers and status labels.',
+    'Unified graphite and light surfaces, fine borders, spacing and lime accents while retaining the cyber-industrial identity and original project artwork.',
+    'Refined navigation and functional panels, added Home, and fixed mobile menu links hidden by legacy CSS.',
+    'Preserved all routes, accounts, radio, signal lab, playroom and quick search, with Chinese as default, three languages, both themes and reduced-motion support.',
   ] },
-  ja: { title: '猫とプレイルーム', items: [
-    '/play に Bongo Cat の太鼓、2048、星の演出を追加しました。',
-    'タップや A / D キーで演奏し、音は任意でオンにできます。猫を他のページに連れて行き、収納・非表示にできます。音の自動再生はありません。',
-    '2048 は矢印・WASD・スワイプ・方向ボタン・一手戻しに対応し、進行状況と最高点をブラウザ内に保存します。',
-    '2048 達成時またはボタン操作で星が舞います。動きを減らす設定を尊重し、ページ終了時に演出と音声を解放します。',
-    'ホーム、ナビ、探索、クイック検索に入口を追加。中国語・英語・日本語と明暗テーマに対応しました。',
-    '猫の素材は当サイトから配信し、演出は必要時に読み込みます。GitHub の出典・作者・MIT / ISC ライセンスを保持しています。',
+  ja: { title: '個人空間のモジュール化', items: [
+    'ホームをメインカード、プロフィール欄、独立したプロジェクト画像と状態表示で再構成しました。',
+    '暗色・明色パネル、細い境界線、余白、ライム色のアクセントを統一し、工業的な個性と既存の画像を維持しました。',
+    'ナビゲーションにホームを追加し、旧CSSでモバイルメニューのリンクが非表示になる問題を修正しました。',
+    '既存のルート、アカウント、無線、実験室、ゲーム、検索を維持。初期言語は中国語で、3言語、明暗テーマ、動きを減らす設定に対応します。',
   ] },
 }
