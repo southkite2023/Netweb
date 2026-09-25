@@ -1,0 +1,608 @@
+/* Yuashie v0.6 — WinMoes-inspired visual layer
+   Original UI redraw: modular portal layout, soft glass, anime-tech accents.
+   Imported last so legacy components keep their behavior while sharing one skin. */
+
+:root {
+  --moe-bg: #0a0c12;
+  --moe-surface: rgba(17, 20, 29, .82);
+  --moe-surface-soft: rgba(22, 25, 36, .66);
+  --moe-surface-solid: #11151f;
+  --moe-line: rgba(255, 255, 255, .09);
+  --moe-line-strong: rgba(255, 255, 255, .16);
+  --moe-text: #f7f8fb;
+  --moe-muted: #949bac;
+  --moe-cyan: #75ddff;
+  --moe-purple: #a98fff;
+  --moe-pink: #ff86c8;
+  --moe-green: #72edbd;
+  --moe-shadow: 0 18px 60px rgba(0, 0, 0, .24);
+  --moe-radius-xl: 28px;
+  --moe-radius-lg: 22px;
+  --moe-radius-md: 16px;
+  --moe-radius-sm: 12px;
+  --moe-blur: blur(20px) saturate(135%);
+}
+
+:root[data-theme="light"] {
+  --moe-bg: #f6f7fb;
+  --moe-surface: rgba(255, 255, 255, .82);
+  --moe-surface-soft: rgba(255, 255, 255, .66);
+  --moe-surface-solid: #fff;
+  --moe-line: rgba(31, 38, 52, .09);
+  --moe-line-strong: rgba(31, 38, 52, .16);
+  --moe-text: #151925;
+  --moe-muted: #6f7789;
+  --moe-cyan: #167f9f;
+  --moe-purple: #7451ca;
+  --moe-pink: #c74f91;
+  --moe-green: #168766;
+  --moe-shadow: 0 18px 60px rgba(45, 54, 76, .12);
+}
+
+html {
+  background: var(--moe-bg);
+}
+
+body {
+  color: var(--moe-text);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(117, 221, 255, .10), transparent 30%),
+    radial-gradient(circle at 88% 14%, rgba(255, 134, 200, .08), transparent 26%),
+    radial-gradient(circle at 74% 78%, rgba(169, 143, 255, .09), transparent 31%),
+    var(--moe-bg);
+}
+
+body::before {
+  opacity: .46;
+  background-size: 56px 56px;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, transparent 0 47%, rgba(255,255,255,.018) 47% 48%, transparent 48% 100%);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.72), transparent 72%);
+}
+
+.container {
+  width: min(1260px, calc(100% - 48px));
+}
+
+/* floating portal navigation */
+.site-nav {
+  position: sticky;
+  top: 14px;
+  z-index: 50;
+  min-height: 68px;
+  height: auto;
+  margin-top: 14px;
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--moe-line);
+  border-radius: 20px;
+  background: var(--moe-surface);
+  backdrop-filter: var(--moe-blur);
+  box-shadow: 0 14px 42px rgba(0,0,0,.14);
+}
+
+.brand {
+  gap: 10px;
+  letter-spacing: .18em;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  transform: rotate(8deg);
+  border-color: color-mix(in srgb, var(--moe-cyan) 42%, transparent);
+  background:
+    linear-gradient(145deg, rgba(117,221,255,.15), rgba(169,143,255,.08));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.brand-mark::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--moe-cyan), var(--moe-purple));
+  box-shadow: 0 0 20px rgba(117,221,255,.45);
+}
+
+.theme-toggle,
+.icon-button,
+.mobile-nav-toggle {
+  border-radius: 12px !important;
+  background: rgba(255,255,255,.035) !important;
+}
+
+.nav-right {
+  gap: 6px;
+}
+
+.nav-link {
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--moe-muted);
+  font-size: 12px;
+}
+
+.nav-link:hover,
+.nav-link.router-link-active {
+  color: var(--moe-text);
+  background: rgba(255,255,255,.055);
+}
+
+.language-switcher {
+  margin-left: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* home hero becomes a portal card rather than a bare landing page */
+.home-hero {
+  min-height: auto;
+  margin: 34px 0 28px;
+  padding: clamp(34px, 6vw, 72px);
+  grid-template-columns: minmax(0, 1.28fr) minmax(300px, .72fr);
+  gap: 32px;
+  align-items: stretch;
+  border: 1px solid var(--moe-line);
+  border-radius: var(--moe-radius-xl);
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(117,221,255,.13), transparent 27%),
+    radial-gradient(circle at 72% 12%, rgba(255,134,200,.10), transparent 24%),
+    linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+  box-shadow: var(--moe-shadow);
+}
+
+.home-hero::before {
+  content: "YUASHIE // PERSONAL NETWORK";
+  position: absolute;
+  right: 26px;
+  top: 20px;
+  color: rgba(255,255,255,.14);
+  font: 10px/1 monospace;
+  letter-spacing: .18em;
+}
+
+:root[data-theme="light"] .home-hero::before {
+  color: rgba(17,25,37,.18);
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -8% -34% 42%;
+  height: 66%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(169,143,255,.11), transparent 68%);
+  pointer-events: none;
+}
+
+.home-hero > div,
+.home-hero > aside {
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 24px;
+  padding: 8px 11px;
+  border: 1px solid color-mix(in srgb, var(--moe-cyan) 24%, transparent);
+  border-radius: 999px;
+  background: rgba(117,221,255,.055);
+  letter-spacing: .13em;
+}
+
+.home-hero h1 {
+  max-width: 820px;
+  margin-bottom: 28px;
+  font-size: clamp(54px, 7vw, 106px);
+  line-height: .91;
+  letter-spacing: -.06em;
+}
+
+.home-hero h1 span {
+  background: linear-gradient(100deg, var(--moe-cyan), var(--moe-purple) 54%, var(--moe-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0;
+}
+
+.intro {
+  color: var(--moe-muted);
+  font-size: clamp(16px, 1.55vw, 20px);
+  line-height: 1.8;
+}
+
+.btn {
+  height: 46px;
+  border-radius: 13px;
+}
+
+.btn-primary {
+  background: linear-gradient(110deg, var(--moe-cyan), #91cfff 52%, var(--moe-purple));
+  border-color: transparent;
+  box-shadow: 0 10px 32px rgba(117,221,255,.16);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,.035);
+}
+
+.node-panel {
+  align-self: stretch;
+  min-height: 100%;
+  border-radius: 22px;
+  border-color: var(--moe-line);
+  background:
+    linear-gradient(155deg, rgba(11,14,22,.78), rgba(18,21,31,.7));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+:root[data-theme="light"] .node-panel {
+  background: rgba(255,255,255,.78);
+}
+
+.node-body {
+  padding: 28px !important;
+}
+
+.node-facts > div,
+.node-search,
+.home-play-link {
+  border-radius: 12px;
+}
+
+/* section modules */
+section {
+  padding: 86px 0;
+  border-top: 0;
+}
+
+.home-page section > .container {
+  padding: 30px;
+  border: 1px solid var(--moe-line);
+  border-radius: var(--moe-radius-xl);
+  background: var(--moe-surface-soft);
+  backdrop-filter: var(--moe-blur);
+  box-shadow: 0 10px 40px rgba(0,0,0,.08);
+}
+
+.home-page section + section {
+  margin-top: 22px;
+}
+
+.section-heading {
+  gap: 24px;
+}
+
+.section-heading h2,
+.quote h2,
+.lab-invitation h2,
+.release-invitation h2 {
+  letter-spacing: -.035em;
+}
+
+.section-label {
+  color: color-mix(in srgb, var(--moe-muted) 88%, transparent);
+}
+
+/* image-first cards inspired by community portal content blocks */
+.home-project-grid,
+.projects-grid {
+  gap: 18px;
+}
+
+.home-project-card,
+.project-tile {
+  border-radius: 20px;
+  border-color: var(--moe-line);
+  background: var(--moe-surface-solid);
+  box-shadow: 0 14px 38px rgba(0,0,0,.10);
+}
+
+.home-project-card {
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.home-project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  pointer-events: none;
+  transition: border-color .25s ease;
+}
+
+.home-project-card:hover::after {
+  border-color: rgba(117,221,255,.30);
+}
+
+.home-project-copy {
+  padding: 26px;
+}
+
+.home-project-copy > span {
+  color: var(--moe-cyan);
+}
+
+.home-project-shade {
+  background:
+    linear-gradient(to top, rgba(7,9,14,.92) 0%, rgba(7,9,14,.48) 46%, transparent 76%);
+}
+
+.home-project-card:hover,
+.project-tile:hover {
+  transform: translateY(-5px);
+  border-color: var(--moe-line-strong);
+  box-shadow: 0 24px 56px rgba(0,0,0,.18);
+}
+
+.home-discovery .container {
+  background:
+    linear-gradient(135deg, rgba(117,221,255,.055), transparent 48%),
+    linear-gradient(315deg, rgba(169,143,255,.07), transparent 42%),
+    var(--moe-surface-soft);
+}
+
+.discovery-duo {
+  gap: 18px;
+}
+
+.lab-invitation,
+.release-invitation {
+  border-radius: 20px;
+  border: 1px solid var(--moe-line);
+  background: rgba(255,255,255,.028);
+}
+
+.lab-invitation:hover,
+.release-invitation:hover {
+  border-color: var(--moe-line-strong);
+  background: rgba(255,255,255,.05);
+}
+
+/* archive / secondary pages */
+.projects-main,
+.about-main,
+.project-detail-main {
+  padding-top: 58px;
+}
+
+.projects-header {
+  margin: 34px 0 44px;
+  padding: 36px;
+  border: 1px solid var(--moe-line);
+  border-radius: var(--moe-radius-xl);
+  background:
+    linear-gradient(135deg, rgba(117,221,255,.055), rgba(169,143,255,.025)),
+    var(--moe-surface-soft);
+  backdrop-filter: var(--moe-blur);
+}
+
+.projects-header h1,
+.detail-header h1,
+.about-heading h1 {
+  letter-spacing: -.05em;
+}
+
+.project-tile {
+  aspect-ratio: 4 / 5;
+  min-height: 420px;
+}
+
+.project-number {
+  top: 14px;
+  right: 14px;
+  border-radius: 999px;
+  border-color: rgba(255,255,255,.20);
+  background: rgba(8,10,15,.56);
+}
+
+.project-copy {
+  background: var(--moe-surface-solid);
+}
+
+/* general glass surfaces across auth, profile, feedback, radio and legal */
+.auth-shell,
+.profile-card,
+.badge-section,
+.badge-card,
+.comment-composer,
+.comment-login,
+.comment-empty,
+.feedback-form,
+.feedback-history,
+.admin-panel,
+.radio-panel,
+.radio-card,
+.qsl-card,
+.legal-card,
+.about-intro,
+.contribution-card,
+.contribution-ledger,
+.membership-principle,
+.support-section {
+  border-radius: var(--moe-radius-lg) !important;
+}
+
+.card,
+.project-meta,
+.project-not-found,
+.auth-shell,
+.profile-card,
+.badge-section,
+.badge-card,
+.comment-composer,
+.comment-login,
+.comment-empty,
+.feedback-form,
+.feedback-history,
+.admin-panel,
+.radio-panel,
+.radio-card,
+.qsl-card,
+.legal-card {
+  border-color: var(--moe-line) !important;
+  background: var(--moe-surface-soft) !important;
+  backdrop-filter: var(--moe-blur);
+  box-shadow: 0 14px 42px rgba(0,0,0,.08);
+}
+
+input,
+textarea,
+select {
+  border-radius: 12px !important;
+}
+
+button,
+.btn,
+input,
+textarea,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--moe-cyan) 82%, white);
+  outline-offset: 3px;
+}
+
+/* footer becomes a compact portal status bar */
+footer {
+  padding: 30px 0 38px;
+}
+
+.footer-content {
+  padding: 22px 24px;
+  border: 1px solid var(--moe-line);
+  border-radius: 18px;
+  background: var(--moe-surface-soft);
+  backdrop-filter: var(--moe-blur);
+}
+
+.footer-main a {
+  color: var(--moe-cyan);
+}
+
+/* polished scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148,155,172,.5) transparent;
+}
+
+@media (max-width: 980px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .node-panel {
+    min-height: auto;
+  }
+
+  .projects-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .home-project-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 24px, 1260px);
+  }
+
+  .site-nav {
+    top: 8px;
+    margin-top: 8px;
+    border-radius: 16px;
+  }
+
+  .nav-right.is-open {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid var(--moe-line);
+    border-radius: 14px;
+    background: var(--moe-surface);
+    box-shadow: var(--moe-shadow);
+  }
+
+  .nav-link {
+    border-radius: 10px;
+  }
+
+  .home-hero {
+    margin-top: 18px;
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+
+  .home-hero::before {
+    display: none;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(48px, 18vw, 78px);
+  }
+
+  .home-page section > .container,
+  .projects-header {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .home-project-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-tile {
+    min-height: 470px;
+  }
+
+  section {
+    padding: 44px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: min(100% - 16px, 1260px);
+  }
+
+  .home-hero {
+    padding: 24px 18px;
+  }
+
+  .home-page section > .container {
+    padding: 18px;
+  }
+
+  .footer-content {
+    padding: 18px;
+  }
+}
