@@ -47,7 +47,11 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
             <p class="section-label">01 / {{ t('projectArchive.overview') }}</p>
             <p>{{ localizedField(project, 'description', locale) }}</p>
             <p class="detail-note">{{ project.note ? localizedField(project, 'note', locale) : t('projectArchive.moreSoon') }}</p>
-            <a v-if="project.repository" class="btn btn-primary" :href="project.repository" target="_blank" rel="noopener noreferrer">{{ localizedField(project, 'repositoryLabel', locale) }} ↗</a>
+            <div v-if="project.repository || project.downloadUrl" class="project-actions">
+              <a v-if="project.repository" class="btn btn-primary" :href="project.repository" target="_blank" rel="noopener noreferrer">{{ localizedField(project, 'repositoryLabel', locale) }} ↗</a>
+              <a v-if="project.downloadUrl" class="btn btn-secondary" :href="project.downloadUrl">{{ localizedField(project, 'downloadLabel', locale) }} ↓</a>
+            </div>
+            <p v-if="project.downloadNote" class="detail-note">{{ localizedField(project, 'downloadNote', locale) }}</p>
           </div>
         </section>
 
@@ -72,3 +76,12 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
     <SiteFooter />
   </div>
 </template>
+
+<style scoped>
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+</style>
