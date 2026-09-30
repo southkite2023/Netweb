@@ -7,9 +7,9 @@ export const projects = [
       ja: 'Quota Hub · 残量ダッシュボード',
     },
     summary: {
-      zh: '开源、自托管的余额与用量看板，Android 测试版现已提供下载。',
-      en: 'An open-source, self-hosted balance and usage dashboard. The Android test release is available now.',
-      ja: 'オープンソースのセルフホスト型残高・使用量ダッシュボード。Androidテスト版を公開中。',
+      zh: '所有余额，一眼看清。集中查看 API 与云账户余额，Android 测试版现已开放下载。',
+      en: 'Every balance. One clear view. A dashboard for API and cloud balances, available as an Android test release.',
+      ja: 'すべての残高をひと目で。APIとクラウドの残高をまとめるAndroidテスト版を公開中。',
     },
     description: {
       zh: 'Quota Hub 将分散在不同服务中的余额与用量集中展示，支持按 AI 订阅、云服务器和节点订阅分类管理账户。项目采用 MIT 许可；当前 Android 版本为公开测试版，服务商支持范围与配置说明请参阅 GitHub 仓库。',
@@ -20,19 +20,6 @@ export const projects = [
     type: { zh: '开源 / 余额与用量管理', en: 'Open source / Usage management', ja: 'オープンソース / 残高・使用量管理' },
     version: '0.7.1',
     repository: 'https://github.com/southkite2023/quota-hub',
-    repositoryLabel: { zh: '在 GitHub 查看项目', en: 'View project on GitHub', ja: 'GitHubでプロジェクトを見る' },
-    downloadUrl: 'https://github.com/southkite2023/quota-hub/releases/download/v0.7.1/quota-hub-0.7.1-arm64-v8a.apk',
-    downloadLabel: { zh: '直接下载 APK', en: 'Download APK', ja: 'APKをダウンロード' },
-    downloadNote: {
-      zh: '0.7.1 测试版 · Android ARM64 · 17.02 MB · 文件托管于 GitHub Releases',
-      en: '0.7.1 test release · Android ARM64 · 17.02 MB · Hosted on GitHub Releases',
-      ja: '0.7.1 テスト版 · Android ARM64 · 17.02 MB · GitHub Releasesで配布',
-    },
-    note: {
-      zh: '适用于 ARM64 安卓设备。其他架构安装包、更新记录与测试范围请查看 GitHub Releases。',
-      en: 'For ARM64 Android devices. Other architectures, release notes and testing details are available on GitHub Releases.',
-      ja: 'ARM64のAndroid端末向けです。他のアーキテクチャ用APK、更新履歴、テスト範囲はGitHub Releasesをご確認ください。',
-    },
     year: '2026',
     image: new URL('../assets/projects/project-001.svg', import.meta.url).href,
   },

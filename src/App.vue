@@ -28,7 +28,7 @@ function retry() { window.location.assign(router.resolve(failedPath.value || rou
 function skip() { document.querySelector('main')?.focus() }
 watchEffect(() => {
   const entry = directoryEntries(locale.value).find(item => item.path === route.path)
-  const title = entry?.title || ({ home: c.value.home, explore: c.value.explore, projects: c.value.projects, 'not-found': '404', register: c.value.login }[route.name]) || 'Yuashie'
+  const title = entry?.title || ({ 'quota-download': 'Quota Hub', 'quota-guide': 'Quota Hub · Guide', home: c.value.home, explore: c.value.explore, projects: c.value.projects, 'not-found': '404', register: c.value.login }[route.name]) || 'Yuashie'
   document.title = title === 'Yuashie' ? title : `${title} · Yuashie`
 })
 onMounted(() => {

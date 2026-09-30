@@ -7,6 +7,7 @@ import SiteNav from '../components/SiteNav.vue'
 import CommentSection from '../components/CommentSection.vue'
 import MinecraftWhitelistPanel from '../components/MinecraftWhitelistPanel.vue'
 import RadioProjectPanel from '../components/RadioProjectPanel.vue'
+import QuotaProjectIntro from '../components/QuotaProjectIntro.vue'
 import { localizedField, projects } from '../data/projects'
 
 const route = useRoute()
@@ -23,7 +24,9 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
       <main v-if="project" class="project-detail-main">
         <RouterLink class="detail-back" to="/projects">← {{ t('projectArchive.back') }}</RouterLink>
 
-        <header class="detail-header">
+        <QuotaProjectIntro v-if="project.id === '001'" />
+
+        <header v-if="project.id !== '001'" class="detail-header">
           <div class="detail-kicker">
             <span>PROJECT / {{ project.id }}</span>
             <span>{{ localizedField(project, 'status', locale) }}</span>
@@ -32,11 +35,11 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
           <p>{{ localizedField(project, 'summary', locale) }}</p>
         </header>
 
-        <figure class="detail-visual">
+        <figure v-if="project.id !== '001'" class="detail-visual">
           <img :src="project.image" :alt="localizedField(project, 'title', locale)">
         </figure>
 
-        <section class="detail-content">
+        <section v-if="project.id !== '001'" class="detail-content">
           <div class="detail-meta">
             <div><span>{{ t('projectArchive.type') }}</span><strong>{{ localizedField(project, 'type', locale) }}</strong></div>
             <div><span>{{ t('projectArchive.status') }}</span><strong>{{ localizedField(project, 'status', locale) }}</strong></div>
