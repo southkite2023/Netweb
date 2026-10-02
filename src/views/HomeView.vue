@@ -41,14 +41,11 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
           </p>
 
           <div class="hero-actions">
-            <RouterLink class="btn btn-primary" to="/projects">
+            <RouterLink class="btn btn-primary" to="/project">
               {{ t('hero.projects') }}
               <span>→</span>
             </RouterLink>
 
-            <RouterLink class="btn btn-secondary" to="/explore">
-              {{ c.explore }}
-            </RouterLink>
           </div>
           <div class="hero-caption"><span>YUASHIE / PERSONAL SPACE</span><span aria-hidden="true">01 — ∞</span></div>
         </div>
@@ -67,7 +64,7 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
 
     <section class="home-selected">
       <div>
-        <div class="section-heading"><div><p class="section-label">01 / SELECTED PROJECTS</p><h2>{{ c.featured }}</h2><p>{{ c.featuredIntro }}</p></div><RouterLink to="/explore">{{ c.explore }} ↗</RouterLink></div>
+        <div class="section-heading"><div><p class="section-label">01 / SELECTED PROJECTS</p><h2>{{ c.featured }}</h2><p>{{ c.featuredIntro }}</p></div><RouterLink to="/project">{{ c.projects }} ↗</RouterLink></div>
 
         <div class="home-project-grid">
           <RouterLink

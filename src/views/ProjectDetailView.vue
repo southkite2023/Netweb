@@ -22,7 +22,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
       <SiteNav />
 
       <main v-if="project" class="project-detail-main">
-        <RouterLink class="detail-back" to="/projects">← {{ t('projectArchive.back') }}</RouterLink>
+        <RouterLink class="detail-back" to="/project">← {{ t('projectArchive.back') }}</RouterLink>
 
         <QuotaProjectIntro v-if="project.id === '001'" />
 
@@ -64,7 +64,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
         <CommentSection :key="project.id" :project-id="project.id" />
 
         <nav class="project-pagination" aria-label="Project navigation">
-          <RouterLink to="/projects">{{ t('projectArchive.allProjects') }}</RouterLink>
+          <RouterLink to="/project">{{ t('projectArchive.allProjects') }}</RouterLink>
           <RouterLink v-if="nextProject" :to="`/projects/${nextProject.id}`">{{ t('projectArchive.next') }} →</RouterLink>
         </nav>
       </main>
@@ -72,7 +72,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
       <main v-else class="project-not-found">
         <p class="eyebrow">// 404</p>
         <h1>{{ t('projectArchive.notFound') }}</h1>
-        <RouterLink class="btn btn-primary" to="/projects">{{ t('projectArchive.allProjects') }}</RouterLink>
+        <RouterLink class="btn btn-primary" to="/project">{{ t('projectArchive.allProjects') }}</RouterLink>
       </main>
     </div>
 

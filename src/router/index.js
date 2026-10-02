@@ -30,7 +30,8 @@ const router = createRouter({
   },
   routes: [
     { path: '/play', name: 'playroom', component: () => import('../views/PlayroomView.vue') },
-    { path: '/explore', name: 'explore', component: () => import('../views/ExploreView.vue') },
+    { path: '/explore', redirect: to => ({ path: '/project', query: to.query, hash: to.hash }) },
+    { path: '/projects', redirect: to => ({ path: '/project', query: to.query, hash: to.hash }) },
     { path: '/lab', name: 'signal-lab', component: () => import('../views/SignalLabView.vue') },
     {
       path: '/',
@@ -42,7 +43,7 @@ const router = createRouter({
       redirect: '/',
     },
     {
-      path: '/projects',
+      path: '/project',
       name: 'projects',
       component: ProjectsView,
     },

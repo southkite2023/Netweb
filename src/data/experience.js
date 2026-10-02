@@ -1,5 +1,6 @@
 export const experienceCopy = {
   zh: {
+    projectIntro: '四个项目，记录从想法到实践的过程。', projectSearch: '搜索项目', projectSearchHint: '试试「Quota Hub」「Minecraft」或「日历」',
     explore: '探索', lab: '信号实验室', home: '首页', search: '搜索项目或页面', searchHint: '试试「QSL」「Minecraft」或「反馈」', close: '关闭', menu: '导航菜单', language: '语言', light: '切换浅色', dark: '切换深色', skip: '跳到主要内容',
     exploreTitle: '好奇心，从这里出发。', exploreIntro: '项目、工具和社区入口，一处找到。', all: '全部', projects: '项目', pages: '页面', saved: '已收藏', save: '收藏', unsave: '取消收藏', localSaved: '收藏只保存在当前浏览器，清除浏览器数据后会重置。', empty: '还没有匹配的结果', emptyHint: '换个关键词，或查看全部内容。', reset: '清除筛选', count: '个结果', open: '打开', move: '选择', shortcut: '快捷导航',
     latest: '最近一次更新', release: '查看更新日志', featured: '正在构建的小小世界', featuredIntro: '把好奇心变成能打开、能体验的东西。', nodeTitle: '一个持续生长的个人节点', nodeText: '自动化、游戏与无线电，在同一个坐标相遇。', version: '站点版本', languages: '三种语言', enterLab: '把一句话变成信号', labIntro: '用点与划，听见文字的另一种样子。',
@@ -7,6 +8,7 @@ export const experienceCopy = {
     missingTitle: '这个坐标，还没有信号。', missingText: '页面可能已移动，或地址输入有误。你可以回到首页，也可以继续探索。', backHome: '返回首页', loading: '正在打开页面…', routeError: '页面暂时无法载入，请检查网络后重试。', retry: '重试', offline: '当前已离线，联网功能暂不可用。', about: '关于本站', radio: '无线电台', feedback: '反馈中心', vip: '支持本站', login: '个人账户', terms: '服务条款', privacyPage: '隐私协议', works: '作品使用条款', log: '通联日志', qsl: '电子 QSL',
   },
   en: {
+    projectIntro: 'Four projects, from early ideas to things you can use.', projectSearch: 'Search projects', projectSearchHint: 'Try “Quota Hub”, “Minecraft” or “calendar”',
     explore: 'Explore', lab: 'Signal lab', home: 'Home', search: 'Search projects or pages', searchHint: 'Try “QSL”, “Minecraft” or “feedback”', close: 'Close', menu: 'Navigation menu', language: 'Language', light: 'Use light theme', dark: 'Use dark theme', skip: 'Skip to main content',
     exploreTitle: 'Follow your curiosity.', exploreIntro: 'Projects, tools and community, all in one place.', all: 'All', projects: 'Projects', pages: 'Pages', saved: 'Saved', save: 'Save', unsave: 'Unsave', localSaved: 'Saved links stay in this browser and reset when its data is cleared.', empty: 'No matches yet', emptyHint: 'Try another keyword or browse everything.', reset: 'Clear filters', count: 'results', open: 'Open', move: 'Select', shortcut: 'Quick navigation',
     latest: 'Latest update', release: 'Read the changelog', featured: 'Small worlds in the making', featuredIntro: 'Turning curiosity into things you can open and experience.', nodeTitle: 'A personal node, always growing', nodeText: 'Automation, games and radio meet at one coordinate.', version: 'Site version', languages: 'Three languages', enterLab: 'Turn a sentence into a signal', labIntro: 'Hear a different side of words, in dots and dashes.',
@@ -14,6 +16,7 @@ export const experienceCopy = {
     missingTitle: 'No signal at this coordinate.', missingText: 'This page may have moved, or the address may be mistyped. Head home or keep exploring.', backHome: 'Back home', loading: 'Opening page…', routeError: 'This page could not load. Check your connection and try again.', retry: 'Retry', offline: 'You are offline. Connected features are temporarily unavailable.', about: 'About', radio: 'Radio', feedback: 'Feedback', vip: 'Support', login: 'Account', terms: 'Terms of service', privacyPage: 'Privacy policy', works: 'Content usage', log: 'QSO logbook', qsl: 'Electronic QSL',
   },
   ja: {
+    projectIntro: 'アイデアから実践へ、4つのプロジェクト。', projectSearch: 'プロジェクトを検索', projectSearchHint: '「Quota Hub」「Minecraft」「カレンダー」など',
     explore: '探索', lab: '信号ラボ', home: 'ホーム', search: 'プロジェクト・ページを検索', searchHint: '「QSL」「Minecraft」「フィードバック」など', close: '閉じる', menu: 'ナビゲーション', language: '言語', light: 'ライトモードへ', dark: 'ダークモードへ', skip: '本文へ移動',
     exploreTitle: '好奇心の、その先へ。', exploreIntro: 'プロジェクト、ツール、コミュニティへの入口をひとつに。', all: 'すべて', projects: 'プロジェクト', pages: 'ページ', saved: '保存済み', save: '保存', unsave: '保存を解除', localSaved: '保存したリンクはこのブラウザにのみ残り、データを消すとリセットされます。', empty: '一致する結果がありません', emptyHint: 'キーワードを変えるか、すべての項目をご覧ください。', reset: '絞り込みを解除', count: '件', open: '開く', move: '選択', shortcut: 'クイックナビ',
     latest: '最新の更新', release: '更新履歴を見る', featured: 'つくり続ける、小さな世界', featuredIntro: '好奇心を、開いて体験できるものに。', nodeTitle: '育ち続ける、個人のノード', nodeText: '自動化、ゲーム、無線が同じ座標で出会う。', version: 'サイトのバージョン', languages: '3つの言語', enterLab: '言葉を信号に変える', labIntro: '点と線で、言葉のもうひとつの姿を聴く。',

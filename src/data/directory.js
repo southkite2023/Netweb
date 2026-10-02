@@ -2,12 +2,21 @@ import { projects, localizedField } from './projects'
 import { experienceCopy } from './experience'
 import { playroomCopy } from './playroom'
 
+export function projectEntries(locale = 'zh') {
+  return projects.map(project => ({
+    path: `/projects/${project.id}`, href: project.externalUrl,
+    title: localizedField(project, 'title', locale), description: localizedField(project, 'summary', locale),
+    category: 'projects', code: project.id, image: project.image,
+    keywords: Object.values(project.title).join(' ') + ' ' + Object.values(project.type).join(' '),
+  }))
+}
+
 // Only public destinations belong here. Keep the hidden archive out of discovery.
 export function directoryEntries(locale = 'zh') {
   const c = experienceCopy[locale] || experienceCopy.zh
   return [
     { path: '/play', title: (playroomCopy[locale] || playroomCopy.zh).title, description: (playroomCopy[locale] || playroomCopy.zh).playHint, keywords: '2048 Bongo Cat 猫猫 游戏 游乐室 小伙伴 礼花 companion playroom game 猫 ゲーム プレイルーム', category: 'pages', code: 'FUN' },
-    ...projects.map(project => ({ path: `/projects/${project.id}`, title: localizedField(project, 'title', locale), description: localizedField(project, 'summary', locale), category: 'projects', code: project.id, image: project.image, keywords: Object.values(project.title).join(' ') + ' ' + Object.values(project.type).join(' ') })),
+    ...projectEntries(locale),
     ...[
       ['/lab', 'lab', 'CW morse 摩尔斯 モールス signal 实验'],
       ['/radio', 'radio', '业余无线电 amateur callsign 呼号 無線'],

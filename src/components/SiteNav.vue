@@ -60,8 +60,7 @@ onBeforeUnmount(() => { timers.forEach(clearTimeout) })
     </div>
     <div id="primary-navigation" class="nav-right" :class="{ 'is-open': mobileMenuOpen }">
       <RouterLink class="nav-link" to="/" @click="closeMobileMenu">{{ c.home }}</RouterLink>
-      <RouterLink class="nav-link" to="/projects" @click="closeMobileMenu">{{ t('nav.projects') }}</RouterLink>
-      <RouterLink class="nav-link" to="/explore" @click="closeMobileMenu">{{ c.explore }}</RouterLink>
+      <RouterLink class="nav-link" to="/project" @click="closeMobileMenu">{{ t('nav.projects') }}</RouterLink>
       <RouterLink class="nav-link" to="/play" @click="closeMobileMenu">{{ (playroomCopy[locale] || playroomCopy.zh).title }}</RouterLink>
       <RouterLink class="nav-link" to="/radio" @click="closeMobileMenu">{{ t('nav.radio') }}</RouterLink>
       <RouterLink class="nav-link" to="/about" @click="closeMobileMenu">{{ t('nav.about') }}</RouterLink>

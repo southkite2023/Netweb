@@ -69,6 +69,28 @@ export const projects = [
     year: '2026',
     image: new URL('../assets/projects/project-003.png', import.meta.url).href,
   },
+  {
+    id: '004',
+    title: { zh: 'Yuashie Calendar · 订阅日历', en: 'Yuashie Calendar', ja: 'Yuashie Calendar · 購読カレンダー' },
+    summary: {
+      zh: '游戏版本与卡池、动漫周更、新游戏发售的订阅日历企划。正在开发，尚无线上订阅地址。',
+      en: 'A subscription calendar for game updates, banners, weekly anime and new releases. In development; no live subscription yet.',
+      ja: 'ゲーム更新・ガチャ、アニメ放送、新作発売の購読カレンダー。開発中で、オンライン購読はまだありません。',
+    },
+    description: {
+      zh: '计划汇集原神、崩坏：星穹铁道、绝区零、明日方舟的版本与卡池事件，以及动漫周更和新游戏发售，支持自选内容并生成可订阅的 ICS 日历。目前已完成事件规范、虚构样例、离线校验与 ICS 生成；尚未接入真实来源、网站或自动发布。',
+      en: 'Planned coverage includes Genshin Impact, Honkai: Star Rail, Zenless Zone Zero and Arknights updates and banners, weekly anime and new game releases, with selectable content and ICS subscriptions. Event specifications, fictional samples, offline validation and ICS generation are implemented. Real sources, website integration and automated publication are not yet connected.',
+      ja: '原神、崩壊：スターレイル、ゼンレスゾーンゼロ、アークナイツの更新・ガチャ、アニメ放送、新作発売をまとめ、選択した内容のICS購読を計画中。イベント仕様、架空サンプル、オフライン検証とICS生成を実装済み。実データ、サイト連携、自動公開は未対応です。',
+    },
+    status: { zh: '开发中', en: 'In development', ja: '開発中' },
+    type: { zh: '游戏 / 动漫 / 订阅日历', en: 'Games / Anime / Subscription calendar', ja: 'ゲーム / アニメ / 購読カレンダー' },
+    externalUrl: 'https://github.com/southkite2023/yuashie-calendar',
+    repository: 'https://github.com/southkite2023/yuashie-calendar',
+    repositoryLabel: { zh: '在 GitHub 查看日历企划', en: 'View the calendar on GitHub', ja: 'GitHubでカレンダー企画を見る' },
+    note: { zh: '开发进度与实施路线以 GitHub 仓库为准。', en: 'Follow the GitHub repository for progress and the roadmap.', ja: '開発状況とロードマップはGitHubをご覧ください。' },
+    year: '2026',
+    image: new URL('../assets/projects/project-004.svg', import.meta.url).href,
+  },
 ]
 
 export function localizedField(project, field, locale) {

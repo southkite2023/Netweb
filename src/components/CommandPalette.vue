@@ -17,7 +17,7 @@ const input = ref(null)
 const results = computed(() => searchEntries(directoryEntries(locale.value), query.value).slice(0, 9))
 let previousFocus
 function close() { commandOpen.value = false }
-async function choose(item) { if (item) { close(); await router.push(item.path) } }
+async function choose(item) { if (item) { close(); if (item.href) window.open(item.href, '_blank', 'noopener,noreferrer'); else await router.push(item.path) } }
 function keyboard(event) {
   if (event.isComposing) return
   if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {

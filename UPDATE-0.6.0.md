@@ -41,3 +41,10 @@
 - 保留 GitHub 项目按钮，新增直接下载 Quota Hub 0.7.1 ARM64 APK 的按钮（17.02 MB）。
 - 中、英、日文同步更新为公开测试状态，注明架构、版本、大小和 GitHub Releases 托管来源。
 - 下载入口仅用于配置了下载地址的项目，按钮在窄屏自动换行。
+
+
+## 2026-10-03 · 项目入口合并
+
+- 探索和项目列表统一为 `/project`，沿用探索页的卡片、搜索和浏览器收藏；旧 `/explore`、`/projects` 跳转并保留查询参数。
+- 合并页仅展示 Project 001–004，移除非项目入口和重复导航。现有详情与 Quota Hub 下载页面保留。
+- 新增 Project 004：Yuashie Calendar，卡片直达 `southkite2023/yuashie-calendar`，明确仍在开发且无线上订阅地址。
