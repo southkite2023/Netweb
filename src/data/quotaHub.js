@@ -1,11 +1,11 @@
 // Verified release assets. Keep the version, sizes and filenames together.
 export const quotaRelease = {
-  version: '0.9.0', date: '2026-10-08',
+  version: '0.10.0', date: '2026-10-08',
   repository: 'https://github.com/southkite2023/quota-hub',
-  url: 'https://github.com/southkite2023/quota-hub/releases/tag/v0.9.0',
+  url: 'https://github.com/southkite2023/quota-hub/releases/tag/v0.10.0',
   desktop: {
-    Windows: { file: 'astracct-0.9.0-windows-x64.zip', label: 'Windows x64', size: '12.34 MB' },
-    macOS: { file: 'astracct-0.9.0-macos-universal.zip', label: 'macOS Universal · Intel + Apple Silicon · macOS 12+', size: '19.89 MB' },
+    Windows: { file: 'astracct-0.10.0-windows-x64.zip', label: 'Windows x64', size: '12.34 MB' },
+    macOS: { file: 'astracct-0.10.0-macos-universal.zip', label: 'macOS Universal · Intel + Apple Silicon · macOS 12+', size: '19.92 MB' },
   },
   packages: [
     { id: 'universal', label: 'Universal', size: '49.26 MB' },
@@ -45,7 +45,7 @@ export const quotaCopy = {
     guide: '第一次使用？查看使用方法', hosted: '测试版 · 安装包托管于 GitHub Releases', source: 'GitHub 项目', notes: '版本说明',
     guideTitle: '从这里开始。', guideIntro: '安装、添加账户，再把余量放到眼前。', returnDownload: '返回下载页',
     steps: [
-      ['下载并安装', '在下载页选择 Android 安装包。不确定芯片架构时选择通用版；下载完成后打开 APK，按系统提示允许本次安装。当前为 0.9.0 测试版。Windows 请完整解压并运行 astracct.exe；macOS 请解压后打开 Astracct.app。'],
+      ['下载并安装', '在下载页选择 Android 安装包。不确定芯片架构时选择通用版；下载完成后打开 APK，按系统提示允许本次安装。当前为 0.10.0 测试版。Windows 请完整解压并运行 astracct.exe；macOS 请解压后打开 Astracct.app。'],
       ['添加余额账户', '打开应用，进入“管理 / 添加余额账户”，选择对应服务商并填写该服务需要的账户信息或 API 凭据。凭据只在应用内填写，请勿发送到网站评论区。'],
       ['查看与刷新', '返回主界面查看账户余额。在“自动刷新”中调整刷新间隔；查询失败或数据过期时，先检查网络和账户配置，再尝试刷新。'],
       ['放到桌面', '在 Android 桌面的小组件列表中找到星账 Astracct，将组件添加到桌面，并选择要显示的账户。后台刷新受系统省电和网络状态影响。'],
@@ -67,7 +67,7 @@ export const quotaCopy = {
     guide: 'New here? Read the getting-started guide', hosted: 'Test release · Hosted on GitHub Releases', source: 'GitHub project', notes: 'Release notes',
     guideTitle: 'Start here.', guideIntro: 'Install, add your accounts, and keep your balances in view.', returnDownload: 'Back to downloads',
     steps: [
-      ['Download and install', 'Choose an Android package. If you do not know your device architecture, choose Universal. Open the downloaded APK and follow the system installation prompts. This is the 0.9.0 test release. On Windows, extract the full ZIP and run astracct.exe. On macOS, extract and open Astracct.app.'],
+      ['Download and install', 'Choose an Android package. If you do not know your device architecture, choose Universal. Open the downloaded APK and follow the system installation prompts. This is the 0.10.0 test release. On Windows, extract the full ZIP and run astracct.exe. On macOS, extract and open Astracct.app.'],
       ['Add an account', 'Open Manage / Add balance account in the app, select a provider and enter the account details or API credentials it requires. Enter credentials only in the app, never in website comments.'],
       ['View and refresh', 'Return to the dashboard to see balances. Adjust the interval in Auto refresh. If a query fails or data is stale, check your connection and account settings before refreshing.'],
       ['Add a widget', 'Find Astracct in the Android home-screen widget picker. Add a widget and select which accounts to display. Background refresh depends on system power saving and network conditions.'],
@@ -89,7 +89,7 @@ export const quotaCopy = {
     guide: 'はじめての方へ：使い方を見る', hosted: 'テスト版 · GitHub Releasesで配布', source: 'GitHubプロジェクト', notes: 'リリースノート',
     guideTitle: 'ここから始めよう。', guideIntro: 'インストールしてアカウントを追加。残高をもっと身近に。', returnDownload: 'ダウンロードに戻る',
     steps: [
-      ['ダウンロード・インストール', 'Android用パッケージを選びます。CPUが不明な場合は汎用版を選択してください。APKを開き、システムの案内に従ってインストールします。現在は0.9.0テスト版です。WindowsではZIP全体を展開してastracct.exeを実行し、macOSではAstracct.appを開いてください。'],
+      ['ダウンロード・インストール', 'Android用パッケージを選びます。CPUが不明な場合は汎用版を選択してください。APKを開き、システムの案内に従ってインストールします。現在は0.10.0テスト版です。WindowsではZIP全体を展開してastracct.exeを実行し、macOSではAstracct.appを開いてください。'],
       ['アカウントを追加', 'アプリの「管理 / 添加余额账户」を開き、サービスを選んで必要なアカウント情報やAPI認証情報を入力します。認証情報はアプリ内でのみ入力し、サイトのコメント欄には書かないでください。'],
       ['残高と更新を確認', 'ホーム画面に戻り残高を確認します。「自动刷新」で更新間隔を変更できます。取得失敗や古いデータの表示時は、接続とアカウント設定を確認してください。'],
       ['ホーム画面に追加', 'Androidのウィジェット一覧からAstracctを選び、表示するアカウントを指定します。バックグラウンド更新は省電力設定や通信状態に影響されます。'],
@@ -102,7 +102,7 @@ export const quotaCopy = {
 
 
 export const quotaDesktopCopy = {
-  zh: { download: '下载', Windows: '完整解压 ZIP 后运行 astracct.exe，保留同目录 DLL 和 data。', macOS: '解压后打开 Astracct.app。支持 Intel 与 Apple Silicon，需 macOS 12 或更新版本；尚未进行 Apple 分发签名与公证，首次打开可能被系统拦截。', usage: '在账户设置中勾选“显示在悬浮窗”，再打开悬浮窗。可拖动、置顶和隐藏金额；退出后停止刷新。账户凭据保存在各设备本机，不自动同步。' },
-  en: { download: 'Download for', Windows: 'Extract the entire ZIP, then run astracct.exe. Keep DLL files and the data folder together.', macOS: 'Extract and open Astracct.app. Supports Intel and Apple Silicon on macOS 12+. Apple distribution signing and notarization are not configured; first launch may be blocked.', usage: 'Select accounts for the floating window in account settings, then open it. Drag, pin and hide amounts; refresh stops on exit. Credentials stay on each device and do not sync automatically.' },
-  ja: { download: 'ダウンロード：', Windows: 'ZIP全体を展開してastracct.exeを実行してください。DLLとdataフォルダーを同じ場所に保持します。', macOS: '展開してAstracct.appを開きます。macOS 12以降のIntel・Apple Siliconに対応。Apple配布署名と公証は未設定のため、初回起動がブロックされる場合があります。', usage: 'アカウント設定で悬浮窗の表示対象を選び、ウィンドウを開きます。移動・最前面・金額非表示に対応。終了後は更新が止まります。認証情報は端末内に保存され、自動同期されません。' },
+  zh: { download: '下载', Windows: '完整解压 ZIP 后运行 astracct.exe，保留同目录 DLL 和 data。', macOS: '解压后打开 Astracct.app。顶部菜单栏常驻图标，左键打开主窗口，右键选择显示的余额；关闭窗口后继续运行，选择“退出星账”才停止。支持 Intel 与 Apple Silicon，需 macOS 12 或更新版本；尚未进行 Apple 分发签名与公证，首次打开可能被系统拦截。', usage: '在账户设置中勾选“显示在悬浮窗”，再打开悬浮窗。可拖动、置顶和隐藏金额；退出后停止刷新。账户凭据保存在各设备本机，不自动同步。' },
+  en: { download: 'Download for', Windows: 'Extract the entire ZIP, then run astracct.exe. Keep DLL files and the data folder together.', macOS: 'Extract and open Astracct.app. Its menu bar icon stays active when the window closes. Left-click to open; right-click to select a balance or quit. Supports Intel and Apple Silicon on macOS 12+. Apple distribution signing and notarization are not configured; first launch may be blocked.', usage: 'Select accounts for the floating window in account settings, then open it. Drag, pin and hide amounts; refresh stops on exit. Credentials stay on each device and do not sync automatically.' },
+  ja: { download: 'ダウンロード：', Windows: 'ZIP全体を展開してastracct.exeを実行してください。DLLとdataフォルダーを同じ場所に保持します。', macOS: '展開してAstracct.appを開きます。メニューバーのアイコンを左クリックで開き、右クリックで残高を選択します。ウィンドウを閉じても動作し、終了メニューで停止します。macOS 12以降のIntel・Apple Siliconに対応。Apple配布署名と公証は未設定のため、初回起動がブロックされる場合があります。', usage: 'アカウント設定で悬浮窗の表示対象を選び、ウィンドウを開きます。移動・最前面・金額非表示に対応。終了後は更新が止まります。認証情報は端末内に保存され、自動同期されません。' },
 }
