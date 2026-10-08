@@ -1,12 +1,12 @@
 # 星账 Astracct · iOS PWA
 
-独立访问入口：`https://yuashie.cn/astracct/`（生产部署成功后生效）。
+独立访问入口：`https://yuashie.cn/assets/astracct/`（生产部署成功后生效）。
 
 ## 安装与分发
 
-从个人网站 `/projects/001/download` 检测 iPhone/iPad（含桌面 UA 的 iPad），自动选择 iOS。用户点击「安装 iOS 网页版」跳转 `/astracct/?install=1`，显示安装指引。iOS 不支持网页主动触发原生安装弹窗，用户必须在浏览器分享菜单选择「添加到主屏幕」，确认「作为网页 App 打开」和「添加」。已作为 standalone 运行时不再显示安装按钮。其他平台下载安装流程不变。
+从个人网站 `/projects/001/download` 检测 iPhone/iPad（含桌面 UA 的 iPad），自动选择 iOS。用户点击「安装 iOS 网页版」跳转 `/assets/astracct/?install=1`，显示安装指引。iOS 不支持网页主动触发原生安装弹窗，用户必须在浏览器分享菜单选择「添加到主屏幕」，确认「作为网页 App 打开」和「添加」。已作为 standalone 运行时不再显示安装按钮。其他平台下载安装流程不变。
 
-独立的 `public/astracct/` 目录由 Vite 原样复制到站点 `dist/astracct/`，与网站 Vue 根应用分离。PWA manifest 的 id/start_url/scope 均固定在 `/astracct/`；service worker 仅控制此路径，离线缓存 HTML/CSS/JS/图标，不缓存网站其他页面、用户凭据或 API 响应。
+独立的 `public/assets/astracct/` 目录由 Vite 原样复制到站点 `dist/assets/astracct/`，与网站 Vue 根应用分离。PWA manifest 的 id/start_url/scope 均固定在 `/assets/astracct/`；service worker 仅控制此路径，离线缓存 HTML/CSS/JS/图标，不缓存网站其他页面、用户凭据或 API 响应。
 
 ## 首版功能 / 限制
 
