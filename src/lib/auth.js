@@ -9,5 +9,6 @@ export async function loadSession() {
 }
 
 export async function signOut() {
-  try { await api.logout() } finally { auth.user = null }
+  await api.logout()
+  auth.user = null
 }

@@ -1,3 +1,4 @@
+import { writePreference } from '../lib/preferences'
 import { createI18n } from 'vue-i18n'
 
 const messages = {
@@ -385,15 +386,11 @@ function applyDocumentLanguage(lang) {
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en'
 }
 
-export function changeLanguage(lang) {
+export function changeLanguage(lang, persist = true) {
   if (!supportedLanguages.includes(lang)) return
   i18n.global.locale.value = lang
   applyDocumentLanguage(lang)
-  try {
-    localStorage.setItem(languagePreferenceKey, lang)
-  } catch {
-    // The current page can change language even when storage is unavailable.
-  }
+  if (persist) writePreference(languagePreferenceKey, lang)
 }
 
 applyDocumentLanguage(i18n.global.locale.value)

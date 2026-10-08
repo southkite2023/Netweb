@@ -1,4 +1,5 @@
 <script setup>
+import PrivacySettingsButton from '../components/PrivacySettingsButton.vue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SiteFooter from '../components/SiteFooter.vue'
@@ -10,6 +11,8 @@ import { legalCopy, legalDocuments, legalPaths } from '../data/legal'
 const { locale } = useI18n()
 const lang = computed(() => archiveCopy[locale.value] ? locale.value : 'zh')
 const copy = computed(() => archiveCopy[lang.value])
+
+const cloudDisclosure = { zh: 'Cloud Sync：收藏、通知已读、语言和主题随账号保存。旧本地资料可选择导入，原始数据保留。当前未使用非必要追踪，所有选择均可登录与同步。', en: 'Cloud Sync saves bookmarks, notification read states, language and theme with your account. Local import is optional and preserves the originals. No optional tracking is installed; every privacy choice permits sign-in and sync.', ja: 'Cloud Syncは保存、通知の既読、言語とテーマをアカウントに保存します。ローカルインポートは任意で元のデータを保持します。任意の追跡は未使用で、すべての選択でログインと同期を利用できます。' }
 
 const uiFollowup = {
   zh: [
@@ -50,6 +53,8 @@ const displayReleases = computed(() => releases.map((release) => {
         <div class="archive-title-row"><h1>{{ copy.title }}</h1><span class="archive-version">V{{ SITE_VERSION }}</span></div>
         <p class="archive-intro">{{ copy.intro }}</p>
       </header>
+      <PrivacySettingsButton />
+      <p>{{ cloudDisclosure[lang] }}</p>
       <nav class="legal-entry-grid" :aria-label="legalCopy[lang].navigation">
         <RouterLink v-for="(path, key) in legalPaths" :key="key" :to="path" class="legal-entry">
           <span class="legal-entry-code">{{ key.toUpperCase() }} / ↗</span>

@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import { registerCloudSync, csrfToken, safeEqual } from './cloud-sync.js'
 import cookie from '@fastify/cookie'
 import rateLimit from '@fastify/rate-limit'
 import argon2 from 'argon2'
@@ -6,12 +7,15 @@ import pg from 'pg'
 import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 const app = Fastify({ logger: true, trustProxy: true, bodyLimit: 1024 * 1024 })
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL })
 const PORT = Number(process.env.PORT || 3000)
 const ORIGIN = process.env.SITE_ORIGIN || 'https://yuashie.cn'
 const COOKIE = 'yuashie_session'
+const CSRF_SECRET = process.env.CSRF_SECRET || (process.env.NODE_ENV === 'production' ? '' : crypto.randomBytes(32).toString('hex'))
+if (CSRF_SECRET.length < 32) throw new Error('CSRF_SECRET must contain at least 32 characters')
 const DAY = 86400
 const FOUNDING_CUTOFF = '2027-01-01T00:00:00+08:00'
 const USER_CONTENT_DIR = process.env.USER_CONTENT_DIR || '/var/www/yuashie-app/user-content'
@@ -26,12 +30,20 @@ await app.register(cookie)
 await app.register(rateLimit, { max: 120, timeWindow: '1 minute' })
 
 app.addHook('onRequest', async (req, reply) => {
+  // Bridge callbacks use independently validated bearer credentials, never browser sessions.
+  if (/^\/api\/minecraft\/bridge\/\d+\/(complete|fail)$/.test(req.url.split('?')[0]) && !req.cookies[COOKIE]) return
   if (!['GET', 'HEAD', 'OPTIONS'].includes(req.method)) {
-    const origin = req.headers.origin
-    if (origin && origin !== ORIGIN) {
+    if (req.headers.origin !== ORIGIN || req.headers['sec-fetch-site'] === 'cross-site') {
       return reply.code(403).send({ message: 'Invalid request origin.' })
     }
+    if (req.cookies[COOKIE] && !safeEqual(req.headers['x-csrf-token'], csrfToken(req.cookies[COOKIE], CSRF_SECRET))) {
+      return reply.code(403).send({ message: 'Invalid CSRF token. Reload and try again.' })
+    }
   }
+})
+app.get('/api/auth/csrf', async (req, reply) => {
+  reply.header('Cache-Control', 'no-store')
+  return { token: req.cookies[COOKIE] ? csrfToken(req.cookies[COOKIE], CSRF_SECRET) : null }
 })
 
 const hashToken = token => crypto.createHash('sha256').update(token).digest('hex')
@@ -152,12 +164,12 @@ async function requireAdmin(req, reply) {
   return user
 }
 
-async function createSession(userId, reply) {
+async function createSession(userId, reply, req) {
   const token = crypto.randomBytes(32).toString('base64url')
   await pool.query(`
-    INSERT INTO sessions(user_id,token_hash,expires_at)
-    VALUES($1,$2,NOW()+INTERVAL '30 days')
-  `, [userId, hashToken(token)])
+    INSERT INTO sessions(user_id,token_hash,expires_at,device)
+    VALUES($1,$2,NOW()+INTERVAL '30 days',$3)
+  `, [userId, hashToken(token), String(req.headers['user-agent'] || 'Unknown device').slice(0,200)])
   reply.setCookie(COOKIE, token, {
     path: '/',
     httpOnly: true,
@@ -335,7 +347,9 @@ function validateQsoPayload(body, profile) {
   }
 }
 
-app.get('/api/health', async () => ({ ok: true, version: '0.3.0' }))
+registerCloudSync(app, pool, requireUser, COOKIE, hashToken)
+
+app.get('/api/health', async () => ({ ok: true, version: '0.7.0' }))
 
 app.get('/api/avatars/:filename', async (req, reply) => {
   const filename = req.params.filename
@@ -394,7 +408,7 @@ app.post('/api/auth/register', {
     `, [user.id])
     await syncAutomaticBadges(user.id, client)
     await client.query('COMMIT')
-    await createSession(user.id, reply)
+    await createSession(user.id, reply, req)
     return reply.code(201).send({ user: await publicUser(user) })
   } catch (error) {
     await client.query('ROLLBACK')
@@ -412,7 +426,7 @@ app.post('/api/auth/login', {
   const { rows } = await pool.query('SELECT * FROM users WHERE email=$1', [(email || '').toLowerCase()])
   const user = rows[0]
   if (!user || !await argon2.verify(user.password_hash, password || '')) return reply.code(401).send({ message: 'Email or password is incorrect.' })
-  await createSession(user.id, reply)
+  await createSession(user.id, reply, req)
   return { user: await publicUser(user) }
 })
 
@@ -1171,8 +1185,9 @@ app.delete('/api/admin/users/:username/badges/:badgeKey', async (req, reply) => 
 })
 
 app.setErrorHandler((error, req, reply) => {
-  req.log.error(error)
+  req.log.error({ code: error.code, message: error.message }, 'API request failed')
   reply.code(500).send({ message: 'Internal server error.' })
 })
 
-await app.listen({ port: PORT, host: '127.0.0.1' })
+export { app, pool }
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) await app.listen({ port: PORT, host: '127.0.0.1' })

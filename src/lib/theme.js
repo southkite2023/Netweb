@@ -6,8 +6,9 @@ export const isLightMode = computed(() => theme.value === 'light')
 export function applyTheme() {
   document.documentElement.dataset.theme = theme.value
 }
-export function toggleTheme() {
-  theme.value = isLightMode.value ? 'dark' : 'light'
-  writePreference('theme', theme.value)
+export function setTheme(value, persist = true) {
+  theme.value = value === 'light' ? 'light' : 'dark'
+  if (persist) writePreference('theme', theme.value)
   applyTheme()
 }
+export function toggleTheme() { setTheme(isLightMode.value ? 'dark' : 'light') }

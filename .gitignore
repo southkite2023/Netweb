@@ -37,3 +37,6 @@ backups/
 *.sqlite3
 *.pem
 *.key
+
+# Python test cache
+__pycache__/

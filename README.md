@@ -46,3 +46,9 @@ See `MINECRAFT-BRIDGE-0.2.6.md` for the Minecraft bridge details.
 Calendar now opens a Quota Hub-style introduction at `/projects/004`, with a primary CTA to the visual subscription builder at `/projects/004/subscribe`. The builder supports game/event filters, weekly anime, new-game releases and start-day/full-duration modes in Chinese, English and Japanese. GitHub is a secondary resource on the builder.
 
 **Frontend test only:** the copied `.ics` URL uses `calendar.example.invalid`. Real sources and online subscription are not yet connected. See [Calendar routes, URL contract and launch requirements](docs/CALENDAR.md).
+
+## v0.7.0 Cloud Sync
+
+收藏、真实通知及已读状态、语言和主题可随账号跨设备同步；新增独立设备会话管理、CSRF 校验、可选的本地数据导入和 Cookie 隐私偏好。原始 localStorage 数据保留，当前未使用非必要追踪。
+
+请先阅读 [Cloud Sync 审计与完整部署说明](docs/CLOUD-SYNC-0.7.0.md)。服务器需执行 `006_cloud_sync.sql` 并设置私有 `CSRF_SECRET`，前后端必须协调发布；现有前端专用发布任务不能发布这次后端升级。验证新增使用 `npm ci --prefix server` 与 `npm run test:server`，测试不连接生产数据库。

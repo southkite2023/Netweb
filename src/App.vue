@@ -2,6 +2,8 @@
 import { computed, defineAsyncComponent, onBeforeUnmount, onMounted, ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
+import PrivacyPanel from './components/PrivacyPanel.vue'
+import CloudSyncPanel from './components/CloudSyncPanel.vue'
 import BackToTop from './components/BackToTop.vue'
 import Live2DCompanion from './components/Live2DCompanion.vue'
 import { experienceCopy } from './data/experience'
@@ -48,6 +50,8 @@ onBeforeUnmount(() => {
   <div v-if="navigationPending" class="route-progress" role="status" :aria-label="c.loading"></div>
   <div v-if="offline" class="connection-banner" role="status">{{ c.offline }}</div>
   <RouterView />
+  <CloudSyncPanel />
+  <PrivacyPanel />
   <div v-if="navigationError" class="route-error" role="alert"><p>{{ c.routeError }}</p><button class="btn btn-primary" @click="retry">{{ c.retry }}</button></div>
   <CommandPalette v-if="commandOpen" />
   <BackToTop />
