@@ -40,3 +40,9 @@ The new radio migration is `server/sql/005_radio.sql`.
 Project 002 continues to use `YuashieWhitelistBridge` inside Paper. It polls the Yuashie API over outbound HTTPS and updates Bukkit's local whitelist, so no public RCON port is required.
 
 See `MINECRAFT-BRIDGE-0.2.6.md` for the Minecraft bridge details.
+
+## Project 004 · Yuashie Calendar
+
+Calendar now opens a Quota Hub-style introduction at `/projects/004`, with a primary CTA to the visual subscription builder at `/projects/004/subscribe`. The builder supports game/event filters, weekly anime, new-game releases and start-day/full-duration modes in Chinese, English and Japanese. GitHub is a secondary resource on the builder.
+
+**Frontend test only:** the copied `.ics` URL uses `calendar.example.invalid`. Real sources and online subscription are not yet connected. See [Calendar routes, URL contract and launch requirements](docs/CALENDAR.md).

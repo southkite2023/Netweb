@@ -1,5 +1,6 @@
 import { projects, localizedField } from './projects'
 import { experienceCopy } from './experience'
+import { calendarCopy } from './calendar'
 
 export function projectEntries(locale = 'zh') {
   return projects.map(project => ({
@@ -13,7 +14,9 @@ export function projectEntries(locale = 'zh') {
 // Only public destinations belong here. Keep the hidden archive out of discovery.
 export function directoryEntries(locale = 'zh') {
   const c = experienceCopy[locale] || experienceCopy.zh
+  const calendar = calendarCopy[locale] || calendarCopy.zh
   return [    ...projectEntries(locale),
+    { path: '/projects/004/subscribe', title: `Calendar · ${calendar.generator}`, description: calendar.badge, keywords: 'calendar 日历 カレンダー ics 订阅 subscription 購読', category: 'pages', code: 'ICS' },
     ...[
       ['/lab', 'lab', 'CW morse 摩尔斯 モールス signal 实验'],
       ['/radio', 'radio', '业余无线电 amateur callsign 呼号 無線'],

@@ -56,6 +56,9 @@ const router = createRouter({
       name: 'identity-backup',
       component: IdentityBackupView,
     },
+    { path: '/projects/004/subscribe', name: 'calendar-subscribe', component: () => import('../views/CalendarSubscribeView.vue') },
+    { path: '/projects/calendar', redirect: '/projects/004' },
+    { path: '/projects/calendar/subscribe', redirect: '/projects/004/subscribe' },
     { path: '/projects/001/download', name: 'quota-download', component: () => import('../views/QuotaDownloadView.vue') },
     { path: '/projects/001/guide', name: 'quota-guide', component: () => import('../views/QuotaGuideView.vue') },
     {

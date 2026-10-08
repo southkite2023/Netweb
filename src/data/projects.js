@@ -84,7 +84,6 @@ export const projects = [
     },
     status: { zh: '开发中', en: 'In development', ja: '開発中' },
     type: { zh: '游戏 / 动漫 / 订阅日历', en: 'Games / Anime / Subscription calendar', ja: 'ゲーム / アニメ / 購読カレンダー' },
-    externalUrl: 'https://github.com/southkite2023/yuashie-calendar',
     repository: 'https://github.com/southkite2023/yuashie-calendar',
     repositoryLabel: { zh: '在 GitHub 查看日历企划', en: 'View the calendar on GitHub', ja: 'GitHubでカレンダー企画を見る' },
     note: { zh: '开发进度与实施路线以 GitHub 仓库为准。', en: 'Follow the GitHub repository for progress and the roadmap.', ja: '開発状況とロードマップはGitHubをご覧ください。' },
