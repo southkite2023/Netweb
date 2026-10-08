@@ -4,14 +4,14 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { quotaCopy, detectQuotaPlatform } from '../src/data/quotaHub.js'
 
-const root = resolve(import.meta.dirname, '../public/astracct')
+const root = resolve(import.meta.dirname, '../public/assets/astracct')
 const source = file => readFileSync(resolve(root, file), 'utf8')
 
 test('Astracct iOS PWA has a scoped installable manifest and offline app shell', () => {
   const manifest = JSON.parse(source('manifest.webmanifest'))
-  assert.equal(manifest.id, '/astracct/')
-  assert.equal(manifest.start_url, '/astracct/')
-  assert.equal(manifest.scope, '/astracct/')
+  assert.equal(manifest.id, '/assets/astracct/')
+  assert.equal(manifest.start_url, '/assets/astracct/')
+  assert.equal(manifest.scope, '/assets/astracct/')
   assert.equal(manifest.display, 'standalone')
   assert.ok(manifest.icons.some(i => i.sizes === '192x192'))
   assert.ok(manifest.icons.some(i => i.sizes === '512x512'))
@@ -37,7 +37,7 @@ test('Astracct PWA PNG icons have the declared dimensions', () => {
 test('iOS download page offers the PWA for iPhone and desktop-mode iPad', () => {
   const page = readFileSync(resolve(import.meta.dirname, '../src/views/QuotaDownloadView.vue'), 'utf8')
   assert.match(page, /selectedPlatform === 'iOS'/)
-  assert.match(page, /href="\/astracct\/\?install=1"/)
+  assert.match(page, /href="\/assets\/astracct\/\?install=1"/)
   assert.equal(detectQuotaPlatform({userAgent:'Mozilla/5.0 (iPhone; CPU iPhone OS 27_0 like Mac OS X)'}), 'iOS')
   assert.equal(detectQuotaPlatform({platform:'MacIntel',maxTouchPoints:5}), 'iOS')
   for (const locale of ['zh','en','ja']) {
