@@ -2,7 +2,7 @@ export const latestRelease = {
   version: '0.6.0', date: '2026-10-08',
   zh: { title: '个人节点 · 模块化重绘', items: [
     '10.08：Calendar 新增项目介绍与可视化订阅生成器，支持游戏/动漫/新作筛选及两种显示方式；仅为前端测试，真实订阅尚未上线。',
-    '10.08：看板娘更换为水色小狗，召唤后位于左下角，支持鼠标跟随、点击互动、表情切换和暂停动作。',
+    '10.08：看板娘更换为水色小狗，召唤后位于左下角，支持鼠标跟随与点击互动；压缩加载资源，移除下方选项，再次召唤直接复用模型。',
     '10.03：探索与项目合并为 /project，沿用探索页的搜索与收藏，仅展示四个项目；新增 Project 004 日历企划并链接 GitHub。',
     '09.30：重绘 Quota Hub 项目介绍，统一为一个下载入口；新增大字下载页、设备识别、四种 Android 安装包选择和使用方法页。',
     '重绘首页：图文主卡、个人信息侧栏、独立项目封面与状态标签，建立清晰的内容层级。',
@@ -12,7 +12,7 @@ export const latestRelease = {
   ] },
   en: { title: 'A modular personal space', items: [
     'Oct 8: Added a Calendar introduction and visual feed builder with game/anime/release filters and two display modes. Frontend test only; live subscriptions are pending.',
-    'Oct 8: Replaced the companion with Mizuiro Dog at the bottom left, with pointer tracking, touch responses, expressions and animation pause.',
+    'Oct 8: Replaced the companion with Mizuiro Dog at the bottom left, with pointer tracking and touch responses; compressed loading, no lower option panel, and instant reuse on resummon.',
     'Oct 3: Merged Explore and Projects at /project, retaining search and saved projects with four entries; added Project 004, the calendar plan linked to GitHub.',
     'Sep 30: Redesigned the Quota Hub project with one download entry, a large-type download page, device detection, four Android packages and a getting-started guide.',
     'Redesigned the homepage with a feature panel, personal sidebar, separate project covers and status labels.',
@@ -22,7 +22,7 @@ export const latestRelease = {
   ] },
   ja: { title: '個人空間のモジュール化', items: [
     '10月8日：Calendarの紹介と購読ジェネレーターを追加。ゲーム・アニメ・新作の選択と2つの表示方法に対応。フロントエンドテストのみで、実際の購読は未公開です。',
-    '10月8日：看板娘を水色小狗に変更。呼び出すと左下に表示され、マウス追従、クリック、表情変更と動きの一時停止に対応します。',
+    '10月8日：看板娘を水色小狗に変更。呼び出すと左下に表示され、マウス追従とクリックに対応。圧縮読み込みで高速化し、下部の選択パネルを削除。再呼び出しではモデルを再利用します。',
     '10月3日：探索とプロジェクトを /project に統合。検索と保存を維持して4件のみ表示し、GitHubのカレンダー企画をProject 004として追加しました。',
     '9月30日：Quota Hubの紹介を刷新。入口を統一し、大きな文字のダウンロードページ、端末判別、4種類のAndroidパッケージと使い方を追加しました。',
     'ホームをメインカード、プロフィール欄、独立したプロジェクト画像と状態表示で再構成しました。',
