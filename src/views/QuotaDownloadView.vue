@@ -1,31 +1,37 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
-import { detectQuotaPlatform, quotaCopy, quotaDownloadUrl, quotaPlatforms, quotaRelease } from '../data/quotaHub'
+import { detectQuotaPlatform, quotaCopy, quotaDesktopCopy, quotaDownloadUrl, quotaPlatforms, quotaRelease } from '../data/quotaHub'
 import '../quota-hub.css'
 const { locale } = useI18n()
 const c = computed(() => quotaCopy[locale.value] || quotaCopy.zh)
+const route = useRoute()
+const router = useRouter()
+const desktopCopy = computed(() => quotaDesktopCopy[locale.value] || quotaDesktopCopy.zh)
 const detected = ref(null)
 const selectedPlatform = ref('Android')
 const architecture = ref('universal')
-const selectedPackage = computed(() => quotaRelease.packages.find(item => item.id === architecture.value))
+const selectedPackage = computed(() => quotaRelease.desktop[selectedPlatform.value] || quotaRelease.packages.find(item => item.id === architecture.value))
 const downloadUrl = computed(() => quotaDownloadUrl(selectedPlatform.value, architecture.value))
 onMounted(() => {
   detected.value = detectQuotaPlatform(navigator)
-  selectedPlatform.value = detected.value || 'Android'
+  selectedPlatform.value = quotaPlatforms.includes(route.query.platform) ? route.query.platform : detected.value || 'Android'
 })
+watch(selectedPlatform, platform => router.replace({ query: { ...route.query, platform } }))
+watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(platform)) selectedPlatform.value = platform })
 </script>
 
 <template>
   <div class="quota-page quota-download">
     <div class="container"><SiteNav /></div>
     <main>
-      <div class="quota-subnav"><RouterLink to="/projects/001">← {{ c.back }}</RouterLink><span>QUOTA HUB / {{ quotaRelease.version }}</span></div>
+      <div class="quota-subnav"><RouterLink to="/projects/001">← {{ c.back }}</RouterLink><span>ASTRACCT / {{ quotaRelease.version }}</span></div>
       <section class="quota-hero">
         <div class="quota-hero-orbit" aria-hidden="true"></div>
-        <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">Q</span> Quota Hub <span class="quota-beta">{{ c.badge }}</span></p>
+        <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">Q</span> Astracct <span class="quota-beta">{{ c.badge }}</span></p>
         <p class="quota-eyebrow">{{ c.eyebrow }}</p>
         <h1>{{ c.headline[0] }}<br><span>{{ c.headline[1] }}</span></h1>
         <p class="quota-intro">{{ c.intro }}</p>
@@ -35,14 +41,18 @@ onMounted(() => {
             <button v-for="platform in quotaPlatforms" :key="platform" type="button" :aria-pressed="selectedPlatform === platform" @click="selectedPlatform = platform">{{ platform }}</button>
           </div>
           <div v-if="downloadUrl" class="quota-package">
+            <template v-if="selectedPlatform === 'Android'">
             <label for="quota-architecture">{{ c.architecture }}</label>
             <select id="quota-architecture" v-model="architecture" aria-describedby="quota-architecture-note">
               <option v-for="item in quotaRelease.packages" :key="item.id" :value="item.id">{{ c.packageHints[item.id] }} · {{ item.size }}</option>
             </select>
             <p id="quota-architecture-note" class="quota-fineprint">{{ c.architectureHint }}</p>
-            <a class="quota-primary quota-download-button" :href="downloadUrl">{{ c.download }} <span aria-hidden="true">↓</span></a>
+            </template>
+            <p v-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy[selectedPlatform] }}</p>
+            <a class="quota-primary quota-download-button" :href="downloadUrl">{{ selectedPlatform === 'Android' ? c.download : `${desktopCopy.download} ${selectedPlatform}` }} <span aria-hidden="true">↓</span></a>
             <p class="quota-package-meta">v{{ quotaRelease.version }} · {{ selectedPackage.label }} · {{ selectedPackage.size }}</p>
             <p class="quota-fineprint">{{ c.hosted }}</p>
+            <p v-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy.usage }}</p>
           </div>
           <div v-else class="quota-unavailable" role="status">
             <p>{{ c.unsupported }}</p>
@@ -52,7 +62,7 @@ onMounted(() => {
         </div>
       </section>
       <section class="quota-benefits">
-        <p class="quota-eyebrow">QUOTA HUB / {{ c.name }}</p>
+        <p class="quota-eyebrow">ASTRACCT / {{ c.name }}</p>
         <h2>{{ c.overview }}</h2>
         <div class="quota-features"><article v-for="(feature, index) in c.features" :key="feature[0]"><span>0{{ index + 1 }}</span><h3>{{ feature[0] }}</h3><p>{{ feature[1] }}</p></article></div>
         <p class="quota-fineprint">{{ c.limits }}</p>
@@ -62,3 +72,4 @@ onMounted(() => {
     <SiteFooter />
   </div>
 </template>
+
