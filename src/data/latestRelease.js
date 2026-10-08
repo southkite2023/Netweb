@@ -34,7 +34,7 @@ export const release060 = {
 
 export const latestRelease = {
   version: '0.7.0', date: '2026-10-08',
-  zh: { title: 'Cloud Sync · 账号云端同步', items: ['收藏、真实通知与已读、语言和主题随账号跨设备同步。', '新增旧本地资料选择导入、独立设备会话与 Cookie 隐私偏好。'] },
-  en: { title: 'Cloud Sync · Your account across devices', items: ['Sync bookmarks, real notifications and read states, language and theme across devices.', 'Optional local import, independent device sessions and Cookie privacy settings.'] },
-  ja: { title: 'Cloud Sync · アカウントのクラウド同期', items: ['保存・実際の通知と既読・言語・テーマを端末間で同期。', '任意のローカルインポート、端末別セッションとCookie設定。'] },
+  zh: { title: 'Cloud Sync · 账号云端同步', items: ['10.08：看板娘打开页面即预加载，默认隐藏并以半身显示；精简导航与首页入口，实验室移入无线电项目，隐私提示改为首次访问弹窗，设备管理移入个人资料。', '收藏、真实通知与已读、语言和主题随账号跨设备同步。', '新增旧本地资料选择导入、独立设备会话与 Cookie 隐私偏好。'] },
+  en: { title: 'Cloud Sync · Your account across devices', items: ['Oct 8: Preinitialize the hidden half-body companion, simplify navigation and home links, move the lab into Radio, show first-visit privacy consent in a modal and manage devices from your profile.', 'Sync bookmarks, real notifications and read states, language and theme across devices.', 'Optional local import, independent device sessions and Cookie privacy settings.'] },
+  ja: { title: 'Cloud Sync · アカウントのクラウド同期', items: ['10月8日：非表示の看板娘を事前初期化し半身表示に変更。ナビとホームを整理し、実験室は無線へ、初回プライバシー案内はダイアログへ、端末管理はプロフィールへ移動。', '保存・実際の通知と既読・言語・テーマを端末間で同期。', '任意のローカルインポート、端末別セッションとCookie設定。'] },
 }

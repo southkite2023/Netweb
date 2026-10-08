@@ -1,5 +1,4 @@
 <script setup>
-import PrivacySettingsButton from '../components/PrivacySettingsButton.vue'
 import LegalLinks from './LegalLinks.vue'
 import { SITE_VERSION } from '../data/version'
 import beianIcon from '../assets/beian-icon.png'
@@ -14,7 +13,6 @@ import beianIcon from '../assets/beian-icon.png'
         <RouterLink to="/about">YUASHIE · v{{ SITE_VERSION }}</RouterLink>
       </div>
       <LegalLinks />
-      <PrivacySettingsButton />
       <div class="filing-links">
         <a class="filing-link" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">蜀ICP备2026050398号-1</a>
         <a class="filing-link public-security-link" href="https://beian.mps.gov.cn/#/query/webSearch?code=51050202000608" target="_blank" rel="noopener noreferrer">

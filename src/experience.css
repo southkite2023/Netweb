@@ -11,7 +11,7 @@ main:focus { outline: none; }
 .skip-link:focus { transform:translateY(0); }
 .site-nav { height:auto; min-height:76px; gap:18px; overflow:visible; }
 .site-nav .brand-cluster { flex-shrink:0; }
-.site-nav .nav-right { gap:16px; order:2; }
+.site-nav .nav-right { gap:16px; order:2; margin-left:auto; }
 .site-nav .nav-utility { display:flex; gap:8px; align-items:center; order:3; flex-shrink:0; }
 .site-nav .nav-link { font-size:.875rem; padding-block:12px; }
 .site-nav .account-link { max-width:120px; overflow:hidden; text-overflow:ellipsis; }
@@ -146,7 +146,7 @@ kbd { font: .75rem/1.4 ui-monospace,monospace; padding:4px 6px; border:1px solid
   .site-nav { display:grid; grid-template-columns:minmax(0,1fr) auto; height:auto; min-height:72px; padding:14px; }
   .site-nav .nav-utility { grid-column:2; grid-row:1; }
   .site-nav .mobile-nav-toggle { display:grid; }
-  .site-nav .nav-right { display:none; grid-column:1/-1; order:4; width:100%; gap:0; padding-top:10px; border-top:1px solid var(--glass-border); }
+  .site-nav .nav-right { display:none; grid-column:1/-1; order:4; margin-left:0; width:100%; gap:0; padding-top:10px; border-top:1px solid var(--glass-border); }
   .site-nav .nav-right.is-open { display:flex; flex-direction:column; align-items:stretch; }
   .site-nav .nav-link { padding:14px 8px; border-bottom:1px solid var(--line); width:100%; }
   .site-nav .account-link { max-width:none; }

@@ -52,13 +52,7 @@ onBeforeUnmount(() => { timers.forEach(clearTimeout) })
       <RouterLink to="/" class="brand" :class="{ 'archive-glitch': brandGlitch }" @click="handleBrandClick"><span class="brand-mark" aria-hidden="true"></span><span>YUASHIE</span></RouterLink>
       <button class="theme-toggle" type="button" :aria-label="isLightMode ? c.dark : c.light" :title="isLightMode ? c.dark : c.light" :aria-pressed="isLightMode" @click="toggleTheme"><span aria-hidden="true">{{ isLightMode ? '🌙' : '☀️' }}</span></button>
     </div>
-    <div class="nav-utility">
-      <button class="nav-search icon-button" type="button" :aria-label="c.search" :title="c.shortcut + ' · Ctrl / ⌘ K'" @click="closeMobileMenu(); openCommands()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-      <MailboxPanel v-if="auth.user" :key="auth.user.username" />
-      <button ref="menuButton" class="mobile-nav-toggle" type="button" :aria-expanded="mobileMenuOpen" aria-controls="primary-navigation" :aria-label="mobileMenuOpen ? c.close : c.menu" @click="mobileMenuOpen = !mobileMenuOpen"><span aria-hidden="true">{{ mobileMenuOpen ? '×' : '☰' }}</span></button>
-    </div>
     <div id="primary-navigation" class="nav-right" :class="{ 'is-open': mobileMenuOpen }">
-      <RouterLink class="nav-link" to="/" @click="closeMobileMenu">{{ c.home }}</RouterLink>
       <RouterLink class="nav-link" to="/project" @click="closeMobileMenu">{{ t('nav.projects') }}</RouterLink>
       <RouterLink class="nav-link" to="/about" @click="closeMobileMenu">{{ t('nav.about') }}</RouterLink>
       <RouterLink class="nav-link" to="/vip" @click="closeMobileMenu">{{ t('nav.vip') }}</RouterLink>
@@ -66,6 +60,11 @@ onBeforeUnmount(() => { timers.forEach(clearTimeout) })
       <RouterLink v-if="auth.user" class="nav-link account-link" :to="`/u/${encodeURIComponent(auth.user.username)}`" @click="closeMobileMenu">@{{ auth.user.username }}</RouterLink>
       <RouterLink v-else class="nav-link" to="/login" @click="closeMobileMenu">{{ t('nav.login') }}</RouterLink>
       <label class="language-switcher" :title="c.language"><span class="language-icon" aria-hidden="true">文</span><select :value="locale" :aria-label="c.language" @change="changeLanguage($event.target.value)"><option value="zh">简体中文</option><option value="en">English</option><option value="ja">日本語</option></select></label>
+    </div>
+    <div class="nav-utility">
+      <button class="nav-search icon-button" type="button" :aria-label="c.search" :title="c.shortcut + ' · Ctrl / ⌘ K'" @click="closeMobileMenu(); openCommands()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+      <MailboxPanel v-if="auth.user" :key="auth.user.username" />
+      <button ref="menuButton" class="mobile-nav-toggle" type="button" :aria-expanded="mobileMenuOpen" aria-controls="primary-navigation" :aria-label="mobileMenuOpen ? c.close : c.menu" @click="mobileMenuOpen = !mobileMenuOpen"><span aria-hidden="true">{{ mobileMenuOpen ? '×' : '☰' }}</span></button>
     </div>
   </nav>
 </template>

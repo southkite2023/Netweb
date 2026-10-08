@@ -91,12 +91,10 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
       </div>
     </section>
 
-    <section class="home-discovery"><div class="discovery-duo"><RouterLink class="lab-invitation" to="/lab"><span class="section-label">02 / SIGNAL LAB</span><span class="lab-glyph" aria-hidden="true">−·−·  −−·−</span><h2>{{ c.enterLab }}</h2><p>{{ c.labIntro }}</p><span class="inline-link">{{ c.lab }} ↗</span></RouterLink><RouterLink class="release-invitation" to="/about"><span class="section-label">{{ c.latest }}</span><span class="release-number">v{{ SITE_VERSION }}</span><h2>{{ latest.title }}</h2><time :datetime="latestRelease.date">{{ latestRelease.date }}</time><span class="inline-link">{{ c.release }} ↗</span></RouterLink></div></section>
-
     <section class="home-manifesto">
       <div>
         <div class="section-label">
-          03 / {{ t('manifesto.title') }}
+          02 / {{ t('manifesto.title') }}
         </div>
 
         <div class="quote">

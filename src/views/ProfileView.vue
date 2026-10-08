@@ -6,6 +6,7 @@ import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import { api } from '../lib/api'
 import { auth, signOut } from '../lib/auth'
+import { openDevices } from '../lib/accountPanels'
 
 const route = useRoute()
 const router = useRouter()
@@ -21,19 +22,19 @@ const form = ref({ displayName: '', bio: '', website: '' })
 
 const copy = computed(() => ({
   zh: {
-    contribution: '贡献值', joined: '加入时间', edit: '编辑资料', signout: '退出登录', about: '个人简介', empty: '暂未填写个人简介。',
+    contribution: '贡献值', joined: '加入时间', edit: '编辑资料', devices: '登录设备', signout: '退出登录', about: '个人简介', empty: '暂未填写个人简介。',
     save: '保存', cancel: '取消', website: '个人网站', badges: '徽章', badgeIntro: '完成对应条件即可获得徽章。你可以选择佩戴一个，也可以不佩戴。', equipped: '佩戴中', equip: '佩戴', locked: '未获得',
     unequip: '不佩戴徽章', earned: '已获得', manual: '由管理员确认成员身份后授予。', avatar: '头像', uploadAvatar: '上传头像', removeAvatar: '移除头像', avatarHint: '支持 PNG / JPEG / WebP，文件大小不超过 512 KB。',
     contributionLog: 'Contribution 记录', noContribution: '暂无贡献记录。', adminPanel: '管理员控制台', adminTitle: 'Bug / 建议审核', adminText: '查阅、批复用户反馈，并自动发放 Contribution 与徽章资格。', openAdmin: '打开审核台', feedback: '提交 Bug / 建议',
   },
   en: {
-    contribution: 'CONTRIBUTION', joined: 'JOINED', edit: 'Edit profile', signout: 'Sign out', about: 'ABOUT', empty: 'No bio yet.',
+    contribution: 'CONTRIBUTION', joined: 'JOINED', edit: 'Edit profile', devices: 'Signed-in devices', signout: 'Sign out', about: 'ABOUT', empty: 'No bio yet.',
     save: 'Save', cancel: 'Cancel', website: 'Website', badges: 'BADGES', badgeIntro: 'Earn badges by meeting their requirements. Equip one beside your name, or wear none.', equipped: 'Equipped', equip: 'Equip', locked: 'Locked',
     unequip: 'Wear no badge', earned: 'Earned', manual: 'Awarded after membership is confirmed by an administrator.', avatar: 'Avatar', uploadAvatar: 'Upload avatar', removeAvatar: 'Remove avatar', avatarHint: 'PNG / JPEG / WebP, maximum file size 512 KB.',
     contributionLog: 'CONTRIBUTION LOG', noContribution: 'No contribution events yet.', adminPanel: 'ADMIN CONSOLE', adminTitle: 'Bug / Suggestion Review', adminText: 'Review feedback and automatically issue Contribution and badge eligibility.', openAdmin: 'Open review console', feedback: 'Submit bug / suggestion',
   },
   ja: {
-    contribution: '貢献値', joined: '参加日', edit: 'プロフィール編集', signout: 'ログアウト', about: '自己紹介', empty: '自己紹介はまだありません。',
+    contribution: '貢献値', joined: '参加日', edit: 'プロフィール編集', devices: 'ログイン端末', signout: 'ログアウト', about: '自己紹介', empty: '自己紹介はまだありません。',
     save: '保存', cancel: 'キャンセル', website: 'ウェブサイト', badges: 'バッジ', badgeIntro: '条件を満たすとバッジを獲得できます。名前の横に1つ装着するか、何も装着しないこともできます。', equipped: '装着中', equip: '装着', locked: '未獲得',
     unequip: 'バッジを装着しない', earned: '獲得済み', manual: 'メンバー確認後に管理者が付与します。', avatar: 'アバター', uploadAvatar: 'アバターを変更', removeAvatar: 'アバターを削除', avatarHint: 'PNG / JPEG / WebP、最大512 KB。',
     contributionLog: 'Contribution 履歴', noContribution: '貢献履歴はありません。', adminPanel: '管理者コンソール', adminTitle: 'Bug / 提案審査', adminText: 'フィードバックを審査し、Contributionとバッジ資格を自動反映します。', openAdmin: '審査画面を開く', feedback: 'Bug / 提案を送信',
@@ -157,6 +158,7 @@ watch(() => route.params.username, load)
           <div v-if="mine" class="profile-actions">
             <RouterLink class="secondary-action" to="/feedback">{{ copy.feedback }}</RouterLink>
             <button class="secondary-action" @click="editing = !editing">{{ copy.edit }}</button>
+            <button class="secondary-action" @click="openDevices">{{ copy.devices }}</button>
             <button class="text-action" @click="logout">{{ copy.signout }}</button>
           </div>
         </header>
