@@ -1,6 +1,6 @@
 # v0.7.0 Cloud Sync — audit and coordinated release
 
-Audited `southkite2023/Netweb` main at `654e67f` on 2026-10-08 (Asia/Shanghai). No production database was accessed or changed.
+Audited `southkite2023/Netweb` main at `654e67f` on 2026-10-08 (Asia/Shanghai). The implementation audit used repository sources. Production rollout was performed after explicit owner approval on 2026-10-08.
 
 ## Actual architecture and storage
 
@@ -60,4 +60,17 @@ This release changes backend and schema. The existing frontend-only deployment w
 5. Verify `/api/health` reports 0.7.0, /about and /privacy load, and deploy-version.json identifies the released commit. Test with disposable staging accounts: favorite/unfavorite on device A → B, read → B, language/theme, rejection on account B, per-device logout, necessary-only sign-in, local import and network error behavior. Ask users with old open tabs to reload.
 6. Rollback: restore prior API and frontend commit together. Leave new additive tables/column intact; do not drop them or erase newly synced data. Restore DB backup only under a separately approved recovery procedure because it can discard real user changes.
 
-A successful PR/build is not evidence of backend publication. This task leaves production unchanged pending confirmation and server rollout.
+A successful PR/build alone is not evidence of backend publication.
+
+## Completed production rollout — 2026-10-08 (Asia/Shanghai)
+
+- [PR #4](https://github.com/southkite2023/Netweb/pull/4) was merged. Released source commit: `d0d9ee2fca5f1e3742f616e343cdba3e61131edc`.
+- Concurrent Astracct download updates from `04d393f` were preserved. The combined release passed 15 frontend tests, 2 backend integration tests and the production build; every tracked release file was verified against the merged source.
+- On ECS PostgreSQL 14.24, a separate temporary database passed real API probes for independent sessions, CSRF, preferences, favorites, imports and notification read states. The full production backup was restored into a second isolated database and migration 006 preserved its accounts and sessions. Both temporary databases were removed.
+- Private database, uploaded-content, environment and previous-source backups were retained on the server. The final pre-publication database/upload backup was refreshed immediately before switching.
+- Migration `006_cloud_sync.sql` completed; a private CSRF secret was configured without exposing it. The API was restarted with the new locked dependencies, and frontend/API were published together under the existing deployment lock.
+- Public `/api/health` reports `0.7.0`; `/deploy-version.json` reports the released commit and version. Home, About, Privacy, Projects, Login and Astracct download routes return HTTP 200. Anonymous sync, notification and session-list requests correctly return HTTP 401.
+- Existing open browser tabs should be refreshed for the new CSRF client. Local-data import remains an explicit user choice; original local storage is retained.
+- The initial frontend-only Actions attempt correctly stopped at its backend scope guard. After the full coordinated release satisfied that guard, only its failed job was rerun; the guard and restricted receiver were preserved.
+
+Rollback must restore the previous API and frontend together and retain the additive tables and newly synced data. Database restoration requires a separately approved recovery procedure.
