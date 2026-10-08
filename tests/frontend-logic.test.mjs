@@ -45,7 +45,9 @@ test('Preference helpers tolerate denied browser storage', () => {
 
 test('API preserves credentials and payload, and rejects misleading success responses', async t => {
   t.mock.method(globalThis, 'fetch', async (url, options) => {
+    if (url === '/api/auth/csrf') return new Response('{"token":"test-token"}')
     assert.equal(url, '/api/example')
+    assert.equal(options.headers.get('X-CSRF-Token'), 'test-token')
     assert.equal(options.credentials, 'include')
     assert.equal(options.headers.get('Content-Type'), 'application/json')
     assert.equal(options.body, '{"text":"你好"}')
@@ -64,11 +66,13 @@ test('API timeout aborts once, cleans up and never retries a write automatically
   let calls = 0, onTimeout, cleared = false
   t.mock.method(globalThis, 'setTimeout', callback => { onTimeout = callback; return 1 })
   t.mock.method(globalThis, 'clearTimeout', () => { cleared = true })
-  t.mock.method(globalThis, 'fetch', async (_, options) => {
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    if (url === '/api/auth/csrf') return new Response('{"token":null}')
     calls++
     return new Promise((resolve, reject) => options.signal.addEventListener('abort', () => reject(new DOMException('Aborted', 'AbortError'))))
   })
   const pending = request('/feedback', { method: 'POST', body: '{}' })
+  while (!onTimeout) await new Promise(resolve => setImmediate(resolve))
   onTimeout()
   await assert.rejects(pending, /超时/)
   assert.equal(calls, 1)

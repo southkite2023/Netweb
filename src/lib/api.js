@@ -1,4 +1,13 @@
 const API_BASE = '/api'
+let accountId = null
+export function setRequestAccount(id) { accountId = id }
+let csrf = null
+let csrfFlight
+async function getCsrf() {
+  if (!csrfFlight) csrfFlight = fetch('/api/auth/csrf', { credentials: 'include', cache: 'no-store', signal: AbortSignal.timeout(15000) }).then(async r => { if (!r.ok) throw new Error('CSRF unavailable'); csrf = (await r.json()).token }).finally(() => { csrfFlight = null })
+  await csrfFlight
+  return csrf
+}
 
 export async function request(path, options = {}) {
   const lang = typeof document !== 'undefined' ? document.documentElement.lang : 'zh-CN'
@@ -8,7 +17,12 @@ export async function request(path, options = {}) {
       ? { timeout: '応答がタイムアウトしました。送信した場合は、再試行の前に結果を確認してください。', network: '接続できません。ネットワークを確認してください。', invalid: 'サーバーの応答を読み取れません。しばらくして再試行してください。' }
       : { timeout: '请求超时。若刚刚提交了内容，请先查看结果再重试。', network: '暂时无法连接，请检查网络后重试。', invalid: '服务器返回了无法识别的内容，请稍后再试。' }
   const headers = new Headers(options.headers || {})
+  if (accountId) headers.set('X-Sync-User', String(accountId))
   if (options.body !== undefined && !headers.has('Content-Type')) headers.set('Content-Type', 'application/json')
+  if (!['GET','HEAD','OPTIONS'].includes(options.method || 'GET')) {
+    const token = await getCsrf()
+    if (token) headers.set('X-CSRF-Token', token)
+  }
   const controller = new AbortController()
   let timedOut = false
   const cancel = () => controller.abort(options.signal?.reason)

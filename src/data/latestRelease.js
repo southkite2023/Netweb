@@ -1,4 +1,4 @@
-export const latestRelease = {
+export const release060 = {
   version: '0.6.0', date: '2026-10-08',
   zh: { title: '个人节点 · 模块化重绘', items: [
     '10.08：Calendar 新增项目介绍与可视化订阅生成器，支持游戏/动漫/新作筛选及两种显示方式；仅为前端测试，真实订阅尚未上线。',
@@ -30,4 +30,11 @@ export const latestRelease = {
     'ナビゲーションにホームを追加し、旧CSSでモバイルメニューのリンクが非表示になる問題を修正しました。',
     '既存のルート、アカウント、無線、実験室、ゲーム、検索を維持。初期言語は中国語で、3言語、明暗テーマ、動きを減らす設定に対応します。',
   ] },
+}
+
+export const latestRelease = {
+  version: '0.7.0', date: '2026-10-08',
+  zh: { title: 'Cloud Sync · 账号云端同步', items: ['收藏、真实通知与已读、语言和主题随账号跨设备同步。', '新增旧本地资料选择导入、独立设备会话与 Cookie 隐私偏好。'] },
+  en: { title: 'Cloud Sync · Your account across devices', items: ['Sync bookmarks, real notifications and read states, language and theme across devices.', 'Optional local import, independent device sessions and Cookie privacy settings.'] },
+  ja: { title: 'Cloud Sync · アカウントのクラウド同期', items: ['保存・実際の通知と既読・言語・テーマを端末間で同期。', '任意のローカルインポート、端末別セッションとCookie設定。'] },
 }

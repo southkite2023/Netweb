@@ -1,10 +1,9 @@
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import { api } from '../lib/api'
+import { api, request } from '../lib/api'
 import { auth } from '../lib/auth'
-import { writePreference } from '../lib/preferences'
 import { localizedField, projects } from '../data/projects'
 
 const { locale } = useI18n()
@@ -61,36 +60,21 @@ const strings = {
 }
 
 const copy = computed(() => strings[locale.value] || strings.zh)
-const readKey = computed(() => auth.user ? `yuashie_mailbox_read:${auth.user.username}` : '')
 const readIds = ref(new Set())
 const unreadCount = computed(() => messages.value.reduce((total, item) => total + (readIds.value.has(item.key) ? 0 : 1), 0))
 const isAdmin = computed(() => auth.user?.role === 'admin')
 
-function loadReadState() {
-  if (!readKey.value) return
+async function saveReadState(next) {
+  const id = auth.user?.id
   try {
-    const stored = JSON.parse(localStorage.getItem(readKey.value) || '[]')
-    readIds.value = new Set(Array.isArray(stored) ? stored : [])
-  } catch {
-    readIds.value = new Set()
-  }
+    await request('/notifications/read', { method: 'PUT', body: JSON.stringify({ keys: [...next].slice(-1000) }) })
+    if (auth.user?.id === id) readIds.value = new Set(next)
+  } catch (cause) { if (auth.user?.id === id) { if (cause.status === 401) auth.user = null; else error.value = cause.message } }
 }
-
-function saveReadState(next) {
-  readIds.value = new Set(next)
-  if (readKey.value) writePreference(readKey.value, JSON.stringify([...readIds.value].slice(-1000)))
-}
-
 function markRead(item) {
-  if (!item || readIds.value.has(item.key)) return
-  const next = new Set(readIds.value)
-  next.add(item.key)
-  saveReadState(next)
+  if (item && !readIds.value.has(item.key)) saveReadState(new Set([...readIds.value, item.key]))
 }
-
-function markAllRead() {
-  saveReadState(new Set([...readIds.value, ...messages.value.map(item => item.key)]))
-}
+function markAllRead() { saveReadState(new Set(messages.value.map(item => item.key))) }
 
 function formatTime(value) {
   if (!value) return ''
@@ -106,114 +90,26 @@ function projectTitle(id) {
   return project ? localizedField(project, 'title', locale.value) : id
 }
 
-function parseBroadcast(comment) {
-  if (comment.status !== 'visible' || comment.parentId || comment.author?.role !== 'admin') return null
-  if (!comment.content?.startsWith(BROADCAST_PREFIX)) return null
-  try {
-    const data = JSON.parse(comment.content.slice(BROADCAST_PREFIX.length))
-    if (!data?.title || !data?.body) return null
-    return { comment, data }
-  } catch {
-    return null
-  }
-}
-
-function feedbackMessage(item) {
-  const accepted = item.type === 'suggestion' ? item.status === 'adopted' : ['valid', 'fixed'].includes(item.status)
-  const rejected = item.status === 'rejected'
-  if (!accepted && !rejected) return null
-  const title = accepted ? copy.value.feedbackAdopted(item.type) : copy.value.feedbackRejected(item.type)
-  return {
-    key: `feedback:${item.id}:${item.status}:${item.updatedAt || item.reviewedAt || ''}`,
-    type: rejected ? 'feedback-rejected' : 'feedback',
-    typeLabel: copy.value.feedbackType,
-    title,
-    body: item.adminNote || item.title,
-    timestamp: item.reviewedAt || item.updatedAt || item.createdAt,
-    route: '/feedback',
-  }
-}
-
 async function refresh() {
   if (!auth.user || loading.value || document.hidden) return
-  const username = auth.user.username
-  loading.value = true
-  error.value = ''
+  const id = auth.user.id
+  loading.value = true; error.value = ''
   try {
-    const projectIds = projects.map(project => project.id)
-    const requests = [api.comments(BROADCAST_PROJECT), api.myFeedback(), api.me(), ...projectIds.map(id => api.comments(id))]
-    const results = await Promise.allSettled(requests)
-    if (auth.user?.username !== username) return
-    if (results.every(result => result.status === 'rejected')) throw results[0].reason
-    const next = []
-
-    const broadcastResult = results[0]
-    if (broadcastResult.status === 'fulfilled') {
-      const parsed = (broadcastResult.value.comments || []).map(parseBroadcast).filter(Boolean)
-      const replaced = new Set(parsed.map(item => item.data.replaces).filter(Boolean).map(String))
-      for (const item of parsed) {
-        if (replaced.has(String(item.comment.id))) continue
-        next.push({
-          key: `broadcast:${item.comment.id}`,
-          type: 'broadcast', typeLabel: copy.value.broadcastType,
-          title: item.data.title, body: item.data.body, timestamp: item.comment.createdAt,
-          broadcastId: item.comment.id,
-        })
-      }
-    }
-
-    const feedbackResult = results[1]
-    if (feedbackResult.status === 'fulfilled') {
-      for (const item of feedbackResult.value.feedback || []) {
-        const message = feedbackMessage(item)
-        if (message) next.push(message)
-      }
-    }
-
-    const meResult = results[2]
-    if (meResult.status === 'fulfilled') {
-      if (!meResult.value.user) { auth.user = null; return }
-      auth.user = meResult.value.user
-      for (const badge of meResult.value.user?.badges || []) {
-        next.push({
-          key: `badge:${badge.key}:${badge.awardedAt || ''}`,
-          type: 'badge', typeLabel: copy.value.badgeType,
-          title: copy.value.badgeTitle(badge.name), body: `${badge.emoji || '◆'} ${badge.description || ''}`,
-          timestamp: badge.awardedAt, route: `/u/${auth.user.username}`,
-        })
-      }
-    }
-
-    projectIds.forEach((projectId, index) => {
-      const result = results[index + 3]
-      if (result?.status !== 'fulfilled') return
-      const comments = result.value.comments || []
-      const byId = new Map(comments.map(comment => [String(comment.id), comment]))
-      for (const comment of comments) {
-        if (!comment.parentId || comment.status !== 'visible') continue
-        const parent = byId.get(String(comment.parentId))
-        if (!parent || parent.author?.username !== auth.user.username || comment.author?.username === auth.user.username) continue
-        next.push({
-          key: `reply:${comment.id}`, type: 'reply', typeLabel: copy.value.replyType,
-          title: copy.value.replyTitle(comment.author?.displayName || comment.author?.username || 'User'),
-          body: copy.value.replyBody(projectTitle(projectId), comment.content), timestamp: comment.createdAt,
-          route: `/projects/${projectId}`,
-        })
-      }
+    const data = await request('/notifications')
+    if (auth.user?.id !== id) return
+    readIds.value = new Set(data.notifications.filter(n => n.read).map(n => n.key))
+    messages.value = data.notifications.map(n => {
+      const common = { key: n.key, timestamp: n.time, type: n.kind, typeLabel: copy.value[`${n.kind}Type`] }
+      if (n.kind === 'reply') return { ...common, title: copy.value.replyTitle(n.author), body: copy.value.replyBody(projectTitle(n.project), n.content), route: `/projects/${n.project}` }
+      if (n.kind === 'badge') return { ...common, title: copy.value.badgeTitle(n.name), body: `${n.emoji || '◆'} ${n.description || ''}`, route: `/u/${auth.user.username}` }
+      if (n.kind === 'feedback') return { ...common, type: n.status === 'rejected' ? 'feedback-rejected' : 'feedback', title: n.status === 'rejected' ? copy.value.feedbackRejected(n.type) : copy.value.feedbackAdopted(n.type), body: n.body || n.title, route: '/feedback' }
+      return { ...common, title: n.title, body: n.body, broadcastId: n.id }
     })
-
-    const unique = new Map(next.map(item => [item.key, item]))
-    messages.value = [...unique.values()]
-      .sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0))
-      .slice(0, 120)
-
     if (selected.value) selected.value = messages.value.find(item => item.key === selected.value.key) || null
-  } catch (cause) {
-    error.value = cause?.message || 'Mailbox sync failed.'
-  } finally {
-    loading.value = false
-  }
+  } catch (cause) { if (auth.user?.id === id) { if (cause.status === 401) auth.user = null; else error.value = cause.message } }
+  finally { loading.value = false }
 }
+watch(() => auth.user?.id, () => { messages.value = []; readIds.value = new Set(); selected.value = null; refresh() })
 
 async function toggleMailbox() {
   open.value = !open.value
@@ -293,12 +189,13 @@ function iconPath(type) {
 }
 
 onMounted(() => {
-  loadReadState()
   refresh()
   refreshTimer = window.setInterval(refresh, 60000)
+  window.addEventListener('cloud-imported', refresh)
+  window.addEventListener('focus', refresh)
 })
 
-onBeforeUnmount(() => window.clearInterval(refreshTimer))
+onBeforeUnmount(() => { window.clearInterval(refreshTimer); window.removeEventListener('cloud-imported', refresh); window.removeEventListener('focus', refresh) })
 </script>
 
 <template>

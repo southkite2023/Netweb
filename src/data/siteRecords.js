@@ -1,4 +1,4 @@
-import { latestRelease } from './latestRelease'
+import { latestRelease, release060 } from './latestRelease'
 import { release050 } from './release050'
 import { release040 } from './release040'
 // Beijing dates; same-version follow-ups grouped. No invented release numbers.
@@ -9,7 +9,9 @@ export const archiveCopy = {
 }
 const release = (version, date, zh, en, ja) => ({ version, date, zh: { title: zh[0], items: zh.slice(1) }, en: { title: en[0], items: en.slice(1) }, ja: { title: ja[0], items: ja.slice(1) } })
 export const releases = [
+
   latestRelease,
+  release060,
   release050,
   release040,
   release('0.3.2', '2026-08-31',
