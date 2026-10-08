@@ -40,7 +40,13 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
           <div class="quota-platforms" role="group" :aria-label="c.choose">
             <button v-for="platform in quotaPlatforms" :key="platform" type="button" :aria-pressed="selectedPlatform === platform" @click="selectedPlatform = platform">{{ platform }}</button>
           </div>
-          <div v-if="downloadUrl" class="quota-package">
+          <div v-if="selectedPlatform === 'iOS'" class="quota-package">
+            <p class="quota-fineprint">{{ c.iosPwaIntro }}</p>
+            <a class="quota-primary quota-download-button" href="/assets/astracct/?install=1">{{ c.iosPwaInstall }} <span aria-hidden="true">↗</span></a>
+            <p class="quota-package-meta">{{ c.iosPwaMeta }}</p>
+            <p class="quota-fineprint">{{ c.iosPwaNote }}</p>
+          </div>
+          <div v-else-if="downloadUrl" class="quota-package">
             <template v-if="selectedPlatform === 'Android'">
             <label for="quota-architecture">{{ c.architecture }}</label>
             <select id="quota-architecture" v-model="architecture" aria-describedby="quota-architecture-note">

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f7ff"><meta name="description" content="星账 Astracct iOS PWA">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="星账">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="stylesheet" href="./styles.css"><script defer src="./app.js"></script>
+<title>星账 Astracct · iOS PWA</title></head><body>
+<div class="shell">
+<header><a class="brand" href="./"><img src="./icon.svg" alt="" width="44" height="44"><span>星账 <b>Astracct</b><small>IOS WEB APP</small></span></a><button id="install" type="button" class="secondary">安装到主屏幕</button></header>
+<main>
+<section class="hero"><p class="label">ASTRACCT / PWA</p><h1>你的余额，<br><em>一眼看清。</em></h1><p>为 iPhone 与 iPad 准备的独立网页应用。安装后可从主屏幕进入，也能离线查看本机记录。</p><button type="button" id="new" class="primary">＋ 添加余额账户</button></section>
+<p class="disclaimer"><strong>iOS 首版 · 手动记录模式。</strong> 暂不支持原生版的厂商 API 自动查询、后台刷新或原生小组件；切勿在此填写 API Key、云密钥、订阅凭据。</p>
+<section class="stats"><article><small>已添加账户</small><strong id="count">0</strong></article><article><small>账户种类</small><strong id="kinds">0</strong></article><article><small>最近更新</small><strong id="updated">—</strong></article></section>
+<section><div class="heading"><h2>余额账户</h2><button id="privacy" class="secondary" type="button" aria-pressed="false">隐藏金额</button></div>
+<nav id="filters" aria-label="筛选账户"><button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="ai">AI 订阅</button><button type="button" data-filter="cloud">云服务器</button><button type="button" data-filter="nodes">节点订阅</button></nav>
+<div id="cards" class="cards" aria-live="polite"></div>
+<div class="row"><button id="export" type="button" class="link">导出本机记录</button><button id="import" type="button" class="link">导入备份</button><input id="file" type="file" accept=".json,application/json" hidden></div>
+<p class="tip">数据仅保存在本设备的浏览器存储中，不会同步 Android 或桌面版；请定期导出备份，删除网站数据可能造成丢失。</p>
+</section></main>
+<footer>© 2026 Astracct · <a href="/projects/001/download">返回下载页</a> · <a href="https://github.com/southkite2023/quota-hub">项目源码</a></footer></div>
+<dialog id="editDialog"><form id="form"><div class="heading"><h2 id="formTitle">添加余额账户</h2><button type="button" data-close="editDialog" class="cross" aria-label="关闭">×</button></div>
+<label>余额种类<select name="category" id="category" required><option value="ai">AI 订阅</option><option value="cloud">云服务器</option><option value="nodes">节点订阅</option></select></label>
+<label>服务商 / 名称<input name="name" id="name" maxlength="60" required placeholder="例如：DeepSeek API"></label>
+<div class="pair"><label>余额数字<input name="amount" id="amount" inputmode="decimal" maxlength="30" required placeholder="28.50"></label><label>单位<select id="unit" name="unit"><option>CNY</option><option>USD</option><option>JPY</option><option>EUR</option><option>GB</option><option>GiB</option><option>次</option></select></label></div>
+<label>备注<input name="note" id="note" maxlength="90" placeholder="可选"></label>
+<p class="tip">仅记录余额数值；请勿输入 API Key、AccessKey 或订阅密钥。</p>
+<div class="row end"><button type="button" data-close="editDialog" class="secondary">取消</button><button class="primary" type="submit">保存</button></div></form></dialog>
+<dialog id="installDialog"><div class="guide"><div class="heading"><h2>安装星账到主屏幕</h2><button data-close="installDialog" type="button" class="cross" aria-label="关闭">×</button></div>
+<ol><li>在 iPhone 或 iPad 浏览器中打开当前页面。</li><li>点击浏览器的<strong>分享</strong>按钮（必要时先展开页面菜单）。</li><li>选择<strong>添加到主屏幕</strong>，确认<strong>作为网页 App 打开</strong>后点击<strong>添加</strong>。</li></ol>
+<p class="tip">iOS 不支持网页按钮直接静默安装，需要你完成系统确认。</p><button type="button" data-close="installDialog" class="primary full">我知道了</button></div></dialog>
+<p id="status" role="status" class="status" aria-live="polite"></p>
+</body></html>
