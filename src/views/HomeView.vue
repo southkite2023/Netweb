@@ -8,7 +8,6 @@ import { experienceCopy } from '../data/experience'
 import { latestRelease } from '../data/latestRelease'
 import { SITE_VERSION } from '../data/version'
 import { openCommands } from '../lib/navigation'
-import { playroomCopy } from '../data/playroom'
 
 const { t, locale } = useI18n()
 const featuredProjects = projects.slice(0, 3)
@@ -57,7 +56,6 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
             <h2>{{ c.nodeTitle }}</h2><p class="node-description">{{ c.nodeText }}</p>
             <dl class="node-facts"><div><dt>{{ c.version }}</dt><dd>v{{ SITE_VERSION }}</dd></div><div><dt>{{ c.projects }}</dt><dd>{{ String(projects.length).padStart(2, '0') }}</dd></div><div><dt>{{ c.languages }}</dt><dd>ZH / EN / JA</dd></div></dl>
             <button class="node-search" type="button" @click="openCommands"><span>{{ c.search }}</span><kbd>⌘ / Ctrl K</kbd></button>
-            <RouterLink class="home-play-link" to="/play"><span aria-hidden="true">✦</span><span>{{ (playroomCopy[locale] || playroomCopy.zh).playHint }}</span><span>↗</span></RouterLink>
           </div>
         </aside>
       </div>
