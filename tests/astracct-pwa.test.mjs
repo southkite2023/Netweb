@@ -8,7 +8,7 @@ const root = resolve(import.meta.dirname, '../public/assets/astracct')
 const source = file => readFileSync(resolve(root, file), 'utf8')
 
 test('Astracct iOS PWA has a scoped installable manifest and offline app shell', () => {
-  const manifest = JSON.parse(source('manifest.webmanifest'))
+  const manifest = JSON.parse(source('manifest.json'))
   assert.equal(manifest.id, '/assets/astracct/')
   assert.equal(manifest.start_url, '/assets/astracct/')
   assert.equal(manifest.scope, '/assets/astracct/')
