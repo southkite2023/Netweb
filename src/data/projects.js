@@ -2,9 +2,9 @@ export const projects = [
   {
     id: '001',
     title: {
-      zh: 'Quota Hub · 余量看板',
-      en: 'Quota Hub',
-      ja: 'Quota Hub · 残量ダッシュボード',
+      zh: '星账 Astracct',
+      en: 'Astracct',
+      ja: 'Astracct',
     },
     summary: {
       zh: '所有余额，一眼看清。集中查看 API 与云账户余额，Android 测试版现已开放下载。',
@@ -12,13 +12,13 @@ export const projects = [
       ja: 'すべての残高をひと目で。APIとクラウドの残高をまとめるAndroidテスト版を公開中。',
     },
     description: {
-      zh: 'Quota Hub 将分散在不同服务中的余额与用量集中展示，支持按 AI 订阅、云服务器和节点订阅分类管理账户。项目采用 MIT 许可；当前 Android 版本为公开测试版，服务商支持范围与配置说明请参阅 GitHub 仓库。',
-      en: 'Quota Hub brings balances and usage from different services into one dashboard, with accounts grouped into AI subscriptions, cloud servers and node subscriptions. The project is MIT licensed. The current Android release is a public test version; see GitHub for supported providers and setup instructions.',
-      ja: 'Quota Hubは各サービスの残高と使用量をまとめ、AIサブスクリプション・クラウドサーバー・ノードサブスクリプションに分類してアカウントを管理できます。MITライセンスで公開しています。Android版は公開テスト版です。対応プロバイダーと設定方法はGitHubをご覧ください。',
+      zh: 'Astracct 将分散在不同服务中的余额与用量集中展示，支持按 AI 订阅、云服务器和节点订阅分类管理账户。项目采用 MIT 许可；当前 Android 版本为公开测试版，服务商支持范围与配置说明请参阅 GitHub 仓库。',
+      en: 'Astracct brings balances and usage from different services into one dashboard, with accounts grouped into AI subscriptions, cloud servers and node subscriptions. The project is MIT licensed. The current Android release is a public test version; see GitHub for supported providers and setup instructions.',
+      ja: 'Astracctは各サービスの残高と使用量をまとめ、AIサブスクリプション・クラウドサーバー・ノードサブスクリプションに分類してアカウントを管理できます。MITライセンスで公開しています。Android版は公開テスト版です。対応プロバイダーと設定方法はGitHubをご覧ください。',
     },
     status: { zh: '公开测试', en: 'Public testing', ja: '公開テスト中' },
     type: { zh: '开源 / 余额与用量管理', en: 'Open source / Usage management', ja: 'オープンソース / 残高・使用量管理' },
-    version: '0.7.1',
+    version: '0.8.0',
     repository: 'https://github.com/southkite2023/quota-hub',
     year: '2026',
     image: new URL('../assets/projects/project-001.png', import.meta.url).href,

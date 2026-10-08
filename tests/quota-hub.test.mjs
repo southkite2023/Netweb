@@ -18,7 +18,7 @@ test('only verified Android architecture choices produce direct APK links', () =
   for (const item of quotaRelease.packages) {
     const url = new URL(quotaDownloadUrl('Android', item.id))
     assert.equal(url.host, 'github.com')
-    assert.equal(url.pathname, `/southkite2023/quota-hub/releases/download/v${quotaRelease.version}/quota-hub-${quotaRelease.version}-${item.id}.apk`)
+    assert.equal(url.pathname, `/southkite2023/quota-hub/releases/download/v${quotaRelease.version}/astracct-${quotaRelease.version}-${item.id}.apk`)
   }
   for (const platform of ['Windows', 'macOS', 'iOS', 'Linux', null]) assert.equal(quotaDownloadUrl(platform, 'universal'), null)
   assert.equal(quotaDownloadUrl('Android', '../../other'), null)
