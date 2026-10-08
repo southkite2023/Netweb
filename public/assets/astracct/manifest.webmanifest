@@ -1,29 +1,29 @@
 {
-  "id": "/astracct/",
+  "id": "/assets/astracct/",
   "name": "星账 Astracct",
   "short_name": "星账",
   "description": "星账 iOS 独立余额记录应用",
   "lang": "zh-CN",
-  "start_url": "/astracct/",
-  "scope": "/astracct/",
+  "start_url": "/assets/astracct/",
+  "scope": "/assets/astracct/",
   "display": "standalone",
   "background_color": "#f5f7ff",
   "theme_color": "#f5f7ff",
   "icons": [
     {
-      "src": "/astracct/icon-192.png",
+      "src": "/assets/astracct/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/astracct/icon-512.png",
+      "src": "/assets/astracct/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/astracct/icon.svg",
+      "src": "/assets/astracct/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
