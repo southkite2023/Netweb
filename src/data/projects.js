@@ -21,7 +21,7 @@ export const projects = [
     version: '0.7.1',
     repository: 'https://github.com/southkite2023/quota-hub',
     year: '2026',
-    image: new URL('../assets/projects/project-001.svg', import.meta.url).href,
+    image: new URL('../assets/projects/project-001.png', import.meta.url).href,
   },
   {
     id: '002',
