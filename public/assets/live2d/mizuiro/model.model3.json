@@ -1,0 +1,64 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "model.moc3",
+    "Textures": [
+      "texture_00.webp",
+      "texture_01.webp",
+      "texture_02.webp",
+      "texture_03.webp",
+      "texture_04.webp"
+    ],
+    "Physics": "physics.json",
+    "Expressions": [
+      {
+        "Name": "neutral",
+        "File": "neutral.exp3.json"
+      },
+      {
+        "Name": "blush",
+        "File": "blush.exp3.json"
+      },
+      {
+        "Name": "hearts",
+        "File": "hearts.exp3.json"
+      },
+      {
+        "Name": "stars",
+        "File": "stars.exp3.json"
+      },
+      {
+        "Name": "dizzy",
+        "File": "dizzy.exp3.json"
+      },
+      {
+        "Name": "wave",
+        "File": "wave.exp3.json"
+      }
+    ],
+    "Motions": {
+      "Idle": [
+        {
+          "File": "idle.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeLOpen",
+        "ParamEyeROpen"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 export const latestRelease = {
-  version: '0.6.0', date: '2026-10-03',
+  version: '0.6.0', date: '2026-10-08',
   zh: { title: '个人节点 · 模块化重绘', items: [
+    '10.08：看板娘更换为水色小狗，召唤后位于左下角，支持鼠标跟随、点击互动、表情切换和暂停动作。',
     '10.03：探索与项目合并为 /project，沿用探索页的搜索与收藏，仅展示四个项目；新增 Project 004 日历企划并链接 GitHub。',
     '09.30：重绘 Quota Hub 项目介绍，统一为一个下载入口；新增大字下载页、设备识别、四种 Android 安装包选择和使用方法页。',
     '重绘首页：图文主卡、个人信息侧栏、独立项目封面与状态标签，建立清晰的内容层级。',
@@ -9,6 +10,7 @@ export const latestRelease = {
     '保留全部路由、账号、电台、实验室、游乐室与快捷搜索功能；默认中文，兼容中英日、明暗主题和减少动态效果设置。',
   ] },
   en: { title: 'A modular personal space', items: [
+    'Oct 8: Replaced the companion with Mizuiro Dog at the bottom left, with pointer tracking, touch responses, expressions and animation pause.',
     'Oct 3: Merged Explore and Projects at /project, retaining search and saved projects with four entries; added Project 004, the calendar plan linked to GitHub.',
     'Sep 30: Redesigned the Quota Hub project with one download entry, a large-type download page, device detection, four Android packages and a getting-started guide.',
     'Redesigned the homepage with a feature panel, personal sidebar, separate project covers and status labels.',
@@ -17,6 +19,7 @@ export const latestRelease = {
     'Preserved all routes, accounts, radio, signal lab, playroom and quick search, with Chinese as default, three languages, both themes and reduced-motion support.',
   ] },
   ja: { title: '個人空間のモジュール化', items: [
+    '10月8日：看板娘を水色小狗に変更。呼び出すと左下に表示され、マウス追従、クリック、表情変更と動きの一時停止に対応します。',
     '10月3日：探索とプロジェクトを /project に統合。検索と保存を維持して4件のみ表示し、GitHubのカレンダー企画をProject 004として追加しました。',
     '9月30日：Quota Hubの紹介を刷新。入口を統一し、大きな文字のダウンロードページ、端末判別、4種類のAndroidパッケージと使い方を追加しました。',
     'ホームをメインカード、プロフィール欄、独立したプロジェクト画像と状態表示で再構成しました。',
