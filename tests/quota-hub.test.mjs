@@ -29,8 +29,9 @@ test('only verified Android architecture choices produce direct APK links', () =
 
 
 test('desktop downloads use fixed release assets and reject unsupported platforms', () => {
-  assert.equal(quotaDownloadUrl('Windows'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.9.0/astracct-0.9.0-windows-x64.zip')
-  assert.equal(quotaDownloadUrl('macOS'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.9.0/astracct-0.9.0-macos-universal.zip')
+  assert.equal(quotaDownloadUrl('Windows'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.10.0/astracct-0.10.0-windows-x64.zip')
+  assert.equal(quotaDownloadUrl('macOS'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.10.0/astracct-0.10.0-macos-universal.zip')
   assert.equal(quotaDownloadUrl('__proto__'), null)
   assert.equal(quotaDownloadUrl('Android', '../../evil'), null)
 })
+
