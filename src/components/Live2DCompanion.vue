@@ -85,7 +85,7 @@ onBeforeUnmount(destroy)
       <div v-else-if="failed" class="live2d-status live2d-error">LIVE2D OFFLINE</div>
     </div>
   </aside>
-  <button v-else class="live2d-restore" type="button" aria-label="显示 Live2D" @click="show">✦</button>
+  <button v-else class="live2d-restore" type="button" aria-label="召唤看板娘" @click="show"><span aria-hidden="true">✦</span> 召唤看板娘</button>
 </template>
 
 <style scoped>
@@ -94,7 +94,7 @@ onBeforeUnmount(destroy)
 .live2d-close{position:absolute;right:6px;top:6px;z-index:3;width:32px;height:32px;border:1px solid color-mix(in srgb,var(--line) 80%,transparent);border-radius:50%;background:color-mix(in srgb,var(--bg-soft) 82%,transparent);backdrop-filter:blur(12px);color:var(--muted);font:20px/1 inherit;cursor:pointer;pointer-events:auto;opacity:.55;transition:.2s ease}.live2d-close:hover{opacity:1;color:var(--text);border-color:var(--accent)}
 .live2d-bubble{position:absolute;z-index:2;right:54px;top:18px;max-width:210px;padding:10px 13px;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:14px 14px 4px 14px;background:color-mix(in srgb,var(--bg-soft) 80%,transparent);backdrop-filter:blur(14px);color:var(--text);font-size:12px;line-height:1.55;letter-spacing:.02em;box-shadow:0 10px 30px #0003;pointer-events:none}
 .live2d-status{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);font-size:10px;letter-spacing:.18em;color:var(--muted);white-space:nowrap}.live2d-error{color:#d97777}
-.live2d-restore{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:34;width:44px;height:44px;border-radius:50%;border:1px solid var(--accent);background:var(--bg-soft);color:var(--accent);box-shadow:0 8px 30px #0004;cursor:pointer;font-size:18px}
+.live2d-restore{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(18px,env(safe-area-inset-bottom));z-index:35;max-width:calc(100vw - 32px);background:var(--bg-soft);border:1px solid var(--accent);color:var(--text);font:inherit;font-size:.875rem;border-radius:30px;min-height:44px;padding:8px 16px;box-shadow:0 6px 24px #0003;cursor:pointer;display:flex;align-items:center;gap:8px}
 @media (max-width:760px){.live2d-companion{width:190px;height:310px;right:-8px;bottom:0}.live2d-bubble{right:34px;top:8px;max-width:145px;font-size:10px;padding:8px 10px}.live2d-close{width:30px;height:30px;right:2px;top:2px}}
 @media (prefers-reduced-motion:reduce){.live2d-companion{display:none}.live2d-restore{display:none}}
 </style>

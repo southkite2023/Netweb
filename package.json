@@ -12,7 +12,6 @@
     "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
-    "canvas-confetti": "1.9.4",
     "vue": "^3.5.41",
     "vue-i18n": "^11.4.10",
     "vue-router": "^5.3.0"

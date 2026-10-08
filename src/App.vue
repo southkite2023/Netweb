@@ -3,7 +3,6 @@ import { computed, defineAsyncComponent, onBeforeUnmount, onMounted, ref, watchE
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import BackToTop from './components/BackToTop.vue'
-import CompanionDock from './components/CompanionDock.vue'
 import Live2DCompanion from './components/Live2DCompanion.vue'
 import { experienceCopy } from './data/experience'
 import { directoryEntries } from './data/directory'
@@ -52,6 +51,5 @@ onBeforeUnmount(() => {
   <div v-if="navigationError" class="route-error" role="alert"><p>{{ c.routeError }}</p><button class="btn btn-primary" @click="retry">{{ c.retry }}</button></div>
   <CommandPalette v-if="commandOpen" />
   <BackToTop />
-  <CompanionDock />
   <Live2DCompanion />
 </template>
