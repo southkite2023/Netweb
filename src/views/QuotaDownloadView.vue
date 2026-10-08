@@ -42,7 +42,7 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
           </div>
           <div v-if="selectedPlatform === 'iOS'" class="quota-package">
             <p class="quota-fineprint">{{ c.iosPwaIntro }}</p>
-            <a class="quota-primary quota-download-button" href="/astracct/?install=1">{{ c.iosPwaInstall }} <span aria-hidden="true">↗</span></a>
+            <a class="quota-primary quota-download-button" href="/assets/astracct/?install=1">{{ c.iosPwaInstall }} <span aria-hidden="true">↗</span></a>
             <p class="quota-package-meta">{{ c.iosPwaMeta }}</p>
             <p class="quota-fineprint">{{ c.iosPwaNote }}</p>
           </div>
