@@ -12,14 +12,14 @@ const c = computed(() => quotaCopy[locale.value] || quotaCopy.zh)
     <div class="quota-kicker"><span>PROJECT / 001</span><span>{{ c.badge }} · {{ quotaRelease.version }}</span></div>
     <div class="quota-project-grid">
       <header>
-        <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">Q</span> Quota Hub</p>
+        <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">Q</span> Astracct</p>
         <h1>{{ c.headline[0] }}<br><span>{{ c.headline[1] }}</span></h1>
         <p class="quota-intro">{{ c.intro }}</p>
         <RouterLink class="quota-primary" to="/projects/001/download">{{ c.open }} <span aria-hidden="true">↗</span></RouterLink>
       </header>
       <div class="quota-diagram">
         <div class="quota-orbit" aria-hidden="true"></div>
-        <div class="quota-diagram-hub"><span class="quota-symbol" aria-hidden="true">Q</span><strong>Quota Hub</strong></div>
+        <div class="quota-diagram-hub"><span class="quota-symbol" aria-hidden="true">Q</span><strong>Astracct</strong></div>
         <div v-for="(account, index) in c.accounts" :key="account" class="quota-account"><span class="quota-account-index">0{{ index + 1 }}</span><strong>{{ account }}</strong><span aria-hidden="true">↗</span></div>
         <p>{{ c.preview }}</p>
       </div>
@@ -28,3 +28,4 @@ const c = computed(() => quotaCopy[locale.value] || quotaCopy.zh)
     <p class="quota-fineprint">{{ c.limits }}</p>
   </section>
 </template>
+
