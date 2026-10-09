@@ -22,7 +22,9 @@ onMounted(() => {
   detected.value = detectQuotaPlatform(navigator)
   selectedPlatform.value = quotaPlatforms.includes(route.query.platform) ? route.query.platform : detected.value || 'Android'
 })
-watch(selectedPlatform, platform => router.replace({ query: { ...route.query, platform } }))
+watch(selectedPlatform, platform => {
+  if (platform !== route.query.platform) router.replace({ query: { ...route.query, platform }, hash: route.hash })
+})
 watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(platform)) selectedPlatform.value = platform })
 </script>
 
@@ -80,4 +82,3 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
     <SiteFooter />
   </div>
 </template>
-

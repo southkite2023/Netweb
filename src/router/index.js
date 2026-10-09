@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { nextTick } from 'vue'
 import { navigationPending, navigationError, failedPath } from '../lib/navigation'
+import { scrollBehavior } from '../lib/scroll.js'
 
 const HomeView = () => import('../views/HomeView.vue')
 const ProjectsView = () => import('../views/ProjectsView.vue')
@@ -24,10 +25,7 @@ const RadioStationView = () => import('../views/RadioStationView.vue')
 
 const router = createRouter({
   history: createWebHistory(),
-  scrollBehavior() {
-    // New pages always start at the top, even with global smooth scrolling.
-    return { top: 0, left: 0, behavior: 'instant' }
-  },
+  scrollBehavior,
   routes: [
     { path: '/explore', redirect: to => ({ path: '/project', query: to.query, hash: to.hash }) },
     { path: '/projects', redirect: to => ({ path: '/project', query: to.query, hash: to.hash }) },
