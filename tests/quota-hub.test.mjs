@@ -18,7 +18,7 @@ test('only verified Android architecture choices produce direct APK links', () =
   for (const item of quotaRelease.packages) {
     const url = new URL(quotaDownloadUrl('Android', item.id))
     assert.equal(url.host, 'github.com')
-    assert.equal(url.pathname, `/southkite2023/quota-hub/releases/download/v${quotaRelease.version}/astracct-${quotaRelease.version}-${item.id}.apk`)
+    assert.equal(url.pathname, `/southkite2023/quota-hub/releases/download/v1.0.0/${item.id === 'universal' ? 'quota-hub-1.0.0-android.apk' : `quota-hub-1.0.0-${item.id}.apk`}`)
   }
   for (const platform of ['iOS', 'Linux', null]) assert.equal(quotaDownloadUrl(platform, 'universal'), null)
   assert.equal(quotaDownloadUrl('Android', '../../other'), null)
@@ -31,6 +31,9 @@ test('only verified Android architecture choices produce direct APK links', () =
 test('desktop downloads use fixed release assets and reject unsupported platforms', () => {
   assert.equal(quotaDownloadUrl('Windows'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.10.0/astracct-0.10.0-windows-x64.zip')
   assert.equal(quotaDownloadUrl('macOS'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.10.0/astracct-0.10.0-macos-universal.zip')
+  assert.equal(quotaRelease.version, '1.0.0')
+  assert.equal(quotaRelease.desktop.Windows.version, '0.10.0')
+  assert.equal(quotaRelease.desktop.macOS.version, '0.10.0')
   assert.equal(quotaDownloadUrl('__proto__'), null)
   assert.equal(quotaDownloadUrl('Android', '../../evil'), null)
 })

@@ -15,6 +15,8 @@ const detected = ref(null)
 const selectedPlatform = ref('Android')
 const architecture = ref('universal')
 const selectedPackage = computed(() => quotaRelease.desktop[selectedPlatform.value] || quotaRelease.packages.find(item => item.id === architecture.value))
+const selectedVersion = computed(() => selectedPackage.value?.version || quotaRelease.version)
+const selectedReleaseUrl = computed(() => selectedPackage.value?.releaseUrl || quotaRelease.url)
 const downloadUrl = computed(() => quotaDownloadUrl(selectedPlatform.value, architecture.value))
 onMounted(() => {
   detected.value = detectQuotaPlatform(navigator)
@@ -28,7 +30,7 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
   <div class="quota-page quota-download">
     <div class="container"><SiteNav /></div>
     <main>
-      <div class="quota-subnav"><RouterLink to="/projects/001">← {{ c.back }}</RouterLink><span>ASTRACCT / {{ quotaRelease.version }}</span></div>
+      <div class="quota-subnav"><RouterLink to="/projects/001">← {{ c.back }}</RouterLink><span>ASTRACCT / {{ selectedPlatform === 'iOS' ? 'PWA' : selectedVersion }}</span></div>
       <section class="quota-hero">
         <div class="quota-hero-orbit" aria-hidden="true"></div>
         <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">Q</span> Astracct <span class="quota-beta">{{ c.badge }}</span></p>
@@ -56,7 +58,7 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
             </template>
             <p v-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy[selectedPlatform] }}</p>
             <a class="quota-primary quota-download-button" :href="downloadUrl">{{ selectedPlatform === 'Android' ? c.download : `${desktopCopy.download} ${selectedPlatform}` }} <span aria-hidden="true">↓</span></a>
-            <p class="quota-package-meta">v{{ quotaRelease.version }} · {{ selectedPackage.label }} · {{ selectedPackage.size }}</p>
+            <p class="quota-package-meta">v{{ selectedVersion }} · {{ selectedPackage.label }} · {{ selectedPackage.size }}</p>
             <p class="quota-fineprint">{{ c.hosted }}</p>
             <p v-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy.usage }}</p>
           </div>
@@ -72,7 +74,7 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
         <h2>{{ c.overview }}</h2>
         <div class="quota-features"><article v-for="(feature, index) in c.features" :key="feature[0]"><span>0{{ index + 1 }}</span><h3>{{ feature[0] }}</h3><p>{{ feature[1] }}</p></article></div>
         <p class="quota-fineprint">{{ c.limits }}</p>
-        <div class="quota-resource-links"><a :href="quotaRelease.repository" target="_blank" rel="noopener noreferrer">{{ c.source }} ↗</a><a :href="quotaRelease.url" target="_blank" rel="noopener noreferrer">{{ c.notes }} ↗</a></div>
+        <div class="quota-resource-links"><a :href="quotaRelease.repository" target="_blank" rel="noopener noreferrer">{{ c.source }} ↗</a><a :href="selectedReleaseUrl" target="_blank" rel="noopener noreferrer">{{ c.notes }} ↗</a></div>
       </section>
     </main>
     <SiteFooter />

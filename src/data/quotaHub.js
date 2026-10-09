@@ -1,17 +1,17 @@
 // Verified release assets. Keep the version, sizes and filenames together.
 export const quotaRelease = {
-  version: '0.10.0', date: '2026-10-08',
+  version: '1.0.0', date: '2026-10-09',
   repository: 'https://github.com/southkite2023/quota-hub',
-  url: 'https://github.com/southkite2023/quota-hub/releases/tag/v0.10.0',
+  url: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.0.0',
   desktop: {
-    Windows: { file: 'astracct-0.10.0-windows-x64.zip', label: 'Windows x64', size: '12.34 MB' },
-    macOS: { file: 'astracct-0.10.0-macos-universal.zip', label: 'macOS Universal · Intel + Apple Silicon · macOS 12+', size: '19.92 MB' },
+    Windows: { version: '0.10.0', releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v0.10.0', file: 'astracct-0.10.0-windows-x64.zip', label: 'Windows x64', size: '12.34 MB' },
+    macOS: { version: '0.10.0', releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v0.10.0', file: 'astracct-0.10.0-macos-universal.zip', label: 'macOS Universal · Intel + Apple Silicon · macOS 12+', size: '19.92 MB' },
   },
   packages: [
-    { id: 'universal', label: 'Universal', size: '49.26 MB' },
-    { id: 'arm64-v8a', label: 'ARM64', size: '17.19 MB' },
-    { id: 'armeabi-v7a', label: 'ARM32', size: '14.37 MB' },
-    { id: 'x86_64', label: 'x86_64', size: '18.67 MB' },
+    { id: 'universal', file: 'quota-hub-1.0.0-android.apk', label: 'Universal', size: '49.59 MB' },
+    { id: 'arm64-v8a', file: 'quota-hub-1.0.0-arm64-v8a.apk', label: 'ARM64', size: '17.32 MB' },
+    { id: 'armeabi-v7a', file: 'quota-hub-1.0.0-armeabi-v7a.apk', label: 'ARM32', size: '14.50 MB' },
+    { id: 'x86_64', file: 'quota-hub-1.0.0-x86_64.apk', label: 'x86_64', size: '18.74 MB' },
   ],
 }
 export const quotaPlatforms = ['Android', 'iOS', 'Windows', 'macOS', 'Linux']
@@ -26,9 +26,9 @@ export function detectQuotaPlatform(device = {}) {
   return null
 }
 export function quotaDownloadUrl(platform, architecture) {
-  if (Object.hasOwn(quotaRelease.desktop, platform)) return `${quotaRelease.repository}/releases/download/v${quotaRelease.version}/${quotaRelease.desktop[platform].file}`
+  if (Object.hasOwn(quotaRelease.desktop, platform)) return `${quotaRelease.repository}/releases/download/v${quotaRelease.desktop[platform].version}/${quotaRelease.desktop[platform].file}`
   if (platform !== 'Android' || !quotaRelease.packages.some(item => item.id === architecture)) return null
-  return `${quotaRelease.repository}/releases/download/v${quotaRelease.version}/astracct-${quotaRelease.version}-${architecture}.apk`
+  return `${quotaRelease.repository}/releases/download/v${quotaRelease.version}/${quotaRelease.packages.find(item => item.id === architecture).file}`
 }
 
 export const quotaCopy = {
@@ -46,8 +46,8 @@ export const quotaCopy = {
     guide: '第一次使用？查看使用方法', hosted: '测试版 · 安装包托管于 GitHub Releases', source: 'GitHub 项目', notes: '版本说明',
     guideTitle: '从这里开始。', guideIntro: '安装、添加账户，再把余量放到眼前。', returnDownload: '返回下载页',
     steps: [
-      ['下载并安装', '在下载页选择 Android 安装包。不确定芯片架构时选择通用版；下载完成后打开 APK，按系统提示允许本次安装。当前为 0.10.0 测试版。Windows 请完整解压并运行 astracct.exe；macOS 请解压后打开 Astracct.app。'],
-      ['添加余额账户', '打开应用，进入“管理 / 添加余额账户”，选择对应服务商并填写该服务需要的账户信息或 API 凭据。凭据只在应用内填写，请勿发送到网站评论区。'],
+      ['下载并安装', '在下载页选择 Android 安装包。不确定芯片架构时选择通用版；下载完成后打开 APK，按系统提示允许本次安装。Android 当前为 1.0.0 UI 测试版；Windows/macOS 保留 0.10.0。Windows 请完整解压并运行 astracct.exe；macOS 请解压后打开 Astracct.app。'],
+      ['添加余额账户', '打开应用，点击“添加余额账户”或进入账户设置，选择对应服务商并填写该服务需要的账户信息或 API 凭据。凭据只在应用内填写，请勿发送到网站评论区。'],
       ['查看与刷新', '返回主界面查看账户余额。在“自动刷新”中调整刷新间隔；查询失败或数据过期时，先检查网络和账户配置，再尝试刷新。'],
       ['放到桌面', '在 Android 桌面的小组件列表中找到星账 Astracct，将组件添加到桌面，并选择要显示的账户。后台刷新受系统省电和网络状态影响。'],
     ],
@@ -69,8 +69,8 @@ export const quotaCopy = {
     guide: 'New here? Read the getting-started guide', hosted: 'Test release · Hosted on GitHub Releases', source: 'GitHub project', notes: 'Release notes',
     guideTitle: 'Start here.', guideIntro: 'Install, add your accounts, and keep your balances in view.', returnDownload: 'Back to downloads',
     steps: [
-      ['Download and install', 'Choose an Android package. If you do not know your device architecture, choose Universal. Open the downloaded APK and follow the system installation prompts. This is the 0.10.0 test release. On Windows, extract the full ZIP and run astracct.exe. On macOS, extract and open Astracct.app.'],
-      ['Add an account', 'Open Manage / Add balance account in the app, select a provider and enter the account details or API credentials it requires. Enter credentials only in the app, never in website comments.'],
+      ['Download and install', 'Choose an Android package. If you do not know your device architecture, choose Universal. Open the downloaded APK and follow the system installation prompts. Android uses the 1.0.0 UI test release; Windows/macOS remain on 0.10.0. On Windows, extract the full ZIP and run astracct.exe. On macOS, extract and open Astracct.app.'],
+      ['Add an account', 'Tap Add balance account or open account settings in the app, select a provider and enter the account details or API credentials it requires. Enter credentials only in the app, never in website comments.'],
       ['View and refresh', 'Return to the dashboard to see balances. Adjust the interval in Auto refresh. If a query fails or data is stale, check your connection and account settings before refreshing.'],
       ['Add a widget', 'Find Astracct in the Android home-screen widget picker. Add a widget and select which accounts to display. Background refresh depends on system power saving and network conditions.'],
     ],
@@ -92,8 +92,8 @@ export const quotaCopy = {
     guide: 'はじめての方へ：使い方を見る', hosted: 'テスト版 · GitHub Releasesで配布', source: 'GitHubプロジェクト', notes: 'リリースノート',
     guideTitle: 'ここから始めよう。', guideIntro: 'インストールしてアカウントを追加。残高をもっと身近に。', returnDownload: 'ダウンロードに戻る',
     steps: [
-      ['ダウンロード・インストール', 'Android用パッケージを選びます。CPUが不明な場合は汎用版を選択してください。APKを開き、システムの案内に従ってインストールします。現在は0.10.0テスト版です。WindowsではZIP全体を展開してastracct.exeを実行し、macOSではAstracct.appを開いてください。'],
-      ['アカウントを追加', 'アプリの「管理 / 添加余额账户」を開き、サービスを選んで必要なアカウント情報やAPI認証情報を入力します。認証情報はアプリ内でのみ入力し、サイトのコメント欄には書かないでください。'],
+      ['ダウンロード・インストール', 'Android用パッケージを選びます。CPUが不明な場合は汎用版を選択してください。APKを開き、システムの案内に従ってインストールします。Androidは1.0.0 UIテスト版、Windows/macOSは0.10.0です。WindowsではZIP全体を展開してastracct.exeを実行し、macOSではAstracct.appを開いてください。'],
+      ['アカウントを追加', 'アプリの「添加余额账户」またはアカウント設定を開き、サービスを選んで必要なアカウント情報やAPI認証情報を入力します。認証情報はアプリ内でのみ入力し、サイトのコメント欄には書かないでください。'],
       ['残高と更新を確認', 'ホーム画面に戻り残高を確認します。「自动刷新」で更新間隔を変更できます。取得失敗や古いデータの表示時は、接続とアカウント設定を確認してください。'],
       ['ホーム画面に追加', 'Androidのウィジェット一覧からAstracctを選び、表示するアカウントを指定します。バックグラウンド更新は省電力設定や通信状態に影響されます。'],
     ],
