@@ -5,7 +5,7 @@ export const quotaRelease = {
   url: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.0.0',
   desktop: {
     Windows: { version: '0.10.0', releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v0.10.0', file: 'astracct-0.10.0-windows-x64.zip', label: 'Windows x64', size: '12.34 MB' },
-    macOS: { version: '1.1.0', releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.1.0', file: 'astracct-1.1.0-macos-universal.zip', label: 'macOS Universal · Intel + Apple Silicon · macOS 12+', size: '待核实' },
+    macOS: { version: '1.1.0', releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.1.0', file: 'astracct-1.1.0-macos-universal.zip', label: 'macOS Universal · Intel + Apple Silicon · macOS 12+', size: '19.97 MB' },
   },
   packages: [
     { id: 'universal', file: 'quota-hub-1.0.0-android.apk', label: 'Universal', size: '49.59 MB' },
