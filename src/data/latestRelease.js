@@ -32,9 +32,16 @@ export const release060 = {
   ] },
 }
 
-export const latestRelease = {
+export const release070 = {
   version: '0.7.0', date: '2026-10-08',
   zh: { title: 'Cloud Sync · 账号云端同步', items: ['10.08：看板娘打开页面即预加载，默认隐藏并以半身显示；精简导航与首页入口，实验室移入无线电项目，隐私提示改为首次访问弹窗，设备管理移入个人资料。', '收藏、真实通知与已读、语言和主题随账号跨设备同步。', '新增旧本地资料选择导入、独立设备会话与 Cookie 隐私偏好。'] },
   en: { title: 'Cloud Sync · Your account across devices', items: ['Oct 8: Preinitialize the hidden half-body companion, simplify navigation and home links, move the lab into Radio, show first-visit privacy consent in a modal and manage devices from your profile.', 'Sync bookmarks, real notifications and read states, language and theme across devices.', 'Optional local import, independent device sessions and Cookie privacy settings.'] },
   ja: { title: 'Cloud Sync · アカウントのクラウド同期', items: ['10月8日：非表示の看板娘を事前初期化し半身表示に変更。ナビとホームを整理し、実験室は無線へ、初回プライバシー案内はダイアログへ、端末管理はプロフィールへ移動。', '保存・実際の通知と既読・言語・テーマを端末間で同期。', '任意のローカルインポート、端末別セッションとCookie設定。'] },
+}
+
+export const latestRelease = {
+  version: '0.7.1', date: '2026-10-14',
+  zh: { title: '图片与看板娘本地缓存', items: ['五张主要图片改为适当尺寸的 WebP，体积减少约 95%。', '公开图片与 Live2D 资源优先读取本地缓存，内容版本更新后自动换新。', '看板娘默认隐藏，后台预加载；召唤显示、隐藏和再次召唤交互保持不变。', '限制缓存容量并清理过期资源；登录、用户上传与动态 API 不进入缓存。'] },
+  en: { title: 'Local image and companion caching', items: ['Five main images now use resized WebP, reducing their total size by about 95%.', 'Public images and Live2D resources prefer local caches, with content versions for updates.', 'The companion remains hidden while preloading; summon, hide and resummon controls are preserved.', 'Caches have size and age limits; sign-in, user uploads and dynamic APIs remain excluded.'] },
+  ja: { title: '画像と看板娘のローカルキャッシュ', items: ['主要画像5枚を適切なサイズのWebPに変更し、合計サイズを約95%削減。', '公開画像とLive2Dをローカルキャッシュから優先取得し、内容の更新に合わせてバージョンを変更。', '看板娘は非表示のまま事前読み込みし、呼び出し・非表示・再呼び出しを維持。', '容量と有効期限を制限し、ログイン・アップロード・動的APIはキャッシュ対象外。'] },
 }

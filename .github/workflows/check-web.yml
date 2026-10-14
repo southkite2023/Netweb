@@ -7,6 +7,7 @@ on:
       - 'index.html'
       - 'package*.json'
       - 'vite.config.*'
+      - 'scripts/asset-cache-plugin.mjs'
       - 'tests/**'
       - '.github/workflows/check-web.yml'
 permissions:

@@ -10,6 +10,7 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - 'vite.config.*'
+      - 'scripts/asset-cache-plugin.mjs'
       - '.github/workflows/deploy-web.yml'
       - 'scripts/check-frontend-scope.py'
   workflow_dispatch:

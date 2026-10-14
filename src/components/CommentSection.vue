@@ -88,7 +88,7 @@ watch(() => props.projectId, () => {
 
     <div v-if="auth.user" class="comment-composer">
       <div class="comment-avatar compact-avatar">
-        <img v-if="auth.user.avatarUrl" :src="auth.user.avatarUrl" alt="">
+        <img loading="lazy" decoding="async" v-if="auth.user.avatarUrl" :src="auth.user.avatarUrl" alt="">
         <span v-else>{{ (auth.user.displayName || auth.user.username).slice(0,1).toUpperCase() }}</span>
       </div>
       <div class="comment-compose-body">
@@ -105,7 +105,7 @@ watch(() => props.projectId, () => {
       <article v-for="item in roots" :key="item.id" class="comment-thread">
         <div class="comment-row" :class="{ 'is-admin-comment': item.author.role === 'admin' }">
           <RouterLink class="comment-avatar" :to="`/u/${item.author.username}`">
-            <img v-if="item.author.avatarUrl" :src="item.author.avatarUrl" alt="">
+            <img loading="lazy" decoding="async" v-if="item.author.avatarUrl" :src="item.author.avatarUrl" alt="">
             <span v-else>{{ (item.author.displayName || item.author.username).slice(0,1).toUpperCase() }}</span>
           </RouterLink>
           <div class="comment-body">
@@ -135,7 +135,7 @@ watch(() => props.projectId, () => {
             <div v-if="replies(item.id).length" class="reply-list">
               <div v-for="reply in replies(item.id)" :key="reply.id" class="comment-row reply-row" :class="{ 'is-admin-comment': reply.author.role === 'admin' }">
                 <RouterLink class="comment-avatar reply-avatar" :to="`/u/${reply.author.username}`">
-                  <img v-if="reply.author.avatarUrl" :src="reply.author.avatarUrl" alt="">
+                  <img loading="lazy" decoding="async" v-if="reply.author.avatarUrl" :src="reply.author.avatarUrl" alt="">
                   <span v-else>{{ (reply.author.displayName || reply.author.username).slice(0,1).toUpperCase() }}</span>
                 </RouterLink>
                 <div class="comment-body">

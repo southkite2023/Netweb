@@ -38,7 +38,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
         </header>
 
         <figure v-if="!['001', '004'].includes(project.id)" class="detail-visual">
-          <img :src="project.image" :alt="localizedField(project, 'title', locale)">
+          <img decoding="async" :width="project.imageWidth" :height="project.imageHeight" :src="project.image" :alt="localizedField(project, 'title', locale)">
         </figure>
 
         <section v-if="!['001', '004'].includes(project.id)" class="detail-content">

@@ -1,5 +1,7 @@
 <script setup>
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { modelBase, runtimeBase } from 'virtual:live2d-assets'
+import { waitForAssetCache } from '../lib/assetCache'
 
 const canvas = ref(null)
 const attempt = ref(0)
@@ -25,7 +27,7 @@ let expressionRequest = 0
 let assetsPromise = null
 let modelBlobURL = null
 let initializing = null
-const MODEL_URL = '/assets/live2d/mizuiro/model.model3.json'
+const MODEL_URL = modelBase + 'model.model3.json'
 
 function loadModelAssets() {
   if (!assetsPromise) assetsPromise = (async () => {
@@ -34,7 +36,7 @@ function loadModelAssets() {
     if (!window.DecompressionStream) return url
     try {
       const [response, compressed] = await Promise.all([
-        fetch(url), fetch('/assets/live2d/mizuiro/model.moc3.gz'),
+        fetch(url), fetch(modelBase + 'model.moc3.gz'),
       ])
       if (!response.ok || !compressed.ok) throw new Error('Model download failed')
       const settings = await response.json()
@@ -75,10 +77,10 @@ function loadScript(src) {
 function loadRuntime() {
   if (!runtimePromise) runtimePromise = (async () => {
     await Promise.all([
-      window.Live2DCubismCore || loadScript('/assets/live2d/runtime/live2dcubismcore.min.js'),
-      window.PIXI || loadScript('/assets/live2d/runtime/pixi.min.js'),
+      window.Live2DCubismCore || loadScript(runtimeBase + 'live2dcubismcore.min.js'),
+      window.PIXI || loadScript(runtimeBase + 'pixi.min.js'),
     ])
-    if (!window.PIXI.live2d) await loadScript('/assets/live2d/runtime/cubism4.min.js')
+    if (!window.PIXI.live2d) await loadScript(runtimeBase + 'cubism4.min.js')
   })().catch(error => { runtimePromise = null; throw error })
   return runtimePromise
 }
@@ -109,6 +111,8 @@ async function initialize() {
   ready.value = false
   try {
     await nextTick()
+    await waitForAssetCache()
+    if (ticket !== generation) return
     const [, settings] = await Promise.all([loadRuntime(), loadModelAssets()])
     if (ticket !== generation) return
     const PIXI = window.PIXI
@@ -195,6 +199,7 @@ async function show() {
   } else await init()
 }
 function retry() { if (initializing) return; dispose(); init() }
+// Keep the companion hidden while warming it, as requested by the owner.
 onMounted(init)
 onBeforeUnmount(() => {
   ++generation

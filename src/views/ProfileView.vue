@@ -143,7 +143,7 @@ watch(() => route.params.username, load)
       <template v-if="user">
         <header class="profile-hero">
           <div class="avatar-node">
-            <img v-if="user.avatarUrl" :src="user.avatarUrl" alt="">
+            <img decoding="async" v-if="user.avatarUrl" :src="user.avatarUrl" alt="">
             <span v-else>{{ (user.displayName || user.username).slice(0, 1).toUpperCase() }}</span>
           </div>
           <div class="profile-identity">

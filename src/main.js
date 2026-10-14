@@ -1,4 +1,6 @@
 import { createApp } from 'vue'
+import { waitForAssetCache } from './lib/assetCache'
+
 import './style.css'
 import './glass-ui.css'
 import './experience.css'
@@ -14,8 +16,10 @@ initializeCloud()
 applyTheme()
 loadSession()
 
-createApp(App)
-  .use(router)
-  .use(i18n)
-  .mount('#app')
+waitForAssetCache().then(() => {
+  createApp(App)
+    .use(router)
+    .use(i18n)
+    .mount('#app')
+})
 

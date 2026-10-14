@@ -8,7 +8,7 @@ import { experienceCopy } from '../data/experience'
 import { latestRelease } from '../data/latestRelease'
 import { SITE_VERSION } from '../data/version'
 import { openCommands } from '../lib/navigation'
-import heroBanner from '../assets/hero-signal.png'
+import heroBanner from '../assets/hero-signal-optimized.webp'
 
 const { t, locale } = useI18n()
 const featuredProjects = projects.slice(0, 3)
@@ -25,7 +25,7 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
       <div class="home-announcement"><span class="announcement-mark" aria-hidden="true">↗</span><RouterLink to="/about">{{ c.latest }} · {{ latest.title }}</RouterLink><span class="announcement-version">v{{ SITE_VERSION }}</span></div>
       <div class="hero home-hero">
         <div class="hero-feature">
-          <div class="hero-signal-art" aria-hidden="true"><img :src="heroBanner" alt="" width="2172" height="724" fetchpriority="high"><span class="signal-coordinate">YU / 001</span></div>
+          <div class="hero-signal-art" aria-hidden="true"><img :src="heroBanner" alt="" width="1600" height="533" decoding="async" fetchpriority="high"><span class="signal-coordinate">YU / 001</span></div>
           <div class="eyebrow">
             {{ t('hero.eyebrow') }}
           </div>
