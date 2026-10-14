@@ -9,7 +9,7 @@ const c = computed(() => quotaCopy[locale.value] || quotaCopy.zh)
 
 <template>
   <section class="quota-page quota-project">
-    <div class="quota-kicker"><span>PROJECT / 001</span><span>{{ c.badge }} · {{ quotaRelease.version }}</span></div>
+    <div class="quota-kicker"><span>PROJECT / 001</span><span>{{ c.badge }} · {{ quotaRelease.latestVersion || quotaRelease.version }}</span></div>
     <div class="quota-project-grid">
       <header>
         <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">Q</span> Astracct</p>

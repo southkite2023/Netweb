@@ -7,9 +7,9 @@ export const projects = [
       ja: 'Astracct',
     },
     summary: {
-      zh: '所有余额，一眼看清。集中查看 API 与云账户余额，Android 测试版现已开放下载。',
-      en: 'Every balance. One clear view. A dashboard for API and cloud balances, available as an Android test release.',
-      ja: 'すべての残高をひと目で。APIとクラウドの残高をまとめるAndroidテスト版を公開中。',
+      zh: '所有余额，一眼看清。集中查看 API 与云账户余额，Android 1.0.0 与 macOS 1.1.0 测试版现已开放下载。',
+      en: 'Every balance. One clear view. A dashboard for API and cloud balances, available as Android 1.0.0 and macOS 1.1.0 test releases.',
+      ja: 'すべての残高をひと目で。APIとクラウドの残高をまとめるAndroid 1.0.0とmacOS 1.1.0のテスト版を公開中。',
     },
     description: {
       zh: 'Astracct 将分散在不同服务中的余额与用量集中展示，支持按 AI 订阅、云服务器和节点订阅分类管理账户。项目采用 MIT 许可；当前 Android 版本为公开测试版，服务商支持范围与配置说明请参阅 GitHub 仓库。',
@@ -18,7 +18,7 @@ export const projects = [
     },
     status: { zh: '公开测试', en: 'Public testing', ja: '公開テスト中' },
     type: { zh: '开源 / 余额与用量管理', en: 'Open source / Usage management', ja: 'オープンソース / 残高・使用量管理' },
-    version: '0.8.0',
+    version: '1.1.0 (macOS)',
     repository: 'https://github.com/southkite2023/quota-hub',
     year: '2026',
     image: new URL('../assets/projects/project-001.png', import.meta.url).href,

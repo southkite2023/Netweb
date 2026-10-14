@@ -30,10 +30,13 @@ test('only verified Android architecture choices produce direct APK links', () =
 
 test('desktop downloads use fixed release assets and reject unsupported platforms', () => {
   assert.equal(quotaDownloadUrl('Windows'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.10.0/astracct-0.10.0-windows-x64.zip')
-  assert.equal(quotaDownloadUrl('macOS'), 'https://github.com/southkite2023/quota-hub/releases/download/v0.10.0/astracct-0.10.0-macos-universal.zip')
+  assert.equal(quotaDownloadUrl('macOS'), 'https://github.com/southkite2023/quota-hub/releases/download/v1.1.0/astracct-1.1.0-macos-universal.zip')
   assert.equal(quotaRelease.version, '1.0.0')
   assert.equal(quotaRelease.desktop.Windows.version, '0.10.0')
-  assert.equal(quotaRelease.desktop.macOS.version, '0.10.0')
+  assert.equal(quotaRelease.desktop.macOS.version, '1.1.0')
+  assert.equal(quotaRelease.latestVersion, '1.1.0')
+  assert.equal(quotaRelease.desktop.macOS.releaseUrl, 'https://github.com/southkite2023/quota-hub/releases/tag/v1.1.0')
+  for (const locale of ['zh', 'en', 'ja']) assert.ok(quotaCopy[locale].limits.includes('1.1.0'))
   assert.equal(quotaDownloadUrl('__proto__'), null)
   assert.equal(quotaDownloadUrl('Android', '../../evil'), null)
 })
