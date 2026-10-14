@@ -1,6 +1,6 @@
 // Verified release assets. Keep the version, sizes and filenames together.
 export const quotaRelease = {
-  version: '1.0.0', latestVersion: '1.1.0', date: '2026-10-14',
+  version: '1.0.0', latestVersion: '1.1.0', date: '2026-10-09', latestDate: '2026-10-14',
   repository: 'https://github.com/southkite2023/quota-hub',
   url: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.0.0',
   desktop: {
