@@ -1,4 +1,5 @@
 import test from 'node:test'
+import { projects } from '../src/data/projects.js'
 import assert from 'node:assert/strict'
 import { detectQuotaPlatform, quotaDownloadUrl, quotaRelease, quotaCopy, applyQuotaManifest } from '../src/data/quotaHub.js'
 
@@ -53,6 +54,7 @@ test('release discovery changes metadata and downloads together, rejects untrust
   try {
     applyQuotaManifest(manifest)
     assert.equal(quotaRelease.version, '1.3.0')
+    assert.equal(projects.find(item => item.id === '001').version, '1.3.0')
     assert.equal(quotaRelease.desktop.Windows.version, '1.3.0')
     assert.equal(quotaDownloadUrl('Android', 'universal'), manifest.packages[0].url)
     const before = JSON.stringify(quotaRelease)

@@ -68,6 +68,7 @@ jobs:
           npm test
           python3 -m unittest discover -s tests -p 'test_github*.py' -v
           python3 -m unittest discover -s tests -p 'test_frontend_scope.py' -v
+          python3 -m unittest discover -s tests -p 'test_astracct_mirror.py' -v
 
       - name: 安全上传、备份和发布
         env:

@@ -9,6 +9,7 @@ on:
       - 'vite.config.*'
       - 'scripts/asset-cache-plugin.mjs'
       - 'tests/**'
+      - 'ops/astracct-downloads/**'
       - 'server/**'
       - '.github/workflows/check-web.yml'
 permissions:
@@ -32,3 +33,4 @@ jobs:
       - run: npm run test:server
       - run: python3 -m unittest discover -s tests -p 'test_github*.py' -v
       - run: python3 -m unittest discover -s tests -p 'test_frontend_scope.py' -v
+      - run: python3 -m unittest discover -s tests -p 'test_astracct_mirror.py' -v
