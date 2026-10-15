@@ -10,4 +10,4 @@ yuashie.cn 的 `/downloads/astracct/latest.json` 是网站和原生应用共同�
 
 网页启动、返回前台和联网时检查清单；前台每分钟复查。不可用时准确提示显示上次已核验安装包，并保留 GitHub 备用下载。iOS PWA 对页面脚本和样式联网重新验证，离线仍使用缓存；设置提供重新载入入口，更新不清除本机账户记录。
 
-原生应用的更新入口从 1.3.0+17 开始提供（发布状态以公开清单为准）。Android 需系统确认安装，Windows/macOS 需应用目录可写并退出后替换。Linux 暂无公开包，iOS 提供 PWA；不能据此宣称已有 Linux 或原生 iOS 自动安装。
+原生应用的更新入口从 1.3.0+17 开始提供（Android / Windows / macOS 1.3.0+17 测试版已公开，发布状态以公开清单为准）。Android 需系统确认安装，Windows/macOS 需应用目录可写并退出后替换。Linux 暂无公开包，iOS 提供 PWA；不能据此宣称已有 Linux 或原生 iOS 自动安装。

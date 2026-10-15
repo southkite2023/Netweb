@@ -2,19 +2,54 @@ import { reactive } from 'vue'
 
 // Verified release assets. Keep the version, sizes and filenames together.
 export const quotaRelease = reactive({
-  version: '1.0.0', latestVersion: '1.1.0', date: '2026-10-09', latestDate: '2026-10-14',
-  repository: 'https://github.com/southkite2023/quota-hub',
-  url: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.0.0',
-  desktop: {
-    Windows: { version: '0.10.0', releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v0.10.0', file: 'astracct-0.10.0-windows-x64.zip', label: 'Windows x64', size: '12.34 MB' },
-    macOS: { version: '1.1.0', releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.1.0', file: 'astracct-1.1.0-macos-universal.zip', label: 'macOS Universal · Intel + Apple Silicon · macOS 12+', size: '19.97 MB' },
+  "version": "1.3.0",
+  "latestVersion": "1.3.0",
+  "date": "2026-10-15",
+  "latestDate": "2026-10-15",
+  "repository": "https://github.com/southkite2023/quota-hub",
+  "url": "https://github.com/southkite2023/quota-hub/releases/tag/v1.3.0",
+  "desktop": {
+    "Windows": {
+      "version": "1.3.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v1.3.0",
+      "file": "astracct-1.3.0-windows-x64.zip",
+      "label": "Windows x64",
+      "size": "12.53 MB"
+    },
+    "macOS": {
+      "version": "1.3.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v1.3.0",
+      "file": "astracct-1.3.0-macos-universal.zip",
+      "label": "macOS Universal · Intel + Apple Silicon · macOS 12+",
+      "size": "20.28 MB"
+    }
   },
-  packages: [
-    { id: 'universal', file: 'quota-hub-1.0.0-android.apk', label: 'Universal', size: '49.59 MB' },
-    { id: 'arm64-v8a', file: 'quota-hub-1.0.0-arm64-v8a.apk', label: 'ARM64', size: '17.32 MB' },
-    { id: 'armeabi-v7a', file: 'quota-hub-1.0.0-armeabi-v7a.apk', label: 'ARM32', size: '14.50 MB' },
-    { id: 'x86_64', file: 'quota-hub-1.0.0-x86_64.apk', label: 'x86_64', size: '18.74 MB' },
-  ],
+  "packages": [
+    {
+      "id": "universal",
+      "file": "quota-hub-1.3.0-universal.apk",
+      "label": "Universal",
+      "size": "50.47 MB"
+    },
+    {
+      "id": "arm64-v8a",
+      "file": "quota-hub-1.3.0-arm64-v8a.apk",
+      "label": "ARM64",
+      "size": "17.61 MB"
+    },
+    {
+      "id": "armeabi-v7a",
+      "file": "quota-hub-1.3.0-armeabi-v7a.apk",
+      "label": "ARM32",
+      "size": "14.78 MB"
+    },
+    {
+      "id": "x86_64",
+      "file": "quota-hub-1.3.0-x86_64.apk",
+      "label": "x86_64",
+      "size": "19.09 MB"
+    }
+  ]
 })
 export const quotaPlatforms = ['Android', 'iOS', 'Windows', 'macOS', 'Linux']
 export function detectQuotaPlatform(device = {}) {

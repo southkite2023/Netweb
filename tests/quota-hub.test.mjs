@@ -19,7 +19,7 @@ test('only verified Android architecture choices produce direct APK links', () =
   for (const item of quotaRelease.packages) {
     const url = new URL(quotaDownloadUrl('Android', item.id))
     assert.equal(url.host, 'yuashie.cn')
-    assert.equal(url.pathname, `/downloads/astracct/v1.0.0/${item.id === 'universal' ? 'quota-hub-1.0.0-android.apk' : `quota-hub-1.0.0-${item.id}.apk`}`)
+    assert.equal(url.pathname, `/downloads/astracct/v1.3.0/${`quota-hub-1.3.0-${item.id}.apk`}`)
   }
   for (const platform of ['iOS', 'Linux', null]) assert.equal(quotaDownloadUrl(platform, 'universal'), null)
   assert.equal(quotaDownloadUrl('Android', '../../other'), null)
@@ -30,13 +30,13 @@ test('only verified Android architecture choices produce direct APK links', () =
 
 
 test('desktop downloads use fixed release assets and reject unsupported platforms', () => {
-  assert.equal(quotaDownloadUrl('Windows'), 'https://yuashie.cn/downloads/astracct/v0.10.0/astracct-0.10.0-windows-x64.zip')
-  assert.equal(quotaDownloadUrl('macOS'), 'https://yuashie.cn/downloads/astracct/v1.1.0/astracct-1.1.0-macos-universal.zip')
-  assert.equal(quotaRelease.version, '1.0.0')
-  assert.equal(quotaRelease.desktop.Windows.version, '0.10.0')
-  assert.equal(quotaRelease.desktop.macOS.version, '1.1.0')
-  assert.equal(quotaRelease.latestVersion, '1.1.0')
-  assert.equal(quotaRelease.desktop.macOS.releaseUrl, 'https://github.com/southkite2023/quota-hub/releases/tag/v1.1.0')
+  assert.equal(quotaDownloadUrl('Windows'), 'https://yuashie.cn/downloads/astracct/v1.3.0/astracct-1.3.0-windows-x64.zip')
+  assert.equal(quotaDownloadUrl('macOS'), 'https://yuashie.cn/downloads/astracct/v1.3.0/astracct-1.3.0-macos-universal.zip')
+  assert.equal(quotaRelease.version, '1.3.0')
+  assert.equal(quotaRelease.desktop.Windows.version, '1.3.0')
+  assert.equal(quotaRelease.desktop.macOS.version, '1.3.0')
+  assert.equal(quotaRelease.latestVersion, '1.3.0')
+  assert.equal(quotaRelease.desktop.macOS.releaseUrl, 'https://github.com/southkite2023/quota-hub/releases/tag/v1.3.0')
   for (const locale of ['zh', 'en', 'ja']) assert.ok(quotaCopy[locale].limits.length > 30)
   assert.equal(quotaDownloadUrl('__proto__'), null)
   assert.equal(quotaDownloadUrl('Android', '../../evil'), null)
@@ -46,16 +46,16 @@ test('desktop downloads use fixed release assets and reject unsupported platform
 
 test('release discovery changes metadata and downloads together, rejects untrusted or incomplete updates', () => {
   const old = JSON.parse(JSON.stringify(quotaRelease))
-  const asset = (platform, architecture) => ({ platform, architecture, version: '1.3.0', bytes: 1234, sha256: 'a'.repeat(64),
-    file: `astracct-1.3.0-${architecture}.${platform === 'android' ? 'apk' : 'zip'}`,
-    url: `https://yuashie.cn/downloads/astracct/v1.3.0/astracct-1.3.0-${architecture}.${platform === 'android' ? 'apk' : 'zip'}`,
-    releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.3.0' })
+  const asset = (platform, architecture) => ({ platform, architecture, version: '1.4.0', bytes: 1234, sha256: 'a'.repeat(64),
+    file: `astracct-1.4.0-${architecture}.${platform === 'android' ? 'apk' : 'zip'}`,
+    url: `https://yuashie.cn/downloads/astracct/v1.4.0/astracct-1.4.0-${architecture}.${platform === 'android' ? 'apk' : 'zip'}`,
+    releaseUrl: 'https://github.com/southkite2023/quota-hub/releases/tag/v1.4.0' })
   const manifest = { schema: 1, packages: [asset('android', 'universal'), asset('windows', 'windows-x64'), asset('macos', 'macos-universal')] }
   try {
     applyQuotaManifest(manifest)
-    assert.equal(quotaRelease.version, '1.3.0')
-    assert.equal(projects.find(item => item.id === '001').version, '1.3.0')
-    assert.equal(quotaRelease.desktop.Windows.version, '1.3.0')
+    assert.equal(quotaRelease.version, '1.4.0')
+    assert.equal(projects.find(item => item.id === '001').version, '1.4.0')
+    assert.equal(quotaRelease.desktop.Windows.version, '1.4.0')
     assert.equal(quotaDownloadUrl('Android', 'universal'), manifest.packages[0].url)
     const before = JSON.stringify(quotaRelease)
     assert.throws(() => applyQuotaManifest({ ...manifest, packages: manifest.packages.slice(1) }))
