@@ -69,7 +69,7 @@ AstrAcct 原生设置顶部增加统一账号入口。无需验证码时可直�
 
 绑定邮箱/手机号还需验证新地址；更换需先解绑旧地址。第三方绑定不按同名、同邮箱合并账户，已属于其他账号的身份返回冲突。每个账号、每个平台最多绑定一个身份。绑定/解绑在账号行锁下串行执行；解绑后必须仍有一种已配置、可用的登录路径。修改绑定或密码会撤销其他会话、待确认的应用授权和第三方绑定请求，保留当前会话及账号数据。移除密码后，可通过已绑定手机号的短信或已配置第三方登录；邮箱本身不是免密登录入口。
 
-短信使用「号码认证服务 → 短信认证」PNVS，与普通国内短信 SendSms 产品分开。配置 `ALIYUN_PNVS_ENABLED=true`、`ALIYUN_PNVS_SIGN_NAME`、`ALIYUN_PNVS_TEMPLATE_CODE`，选择控制台系统赠送签名及对应赠送验证码模板（编号可为数字，无需 SMS_ 前缀）。模板使用 `${code}` 与 `${min}`。可选 `ALIYUN_PNVS_SCHEME_NAME`，不填使用默认方案；发码时记录方案并在核验时使用同一方案。现有 ECS 角色须有 `dypns:SendSmsVerifyCode` 与 `dypns:CheckSmsVerifyCode`，不新增长期密钥。验证码 2.0 保留为人机验证。
+短信使用「号码认证服务 → 短信认证」PNVS，与普通国内短信 SendSms 产品分开。配置 `ALIYUN_PNVS_ENABLED=true`、`ALIYUN_PNVS_SIGN_NAME`、`ALIYUN_PNVS_TEMPLATE_CODE`，选择控制台系统赠送签名及对应赠送验证码模板（编号可为数字，无需 SMS_ 前缀）。模板使用 `${code}` 与 `${min}`。默认注册/登录模板为 `100001`，绑定新手机号为 `100004`，验证已绑定手机号为 `100005`；后两者可用 `ALIYUN_PNVS_BIND_TEMPLATE_CODE` 与 `ALIYUN_PNVS_VERIFY_TEMPLATE_CODE` 覆盖。可选 `ALIYUN_PNVS_SCHEME_NAME`，不填使用默认方案；发码时记录方案并在核验时使用同一方案。现有 ECS 角色须有 `dypns:SendSmsVerifyCode` 与 `dypns:CheckSmsVerifyCode`，不新增长期密钥。验证码 2.0 保留为人机验证。
 
 服务端调用 [SendSmsVerifyCode](https://help.aliyun.com/zh/pnvs/developer-reference/api-dypnsapi-2017-05-25-sendsmsverifycode/) 由阿里云生成 6 位数字验证码，5 分钟有效，60 秒发送间隔，覆盖旧码。验证码只返回后端供 HMAC 保存，不返回浏览器或记录到日志。收到用户输入后，先核对本地挑战的账号、用途、号码、有效期、最多 5 次尝试和 HMAC，再调用 [CheckSmsVerifyCode](https://help.aliyun.com/zh/pnvs/developer-reference/api-dypnsapi-2017-05-25-checksmsverifycode)；要求 `Code=OK`、`Success=true` 且 `Model.VerifyResult=PASS`，接口成功本身不能视作验证码通过。数据库成功消耗后不可重放，其他用途的码不能复用。
 

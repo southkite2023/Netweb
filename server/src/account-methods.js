@@ -73,7 +73,7 @@ export function registerAccountMethods(app,pool,options,helpers,services={}) {
     })
     if(!reserved)return failure(reply,429,'短信发送过于频繁，请稍后重试。')
     try {
-      const delivery=await sendSms(phone,id,scheme)
+      const delivery=await sendSms(phone,id,scheme,purpose)
       if(!/^\d{6}$/.test(delivery?.code || ''))throw new Error('Invalid SMS response')
       await transaction(async db=>{
         await db.query('UPDATE auth_phone_challenges SET sent=TRUE,code_hash=$2 WHERE id=$1',[id,phoneCodeHash(secret,id,phone,purpose,delivery.code)])

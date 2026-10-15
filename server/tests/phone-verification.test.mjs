@@ -7,19 +7,22 @@ test('PNVS sends six-digit managed codes and checks the actual verification verd
  const sent=[]
  const rpc=async(...args)=>{sent.push(args);return {Code:'OK',Success:true,Model:{VerifyCode:'123456',VerifyResult:'PASS'}}}
  const id='11111111-1111-4111-8111-111111111111'
- const result=await sendVerificationSms('+8613800138000',id,'test-scheme',rpc)
+ const result=await sendVerificationSms('+8613800138000',id,'test-scheme','login',rpc)
  assert.deepEqual(result,{code:'123456'})
  assert.equal(sent[0][0],'dypnsapi.aliyuncs.com');assert.equal(sent[0][2],'SendSmsVerifyCode')
  const params=sent[0][3]
  assert.equal(params.PhoneNumber,'13800138000');assert.equal(params.OutId,id)
+ assert.equal(params.TemplateCode,'100001')
  assert.equal(params.CodeLength,6);assert.equal(params.ValidTime,300);assert.equal(params.ReturnVerifyCode,true)
  assert.equal(JSON.parse(params.TemplateParam).code,'##code##')
  assert.equal(await checkVerificationSms('+8613800138000','123456',id,'test-scheme',rpc),true)
  assert.equal(sent[1][2],'CheckSmsVerifyCode');assert.equal(sent[1][3].SchemeName,params.SchemeName)
+ await sendVerificationSms('+8613800138000',id,'','bind',rpc);assert.equal(sent.at(-1)[3].TemplateCode,'100004')
+ await sendVerificationSms('+8613800138000',id,'','manage',rpc);assert.equal(sent.at(-1)[3].TemplateCode,'100005')
  for(const response of [{Code:'OK',Success:true,Model:{VerifyResult:'UNKNOWN'}},{Code:'OK',Success:true,Model:{}},{Code:'FAIL',Success:true,Model:{VerifyResult:'PASS'}},{Code:'OK',Success:false,Model:{VerifyResult:'PASS'}}]) {
   assert.equal(await checkVerificationSms('+8613800138000','123456',id,'',async()=>response),false)
  }
- await assert.rejects(()=>sendVerificationSms('+8613800138000',id,'',async()=>({Code:'OK',Success:true,Model:{}})))
+ await assert.rejects(()=>sendVerificationSms('+8613800138000',id,'','login',async()=>({Code:'OK',Success:true,Model:{}})))
  const env={ALIBABA_CLOUD_CREDENTIALS_TYPE:'ecs_ram_role',ALIYUN_PNVS_ENABLED:'true',ALIYUN_PNVS_SIGN_NAME:'test',ALIYUN_PNVS_TEMPLATE_CODE:'100001'}
  assert.equal(accountConfig(env).sms,true)
  assert.equal(accountConfig({...env,ALIYUN_PNVS_TEMPLATE_CODE:''}).sms,false)

@@ -4,11 +4,12 @@ import { normalizePhone } from './auth-providers.js'
 import { safeEqual } from './cloud-sync.js'
 export const phoneCodeHash = (secret,id,phone,purpose,code) => crypto.createHmac('sha256',secret).update(`sms:${id}:${phone}:${purpose}:${code}`).digest('hex')
 // PNVS generates the code. It is returned only to this server, hashed, and never sent to the browser.
-export async function sendVerificationSms(phone,outId,scheme='',rpc=aliyunRpc) {
+export async function sendVerificationSms(phone,outId,scheme='',purpose='login',rpc=aliyunRpc) {
   if (!normalizePhone(phone) || !/^[\da-f-]{36}$/i.test(outId)) throw new Error('Invalid SMS request')
+  const template=purpose==='bind' ? (process.env.ALIYUN_PNVS_BIND_TEMPLATE_CODE || '100004') : purpose==='manage' ? (process.env.ALIYUN_PNVS_VERIFY_TEMPLATE_CODE || '100005') : (process.env.ALIYUN_PNVS_TEMPLATE_CODE || '100001')
   const result = await rpc('dypnsapi.aliyuncs.com','2017-05-25','SendSmsVerifyCode',{
     CountryCode:'86', PhoneNumber:phone.slice(3), SignName:process.env.ALIYUN_PNVS_SIGN_NAME,
-    TemplateCode:process.env.ALIYUN_PNVS_TEMPLATE_CODE, TemplateParam:JSON.stringify({code:'##code##',min:'5'}),
+    TemplateCode:template, TemplateParam:JSON.stringify({code:'##code##',min:'5'}),
     ...(scheme?{SchemeName:scheme}:{}), OutId:outId, CodeLength:6, CodeType:1,
     ValidTime:300, Interval:60, DuplicatePolicy:1, ReturnVerifyCode:true,
   })
