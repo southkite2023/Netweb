@@ -51,12 +51,12 @@ export const projects = [
   {
     id: '003',
     title: {
-      zh: 'Yuashie Radio',
+      zh: '电离层情书',
       en: 'Yuashie Radio',
       ja: 'Yuashie Radio',
     },
     summary: {
-      zh: '业余无线电通联日志与电子 QSL 平台。',
+      zh: '业余无线电通联日志与电子 QSL 平台。后期该界面将完全重设，UI大概，敬请期待。',
       en: 'Amateur radio logbook and electronic QSL platform.',
       ja: 'アマチュア無線のQSOログ・電子QSLプラットフォーム。',
     },
