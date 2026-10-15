@@ -19,11 +19,12 @@ const route = useRoute(), router = useRouter()
 const config = ref(null), error = ref(''), message = ref(''), done = ref(false), busy = ref(false), visible = ref(false)
 const challengeId = ref(''), cooldown = ref(0)
 let timer
-const mailFlow = computed(() => props.mode !== 'login' && config.value?.emailVerification)
+const channel = ref('email'), smsLogin = ref(false)
+const mailFlow = computed(() => (props.mode !== 'login' && (channel.value === 'phone' ? config.value?.sms : config.value?.emailVerification)) || (props.mode === 'login' && smsLogin.value))
 onBeforeUnmount(() => clearInterval(timer))
 const captchaToken = ref(''), captcha = ref(null)
-const form = ref({ identifier:'',email:'',username:'',displayName:'',password:'',confirm:'',code:'' })
-watch(() => form.value.email, () => { challengeId.value = ''; form.value.code = '' })
+const form = ref({ identifier:'',email:'',phone:'',username:'',displayName:'',password:'',confirm:'',code:'' })
+watch([() => form.value.email, () => form.value.phone, channel, smsLogin], () => { challengeId.value = ''; form.value.code = '' })
 const title = computed(() => label({ login:'欢迎回来',register:'创建 Yuashie 账号',reset:'找回密码' }[props.mode]))
 const redirect = computed(() => {
   const value = route.query.redirect
@@ -36,10 +37,11 @@ onMounted(async () => {
 })
 async function sendCode(token) {
   if (busy.value || cooldown.value) return
-  if (!/^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+$/.test(form.value.email.trim())) { error.value = '请先填写有效邮箱。'; return }
+  const phoneFlow = channel.value === 'phone' || smsLogin.value
+  if (phoneFlow ? !/^(?:\+?86)?1[3-9]\d{9}$/.test(form.value.phone.trim()) : !/^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+$/.test(form.value.email.trim())) { error.value = '请先填写有效邮箱或中国大陆手机号。'; return }
   busy.value = true; error.value = ''; message.value = ''
   try {
-    const result = await post('/auth/email/send',{email:form.value.email,purpose:props.mode === 'reset' ? 'reset' : 'register',captchaVerifyParam:typeof token === 'string' ? token : undefined})
+    const result = await post(phoneFlow ? '/auth/phone/send' : '/auth/email/send',{email:form.value.email,phone:form.value.phone,purpose:smsLogin.value ? 'login' : props.mode === 'reset' ? 'reset' : 'register',captchaVerifyParam:typeof token === 'string' ? token : undefined})
     challengeId.value = result.challengeId; cooldown.value = result.retryAfter; message.value = result.message
     clearInterval(timer); timer = setInterval(() => { if (--cooldown.value <= 0) clearInterval(timer) },1000)
   } catch(e) { error.value = e.message }
@@ -51,14 +53,15 @@ async function submit(token) {
   if (!document.querySelector('.auth-form')?.reportValidity()) { captchaToken.value = ''; captcha.value?.reset(); return }
   if (!mailFlow.value && config.value?.captchaRequired && !captchaToken.value) { error.value = '请点击下方按钮完成安全验证。'; return }
   error.value = ''; message.value = ''
-  if (mailFlow.value && !challengeId.value) { error.value = '请先获取邮箱验证码。'; return }
+  if (mailFlow.value && !challengeId.value) { error.value = '请先获取验证码。'; return }
   if (props.mode !== 'login' && form.value.password !== form.value.confirm) { error.value = '两次输入的密码不一致。'; return }
   busy.value = true
   try {
     let result
-    if (props.mode === 'login') result = await post('/auth/login',{ identifier:form.value.identifier,password:form.value.password,captchaVerifyParam:captchaToken.value })
+    if (props.mode === 'login' && smsLogin.value) result = await post('/auth/phone/login',{phone:form.value.phone,challengeId:challengeId.value,code:form.value.code})
+    else if (props.mode === 'login') result = await post('/auth/login',{ identifier:form.value.identifier,password:form.value.password,captchaVerifyParam:captchaToken.value })
     else if (props.mode === 'register') result = await post('/auth/register',{ username:form.value.username,displayName:form.value.displayName,password:form.value.password,
-      email:form.value.email,challengeId:challengeId.value,code:form.value.code,captchaVerifyParam:captchaToken.value })
+      email:channel.value === 'email' ? form.value.email : undefined,phone:channel.value === 'phone' ? form.value.phone : undefined,challengeId:challengeId.value,code:form.value.code,captchaVerifyParam:captchaToken.value })
     else {
       const reset = await post('/auth/password/reset',{email:form.value.email,challengeId:challengeId.value,code:form.value.code,password:form.value.password})
       auth.user = null; form.value.password = ''; form.value.confirm = ''; message.value = reset.message; done.value = true; return
@@ -79,29 +82,33 @@ function thirdParty(provider) {
       <h1>{{ title }}</h1>
       <p class="account-subtitle">{{ label('一个账号，连接 AstrAcct 与 yuashie.cn') }}</p>
       <p v-if="config?.captchaRequired && !config.captcha" role="alert" class="form-error">安全验证尚未完成配置，请稍后重试。</p>
+      <div v-if="mode === 'register'" class="account-links"><button type="button" class="account-secondary" :aria-pressed="channel==='email'" :disabled="busy" @click="channel='email'">邮箱注册</button><button type="button" class="account-secondary" :aria-pressed="channel==='phone'" :disabled="busy || !config?.sms" @click="channel='phone'">手机号注册{{ config?.sms ? '' : ' · 待开通' }}</button></div>
+      <div v-if="mode === 'login'" class="account-links"><button type="button" class="account-secondary" :aria-pressed="!smsLogin" :disabled="busy" @click="smsLogin=false">密码登录</button><button type="button" class="account-secondary" :aria-pressed="smsLogin" :disabled="busy || !config?.sms" @click="smsLogin=true">短信登录{{ config?.sms ? '' : ' · 待开通' }}</button></div>
       <form v-if="!done && (mode !== 'reset' || config?.passwordReset)" class="auth-form" @submit.prevent="submit">
         <template v-if="mode === 'register'">
           <label>{{ label('用户名') }}<input v-model.trim="form.username" autocomplete="username" minlength="3" maxlength="24" pattern="[A-Za-z0-9_-]{3,24}" required placeholder="3～24 位字母、数字、_ 或 -"></label>
           <label>{{ label('昵称') }}<input v-model.trim="form.displayName" maxlength="40" required></label>
-          <label>{{ label('邮箱') }}<input v-model.trim="form.email" type="email" autocomplete="email" maxlength="254" required></label>
-          <p v-if="!config?.emailVerification" class="form-hint">邮箱验证暂未启用，请妥善保管密码。</p>
+          <label v-if="channel === 'email'">{{ label('邮箱') }}<input v-model.trim="form.email" type="email" autocomplete="email" maxlength="254" required></label>
+          <label v-else>手机号<input v-model.trim="form.phone" type="tel" autocomplete="tel" maxlength="16" pattern="(\+?86)?1[3-9][0-9]{9}" required placeholder="中国大陆手机号"></label>
+          <p v-if="channel === 'email' && !config?.emailVerification" class="form-hint">邮箱验证暂未启用，请妥善保管密码。</p>
         </template>
         <label v-if="mode === 'reset'">邮箱<input v-model.trim="form.email" type="email" autocomplete="email" maxlength="254" required></label>
+        <label v-if="mode==='login' && smsLogin">手机号<input v-model.trim="form.phone" type="tel" autocomplete="tel" maxlength="16" required placeholder="已绑定的中国大陆手机号"></label>
         <template v-if="mailFlow">
-          <AliyunCaptcha v-if="config.captcha" ref="captcha" :config="config.captcha" :disabled="busy || cooldown > 0 || !form.email" :label="cooldown ? `${cooldown} 秒后重发` : '安全验证并发送验证码'" @verified="sendCode" />
-          <button v-else type="button" class="account-secondary" :disabled="busy || cooldown > 0 || !form.email || config.captchaRequired" @click="sendCode">{{ cooldown ? `${cooldown} 秒后重发` : '发送邮箱验证码' }}</button>
-          <label>邮箱验证码<input v-model.trim="form.code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required placeholder="6 位验证码，5 分钟内有效"></label>
+          <AliyunCaptcha v-if="config.captcha" ref="captcha" :config="config.captcha" :disabled="busy || cooldown > 0 || !(channel==='phone' || smsLogin ? form.phone : form.email)" :label="cooldown ? `${cooldown} 秒后重发` : '安全验证并发送验证码'" @verified="sendCode" />
+          <button v-else type="button" class="account-secondary" :disabled="busy || cooldown > 0 || !(channel==='phone' || smsLogin ? form.phone : form.email) || config.captchaRequired" @click="sendCode">{{ cooldown ? `${cooldown} 秒后重发` : '发送验证码' }}</button>
+          <label>验证码<input v-model.trim="form.code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required placeholder="6 位验证码，5 分钟内有效"></label>
         </template>
-        <label v-if="mode === 'login'">{{ label('邮箱 / 手机号') }}<input v-model.trim="form.identifier" autocomplete="username" maxlength="254" required placeholder="请输入邮箱或已验证的手机号"></label>
-        <p v-if="mode === 'login'" class="form-hint">{{ label('当前使用邮箱登录；手机号验证接入后开放手机号登录。') }}</p>
-        <label>{{ label(mode === 'reset' ? '新密码' : '密码') }}<span class="account-password"><input v-model="form.password" :type="visible ? 'text' : 'password'" :autocomplete="mode === 'login' ? 'current-password' : 'new-password'" :minlength="mode === 'login' ? 1 : 8" maxlength="128" required :placeholder="mode === 'login' ? '请输入密码' : '8～128 位密码'"><button type="button" @click="visible = !visible" :aria-label="visible ? '隐藏密码' : '显示密码'">{{ visible ? '隐藏' : '显示' }}</button></span></label>
-        <label v-if="mode !== 'login'">{{ label('确认密码') }}<input v-model="form.confirm" :type="visible ? 'text' : 'password'" autocomplete="new-password" minlength="8" maxlength="128" required></label>
+        <label v-if="mode === 'login' && !smsLogin">{{ label('邮箱 / 手机号') }}<input v-model.trim="form.identifier" autocomplete="username" maxlength="254" required placeholder="请输入邮箱或已验证的手机号"></label>
+        <p v-if="mode === 'login' && !smsLogin" class="form-hint">{{ config?.sms ? '可使用邮箱或已验证的手机号登录，同一账号数据共用。' : '可使用邮箱或已验证的手机号及密码登录；短信注册与验证码登录待开通。' }}</p>
+        <label v-if="!smsLogin">{{ label(mode === 'reset' ? '新密码' : '密码') }}<span class="account-password"><input v-model="form.password" :type="visible ? 'text' : 'password'" :autocomplete="mode === 'login' ? 'current-password' : 'new-password'" :minlength="mode === 'login' ? 1 : 8" maxlength="128" required :placeholder="mode === 'login' ? '请输入密码' : '8～128 位密码'"><button type="button" @click="visible = !visible" :aria-label="visible ? '隐藏密码' : '显示密码'">{{ visible ? '隐藏' : '显示' }}</button></span></label>
+        <label v-if="mode !== 'login' && !smsLogin">{{ label('确认密码') }}<input v-model="form.confirm" :type="visible ? 'text' : 'password'" autocomplete="new-password" minlength="8" maxlength="128" required></label>
         <p v-if="error" role="alert" class="form-error">{{ error }}</p>
         <AliyunCaptcha v-if="config?.captcha && !mailFlow" ref="captcha" :config="config.captcha" :disabled="busy" :label="mode === 'login' ? '安全验证并登录' : '安全验证并注册'" @verified="submit" />
         <button v-else class="primary-action" :disabled="busy || !config || (!mailFlow && config.captchaRequired) || (mailFlow && !challengeId)">{{ busy ? '请稍候…' : label(mode === 'login' ? '登录' : mode === 'register' ? '注册' : '重置密码') }}</button>
       </form>
-      <div class="account-links"><RouterLink :to="link(mode === 'login' ? '/register' : '/login')">{{ label(mode === 'login' ? '注册账号' : '返回登录') }}</RouterLink><RouterLink v-if="mode === 'login'" :to="link('/forgot-password')">{{ label('忘记密码？') }}</RouterLink></div>
-      <template v-if="mode === 'login'">
+      <div class="account-links"><RouterLink :to="link(mode === 'login' ? '/register' : '/login')">{{ label(mode === 'login' ? '注册账号' : '返回登录') }}</RouterLink><RouterLink v-if="mode === 'login' && !smsLogin" :to="link('/forgot-password')">{{ label('忘记密码？') }}</RouterLink></div>
+      <template v-if="mode === 'login' && !smsLogin">
         <div class="account-divider">{{ label('其他方式登录') }}</div>
         <div class="account-providers"><button v-for="p in config?.providers || []" :key="p.id" type="button" :disabled="!p.enabled || busy" @click="thirdParty(p.id)"><span class="account-provider-mark">{{ p.id === 'qq' ? 'Q' : p.id === 'github' ? 'GH' : 'G' }}</span>{{ p.name }}<small v-if="!p.enabled">{{ label('待开通') }}</small></button></div>
       </template>

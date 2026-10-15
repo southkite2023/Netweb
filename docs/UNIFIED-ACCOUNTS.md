@@ -1,4 +1,4 @@
-# Yuashie / AstrAcct 统一账号 · 0.9.0
+# Yuashie / AstrAcct 统一账号 · 0.9.1
 
 ## 已实现与尚未启用
 
@@ -6,7 +6,7 @@
 
 - 支持邮箱与密码登录；旧密码仍可登录，新注册密码要求 8～128 位。
 - QQ、GitHub、Google 的登录与已登录用户主动绑定已实现。未设置 Client ID/Secret 的平台显示“待开通”。不依据邮箱相同自动合并账号；已有账号应先用密码登录，再从“账号安全”绑定。
-- 用户最新要求只接入阿里云验证码 2.0，不接短信发送。验证码用于人机验证；不验证号码归属。手机号注册与短信找回保持关闭。邮件验证码支持注册、已登录账号的邮箱验证和密码重置；邮件服务未配置时自助找回保持关闭。
+- 手机号注册、手机号密码登录与短信验证码登录已实现；验证码 2.0 仅用于人机验证。号码认证短信签名、模板、RAM 权限未配置时，短信入口保持“待开通”，不放行未验证手机号。邮件验证码支持注册、绑定、身份复核与密码重置。
 - 账号登录不等于余额配置云同步。现有 API Key、订阅链接、手动余额仍保留本机，本次不会自动上传。
 
 ## 配置阿里云验证码 2.0
@@ -57,7 +57,22 @@ AstrAcct 原生设置顶部增加统一账号入口。无需验证码时可直�
 
 1. 验证 `npm ci`、`npm ci --prefix server`、`npm test`、`npm run test:server`、部署脚本测试与 `npm run build`。客户端另行运行 Flutter analyze/test/build。
 2. 使用具备完整发布权限的路径备份服务器 `src`、`sql`、`package.json`、`package-lock.json`、`templates` 与当前前端，保留 `.env`、数据库及 user-content。新增依赖必须在服务端 `npm ci --omit=dev`。
-3. 按顺序执行 SQL 迁移，包含 `007_unified_accounts.sql` 与 `008_email_verification.sql`（可重复执行），再发布 API、重启 yuashie-api 并检查 `/api/health`、`/api/auth/config`。未完成 API/数据库发布前不能单独发布本次前端。
+3. 按顺序执行 SQL 迁移，包含 `007_unified_accounts.sql`、`008_email_verification.sql` 与 `009_account_methods.sql`（可重复执行），再发布 API、重启 yuashie-api 并检查 `/api/health`、`/api/auth/config`。未完成 API/数据库发布前不能单独发布本次前端。
 4. API健康后再切换前端，核对 `deploy-version.json` 与确切 Git 提交。正常工作流前端范围检查不应被绕过。
-5. 定期删除 `auth_email_challenges`、`auth_oauth_states`、`auth_app_requests` 中 `expires_at<NOW()` 的记录；日志不记录授权回调 query、密码、验证码参数或令牌。
+5. 定期删除 `auth_email_challenges`、`auth_phone_challenges`、`auth_oauth_states`、`auth_app_requests` 中 `expires_at<NOW()` 的记录；日志不记录授权回调 query、密码、验证码参数或令牌。
 6. 真实注册/重置/第三方授权涉及用户身份与外部服务，本次自动测试使用隔离数据库、模拟身份与验证码，不替代真实配置及设备验收。旧 API 不认识无邮箱/无密码的 OAuth-only 账号，回滚时需保留本次统一身份支持。
+
+
+## 0.9.1 登录方式管理与短信
+
+本人主页及 `/auth/security` 显示同一账号 ID、邮箱/手机号验证状态、密码和 QQ/GitHub/Google 绑定状态。只有本人可读取联系方式。管理前须用当前密码、已验证联系方式的验证码，或已绑定第三方重新授权；授权保留 10 分钟，以 HttpOnly/Secure/SameSite Cookie 绑定当前会话。授权不能跨账号或会话复用。
+
+绑定邮箱/手机号还需验证新地址；更换需先解绑旧地址。第三方绑定不按同名、同邮箱合并账户，已属于其他账号的身份返回冲突。每个账号、每个平台最多绑定一个身份。绑定/解绑在账号行锁下串行执行；解绑后必须仍有一种已配置、可用的登录路径。修改绑定或密码会撤销其他会话、待确认的应用授权和第三方绑定请求，保留当前会话及账号数据。移除密码后，可通过已绑定手机号的短信或已配置第三方登录；邮箱本身不是免密登录入口。
+
+短信使用「号码认证服务 → 短信认证」PNVS，与普通国内短信 SendSms 产品分开。配置 `ALIYUN_PNVS_ENABLED=true`、`ALIYUN_PNVS_SIGN_NAME`、`ALIYUN_PNVS_TEMPLATE_CODE`，选择控制台系统赠送签名及对应赠送验证码模板（编号可为数字，无需 SMS_ 前缀）。模板使用 `${code}` 与 `${min}`。可选 `ALIYUN_PNVS_SCHEME_NAME`，不填使用默认方案；发码时记录方案并在核验时使用同一方案。现有 ECS 角色须有 `dypns:SendSmsVerifyCode` 与 `dypns:CheckSmsVerifyCode`，不新增长期密钥。验证码 2.0 保留为人机验证。
+
+服务端调用 [SendSmsVerifyCode](https://help.aliyun.com/zh/pnvs/developer-reference/api-dypnsapi-2017-05-25-sendsmsverifycode/) 由阿里云生成 6 位数字验证码，5 分钟有效，60 秒发送间隔，覆盖旧码。验证码只返回后端供 HMAC 保存，不返回浏览器或记录到日志。收到用户输入后，先核对本地挑战的账号、用途、号码、有效期、最多 5 次尝试和 HMAC，再调用 [CheckSmsVerifyCode](https://help.aliyun.com/zh/pnvs/developer-reference/api-dypnsapi-2017-05-25-checksmsverifycode)；要求 `Code=OK`、`Success=true` 且 `Model.VerifyResult=PASS`，接口成功本身不能视作验证码通过。数据库成功消耗后不可重放，其他用途的码不能复用。
+
+每手机号每天最多 10 次，每 IP 每天最多 30 次，失败发送也计入限额。开启验证码 2.0 时，发码须先验签。短信登录只登录已注册/绑定账号，不自动创建新账号。短信密码找回暂不提供，可用短信登录后在账号安全内修改密码。
+
+上线时必须同时发布 API、迁移与前端。自动测试通过隔离 PostgreSQL 与模拟短信/OAuth 覆盖同账号登录、错误/过期/重放验证码、跨账号冲突、身份复核、会话撤销与最后方式保护；短信及第三方真实验收待对应服务完成配置。

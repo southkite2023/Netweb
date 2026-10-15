@@ -56,3 +56,8 @@ Calendar now opens a Quota Hub-style introduction at `/projects/004`, with a pri
 ## v0.9.0 统一账号与邮件验证
 
 AstrAcct 与网站共用用户和会话体系；加入 QQ/GitHub/Google 配置入口及阿里云验证码 2.0 接入。加入邮件验证码注册、邮箱验证与密码重置，支持 ECS RAM 角色临时凭据和自动刷新。第三方应用尚待申请；手机号验证待接入短信服务。登录不会自动同步余额账户凭据。完整配置和发布请见 [统一账号说明](docs/UNIFIED-ACCOUNTS.md)。
+
+
+## v0.9.1 登录方式管理
+
+本人主页与账号安全页可管理邮箱、手机号、密码及 QQ/GitHub/Google 绑定；修改前重新验证身份，拒绝跨账号抢绑及移除最后一种可用方式，修改后退出其他设备。手机号注册与短信登录使用阿里云「号码认证服务 → 短信认证」，复用 ECS 角色凭据，配置系统赠送签名、模板及发码/核验权限后开放；验证码 2.0 本身不发送短信。完整发布须应用 `009_account_methods.sql`，详情见 [统一账号说明](docs/UNIFIED-ACCOUNTS.md)。

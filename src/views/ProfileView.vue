@@ -2,6 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import AccountMethods from '../components/AccountMethods.vue'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import { api } from '../lib/api'
@@ -192,6 +193,7 @@ watch(() => route.params.username, load)
           </div>
         </section>
 
+        <AccountMethods v-if="mine" :key="user.id" />
         <section v-if="mine && user.role === 'admin'" class="admin-profile-panel">
           <div><span>{{ copy.adminPanel }}</span><h2>{{ copy.adminTitle }}</h2><p>{{ copy.adminText }}</p></div>
           <RouterLink class="primary-action compact" to="/admin/feedback">{{ copy.openAdmin }} →</RouterLink>

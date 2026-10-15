@@ -22,7 +22,7 @@ test('configuration keeps unconfigured services disabled and validates identifie
 
 test('shared accounts, password hashes, proof-bound app handoff, OAuth linking and captcha enforcement', async t => {
  const db = new PGlite()
- for (const file of ['001_account_system.sql','006_cloud_sync.sql','007_unified_accounts.sql','008_email_verification.sql']) await db.exec(await readFile(new URL(`../sql/${file}`,import.meta.url),'utf8'))
+ for (const file of ['001_account_system.sql','006_cloud_sync.sql','007_unified_accounts.sql','008_email_verification.sql','009_account_methods.sql']) await db.exec(await readFile(new URL(`../sql/${file}`,import.meta.url),'utf8'))
  await db.exec(await readFile(new URL('../sql/007_unified_accounts.sql',import.meta.url),'utf8'))
  // PGlite is single-connection; PostgreSQL advisory locking is tested by the SQL call but unnecessary in this serialized harness.
  const query = async(sql,args) => sql.startsWith('SELECT pg_advisory_xact_lock') ? {rows:[]} : db.query(sql,args)
@@ -89,7 +89,10 @@ test('shared accounts, password hashes, proof-bound app handoff, OAuth linking a
  assert.notEqual(external.id,id);assert.equal(external.email,null);assert.equal(external.password_hash,null)
  assert.equal((await app.inject({url:`/api/auth/oauth/github/callback?state=${state}&code=example`,headers:{cookie:oauthCookie}})).statusCode,400)
  identitySubject='linked-to-existing'
- const linking=await post('/api/auth/oauth/github/link',{redirect:'/auth/security'},{cookie:cookieHeader})
+ const reauth=await post('/api/auth/reauth',{password:'ExamplePass123'},{cookie:cookieHeader})
+ assert.equal(reauth.statusCode,200,reauth.body)
+ const managementCookie=reauth.headers['set-cookie'].split(';')[0]
+ const linking=await post('/api/auth/oauth/github/link',{redirect:'/auth/security'},{cookie:`${cookieHeader}; ${managementCookie}`})
  const linkState=new URL(linking.json().url).searchParams.get('state'), linkCookie=linking.headers['set-cookie'].split(';')[0]
  const linked=await app.inject({url:`/api/auth/oauth/github/callback?state=${linkState}&code=example`,headers:{cookie:`${cookieHeader}; ${linkCookie}`}})
  assert.equal(linked.statusCode,302,linked.body)

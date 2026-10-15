@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import { registerAccountMethods } from './account-methods.js'
 import argon2 from 'argon2'
 import { accountConfig, digest, pkce, normalizePhone, localRedirect, verifyCaptcha, authorizationUrl, oauthIdentity } from './auth-providers.js'
 import { normalizeEmail, emailCodeHash, consumeEmailCode, sendVerificationEmail } from './email-verification.js'
@@ -16,6 +17,7 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
   async function captcha(param) {
     try { return await providers.verifyCaptcha(param) } catch { return false }
   }
+  const methods = registerAccountMethods(app,pool,{secret,cookieName,requireUser,publicUser,createSession,syncAutomaticBadges},{transaction,captcha},services)
   app.get('/api/auth/config', async () => accountConfig())
   app.get('/api/auth/email/status',async(req,reply) => {
     const user=await requireUser(req,reply); if(!user) return
@@ -24,7 +26,12 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
   app.post('/api/auth/email/send',limit(5),async(req,reply) => {
     if (!accountConfig().emailVerification) return failure(reply,503,'邮件验证尚未配置。')
     const email = normalizeEmail(req.body?.email), purpose = req.body?.purpose
-    if (!email || !['register','reset','verify'].includes(purpose)) return failure(reply,400,'邮箱或验证用途无效。')
+    if (!email || !['register','reset','verify','bind','manage'].includes(purpose)) return failure(reply,400,'邮箱或验证用途无效。')
+    let owner = null
+    if (['bind','manage'].includes(purpose)) {
+      owner = purpose === 'bind' ? await methods.requireFresh(req,reply) : await requireUser(req,reply); if(!owner) return
+      if(purpose === 'manage' && (normalizeEmail(owner.email)!==email || !owner.email_verified_at)) return failure(reply,400,'请使用当前账号已验证的邮箱。')
+    }
     if (purpose === 'verify') {
       const user = await requireUser(req,reply); if(!user) return
       if (normalizeEmail(user.email) !== email) return failure(reply,400,'请验证当前账号绑定的邮箱。')
@@ -40,7 +47,7 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
         COUNT(*) FILTER(WHERE email=$1) AS daily, COUNT(*) FILTER(WHERE ip_hash=$2) AS ip_daily
         FROM auth_email_challenges WHERE created_at>NOW()-INTERVAL '1 day' AND (email=$1 OR ip_hash=$2)`,[email,ipHash])
       if (+rows[0].recent || +rows[0].daily >= 10 || +rows[0].ip_daily >= 30) return false
-      await db.query(`INSERT INTO auth_email_challenges(id,email,purpose,code_hash,ip_hash,expires_at) VALUES($1,$2,$3,$4,$5,NOW()+INTERVAL '5 minutes')`,[id,email,purpose,emailCodeHash(secret,id,email,purpose,code),ipHash])
+      await db.query(`INSERT INTO auth_email_challenges(id,email,purpose,code_hash,ip_hash,user_id,expires_at) VALUES($1,$2,$3,$4,$5,$6,NOW()+INTERVAL '5 minutes')`,[id,email,purpose,emailCodeHash(secret,id,email,purpose,code),ipHash,owner?.id || null])
       return true
     })
     if(!reserved) return failure(reply,429,'邮件发送过于频繁，请稍后重试。')
@@ -67,7 +74,7 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
   })
   app.post('/api/auth/register', limit(5), async (req, reply) => {
     const { username, displayName, password, email } = req.body || {}
-    if (req.body?.phone) return failure(reply,503,'手机号注册需接入短信验证后才能开放。')
+    if (req.body?.phone) return methods.registerPhone(req,reply)
     if (!/^[A-Za-z0-9_-]{3,24}$/.test(username || '') || typeof displayName !== 'string' || !displayName.trim() || displayName.trim().length > 40) return failure(reply,400,'请检查用户名和昵称。')
     if (typeof password !== 'string' || password.length < 8 || password.length > 128) return failure(reply,400,'密码长度应为 8～128 位。')
     if (!normalizeEmail(email)) return failure(reply,400,'邮箱格式有误。')
@@ -126,16 +133,17 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
   function enabled(provider) { return accountConfig().providers.some(p => p.id === provider && p.enabled) }
   async function startOAuth(req,reply,linkUser = null) {
     const provider = req.params.provider
+    const purpose = linkUser ? (req.body?.reauth === true ? 'reauth' : 'link') : 'login'
     if (!enabled(provider)) return failure(reply,503,'该第三方登录尚未配置。')
     const state = crypto.randomBytes(32).toString('base64url'), verifier = crypto.randomBytes(32).toString('base64url'), nonce = crypto.randomBytes(32).toString('base64url')
-    await pool.query(`INSERT INTO auth_oauth_states(state_hash,provider,verifier,nonce,redirect_path,link_user_id,expires_at) VALUES($1,$2,$3,$4,$5,$6,NOW()+INTERVAL '10 minutes')`,[digest(state),provider,verifier,nonce,localRedirect(req.query.redirect || req.body?.redirect),linkUser])
+    await pool.query(`INSERT INTO auth_oauth_states(state_hash,provider,verifier,nonce,redirect_path,link_user_id,purpose,expires_at) VALUES($1,$2,$3,$4,$5,$6,$7,NOW()+INTERVAL '10 minutes')`,[digest(state),provider,verifier,nonce,localRedirect(req.query.redirect || req.body?.redirect),linkUser,purpose])
     reply.setCookie('yuashie_oauth',state,{ path:'/api/auth/oauth',httpOnly:true,secure:process.env.NODE_ENV === 'production',sameSite:'lax',maxAge:600 })
     const url = authorizationUrl(provider,origin,state,verifier,nonce)
     return linkUser ? { url } : reply.redirect(url)
   }
   app.get('/api/auth/oauth/:provider/start',limit(10),startOAuth)
   app.post('/api/auth/oauth/:provider/link',limit(5),async (req,reply) => {
-    const user = await requireUser(req,reply); if (!user) return
+    const user = req.body?.reauth === true ? await requireUser(req,reply) : await methods.requireFresh(req,reply); if (!user) return
     return startOAuth(req,reply,user.id)
   })
   app.get('/api/auth/oauth/:provider/callback',limit(20),async (req,reply) => {
@@ -150,11 +158,13 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
       const identity = await providers.oauthIdentity(provider,code,record,origin)
       const user = await transaction(async db => {
         await db.query('SELECT pg_advisory_xact_lock(hashtext($1))',[`${provider}:${identity.subject}`])
+        if(record.link_user_id) await db.query('SELECT id FROM users WHERE id=$1 FOR UPDATE',[record.link_user_id])
         const existing = await db.query('SELECT u.* FROM auth_identities i JOIN users u ON u.id=i.user_id WHERE provider=$1 AND subject=$2',[provider,identity.subject])
         if (existing.rows[0]) {
           if (record.link_user_id && String(existing.rows[0].id) !== String(record.link_user_id)) throw new Error('Identity already linked')
           return existing.rows[0]
         }
+        if(record.purpose === 'reauth') throw new Error('Identity does not belong to this account')
         let user
         if (record.link_user_id) user = (await db.query('SELECT * FROM users WHERE id=$1',[record.link_user_id])).rows[0]
         else {
@@ -163,8 +173,10 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
           await syncAutomaticBadges(user.id,db)
         }
         await db.query('INSERT INTO auth_identities(provider,subject,user_id) VALUES($1,$2,$3)',[provider,identity.subject,user.id])
+        if(record.link_user_id) await methods.revokeOtherSessions(db,req,user.id)
         return user
       })
+      if(record.purpose === 'reauth') methods.grant(req,reply,user.id)
       if (!record.link_user_id) await createSession(user.id,reply,req)
       return reply.redirect(record.redirect_path)
     } catch { return failure(reply,400,'第三方授权失败，或该身份已绑定其他账号。请重新尝试。') }
