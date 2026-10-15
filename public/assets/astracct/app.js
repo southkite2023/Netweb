@@ -160,3 +160,69 @@ else if (new URLSearchParams(location.search).get('install') === '1') {
   setTimeout(showInstall, 200);
 }
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js', {scope: './'}).catch(() => {});
+
+// Identity sessions use HttpOnly cookies; account records continue to stay on this device.
+let identityBusy = false;
+async function identityRequest(path, payload) {
+  const headers = { Accept: 'application/json' };
+  if (payload !== undefined) {
+    headers['Content-Type'] = 'application/json';
+    const csrf = await fetch('/api/auth/csrf', { credentials: 'same-origin', cache: 'no-store', signal: AbortSignal.timeout(15000) });
+    if (!csrf.ok) throw Error('账号服务暂时不可用');
+    const token = (await csrf.json()).token;
+    if (token) headers['X-CSRF-Token'] = token;
+  }
+  const response = await fetch('/api' + path, { method: payload === undefined ? 'GET' : 'POST', headers, credentials: 'same-origin', cache: 'no-store',
+    ...(payload === undefined ? {} : { body: JSON.stringify(payload) }), signal: AbortSignal.timeout(15000) });
+  let data;
+  try { data = await response.json(); } catch (_) { throw Error('账号服务正在更新，请稍后重试'); }
+  if (!response.ok) { const error = Error(data.message || '账号服务暂时不可用'); error.status = response.status; throw error; }
+  return data;
+}
+async function refreshIdentity() {
+  try {
+    const result = await identityRequest('/auth/me');
+    $('identityName').textContent = result.user.displayName;
+    $('identityHint').textContent = '@' + result.user.username + ' · Yuashie 统一账号';
+    $('identityLogin').hidden = true; $('identityLogout').hidden = false;
+  } catch (error) {
+    $('identityName').textContent = 'Yuashie 账号';
+    $('identityLogin').hidden = false; $('identityLogout').hidden = true;
+    $('identityHint').textContent = error.status === 401 ? '与 yuashie.cn 共用账号。' : '离线或暂时无法连接账号服务。';
+  }
+}
+$('settings').addEventListener('click', () => { $('settingsDialog').showModal(); refreshIdentity(); });
+$('identityLogout').addEventListener('click', async () => {
+  if (identityBusy) return;
+  try { await identityRequest('/auth/logout', {}); await refreshIdentity(); notify('已退出登录，本机记录保留'); }
+  catch (_) { notify('退出登录失败，请检查网络后重试'); }
+});
+$('identityLogin').addEventListener('click', async () => {
+  if (identityBusy) return;
+  // Open synchronously for iOS popup rules; no credentials or verifier go into this window.
+  const popup = window.open('about:blank', '_blank');
+  if (popup) popup.opener = null;
+  identityBusy = true; $('identityLogin').disabled = true;
+  try {
+    const bytes = crypto.getRandomValues(new Uint8Array(32));
+    const encode = array => btoa(String.fromCharCode(...array)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    const verifier = encode(bytes);
+    const challenge = encode(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier))));
+    const pending = await identityRequest('/auth/app/requests', { challenge });
+    if (!/^[a-f0-9-]{36}$/.test(pending.id || '')) throw Error('登录请求无效');
+    const url = new URL('/login', location.origin);
+    url.searchParams.set('redirect', '/auth/approve?request=' + pending.id);
+    $('identityContinue').href = url.href; $('identityContinue').hidden = false;
+    if (popup) popup.location.href = url.href;
+    $('identityHint').textContent = '请在安全登录页完成登录，点击“确认登录”后返回星账。';
+    const deadline = Date.now() + 600000;
+    while (Date.now() < deadline) {
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      const result = await identityRequest('/auth/app/exchange', { id: pending.id, verifier, browser: true });
+      if (result.pending) continue;
+      await refreshIdentity(); notify('登录成功'); return;
+    }
+    throw Error('登录已超时，请重试');
+  } catch (error) { notify(error.message || '登录未完成，请重试'); try { if (popup && popup.location.href === 'about:blank') popup.close(); } catch (_) {} }
+  finally { identityBusy = false; $('identityLogin').disabled = false; $('identityContinue').hidden = true; }
+});

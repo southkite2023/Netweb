@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./styles.css"><script defer src="./app.js"></script>
 <title>星账 Astracct · iOS PWA</title></head><body>
 <div class="shell">
-<header><a class="brand" href="./"><img src="./icon.svg" alt="" width="44" height="44"><span>星账 <b>Astracct</b><small>IOS WEB APP</small></span></a><button id="install" type="button" class="secondary">安装到主屏幕</button></header>
+<header><a class="brand" href="./"><img src="./icon.svg" alt="" width="44" height="44"><span>星账 <b>Astracct</b><small>IOS WEB APP</small></span></a><button id="settings" type="button" class="secondary">设置</button><button id="install" type="button" class="secondary">安装到主屏幕</button></header>
 <main>
 <section class="hero"><p class="label">ASTRACCT / PWA</p><h1>你的余额，<br><em>一眼看清。</em></h1><p>为 iPhone 与 iPad 准备的独立网页应用。安装后可从主屏幕进入，也能离线查看本机记录。</p><button type="button" id="new" class="primary">＋ 添加余额账户</button></section>
 <p class="disclaimer"><strong>iOS 首版 · 手动记录模式。</strong> 暂不支持原生版的厂商 API 自动查询、后台刷新或原生小组件；切勿在此填写 API Key、云密钥、订阅凭据。</p>
@@ -22,6 +22,8 @@
 <p class="tip">数据仅保存在本设备的浏览器存储中，不会同步 Android 或桌面版；请定期导出备份，删除网站数据可能造成丢失。</p>
 </section></main>
 <footer>© 2026 Astracct · <a href="/projects/001/download">返回下载页</a> · <a href="https://github.com/southkite2023/quota-hub">项目源码</a></footer></div>
+<dialog id="settingsDialog"><div class="guide"><div class="heading"><h2>设置</h2><button type="button" data-close="settingsDialog" class="cross" aria-label="关闭">×</button></div>
+<h3 id="identityName">Yuashie 账号</h3><p id="identityHint">与 yuashie.cn 共用账号。</p><div class="row"><button id="identityLogin" type="button" class="primary">登录 / 注册</button><button id="identityLogout" type="button" class="secondary" hidden>退出登录</button><a href="/auth/security" target="_blank" rel="noopener">账号安全</a></div><a id="identityContinue" target="_blank" rel="noopener" hidden>打开安全登录页</a><p class="tip">登录不会自动上传本机余额记录。手机号验证、邮箱验证与密码找回待接入发送服务。</p></div></dialog>
 <dialog id="editDialog"><form id="form"><div class="heading"><h2 id="formTitle">添加余额账户</h2><button type="button" data-close="editDialog" class="cross" aria-label="关闭">×</button></div>
 <label>余额种类<select name="category" id="category" required><option value="ai">AI 订阅</option><option value="cloud">云服务器</option><option value="nodes">节点订阅</option></select></label>
 <label>服务商 / 名称<input name="name" id="name" maxlength="60" required placeholder="例如：DeepSeek API"></label>

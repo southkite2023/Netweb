@@ -22,6 +22,7 @@ test('PostgreSQL migration and full API: independent sessions, CSRF, isolation, 
  const db = new PGlite()
  for (const file of (await readdir(new URL('../../server/sql/',import.meta.url))).filter(f => f.endsWith('.sql')).sort()) await db.exec(await readFile(new URL(`../../server/sql/${file}`, import.meta.url),'utf8'))
  await db.exec(await readFile(new URL('../../server/sql/006_cloud_sync.sql',import.meta.url),'utf8')) // rerunnable
+ await db.exec(await readFile(new URL('../../server/sql/007_unified_accounts.sql',import.meta.url),'utf8'))
  process.env.USER_CONTENT_DIR = await mkdtemp(path.join(tmpdir(),'netweb-sync-test-'))
  process.env.CSRF_SECRET = 'test-only-secret-with-at-least-32-characters'
  process.env.SITE_ORIGIN = 'https://yuashie.cn'
@@ -91,5 +92,15 @@ test('PostgreSQL migration and full API: independent sessions, CSRF, isolation, 
  assert.equal((await send('GET','/api/auth/me',undefined,c2)).statusCode,200)
  await send('POST','/api/auth/logout',undefined,c2)
  assert.equal((await send('GET','/api/auth/me',undefined,c2)).statusCode,401)
+ const native = await send('POST','/api/auth/native/login',{identifier:'a@example.test',password:'testPassword99'},undefined,{cookie:cb})
+ assert.equal(native.statusCode,200,native.body)
+ const bearer = { authorization:`Bearer ${native.json().token}` }
+ assert.equal(native.json().user.id,userA)
+ assert.equal((await send('GET','/api/auth/me',undefined,cb,bearer)).json().user.id,userA)
+ const nativeLogout = await send('POST','/api/auth/logout',{},undefined,{cookie:cb,...bearer})
+ assert.equal(nativeLogout.statusCode,200,nativeLogout.body)
+ assert.equal(nativeLogout.headers['set-cookie'],undefined)
+ assert.equal((await send('GET','/api/auth/me',undefined,undefined,bearer)).statusCode,401)
+ assert.equal((await send('GET','/api/auth/me',undefined,cb)).json().user.id,userB)
  assert.equal((await send('POST','/api/minecraft/bridge/1/fail',{message:'test'})).statusCode,503)
 })
