@@ -1,0 +1,16 @@
+[Unit]
+Description=Verify and mirror Astracct public testing releases
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+User=astracct-mirror
+Group=astracct-mirror
+ExecStart=/usr/bin/python3 /usr/local/lib/astracct-downloads/sync.py /var/www/astracct-downloads
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/www/astracct-downloads
+TimeoutStartSec=15min
+UMask=0022

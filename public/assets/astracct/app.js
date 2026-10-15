@@ -159,7 +159,22 @@ else if (new URLSearchParams(location.search).get('install') === '1') {
   history.replaceState(null, '', location.pathname);
   setTimeout(showInstall, 200);
 }
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js', {scope: './'}).catch(() => {});
+let appRegistration;
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js', {scope: './'}).then(registration => { appRegistration = registration; }).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => notify('星账已更新，可在设置中重新载入。未保存的编辑请先保存。'));
+  window.addEventListener('focus', () => appRegistration?.update().catch(() => {}));
+  setInterval(() => { if (!document.hidden) appRegistration?.update().catch(() => {}); }, 60000);
+}
+$('checkUpdate').addEventListener('click', async () => {
+  if (!navigator.onLine) { notify('当前离线，请联网后检查更新'); return; }
+  $('checkUpdate').disabled = true;
+  try {
+    await appRegistration?.update();
+    // All shell resources revalidate online; reloading preserves the local account store.
+    location.reload();
+  } catch { notify('更新检查失败，请稍后重试'); $('checkUpdate').disabled = false; }
+});
 
 // Identity sessions use HttpOnly cookies; account records continue to stay on this device.
 let identityBusy = false;

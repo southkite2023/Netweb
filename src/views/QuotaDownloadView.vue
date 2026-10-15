@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
-import { detectQuotaPlatform, quotaCopy, quotaDesktopCopy, quotaDownloadUrl, quotaPlatforms, quotaRelease } from '../data/quotaHub'
+import { detectQuotaPlatform, quotaCopy, quotaDesktopCopy, quotaDownloadUrl, quotaPlatforms, quotaRelease, quotaReleaseStatus } from '../data/quotaHub'
 import '../quota-hub.css'
 const { locale } = useI18n()
 const c = computed(() => quotaCopy[locale.value] || quotaCopy.zh)
@@ -62,6 +62,8 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
             <a class="quota-primary quota-download-button" :href="downloadUrl">{{ selectedPlatform === 'Android' ? c.download : `${desktopCopy.download} ${selectedPlatform}` }} <span aria-hidden="true">↓</span></a>
             <p class="quota-package-meta">v{{ selectedVersion }} · {{ selectedPackage.label }} · {{ selectedPackage.size }}</p>
             <p class="quota-fineprint">{{ c.hosted }}</p>
+            <p v-if="quotaReleaseStatus.failed" role="status" class="quota-fineprint">{{ locale === 'zh' ? '暂时无法检查最新版本，当前显示上次已核验的安装包。' : locale === 'ja' ? '最新版を確認できません。確認済みの配布ファイルを表示しています。' : 'Unable to check for updates. Showing the last verified packages.' }}</p>
+            <a :href="`${quotaRelease.repository}/releases/download/v${selectedVersion}/${selectedPackage.file}`" target="_blank" rel="noopener noreferrer">{{ locale === 'zh' ? 'GitHub 备用下载' : locale === 'ja' ? 'GitHub 予備ダウンロード' : 'GitHub fallback download' }}</a>
             <p v-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy.usage }}</p>
           </div>
           <div v-else class="quota-unavailable" role="status">

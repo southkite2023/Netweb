@@ -11,6 +11,7 @@ import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
 import { loadSession } from './lib/auth'
+import { refreshQuotaRelease } from './data/quotaHub'
 import { initializeCloud } from './lib/cloudSync'
 
 initializeCloud()
@@ -24,3 +25,8 @@ waitForAssetCache().then(() => {
     .mount('#app')
 })
 
+
+refreshQuotaRelease()
+window.addEventListener('focus', refreshQuotaRelease)
+window.addEventListener('online', refreshQuotaRelease)
+setInterval(() => { if (!document.hidden) refreshQuotaRelease() }, 60000)

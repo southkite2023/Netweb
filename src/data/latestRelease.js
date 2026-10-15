@@ -39,9 +39,17 @@ export const release070 = {
   ja: { title: 'Cloud Sync · アカウントのクラウド同期', items: ['10月8日：非表示の看板娘を事前初期化し半身表示に変更。ナビとホームを整理し、実験室は無線へ、初回プライバシー案内はダイアログへ、端末管理はプロフィールへ移動。', '保存・実際の通知と既読・言語・テーマを端末間で同期。', '任意のローカルインポート、端末別セッションとCookie設定。'] },
 }
 
-export const latestRelease = {
+export const release071 = {
   version: '0.7.1', date: '2026-10-14',
   zh: { title: '图片与看板娘本地缓存', items: ['五张主要图片改为适当尺寸的 WebP，体积减少约 95%。', '公开图片与 Live2D 资源优先读取本地缓存，内容版本更新后自动换新。', '看板娘默认隐藏，后台预加载；召唤显示、隐藏和再次召唤交互保持不变。', '限制缓存容量并清理过期资源；登录、用户上传与动态 API 不进入缓存。'] },
   en: { title: 'Local image and companion caching', items: ['Five main images now use resized WebP, reducing their total size by about 95%.', 'Public images and Live2D resources prefer local caches, with content versions for updates.', 'The companion remains hidden while preloading; summon, hide and resummon controls are preserved.', 'Caches have size and age limits; sign-in, user uploads and dynamic APIs remain excluded.'] },
   ja: { title: '画像と看板娘のローカルキャッシュ', items: ['主要画像5枚を適切なサイズのWebPに変更し、合計サイズを約95%削減。', '公開画像とLive2Dをローカルキャッシュから優先取得し、内容の更新に合わせてバージョンを変更。', '看板娘は非表示のまま事前読み込みし、呼び出し・非表示・再呼び出しを維持。', '容量と有効期限を制限し、ログイン・アップロード・動的APIはキャッシュ対象外。'] },
+}
+
+
+export const latestRelease = {
+  version: '0.10.0', date: '2026-10-15',
+  zh: { title: '星账服务器下载与版本同步', items: ['Android、Windows、macOS 安装包从 Yuashie 服务器直接下载，保留 GitHub 备用入口。', '下载页与应用共用按平台维护的版本清单；仅在真实安装包下载和校验完成后更新版本。', '网站打开、返回前台及每分钟检查最新安装包；iOS PWA 联网重新验证页面资源，设置提供重新载入入口。', '服务器每十五分钟同步公开测试版，网页发布与安装包独立保存。'] },
+  en: { title: 'Astracct server downloads and release sync', items: ['Download Android, Windows and macOS packages directly from Yuashie, with GitHub as a fallback.', 'Website and apps share per-platform release metadata published only after package verification.', 'The page checks on launch, focus and each minute; the iOS PWA revalidates its shell online.', 'The server checks public testing releases every fifteen minutes; packages survive website deployments.'] },
+  ja: { title: '星账サーバー配布とバージョン同期', items: ['Android・Windows・macOSをYuashieから直接配布し、GitHub予備リンクも維持。', '確認済みファイルのOS別バージョン一覧をサイトとアプリで共有。', '起動・再表示・毎分に最新版を確認し、iOS PWAはオンラインで再検証。', '公開テスト版を15分ごとに同期し、サイトの公開後も配布ファイルを保持。'] },
 }
