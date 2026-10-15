@@ -1,10 +1,11 @@
 import crypto from 'node:crypto'
 import argon2 from 'argon2'
 import { accountConfig, digest, pkce, normalizePhone, localRedirect, verifyCaptcha, authorizationUrl, oauthIdentity } from './auth-providers.js'
+import { normalizeEmail, emailCodeHash, consumeEmailCode, sendVerificationEmail } from './email-verification.js'
 import { safeEqual } from './cloud-sync.js'
 
 export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, currentUser, requireUser, publicUser, createSession, syncAutomaticBadges }, services = {}) {
-  const providers = { verifyCaptcha, oauthIdentity, ...services }
+  const providers = { verifyCaptcha, oauthIdentity, sendVerificationEmail, ...services }
   const failure = (reply, status, message) => reply.code(status).send({ message })
   const limit = (max, timeWindow = '15 minutes') => ({ config:{ rateLimit:{ max, timeWindow } } })
   async function transaction(fn) {
@@ -16,21 +17,72 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
     try { return await providers.verifyCaptcha(param) } catch { return false }
   }
   app.get('/api/auth/config', async () => accountConfig())
+  app.get('/api/auth/email/status',async(req,reply) => {
+    const user=await requireUser(req,reply); if(!user) return
+    return {email:user.email || null,verified:!!user.email_verified_at}
+  })
+  app.post('/api/auth/email/send',limit(5),async(req,reply) => {
+    if (!accountConfig().emailVerification) return failure(reply,503,'邮件验证尚未配置。')
+    const email = normalizeEmail(req.body?.email), purpose = req.body?.purpose
+    if (!email || !['register','reset','verify'].includes(purpose)) return failure(reply,400,'邮箱或验证用途无效。')
+    if (purpose === 'verify') {
+      const user = await requireUser(req,reply); if(!user) return
+      if (normalizeEmail(user.email) !== email) return failure(reply,400,'请验证当前账号绑定的邮箱。')
+    }
+    if (accountConfig().captchaRequired && !await captcha(req.body?.captchaVerifyParam)) return failure(reply,400,'请先完成安全验证。')
+    const id=crypto.randomUUID(), code=crypto.randomInt(0,1000000).toString().padStart(6,'0')
+    const ipHash=crypto.createHmac('sha256',secret).update(req.ip).digest('hex')
+    const reserved=await transaction(async db => {
+      await db.query('SELECT pg_advisory_xact_lock(hashtext($1))',[`email-ip:${ipHash}`])
+      await db.query('SELECT pg_advisory_xact_lock(hashtext($1))',[`email-address:${email}`])
+      const {rows}=await db.query(`SELECT
+        COUNT(*) FILTER(WHERE email=$1 AND created_at>NOW()-INTERVAL '60 seconds') AS recent,
+        COUNT(*) FILTER(WHERE email=$1) AS daily, COUNT(*) FILTER(WHERE ip_hash=$2) AS ip_daily
+        FROM auth_email_challenges WHERE created_at>NOW()-INTERVAL '1 day' AND (email=$1 OR ip_hash=$2)`,[email,ipHash])
+      if (+rows[0].recent || +rows[0].daily >= 10 || +rows[0].ip_daily >= 30) return false
+      await db.query(`INSERT INTO auth_email_challenges(id,email,purpose,code_hash,ip_hash,expires_at) VALUES($1,$2,$3,$4,$5,NOW()+INTERVAL '5 minutes')`,[id,email,purpose,emailCodeHash(secret,id,email,purpose,code),ipHash])
+      return true
+    })
+    if(!reserved) return failure(reply,429,'邮件发送过于频繁，请稍后重试。')
+    try {
+      await providers.sendVerificationEmail(email,code,purpose)
+      await transaction(async db => {
+        await db.query('UPDATE auth_email_challenges SET sent=TRUE WHERE id=$1',[id])
+        await db.query('UPDATE auth_email_challenges SET used_at=NOW() WHERE email=$1 AND purpose=$2 AND id<>$3 AND used_at IS NULL',[email,purpose,id])
+      })
+      return {challengeId:id,retryAfter:60,expiresIn:300,message:'验证码已发送，请检查收件箱或垃圾邮件。'}
+    } catch { return failure(reply,503,'邮件发送失败，请稍后重试。') }
+  })
+  app.post('/api/auth/email/verify',limit(5),async(req,reply) => {
+    if(!accountConfig().emailVerification) return failure(reply,503,'邮件验证尚未配置。')
+    const user=await requireUser(req,reply); if(!user) return
+    const email=normalizeEmail(user.email)
+    if(!email) return failure(reply,400,'当前账号未绑定邮箱。')
+    const valid=await transaction(async db => {
+      if(!await consumeEmailCode(db,secret,{...req.body,email,purpose:'verify'})) return false
+      await db.query('UPDATE users SET email_verified_at=NOW(),updated_at=NOW() WHERE id=$1',[user.id])
+      return true
+    })
+    return valid ? {ok:true} : failure(reply,400,'验证码无效、已使用或已过期。')
+  })
   app.post('/api/auth/register', limit(5), async (req, reply) => {
     const { username, displayName, password, email } = req.body || {}
     if (req.body?.phone) return failure(reply,503,'手机号注册需接入短信验证后才能开放。')
     if (!/^[A-Za-z0-9_-]{3,24}$/.test(username || '') || typeof displayName !== 'string' || !displayName.trim() || displayName.trim().length > 40) return failure(reply,400,'请检查用户名和昵称。')
     if (typeof password !== 'string' || password.length < 8 || password.length > 128) return failure(reply,400,'密码长度应为 8～128 位。')
-    if ((typeof email !== 'string' || email.length > 254 || !/^\S+@\S+\.\S+$/.test(email))) return failure(reply,400,'邮箱格式有误。')
-    if (accountConfig().captchaRequired && !await captcha(req.body?.captchaVerifyParam)) return failure(reply,400,'请先完成安全验证。')
+    if (!normalizeEmail(email)) return failure(reply,400,'邮箱格式有误。')
+    const requireEmail = accountConfig().emailVerification
+    if (!requireEmail && accountConfig().captchaRequired && !await captcha(req.body?.captchaVerifyParam)) return failure(reply,400,'请先完成安全验证。')
     const passwordHash = await argon2.hash(password,{ type:argon2.argon2id })
     try {
       const user = await transaction(async db => {
-        const { rows } = await db.query(`INSERT INTO users(username,email,password_hash,display_name) VALUES($1,$2,$3,$4) RETURNING *`,[username,email.trim().toLowerCase(),passwordHash,displayName.trim()])
+        if (requireEmail && !await consumeEmailCode(db,secret,{...req.body,email:normalizeEmail(email),purpose:'register'})) return null
+        const { rows } = await db.query(`INSERT INTO users(username,email,password_hash,display_name,email_verified_at) VALUES($1,$2,$3,$4,CASE WHEN $5 THEN NOW() END) RETURNING *`,[username,normalizeEmail(email),passwordHash,displayName.trim(),requireEmail])
         await db.query(`INSERT INTO contribution_events(user_id,type,points,reason) VALUES($1,'ACCOUNT_CREATED',5,'Account created')`,[rows[0].id])
         await syncAutomaticBadges(rows[0].id,db)
         return rows[0]
       })
+      if (!user) return failure(reply,400,'验证码无效、已使用或已过期。')
       await createSession(user.id,reply,req)
       return reply.code(201).send({ user:await publicUser(user) })
     } catch (e) { if (e.code === '23505') return failure(reply,409,'用户名或联系方式已被使用。'); throw e }
@@ -52,7 +104,25 @@ export function registerUnifiedAuth(app, pool, { origin, cookieName, secret, cur
   }
   app.post('/api/auth/login',limit(8),(req,reply) => passwordLogin(req,reply,false))
   app.post('/api/auth/native/login',limit(8),(req,reply) => passwordLogin(req,reply,true))
-  app.post('/api/auth/password/reset',limit(5),async (req,reply) => failure(reply,503,'密码找回将在邮箱或短信验证服务接入后开放。'))
+  app.post('/api/auth/password/reset',limit(5),async(req,reply) => {
+    if(!accountConfig().passwordReset) return failure(reply,503,'密码找回将在邮件验证服务接入后开放。')
+    const email=normalizeEmail(req.body?.email), password=req.body?.password
+    if(!email || typeof password !== 'string' || password.length<8 || password.length>128) return failure(reply,400,'请输入邮箱、验证码及 8～128 位新密码。')
+    const hash=await argon2.hash(password,{type:argon2.argon2id})
+    const valid=await transaction(async db => {
+      if(!await consumeEmailCode(db,secret,{...req.body,email,purpose:'reset'})) return false
+      const {rows}=await db.query('UPDATE users SET password_hash=$1,email_verified_at=NOW(),updated_at=NOW() WHERE email=$2 RETURNING id',[hash,email])
+      if(rows[0]) {
+        await db.query('DELETE FROM sessions WHERE user_id=$1',[rows[0].id])
+        await db.query('DELETE FROM auth_app_requests WHERE user_id=$1',[rows[0].id])
+        await db.query('DELETE FROM auth_oauth_states WHERE link_user_id=$1',[rows[0].id])
+      }
+      return true
+    })
+    if(!valid) return failure(reply,400,'验证码无效、已使用或已过期。')
+    reply.clearCookie(cookieName,{path:'/'})
+    return {ok:true,message:'如该邮箱已注册，密码已更新，请重新登录。'}
+  })
   function enabled(provider) { return accountConfig().providers.some(p => p.id === provider && p.enabled) }
   async function startOAuth(req,reply,linkUser = null) {
     const provider = req.params.provider

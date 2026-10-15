@@ -1,4 +1,4 @@
-import RPCClient from '@alicloud/pop-core'
+import { aliyunRpc, credentialsConfigured } from './aliyun-credentials.js'
 import { createRemoteJWKSet, jwtVerify } from 'jose'
 import crypto from 'node:crypto'
 
@@ -15,23 +15,20 @@ export function localRedirect(value) {
   return parsed.origin === 'https://yuashie.cn' ? parsed.pathname + parsed.search : '/'
 }
 export function accountConfig(env = process.env) {
-  const keys = !!(env.ALIBABA_CLOUD_ACCESS_KEY_ID && env.ALIBABA_CLOUD_ACCESS_KEY_SECRET)
+  const keys = credentialsConfigured(env)
   const captcha = !!(env.ALIYUN_CAPTCHA_SCENE_ID && env.ALIYUN_CAPTCHA_PREFIX)
   const captchaRequired = env.ALIYUN_CAPTCHA_ENABLED === 'true'
+  const email = !!(keys && env.ALIYUN_MAIL_ENABLED === 'true' && env.ALIYUN_MAIL_FROM)
   return {
-    captchaRequired, captchaConfigured: !!(keys && captcha), sms: false, passwordReset: false, emailVerification: false,
+    captchaRequired, captchaConfigured: !!(keys && captcha), sms: false, passwordReset: email, emailVerification: email,
     captcha: captchaRequired && captcha ? { sceneId: env.ALIYUN_CAPTCHA_SCENE_ID, prefix: env.ALIYUN_CAPTCHA_PREFIX, region: env.ALIYUN_CAPTCHA_REGION === 'sgp' ? 'sgp' : 'cn' } : null,
     providers: ['qq','github','google'].map(id => ({ id, name: {qq:'QQ',github:'GitHub',google:'Google'}[id], enabled: !!(env[`OAUTH_${id.toUpperCase()}_CLIENT_ID`] && env[`OAUTH_${id.toUpperCase()}_CLIENT_SECRET`]) })),
   }
 }
-function rpc(endpoint, apiVersion) {
-  return new RPCClient({ accessKeyId: process.env.ALIBABA_CLOUD_ACCESS_KEY_ID, accessKeySecret: process.env.ALIBABA_CLOUD_ACCESS_KEY_SECRET,
-    securityToken: process.env.ALIBABA_CLOUD_SECURITY_TOKEN, endpoint: `https://${endpoint}`, apiVersion, opts: { timeout: 10000 } })
-}
 export async function verifyCaptcha(param) {
   if (!accountConfig().captchaConfigured || typeof param !== 'string' || !param || param.length > 16000) return false
   const endpoint = process.env.ALIYUN_CAPTCHA_REGION === 'sgp' ? 'captcha.ap-southeast-1.aliyuncs.com' : 'captcha.cn-shanghai.aliyuncs.com'
-  const result = await rpc(endpoint, '2023-03-05').request('VerifyIntelligentCaptcha', { CaptchaVerifyParam: param, SceneId: process.env.ALIYUN_CAPTCHA_SCENE_ID }, { method: 'POST' })
+  const result = await aliyunRpc(endpoint, '2023-03-05', 'VerifyIntelligentCaptcha', { CaptchaVerifyParam: param, SceneId: process.env.ALIYUN_CAPTCHA_SCENE_ID })
   return result.Code === 'Success' && result.Result?.VerifyResult === true
 }
 const endpoints = {

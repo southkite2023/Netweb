@@ -53,6 +53,6 @@ Calendar now opens a Quota Hub-style introduction at `/projects/004`, with a pri
 
 请先阅读 [Cloud Sync 审计与完整部署说明](docs/CLOUD-SYNC-0.7.0.md)。服务器需执行 `006_cloud_sync.sql` 并设置私有 `CSRF_SECRET`，前后端必须协调发布；现有前端专用发布任务不能发布这次后端升级。验证新增使用 `npm ci --prefix server` 与 `npm run test:server`，测试不连接生产数据库。
 
-## v0.8.0 统一账号
+## v0.9.0 统一账号与邮件验证
 
-AstrAcct 与网站共用用户和会话体系；加入 QQ/GitHub/Google 配置入口及阿里云验证码 2.0 接入。第三方应用尚待申请，验证码需服务端凭据后启用；手机号/邮箱验证和自助找回暂未开放。登录不会自动同步余额账户凭据。完整配置和发布请见 [统一账号说明](docs/UNIFIED-ACCOUNTS.md)。
+AstrAcct 与网站共用用户和会话体系；加入 QQ/GitHub/Google 配置入口及阿里云验证码 2.0 接入。加入邮件验证码注册、邮箱验证与密码重置，支持 ECS RAM 角色临时凭据和自动刷新。第三方应用尚待申请；手机号验证待接入短信服务。登录不会自动同步余额账户凭据。完整配置和发布请见 [统一账号说明](docs/UNIFIED-ACCOUNTS.md)。

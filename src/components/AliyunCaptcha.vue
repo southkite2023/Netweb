@@ -1,6 +1,6 @@
 <script setup>
 import { nextTick, onMounted, onBeforeUnmount, ref, useId } from 'vue'
-const props = defineProps({ config:Object, disabled:Boolean, label:{ type:String, default:'获取短信验证码' } })
+const props = defineProps({ config:Object, disabled:Boolean, label:{ type:String, default:'安全验证' } })
 const emit = defineEmits(['verified'])
 const suffix = useId().replace(/[^a-zA-Z0-9]/g,'')
 const element = `captcha-${suffix}`, button = `captcha-button-${suffix}`
@@ -37,6 +37,6 @@ defineExpose({ reset:initialize })
 </script>
 <template>
   <div :id="element"></div>
-  <button :id="button" type="button" class="account-secondary" :disabled="disabled || !config || !ready">{{ ready ? label : config ? '加载安全验证…' : '短信验证待配置' }}</button>
+  <button :id="button" type="button" class="account-secondary" :disabled="disabled || !config || !ready">{{ ready ? label : config ? '加载安全验证…' : '安全验证待配置' }}</button>
   <p v-if="error" role="alert" class="form-error">{{ error }}</p>
 </template>

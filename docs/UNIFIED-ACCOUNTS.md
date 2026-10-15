@@ -1,4 +1,4 @@
-# Yuashie / AstrAcct 统一账号 · 0.8.0
+# Yuashie / AstrAcct 统一账号 · 0.9.0
 
 ## 已实现与尚未启用
 
@@ -6,18 +6,32 @@
 
 - 支持邮箱与密码登录；旧密码仍可登录，新注册密码要求 8～128 位。
 - QQ、GitHub、Google 的登录与已登录用户主动绑定已实现。未设置 Client ID/Secret 的平台显示“待开通”。不依据邮箱相同自动合并账号；已有账号应先用密码登录，再从“账号安全”绑定。
-- 用户最新要求只接入阿里云验证码 2.0，不接短信发送。验证码用于人机验证；不验证号码归属。手机号注册、短信找回、邮件验证和邮件找回均未启用。忘记密码页说明此限制，后端不允许绕过验证改密码。
+- 用户最新要求只接入阿里云验证码 2.0，不接短信发送。验证码用于人机验证；不验证号码归属。手机号注册与短信找回保持关闭。邮件验证码支持注册、已登录账号的邮箱验证和密码重置；邮件服务未配置时自助找回保持关闭。
 - 账号登录不等于余额配置云同步。现有 API Key、订阅链接、手动余额仍保留本机，本次不会自动上传。
 
 ## 配置阿里云验证码 2.0
 
 1. 在 [验证码 2.0 控制台](https://yundun.console.aliyun.com/?p=captcha) 开通服务，在概览获取身份标 `prefix`。
 2. 创建 **Web/H5、V3 架构**场景，记录 SceneId 和地域 cn（上海）或 sgp（新加坡）。本方案的软件验证码运行在系统浏览器里的 yuashie.cn 登录页，不嵌入 App WebView。
-3. 将以下配置写入服务器 `server/.env`，不要提交真实值：`ALIYUN_CAPTCHA_ENABLED=true`、`ALIYUN_CAPTCHA_SCENE_ID`、`ALIYUN_CAPTCHA_PREFIX`、`ALIYUN_CAPTCHA_REGION`、RAM 用户的 `ALIBABA_CLOUD_ACCESS_KEY_ID` 和 `ALIBABA_CLOUD_ACCESS_KEY_SECRET`。可选 STS SecurityToken。RAM 仅授予验证码所需权限，勿使用主账号密钥。
+3. 将以下配置写入服务器 `server/.env`，不要提交真实值：`ALIYUN_CAPTCHA_ENABLED=true`、`ALIYUN_CAPTCHA_SCENE_ID`、`ALIYUN_CAPTCHA_PREFIX`、`ALIYUN_CAPTCHA_REGION`、凭据配置。ECS 推荐绑定 RAM 角色，并设置 `ALIBABA_CLOUD_CREDENTIALS_TYPE=ecs_ram_role`、`ALIBABA_CLOUD_ECS_METADATA=YuashieAuthRole`。Credentials SDK 使用 IMDSv2 获取并刷新临时凭据，无需长期 AccessKey。非 ECS 环境可使用专用 RAM 用户的环境变量凭据，勿使用主账号密钥。
 4. 前端动态加载官方 SDK，服务端调用 `VerifyIntelligentCaptcha` 并检查 `Code=Success` 与 `Result.VerifyResult=true`。已要求验证但配置不全、SDK失败、服务端验证异常时均不放行注册和密码登录。未开始启用时保留原有邮箱密码流程。
 5. 重启 API；检查 `/api/auth/config` 中 `captchaRequired`、`captchaConfigured` 及公开场景信息。此接口不返回密钥。
 
 官方文档：[产品说明](https://help.aliyun.com/zh/captcha/captcha2-0/product-overview/what-is-alibaba-cloud-captcha-2)、[Web/H5 V3](https://help.aliyun.com/zh/captcha/captcha2-0/user-guide/new-architecture-for-web-and-h5-client-access)、[服务端验签](https://help.aliyun.com/zh/captcha/captcha2-0/user-guide/server-access)。
+
+## 邮箱验证码与密码重置
+
+配置 `ALIYUN_MAIL_ENABLED=true`、`ALIYUN_MAIL_FROM=verify@auth.yuashie.com`。发信地址须在杭州地域的阿里云邮件推送中验证为正常状态，使用 `SingleSendMail` 触发邮件，直接指定收件邮箱，无需建立收件人列表。正文位于 `server/templates/verification.html`，模板变量仅由服务端替换。
+
+ECS 角色最小策略包含 `dm:SingleSendMail` 和 `yundun-afs:VerifyCaptcha`，资源为 `*`；不需要 AdministratorAccess。验证码 2.0 的权限动作名与 API 名不同，不应写成 `yundun-afs:VerifyIntelligentCaptcha`。
+
+发送邮件前须完成人机验证。邮箱验证码为随机 6 位，5 分钟有效，绑定邮箱、用途和 challenge ID，数据库只存 HMAC 摘要。单码最多尝试 5 次；新码使旧码失效；服务端限制邮箱 60 秒一次、每天 10 次，IP 每天 30 次，另外限制短时请求。发送失败仍计入额度，避免反复请求发送服务。
+
+注册必须验证邮箱；旧用户可在“账号安全”验证当前邮箱。找回页验证邮箱后设置新密码，统一账号的网页与 App 会话、待领取的 App 登录授权全部失效，需要重新登录。找回操作对未注册邮箱返回相同结果，不创建账号。密码继续使用 Argon2id。
+
+发布验证包括 ECS 临时凭据获取、无效 CAPTCHA 令牌的拒绝、邮件服务接受一次指定地址的测试邮件，以及隔离数据库中的注册/过期/错误次数/用途绑定/单次使用/会话撤销测试。邮件 API 接受不代表已投递到收件箱；真实人机验证和收件需另行实际验收。
+
+参考：[RAM 凭据最佳实践](https://help.aliyun.com/zh/ram/use-cases/best-practices-for-using-access-credentials-to-access-alibaba-cloud-openapi)、[验证码 RAM 授权](https://help.aliyun.com/zh/captcha/captcha2-0/user-guide/authorize-a-ram-user-to-access-alibaba-cloud-captcha)。
 
 ## 第三方应用申请与回调地址
 
@@ -42,8 +56,8 @@ AstrAcct 原生设置顶部增加统一账号入口。无需验证码时可直�
 ## 完整发布与维护
 
 1. 验证 `npm ci`、`npm ci --prefix server`、`npm test`、`npm run test:server`、部署脚本测试与 `npm run build`。客户端另行运行 Flutter analyze/test/build。
-2. 使用具备完整发布权限的路径备份服务器 `src`、`sql`、`package.json`、`package-lock.json` 与当前前端，保留 `.env`、数据库及 user-content。新增依赖必须在服务端 `npm ci --omit=dev`。
-3. 执行 `server/sql/007_unified_accounts.sql`（可重复执行），再发布 API、重启 yuashie-api 并检查 `/api/health`、`/api/auth/config`。未完成 API/数据库发布前不能单独发布本次前端。
+2. 使用具备完整发布权限的路径备份服务器 `src`、`sql`、`package.json`、`package-lock.json`、`templates` 与当前前端，保留 `.env`、数据库及 user-content。新增依赖必须在服务端 `npm ci --omit=dev`。
+3. 按顺序执行 SQL 迁移，包含 `007_unified_accounts.sql` 与 `008_email_verification.sql`（可重复执行），再发布 API、重启 yuashie-api 并检查 `/api/health`、`/api/auth/config`。未完成 API/数据库发布前不能单独发布本次前端。
 4. API健康后再切换前端，核对 `deploy-version.json` 与确切 Git 提交。正常工作流前端范围检查不应被绕过。
-5. 定期删除 `auth_oauth_states`、`auth_app_requests` 中 `expires_at<NOW()` 的记录；日志不记录授权回调 query、密码、验证码参数或令牌。
+5. 定期删除 `auth_email_challenges`、`auth_oauth_states`、`auth_app_requests` 中 `expires_at<NOW()` 的记录；日志不记录授权回调 query、密码、验证码参数或令牌。
 6. 真实注册/重置/第三方授权涉及用户身份与外部服务，本次自动测试使用隔离数据库、模拟身份与验证码，不替代真实配置及设备验收。旧 API 不认识无邮箱/无密码的 OAuth-only 账号，回滚时需保留本次统一身份支持。
