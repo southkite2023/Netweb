@@ -93,14 +93,14 @@ export function registerCloudSync(app, pool, authenticate, cookieName, hashToken
   })
   app.get('/api/auth/sessions', async (req, reply) => {
     const u = await requireUser(req, reply); if (!u) return
-    const result = await pool.query('SELECT id,device,created_at AS "createdAt",expires_at AS "expiresAt",token_hash=$2 AS current FROM sessions WHERE user_id=$1 AND expires_at>NOW() ORDER BY created_at DESC', [u.id,hashToken(req.cookies[cookieName])])
+    const result = await pool.query('SELECT id,device,created_at AS "createdAt",expires_at AS "expiresAt",token_hash=$2 AS current FROM sessions WHERE user_id=$1 AND expires_at>NOW() ORDER BY created_at DESC', [u.id,hashToken((req.headers.authorization || '').replace(/^Bearer /, '') || req.cookies[cookieName] || '')])
     return { sessions: result.rows }
   })
   app.delete('/api/auth/sessions/:id', async (req, reply) => {
     const u = await requireUser(req, reply); if (!u) return
     if (!/^\d+$/.test(req.params.id)) return reply.code(400).send({ message: 'Invalid session.' })
     const result = await pool.query('DELETE FROM sessions WHERE user_id=$1 AND id=$2 RETURNING token_hash', [u.id,req.params.id])
-    if (result.rows[0]?.token_hash === hashToken(req.cookies[cookieName])) reply.clearCookie(cookieName, { path: '/' })
+    if (result.rows[0]?.token_hash === hashToken((req.headers.authorization || '').replace(/^Bearer /, '') || req.cookies[cookieName] || '')) reply.clearCookie(cookieName, { path: '/' })
     return { ok: true }
   })
 }

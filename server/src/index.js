@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import { registerUnifiedAuth } from './unified-auth.js'
 import { registerCloudSync, csrfToken, safeEqual } from './cloud-sync.js'
 import cookie from '@fastify/cookie'
 import rateLimit from '@fastify/rate-limit'
@@ -9,7 +10,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
-const app = Fastify({ logger: true, trustProxy: true, bodyLimit: 1024 * 1024 })
+const app = Fastify({ logger: { serializers: { req: req => ({ method:req.method, url:req.url?.split('?')[0], hostname:req.hostname, remoteAddress:req.ip }) } }, trustProxy: true, bodyLimit: 1024 * 1024 })
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL })
 const PORT = Number(process.env.PORT || 3000)
 const ORIGIN = process.env.SITE_ORIGIN || 'https://yuashie.cn'
@@ -36,7 +37,9 @@ app.addHook('onRequest', async (req, reply) => {
     if (req.headers.origin !== ORIGIN || req.headers['sec-fetch-site'] === 'cross-site') {
       return reply.code(403).send({ message: 'Invalid request origin.' })
     }
-    if (req.cookies[COOKIE] && !safeEqual(req.headers['x-csrf-token'], csrfToken(req.cookies[COOKIE], CSRF_SECRET))) {
+    const independentAppRequest = ['/api/auth/native/login', '/api/auth/app/requests', '/api/auth/app/exchange'].includes(req.url.split('?')[0])
+    const bearer = /^Bearer [A-Za-z0-9_-]{43}$/.test(req.headers.authorization || '')
+    if (!independentAppRequest && !bearer && req.cookies[COOKIE] && !safeEqual(req.headers['x-csrf-token'], csrfToken(req.cookies[COOKIE], CSRF_SECRET))) {
       return reply.code(403).send({ message: 'Invalid CSRF token. Reload and try again.' })
     }
   }
@@ -134,7 +137,7 @@ function publicAuthor(row) {
 }
 
 async function currentUser(req) {
-  const token = req.cookies[COOKIE]
+  const token = (/^Bearer [A-Za-z0-9_-]{43}$/.test(req.headers.authorization || '') ? req.headers.authorization.slice(7) : req.cookies[COOKIE])
   if (!token) return null
   const { rows } = await pool.query(`
     SELECT u.*
@@ -164,19 +167,20 @@ async function requireAdmin(req, reply) {
   return user
 }
 
-async function createSession(userId, reply, req) {
+async function createSession(userId, reply, req, native = false) {
   const token = crypto.randomBytes(32).toString('base64url')
   await pool.query(`
     INSERT INTO sessions(user_id,token_hash,expires_at,device)
     VALUES($1,$2,NOW()+INTERVAL '30 days',$3)
   `, [userId, hashToken(token), String(req.headers['user-agent'] || 'Unknown device').slice(0,200)])
-  reply.setCookie(COOKIE, token, {
+  if (!native) reply.setCookie(COOKIE, token, {
     path: '/',
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
     maxAge: 30 * DAY,
   })
+  return token
 }
 
 async function addContribution(client, userId, { type, points, reason, referenceType = null, referenceId = null }) {
@@ -349,7 +353,7 @@ function validateQsoPayload(body, profile) {
 
 registerCloudSync(app, pool, requireUser, COOKIE, hashToken)
 
-app.get('/api/health', async () => ({ ok: true, version: '0.7.0' }))
+app.get('/api/health', async () => ({ ok: true, version: '0.8.0' }))
 
 app.get('/api/avatars/:filename', async (req, reply) => {
   const filename = req.params.filename
@@ -382,58 +386,12 @@ app.get('/api/auth/me', async (req, reply) => {
   return { user: await publicUser(user) }
 })
 
-app.post('/api/auth/register', {
-  config: { rateLimit: { max: 5, timeWindow: '15 minutes' } },
-}, async (req, reply) => {
-  const { username, email, password, displayName } = req.body || {}
-  if (!/^[A-Za-z0-9_-]{3,24}$/.test(username || '')) return reply.code(400).send({ message: 'Invalid username.' })
-  if (typeof password !== 'string' || password.length < 6) return reply.code(400).send({ message: 'Password must be at least 6 characters.' })
-  if (password.length > 128) return reply.code(400).send({ message: 'Password is too long.' })
-  if (!/^\S+@\S+\.\S+$/.test(email || '')) return reply.code(400).send({ message: 'Invalid email.' })
-  if (!displayName?.trim()) return reply.code(400).send({ message: 'Display name is required.' })
-
-  const passwordHash = await argon2.hash(password, { type: argon2.argon2id })
-  const client = await pool.connect()
-  try {
-    await client.query('BEGIN')
-    const { rows } = await client.query(`
-      INSERT INTO users(username,email,password_hash,display_name)
-      VALUES($1,$2,$3,$4)
-      RETURNING *
-    `, [username, email.toLowerCase(), passwordHash, displayName.trim()])
-    const user = rows[0]
-    await client.query(`
-      INSERT INTO contribution_events(user_id,type,points,reason)
-      VALUES($1,'ACCOUNT_CREATED',5,'Account created')
-    `, [user.id])
-    await syncAutomaticBadges(user.id, client)
-    await client.query('COMMIT')
-    await createSession(user.id, reply, req)
-    return reply.code(201).send({ user: await publicUser(user) })
-  } catch (error) {
-    await client.query('ROLLBACK')
-    if (error.code === '23505') return reply.code(409).send({ message: 'Username or email is already in use.' })
-    throw error
-  } finally {
-    client.release()
-  }
-})
-
-app.post('/api/auth/login', {
-  config: { rateLimit: { max: 8, timeWindow: '15 minutes' } },
-}, async (req, reply) => {
-  const { email, password } = req.body || {}
-  const { rows } = await pool.query('SELECT * FROM users WHERE email=$1', [(email || '').toLowerCase()])
-  const user = rows[0]
-  if (!user || !await argon2.verify(user.password_hash, password || '')) return reply.code(401).send({ message: 'Email or password is incorrect.' })
-  await createSession(user.id, reply, req)
-  return { user: await publicUser(user) }
-})
+registerUnifiedAuth(app, pool, { origin: ORIGIN, cookieName: COOKIE, secret: CSRF_SECRET, currentUser, requireUser, publicUser, createSession, syncAutomaticBadges })
 
 app.post('/api/auth/logout', async (req, reply) => {
-  const token = req.cookies[COOKIE]
+  const token = (/^Bearer [A-Za-z0-9_-]{43}$/.test(req.headers.authorization || '') ? req.headers.authorization.slice(7) : req.cookies[COOKIE])
   if (token) await pool.query('DELETE FROM sessions WHERE token_hash=$1', [hashToken(token)])
-  reply.clearCookie(COOKIE, { path: '/' })
+  if (!req.headers.authorization) reply.clearCookie(COOKIE, { path: '/' })
   return { ok: true }
 })
 

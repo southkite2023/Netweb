@@ -55,5 +55,5 @@ onBeforeUnmount(() => {
   <div v-if="navigationError" class="route-error" role="alert"><p>{{ c.routeError }}</p><button class="btn btn-primary" @click="retry">{{ c.retry }}</button></div>
   <CommandPalette v-if="commandOpen" />
   <BackToTop />
-  <Live2DCompanion />
+  <Live2DCompanion v-if="!['/login', '/register', '/forgot-password'].includes(route.path) && !route.path.startsWith('/auth/')" />
 </template>

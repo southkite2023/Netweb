@@ -52,3 +52,7 @@ Calendar now opens a Quota Hub-style introduction at `/projects/004`, with a pri
 收藏、真实通知及已读状态、语言和主题可随账号跨设备同步；新增独立设备会话管理、CSRF 校验、可选的本地数据导入和 Cookie 隐私偏好。原始 localStorage 数据保留，当前未使用非必要追踪。
 
 请先阅读 [Cloud Sync 审计与完整部署说明](docs/CLOUD-SYNC-0.7.0.md)。服务器需执行 `006_cloud_sync.sql` 并设置私有 `CSRF_SECRET`，前后端必须协调发布；现有前端专用发布任务不能发布这次后端升级。验证新增使用 `npm ci --prefix server` 与 `npm run test:server`，测试不连接生产数据库。
+
+## v0.8.0 统一账号
+
+AstrAcct 与网站共用用户和会话体系；加入 QQ/GitHub/Google 配置入口及阿里云验证码 2.0 接入。第三方应用尚待申请，验证码需服务端凭据后启用；手机号/邮箱验证和自助找回暂未开放。登录不会自动同步余额账户凭据。完整配置和发布请见 [统一账号说明](docs/UNIFIED-ACCOUNTS.md)。

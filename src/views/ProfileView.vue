@@ -150,6 +150,7 @@ watch(() => route.params.username, load)
             <div class="auth-kicker">// PUBLIC IDENTITY · {{ user.role.toUpperCase() }}</div>
             <div class="profile-name-line">
               <h1>{{ user.displayName }}</h1>
+              <RouterLink v-if="mine" to="/auth/security">账号安全与登录方式</RouterLink>
               <RouterLink v-if="user.radioProfile" class="radio-identity-badge" :to="`/radio/${user.radioProfile.callsign}`" :title="`Radio operator · Class ${user.radioProfile.operatorClass}`">📻 {{ user.radioProfile.callsign }}<span v-if="user.radioProfile.verificationStatus === 'verified'"> ✓</span></RouterLink>
               <span v-if="user.equippedBadge" class="equipped-badge" :title="badgeDescription(user.equippedBadge)"><span aria-hidden="true">{{ user.equippedBadge.emoji }}</span>{{ user.equippedBadge.name }}</span>
             </div>

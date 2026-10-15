@@ -1,3 +1,4 @@
+import './account-auth.css'
 import { createApp } from 'vue'
 import { waitForAssetCache } from './lib/assetCache'
 
