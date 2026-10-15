@@ -353,7 +353,7 @@ function validateQsoPayload(body, profile) {
 
 registerCloudSync(app, pool, requireUser, COOKIE, hashToken)
 
-app.get('/api/health', async () => ({ ok: true, version: '0.8.0' }))
+app.get('/api/health', async () => ({ ok: true, version: '0.9.0' }))
 
 app.get('/api/avatars/:filename', async (req, reply) => {
   const filename = req.params.filename

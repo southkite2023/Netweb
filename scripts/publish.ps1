@@ -44,7 +44,7 @@ try {
   }
 
   Write-Host '[3/8] Packaging account API...' -ForegroundColor Cyan
-  & tar -czf $localServerArchive -C $serverDir src sql package.json .env.example
+  & tar -czf $localServerArchive -C $serverDir src sql templates package.json package-lock.json .env.example
   if ($LASTEXITCODE -ne 0) {
     throw "Server packaging failed with exit code $LASTEXITCODE."
   }
@@ -60,7 +60,7 @@ set -eu
 mkdir -p '$remoteNew' '$appDir/backups'
 
 # Update API source while preserving the production .env and node_modules.
-tar -czf '$remoteServerBackup' -C '$appDir/server' src sql package.json 2>/dev/null || true
+tar -czf '$remoteServerBackup' -C '$appDir/server' src sql templates package.json package-lock.json 2>/dev/null || true
 server_tmp='/tmp/yuashie-server-unpack-$stamp'
 rm -rf "`$server_tmp"
 mkdir -p "`$server_tmp"
@@ -69,6 +69,10 @@ rm -rf '$appDir/server/src' '$appDir/server/sql'
 cp -a "`$server_tmp/src" '$appDir/server/src'
 cp -a "`$server_tmp/sql" '$appDir/server/sql'
 cp "`$server_tmp/package.json" '$appDir/server/package.json'
+cp "`$server_tmp/package-lock.json" '$appDir/server/package-lock.json'
+mkdir -p '$appDir/server/templates'
+cp -a "`$server_tmp/templates/." '$appDir/server/templates/'
+(cd '$appDir/server' && npm ci --omit=dev --no-audit --no-fund)
 cp "`$server_tmp/.env.example" '$appDir/server/.env.example'
 rm -rf "`$server_tmp"
 rm -f '$remoteServerArchive'
