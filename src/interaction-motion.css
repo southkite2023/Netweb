@@ -1,0 +1,29 @@
+/* Independent scale preserves each control's existing positioning / hover transform. */
+:root :is(button, [role="button"], a.nav-link, a.btn, a.primary-action, a.secondary-action,
+  a.text-action, a.icon-button, .avatar-upload-button, summary) {
+  transition-property: scale, background-color, border-color, color, box-shadow, opacity, transform;
+  transition-duration: 180ms;
+  transition-timing-function: cubic-bezier(.2, .7, .2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root :is(button, [role="button"], a.nav-link, a.btn, a.primary-action, a.secondary-action,
+    a.text-action, a.icon-button, .avatar-upload-button, summary):not(:disabled):not([aria-disabled="true"]):not([aria-busy="true"]):active {
+    scale: .97;
+    transition-duration: 80ms;
+  }
+}
+
+:root :is(button, [role="button"], a.nav-link, a.btn, a.primary-action, a.secondary-action,
+  a.text-action, a.icon-button, .avatar-upload-button, summary):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root :is(button, [role="button"], a.nav-link, a.btn, a.primary-action, a.secondary-action,
+    a.text-action, a.icon-button, .avatar-upload-button, summary) {
+    transition: none !important;
+  }
+}

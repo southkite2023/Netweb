@@ -6,6 +6,8 @@ import './style.css'
 import './glass-ui.css'
 import './experience.css'
 import './modular-ui.css'
+import './interaction-motion.css'
+import { initializeInteractionMotion } from './lib/interactionMotion'
 import { applyTheme } from './lib/theme'
 import App from './App.vue'
 import router from './router'
@@ -14,6 +16,7 @@ import { loadSession } from './lib/auth'
 import { refreshQuotaRelease } from './data/quotaHub'
 import { initializeCloud } from './lib/cloudSync'
 
+initializeInteractionMotion()
 initializeCloud()
 applyTheme()
 loadSession()
