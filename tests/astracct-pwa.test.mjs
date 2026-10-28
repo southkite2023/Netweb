@@ -45,3 +45,15 @@ test('iOS download page offers the PWA for iPhone and desktop-mode iPad', () => 
     assert.ok(quotaCopy[locale].iosPwaNote)
   }
 })
+
+test('PWA redesign keeps manual records and privacy keys while adding adaptive navigation', () => {
+  const html = source('index.html'), script = source('app.js'), css = source('styles.css')
+  for (const destination of ['overview', 'accounts', 'settings']) assert.ok(html.includes(`data-destination="${destination}"`))
+  assert.match(html, /id="appearance"/)
+  assert.match(script, /astracct\.pwa\.manual\.v1/)
+  assert.match(script, /astracct\.pwa\.private\.v1/)
+  assert.match(script, /astracct\.pwa\.appearance\.v3/)
+  assert.match(css, /prefers-color-scheme:dark/)
+  assert.match(css, /min-width:900px/)
+  assert.match(html, /切勿在此填写 API Key/)
+})

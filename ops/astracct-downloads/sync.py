@@ -12,7 +12,7 @@ import tempfile
 import urllib.request
 
 REPO = 'southkite2023/quota-hub'
-PATTERN = re.compile(r'^(?:quota-hub|astracct)-(\d+\.\d+\.\d+)-(android|universal|arm64-v8a|armeabi-v7a|x86_64|windows-x64|macos-universal)\.(apk|zip)$')
+PATTERN = re.compile(r'^(?:quota-hub|astracct)-(\d+\.\d+\.\d+)-(android|universal|arm64-v8a|armeabi-v7a|x86_64|windows-x64|macos-universal)\.(apk|zip|dmg)$')
 MAX_SIZE = 512 * 1024 * 1024
 
 def request(url, binary=False):
@@ -30,9 +30,10 @@ def select(releases):
                 continue
             version, variant, extension = match.groups()
             platform = 'windows' if variant == 'windows-x64' else 'macos' if variant == 'macos-universal' else 'android'
-            if extension != ('apk' if platform == 'android' else 'zip'):
+            if extension not in (('apk',) if platform == 'android' else ('zip', 'dmg') if platform == 'macos' else ('zip',)):
                 continue
             arch = 'universal' if variant == 'android' else variant
+            if extension == 'dmg': arch += '-dmg'
             key = platform + ':' + arch
             digest = asset.get('digest') or ''
             if not re.fullmatch(r'sha256:[a-f0-9]{64}', digest) or not 0 < asset['size'] <= MAX_SIZE:
@@ -92,7 +93,7 @@ def sync(root):
             finally:
                 Path(temporary).unlink(missing_ok=True)
         item['url'] = 'https://yuashie.cn/downloads/astracct/v' + item['version'] + '/' + item['file']
-    manifest = {'schema': 1, 'channel': 'public-testing', 'packages': packages}
+    manifest = {'schema': 1, 'channel': 'public-testing', 'packages': [item for item in packages if not item['file'].endswith('.dmg')]}
     fd, temporary = tempfile.mkstemp(dir=root, prefix='.manifest-')
     try:
         with os.fdopen(fd, 'w') as output:

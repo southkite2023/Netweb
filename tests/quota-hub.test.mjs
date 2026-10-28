@@ -19,7 +19,7 @@ test('only verified Android architecture choices produce direct APK links', () =
   for (const item of quotaRelease.packages) {
     const url = new URL(quotaDownloadUrl('Android', item.id))
     assert.equal(url.host, 'yuashie.cn')
-    assert.equal(url.pathname, `/downloads/astracct/v1.3.0/${`quota-hub-1.3.0-${item.id}.apk`}`)
+    assert.equal(url.pathname, `/downloads/astracct/v3.0.0/${`quota-hub-3.0.0-${item.id}.apk`}`)
   }
   for (const platform of ['iOS', 'Linux', null]) assert.equal(quotaDownloadUrl(platform, 'universal'), null)
   assert.equal(quotaDownloadUrl('Android', '../../other'), null)
@@ -30,13 +30,13 @@ test('only verified Android architecture choices produce direct APK links', () =
 
 
 test('desktop downloads use fixed release assets and reject unsupported platforms', () => {
-  assert.equal(quotaDownloadUrl('Windows'), 'https://yuashie.cn/downloads/astracct/v1.3.0/astracct-1.3.0-windows-x64.zip')
-  assert.equal(quotaDownloadUrl('macOS'), 'https://yuashie.cn/downloads/astracct/v1.3.0/astracct-1.3.0-macos-universal.zip')
-  assert.equal(quotaRelease.version, '1.3.0')
-  assert.equal(quotaRelease.desktop.Windows.version, '1.3.0')
-  assert.equal(quotaRelease.desktop.macOS.version, '1.3.0')
-  assert.equal(quotaRelease.latestVersion, '1.3.0')
-  assert.equal(quotaRelease.desktop.macOS.releaseUrl, 'https://github.com/southkite2023/quota-hub/releases/tag/v1.3.0')
+  assert.equal(quotaDownloadUrl('Windows'), 'https://yuashie.cn/downloads/astracct/v3.0.0/astracct-3.0.0-windows-x64.zip')
+  assert.equal(quotaDownloadUrl('macOS'), 'https://yuashie.cn/downloads/astracct/v3.0.0/astracct-3.0.0-macos-universal.zip')
+  assert.equal(quotaRelease.version, '3.0.0')
+  assert.equal(quotaRelease.desktop.Windows.version, '3.0.0')
+  assert.equal(quotaRelease.desktop.macOS.version, '3.0.0')
+  assert.equal(quotaRelease.latestVersion, '3.0.0')
+  assert.equal(quotaRelease.desktop.macOS.releaseUrl, 'https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0')
   for (const locale of ['zh', 'en', 'ja']) assert.ok(quotaCopy[locale].limits.length > 30)
   assert.equal(quotaDownloadUrl('__proto__'), null)
   assert.equal(quotaDownloadUrl('Android', '../../evil'), null)

@@ -17,6 +17,7 @@ const architecture = ref('universal')
 const selectedPackage = computed(() => quotaRelease.desktop[selectedPlatform.value] || quotaRelease.packages.find(item => item.id === architecture.value))
 const selectedVersion = computed(() => selectedPackage.value?.version || quotaRelease.version)
 const selectedReleaseUrl = computed(() => selectedPackage.value?.releaseUrl || quotaRelease.url)
+const macDmgUrl = computed(() => selectedPlatform.value === 'macOS' ? selectedPackage.value?.installer?.url || null : null)
 const downloadUrl = computed(() => quotaDownloadUrl(selectedPlatform.value, architecture.value))
 onMounted(() => {
   detected.value = detectQuotaPlatform(navigator)
@@ -47,6 +48,8 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
           <div v-if="selectedPlatform === 'iOS'" class="quota-package">
             <p class="quota-fineprint">{{ c.iosPwaIntro }}</p>
             <a class="quota-primary quota-download-button" href="/assets/astracct/?install=1">{{ c.iosPwaInstall }} <span aria-hidden="true">↗</span></a>
+            <p v-if="macDmgUrl" class="quota-fineprint"><a :href="macDmgUrl" target="_blank" rel="noopener noreferrer">{{ locale === 'zh' ? 'DMG 拖拽安装包（官网下载）' : locale === 'ja' ? 'DMG インストーラー（公式サイト）' : 'DMG drag-to-install package (official mirror)' }}</a><br>{{ locale === 'zh' ? '打开 DMG，将 Astracct 拖到 Applications，复制完成后可在桌面右键磁盘并“推出”。上方 ZIP 供解压安装及应用内更新。' : locale === 'ja' ? 'DMGを開き、AstracctをApplicationsにドラッグします。コピー後にディスクを取り出せます。上のZIPは展開とアプリ内更新用です。' : 'Open the DMG and drag Astracct to Applications. Eject the mounted disk after copying. The ZIP above is retained for extraction and in-app updates.' }}</p>
+            <p v-if="macDmgUrl" class="quota-fineprint">{{ locale === 'zh' ? 'Mac 3.0.0 起密钥改存本地明文文件，仅当前系统用户可读写；首次迁移旧钥匙串记录可能需要一次授权。' : locale === 'ja' ? 'Mac 3.0.0以降、認証情報はユーザー専用権限のローカル平文ファイルに保存されます。旧キーチェーンからの初回移行で許可が必要な場合があります。' : 'From Mac 3.0.0, credentials use local plaintext files with owner-only permissions. Importing existing Keychain records may require authorization once.' }}</p>
             <p class="quota-package-meta">{{ c.iosPwaMeta }}</p>
             <p class="quota-fineprint">{{ c.iosPwaNote }}</p>
           </div>

@@ -7,8 +7,8 @@
   "start_url": "/assets/astracct/",
   "scope": "/assets/astracct/",
   "display": "standalone",
-  "background_color": "#f5f7ff",
-  "theme_color": "#f5f7ff",
+  "background_color": "#f0eef2",
+  "theme_color": "#f0eef2",
   "icons": [
     {
       "src": "/assets/astracct/icon-192.png",

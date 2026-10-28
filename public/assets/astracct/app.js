@@ -241,3 +241,25 @@ $('identityLogin').addEventListener('click', async () => {
   } catch (error) { notify(error.message || '登录未完成，请重试'); try { if (popup && popup.location.href === 'about:blank') popup.close(); } catch (_) {} }
   finally { identityBusy = false; $('identityLogin').disabled = false; $('identityContinue').hidden = true; }
 });
+
+// Appearance and navigation never alter the existing balance/identity storage.
+const APPEARANCE = 'astracct.pwa.appearance.v3';
+function setAppearance(value) {
+  const mode = ['light', 'dark'].includes(value) ? value : 'system';
+  document.documentElement.dataset.theme = mode;
+  $('appearance').value = mode;
+}
+try { setAppearance(localStorage.getItem(APPEARANCE)); } catch (_) { setAppearance('system'); }
+$('appearance').addEventListener('change', event => {
+  const before = document.documentElement.dataset.theme;
+  try { localStorage.setItem(APPEARANCE, event.target.value); setAppearance(event.target.value); }
+  catch (_) { setAppearance(before); $('status').textContent = '外观设置无法保存，请检查浏览器存储权限。'; }
+});
+document.querySelectorAll('[data-destination]').forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.dataset.destination === 'settings') { $('settings').click(); return; }
+    document.querySelectorAll('[data-destination]').forEach(item => item.removeAttribute('aria-current'));
+    button.setAttribute('aria-current', 'page');
+    $(button.dataset.destination).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+  });
+});

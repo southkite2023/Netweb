@@ -47,3 +47,18 @@ class MirrorTests(unittest.TestCase):
             self.assertTrue(all((Path(path) / ('v' + p['version']) / p['file']).exists() for p in manifest['packages']))
 
 if __name__ == '__main__': unittest.main()
+
+class DmgCompatibilityTests(unittest.TestCase):
+    def test_dmg_is_mirrored_but_never_breaks_the_native_update_manifest(self):
+        data=release('3.0.0', ['universal', 'windows-x64', 'macos-universal'])
+        dmg=dict(data['assets'][-1]);dmg['name']='astracct-3.0.0-macos-universal.dmg';dmg['id']=99
+        data['assets'].append(dmg)
+        self.assertEqual(len(mirror.select([data])),4)
+        with tempfile.TemporaryDirectory() as path:
+            def request(url,binary=False):
+                return io.BytesIO(b'PKxx' if binary else json.dumps([data]).encode())
+            with patch.object(mirror,'request',request):mirror.sync(Path(path))
+            packages=json.loads((Path(path)/'latest.json').read_text())['packages']
+            self.assertEqual(len(packages),3)
+            self.assertFalse(any(p['file'].endswith('.dmg') for p in packages))
+            self.assertTrue((Path(path)/'v3.0.0'/dmg['name']).is_file())
