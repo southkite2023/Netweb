@@ -12,7 +12,7 @@
 <div class="shell">
 <header><a class="brand" href="./"><img src="./icon.svg" alt="" width="44" height="44"><span>星账 <b>Astracct</b><small>IOS WEB APP</small></span></a><button id="settings" type="button" class="secondary">设置</button><button id="install" type="button" class="secondary">安装到主屏幕</button></header>
 <main id="overview">
-<section class="hero"><div><p class="label">账户状态 <span class="state-badge">本机记录</span></p><h1>余额概览</h1><p>各账户与币种分别展示，手动记录保存在此设备。</p></div><button type="button" id="new" class="primary" aria-label="添加余额账户">＋</button></section>
+<section class="hero"><div><p class="label">账户状态 <span class="state-badge">本机记录</span></p><h1>仪表盘</h1><p>各账户与币种分别展示，手动记录保存在此设备。</p></div><button type="button" id="new" class="primary" aria-label="添加余额账户">＋</button></section>
 <p class="disclaimer"><strong>iOS 首版 · 手动记录模式。</strong> 暂不支持原生版的厂商 API 自动查询、后台刷新或原生小组件；切勿在此填写 API Key、云密钥、订阅凭据。</p>
 <section class="stats"><article><small>已添加账户</small><strong id="count">0</strong></article><article><small>账户种类</small><strong id="kinds">0</strong></article><article><small>最近更新</small><strong id="updated">—</strong></article></section>
 <section id="accounts"><div class="heading"><h2>余额账户</h2><button id="privacy" class="secondary" type="button" aria-pressed="false">隐藏金额</button></div>
@@ -34,6 +34,6 @@
 <dialog id="installDialog"><div class="guide"><div class="heading"><h2>安装星账到主屏幕</h2><button data-close="installDialog" type="button" class="cross" aria-label="关闭">×</button></div>
 <ol><li>在 iPhone 或 iPad 浏览器中打开当前页面。</li><li>点击浏览器的<strong>分享</strong>按钮（必要时先展开页面菜单）。</li><li>选择<strong>添加到主屏幕</strong>，确认<strong>作为网页 App 打开</strong>后点击<strong>添加</strong>。</li></ol>
 <p class="tip">iOS 不支持网页按钮直接静默安装，需要你完成系统确认。</p><button type="button" data-close="installDialog" class="primary full">我知道了</button></div></dialog>
-<nav class="app-navigation" aria-label="主导航"><a class="nav-brand" href="./">✦ Astracct</a><button type="button" data-destination="overview" aria-current="page"><span aria-hidden="true">▦</span>概览</button><button type="button" data-destination="accounts"><span aria-hidden="true">▣</span>余额账户</button><button type="button" data-destination="settings"><span aria-hidden="true">☷</span>设置</button></nav>
+<nav class="app-navigation" aria-label="主导航"><a class="nav-brand" href="./">✦ Astracct</a><button type="button" data-destination="overview" aria-current="page"><span aria-hidden="true">▦</span>仪表盘</button><button type="button" data-destination="accounts"><span aria-hidden="true">▣</span>余额账户</button><button type="button" data-destination="settings"><span aria-hidden="true">☷</span>设置</button></nav>
 <p id="status" role="status" class="status" aria-live="polite"></p>
 </body></html>

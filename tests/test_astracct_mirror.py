@@ -58,7 +58,9 @@ class DmgCompatibilityTests(unittest.TestCase):
             def request(url,binary=False):
                 return io.BytesIO(b'PKxx' if binary else json.dumps([data]).encode())
             with patch.object(mirror,'request',request):mirror.sync(Path(path))
-            packages=json.loads((Path(path)/'latest.json').read_text())['packages']
+            manifest=json.loads((Path(path)/'latest.json').read_text())
+            self.assertEqual(manifest['installers'][0]['file'],dmg['name'])
+            packages=manifest['packages']
             self.assertEqual(len(packages),3)
             self.assertFalse(any(p['file'].endswith('.dmg') for p in packages))
             self.assertTrue((Path(path)/'v3.0.0'/dmg['name']).is_file())

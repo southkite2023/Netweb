@@ -2,78 +2,78 @@ import { reactive } from 'vue'
 
 // Verified release assets. Keep the version, sizes and filenames together.
 export const quotaRelease = reactive({
-  "version": "3.0.0",
-  "latestVersion": "3.0.0",
+  "version": "3.1.0",
+  "latestVersion": "3.1.0",
   "date": "2026-10-28",
   "latestDate": "2026-10-28",
   "repository": "https://github.com/southkite2023/quota-hub",
-  "url": "https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0",
+  "url": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
   "desktop": {
     "Windows": {
-      "version": "3.0.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0",
-      "file": "astracct-3.0.0-windows-x64.zip",
+      "version": "3.1.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
+      "file": "astracct-3.1.0-windows-x64.zip",
       "label": "Windows x64",
       "size": "13.04 MB",
-      "bytes": 13037195,
-      "sha256": "d7b4b70083615fe4053b7a9453d951e2713e27018285842b74c6b0f72c93fcab"
+      "bytes": 13038857,
+      "sha256": "b5caa70805b5a8a5dd405a0ef3317e9e7ba7f54cfa06a69df0fea4791efcbf2c"
     },
     "macOS": {
-      "version": "3.0.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0",
-      "file": "astracct-3.0.0-macos-universal.zip",
+      "version": "3.1.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
+      "file": "astracct-3.1.0-macos-universal.zip",
       "label": "macOS Universal · Intel + Apple Silicon · macOS 12+",
-      "size": "21.33 MB",
-      "bytes": 21332873,
-      "sha256": "d17b935ab392c871c6d821dfac7011d0590369784cbba152d97d384d9e44fc48",
+      "size": "21.34 MB",
+      "bytes": 21336710,
+      "sha256": "921722fe05b68fe49fb401c256b6619d4e4b0e1a6e20d18310badffa7d623788",
       "installer": {
-        "file": "astracct-3.0.0-macos-universal.dmg",
-        "url": "https://yuashie.cn/downloads/astracct/v3.0.0/astracct-3.0.0-macos-universal.dmg",
-        "bytes": 23319545,
-        "sha256": "eefd504c73e3cb38f1667e5afaa854c514bda72c4c910b0a24fea40f0efd2c8c"
+        "file": "astracct-3.1.0-macos-universal.dmg",
+        "url": "https://yuashie.cn/downloads/astracct/v3.1.0/astracct-3.1.0-macos-universal.dmg",
+        "bytes": 23323082,
+        "sha256": "0a7c14d347bbdebd69a361cbabbbe588cff78fbb224bb3b22525762227e79c71"
       }
     }
   },
   "packages": [
     {
       "id": "universal",
-      "version": "3.0.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0",
-      "file": "quota-hub-3.0.0-universal.apk",
+      "version": "3.1.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
+      "file": "quota-hub-3.1.0-universal.apk",
       "label": "Universal",
       "size": "53.67 MB",
       "bytes": 53672862,
-      "sha256": "b0a8a8a5e6d8f0a6f26a741ea7add0fe285af3c49226c2edcaa3d7257dd07ad2"
+      "sha256": "087f08ac5722590a207aa6fe7270c9cfd4fef48b29844ec52b3162c566a9695b"
     },
     {
       "id": "arm64-v8a",
-      "version": "3.0.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0",
-      "file": "quota-hub-3.0.0-arm64-v8a.apk",
+      "version": "3.1.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
+      "file": "quota-hub-3.1.0-arm64-v8a.apk",
       "label": "ARM64",
       "size": "19.22 MB",
       "bytes": 19224896,
-      "sha256": "937cbfe594bfa5553b97278550c75d2c7347e53dad94fc57535f407189363c35"
+      "sha256": "bebd4ee0471724c9ed52f562a56b67b5752d514e3af2a77e3dad3f3cff03a4f0"
     },
     {
       "id": "armeabi-v7a",
-      "version": "3.0.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0",
-      "file": "quota-hub-3.0.0-armeabi-v7a.apk",
+      "version": "3.1.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
+      "file": "quota-hub-3.1.0-armeabi-v7a.apk",
       "label": "ARM32",
       "size": "16.52 MB",
       "bytes": 16517448,
-      "sha256": "d11ce4ba41743c5819a9da8e10ee8308e1be62a834c41ff0914de86ee7c6d77f"
+      "sha256": "7f84900c0a31ff63eb844809f458894a1d9ad3ca338d19e8b03b1dad068ae329"
     },
     {
       "id": "x86_64",
-      "version": "3.0.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.0.0",
-      "file": "quota-hub-3.0.0-x86_64.apk",
+      "version": "3.1.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
+      "file": "quota-hub-3.1.0-x86_64.apk",
       "label": "x86_64",
       "size": "20.71 MB",
       "bytes": 20707636,
-      "sha256": "9ddf121619260f1afaa6cfb4851e115cab2e083a96b49f18bf30b84aa56cb67b"
+      "sha256": "8bbbd31a2753d08d04824ae6345f6eab1b74c2518d33adc24c68e48738f01658"
     }
   ]
 })
@@ -200,10 +200,21 @@ export function applyQuotaManifest(manifest) {
   const macos = packages.find(item => item.platform === 'macos' && item.architecture === 'macos-universal')
   const versions = new Set(android.map(item => item.version))
   if (!android.some(item => item.id === 'universal') || versions.size !== 1 || !windows || !macos) throw Error('Incomplete release manifest')
+  const extraInstallers = manifest.installers ?? []
+  if (!Array.isArray(extraInstallers) || extraInstallers.length > 10) throw Error('Invalid installer manifest')
+  for (const item of extraInstallers) {
+    if (item.platform !== 'macos' || item.architecture !== 'macos-universal-dmg' ||
+        !/^\d+\.\d+\.\d+$/.test(item.version) || !/^[a-f0-9]{64}$/.test(item.sha256) ||
+        !Number.isSafeInteger(item.bytes) || item.bytes <= 0 || item.bytes > 512 * 1024 * 1024 ||
+        item.file !== `astracct-${item.version}-macos-universal.dmg` ||
+        item.url !== `https://yuashie.cn/downloads/astracct/v${item.version}/${item.file}` ||
+        item.releaseUrl !== `https://github.com/southkite2023/quota-hub/releases/tag/v${item.version}`) throw Error('Invalid DMG installer')
+  }
+  const installer = extraInstallers.find(item => item.version === macos.version) ||
+    (quotaRelease.desktop.macOS?.version === macos.version ? quotaRelease.desktop.macOS.installer : undefined)
   quotaRelease.version = android[0].version
   quotaRelease.packages = android
   quotaRelease.url = android[0].releaseUrl
-  const installer = quotaRelease.desktop.macOS?.version === macos.version ? quotaRelease.desktop.macOS.installer : undefined
   quotaRelease.desktop = { Windows: windows, macOS: { ...macos, ...(installer ? { installer } : {}) } }
   quotaRelease.latestVersion = packages.map(item => item.version).sort((a, b) => {
     const left = a.split('.').map(Number), right = b.split('.').map(Number)

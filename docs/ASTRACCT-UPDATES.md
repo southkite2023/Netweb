@@ -19,3 +19,9 @@ Android 四种固定签名 APK、Windows x64 ZIP、Mac Universal ZIP 与拖拽 D
 iOS PWA 同步圆角卡片、宽屏侧栏/窄屏底部导航、跟随系统或手动浅深色；保留原有记录、金额隐藏与导入导出键，不增加 API 密钥采集功能。源码与原生验证：https://github.com/southkite2023/quota-hub/actions/runs/40619471193；发布校验：https://github.com/southkite2023/quota-hub/actions/runs/40620155689。
 
 2026-10-28 下载入口调整：官网选择 macOS 后，主下载按钮及 GitHub 备用入口直接下载已核验的 Universal DMG，包名、23.32 MB 大小及拖拽安装说明同步展示。ZIP 保留为独立备用入口，应用内更新清单继续使用 ZIP。
+
+镜像清单现额外提供顶层 `installers` 字段用于网页发现对应版本的 DMG；`packages` 仍只包含 APK/ZIP，旧版应用内更新不受影响。网页先验证 DMG 的版本、同源路径、大小与 SHA-256，再更新主按钮，避免自动发现新版时退回 ZIP。
+
+## 3.1.0 发布（2026-10-28）
+
+固定导航、完整余额明细和行内菜单栏勾选已通过原生构建与发布校验，公开标签 v3.1.0。官网下载信息按实际附件大小及 SHA-256 更新，Mac 主按钮继续直下 DMG，ZIP 用于备用及应用内更新；iOS PWA 同步“仪表盘”名称并更新离线壳缓存版本。

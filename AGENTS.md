@@ -12,3 +12,5 @@ The owner explicitly requested on 2026-08-31: after website updates, sync GitHub
 6. Follow the exact commit's Actions run to completion and verify `https://yuashie.cn/deploy-version.json` identifies that commit. Check relevant page routes. Distinguish GitHub synchronization, frontend publication and backend publication in the result. Fix ordinary build/deployment faults where authorized; never weaken authentication or ask for private keys in chat.
 
 Do not use a separate ChatGPT Sites publication as evidence that `yuashie.cn` was updated. Publishing to unrelated domains or changing access policy requires its own authorization.
+
+Astracct 发布补充（2026-10-28）：用户要求完成已授权更新并通过检查后直接发布各平台安装包、同步 yuashie.cn，不再单独确认是否发布。发布后核对真实附件、镜像清单与线上提交，不将构建失败或未发布的候选描述为已上线。

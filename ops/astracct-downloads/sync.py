@@ -93,7 +93,8 @@ def sync(root):
             finally:
                 Path(temporary).unlink(missing_ok=True)
         item['url'] = 'https://yuashie.cn/downloads/astracct/v' + item['version'] + '/' + item['file']
-    manifest = {'schema': 1, 'channel': 'public-testing', 'packages': [item for item in packages if not item['file'].endswith('.dmg')]}
+    manifest = {'schema': 1, 'channel': 'public-testing', 'packages': [item for item in packages if not item['file'].endswith('.dmg')],
+                'installers': [item for item in packages if item['file'].endswith('.dmg')]}
     fd, temporary = tempfile.mkstemp(dir=root, prefix='.manifest-')
     try:
         with os.fdopen(fd, 'w') as output:
