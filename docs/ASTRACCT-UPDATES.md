@@ -17,3 +17,5 @@ yuashie.cn 的 `/downloads/astracct/latest.json` 是网站和原生应用共同�
 Android 四种固定签名 APK、Windows x64 ZIP、Mac Universal ZIP 与拖拽 DMG 已公开。镜像同时验证七个安装包，latest.json 仍只包含四种 APK 和两个 ZIP，保持旧版应用更新清单兼容；DMG 不进入应用内更新清单。Nginx 额外允许固定版本目录的 DMG 下载，权限与缓存规则保持一致。网站 DMG 入口使用已核验附件元数据，只有与当前 Mac ZIP 相同版本时展示，避免推测不存在的文件名。
 
 iOS PWA 同步圆角卡片、宽屏侧栏/窄屏底部导航、跟随系统或手动浅深色；保留原有记录、金额隐藏与导入导出键，不增加 API 密钥采集功能。源码与原生验证：https://github.com/southkite2023/quota-hub/actions/runs/40619471193；发布校验：https://github.com/southkite2023/quota-hub/actions/runs/40620155689。
+
+2026-10-28 下载入口调整：官网选择 macOS 后，主下载按钮及 GitHub 备用入口直接下载已核验的 Universal DMG，包名、23.32 MB 大小及拖拽安装说明同步展示。ZIP 保留为独立备用入口，应用内更新清单继续使用 ZIP。

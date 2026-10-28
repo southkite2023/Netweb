@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
-import { detectQuotaPlatform, quotaCopy, quotaDesktopCopy, quotaDownloadUrl, quotaPlatforms, quotaRelease, quotaReleaseStatus } from '../data/quotaHub'
+import { detectQuotaPlatform, quotaCopy, quotaDesktopCopy, quotaDownloadPackage, quotaDownloadUrl, quotaPlatforms, quotaRelease, quotaReleaseStatus } from '../data/quotaHub'
 import '../quota-hub.css'
 const { locale } = useI18n()
 const c = computed(() => quotaCopy[locale.value] || quotaCopy.zh)
@@ -14,10 +14,11 @@ const desktopCopy = computed(() => quotaDesktopCopy[locale.value] || quotaDeskto
 const detected = ref(null)
 const selectedPlatform = ref('Android')
 const architecture = ref('universal')
-const selectedPackage = computed(() => quotaRelease.desktop[selectedPlatform.value] || quotaRelease.packages.find(item => item.id === architecture.value))
+const selectedPackage = computed(() => quotaDownloadPackage(selectedPlatform.value, architecture.value))
 const selectedVersion = computed(() => selectedPackage.value?.version || quotaRelease.version)
 const selectedReleaseUrl = computed(() => selectedPackage.value?.releaseUrl || quotaRelease.url)
-const macDmgUrl = computed(() => selectedPlatform.value === 'macOS' ? selectedPackage.value?.installer?.url || null : null)
+const macDmgUrl = computed(() => selectedPlatform.value === 'macOS' ? quotaRelease.desktop.macOS?.installer?.url || null : null)
+const macZipUrl = computed(() => macDmgUrl.value ? `https://yuashie.cn/downloads/astracct/v${selectedVersion.value}/${quotaRelease.desktop.macOS.file}` : null)
 const downloadUrl = computed(() => quotaDownloadUrl(selectedPlatform.value, architecture.value))
 onMounted(() => {
   detected.value = detectQuotaPlatform(navigator)
@@ -48,8 +49,6 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
           <div v-if="selectedPlatform === 'iOS'" class="quota-package">
             <p class="quota-fineprint">{{ c.iosPwaIntro }}</p>
             <a class="quota-primary quota-download-button" href="/assets/astracct/?install=1">{{ c.iosPwaInstall }} <span aria-hidden="true">↗</span></a>
-            <p v-if="macDmgUrl" class="quota-fineprint"><a :href="macDmgUrl" target="_blank" rel="noopener noreferrer">{{ locale === 'zh' ? 'DMG 拖拽安装包（官网下载）' : locale === 'ja' ? 'DMG インストーラー（公式サイト）' : 'DMG drag-to-install package (official mirror)' }}</a><br>{{ locale === 'zh' ? '打开 DMG，将 Astracct 拖到 Applications，复制完成后可在桌面右键磁盘并“推出”。上方 ZIP 供解压安装及应用内更新。' : locale === 'ja' ? 'DMGを開き、AstracctをApplicationsにドラッグします。コピー後にディスクを取り出せます。上のZIPは展開とアプリ内更新用です。' : 'Open the DMG and drag Astracct to Applications. Eject the mounted disk after copying. The ZIP above is retained for extraction and in-app updates.' }}</p>
-            <p v-if="macDmgUrl" class="quota-fineprint">{{ locale === 'zh' ? 'Mac 3.0.0 起密钥改存本地明文文件，仅当前系统用户可读写；首次迁移旧钥匙串记录可能需要一次授权。' : locale === 'ja' ? 'Mac 3.0.0以降、認証情報はユーザー専用権限のローカル平文ファイルに保存されます。旧キーチェーンからの初回移行で許可が必要な場合があります。' : 'From Mac 3.0.0, credentials use local plaintext files with owner-only permissions. Importing existing Keychain records may require authorization once.' }}</p>
             <p class="quota-package-meta">{{ c.iosPwaMeta }}</p>
             <p class="quota-fineprint">{{ c.iosPwaNote }}</p>
           </div>
@@ -61,10 +60,12 @@ watch(() => route.query.platform, platform => { if (quotaPlatforms.includes(plat
             </select>
             <p id="quota-architecture-note" class="quota-fineprint">{{ c.architectureHint }}</p>
             </template>
-            <p v-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy[selectedPlatform] }}</p>
+            <p v-if="macDmgUrl" class="quota-fineprint">{{ locale === 'zh' ? '打开 DMG，将 Astracct 拖到 Applications，复制完成后从“应用程序”启动；桌面磁盘可右键选择“推出”。' : locale === 'ja' ? 'DMGを開き、AstracctをApplicationsへドラッグします。コピー後にアプリケーションから起動し、ディスクを取り出してください。' : 'Open the DMG and drag Astracct to Applications. Launch it from Applications after copying, then eject the mounted disk.' }}</p>
+            <p v-else-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy[selectedPlatform] }}</p>
             <a class="quota-primary quota-download-button" :href="downloadUrl">{{ selectedPlatform === 'Android' ? c.download : `${desktopCopy.download} ${selectedPlatform}` }} <span aria-hidden="true">↓</span></a>
             <p class="quota-package-meta">v{{ selectedVersion }} · {{ selectedPackage.label }} · {{ selectedPackage.size }}</p>
             <p class="quota-fineprint">{{ c.hosted }}</p>
+            <p v-if="macZipUrl" class="quota-fineprint"><a :href="macZipUrl">{{ locale === 'zh' ? 'ZIP 备用下载（用于解压安装或应用内更新）' : locale === 'ja' ? 'ZIP予備ダウンロード（展開・アプリ内更新用）' : 'ZIP alternative (extraction or in-app updates)' }}</a></p>
             <p v-if="quotaReleaseStatus.failed" role="status" class="quota-fineprint">{{ locale === 'zh' ? '暂时无法检查最新版本，当前显示上次已核验的安装包。' : locale === 'ja' ? '最新版を確認できません。確認済みの配布ファイルを表示しています。' : 'Unable to check for updates. Showing the last verified packages.' }}</p>
             <a :href="`${quotaRelease.repository}/releases/download/v${selectedVersion}/${selectedPackage.file}`" target="_blank" rel="noopener noreferrer">{{ locale === 'zh' ? 'GitHub 备用下载' : locale === 'ja' ? 'GitHub 予備ダウンロード' : 'GitHub fallback download' }}</a>
             <p v-if="selectedPlatform !== 'Android'" class="quota-fineprint">{{ desktopCopy.usage }}</p>

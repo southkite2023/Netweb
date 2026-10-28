@@ -1,7 +1,7 @@
 import test from 'node:test'
 import { projects } from '../src/data/projects.js'
 import assert from 'node:assert/strict'
-import { detectQuotaPlatform, quotaDownloadUrl, quotaRelease, quotaCopy, applyQuotaManifest } from '../src/data/quotaHub.js'
+import { detectQuotaPlatform, quotaDownloadUrl, quotaDownloadPackage, quotaRelease, quotaCopy, applyQuotaManifest } from '../src/data/quotaHub.js'
 
 test('device detection distinguishes Android, iPhone and desktop-mode iPad', () => {
   assert.equal(detectQuotaPlatform({ userAgent: 'Mozilla/5.0 (Linux; Android 15; Pixel 9)', platform: 'Linux aarch64' }), 'Android')
@@ -31,7 +31,9 @@ test('only verified Android architecture choices produce direct APK links', () =
 
 test('desktop downloads use fixed release assets and reject unsupported platforms', () => {
   assert.equal(quotaDownloadUrl('Windows'), 'https://yuashie.cn/downloads/astracct/v3.0.0/astracct-3.0.0-windows-x64.zip')
-  assert.equal(quotaDownloadUrl('macOS'), 'https://yuashie.cn/downloads/astracct/v3.0.0/astracct-3.0.0-macos-universal.zip')
+  assert.equal(quotaDownloadUrl('macOS'), 'https://yuashie.cn/downloads/astracct/v3.0.0/astracct-3.0.0-macos-universal.dmg')
+  assert.equal(quotaDownloadPackage('macOS').file, 'astracct-3.0.0-macos-universal.dmg')
+  assert.equal(quotaDownloadPackage('macOS').size, '23.32 MB')
   assert.equal(quotaRelease.version, '3.0.0')
   assert.equal(quotaRelease.desktop.Windows.version, '3.0.0')
   assert.equal(quotaRelease.desktop.macOS.version, '3.0.0')

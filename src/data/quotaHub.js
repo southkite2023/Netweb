@@ -88,10 +88,21 @@ export function detectQuotaPlatform(device = {}) {
   if (/linux/i.test(platform || ua)) return 'Linux'
   return null
 }
+export function quotaDownloadPackage(platform, architecture) {
+  if (Object.hasOwn(quotaRelease.desktop, platform)) {
+    const item = quotaRelease.desktop[platform]
+    if (platform === 'macOS' && item.installer) return {
+      ...item, ...item.installer,
+      label: `${item.label} · DMG`,
+      size: `${(item.installer.bytes / 1000000).toFixed(2)} MB`,
+    }
+    return item
+  }
+  return platform === 'Android' ? quotaRelease.packages.find(item => item.id === architecture) || null : null
+}
 export function quotaDownloadUrl(platform, architecture) {
-  if (Object.hasOwn(quotaRelease.desktop, platform)) return `https://yuashie.cn/downloads/astracct/v${quotaRelease.desktop[platform].version}/${quotaRelease.desktop[platform].file}`
-  if (platform !== 'Android' || !quotaRelease.packages.some(item => item.id === architecture)) return null
-  return `https://yuashie.cn/downloads/astracct/v${quotaRelease.version}/${quotaRelease.packages.find(item => item.id === architecture).file}`
+  const item = quotaDownloadPackage(platform, architecture)
+  return item ? `https://yuashie.cn/downloads/astracct/v${item.version || quotaRelease.version}/${item.file}` : null
 }
 
 export const quotaCopy = {
@@ -109,7 +120,7 @@ export const quotaCopy = {
     guide: '第一次使用？查看使用方法', hosted: '测试版 · Yuashie 服务器直接下载', source: 'GitHub 项目', notes: '版本说明',
     guideTitle: '从这里开始。', guideIntro: '安装、添加账户，再把余量放到眼前。', returnDownload: '返回下载页',
     steps: [
-      ['下载并安装', '在下载页选择 Android 安装包。不确定芯片架构时选择通用版；下载完成后打开 APK，按系统提示允许本次安装。下载页按平台显示已核验的最新公开测试版；支持应用内更新的新包可在设置中检查、下载并安装更新。Windows 请完整解压并运行 astracct.exe；macOS 请解压后打开 Astracct.app。'],
+      ['下载并安装', '在下载页选择 Android 安装包。不确定芯片架构时选择通用版；下载完成后打开 APK，按系统提示允许本次安装。下载页按平台显示已核验的最新公开测试版；支持应用内更新的新包可在设置中检查、下载并安装更新。Windows 请完整解压并运行 astracct.exe；macOS 请打开 DMG，将 Astracct 拖到 Applications，复制完成后从“应用程序”启动并推出磁盘。'],
       ['添加余额账户', '打开应用，点击“添加余额账户”或进入账户设置，选择对应服务商并填写该服务需要的账户信息或 API 凭据。凭据只在应用内填写，请勿发送到网站评论区。'],
       ['查看与刷新', '返回主界面查看账户余额。在“自动刷新”中调整刷新间隔；查询失败或数据过期时，先检查网络和账户配置，再尝试刷新。'],
       ['放到桌面', '在 Android 桌面的小组件列表中找到星账 Astracct，将组件添加到桌面，并选择要显示的账户。后台刷新受系统省电和网络状态影响。'],
@@ -132,7 +143,7 @@ export const quotaCopy = {
     guide: 'New here? Read the getting-started guide', hosted: 'Test release · Direct download from Yuashie', source: 'GitHub project', notes: 'Release notes',
     guideTitle: 'Start here.', guideIntro: 'Install, add your accounts, and keep your balances in view.', returnDownload: 'Back to downloads',
     steps: [
-      ['Download and install', 'Choose an Android package. If you do not know your device architecture, choose Universal. Open the downloaded APK and follow the system installation prompts. The download page shows the latest verified testing version per platform. Packages that support in-app updates offer check, download and installation in Settings. On Windows, extract the full ZIP and run astracct.exe. On macOS, extract and open Astracct.app.'],
+      ['Download and install', 'Choose an Android package. If you do not know your device architecture, choose Universal. Open the downloaded APK and follow the system installation prompts. The download page shows the latest verified testing version per platform. Packages that support in-app updates offer check, download and installation in Settings. On Windows, extract the full ZIP and run astracct.exe. On macOS, open the DMG, drag Astracct to Applications, then open it from Applications and eject the mounted disk.'],
       ['Add an account', 'Tap Add balance account or open account settings in the app, select a provider and enter the account details or API credentials it requires. Enter credentials only in the app, never in website comments.'],
       ['View and refresh', 'Return to the dashboard to see balances. Adjust the interval in Auto refresh. If a query fails or data is stale, check your connection and account settings before refreshing.'],
       ['Add a widget', 'Find Astracct in the Android home-screen widget picker. Add a widget and select which accounts to display. Background refresh depends on system power saving and network conditions.'],
