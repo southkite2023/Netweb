@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { calendarGames, calendarTypes, calendarCopy } from '../src/data/calendar.js'
-import { calendarTestUrl, defaultCalendarSelection } from '../src/lib/calendar.js'
+import { calendarTestUrl, defaultCalendarSelection, CALENDAR_REAL_ANIME_FEEDS } from '../src/lib/calendar.js'
 
 test('empty and unknown selections cannot produce a feed URL', () => {
   assert.equal(calendarTestUrl({ games: {}, anime: false, releases: false }), null)
@@ -40,4 +40,18 @@ test('defaults are independent and all four games and UI strings support three l
     for (const game of calendarGames) assert.ok(game[lang])
     for (const type of calendarTypes) assert.ok(calendarCopy[lang].types[type])
   }
+})
+
+test('live anime URLs are real, HTTPS and separate from the fictional builder', () => {
+  const start = new URL(CALENDAR_REAL_ANIME_FEEDS.start)
+  const span = new URL(CALENDAR_REAL_ANIME_FEEDS.duration)
+  for (const url of [start, span]) {
+    assert.equal(url.protocol, 'https:')
+    assert.equal(url.hostname, 'southkite2023.github.io')
+    assert.ok(url.pathname.includes('/calendar/real/v1/anime/'))
+    assert.ok(url.pathname.endsWith('.ics'))
+  }
+  assert.ok(start.pathname.endsWith('/start.ics'))
+  assert.ok(span.pathname.endsWith('/span.ics'))
+  assert.equal(new URL(calendarTestUrl({ anime: true })).hostname, 'calendar.example.invalid')
 })
