@@ -23,8 +23,8 @@ export const projects = [
     get version() { return quotaRelease.latestVersion },
     repository: 'https://github.com/southkite2023/quota-hub',
     year: '2026',
-    image: new URL('../assets/projects/project-001-optimized.webp', import.meta.url).href,
-    imageWidth: 1280, imageHeight: 960,
+    image: new URL('../assets/projects/project-001.svg', import.meta.url).href,
+    imageWidth: 1280, imageHeight: 800,
   },
   {
     id: '002',
@@ -47,7 +47,7 @@ export const projects = [
     type: { zh: '游戏服务器', en: 'Game server', ja: 'ゲームサーバー' },
     version: '26.2',
     year: '2026',
-    image: new URL('../assets/projects/project-002-optimized.webp', import.meta.url).href,
+    image: new URL('../assets/projects/project-002.svg', import.meta.url).href,
     imageWidth: 1280, imageHeight: 800,
   },
   {
@@ -71,8 +71,8 @@ export const projects = [
     type: { zh: '业余无线电 / Web 应用', en: 'Amateur Radio / Web App', ja: 'アマチュア無線 / Webアプリ' },
     version: '0.3.0',
     year: '2026',
-    image: new URL('../assets/projects/project-003-optimized.webp', import.meta.url).href,
-    imageWidth: 1280, imageHeight: 853,
+    image: new URL('../assets/projects/project-003.svg', import.meta.url).href,
+    imageWidth: 1280, imageHeight: 800,
   },
   {
     id: '004',
@@ -93,8 +93,8 @@ export const projects = [
     repositoryLabel: { zh: '在 GitHub 查看日历企划', en: 'View the calendar on GitHub', ja: 'GitHubでカレンダー企画を見る' },
     note: { zh: '开发进度与实施路线以 GitHub 仓库为准。', en: 'Follow the GitHub repository for progress and the roadmap.', ja: '開発状況とロードマップはGitHubをご覧ください。' },
     year: '2026',
-    image: new URL('../assets/projects/project-004-optimized.webp', import.meta.url).href,
-    imageWidth: 1280, imageHeight: 960,
+    image: new URL('../assets/projects/project-004.svg', import.meta.url).href,
+    imageWidth: 1280, imageHeight: 800,
   },
   {
     "id": "005",

@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import projectArtwork from '../assets/projects/project-004.svg'
 import { useI18n } from 'vue-i18n'
 import { calendarCopy } from '../data/calendar'
 import { CALENDAR_REAL_ANIME_FEEDS } from '../lib/calendar'
@@ -19,12 +20,10 @@ const c = computed(() => calendarCopy[locale.value] || calendarCopy.zh)
         <p class="quota-intro">{{ c.intro }}</p>
         <RouterLink class="quota-primary" to="/projects/004/subscribe">{{ c.open }} <span aria-hidden="true">↗</span></RouterLink>
       </header>
-      <div class="quota-diagram">
-        <div class="quota-orbit" aria-hidden="true"></div>
-        <div class="quota-diagram-hub"><span class="quota-symbol" aria-hidden="true">C</span><strong>{{ c.scope }}</strong></div>
-        <div v-for="(category, index) in c.categories" :key="category" class="quota-account"><span class="quota-account-index">0{{ index + 1 }}</span><strong>{{ category }}</strong><span aria-hidden="true">→</span></div>
-        <p>SELECT → CONFIGURE → ICS</p>
-      </div>
+      <figure class="project-vector-hero">
+        <img :src="projectArtwork" width="1280" height="800" alt="Yuashie Calendar" decoding="async">
+        <figcaption><span v-for="label in c.categories" :key="label">{{ label }}</span></figcaption>
+      </figure>
     </div>
     <p class="calendar-notice">{{ c.warning }}</p>
     <section class="calendar-live-panel" :aria-label="c.liveAnimeTitle">
@@ -43,3 +42,10 @@ const c = computed(() => calendarCopy[locale.value] || calendarCopy.zh)
     </div>
   </section>
 </template>
+
+<style scoped>
+.project-vector-hero { margin:0;min-width:0;align-self:center; }
+.project-vector-hero img { display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:18px; }
+.project-vector-hero figcaption { display:flex;flex-wrap:wrap;gap:8px;margin-top:14px; }
+.project-vector-hero figcaption span { font-size:11px;color:var(--muted);padding:5px 9px;border:1px solid var(--line);border-radius:6px; }
+</style>

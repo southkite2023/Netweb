@@ -1,39 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
-  <title id="title">Quota Hub</title>
-  <desc id="desc">Feature illustration for Quota Hub, showing API, custom endpoint and cloud accounts without live account data.</desc>
-  <defs>
-    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102a32"/><stop offset="1" stop-color="#080d17"/></linearGradient>
-    <linearGradient id="accent"><stop stop-color="#79efd0"/><stop offset="1" stop-color="#72cfff"/></linearGradient>
-  </defs>
-  <rect width="1200" height="800" fill="url(#bg)"/>
-  <g fill="none" stroke="#90dcca" opacity=".08"><circle cx="930" cy="190" r="280"/><circle cx="930" cy="190" r="360"/><path d="M0 670h1200M0 710h1200"/></g>
-  <g font-family="system-ui, sans-serif">
-    <text x="90" y="113" fill="#89e5ce" font-size="20" letter-spacing="5">PROJECT / 001</text>
-    <text x="86" y="205" fill="#eefbf8" font-size="76" font-weight="650">Quota Hub</text>
-    <text x="90" y="254" fill="#a5c5c8" font-size="24">Balances &amp; usage, together.</text>
-    <g transform="translate(90 325)">
-      <rect width="1020" height="310" rx="28" fill="#11232e" stroke="#35535d"/>
-      <text x="34" y="52" fill="#87a5b1" font-size="16" letter-spacing="3">DASHBOARD CONCEPT</text>
-      <g transform="translate(34 90)">
-        <rect width="296" height="183" rx="18" fill="#182f3a"/>
-        <text x="24" y="43" fill="#b9d1d8" font-size="19">API BALANCE</text>
-        <path d="M25 91h64" stroke="#ecf8f7" stroke-width="8" stroke-linecap="round"/>
-        <rect x="24" y="132" width="248" height="8" rx="4" fill="#2a4751"/><rect x="24" y="132" width="175" height="8" rx="4" fill="url(#accent)"/>
-      </g>
-      <g transform="translate(362 90)">
-        <rect width="296" height="183" rx="18" fill="#182f3a"/>
-        <text x="24" y="43" fill="#b9d1d8" font-size="19">CUSTOM ENDPOINT</text>
-        <path d="M25 91h64" stroke="#ecf8f7" stroke-width="8" stroke-linecap="round"/>
-        <rect x="24" y="132" width="248" height="8" rx="4" fill="#2a4751"/><rect x="24" y="132" width="110" height="8" rx="4" fill="url(#accent)"/>
-      </g>
-      <g transform="translate(690 90)">
-        <rect width="296" height="183" rx="18" fill="#182f3a"/>
-        <text x="24" y="43" fill="#b9d1d8" font-size="19">CLOUD BALANCE</text>
-        <path d="M25 91h64" stroke="#ecf8f7" stroke-width="8" stroke-linecap="round"/>
-        <rect x="24" y="132" width="248" height="8" rx="4" fill="#2a4751"/><rect x="24" y="132" width="210" height="8" rx="4" fill="url(#accent)"/>
-      </g>
-    </g>
-    <circle cx="99" cy="707" r="6" fill="#89e5ce"/>
-    <text x="120" y="714" fill="#a5c5c8" font-size="18" letter-spacing="2">OPEN SOURCE · ANDROID · PUBLIC TEST</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+<title id="title">ASTRACCT — Yuashie project 001</title><desc id="desc">BALANCES IN ORBIT. Original geometric vector illustration.</desc>
+<defs><radialGradient id="halo"><stop stop-color="#b9e88c" stop-opacity=".17"/><stop offset="1" stop-color="#b9e88c" stop-opacity="0"/></radialGradient><linearGradient id="surface" x2="1" y2="1"><stop stop-color="#354153"/><stop offset="1" stop-color="#151d2a"/></linearGradient></defs>
+<rect x="0" y="0" width="1280" height="800" rx="0" fill="#10191e"/><path d="M0 0L0 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M80 0L80 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M160 0L160 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M240 0L240 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M320 0L320 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M400 0L400 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M480 0L480 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M560 0L560 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M640 0L640 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M720 0L720 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M800 0L800 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M880 0L880 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M960 0L960 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M1040 0L1040 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M1120 0L1120 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M1200 0L1200 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M1280 0L1280 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 0L1280 0" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 80L1280 80" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 160L1280 160" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 240L1280 240" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 320L1280 320" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 400L1280 400" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 480L1280 480" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 560L1280 560" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 640L1280 640" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 720L1280 720" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><path d="M0 800L1280 800" fill="none" stroke="#b9e88c" stroke-opacity=".055" stroke-width="1"/><circle cx="700" cy="350" r="470" fill="url(#halo)" opacity="1"/>
+<g transform="rotate(-12 640 360)"><ellipse cx="640" cy="360" rx="390" ry="160" fill="none" stroke="#b9e88c" stroke-opacity=".45" stroke-width="2"/><ellipse cx="640" cy="360" rx="310" ry="230" fill="none" stroke="#b9e88c" stroke-opacity=".15" stroke-width="2"/><rect x="415" y="160" width="450" height="382" rx="24" fill="#101c24"/><rect x="435" y="180" width="410" height="342" rx="16" fill="url(#surface)"/><text x="470" y="228" font-family="Arial, sans-serif" font-size="13" letter-spacing="2" fill="#b9e88c">ASTRACCT / ORBITAL LEDGER</text><rect x="478" y="398" width="27" height="70" rx="6" fill="#5b8067"/><rect x="523" y="364" width="27" height="104" rx="6" fill="#78a17a"/><rect x="568" y="377" width="27" height="91" rx="6" fill="#c1ed92"/><rect x="613" y="318" width="27" height="150" rx="6" fill="#5b8067"/><rect x="658" y="280" width="27" height="188" rx="6" fill="#78a17a"/><rect x="703" y="301" width="27" height="167" rx="6" fill="#c1ed92"/><rect x="748" y="246" width="27" height="222" rx="6" fill="#5b8067"/><path d="M468 480L810 480" fill="none" stroke="#c1ed92" stroke-opacity=".4" stroke-width="2"/></g><circle cx="283" cy="307" r="17" fill="#c1ed92" opacity="1"/><circle cx="283" cy="307" r="27" fill="none" opacity="1"/><circle cx="1008" cy="391" r="25" fill="#c1ed92" opacity="1"/><circle cx="1008" cy="391" r="35" fill="none" opacity="1"/><circle cx="518" cy="553" r="12" fill="#c1ed92" opacity="1"/><circle cx="518" cy="553" r="22" fill="none" opacity="1"/><circle cx="852" cy="165" r="37" fill="#c1ed92" opacity="1"/><text x="836" y="178" font-family="Arial, sans-serif" font-size="38" letter-spacing="0" fill="#16251d">+</text>
+<path d="M64 673L1216 673" fill="none" stroke="#b9e88c" stroke-opacity=".24" stroke-width="1"/><text x="66" y="718" font-family="Arial, sans-serif" font-size="30" letter-spacing="1" fill="#eff4ed">ASTRACCT</text><text x="66" y="751" font-family="Arial, sans-serif" font-size="12" letter-spacing="2" fill="#b9e88c">BALANCES IN ORBIT</text><text x="1083" y="724" font-family="Arial, sans-serif" font-size="36" letter-spacing="3" fill="#b9e88c">/001</text>
 </svg>
