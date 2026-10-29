@@ -45,12 +45,12 @@ onUnmounted(() => { stopped = true; clearTimeout(timer) })
   <div class="vip-page"><div class="container"><SiteNav />
     <main class="vip-main">
       <header class="vip-hero"><div class="vip-heading"><p class="eyebrow">// MEMBERSHIP · ALIPAY</p><h1>会员与支持</h1></div>
-        <div class="vip-intro"><p>选择适合自己的月卡，用支付宝为这里的持续维护与创作提供支持。</p><p>普通浏览与基础功能继续开放。三档月卡的具体权益尚未确定，目前暂不开放购买。</p></div>
+        <div class="vip-intro"><p>选择适合自己的月卡，用支付宝为这里的持续维护与创作提供支持。</p><p>{{ ready ? '支付宝月卡现已开放购买。普通浏览与基础功能继续开放；三档月卡的额外权益尚未确定，请按支持本站的意愿选择。' : '支付宝收款暂未开放，请稍后再来。普通浏览与基础功能继续开放。' }}</p></div>
       </header>
       <section class="monthly-section" aria-labelledby="plans-title"><p class="section-label">01 / MONTHLY PLANS</p><h2 id="plans-title">每一份支持，都有回响。</h2>
-        <p class="monthly-note">单次购买一个月，不自动扣款。同档续费从现有到期日顺延；已到期则从付款确认时开始。具体权益公布后开放购买。</p>
+        <p class="monthly-note">单次购买一个月，不自动扣款。同档续费从现有到期日顺延；已到期则从付款确认时开始。有效期内暂不支持跨档购买。</p>
         <p v-if="loading" role="status">正在加载套餐…</p>
-        <div class="monthly-grid"><article v-for="plan in plans" :key="plan.id" class="monthly-card"><span>月卡 · {{ plan.tier }} 档</span><h3>¥{{ plan.price }}<small> / 月</small></h3><p>有效期一个月<br>对应权益待公布</p><button class="btn btn-primary" :disabled="!ready || busy" @click="buy(plan)">{{ ready ? (busy ? '正在创建订单…' : (auth.user ? '支付宝扫码购买' : '登录后购买')) : '暂未开放购买' }}</button></article></div>
+        <div class="monthly-grid"><article v-for="plan in plans" :key="plan.id" class="monthly-card"><span>月卡 · {{ plan.tier }} 档</span><h3>¥{{ plan.price }}<small> / 月</small></h3><p>有效期一个月<br>额外权益尚未确定</p><button class="btn btn-primary" :disabled="!ready || busy" @click="buy(plan)">{{ ready ? (busy ? '正在创建订单…' : (auth.user ? '支付宝扫码购买' : '登录后购买')) : '暂未开放购买' }}</button></article></div>
         <p class="monthly-note">付款订单将关联当前登录账号。支付宝确认到账后自动开通；页面返回本身不会作为到账凭据。</p>
         <p v-if="message" class="monthly-message" role="status">{{ message }}</p>
       </section>
