@@ -11,7 +11,14 @@ Uses existing SiteNav/SiteFooter, Quota Hub layout and site theme variables. Chi
 
 ## Current status
 
-Frontend interaction test only. No data is fetched, no actual events are fabricated and no subscription is offered as operational. The diagram is explicitly illustrative. Anime and new-game releases currently have category-level selection only; individual shows, platforms and source lists await real integration.
+**Partial real launch (2026-10-29):** the website now offers two independent, operating AniList anime ICS subscriptions. The calendar backend successfully generated 174 upcoming Japanese TV anime episodes on first run and published both on GitHub Pages. No API data is fetched from the website itself; links use published static ICS. The existing arbitrary category/game combination builder is **still a demo** with an intentionally unresolvable .invalid URL. Games, new releases, per-title anime filters and multi-category combination remain unimplemented. The diagram remains illustrative.
+
+The live anime URLs (separate from custom builder) are:
+
+- `https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/start.ics` (one all-day marker per airing episode)
+- `https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/span.ics` (exact airing time)
+
+These are explicitly labeled as AniList aggregator data, not official Japanese broadcaster announcements. The start/duration radio in the subscription page chooses between these two feed links; links also appear on Project 004's introduction page. This feature does not expose per-show selections. Source code and ingestion details: [yuashie-calendar/docs/real-anime.md](https://github.com/southkite2023/yuashie-calendar/blob/main/docs/real-anime.md).
 
 The endpoint `https://calendar.example.invalid/v1/feed.ics` is deliberately on the reserved `.invalid` domain. It will not resolve and is NOT a real feed. Copying demonstrates the URL contract; there is no active webcal/add-to-calendar action. Changing feed-affecting options clears the generated URL so stale selections cannot be copied. Clipboard failures allow manual copying from a readonly selectable field.
 
