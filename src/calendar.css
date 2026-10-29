@@ -43,3 +43,12 @@
   .calendar-heading { padding-top: 32px; }
   .calendar-options > .quota-primary { width: 100%; }
 }
+
+/* Real AniList feeds are independent from the unfinished custom builder. */
+.calendar-live-panel { margin: 0 0 28px; padding: 24px; border: 1px solid var(--line); background: var(--bg-soft); overflow-wrap: anywhere; }
+.calendar-live-panel h2 { margin: 10px 0; font-size: clamp(19px, 2.5vw, 25px); }
+.calendar-live-panel > p:not(.quota-eyebrow) { font-size: 13px; color: var(--muted); line-height: 1.85; }
+.calendar-live-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin: 16px 0; }
+.calendar-live-actions a { color: var(--quota-accent); font-size: 13px; font-weight: 600; }
+.calendar-live-actions a:focus-visible, .calendar-live-actions button:focus-visible { outline: 3px solid var(--quota-accent); outline-offset: 4px; }
+.calendar-live-url { display: block; font-size: 11px; padding: 10px; margin: 12px 0; background: var(--bg); border: 1px solid var(--line); overflow-wrap: anywhere; white-space: normal; user-select: all; }
