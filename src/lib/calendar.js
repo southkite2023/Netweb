@@ -2,6 +2,13 @@ import { calendarGames, calendarTypes } from '../data/calendar.js'
 
 // Deliberately unresolvable: never imply a live subscription before backend launch.
 export const CALENDAR_TEST_ENDPOINT = 'https://calendar.example.invalid/v1/feed.ics'
+// Live, public, read-only anime feeds. Keep separate from the unavailable
+// custom multi-category URL builder and from the 2030 fictional test feeds.
+export const CALENDAR_REAL_ANIME_FEEDS = Object.freeze({
+  start: 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/start.ics',
+  duration: 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/span.ics',
+})
+
 export function defaultCalendarSelection() {
   return { games: Object.fromEntries(calendarGames.map(game => [game.id, game.id === 'genshin' ? [...calendarTypes] : []])), anime: false, releases: false, mode: 'start' }
 }
