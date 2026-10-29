@@ -1,3 +1,4 @@
+import { registerMembership } from './membership.js'
 import Fastify from 'fastify'
 import { registerAstracctParameters } from './astracct-parameters.js'
 import { registerUnifiedAuth } from './unified-auth.js'
@@ -32,6 +33,8 @@ await app.register(cookie)
 await app.register(rateLimit, { max: 120, timeWindow: '1 minute' })
 
 app.addHook('onRequest', async (req, reply) => {
+  // Only this exact payment callback bypasses browser CSRF; the handler requires an Alipay signature.
+  if (req.method === 'POST' && req.url.split('?')[0] === '/api/payments/alipay/notify') return
   // Bridge callbacks use independently validated bearer credentials, never browser sessions.
   if (/^\/api\/minecraft\/bridge\/\d+\/(complete|fail)$/.test(req.url.split('?')[0]) && !req.cookies[COOKIE]) return
   if (!['GET', 'HEAD', 'OPTIONS'].includes(req.method)) {
@@ -157,6 +160,8 @@ async function requireUser(req, reply) {
   }
   return user
 }
+
+await registerMembership(app, { pool, requireUser, origin: ORIGIN })
 
 async function requireAdmin(req, reply) {
   const user = await requireUser(req, reply)

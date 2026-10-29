@@ -24,7 +24,7 @@ export function directoryEntries(locale = 'zh') {
       ['/radio/qsl', 'qsl', '收卡 发卡 eQSL cards カード'],
       ['/about', 'about', '更新 日志 changelog release バージョン'],
       ['/feedback', 'feedback', 'Bug 建议 suggestion フィードバック'],
-      ['/vip', 'vip', '会员 支持 爱发电 support membership'],
+      ['/vip', 'vip', '会员 月卡 支付宝 support membership alipay'],
       ['/login', 'login', '登录 注册 账户 sign in account ログイン'],
       ['/terms', 'terms', '用户 服务 条款 terms 規約'],
       ['/privacy', 'privacyPage', '隐私 privacy プライバシー'],
