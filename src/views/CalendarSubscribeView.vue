@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import { calendarCopy, calendarGames, calendarTypes, calendarRepository } from '../data/calendar'
-import { calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
+import { CALENDAR_REAL_ANIME_FEEDS, calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
 import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
@@ -13,6 +13,8 @@ const selection = reactive(defaultCalendarSelection())
 const gamesEnabled = ref(true)
 const output = ref('')
 const copyState = ref('')
+const liveCopyState = ref('')
+const realAnimeUrl = computed(() => CALENDAR_REAL_ANIME_FEEDS[selection.mode] || CALENDAR_REAL_ANIME_FEEDS.start)
 const effective = computed(() => ({ ...selection, games: gamesEnabled.value ? selection.games : {} }))
 const candidate = computed(() => calendarTestUrl(effective.value))
 const selectedLabels = computed(() => [
@@ -23,6 +25,7 @@ function toggleGame(id, enabled) {
   selection.games[id] = enabled ? [...calendarTypes] : []
 }
 watch(candidate, () => { output.value = ''; copyState.value = '' })
+watch(realAnimeUrl, () => { liveCopyState.value = '' })
 async function copyUrl() {
   const value = output.value
   try {
@@ -30,6 +33,14 @@ async function copyUrl() {
     if (output.value === value) copyState.value = 'copied'
   } catch {
     if (output.value === value) copyState.value = 'copyFailed'
+  }
+}
+async function copyRealAnimeUrl() {
+  try {
+    await navigator.clipboard.writeText(realAnimeUrl.value)
+    liveCopyState.value = 'copied'
+  } catch {
+    liveCopyState.value = 'copyFailed'
   }
 }
 </script>
@@ -41,6 +52,18 @@ async function copyUrl() {
         <nav class="quota-kicker" :aria-label="c.back"><RouterLink class="quota-back" to="/projects/004">← {{ c.back }}</RouterLink><span>CALENDAR / CONFIGURATOR</span></nav>
         <header class="calendar-heading"><p class="quota-eyebrow">{{ c.badge }}</p><h1>{{ c.generator }}</h1><p class="quota-intro">{{ c.intro }}</p></header>
         <p id="calendar-test-note" class="calendar-notice">{{ c.warning }}</p>
+        <section class="calendar-live-panel" :aria-label="c.liveAnimeTitle">
+          <p class="quota-eyebrow">LIVE / ANILIST</p>
+          <h2>{{ c.liveAnimeTitle }}</h2>
+          <p>{{ c.liveAnimeDescription }}</p>
+          <div class="calendar-live-actions">
+            <a :href="realAnimeUrl" target="_blank" rel="noopener noreferrer">{{ c.liveAnimeOpen }} ↗</a>
+            <button class="btn btn-secondary" type="button" @click="copyRealAnimeUrl">{{ c.liveAnimeCopy }}</button>
+          </div>
+          <code class="calendar-live-url">{{ realAnimeUrl }}</code>
+          <p class="quota-fineprint">{{ c.liveAnimeHint }}</p>
+          <p role="status" aria-live="polite" class="quota-fineprint">{{ liveCopyState ? c[liveCopyState] : '' }}</p>
+        </section>
         <div class="calendar-builder">
           <form class="calendar-options" aria-describedby="calendar-test-note" @submit.prevent="output = candidate || ''; copyState = ''">
             <fieldset><legend>01 / {{ c.select }}</legend>
