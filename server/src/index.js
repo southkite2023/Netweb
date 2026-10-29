@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import { registerAstracctParameters } from './astracct-parameters.js'
 import { registerUnifiedAuth } from './unified-auth.js'
 import { registerCloudSync, csrfToken, safeEqual } from './cloud-sync.js'
 import cookie from '@fastify/cookie'
@@ -352,6 +353,7 @@ function validateQsoPayload(body, profile) {
 }
 
 registerCloudSync(app, pool, requireUser, COOKIE, hashToken)
+registerAstracctParameters(app, pool, requireUser)
 
 app.get('/api/health', async () => ({ ok: true, version: '0.9.1' }))
 
