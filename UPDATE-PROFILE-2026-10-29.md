@@ -11,4 +11,8 @@
 
 在仓库目录执行 `npm ci`、`npm run dev`。真实 API 需按 server/README.md 配置并启动，开发代理指向 127.0.0.1:3000。生产构建为 `npm run build`，产物为 dist/。
 
-同步最新 main，保留并合并并发提交后正常推送，现有 deploy-web.yml 自动发布 yuashie.cn；必须核对对应 Actions 成功且线上 deploy-version.json 指向该提交，再认定上线。不要强推。此次环境连接 github.com 超时，远端同步及上线未验证。
+同步最新 main，保留并合并并发提交后正常推送，现有 deploy-web.yml 自动发布 yuashie.cn；必须核对对应 Actions 成功且线上 deploy-version.json 指向该提交，再认定上线。不要强推。用户中心已通过 PR #11 合并至 main；发布提交 8ed78f3fd93af55448b11801b833a6e3a2a4a4d0 的 Actions 成功，线上 deploy-version.json 与提交一致，公开主页与设置路由均返回 HTTP 200。
+
+## 站内日志补充
+
+2026-10-29：在关于页面的 0.10.0 同版本记录中补充用户中心布局、公开资料与私密设置分离、真实贡献/徽章数据和未开放功能范围，提供中英日三语；保留星账原有记录，不另造版本号。
