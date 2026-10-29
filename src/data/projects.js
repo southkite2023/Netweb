@@ -96,6 +96,135 @@ export const projects = [
     image: new URL('../assets/projects/project-004-optimized.webp', import.meta.url).href,
     imageWidth: 1280, imageHeight: 960,
   },
+  {
+    "id": "005",
+    "title": {
+        "zh": "雀镜 QueLens",
+        "en": "QueLens",
+        "ja": "雀鏡 QueLens"
+    },
+    "summary": {
+        "zh": "面向微信小程序的成都血战到底牌型学习工具。",
+        "en": "A Chengdu Blood Battle mahjong hand-learning tool for WeChat Mini Programs.",
+        "ja": "WeChatミニプログラム向けの成都麻雀「血戦到底」の牌形学習ツール。"
+    },
+    "description": {
+        "zh": "项目正在搭建，尚未发布。本站先介绍项目方向，后续功能与发布进度以仓库为准。",
+        "en": "The project foundation is being built and has not been released. This page introduces its direction; follow the repository for features and release progress.",
+        "ja": "基盤を構築中で、まだ公開されていません。ここでは企画の方向性を紹介します。機能と公開状況はリポジトリをご覧ください。"
+    },
+    "status": {
+        "zh": "开发中 · 尚未发布",
+        "en": "In development · Unreleased",
+        "ja": "開発中・未公開"
+    },
+    "type": {
+        "zh": "微信小程序 / 麻将学习",
+        "en": "WeChat Mini Program / Mahjong learning",
+        "ja": "WeChat / 麻雀学習"
+    },
+    "repository": "https://github.com/southkite2023/QueLens",
+    "repositoryLabel": {
+        "zh": "在 GitHub 查看项目",
+        "en": "View project on GitHub",
+        "ja": "GitHubでプロジェクトを見る"
+    },
+    "note": {
+        "zh": "目前先展示项目介绍，尚未接入本站功能。开发进度以 GitHub 仓库为准。",
+        "en": "Introduction only; functionality is not integrated into this site. Follow GitHub for progress.",
+        "ja": "現在は紹介のみで、機能は本サイトに未接続です。進捗はGitHubをご覧ください。"
+    },
+    "year": "2026",
+    "imageWidth": 1280,
+    "imageHeight": 800,
+    image: new URL('../assets/projects/project-005.svg', import.meta.url).href,
+  },
+  {
+    "id": "006",
+    "title": {
+        "zh": "Minecraft Mods · Yuashie Core",
+        "en": "Minecraft Mods · Yuashie Core",
+        "ja": "Minecraft Mods · Yuashie Core"
+    },
+    "summary": {
+        "zh": "Minecraft Java 版 Fabric 模组集合，从 Yuashie Core 基础工程起步。",
+        "en": "A collection of Minecraft Java Fabric mods, starting with the Yuashie Core foundation.",
+        "ja": "Yuashie Coreを起点とするMinecraft Java版Fabric MOD集。"
+    },
+    "description": {
+        "zh": "首个模组 Yuashie Core 面向 Minecraft 26.2，目前仅搭建模组加载入口、日志、客户端隔离及构建流程，尚未加入物品、方块或玩法。原创代码采用 MIT 许可。自动构建不代表已完成游戏内测试，本站暂不提供安装包下载。",
+        "en": "Yuashie Core targets Minecraft 26.2. The foundation covers loading, logging, client isolation and builds; items, blocks and gameplay have not been added. Original code is MIT licensed. Automated builds do not imply in-game testing; no downloads are offered here yet.",
+        "ja": "Yuashie CoreはMinecraft 26.2向けです。読み込み・ログ・クライアント分離・ビルドの基盤のみで、アイテム・ブロック・ゲーム要素は未実装。独自コードはMITライセンスです。自動ビルドはゲーム内検証を意味せず、ここではまだ配布しません。"
+    },
+    "status": {
+        "zh": "开发中 · 尚未发布",
+        "en": "In development · Unreleased",
+        "ja": "開発中・未公開"
+    },
+    "type": {
+        "zh": "Minecraft / Fabric 模组",
+        "en": "Minecraft / Fabric mods",
+        "ja": "Minecraft / Fabric MOD"
+    },
+    "repository": "https://github.com/southkite2023/Minecraft-Mods",
+    "repositoryLabel": {
+        "zh": "在 GitHub 查看项目",
+        "en": "View project on GitHub",
+        "ja": "GitHubでプロジェクトを見る"
+    },
+    "note": {
+        "zh": "目前先展示项目介绍，尚未接入本站功能。开发进度以 GitHub 仓库为准。",
+        "en": "Introduction only; functionality is not integrated into this site. Follow GitHub for progress.",
+        "ja": "現在は紹介のみで、機能は本サイトに未接続です。進捗はGitHubをご覧ください。"
+    },
+    "year": "2026",
+    "imageWidth": 1280,
+    "imageHeight": 800,
+    image: new URL('../assets/projects/project-006.svg', import.meta.url).href,
+  },
+  {
+    "id": "007",
+    "title": {
+        "zh": "GamePulse",
+        "en": "GamePulse",
+        "ja": "GamePulse"
+    },
+    "summary": {
+        "zh": "开源的跨设备游戏匹配检测与通知项目，基础工程开发中。",
+        "en": "Open-source cross-device game matchmaking detection and notifications, with the foundation in development.",
+        "ja": "ゲームのマッチング検出と端末間通知を目指すオープンソース企画。基盤を開発中。"
+    },
+    "description": {
+        "zh": "GamePulse 以跨设备的游戏匹配检测和通知为项目方向，采用 MIT 许可。目前基础工程正在开发，本站仅提供介绍与源码入口；具体支持的游戏、设备和可用功能以仓库后续说明为准。",
+        "en": "GamePulse focuses on cross-device game matchmaking detection and notifications under the MIT license. Its foundation is under development. This page provides an introduction and source link; follow the repository for supported games, devices and available features.",
+        "ja": "GamePulseはゲームのマッチング検出と端末間通知を目指すMITライセンスのプロジェクトです。現在は基盤開発中。ここでは紹介とソースへのリンクを提供し、対応ゲーム・端末・機能は今後のリポジトリの案内をご確認ください。"
+    },
+    "status": {
+        "zh": "开发中 · 尚未发布",
+        "en": "In development · Unreleased",
+        "ja": "開発中・未公開"
+    },
+    "type": {
+        "zh": "游戏 / 跨设备通知",
+        "en": "Games / Cross-device notifications",
+        "ja": "ゲーム / 端末間通知"
+    },
+    "repository": "https://github.com/southkite2023/gamepulse",
+    "repositoryLabel": {
+        "zh": "在 GitHub 查看项目",
+        "en": "View project on GitHub",
+        "ja": "GitHubでプロジェクトを見る"
+    },
+    "note": {
+        "zh": "目前先展示项目介绍，尚未接入本站功能。开发进度以 GitHub 仓库为准。",
+        "en": "Introduction only; functionality is not integrated into this site. Follow GitHub for progress.",
+        "ja": "現在は紹介のみで、機能は本サイトに未接続です。進捗はGitHubをご覧ください。"
+    },
+    "year": "2026",
+    "imageWidth": 1280,
+    "imageHeight": 800,
+    image: new URL('../assets/projects/project-007.svg', import.meta.url).href,
+  },
 ]
 
 export function localizedField(project, field, locale) {
