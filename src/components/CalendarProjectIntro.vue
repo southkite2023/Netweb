@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { calendarCopy } from '../data/calendar'
+import { CALENDAR_REAL_ANIME_FEEDS } from '../lib/calendar'
 import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
@@ -26,6 +27,15 @@ const c = computed(() => calendarCopy[locale.value] || calendarCopy.zh)
       </div>
     </div>
     <p class="calendar-notice">{{ c.warning }}</p>
+    <section class="calendar-live-panel" :aria-label="c.liveAnimeTitle">
+      <p class="quota-eyebrow">LIVE / ANILIST</p>
+      <h2>{{ c.liveAnimeTitle }}</h2>
+      <p>{{ c.liveAnimeDescription }}</p>
+      <div class="calendar-live-actions">
+        <a :href="CALENDAR_REAL_ANIME_FEEDS.duration" target="_blank" rel="noopener noreferrer">{{ c.liveAnimeOpen }} ↗</a>
+      </div>
+      <p class="quota-fineprint">{{ c.liveAnimeHint }}</p>
+    </section>
     <div class="quota-features"><article v-for="(feature, index) in c.features" :key="feature[0]"><span>0{{ index + 1 }}</span><h2>{{ feature[0] }}</h2><p>{{ feature[1] }}</p></article></div>
     <div class="calendar-overview">
       <section><h2>{{ c.scope }}</h2><ul><li v-for="item in c.coverage" :key="item">{{ item }}</li></ul></section>
