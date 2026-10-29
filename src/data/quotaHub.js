@@ -2,78 +2,78 @@ import { reactive } from 'vue'
 
 // Verified release assets. Keep the version, sizes and filenames together.
 export const quotaRelease = reactive({
-  "version": "3.1.0",
-  "latestVersion": "3.1.0",
-  "date": "2026-10-28",
-  "latestDate": "2026-10-28",
+  "version": "3.2.0",
+  "latestVersion": "3.2.0",
+  "date": "2026-10-29",
+  "latestDate": "2026-10-29",
   "repository": "https://github.com/southkite2023/quota-hub",
-  "url": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
+  "url": "https://github.com/southkite2023/quota-hub/releases/tag/v3.2.0",
   "desktop": {
     "Windows": {
-      "version": "3.1.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
-      "file": "astracct-3.1.0-windows-x64.zip",
+      "version": "3.2.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.2.0",
+      "file": "astracct-3.2.0-windows-x64.zip",
       "label": "Windows x64",
       "size": "13.04 MB",
-      "bytes": 13038857,
-      "sha256": "b5caa70805b5a8a5dd405a0ef3317e9e7ba7f54cfa06a69df0fea4791efcbf2c"
+      "bytes": 13039331,
+      "sha256": "4765fbad74558623e0fdf363b3d615660929d922af514f2ad48aa1357e5a5d01"
     },
     "macOS": {
-      "version": "3.1.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
-      "file": "astracct-3.1.0-macos-universal.zip",
+      "version": "3.2.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.2.0",
+      "file": "astracct-3.2.0-macos-universal.zip",
       "label": "macOS Universal · Intel + Apple Silicon · macOS 12+",
       "size": "21.34 MB",
-      "bytes": 21336710,
-      "sha256": "921722fe05b68fe49fb401c256b6619d4e4b0e1a6e20d18310badffa7d623788",
+      "bytes": 21342386,
+      "sha256": "849a8b311c2e3623140949d0b0c1c269c3a4ce052411508549a333aed791317d",
       "installer": {
-        "file": "astracct-3.1.0-macos-universal.dmg",
-        "url": "https://yuashie.cn/downloads/astracct/v3.1.0/astracct-3.1.0-macos-universal.dmg",
-        "bytes": 23323082,
-        "sha256": "0a7c14d347bbdebd69a361cbabbbe588cff78fbb224bb3b22525762227e79c71"
+        "file": "astracct-3.2.0-macos-universal.dmg",
+        "url": "https://yuashie.cn/downloads/astracct/v3.2.0/astracct-3.2.0-macos-universal.dmg",
+        "bytes": 23329170,
+        "sha256": "4c4f674dadb774739855cdd4d448c82a7ae66fd42e85028fbdfb687c96a1b4b2"
       }
     }
   },
   "packages": [
     {
       "id": "universal",
-      "version": "3.1.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
-      "file": "quota-hub-3.1.0-universal.apk",
+      "version": "3.2.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.2.0",
+      "file": "quota-hub-3.2.0-universal.apk",
       "label": "Universal",
-      "size": "53.67 MB",
-      "bytes": 53672862,
-      "sha256": "087f08ac5722590a207aa6fe7270c9cfd4fef48b29844ec52b3162c566a9695b"
+      "size": "53.69 MB",
+      "bytes": 53689246,
+      "sha256": "58632715ac2a3d1aae5eddd0b212235c953fb1027f53c09464932759c4dc6df0"
     },
     {
       "id": "arm64-v8a",
-      "version": "3.1.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
-      "file": "quota-hub-3.1.0-arm64-v8a.apk",
+      "version": "3.2.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.2.0",
+      "file": "quota-hub-3.2.0-arm64-v8a.apk",
       "label": "ARM64",
       "size": "19.22 MB",
       "bytes": 19224896,
-      "sha256": "bebd4ee0471724c9ed52f562a56b67b5752d514e3af2a77e3dad3f3cff03a4f0"
+      "sha256": "7f336b05b63d30cd7669705a5bbcd4a1422274f8162311d90714fe1ae1be884c"
     },
     {
       "id": "armeabi-v7a",
-      "version": "3.1.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
-      "file": "quota-hub-3.1.0-armeabi-v7a.apk",
+      "version": "3.2.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.2.0",
+      "file": "quota-hub-3.2.0-armeabi-v7a.apk",
       "label": "ARM32",
-      "size": "16.52 MB",
-      "bytes": 16517448,
-      "sha256": "7f84900c0a31ff63eb844809f458894a1d9ad3ca338d19e8b03b1dad068ae329"
+      "size": "16.53 MB",
+      "bytes": 16533832,
+      "sha256": "71e6414cb8c2bccb7b5c4cb99883b70cdbcac8e36ce2e155e848a4f5ca7a386a"
     },
     {
       "id": "x86_64",
-      "version": "3.1.0",
-      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.1.0",
-      "file": "quota-hub-3.1.0-x86_64.apk",
+      "version": "3.2.0",
+      "releaseUrl": "https://github.com/southkite2023/quota-hub/releases/tag/v3.2.0",
+      "file": "quota-hub-3.2.0-x86_64.apk",
       "label": "x86_64",
       "size": "20.71 MB",
       "bytes": 20707636,
-      "sha256": "8bbbd31a2753d08d04824ae6345f6eab1b74c2518d33adc24c68e48738f01658"
+      "sha256": "abcfafc94e286581ba053a3da33962b125dd9a1286f62ad734e658a10136a3a0"
     }
   ]
 })
@@ -179,9 +179,9 @@ export const quotaCopy = {
 
 
 export const quotaDesktopCopy = {
-  zh: { download: '下载', Windows: '完整解压 ZIP 后运行 astracct.exe，保留同目录 DLL 和 data。', macOS: '机场订阅链接流量查询：账户管理选择「节点订阅 → 订阅链接 · 流量查询」，粘贴 Clash / 小火箭的 HTTPS 链接，服务商需提供标准流量响应头。解压后打开 Astracct.app。顶部菜单栏常驻图标，左键打开主窗口，右键可选择流量或余额；关闭窗口后继续运行，选择“退出星账”才停止。支持 Intel 与 Apple Silicon，需 macOS 12 或更新版本；尚未进行 Apple 分发签名与公证，首次打开可能被系统拦截。', usage: '在账户设置中勾选“显示在悬浮窗”，再打开悬浮窗。可拖动、置顶和隐藏金额；退出后停止刷新。账户凭据保存在各设备本机，不自动同步。' },
-  en: { download: 'Download for', Windows: 'Extract the entire ZIP, then run astracct.exe. Keep DLL files and the data folder together.', macOS: 'For subscription traffic metadata: add a Node Subscription account and paste your Clash / Shadowrocket HTTPS subscription URL; the provider must expose the standard usage header. Extract and open Astracct.app. Its menu bar icon stays active when the window closes. Left-click to open; right-click to select traffic, a balance, or quit. Supports Intel and Apple Silicon on macOS 12+. Apple distribution signing and notarization are not configured; first launch may be blocked.', usage: 'Select accounts for the floating window in account settings, then open it. Drag, pin and hide amounts; refresh stops on exit. Credentials stay on each device and do not sync automatically.' },
-  ja: { download: 'ダウンロード：', Windows: 'ZIP全体を展開してastracct.exeを実行してください。DLLとdataフォルダーを同じ場所に保持します。', macOS: '対応するClash / ShadowrocketのHTTPS購読URLから通信量を取得できます（サービス側の標準応答ヘッダーが必要）。「节点订阅 → 订阅链接 · 流量查询」で追加してください。展開してAstracct.appを開きます。メニューバーのアイコンを左クリックで開き、右クリックで残量や残高を選択します。ウィンドウを閉じても動作し、終了メニューで停止します。macOS 12以降のIntel・Apple Siliconに対応。Apple配布署名と公証は未設定のため、初回起動がブロックされる場合があります。', usage: 'アカウント設定で悬浮窗の表示対象を選び、ウィンドウを開きます。移動・最前面・金額非表示に対応。終了後は更新が止まります。認証情報は端末内に保存され、自動同期されません。' },
+  zh: { download: '下载', Windows: '完整解压 ZIP 后运行 astracct.exe，保留同目录 DLL 和 data。', macOS: '机场订阅链接流量查询：账户管理选择「节点订阅 → 订阅链接 · 流量查询」，粘贴 Clash / 小火箭的 HTTPS 链接，服务商需提供标准流量响应头。解压后打开 Astracct.app。顶部菜单栏常驻图标，左键打开主窗口，右键可选择流量或余额；关闭窗口后继续运行，选择“退出星账”才停止。支持 Intel 与 Apple Silicon，需 macOS 12 或更新版本；尚未进行 Apple 分发签名与公证，首次打开可能被系统拦截。', usage: '在账户设置中勾选“显示在悬浮窗”，再打开悬浮窗。可拖动、置顶和隐藏金额；退出后停止刷新。3.2.0 起，登录 Yuashie 后主动保存的完整参数会加密存入账号云端，并保留本机副本；后续再接自动填充。关闭按钮收起到菜单栏／托盘，Mac 隐藏 Dock，Windows 隐藏任务栏入口。' },
+  en: { download: 'Download for', Windows: 'Extract the entire ZIP, then run astracct.exe. Keep DLL files and the data folder together.', macOS: 'For subscription traffic metadata: add a Node Subscription account and paste your Clash / Shadowrocket HTTPS subscription URL; the provider must expose the standard usage header. Extract and open Astracct.app. Its menu bar icon stays active when the window closes. Left-click to open; right-click to select traffic, a balance, or quit. Supports Intel and Apple Silicon on macOS 12+. Apple distribution signing and notarization are not configured; first launch may be blocked.', usage: 'Select accounts for the floating window in account settings, then open it. Drag, pin and hide amounts; refresh stops on exit. From 3.2.0, saving parameters while signed in stores an encrypted cloud copy under your Yuashie account and a local copy. Autofill will follow later. Close minimizes to the menu bar or tray and hides the Dock or taskbar entry.' },
+  ja: { download: 'ダウンロード：', Windows: 'ZIP全体を展開してastracct.exeを実行してください。DLLとdataフォルダーを同じ場所に保持します。', macOS: '対応するClash / ShadowrocketのHTTPS購読URLから通信量を取得できます（サービス側の標準応答ヘッダーが必要）。「节点订阅 → 订阅链接 · 流量查询」で追加してください。展開してAstracct.appを開きます。メニューバーのアイコンを左クリックで開き、右クリックで残量や残高を選択します。ウィンドウを閉じても動作し、終了メニューで停止します。macOS 12以降のIntel・Apple Siliconに対応。Apple配布署名と公証は未設定のため、初回起動がブロックされる場合があります。', usage: 'アカウント設定で悬浮窗の表示対象を選び、ウィンドウを開きます。移動・最前面・金額非表示に対応。終了後は更新が止まります。3.2.0からログイン後に保存するパラメータはアカウント別に暗号化してクラウドと端末に保存します。自動入力は今後対応予定です。閉じるとメニューバー／トレイに格納し、Dock／タスクバーから非表示になります。' },
 }
 
 
