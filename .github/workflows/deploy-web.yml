@@ -44,7 +44,7 @@ jobs:
           if python3 scripts/check-frontend-scope.py "$RUNNER_TEMP/previous-deploy-version.json" "$GITHUB_SHA"; then
             echo "普通前端发布边界检查通过"
           else
-            echo "发现后端变化；仅允许已独立上线的固定 Calendar API 源码及其测试文件"
+            echo "发现后端变化；仅允许已独立验证 v2 的双语 Calendar API 源码和测试文件"
             # This is not a generic bypass: require a live validated HTTPS API
             # and exact immutable blobs before allowing static-only upload.
             curl --fail --silent --show-error --retry 3 --retry-delay 2 \
@@ -54,26 +54,36 @@ jobs:
             curl --fail --silent --show-error --retry 3 --retry-delay 2 \
               --connect-timeout 10 --max-time 30 \
               -D "$RUNNER_TEMP/calendar-backend-headers.txt" \
-              "https://yuashie.cn/api/calendar/v1/anime.ics?shows=206401&mode=span" \
+              "https://yuashie.cn/api/calendar/v1/anime.ics?shows=206401&mode=span&lang=zh-CN" \
               --output "$RUNNER_TEMP/calendar-backend-check.ics"
+            curl --fail --silent --show-error --retry 3 --retry-delay 2 \
+              --connect-timeout 10 --max-time 30 \
+              "https://yuashie.cn/api/calendar/v1/anime.ics?shows=206401&mode=span" \
+              --output "$RUNNER_TEMP/calendar-backend-ja.ics"
             python3 - <<'PY'
           import json, os
           from pathlib import Path
           temp = Path(os.environ['RUNNER_TEMP'])
           health = json.loads((temp / 'calendar-backend-health.json').read_text())
           assert health.get('ok') is True
-          assert health.get('service') == 'anime-ics-selection' and health.get('version') == 1
+          assert health.get('service') == 'anime-ics-selection'
+          assert health.get('version') == 2
+          assert health.get('languages') == ['ja', 'zh-CN']
           headers = (temp / 'calendar-backend-headers.txt').read_text().lower()
           assert 'content-type: text/calendar' in headers
-          ics = (temp / 'calendar-backend-check.ics').read_text()
-          assert ics.startswith('BEGIN:VCALENDAR')
-          assert 'VERSION:2.0' in ics
-          assert 'BEGIN:VEVENT' in ics and 'END:VCALENDAR' in ics
-          assert 'URL:https://anilist.co/anime/206401' in ics
+          zh = (temp / 'calendar-backend-check.ics').read_text()
+          ja = (temp / 'calendar-backend-ja.ics').read_text()
+          for ics in (zh, ja):
+              assert ics.startswith('BEGIN:VCALENDAR')
+              assert 'VERSION:2.0' in ics
+              assert 'BEGIN:VEVENT' in ics and 'END:VCALENDAR' in ics
+              assert 'URL:https://anilist.co/anime/206401' in ics
+          assert 'FX战士久留美' in zh, 'Known sourced Chinese title missing from merged feed'
+          assert zh != ja, 'Chinese feed must not silently use Japanese source'
           PY
             python3 scripts/check-frontend-scope.py \
               "$RUNNER_TEMP/previous-deploy-version.json" "$GITHUB_SHA" \
-              --confirmed-calendar-backend
+              --confirmed-calendar-zh-v2
           fi
 
       - name: 准备 Node.js

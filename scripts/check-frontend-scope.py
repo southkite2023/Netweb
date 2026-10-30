@@ -23,7 +23,15 @@ CALENDAR_RELEASE_BLOBS = {
 }
 
 
-def check_scope(manifest_path, target, confirmed_calendar_backend=False):
+# Second reviewed one-file API upgrade (v1 -> bilingual v2).
+# Only these two protected files may change, and only after live HTTPS
+# probes confirm v2 has already been manually installed on ECS.
+CALENDAR_ZH_V2_RELEASE_BLOBS = {
+    'server/src/calendar-feed.js': 'd7075f7a3423a7683c2bf20eca470c8808959b0c',
+    'server/tests/calendar-feed.test.mjs': '701084a3266ee29ba95768223f50e00ce7bacb05',
+}
+
+def check_scope(manifest_path, target, confirmed_calendar_backend=False, confirmed_calendar_zh_v2=False):
     previous = json.loads(Path(manifest_path).read_text()).get('commit')
     for commit in (previous, target):
         if not isinstance(commit, str) or not re.fullmatch(r'[0-9a-f]{40}', commit):
@@ -37,10 +45,14 @@ def check_scope(manifest_path, target, confirmed_calendar_backend=False):
                              check=True, capture_output=True, text=True).stdout.strip()
     if changes:
         changed_paths = set(changes.splitlines())
-        if not confirmed_calendar_backend or changed_paths != set(CALENDAR_RELEASE_BLOBS):
+        if confirmed_calendar_backend and changed_paths == set(CALENDAR_RELEASE_BLOBS):
+            pinned = CALENDAR_RELEASE_BLOBS
+        elif confirmed_calendar_zh_v2 and changed_paths == set(CALENDAR_ZH_V2_RELEASE_BLOBS):
+            pinned = CALENDAR_ZH_V2_RELEASE_BLOBS
+        else:
             raise ValueError('Backend, database, game plugin or server receiver differs from the last deployed release. '
                              'Complete and verify the full deployment first; frontend-only publication has been stopped.')
-        for filename, expected in CALENDAR_RELEASE_BLOBS.items():
+        for filename, expected in pinned.items():
             actual = subprocess.run(
                 ['git', 'rev-parse', f'{target}:{filename}'],
                 check=True, capture_output=True, text=True
@@ -54,9 +66,12 @@ def check_scope(manifest_path, target, confirmed_calendar_backend=False):
 
 if __name__ == '__main__':
     try:
-        if len(sys.argv) not in (3, 4) or (len(sys.argv) == 4 and sys.argv[3] != '--confirmed-calendar-backend'):
-            raise ValueError('Usage: check-frontend-scope.py DEPLOY_VERSION_JSON TARGET_COMMIT [--confirmed-calendar-backend]')
-        check_scope(sys.argv[1], sys.argv[2], len(sys.argv) == 4)
+        allowed_flags = {'--confirmed-calendar-backend', '--confirmed-calendar-zh-v2'}
+        if len(sys.argv) not in (3, 4) or (len(sys.argv) == 4 and sys.argv[3] not in allowed_flags):
+            raise ValueError('Usage: check-frontend-scope.py DEPLOY_VERSION_JSON TARGET_COMMIT [--confirmed-calendar-backend|--confirmed-calendar-zh-v2]')
+        check_scope(sys.argv[1], sys.argv[2],
+                    len(sys.argv) == 4 and sys.argv[3] == '--confirmed-calendar-backend',
+                    len(sys.argv) == 4 and sys.argv[3] == '--confirmed-calendar-zh-v2')
     except (ValueError, OSError, subprocess.CalledProcessError) as error:
         print(f'::error::{error}', file=sys.stderr)
         sys.exit(1)

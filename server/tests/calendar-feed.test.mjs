@@ -23,12 +23,14 @@ const original = [
 
 test('canonical selection rejects unexpected parameters, path injection and oversized inputs', () => {
   assert.deepEqual(parseSelection({ shows: '206401,123456,206401', mode: 'span' }),
-    { shows: [123456, 206401], mode: 'span' })
+    { shows: [123456, 206401], mode: 'span', lang: 'ja' })
   assert.equal(parseSelection({ shows: '206401' }).mode, 'span')
+  assert.deepEqual(parseSelection({ shows: '206401', lang: 'zh-CN' }),
+    { shows: [206401], mode: 'span', lang: 'zh-CN' })
   for (const bad of [
     {}, { shows: '0' }, { shows: '-1' }, { shows: '001' },
     { shows: '206401,abc' }, { shows: '206401/' }, { shows: '206401%2C1' },
-    { shows: '206401', mode: 'duration' }, { shows: ['1', '2'] },
+    { shows: '206401', mode: 'duration' }, { shows: '206401', lang: 'en' }, { shows: ['1', '2'] },
     { shows: '206401', url: 'https://evil.example' },
     { shows: Array.from({ length: 81 }, (_, i) => String(i+1)).join(',') },
   ]) assert.equal(parseSelection(bad), null)
@@ -109,4 +111,30 @@ test('unavailable upstream returns 503, never empty calendar; serves recent vali
   clock += 7 * 60 * 60 * 1000
   const expired = await app.inject({ url })
   assert.equal(expired.statusCode, 503)
+})
+
+test('Chinese source selected by fixed filename and isolated cache; Japanese URLs remain unchanged', async t => {
+  const seen = []
+  const chinese = original.replace('SUMMARY:Show 206401', 'SUMMARY:FX战士久留美')
+  const app = Fastify()
+  registerCalendarFeed(app, { fetcher: async url => {
+    seen.push(url)
+    return new Response(url.endsWith('span.zh-CN.ics') ? chinese : original, { status: 200 })
+  } })
+  t.after(() => app.close())
+  const health = (await app.inject({ url: '/api/calendar/v1/health' })).json()
+  assert.equal(health.version, 2)
+  assert.deepEqual(health.languages, ['ja', 'zh-CN'])
+  const zh = await app.inject({ url: '/api/calendar/v1/anime.ics?shows=206401&mode=span&lang=zh-CN' })
+  const ja = await app.inject({ url: '/api/calendar/v1/anime.ics?shows=206401&mode=span' })
+  assert.equal(zh.statusCode, 200)
+  assert.equal(ja.statusCode, 200)
+  assert.match(zh.body, /SUMMARY:FX战士久留美/)
+  assert.match(ja.body, /SUMMARY:Show 206401/)
+  assert.match(zh.body, /我的追番（中文）/)
+  assert.notEqual(zh.headers.etag, ja.headers.etag)
+  assert.equal(seen.length, 2)
+  assert.ok(seen.some(url => url.endsWith('/span.zh-CN.ics')))
+  assert.ok(seen.some(url => url.endsWith('/span.ics')))
+  assert.equal((await app.inject({url:'/api/calendar/v1/anime.ics?shows=206401&lang=fr'})).statusCode,400)
 })
