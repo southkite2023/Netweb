@@ -83,3 +83,16 @@ test('one dynamic subscription URL is canonical for any selection order, and rej
   for(const bad of [[], ['206401'], [NaN], [0], [-1], [2.5], [2147483648],
     Array.from({length:81},(_,i)=>i+1)]) assert.equal(mergedAnimeFeedUrl(bad), null)
 })
+
+test('Chinese and Japanese ICS addresses are explicit and independent', () => {
+  assert.equal(animeShowFeedUrl(206401, 'duration', 'zh-CN'),
+    'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/shows/206401/span.zh-CN.ics')
+  assert.equal(animeShowFeedUrl(206401, 'start', 'zh-CN'),
+    'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/shows/206401/start.zh-CN.ics')
+  const translated = new URL(mergedAnimeFeedUrl([206401, 152677], 'duration', 'zh-CN'))
+  const japanese = new URL(mergedAnimeFeedUrl([206401, 152677]))
+  assert.equal(translated.searchParams.get('lang'), 'zh-CN')
+  assert.equal(translated.searchParams.get('shows'), '152677,206401')
+  assert.equal(japanese.searchParams.get('lang'), null)
+  assert.equal(mergedAnimeFeedUrl([206401], 'duration', 'fr'), null)
+})
