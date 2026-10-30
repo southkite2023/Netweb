@@ -1,4 +1,5 @@
 import json
+import runpy
 from pathlib import Path
 import subprocess
 import tempfile
@@ -61,7 +62,15 @@ class FrontendScopeTests(unittest.TestCase):
             self.write(filename, (root / filename).read_text())
         target = self.commit('pinned manual backend release')
         self.check(target, False)  # default guard still rejects
-        self.check(target, True, confirmed=True)
+        # A future backend release may differ from the one-time pinned
+        # calendar API rollout. Such a changed backend must not pass this
+        # scope exception even when the confirmed flag is supplied.
+        pinned = runpy.run_path(str(SCRIPT))["CALENDAR_RELEASE_BLOBS"]
+        matches = all(
+            self.git('hash-object', str(root / filename)) == expected
+            for filename, expected in pinned.items()
+        )
+        self.check(target, matches, confirmed=True)
 
     def test_unpinned_backend_change_never_passes_confirmed_flag(self):
         self.write('server/src/index.js', 'arbitrary backend')
