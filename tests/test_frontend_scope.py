@@ -35,8 +35,11 @@ class FrontendScopeTests(unittest.TestCase):
         self.git('commit', '-qm', message)
         return self.git('rev-parse', 'HEAD')
 
-    def check(self, target, allowed):
-        result = subprocess.run(['python3', str(SCRIPT), str(self.manifest), target],
+    def check(self, target, allowed, confirmed=False):
+        argv = ['python3', str(SCRIPT), str(self.manifest), target]
+        if confirmed:
+            argv.append('--confirmed-calendar-backend')
+        result = subprocess.run(argv,
                                 cwd=self.root, capture_output=True, text=True)
         self.assertEqual(result.returncode == 0, allowed, result.stdout + result.stderr)
 
@@ -49,6 +52,30 @@ class FrontendScopeTests(unittest.TestCase):
         self.commit('backend')
         self.write('src/page.js', 'new')
         self.check(self.commit('later frontend'), False)
+
+    def test_manually_deployed_calendar_can_be_acknowledged_only_with_pinned_blobs(self):
+        # Reuse the real release code so Git hashing must exactly match the
+        # reviewed PR, not a generic server change or a path prefix.
+        root = SCRIPT.parents[1]
+        for filename in ('server/src/index.js', 'server/src/calendar-feed.js'):
+            self.write(filename, (root / filename).read_text())
+        target = self.commit('pinned manual backend release')
+        self.check(target, False)  # default guard still rejects
+        self.check(target, True, confirmed=True)
+
+    def test_unpinned_backend_change_never_passes_confirmed_flag(self):
+        self.write('server/src/index.js', 'arbitrary backend')
+        self.write('server/src/calendar-feed.js', 'unapproved module')
+        target = self.commit('unapproved backend')
+        self.check(target, False, confirmed=True)
+
+    def test_unrelated_protected_changes_still_block_even_if_calendar_is_verified(self):
+        root = SCRIPT.parents[1]
+        for filename in ('server/src/index.js', 'server/src/calendar-feed.js'):
+            self.write(filename, (root / filename).read_text())
+        self.write('server/sql/999_bad.sql', 'DROP TABLE example')
+        target = self.commit('backend plus migration')
+        self.check(target, False, confirmed=True)
 
     def test_migration_blocks(self):
         self.write('server/sql/006.sql', 'ALTER TABLE example;')
