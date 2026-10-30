@@ -168,8 +168,8 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = '' }, { dee
             </div>
           </template>
         </section>
-        <section class="calendar-live-panel" :aria-label="c.liveAnimeTitle">
-          <p class="quota-eyebrow">LIVE / ANILIST</p>
+        <details class="calendar-live-panel">
+          <summary>{{ picker.allFeed }}</summary>
           <h2>{{ c.liveAnimeTitle }}</h2>
           <p>{{ c.liveAnimeDescription }}</p>
           <div class="calendar-live-actions">
@@ -179,7 +179,7 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = '' }, { dee
           <code class="calendar-live-url">{{ realAnimeUrl }}</code>
           <p class="quota-fineprint">{{ c.liveAnimeHint }}</p>
           <p role="status" aria-live="polite" class="quota-fineprint">{{ liveCopyState ? c[liveCopyState] : '' }}</p>
-        </section>
+        </details>
         <div class="calendar-builder">
           <form class="calendar-options" aria-describedby="calendar-test-note" @submit.prevent="output = candidate || ''; copyState = ''">
             <fieldset><legend>01 / {{ c.select }}</legend>
