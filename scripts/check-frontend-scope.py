@@ -12,12 +12,14 @@ PROTECTED_PATHS = (
 )
 
 # ONE-TIME bridge for the API that the owner has already deployed manually.
-# These immutable Git blob hashes pin the exact backend files; arbitrary
+# These immutable Git blob hashes pin the exact source and test files; arbitrary
 # changes to server/, migrations, deployment receiver and plugins still fail.
 # The CI caller MUST independently verify the production HTTPS API/ICS first.
 CALENDAR_RELEASE_BLOBS = {
     'server/src/index.js': '38d38e1cbfffc27e40bd95cc50627fc392b7e517',
     'server/src/calendar-feed.js': '4b2f25c832ed2f0e4c22d10ddcedca959ac82212',
+    # Unit tests are part of the merged PR but never executed on the ECS API.
+    'server/tests/calendar-feed.test.mjs': '5e8ef317ab14ea8f56a7f9dfcfc4a1a03c09b017',
 }
 
 
