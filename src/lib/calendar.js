@@ -35,9 +35,10 @@ export function calendarTestUrl(selection) {
 // A static catalog, plus one durable HTTPS subscription per AniList show.
 // GitHub Pages cannot host a dynamically merged per-user subscription URL.
 export const CALENDAR_SEASON_CATALOG_URL = 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/catalog/current-season.json'
-export function animeShowFeedUrl(mediaId, mode = 'duration') {
+export function animeShowFeedUrl(mediaId, mode = 'duration', lang = 'ja') {
   if (!Number.isSafeInteger(mediaId) || mediaId <= 0) return null
-  const filename = mode === 'start' ? 'start.ics' : 'span.ics'
+  const base = mode === 'start' ? 'start' : 'span'
+  const filename = lang === 'zh-CN' ? `${base}.zh-CN.ics` : `${base}.ics`
   return `https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/shows/${mediaId}/${filename}`
 }
 
@@ -46,14 +47,16 @@ export function animeShowFeedUrl(mediaId, mode = 'duration') {
  * Only display to users once /api/calendar/v1/health is live on their origin.
  */
 export const CALENDAR_MERGE_HEALTH_URL = '/api/calendar/v1/health'
-export function mergedAnimeFeedUrl(ids, mode = 'duration') {
+export function mergedAnimeFeedUrl(ids, mode = 'duration', lang = 'ja') {
   if (!Array.isArray(ids) || ids.length === 0 || ids.length > 80) return null
   if (!ids.every(id => Number.isSafeInteger(id) && id > 0 && id <= 2147483647)) return null
+  if (!['ja', 'zh-CN'].includes(lang)) return null
   const list = [...new Set(ids)].sort((a,b)=>a-b)
   if (!list.length) return null
   const params = new URLSearchParams({
     shows: list.join(','),
     mode: mode === 'start' ? 'start' : 'span',
+    ...(lang === 'zh-CN' ? { lang: 'zh-CN' } : {}),
   })
   return `https://yuashie.cn/api/calendar/v1/anime.ics?${params.toString()}`
 }
