@@ -57,7 +57,7 @@ class FrontendScopeTests(unittest.TestCase):
         # Reuse the real release code so Git hashing must exactly match the
         # reviewed PR, not a generic server change or a path prefix.
         root = SCRIPT.parents[1]
-        for filename in ('server/src/index.js', 'server/src/calendar-feed.js'):
+        for filename in ('server/src/index.js', 'server/src/calendar-feed.js', 'server/tests/calendar-feed.test.mjs'):
             self.write(filename, (root / filename).read_text())
         target = self.commit('pinned manual backend release')
         self.check(target, False)  # default guard still rejects
@@ -71,7 +71,7 @@ class FrontendScopeTests(unittest.TestCase):
 
     def test_unrelated_protected_changes_still_block_even_if_calendar_is_verified(self):
         root = SCRIPT.parents[1]
-        for filename in ('server/src/index.js', 'server/src/calendar-feed.js'):
+        for filename in ('server/src/index.js', 'server/src/calendar-feed.js', 'server/tests/calendar-feed.test.mjs'):
             self.write(filename, (root / filename).read_text())
         self.write('server/sql/999_bad.sql', 'DROP TABLE example')
         target = self.commit('backend plus migration')
