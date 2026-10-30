@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import { calendarCopy, calendarGames, calendarTypes, calendarRepository } from '../data/calendar'
-import { CALENDAR_REAL_ANIME_FEEDS, CALENDAR_SEASON_CATALOG_URL, animeShowFeedUrl, calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
+import { CALENDAR_REAL_ANIME_FEEDS, CALENDAR_SEASON_CATALOG_URL, CALENDAR_MERGE_HEALTH_URL, animeShowFeedUrl, mergedAnimeFeedUrl, calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
 import { animeSeasonCopy } from '../data/animeSeason'
 import '../quota-hub.css'
 import '../calendar.css'
@@ -51,6 +51,9 @@ const seasonStatus = ref('loading')
 const seasonSearch = ref('')
 const selectedShowIds = ref([])
 const seasonCopyState = ref('')
+const mergeApiStatus = ref('checking')
+const mergedCopyState = ref('')
+const mergedUrl = computed(() => mergedAnimeFeedUrl(selectedShowIds.value, seasonMode.value))
 const seasonMode = ref('duration')
 const seasonShows = computed(() => seasonCatalog.value?.shows || [])
 const visibleSeasonShows = computed(() => seasonShows.value.filter(show =>
@@ -93,6 +96,24 @@ async function loadSeasonCatalog() {
   }
 }
 onMounted(loadSeasonCatalog)
+onMounted(async () => {
+  try {
+    const response = await fetch(CALENDAR_MERGE_HEALTH_URL, { cache: 'no-store' })
+    const data = response.ok ? await response.json() : null
+    mergeApiStatus.value = data?.ok === true && data.service === 'anime-ics-selection' && data.version === 1 ? 'ready' : 'unavailable'
+  } catch {
+    mergeApiStatus.value = 'unavailable'
+  }
+})
+async function copyMergedUrl() {
+  if (mergeApiStatus.value !== 'ready' || !mergedUrl.value) return
+  try {
+    await navigator.clipboard.writeText(mergedUrl.value)
+    mergedCopyState.value = picker.value.mergedCopied
+  } catch {
+    mergedCopyState.value = picker.value.copyFailed
+  }
+}
 async function copySingleShow(id) {
   const url = showFeedUrl(id)
   if (!url) return
@@ -112,7 +133,7 @@ async function copySelectedShows() {
     seasonCopyState.value = picker.value.copyFailed
   }
 }
-watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = '' }, { deep: true })
+watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = ''; mergedCopyState.value = '' }, { deep: true })
 </script>
 
 <template>
@@ -155,6 +176,21 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = '' }, { dee
             </div>
             <div class="calendar-selected-shows">
               <h3>{{ picker.selected }} {{ selectedSeasonShows.length }} {{ picker.shows }}</h3>
+              <section class="calendar-merged-box" :aria-label="picker.mergedTitle">
+                <h4>{{ picker.mergedTitle }}</h4>
+                <p class="quota-fineprint">{{ picker.mergedHint }}</p>
+                <template v-if="mergeApiStatus === 'ready'">
+                  <p role="status" class="quota-fineprint">{{ picker.mergedReady }}</p>
+                  <template v-if="mergedUrl">
+                    <code class="calendar-live-url">{{ mergedUrl }}</code>
+                    <button class="btn btn-secondary" type="button" @click="copyMergedUrl">{{ picker.mergedCopy }}</button>
+                    <a :href="mergedUrl" target="_blank" rel="noopener noreferrer">{{ picker.mergedOpen }} ↗</a>
+                  </template>
+                  <p v-else class="quota-fineprint">{{ picker.mergedSelected }}</p>
+                </template>
+                <p v-else class="quota-fineprint">{{ picker.mergedUnavailable }}</p>
+                <p role="status" aria-live="polite" class="quota-fineprint">{{ mergedCopyState }}</p>
+              </section>
               <p class="quota-fineprint">{{ picker.selectHint }}</p>
               <button class="btn btn-secondary" type="button" :disabled="!selectedSeasonShows.length" @click="copySelectedShows">{{ picker.copyAll }}</button>
               <p role="status" aria-live="polite" class="quota-fineprint">{{ seasonCopyState }}</p>
