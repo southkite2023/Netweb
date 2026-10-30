@@ -1,0 +1,52 @@
+name: Diagnose public calendar deep link
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/diagnose-calendar-route.yml'
+permissions:
+  contents: read
+jobs:
+  public-route:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Inspect public HTTPS, deep-route fallback and page bootstrap
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re
+          import ssl
+          import urllib.error
+          import urllib.request
+          from urllib.parse import urljoin
+          BASE = "https://yuashie.cn"
+          paths = ["/", "/projects/004", "/projects/004/subscribe",
+                   "/projects/004/subscribe?diagnose=1",
+                   "/deploy-version.json", "/api/calendar/v1/health"]
+          context=ssl.create_default_context()
+          for path in paths:
+              url=BASE+path
+              try:
+                  req=urllib.request.Request(url,headers={"User-Agent":"Yuashie-Route-Diagnostic/1.0","Accept":"text/html,application/json;q=0.9,*/*;q=0.1"})
+                  with urllib.request.urlopen(req,timeout=18,context=context) as response:
+                      data=response.read(200_000).decode("utf-8","replace")
+                      print("PATH",path,"STATUS",response.status,"FINAL",response.url,
+                            "CONTENT_TYPE",response.headers.get("Content-Type"),
+                            "BYTES_READ",len(data),"TITLE",re.findall(r"<title[^>]*>(.*?)</title>",data,re.I|re.S)[:1])
+                      if path.startswith("/projects/004") and "<div id=\"app\"" not in data and '<div id="app"' not in data:
+                          print("WARNING: deep route did not return Vue index.html")
+                      if path == "/":
+                          chunks=re.findall(r'<script[^>]+src=["\']([^"\']+\.js)["\']',data,re.I)
+                          print("MAIN_SCRIPTS",chunks[:3])
+                          for asset in chunks[:2]:
+                              u=urljoin(BASE,asset)
+                              with urllib.request.urlopen(urllib.request.Request(u,headers={"User-Agent":"Yuashie-Route-Diagnostic/1.0"}),timeout=18,context=context) as js:
+                                  print("ASSET",asset,"STATUS",js.status,"TYPE",js.headers.get("Content-Type"))
+              except urllib.error.HTTPError as exc:
+                  text=exc.read(500).decode("utf-8","replace")
+                  print("PATH",path,"HTTP_ERROR",exc.code,"BODY",repr(text))
+              except Exception as exc:
+                  print("PATH",path,"NETWORK_ERROR",type(exc).__name__,str(exc)[:250])
+          PY
