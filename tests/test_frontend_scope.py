@@ -36,10 +36,12 @@ class FrontendScopeTests(unittest.TestCase):
         self.git('commit', '-qm', message)
         return self.git('rev-parse', 'HEAD')
 
-    def check(self, target, allowed, confirmed=False):
+    def check(self, target, allowed, confirmed=False, zh_v2=False):
         argv = ['python3', str(SCRIPT), str(self.manifest), target]
         if confirmed:
             argv.append('--confirmed-calendar-backend')
+        if zh_v2:
+            argv.append('--confirmed-calendar-zh-v2')
         result = subprocess.run(argv,
                                 cwd=self.root, capture_output=True, text=True)
         self.assertEqual(result.returncode == 0, allowed, result.stdout + result.stderr)
@@ -85,6 +87,31 @@ class FrontendScopeTests(unittest.TestCase):
         self.write('server/sql/999_bad.sql', 'DROP TABLE example')
         target = self.commit('backend plus migration')
         self.check(target, False, confirmed=True)
+
+    def test_reviewed_bilingual_calendar_v2_only_exact_pinned_blobs(self):
+        root = SCRIPT.parents[1]
+        pinned = runpy.run_path(str(SCRIPT))['CALENDAR_ZH_V2_RELEASE_BLOBS']
+        for filename in pinned:
+            self.write(filename, (root / filename).read_text())
+        target = self.commit('reviewed bilingual API v2')
+        self.check(target, False)
+        self.check(target, True, zh_v2=True)
+
+    def test_unpinned_or_extra_backend_changes_never_pass_v2_flag(self):
+        root = SCRIPT.parents[1]
+        pinned = runpy.run_path(str(SCRIPT))['CALENDAR_ZH_V2_RELEASE_BLOBS']
+        for filename in pinned:
+            self.write(filename, (root / filename).read_text())
+        self.write('server/src/unknown-privileged-module.js', 'unauthorized code')
+        self.check(self.commit('unexpected additional backend file'), False, zh_v2=True)
+
+    def test_bilingual_v2_rejects_modified_target_blob(self):
+        root = SCRIPT.parents[1]
+        pinned = runpy.run_path(str(SCRIPT))['CALENDAR_ZH_V2_RELEASE_BLOBS']
+        for filename in pinned:
+            self.write(filename, (root / filename).read_text())
+        self.write('server/src/calendar-feed.js', 'modified and not verified')
+        self.check(self.commit('tampered backend'), False, zh_v2=True)
 
     def test_migration_blocks(self):
         self.write('server/sql/006.sql', 'ALTER TABLE example;')
