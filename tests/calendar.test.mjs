@@ -1,7 +1,8 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { calendarGames, calendarTypes, calendarCopy } from '../src/data/calendar.js'
-import { calendarTestUrl, defaultCalendarSelection, CALENDAR_REAL_ANIME_FEEDS } from '../src/lib/calendar.js'
+import { calendarTestUrl, defaultCalendarSelection, CALENDAR_REAL_ANIME_FEEDS, CALENDAR_SEASON_CATALOG_URL, animeShowFeedUrl } from '../src/lib/calendar.js'
+import { animeSeasonCopy } from '../src/data/animeSeason.js'
 
 test('empty and unknown selections cannot produce a feed URL', () => {
   assert.equal(calendarTestUrl({ games: {}, anime: false, releases: false }), null)
@@ -54,4 +55,16 @@ test('live anime URLs are real, HTTPS and separate from the fictional builder', 
   assert.ok(start.pathname.endsWith('/start.ics'))
   assert.ok(span.pathname.endsWith('/span.ics'))
   assert.equal(new URL(calendarTestUrl({ anime: true })).hostname, 'calendar.example.invalid')
+})
+
+test('current-season catalog and individual show subscription contract', () => {
+  const catalog = new URL(CALENDAR_SEASON_CATALOG_URL)
+  assert.equal(catalog.hostname, 'southkite2023.github.io')
+  assert.equal(catalog.pathname, '/yuashie-calendar/calendar/real/v1/anime/catalog/current-season.json')
+  assert.equal(animeShowFeedUrl(206401), 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/shows/206401/span.ics')
+  assert.equal(animeShowFeedUrl(206401, 'start'), 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/shows/206401/start.ics')
+  for (const id of [0, -1, 2.5, NaN, Infinity, '206401', '../bad']) assert.equal(animeShowFeedUrl(id), null)
+  for (const lang of ['zh', 'en', 'ja']) {
+    assert.deepEqual(Object.keys(animeSeasonCopy[lang]).sort(), Object.keys(animeSeasonCopy.zh).sort())
+  }
 })
