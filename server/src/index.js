@@ -1,4 +1,5 @@
 import { registerMembership } from './membership.js'
+import { registerCalendarFeed } from './calendar-feed.js'
 import Fastify from 'fastify'
 import { registerAstracctParameters } from './astracct-parameters.js'
 import { registerUnifiedAuth } from './unified-auth.js'
@@ -48,6 +49,9 @@ app.addHook('onRequest', async (req, reply) => {
     }
   }
 })
+// Public, read-only, canonicalized multi-title anime subscriptions.
+registerCalendarFeed(app)
+
 app.get('/api/auth/csrf', async (req, reply) => {
   reply.header('Cache-Control', 'no-store')
   return { token: req.cookies[COOKIE] ? csrfToken(req.cookies[COOKIE], CSRF_SECRET) : null }
