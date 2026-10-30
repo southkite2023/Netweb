@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { calendarGames, calendarTypes, calendarCopy } from '../src/data/calendar.js'
-import { calendarTestUrl, defaultCalendarSelection, CALENDAR_REAL_ANIME_FEEDS, CALENDAR_SEASON_CATALOG_URL, animeShowFeedUrl } from '../src/lib/calendar.js'
+import { calendarTestUrl, defaultCalendarSelection, CALENDAR_REAL_ANIME_FEEDS, CALENDAR_SEASON_CATALOG_URL, CALENDAR_MERGE_HEALTH_URL, animeShowFeedUrl, mergedAnimeFeedUrl } from '../src/lib/calendar.js'
 import { animeSeasonCopy } from '../src/data/animeSeason.js'
 
 test('empty and unknown selections cannot produce a feed URL', () => {
@@ -67,4 +67,19 @@ test('current-season catalog and individual show subscription contract', () => {
   for (const lang of ['zh', 'en', 'ja']) {
     assert.deepEqual(Object.keys(animeSeasonCopy[lang]).sort(), Object.keys(animeSeasonCopy.zh).sort())
   }
+})
+
+test('one dynamic subscription URL is canonical for any selection order, and rejects hostile IDs', () => {
+  assert.equal(CALENDAR_MERGE_HEALTH_URL, '/api/calendar/v1/health')
+  const a = mergedAnimeFeedUrl([206401,123456,206401])
+  const b = mergedAnimeFeedUrl([123456,206401])
+  assert.equal(a,b)
+  const url = new URL(a)
+  assert.equal(url.origin, 'https://yuashie.cn')
+  assert.equal(url.pathname, '/api/calendar/v1/anime.ics')
+  assert.equal(url.searchParams.get('shows'), '123456,206401')
+  assert.equal(url.searchParams.get('mode'), 'span')
+  assert.equal(new URL(mergedAnimeFeedUrl([206401], 'start')).searchParams.get('mode'), 'start')
+  for(const bad of [[], ['206401'], [NaN], [0], [-1], [2.5], [2147483648],
+    Array.from({length:81},(_,i)=>i+1)]) assert.equal(mergedAnimeFeedUrl(bad), null)
 })
