@@ -1,0 +1,116 @@
+/*
+ * Yuashie · unified rounded corners (dark and light themes).
+ * Controls and surfaces receive shared radii; unframed layouts, tables,
+ * decorative geometric marks and circular avatars keep their original form.
+ * Loaded after the site styles, with calendar-specific rules in calendar.css.
+ */
+:root {
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --radius-panel: 22px;
+}
+
+/* Inputs, buttons, dropdowns, and keyboard-accessible interactive surfaces.
+   Existing deliberately pill-shaped controls retain their larger radius. */
+:root :where(button, input:not([type="checkbox"]):not([type="radio"]),
+  select, textarea, dialog, pre) {
+  border-radius: var(--radius-control);
+}
+:root :where(button, input, select, textarea):focus-visible {
+  outline-offset: 3px;
+}
+
+/* Previously square buttons and controls in the older site sections. */
+.theme-toggle,
+.language-switcher button,
+.btn,
+.secondary-action,
+.primary-action,
+.text-action,
+.icon-button,
+.mobile-nav-toggle,
+.qsl-file-button,
+.badge-equip,
+.account-secondary,
+.avatar-upload-button {
+  border-radius: var(--radius-control);
+}
+
+/* Global content panels. Keep column/section separators square as these
+   are not independent surfaces. */
+:root :is(
+  .terminal, .card, .about-intro, .protocol-status, .reward-notice,
+  .contribution-card, .contribution-ledger, .afdian-station,
+  .auth-shell, .profile-hero, .profile-grid, .activity-placeholder,
+  .badge-section, .badge-card, .avatar-editor,
+  .comments-section, .comment-composer, .comment-login,
+  .comment-thread, .comment-empty, .reply-composer, .reply-list,
+  .feedback-layout, .feedback-card, .admin-note,
+  .admin-profile-panel, .admin-feedback-card, .contribution-section,
+  .vip-intro, .vip-notes, .vip-afdian-panel, .afdian-embed,
+  .minecraft-access, .minecraft-access-panel, .minecraft-status-row,
+  .radio-empty-panel, .radio-bind-callout, .radio-station-strip,
+  .radio-stat-grid, .radio-section, .radio-table-wrap,
+  .radio-form-panel, .radio-fieldset, .qsl-upload-panel,
+  .qsl-template-card, .qsl-message-card, .public-radio-hero,
+  .radio-project-panel, .release-body, .archive-origin,
+  .legal-lead, .legal-contact, .privacy-notice, .legal-toc,
+  .signal-output-panel, .connection-banner,
+  .calendar-notice, .calendar-result, .calendar-live-panel,
+  .calendar-season-picker, .calendar-merged-box,
+  .calendar-options fieldset
+) {
+  border-radius: var(--radius-card);
+}
+
+/* Small inset containers, chips, message rows and editable fields. */
+:root :is(
+  .afdian-qr, .minecraft-server-address, .minecraft-bound-id,
+  .radio-subnav-links a, .radio-callsign-chip, .radio-identity-badge,
+  .comment-radio-badge, .qsl-tabs, .qsl-tabs button,
+  .qsl-file-button, .qsl-upload-preview, .qsl-flags b,
+  .radio-project-panel li, .badge-icon, .badge-equip,
+  .comment-compose-body textarea, .reply-composer textarea,
+  .feedback-form textarea, .feedback-form input,
+  .feedback-form select, .admin-feedback-card textarea,
+  .auth-form input, .profile-editor input, .profile-editor textarea,
+  .radio-form-grid input, .radio-form-grid select,
+  .radio-form-grid textarea, .radio-log-toolbar input,
+  .radio-log-toolbar select, .qsl-upload-panel input,
+  .calendar-result textarea, .calendar-live-url,
+  .calendar-season-search input,
+  .calendar-season-item, .calendar-selected-shows li,
+  .home-project-image, .node-search, .command-help
+) {
+  border-radius: var(--radius-sm);
+}
+
+/* Media frame and visible calendar preview should round as one surface.
+   The individual seven day boxes remain square, like proper calendar cells. */
+:root :is(
+  .calendar-days, .calendar-season-list, .project-vector-hero img,
+  .qsl-upload-preview, .afdian-qr
+) {
+  border-radius: var(--radius-card);
+}
+:root .calendar-days {
+  overflow: hidden;
+}
+:root :is(.calendar-season-list, .calendar-result, .calendar-live-panel,
+  .calendar-merged-box) {
+  min-width: 0;
+}
+
+/* Browser dialogs/popovers may be rendered outside #app. */
+:root :is(dialog, [role="dialog"], [role="alertdialog"], .privacy-banner,
+  .command-palette, .popover-panel, .mailbox-panel) {
+  border-radius: var(--radius-panel);
+}
+
+/* Do not square off round avatar/status elements when normalizing panels. */
+:root :is(.avatar-node, .comment-avatar, .status-dot,
+  .account-provider-mark, .quota-orbit) {
+  border-radius: 50%;
+}
