@@ -50,3 +50,32 @@ jobs:
               except Exception as exc:
                   print("PATH",path,"NETWORK_ERROR",type(exc).__name__,str(exc)[:250])
           PY
+
+      - name: Render calendar page in headless Chrome and inspect UI errors
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          if [ -z "$CHROME" ]; then
+            echo "CHROME_UNAVAILABLE: no preinstalled browser on runner"
+            exit 0
+          fi
+          echo "BROWSER: $CHROME"
+          timeout 50 "$CHROME" --headless=new --no-sandbox --disable-gpu \
+            --disable-dev-shm-usage --disable-extensions --no-first-run \
+            --virtual-time-budget=12000 \
+            --dump-dom "https://yuashie.cn/projects/004/subscribe" \
+            > "$RUNNER_TEMP/calendar-dom.html" 2> "$RUNNER_TEMP/calendar-browser.log" || true
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          t=Path(os.environ["RUNNER_TEMP"])
+          html=(t/"calendar-dom.html").read_text(errors="replace") if (t/"calendar-dom.html").exists() else ""
+          errors=(t/"calendar-browser.log").read_text(errors="replace") if (t/"calendar-browser.log").exists() else ""
+          print("RENDERED_HTML_BYTES",len(html))
+          for text in ("ANIME / SEASON PICKER","anime-season-picker","选择本季想追的番剧","加载本季番剧"):
+              print("PAGE_MARKER",repr(text),"FOUND",text in html)
+          print("ROOT_APP_TAG",'<div id="app">' in html)
+          print("HTML_SAMPLE",repr(html[-1500:]))
+          print("BROWSER_ERRORS",errors[-4500:])
+          PY
