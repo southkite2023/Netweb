@@ -52,19 +52,34 @@ const seasonSearch = ref('')
 const selectedShowIds = ref([])
 const seasonCopyState = ref('')
 const mergeApiStatus = ref('checking')
+const mergeApiVersion = ref(0)
+const seasonLanguage = ref(locale.value === 'zh' ? 'zh-CN' : 'ja')
+const supportsSelectedLanguage = computed(() =>
+  mergeApiStatus.value === 'ready' && (seasonLanguage.value === 'ja' || mergeApiVersion.value >= 2)
+)
 const mergedCopyState = ref('')
-const mergedUrl = computed(() => mergedAnimeFeedUrl(selectedShowIds.value, seasonMode.value))
+const mergedUrl = computed(() => mergedAnimeFeedUrl(selectedShowIds.value, seasonMode.value, seasonLanguage.value))
 const seasonMode = ref('duration')
 const seasonShows = computed(() => seasonCatalog.value?.shows || [])
 const visibleSeasonShows = computed(() => seasonShows.value.filter(show =>
-  [show.title, ...show.aliases].some(name => name.toLocaleLowerCase().includes(seasonSearch.value.trim().toLocaleLowerCase()))
+  [show.title, show.title_zh, ...show.aliases].filter(Boolean).some(name =>
+    name.toLocaleLowerCase().includes(seasonSearch.value.trim().toLocaleLowerCase()))
 ))
 const selectedSeasonShows = computed(() => seasonShows.value.filter(show => selectedShowIds.value.includes(show.id)))
 const seasonTitle = computed(() => seasonCatalog.value
   ? `${seasonCatalog.value.year} ${picker.value.season[seasonCatalog.value.season] || seasonCatalog.value.season}`
   : '')
 function showFeedUrl(id) {
-  return animeShowFeedUrl(id, seasonMode.value)
+  return animeShowFeedUrl(id, seasonMode.value, seasonLanguage.value)
+}
+function showDisplayName(show) {
+  return seasonLanguage.value === 'zh-CN' && show.title_zh ? show.title_zh : show.title
+}
+function showTranslationSource(show) {
+  if (seasonLanguage.value !== 'zh-CN') return ''
+  if (show.title_zh_source === 'official') return picker.value.sourceOfficial
+  if (show.title_zh_source === 'bangumi') return picker.value.sourceCommunity
+  return picker.value.sourceOriginal
 }
 function nextAiringLabel(show) {
   if (!Number.isSafeInteger(show.next_airing_at)) return picker.value.unscheduled
@@ -86,7 +101,16 @@ async function loadSeasonCatalog() {
       if (!Number.isSafeInteger(s.id) || s.id <= 0 || known.has(s.id) ||
           typeof s.title !== 'string' || !s.title.trim()) throw new Error('Invalid show')
       known.add(s.id)
-      return { id: s.id, title: s.title, aliases: Array.isArray(s.aliases) ? s.aliases.filter(v => typeof v === 'string') : [], next_airing_at: s.next_airing_at, next_episode: s.next_episode }
+      return {
+        id: s.id, title: s.title,
+        title_zh: typeof s.title_zh === 'string' && s.title_zh.trim() ? s.title_zh.trim() : null,
+        title_zh_source: ['official', 'bangumi'].includes(s.title_zh_source) ? s.title_zh_source : 'none',
+        title_zh_source_url: typeof s.title_zh_source_url === 'string' &&
+          /^https:\/\/(bgm\.tv\/subject\/\d+|[^/]+\/)/.test(s.title_zh_source_url)
+          ? s.title_zh_source_url : null,
+        aliases: Array.isArray(s.aliases) ? s.aliases.filter(v => typeof v === 'string') : [],
+        next_airing_at: s.next_airing_at, next_episode: s.next_episode,
+      }
     })
     seasonCatalog.value = { season: data.season, year: data.year, shows }
     selectedShowIds.value = selectedShowIds.value.filter(id => known.has(id))
@@ -100,13 +124,14 @@ onMounted(async () => {
   try {
     const response = await fetch(CALENDAR_MERGE_HEALTH_URL, { cache: 'no-store' })
     const data = response.ok ? await response.json() : null
-    mergeApiStatus.value = data?.ok === true && data.service === 'anime-ics-selection' && data.version === 1 ? 'ready' : 'unavailable'
+    mergeApiVersion.value = Number.isInteger(data?.version) ? data.version : 0
+    mergeApiStatus.value = data?.ok === true && data.service === 'anime-ics-selection' && mergeApiVersion.value >= 1 ? 'ready' : 'unavailable'
   } catch {
     mergeApiStatus.value = 'unavailable'
   }
 })
 async function copyMergedUrl() {
-  if (mergeApiStatus.value !== 'ready' || !mergedUrl.value) return
+  if (!supportsSelectedLanguage.value || !mergedUrl.value) return
   try {
     await navigator.clipboard.writeText(mergedUrl.value)
     mergedCopyState.value = picker.value.mergedCopied
@@ -133,7 +158,7 @@ async function copySelectedShows() {
     seasonCopyState.value = picker.value.copyFailed
   }
 }
-watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = ''; mergedCopyState.value = '' }, { deep: true })
+watch([selectedShowIds, seasonMode, seasonLanguage], () => { seasonCopyState.value = ''; mergedCopyState.value = '' }, { deep: true })
 </script>
 
 <template>
@@ -160,6 +185,12 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = ''; mergedC
               <label><input v-model="seasonMode" type="radio" name="anime-season-mode" value="duration"> {{ c.duration }}</label>
               <label><input v-model="seasonMode" type="radio" name="anime-season-mode" value="start"> {{ c.start }}</label>
             </fieldset>
+            <fieldset class="calendar-season-mode">
+              <legend>{{ picker.languageTitle }}</legend>
+              <label><input v-model="seasonLanguage" type="radio" name="anime-season-language" value="zh-CN"> {{ picker.languageChinese }}</label>
+              <label><input v-model="seasonLanguage" type="radio" name="anime-season-language" value="ja"> {{ picker.languageJapanese }}</label>
+            </fieldset>
+            <p class="quota-fineprint">{{ picker.chineseNote }}</p>
             <label class="calendar-season-search">
               <span>{{ picker.search }}</span>
               <input v-model="seasonSearch" type="search" :placeholder="picker.searchPlaceholder">
@@ -169,7 +200,9 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = ''; mergedC
               <label v-for="show in visibleSeasonShows" :key="show.id" class="calendar-season-item">
                 <input v-model="selectedShowIds" type="checkbox" :value="show.id">
                 <span class="calendar-season-info">
-                  <strong>{{ show.title }}</strong>
+                  <strong>{{ showDisplayName(show) }}</strong>
+                  <small v-if="seasonLanguage === 'zh-CN' && show.title_zh && show.title_zh !== show.title">{{ show.title }}</small>
+                  <small v-if="seasonLanguage === 'zh-CN'">{{ showTranslationSource(show) }}</small>
                   <small>{{ nextAiringLabel(show) }}</small>
                 </span>
               </label>
@@ -179,7 +212,7 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = ''; mergedC
               <section class="calendar-merged-box" :aria-label="picker.mergedTitle">
                 <h4>{{ picker.mergedTitle }}</h4>
                 <p class="quota-fineprint">{{ picker.mergedHint }}</p>
-                <template v-if="mergeApiStatus === 'ready'">
+                <template v-if="supportsSelectedLanguage">
                   <p role="status" class="quota-fineprint">{{ picker.mergedReady }}</p>
                   <template v-if="mergedUrl">
                     <code class="calendar-live-url">{{ mergedUrl }}</code>
@@ -188,7 +221,7 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = ''; mergedC
                   </template>
                   <p v-else class="quota-fineprint">{{ picker.mergedSelected }}</p>
                 </template>
-                <p v-else class="quota-fineprint">{{ picker.mergedUnavailable }}</p>
+                <p v-else class="quota-fineprint">{{ seasonLanguage === 'zh-CN' && mergeApiStatus === 'ready' ? picker.chineseMergeUnavailable : picker.mergedUnavailable }}</p>
                 <p role="status" aria-live="polite" class="quota-fineprint">{{ mergedCopyState }}</p>
               </section>
               <p class="quota-fineprint">{{ picker.selectHint }}</p>
@@ -196,7 +229,7 @@ watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = ''; mergedC
               <p role="status" aria-live="polite" class="quota-fineprint">{{ seasonCopyState }}</p>
               <ul v-if="selectedSeasonShows.length">
                 <li v-for="show in selectedSeasonShows" :key="show.id">
-                  <strong>{{ show.title }}</strong>
+                  <strong>{{ showDisplayName(show) }}</strong>
                   <button class="btn btn-secondary" type="button" @click="copySingleShow(show.id)">{{ picker.subscribe }}</button>
                   <code>{{ showFeedUrl(show.id) }}</code>
                 </li>
