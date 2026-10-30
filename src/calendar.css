@@ -52,3 +52,32 @@
 .calendar-live-actions a { color: var(--quota-accent); font-size: 13px; font-weight: 600; }
 .calendar-live-actions a:focus-visible, .calendar-live-actions button:focus-visible { outline: 3px solid var(--quota-accent); outline-offset: 4px; }
 .calendar-live-url { display: block; font-size: 11px; padding: 10px; margin: 12px 0; background: var(--bg); border: 1px solid var(--line); overflow-wrap: anywhere; white-space: normal; user-select: all; }
+
+/* Current-season, per-title anime subscriptions. */
+.calendar-season-picker { border: 1px solid var(--line); padding: 24px; margin: 0 0 28px; background: var(--bg-soft); }
+.calendar-season-picker h2 { font-size: clamp(20px, 3vw, 27px); margin: 12px 0; }
+.calendar-season-picker .quota-fineprint { line-height: 1.85; }
+.calendar-season-mode { border: 0; padding: 0; margin: 20px 0; display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; }
+.calendar-season-mode legend { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.calendar-season-mode label { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+.calendar-season-mode input, .calendar-season-item input { accent-color: var(--quota-accent); }
+.calendar-season-search { display: flex; flex-direction: column; gap: 9px; margin: 18px 0; font-size: 12px; color: var(--muted); }
+.calendar-season-search input { width: 100%; padding: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font: inherit; font-size: 14px; }
+.calendar-season-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; max-height: 520px; overflow-y: auto; padding: 2px 0 4px; }
+.calendar-season-item { display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--line); padding: 12px; cursor: pointer; min-width: 0; }
+.calendar-season-item:has(input:checked) { border-color: var(--quota-accent); background: var(--bg); }
+.calendar-season-item input { flex: none; margin: 5px 0 0; width: 16px; height: 16px; }
+.calendar-season-info { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.calendar-season-info strong { font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.calendar-season-info small { font-size: 11px; color: var(--muted); line-height: 1.5; }
+.calendar-selected-shows { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+.calendar-selected-shows h3 { font-size: 17px; margin: 0 0 10px; }
+.calendar-selected-shows ul { list-style: none; padding: 0; }
+.calendar-selected-shows li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 13px; }
+.calendar-selected-shows li strong { flex: 1; min-width: 180px; overflow-wrap: anywhere; }
+.calendar-selected-shows code { flex-basis: 100%; font-size: 10px; line-height: 1.5; overflow-wrap: anywhere; user-select: all; }
+.calendar-season-picker input:focus-visible, .calendar-season-picker button:focus-visible { outline: 3px solid var(--quota-accent); outline-offset: 3px; }
+@media (max-width: 760px) {
+  .calendar-season-picker { padding: 18px; }
+  .calendar-season-list { grid-template-columns: 1fr; }
+}
