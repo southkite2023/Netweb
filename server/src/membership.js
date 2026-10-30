@@ -1,6 +1,11 @@
 import crypto from 'node:crypto'
 
-export const plans = [6,18,25].map((price, i) => ({ id: `monthly_${price}`, tier: i + 1, price, amount: `${price}.00`, months: 1 }))
+// IDs remain stable so existing memberships and pending orders retain their tier.
+export const plans = [
+  { id: 'monthly_6', name: '微光', price: 6 },
+  { id: 'monthly_18', name: '共鸣', price: 18 },
+  { id: 'monthly_25', name: '同行', price: 45 },
+].map((plan, i) => ({ ...plan, tier: i + 1, amount: `${plan.price}.00`, months: 1 }))
 export function matchesPayment(order, data, config) {
   return data.app_id === config.appId && data.seller_id === config.sellerId &&
     data.out_trade_no === order.id && data.total_amount === order.amount &&
@@ -54,7 +59,7 @@ export async function registerMembership(app, { pool, requireUser, origin, confi
     const id = crypto.randomBytes(20).toString('hex')
     const payUrl = sdk.pageExecute('alipay.trade.page.pay','GET', {
       notifyUrl: `${origin}/api/payments/alipay/notify`, returnUrl: `${origin}/vip?order=${id}`,
-      bizContent: { out_trade_no: id, product_code: 'FAST_INSTANT_TRADE_PAY', total_amount: plan.amount, subject: `Yuashie ${plan.price}元会员月卡`, timeout_express: '30m', qr_pay_mode: '2' }
+      bizContent: { out_trade_no: id, product_code: 'FAST_INSTANT_TRADE_PAY', total_amount: plan.amount, subject: `Yuashie ${plan.name}会员月卡 ${plan.price}元`, timeout_express: '30m', qr_pay_mode: '2' }
     })
     await pool.query(`INSERT INTO membership_orders(id,user_id,plan_id,amount) VALUES($1,$2,$3,$4)`,[id,user.id,plan.id,plan.amount])
     reply.header('Cache-Control','no-store')

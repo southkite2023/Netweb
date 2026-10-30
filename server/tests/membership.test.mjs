@@ -25,7 +25,17 @@ test('signed Alipay payments bind amounts and accounts, grant once and renew onc
   const sign = crypto.sign('RSA-SHA256',Buffer.from(content),privateKey).toString('base64')
   return app.inject({method:'POST',url:'/api/payments/alipay/notify',headers:{'content-type':'application/x-www-form-urlencoded'},payload:new URLSearchParams({...data,sign_type:'RSA2',sign}).toString()})
  }
- assert.deepEqual(plans.map(p=>p.price),[6,18,25])
+ assert.deepEqual(plans.map(p=>p.price),[6,18,45])
+ assert.deepEqual(plans.map(p=>p.name),['微光','共鸣','同行'])
+ const premium = (await buy('monthly_25')).json()
+ const premiumContent = JSON.parse(new URL(premium.payUrl).searchParams.get('biz_content'))
+ assert.equal(premiumContent.total_amount,'45.00')
+ assert.equal(premiumContent.subject,'Yuashie 同行会员月卡 45元')
+ assert.equal((await notify({out_trade_no:premium.id,total_amount:'25.00',trade_no:'2026103000000045'})).statusCode,400)
+ // Historical pending orders still settle at their original signed amount.
+ await db.query('UPDATE membership_orders SET amount=25 WHERE id=$1',[premium.id])
+ assert.equal((await notify({out_trade_no:premium.id,total_amount:'25.00',trade_no:'2026103000000045'})).body,'success')
+ await db.query('DELETE FROM memberships')
  assert.equal((await app.inject({method:'POST',url:'/api/membership/orders',payload:{planId:'monthly_6'}})).statusCode,401)
  assert.equal((await buy('monthly_1')).statusCode,400)
  assert.equal((await buy('monthly_68')).statusCode,400)

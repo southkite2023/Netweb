@@ -12,7 +12,7 @@ const receipt = ref(null)
 const pendingKey = 'yuashie:membership:checkout'
 let timer, stopped = false, mounted = false, generation = 0, attempts = 0
 const validOrder = value => typeof value === 'string' && /^[a-f0-9]{40}$/.test(value)
-const planName = id => `${plans.value.find(p => p.id === id)?.price ?? id?.replace('monthly_', '')} 元月卡`
+const planName = id => `${plans.value.find(p => p.id === id)?.name || ({ monthly_6: '微光', monthly_18: '共鸣', monthly_25: '同行' })[id] || '会员'}月卡`
 const formatDate = value => new Date(value).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false })
 const confirmedMembership = computed(() => memberships.value.find(item => item.planId === confirmedPlan.value))
 const loginTarget = computed(() => ({ path: '/login', query: { redirect: route.fullPath } }))
@@ -119,7 +119,7 @@ onUnmounted(() => {
       <section class="monthly-section" aria-labelledby="plans-title"><p class="section-label">01 / MONTHLY PLANS</p><h2 id="plans-title">每一份支持，都有回响。</h2>
         <p class="monthly-note">单次购买一个月，不自动扣款。同档续费从现有到期日顺延；已到期则从付款确认时开始。有效期内暂不支持跨档购买。</p>
         <p v-if="loading" role="status">正在加载套餐…</p>
-        <div class="monthly-grid"><article v-for="plan in plans" :key="plan.id" class="monthly-card" :class="{ 'monthly-card-active': memberships.some(item => item.planId === plan.id) }"><span>月卡 · {{ plan.tier }} 档 <strong v-if="memberships.some(item => item.planId === plan.id)" class="active-label">使用中</strong></span><h3>¥{{ plan.price }}<small> / 月</small></h3><p>有效期一个月<br>额外权益尚未确定</p><button class="btn btn-primary" :disabled="!ready || busy" @click="buy(plan)">{{ ready ? (busy ? '正在创建订单…' : !auth.user ? '登录后购买' : memberships.some(item => item.planId === plan.id) ? '续费一个月' : '支付宝扫码购买') : '暂未开放购买' }}</button></article></div>
+        <div class="monthly-grid"><article v-for="plan in plans" :key="plan.id" class="monthly-card" :class="{ 'monthly-card-active': memberships.some(item => item.planId === plan.id) }"><span>{{ plan.name }} · 月卡 <strong v-if="memberships.some(item => item.planId === plan.id)" class="active-label">使用中</strong></span><h3>¥{{ plan.price }}<small> / 月</small></h3><p>有效期一个月<br>额外权益尚未确定</p><button class="btn btn-primary" :disabled="!ready || busy" @click="buy(plan)">{{ ready ? (busy ? '正在创建订单…' : !auth.user ? '登录后购买' : memberships.some(item => item.planId === plan.id) ? '续费一个月' : '支付宝扫码购买') : '暂未开放购买' }}</button></article></div>
         <p class="monthly-note">付款订单将关联当前登录账号。支付后返回本页，系统会自动更新到账结果和会员有效期。</p>
         <p v-if="message && (!paymentState || paymentState === 'paid')" class="monthly-message" role="status">{{ message }}</p>
       </section>
