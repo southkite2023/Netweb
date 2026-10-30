@@ -44,7 +44,7 @@ jobs:
           if python3 scripts/check-frontend-scope.py "$RUNNER_TEMP/previous-deploy-version.json" "$GITHUB_SHA"; then
             echo "普通前端发布边界检查通过"
           else
-            echo "发现后端变化；仅允许已独立上线的固定 Calendar API 两个文件"
+            echo "发现后端变化；仅允许已独立上线的固定 Calendar API 源码及其测试文件"
             # This is not a generic bypass: require a live validated HTTPS API
             # and exact immutable blobs before allowing static-only upload.
             curl --fail --silent --show-error --retry 3 --retry-delay 2 \
