@@ -52,3 +52,34 @@ Only then replace the reserved endpoint, remove test status and enable subscript
 ## Validation
 
 `npm run build`, `npm test` (including URL validation, independent defaults and multilingual coverage), plus the existing frontend deployment boundary tests.
+
+
+## 2026-10-30: Select current-season anime by title
+
+The live anime selector at `/projects/004/subscribe#anime-season-picker` reads the public,
+read-only JSON catalog at
+`https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/catalog/current-season.json`.
+It renders the AniList current-season TV/TV_SHORT list with search, checkboxes,
+a separately chosen `start` or `span` mode (precise broadcast time by default),
+and a stable individual URL for every selected show:
+
+`https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/shows/{anilist_media_id}/span.ics`
+
+The project introduction links to the selector instead of the old whole-anime feed.
+The whole-anime subscription is available only as an optional collapsed section.
+Titles are sourced from AniList (native first, with English/romaji search aliases);
+some ongoing series and season shows without an upcoming two-week episode or season
+metadata may not appear, so this catalog is not a complete seasonal database.
+
+**Architecture limitation:** GitHub Pages serves static files, so checking multiple
+shows cannot generate one dynamically merged, continuously refreshed ICS URL.
+Users must add each selected show's persistent URL separately; the copy-all
+operation copies multiple URLs separated by newlines, it does not bulk-install
+calendars. Building one subscription URL for arbitrary selections needs a
+server-side dynamic feed (e.g. on an existing server), not static HTML or a
+one-time downloaded ICS. The original multi-category builder remains a demo.
+
+No favorites or account information is sent to the calendar backend. Source data
+and stable per-title feeds are published by the calendar repository's scheduled
+GitHub Actions workflow. Frontend catalog loading errors are displayed explicitly;
+previously subscribed URLs keep working independently of the website.
