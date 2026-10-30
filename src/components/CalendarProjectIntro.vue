@@ -3,11 +3,12 @@ import { computed } from 'vue'
 import projectArtwork from '../assets/projects/project-004.svg'
 import { useI18n } from 'vue-i18n'
 import { calendarCopy } from '../data/calendar'
-import { CALENDAR_REAL_ANIME_FEEDS } from '../lib/calendar'
+import { animeSeasonCopy } from '../data/animeSeason'
 import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
 const c = computed(() => calendarCopy[locale.value] || calendarCopy.zh)
+const p = computed(() => animeSeasonCopy[locale.value] || animeSeasonCopy.zh)
 </script>
 
 <template>
@@ -31,9 +32,9 @@ const c = computed(() => calendarCopy[locale.value] || calendarCopy.zh)
       <h2>{{ c.liveAnimeTitle }}</h2>
       <p>{{ c.liveAnimeDescription }}</p>
       <div class="calendar-live-actions">
-        <a :href="CALENDAR_REAL_ANIME_FEEDS.duration" target="_blank" rel="noopener noreferrer">{{ c.liveAnimeOpen }} ↗</a>
+        <RouterLink to="/projects/004/subscribe#anime-season-picker">{{ p.title }} ↗</RouterLink>
       </div>
-      <p class="quota-fineprint">{{ c.liveAnimeHint }}</p>
+      <p class="quota-fineprint">{{ p.selectHint }}</p>
     </section>
     <div class="quota-features"><article v-for="(feature, index) in c.features" :key="feature[0]"><span>0{{ index + 1 }}</span><h2>{{ feature[0] }}</h2><p>{{ feature[1] }}</p></article></div>
     <div class="calendar-overview">
