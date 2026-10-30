@@ -31,3 +31,12 @@ export function calendarTestUrl(selection) {
   const params = calendarParams(selection)
   return params ? `${CALENDAR_TEST_ENDPOINT}?${params}` : null
 }
+
+// A static catalog, plus one durable HTTPS subscription per AniList show.
+// GitHub Pages cannot host a dynamically merged per-user subscription URL.
+export const CALENDAR_SEASON_CATALOG_URL = 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/catalog/current-season.json'
+export function animeShowFeedUrl(mediaId, mode = 'duration') {
+  if (!Number.isSafeInteger(mediaId) || mediaId <= 0) return null
+  const filename = mode === 'start' ? 'start.ics' : 'span.ics'
+  return `https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/shows/${mediaId}/${filename}`
+}
