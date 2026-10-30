@@ -29,7 +29,7 @@ function toggleGame(id, enabled) {
   selection.games[id] = enabled ? [...calendarTypes] : []
 }
 watch(candidate, () => { output.value = ''; copyState.value = '' })
-watch(realAnimeUrl, () => { liveCopyState.value = '' })
+// Computed watchers that access seasonal refs are registered after the refs exist.
 async function copyUrl() {
   const value = output.value
   try {
@@ -162,6 +162,7 @@ async function copySelectedShows() {
   }
 }
 watch([selectedShowIds, seasonMode, seasonLanguage], () => { seasonCopyState.value = ''; mergedCopyState.value = '' }, { deep: true })
+watch(realAnimeUrl, () => { liveCopyState.value = '' })
 </script>
 
 <template>
