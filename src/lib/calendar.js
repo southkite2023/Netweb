@@ -8,6 +8,10 @@ export const CALENDAR_REAL_ANIME_FEEDS = Object.freeze({
   start: 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/start.ics',
   duration: 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/span.ics',
 })
+export const CALENDAR_REAL_ANIME_FEEDS_ZH = Object.freeze({
+  start: 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/start.zh-CN.ics',
+  duration: 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/span.zh-CN.ics',
+})
 
 export function defaultCalendarSelection() {
   return { games: Object.fromEntries(calendarGames.map(game => [game.id, game.id === 'genshin' ? [...calendarTypes] : []])), anime: false, releases: false, mode: 'start' }
