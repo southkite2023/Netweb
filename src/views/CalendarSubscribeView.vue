@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import { calendarCopy, calendarGames, calendarTypes, calendarRepository } from '../data/calendar'
-import { CALENDAR_REAL_ANIME_FEEDS, CALENDAR_SEASON_CATALOG_URL, CALENDAR_MERGE_HEALTH_URL, animeShowFeedUrl, mergedAnimeFeedUrl, calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
+import { CALENDAR_REAL_ANIME_FEEDS, CALENDAR_REAL_ANIME_FEEDS_ZH, CALENDAR_SEASON_CATALOG_URL, CALENDAR_MERGE_HEALTH_URL, animeShowFeedUrl, mergedAnimeFeedUrl, calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
 import { animeSeasonCopy } from '../data/animeSeason'
 import '../quota-hub.css'
 import '../calendar.css'
@@ -15,7 +15,10 @@ const gamesEnabled = ref(true)
 const output = ref('')
 const copyState = ref('')
 const liveCopyState = ref('')
-const realAnimeUrl = computed(() => CALENDAR_REAL_ANIME_FEEDS[selection.mode] || CALENDAR_REAL_ANIME_FEEDS.start)
+const realAnimeUrl = computed(() =>
+  (seasonLanguage.value === 'zh-CN' ? CALENDAR_REAL_ANIME_FEEDS_ZH : CALENDAR_REAL_ANIME_FEEDS)[seasonMode.value] ||
+  (seasonLanguage.value === 'zh-CN' ? CALENDAR_REAL_ANIME_FEEDS_ZH.start : CALENDAR_REAL_ANIME_FEEDS.start)
+)
 const effective = computed(() => ({ ...selection, games: gamesEnabled.value ? selection.games : {} }))
 const candidate = computed(() => calendarTestUrl(effective.value))
 const selectedLabels = computed(() => [
@@ -230,6 +233,8 @@ watch([selectedShowIds, seasonMode, seasonLanguage], () => { seasonCopyState.val
               <ul v-if="selectedSeasonShows.length">
                 <li v-for="show in selectedSeasonShows" :key="show.id">
                   <strong>{{ showDisplayName(show) }}</strong>
+                  <a v-if="seasonLanguage === 'zh-CN' && show.title_zh_source_url"
+                     :href="show.title_zh_source_url" target="_blank" rel="noopener noreferrer">{{ picker.sourceLink }}</a>
                   <button class="btn btn-secondary" type="button" @click="copySingleShow(show.id)">{{ picker.subscribe }}</button>
                   <code>{{ showFeedUrl(show.id) }}</code>
                 </li>
