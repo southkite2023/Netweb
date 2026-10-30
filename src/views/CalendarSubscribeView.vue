@@ -1,10 +1,11 @@
 <script setup>
-import { computed, reactive, ref, watch } from 'vue'
+import { computed, reactive, ref, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SiteNav from '../components/SiteNav.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import { calendarCopy, calendarGames, calendarTypes, calendarRepository } from '../data/calendar'
-import { CALENDAR_REAL_ANIME_FEEDS, calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
+import { CALENDAR_REAL_ANIME_FEEDS, CALENDAR_SEASON_CATALOG_URL, animeShowFeedUrl, calendarTestUrl, defaultCalendarSelection } from '../lib/calendar'
+import { animeSeasonCopy } from '../data/animeSeason'
 import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
@@ -43,6 +44,74 @@ async function copyRealAnimeUrl() {
     liveCopyState.value = 'copyFailed'
   }
 }
+
+const picker = computed(() => animeSeasonCopy[locale.value] || animeSeasonCopy.zh)
+const seasonCatalog = ref(null)
+const seasonStatus = ref('loading')
+const seasonSearch = ref('')
+const selectedShowIds = ref([])
+const seasonCopyState = ref('')
+const seasonShows = computed(() => seasonCatalog.value?.shows || [])
+const visibleSeasonShows = computed(() => seasonShows.value.filter(show =>
+  show.title.toLocaleLowerCase().includes(seasonSearch.value.trim().toLocaleLowerCase())
+))
+const selectedSeasonShows = computed(() => seasonShows.value.filter(show => selectedShowIds.value.includes(show.id)))
+const seasonTitle = computed(() => seasonCatalog.value
+  ? `${seasonCatalog.value.year} ${picker.value.season[seasonCatalog.value.season] || seasonCatalog.value.season}`
+  : '')
+function showFeedUrl(id) {
+  return animeShowFeedUrl(id, selection.mode)
+}
+function nextAiringLabel(show) {
+  if (!Number.isSafeInteger(show.next_airing_at)) return picker.value.unscheduled
+  const language = locale.value === 'ja' ? 'ja-JP' : locale.value === 'zh' ? 'zh-CN' : 'en-US'
+  return `${picker.value.next} · ${new Date(show.next_airing_at * 1000).toLocaleString(language, {
+    timeZone: 'Asia/Tokyo', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
+  })} JST`
+}
+async function loadSeasonCatalog() {
+  seasonStatus.value = 'loading'
+  try {
+    const response = await fetch(CALENDAR_SEASON_CATALOG_URL, { cache: 'no-store' })
+    if (!response.ok) throw new Error('Catalog HTTP error')
+    const data = await response.json()
+    if (data.schema_version !== 1 || !['WINTER', 'SPRING', 'SUMMER', 'FALL'].includes(data.season) ||
+        !Number.isInteger(data.year) || !Array.isArray(data.shows)) throw new Error('Invalid catalog')
+    const known = new Set()
+    const shows = data.shows.map(s => {
+      if (!Number.isSafeInteger(s.id) || s.id <= 0 || known.has(s.id) ||
+          typeof s.title !== 'string' || !s.title.trim()) throw new Error('Invalid show')
+      known.add(s.id)
+      return { id: s.id, title: s.title, next_airing_at: s.next_airing_at, next_episode: s.next_episode }
+    })
+    seasonCatalog.value = { season: data.season, year: data.year, shows }
+    selectedShowIds.value = selectedShowIds.value.filter(id => known.has(id))
+    seasonStatus.value = 'ready'
+  } catch {
+    seasonStatus.value = 'error'
+  }
+}
+onMounted(loadSeasonCatalog)
+async function copySingleShow(id) {
+  const url = showFeedUrl(id)
+  if (!url) return
+  try {
+    await navigator.clipboard.writeText(url)
+    seasonCopyState.value = picker.value.copied
+  } catch {
+    seasonCopyState.value = picker.value.copyFailed
+  }
+}
+async function copySelectedShows() {
+  if (!selectedSeasonShows.value.length) return
+  try {
+    await navigator.clipboard.writeText(selectedSeasonShows.value.map(show => showFeedUrl(show.id)).join('\n'))
+    seasonCopyState.value = picker.value.copied
+  } catch {
+    seasonCopyState.value = picker.value.copyFailed
+  }
+}
+watch([selectedShowIds, () => selection.mode], () => { seasonCopyState.value = '' }, { deep: true })
 </script>
 
 <template>
@@ -52,6 +121,47 @@ async function copyRealAnimeUrl() {
         <nav class="quota-kicker" :aria-label="c.back"><RouterLink class="quota-back" to="/projects/004">← {{ c.back }}</RouterLink><span>CALENDAR / CONFIGURATOR</span></nav>
         <header class="calendar-heading"><p class="quota-eyebrow">{{ c.badge }}</p><h1>{{ c.generator }}</h1><p class="quota-intro">{{ c.intro }}</p></header>
         <p id="calendar-test-note" class="calendar-notice">{{ c.warning }}</p>
+        <section id="anime-season-picker" class="calendar-season-picker" :aria-label="picker.title">
+          <p class="quota-eyebrow">ANIME / SEASON PICKER</p>
+          <h2>{{ picker.title }} <span v-if="seasonCatalog">· {{ seasonTitle }}</span></h2>
+          <p class="quota-fineprint">{{ picker.intro }}</p>
+          <template v-if="seasonStatus === 'loading'">
+            <p role="status">{{ picker.loading }}</p>
+          </template>
+          <template v-else-if="seasonStatus === 'error'">
+            <p role="alert">{{ picker.error }}</p>
+            <button class="btn btn-secondary" type="button" @click="loadSeasonCatalog">{{ picker.retry }}</button>
+          </template>
+          <template v-else>
+            <label class="calendar-season-search">
+              <span>{{ picker.search }}</span>
+              <input v-model="seasonSearch" type="search" :placeholder="picker.searchPlaceholder">
+            </label>
+            <p v-if="!visibleSeasonShows.length" class="quota-fineprint">{{ picker.empty }}</p>
+            <div v-else class="calendar-season-list">
+              <label v-for="show in visibleSeasonShows" :key="show.id" class="calendar-season-item">
+                <input v-model="selectedShowIds" type="checkbox" :value="show.id">
+                <span class="calendar-season-info">
+                  <strong>{{ show.title }}</strong>
+                  <small>{{ nextAiringLabel(show) }}</small>
+                </span>
+              </label>
+            </div>
+            <div class="calendar-selected-shows">
+              <h3>{{ picker.selected }} {{ selectedSeasonShows.length }} {{ picker.shows }}</h3>
+              <p class="quota-fineprint">{{ picker.selectHint }}</p>
+              <button class="btn btn-secondary" type="button" :disabled="!selectedSeasonShows.length" @click="copySelectedShows">{{ picker.copyAll }}</button>
+              <p role="status" aria-live="polite" class="quota-fineprint">{{ seasonCopyState }}</p>
+              <ul v-if="selectedSeasonShows.length">
+                <li v-for="show in selectedSeasonShows" :key="show.id">
+                  <strong>{{ show.title }}</strong>
+                  <button class="btn btn-secondary" type="button" @click="copySingleShow(show.id)">{{ picker.subscribe }}</button>
+                  <code>{{ showFeedUrl(show.id) }}</code>
+                </li>
+              </ul>
+            </div>
+          </template>
+        </section>
         <section class="calendar-live-panel" :aria-label="c.liveAnimeTitle">
           <p class="quota-eyebrow">LIVE / ANILIST</p>
           <h2>{{ c.liveAnimeTitle }}</h2>
