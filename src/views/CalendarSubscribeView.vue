@@ -51,6 +51,7 @@ const seasonStatus = ref('loading')
 const seasonSearch = ref('')
 const selectedShowIds = ref([])
 const seasonCopyState = ref('')
+const seasonMode = ref('duration')
 const seasonShows = computed(() => seasonCatalog.value?.shows || [])
 const visibleSeasonShows = computed(() => seasonShows.value.filter(show =>
   show.title.toLocaleLowerCase().includes(seasonSearch.value.trim().toLocaleLowerCase())
@@ -60,7 +61,7 @@ const seasonTitle = computed(() => seasonCatalog.value
   ? `${seasonCatalog.value.year} ${picker.value.season[seasonCatalog.value.season] || seasonCatalog.value.season}`
   : '')
 function showFeedUrl(id) {
-  return animeShowFeedUrl(id, selection.mode)
+  return animeShowFeedUrl(id, seasonMode.value)
 }
 function nextAiringLabel(show) {
   if (!Number.isSafeInteger(show.next_airing_at)) return picker.value.unscheduled
@@ -111,7 +112,7 @@ async function copySelectedShows() {
     seasonCopyState.value = picker.value.copyFailed
   }
 }
-watch([selectedShowIds, () => selection.mode], () => { seasonCopyState.value = '' }, { deep: true })
+watch([selectedShowIds, seasonMode], () => { seasonCopyState.value = '' }, { deep: true })
 </script>
 
 <template>
@@ -133,6 +134,11 @@ watch([selectedShowIds, () => selection.mode], () => { seasonCopyState.value = '
             <button class="btn btn-secondary" type="button" @click="loadSeasonCatalog">{{ picker.retry }}</button>
           </template>
           <template v-else>
+            <fieldset class="calendar-season-mode">
+              <legend>{{ c.mode }}</legend>
+              <label><input v-model="seasonMode" type="radio" name="anime-season-mode" value="duration"> {{ c.duration }}</label>
+              <label><input v-model="seasonMode" type="radio" name="anime-season-mode" value="start"> {{ c.start }}</label>
+            </fieldset>
             <label class="calendar-season-search">
               <span>{{ picker.search }}</span>
               <input v-model="seasonSearch" type="search" :placeholder="picker.searchPlaceholder">
