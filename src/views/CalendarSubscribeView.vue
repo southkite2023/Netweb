@@ -54,7 +54,7 @@ const seasonCopyState = ref('')
 const seasonMode = ref('duration')
 const seasonShows = computed(() => seasonCatalog.value?.shows || [])
 const visibleSeasonShows = computed(() => seasonShows.value.filter(show =>
-  show.title.toLocaleLowerCase().includes(seasonSearch.value.trim().toLocaleLowerCase())
+  [show.title, ...show.aliases].some(name => name.toLocaleLowerCase().includes(seasonSearch.value.trim().toLocaleLowerCase()))
 ))
 const selectedSeasonShows = computed(() => seasonShows.value.filter(show => selectedShowIds.value.includes(show.id)))
 const seasonTitle = computed(() => seasonCatalog.value
@@ -83,7 +83,7 @@ async function loadSeasonCatalog() {
       if (!Number.isSafeInteger(s.id) || s.id <= 0 || known.has(s.id) ||
           typeof s.title !== 'string' || !s.title.trim()) throw new Error('Invalid show')
       known.add(s.id)
-      return { id: s.id, title: s.title, next_airing_at: s.next_airing_at, next_episode: s.next_episode }
+      return { id: s.id, title: s.title, aliases: Array.isArray(s.aliases) ? s.aliases.filter(v => typeof v === 'string') : [], next_airing_at: s.next_airing_at, next_episode: s.next_episode }
     })
     seasonCatalog.value = { season: data.season, year: data.year, shows }
     selectedShowIds.value = selectedShowIds.value.filter(id => known.has(id))
