@@ -1,13 +1,14 @@
 name: Diagnose public calendar deep link
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/diagnose-calendar-route.yml'
+  workflow_run:
+    workflows: ["发布网页到 yuashie.cn"]
+    types: [completed]
 permissions:
   contents: read
 jobs:
   public-route:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
@@ -78,4 +79,6 @@ jobs:
           print("ROOT_APP_TAG",'<div id="app">' in html)
           print("HTML_SAMPLE",repr(html[-1500:]))
           print("BROWSER_ERRORS",errors[-4500:])
+          if "anime-season-picker" not in html:
+              raise SystemExit("Calendar route did not mount the picker in headless Chrome")
           PY
