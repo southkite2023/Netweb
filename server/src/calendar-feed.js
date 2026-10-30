@@ -16,9 +16,11 @@ const STALE_MS = 6 * 60 * 60 * 1000
 
 export function parseSelection(query) {
   if (!query || typeof query !== 'object' || Array.isArray(query)) return null
-  if (Object.keys(query).some(key => !['shows', 'mode'].includes(key))) return null
+  if (Object.keys(query).some(key => !['shows', 'mode', 'lang'].includes(key))) return null
   const raw = query.shows
   const mode = query.mode ?? 'span'
+  const lang = query.lang ?? 'ja'
+  if (lang !== 'ja' && lang !== 'zh-CN') return null
   if (typeof raw !== 'string' || !raw || raw.length > MAX_QUERY_LENGTH ||
       (mode !== 'span' && mode !== 'start')) return null
   const tokens = raw.split(',')
@@ -31,7 +33,7 @@ export function parseSelection(query) {
     shows.add(id)
   }
   if (shows.size < 1 || shows.size > MAX_SHOWS) return null
-  return { shows: [...shows].sort((a, b) => a - b), mode }
+  return { shows: [...shows].sort((a, b) => a - b), mode, lang }
 }
 
 function unfolding(lines) {
@@ -43,7 +45,7 @@ function unfolding(lines) {
   return unfolded
 }
 
-export function mergeAnimeCalendar(source, showIds) {
+export function mergeAnimeCalendar(source, showIds, lang = 'ja') {
   if (typeof source !== 'string' || Buffer.byteLength(source, 'utf8') > MAX_UPSTREAM_BYTES) {
     throw new Error('Invalid or oversized upstream calendar')
   }
@@ -90,7 +92,7 @@ export function mergeAnimeCalendar(source, showIds) {
     'VERSION:2.0',
     'PRODID:-//Yuashie Calendar//Dynamic AniList Selection v1//ZH',
     'CALSCALE:GREGORIAN',
-    'X-WR-CALNAME:Yuashie Calendar · 我的追番',
+    lang === 'zh-CN' ? 'X-WR-CALNAME:Yuashie Calendar · 我的追番（中文）' : 'X-WR-CALNAME:Yuashie Calendar · 我的追番',
     ...selected,
     'END:VCALENDAR',
     '',
@@ -126,14 +128,16 @@ export function registerCalendarFeed(app, {
   const cached = new Map()
   const pending = new Map()
 
-  async function getCalendar(mode) {
-    const previous = cached.get(mode)
+  async function getCalendar(mode, lang) {
+    const cacheKey = `${mode}:${lang}`
+    const previous = cached.get(cacheKey)
     const now = clock()
     if (previous && now - previous.checked < FRESH_MS) return { content: previous.content, stale: false }
 
-    if (!pending.has(mode)) {
+    if (!pending.has(cacheKey)) {
       const job = (async () => {
-        const url = `${TRUSTED_UPSTREAM}/${mode}.ics`
+        const filename = lang === 'zh-CN' ? `${mode}.zh-CN.ics` : `${mode}.ics`
+        const url = `${TRUSTED_UPSTREAM}/${filename}`
         const response = await fetcher(url, {
           method: 'GET',
           redirect: 'error',
@@ -144,14 +148,14 @@ export function registerCalendarFeed(app, {
         const content = await readBoundedResponse(response)
         // Validate the entire source, not just whichever shows were selected.
         mergeAnimeCalendar(content, [])
-        cached.set(mode, { content, checked: clock() })
+        cached.set(cacheKey, { content, checked: clock() })
         return content
       })()
-      pending.set(mode, job)
-      job.finally(() => pending.delete(mode)).catch(() => {})
+      pending.set(cacheKey, job)
+      job.finally(() => pending.delete(cacheKey)).catch(() => {})
     }
     try {
-      return { content: await pending.get(mode), stale: false }
+      return { content: await pending.get(cacheKey), stale: false }
     } catch (error) {
       if (previous && now - previous.checked < STALE_MS) {
         app.log.warn({ message: error.message }, 'Serving retained AniList ICS after upstream error')
@@ -162,22 +166,22 @@ export function registerCalendarFeed(app, {
   }
 
   app.get('/api/calendar/v1/health', { config: { rateLimit: { max: 60, timeWindow: '1 minute' } } },
-    async () => ({ ok: true, service: 'anime-ics-selection', version: 1 }))
+    async () => ({ ok: true, service: 'anime-ics-selection', version: 2, languages: ['ja', 'zh-CN'] }))
 
   app.get('/api/calendar/v1/anime.ics', { config: { rateLimit: { max: 30, timeWindow: '1 minute' } } },
     async (req, reply) => {
       const selection = parseSelection(req.query)
-      if (!selection) return reply.code(400).send({ message: 'Invalid shows/mode. Use 1–80 numeric AniList media IDs and mode=start|span.' })
+      if (!selection) return reply.code(400).send({ message: 'Invalid shows/mode/lang. Use 1–80 numeric AniList media IDs, mode=start|span, lang=ja|zh-CN.' })
       let source
       try {
-        source = await getCalendar(selection.mode)
+        source = await getCalendar(selection.mode, selection.lang)
       } catch (error) {
         req.log.warn({ message: error.message }, 'Live anime ICS upstream unavailable')
         return reply.code(503).header('Retry-After', '300').send({ message: 'Calendar temporarily unavailable. Existing subscriptions remain valid.' })
       }
       let output
       try {
-        output = mergeAnimeCalendar(source.content, selection.shows)
+        output = mergeAnimeCalendar(source.content, selection.shows, selection.lang)
       } catch (error) {
         req.log.error({ message: error.message }, 'Failed to merge trusted source')
         return reply.code(503).header('Retry-After', '300').send({ message: 'Calendar temporarily unavailable.' })
