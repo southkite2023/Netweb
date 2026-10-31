@@ -15,7 +15,7 @@ test('only forwards fixed Google target without incoming credentials or cookies'
  const original=globalThis.fetch
  globalThis.fetch=async (url,opts)=>{
   assert.equal(url,'https://www.googleapis.com/oauth2/v3/certs')
-  assert.equal(opts.redirect,'error')
+  assert.equal(opts.redirect,'manual')
   assert.equal(opts.headers.Authorization,undefined)
   assert.equal(opts.headers.Cookie,undefined)
   return new Response('{"keys":[]}',{headers:{'Content-Type':'application/json','Set-Cookie':'bad=1'}})
@@ -44,4 +44,10 @@ test('upstream errors do not leak request bodies or credentials',async()=>{
  const original=globalThis.fetch
  globalThis.fetch=async()=>{throw new Error('sensitive upstream detail')}
  try {const response=await worker.fetch(make('/certs'),env);assert.equal(response.status,502);assert.equal(await response.text(),'{"error":"upstream_unavailable"}')} finally{globalThis.fetch=original}
+})
+
+test('Worker manual redirect mode rejects upstream redirects',async()=>{
+ const original=globalThis.fetch
+ globalThis.fetch=async(url,opts)=>{assert.equal(opts.redirect,'manual');return new Response(null,{status:302,headers:{Location:'https://evil.example/'}})}
+ try{const r=await worker.fetch(make('/certs'),env);assert.equal(r.status,502);assert.equal(await r.text(),'{"error":"upstream_redirect_rejected"}')}finally{globalThis.fetch=original}
 })

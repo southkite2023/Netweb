@@ -42,10 +42,11 @@ export default {
     }
     try {
       const upstream = await fetch(route.upstream, {
-        method: route.method, redirect: 'error', signal: AbortSignal.timeout(8000),
+        method: route.method, redirect: 'manual', signal: AbortSignal.timeout(8000),
         headers: { Accept: 'application/json', ...(body ? { 'Content-Type': 'application/x-www-form-urlencoded' } : {}) },
         ...(body ? { body } : {}),
       })
+      if (upstream.status >= 300 && upstream.status < 400) return reply(502, 'upstream_redirect_rejected')
       const contentType = upstream.headers.get('Content-Type') || ''
       if (!contentType.includes('application/json')) return reply(502, 'invalid_upstream_response')
       return new Response(upstream.body, { status: upstream.status, headers: {
