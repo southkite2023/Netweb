@@ -1,5 +1,6 @@
 import { aliyunRpc, credentialsConfigured } from './aliyun-credentials.js'
-import { createRemoteJWKSet, jwtVerify } from 'jose'
+import { createRemoteJWKSet, jwtVerify, customFetch } from 'jose'
+import { googleFetch } from './google-transport.js'
 import crypto from 'node:crypto'
 
 export const digest = value => crypto.createHash('sha256').update(value).digest('hex')
@@ -45,11 +46,11 @@ export function authorizationUrl(provider, origin, state, verifier, nonce) {
   return url.href
 }
 async function fetchJson(url, options = {}) {
-  const r = await fetch(url, { ...options, signal: AbortSignal.timeout(10000), redirect:'error' })
+  const r = await googleFetch(url, { ...options, signal: AbortSignal.timeout(10000), redirect:'error' })
   if (!r.ok) throw new Error('OAuth upstream unavailable')
   return r.json()
 }
-const googleKeys = createRemoteJWKSet(new URL('https://www.googleapis.com/oauth2/v3/certs'))
+const googleKeys = createRemoteJWKSet(new URL('https://www.googleapis.com/oauth2/v3/certs'), { [customFetch]: googleFetch })
 export async function oauthIdentity(provider, code, state, origin) {
   const clientId = process.env[`OAUTH_${provider.toUpperCase()}_CLIENT_ID`]
   const params = new URLSearchParams({ grant_type:'authorization_code', code, client_id:clientId,

@@ -76,3 +76,14 @@ AstrAcct 原生设置顶部增加统一账号入口。无需验证码时可直�
 每手机号每天最多 10 次，每 IP 每天最多 30 次，失败发送也计入限额。开启验证码 2.0 时，发码须先验签。短信登录只登录已注册/绑定账号，不自动创建新账号。短信密码找回暂不提供，可用短信登录后在账号安全内修改密码。
 
 上线时必须同时发布 API、迁移与前端。自动测试通过隔离 PostgreSQL 与模拟短信/OAuth 覆盖同账号登录、错误/过期/重放验证码、跨账号冲突、身份复核、会话撤销与最后方式保护；短信及第三方真实验收待对应服务完成配置。
+
+
+## Google 登录专用转发
+
+当网站服务器无法直连 Google 时，可在自己控制的 Cloudflare 账号部署 `server/edge/google-worker.mjs`，绑定 `google-auth.yuashie.com`，并配置 `GOOGLE_AUTH_RELAY_ORIGIN=https://google-auth.yuashie.com`。仅 Google 令牌与签名公钥请求走此通道；其他第三方登录保持原路径。
+
+Worker 在 Cloudflare 边缘验证 `CF-Connecting-IP`，只接受网站服务器的 `47.109.147.60`。只允许 `/token` POST 和 `/certs` GET，固定转发至 Google 官方接口，校验客户端 ID、授权码模式、回调地址和请求大小，不接受任意上游地址。服务端继续校验 Google 签名、issuer、audience、nonce 与有效期，不降低证书验证要求。
+
+此方案会让该 Cloudflare Worker 处理 Google 应用密钥、授权码和令牌；上线前须获得站主授权。程序不记录这些数据，勿开启请求正文或响应正文日志。Worker 只保存公开客户端 ID 和来源服务器 IP；无 Google Client Secret。变更服务器出口地址时应同时更新允许的来源 IP 并验证拒绝非授权来源。
+
+上线须先验证 Worker 自定义域 TLS、服务器到 Worker、Worker 到 Google 两个接口，再协调发布后台模块并重启服务。完整的真人授权与已有账号绑定仍需实际账户验收。回滚时恢复旧后台文件及环境变量并重启，不修改用户数据库。
