@@ -72,7 +72,7 @@ watch(selected, async value => {
   if (value && dialog.value && !dialog.value.open) dialog.value.showModal()
 })
 function resetCode() { challenge.value = ''; code.value = '' }
-watch([channel, contact], resetCode)
+watch([channel, contact], () => { resetCode(); cooldown.value = 0; clearInterval(timer) })
 function closeModal(force = false) {
   if (busy.value && force !== true) return
   if (dialog.value?.open) dialog.value.close()
@@ -84,6 +84,8 @@ function closeModal(force = false) {
   confirmPassword.value = ''
   contact.value = ''
   resetCode()
+  cooldown.value = 0
+  clearInterval(timer)
   error.value = ''
 }
 function openMethod(id) {
@@ -93,6 +95,8 @@ function openMethod(id) {
   password.value = ''
   contact.value = ''
   resetCode()
+  cooldown.value = 0
+  clearInterval(timer)
   operation.value = ''
   selected.value = id
   step.value = 'choose'
