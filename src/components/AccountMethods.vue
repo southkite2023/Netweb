@@ -42,6 +42,7 @@ const methodCards = computed(() => {
   ]
 })
 const activeCard = computed(() => methodCards.value.find(item => item.id === selected.value))
+const bindingEnabled = computed(() => selected.value === 'email' ? !!config.value?.emailVerification : selected.value === 'phone' ? !!config.value?.sms : !!provider(selected.value)?.enabled)
 const reauthChannels = computed(() => [
   ...(methods.value?.password ? [{ id: 'password', name: '当前密码' }] : []),
   ...(methods.value?.emailVerified && config.value?.emailVerification ? [{ id: 'email', name: '已验证邮箱' }] : []),
@@ -112,7 +113,7 @@ async function run(fn) {
 }
 function chooseAction(action) {
   if (busy.value || !activeCard.value) return
-  if (action === 'bind' && provider(selected.value) && !provider(selected.value).enabled) return
+  if (action === 'bind' && !bindingEnabled.value) return
   operation.value = action
   error.value = ''
   password.value = ''
@@ -251,13 +252,14 @@ async function remove() {
           <button v-if="activeCard?.bound" type="button" class="method-option" @click="chooseAction('remove')">移除密码<span>›</span></button>
         </template>
         <template v-else>
-          <button v-if="!activeCard?.bound && activeCard?.enabled !== false" type="button" class="method-option" @click="chooseAction('bind')">新增绑定<span>›</span></button>
+          <button v-if="!activeCard?.bound && bindingEnabled" type="button" class="method-option" @click="chooseAction('bind')">新增绑定<span>›</span></button>
           <button v-if="activeCard?.bound && isContact(selected) && !activeCard?.verified && config?.emailVerification" type="button" class="method-option" @click="chooseAction('verify')">验证当前邮箱<span>›</span></button>
-          <button v-if="activeCard?.bound && (isContact(selected) || activeCard?.enabled)" type="button" class="method-option" @click="chooseAction('replace')">更换绑定<span>›</span></button>
+          <button v-if="activeCard?.bound && bindingEnabled" type="button" class="method-option" @click="chooseAction('replace')">更换绑定<span>›</span></button>
           <button v-if="activeCard?.bound" type="button" class="method-option" @click="chooseAction('remove')">解除绑定<span>›</span></button>
         </template>
         <p v-if="activeCard?.enabled === false" class="form-hint">此平台的授权登录尚未开通，暂不能新增或换绑；已绑定身份仍可选择解绑。</p>
         <p v-if="selected === 'phone' && !config?.sms" class="form-hint">短信服务尚未开通，暂不能完成手机号新增或换绑。</p>
+        <p v-if="selected === 'email' && !config?.emailVerification" class="form-hint">邮箱验证服务尚未开通，暂不能完成邮箱新增或换绑。</p>
         <button type="button" class="account-secondary method-cancel" @click="closeModal">取消</button>
       </div>
 
