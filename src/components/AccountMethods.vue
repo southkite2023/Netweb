@@ -72,8 +72,8 @@ watch(selected, async value => {
 })
 function resetCode() { challenge.value = ''; code.value = '' }
 watch([channel, contact], resetCode)
-function closeModal() {
-  if (busy.value) return
+function closeModal(force = false) {
+  if (busy.value && force !== true) return
   if (dialog.value?.open) dialog.value.close()
   selected.value = ''
   step.value = ''
@@ -179,7 +179,7 @@ async function bindContact() {
     }
     const success = operation.value === 'verify' ? '邮箱验证成功。' : (operation.value === 'replace' ? '换绑成功，账号数据保持不变。' : '绑定成功，账号数据保持不变。')
     await load()
-    closeModal()
+    closeModal(true)
     message.value = success
   })
 }
@@ -188,7 +188,7 @@ async function savePassword() {
   await run(async () => {
     await post('/auth/methods/password', { password: newPassword.value })
     await load()
-    closeModal()
+    closeModal(true)
     message.value = '密码已更新，其他设备已退出登录。'
   })
 }
@@ -201,9 +201,9 @@ async function remove() {
       resetCode()
       if (isContact(id)) step.value = 'edit'
       else if (provider(id)?.enabled) await oauth(id)
-      else { closeModal(); message.value = '已解绑。当前平台登录尚未开通，暂不能重新绑定。' }
+      else { closeModal(true); message.value = '已解绑。当前平台登录尚未开通，暂不能重新绑定。' }
     } else {
-      closeModal()
+      closeModal(true)
       message.value = '已解绑，其他设备已退出登录。'
     }
   })
