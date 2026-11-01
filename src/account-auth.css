@@ -17,3 +17,43 @@
 .account-methods button:disabled { cursor: not-allowed; opacity: .5; }
 .account-links:has([aria-pressed]) { gap: .6rem; flex-wrap: wrap; }
 .account-links [aria-pressed=true] { background: #64748b22; font-weight: 700; }
+
+
+/* Security methods: dense 2-column layout with action-first reauthentication. */
+.account-methods{margin-block:1rem;min-width:0}
+.account-methods .method-heading h2{margin:.25rem 0 .4rem}
+.account-methods .method-heading .form-hint{margin:.25rem 0 .65rem;max-width:64ch}
+.method-account-id{margin:0;color:var(--muted);font-size:12px;font-family:monospace}
+.account-methods .method-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1rem 0;padding:0;list-style:none}
+.account-methods .method-list li{min-width:0;padding:0;border:0;display:block}
+.account-methods .method-tile{box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch;gap:10px;text-align:left;width:100%;height:100%;min-height:108px;padding:17px 18px;background:color-mix(in srgb,var(--bg-soft,var(--panel,#fff)) 92%,transparent);color:var(--text,inherit);border:1px solid var(--line,#64748b40);border-radius:14px;cursor:pointer;font:inherit;transition:background .16s,border-color .16s,transform .16s}
+.account-methods .method-tile:hover{background:color-mix(in srgb,var(--accent,#64748b) 7%,var(--bg-soft,var(--panel,#fff)));border-color:var(--accent,#64748b);transform:translateY(-1px)}
+.account-methods .method-tile:focus-visible{outline:2px solid var(--accent,#64748b);outline-offset:3px}
+.method-tile-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.method-tile-top strong{font-size:16px;font-weight:700}
+.method-tile-arrow{font-size:18px;color:var(--accent,#64748b)}
+.account-methods .method-tile-value{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
+.account-methods .method-tile-meta{font-size:11px;margin-top:auto;color:var(--accent,#64748b)}
+.method-footnote{color:var(--muted);font-size:11px;line-height:1.7;margin:.75rem 0 0}
+.account-method-dialog{box-sizing:border-box;position:fixed;width:min(480px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:min(86vh,760px);overflow:auto;margin:auto;padding:24px;border:1px solid var(--line,#64748b40);border-radius:20px;background:var(--bg-soft,var(--panel,#fff));color:var(--text,inherit);box-shadow:0 24px 80px #0005}
+.account-method-dialog::backdrop{background:#0a1118a8;backdrop-filter:blur(5px)}
+.method-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
+.account-method-dialog .method-dialog-head small{font:10px monospace;letter-spacing:.12em;color:var(--muted)}
+.account-method-dialog .method-dialog-head h3{font-size:20px;margin:7px 0 0}
+.account-method-dialog .method-dialog-close{width:32px;height:32px;flex:0 0 32px;padding:0;font-size:25px;line-height:1;border:1px solid var(--line,#64748b40);border-radius:9px;color:inherit;background:transparent;cursor:pointer}
+.method-dialog-options,.method-dialog-content{display:grid;gap:12px}
+.account-method-dialog .method-option{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line,#64748b40);background:var(--bg,transparent);color:inherit;font:inherit;font-weight:600;text-align:left;cursor:pointer}
+.account-method-dialog .method-option:hover{border-color:var(--accent,#64748b)}
+.account-method-dialog .method-option span{color:var(--accent,#64748b)}
+.account-method-dialog .method-cancel{justify-self:end}
+.account-method-dialog .auth-form{max-width:none;width:100%;display:grid;gap:14px;margin:0}
+.account-method-dialog .auth-form label{display:grid;gap:7px;min-width:0}
+.account-method-dialog .auth-form input,.account-method-dialog .auth-form select{box-sizing:border-box;min-width:0;width:100%;padding:12px;border-radius:10px;border:1px solid var(--line,#64748b40);background:var(--bg,transparent);color:inherit;font:inherit}
+.account-method-dialog .form-hint{margin:0;line-height:1.6}
+.account-method-dialog .method-dialog-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.account-method-dialog .method-oauth-verify{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.account-method-dialog .method-oauth-verify p{flex-basis:100%}
+.account-method-dialog .primary-action{width:auto;min-width:130px}
+.unified-account-shell .unified-account-card:has(.account-methods){max-width:850px}
+@media(max-width:600px){.account-methods .method-list{grid-template-columns:1fr;gap:10px}.account-methods .method-tile{min-height:94px;padding:14px}.account-method-dialog{padding:20px}}
+@media(prefers-reduced-motion:reduce){.account-methods .method-tile{transition:none}}
