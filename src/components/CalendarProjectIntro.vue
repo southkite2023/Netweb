@@ -16,13 +16,13 @@ const p = computed(() => animeSeasonCopy[locale.value] || animeSeasonCopy.zh)
     <div class="quota-kicker"><span>PROJECT / 004</span><span>{{ c.badge }}</span></div>
     <div class="quota-project-grid">
       <header>
-        <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">C</span> Yuashie Calendar</p>
+        <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">C</span> ACG Calendar</p>
         <h1>{{ c.headline[0] }}<br><span>{{ c.headline[1] }}</span></h1>
         <p class="quota-intro">{{ c.intro }}</p>
         <RouterLink class="quota-primary" to="/projects/004/subscribe">{{ c.open }} <span aria-hidden="true">↗</span></RouterLink>
       </header>
       <figure class="project-vector-hero">
-        <img :src="projectArtwork" width="1280" height="800" alt="Yuashie Calendar" decoding="async">
+        <img :src="projectArtwork" width="1280" height="800" alt="ACG Calendar" decoding="async">
         <figcaption><span v-for="label in c.categories" :key="label">{{ label }}</span></figcaption>
       </figure>
     </div>

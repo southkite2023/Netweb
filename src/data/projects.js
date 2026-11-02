@@ -29,14 +29,14 @@ export const projects = [
   {
     id: '002',
     title: {
-      zh: '我的世界服务器',
-      en: 'Minecraft Server',
-      ja: 'Minecraft サーバー',
+      zh: '星垣',
+      en: 'ASTERION SMP',
+      ja: '星垣 ASTERION SMP',
     },
     summary: {
-      zh: 's205.singsi.cn:19854 · 纯净生存 · 版本 26.2',
-      en: 's205.singsi.cn:19854 · Vanilla Survival · Version 26.2',
-      ja: 's205.singsi.cn:19854 · バニラサバイバル · バージョン 26.2',
+      zh: '我的世界服务器 Beyond the Stars, Build Our World.',
+      en: 'Minecraft server. Beyond the Stars, Build Our World.',
+      ja: 'Minecraftサーバー Beyond the Stars, Build Our World.',
     },
     description: {
       zh: '一个专注原版玩法的纯净生存服务器。服务器地址：s205.singsi.cn:19854，版本：26.2。',
@@ -76,7 +76,7 @@ export const projects = [
   },
   {
     id: '004',
-    title: { zh: 'Yuashie Calendar · 订阅日历', en: 'Yuashie Calendar', ja: 'Yuashie Calendar · 購読カレンダー' },
+    title: { zh: 'ACG Calendar', en: 'ACG Calendar', ja: 'ACG Calendar' },
     summary: {
       zh: '游戏版本与卡池、动漫周更、新游戏发售的订阅日历企划。正在开发，尚无线上订阅地址。',
       en: 'A subscription calendar for game updates, banners, weekly anime and new releases. In development; no live subscription yet.',
@@ -142,9 +142,9 @@ export const projects = [
   {
     "id": "006",
     "title": {
-        "zh": "Minecraft Mods · Yuashie Core",
-        "en": "Minecraft Mods · Yuashie Core",
-        "ja": "Minecraft Mods · Yuashie Core"
+        "zh": "Minecraft Mod",
+        "en": "Minecraft Mod",
+        "ja": "Minecraft Mod"
     },
     "summary": {
         "zh": "Minecraft Java 版 Fabric 模组集合，从 Yuashie Core 基础工程起步。",
