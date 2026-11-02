@@ -480,7 +480,6 @@ export const catalog = {
     ]
   ]
 };
-
 export const metadata = {
   "official:fxkurumi": {
     "original": "FX戦士くるみちゃん",
@@ -558,357 +557,569 @@ export const metadata = {
     "anilist_id": 172192
   },
   "genshin": {
-    "label": "国服 · 卡池11月03日结束 / 11月04日开启",
-    "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167098",
+    "label": "6 条Wiki日程 · 部分类型待核实",
+    "url": "https://wiki.biligame.com/ys/祈愿",
     "region": "国服",
     "checked_at": "2026-11-02",
-    "event_count": 11,
+    "event_count": 6,
     "verification": "official",
-    "verification_note": "7.1下半精确区间及结束提醒；7.2上半开启日期、11月24日17:59截止提醒。下半未正式确认的钟点不推算。",
+    "verification_note": "当前祈愿页仅核实7.1下半；7.2版本及卡池本轮未从Wiki取得日期，按Wiki-only规则暂不导出，未推算后续轮换。",
+    "event_types": [
+      "banner"
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "verified"
+    },
+    "server": "cn"
+  },
+  "starrail": {
+    "label": "14 条Wiki日程 · 部分类型待核实",
+    "url": "https://wiki.biligame.com/sr/跃迁/4.0",
+    "region": "国服",
+    "checked_at": "2026-11-02",
+    "event_count": 14,
+    "verification": "official",
+    "verification_note": "已检查Wiki；尚未核实的类型不代表无活动。",
+    "event_types": [
+      "banner"
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "partial"
+    },
+    "server": "cn"
+  },
+  "zzz": {
+    "label": "4 条Wiki日程 · 部分类型待核实",
+    "url": "https://wiki.biligame.com/zzz/调频",
+    "region": "国服",
+    "checked_at": "2026-11-02",
+    "event_count": 4,
+    "verification": "official",
+    "verification_note": "已检查Wiki；尚未核实的类型不代表无活动。",
+    "event_types": [
+      "banner"
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "partial"
+    },
+    "server": "cn"
+  },
+  "arknights": {
+    "label": "1 条Wiki日程 · 部分类型待核实",
+    "url": "https://prts.wiki/w/将雪投火",
+    "region": "国服",
+    "checked_at": "2026-11-02",
+    "event_count": 1,
+    "verification": "official",
+    "verification_note": "已检查Wiki；尚未核实的类型不代表无活动。",
+    "event_types": [
+      "banner"
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "verified"
+    },
+    "server": "cn"
+  },
+  "wuwa": {
+    "label": "Wiki排期待核实",
+    "url": "https://wuwa.huijiwiki.com/wiki/模板:活动",
+    "region": "国服",
+    "verification": "official",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "verification_note": "已检查Wiki；尚未核实的类型不代表无活动。",
+    "event_types": [],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "honkai3": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/bh3/首页",
+    "region": "国服",
+    "verification": "official",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "verification_note": "Wiki首页未找到9.1；原数据10/22为国际版来源，不能复用于国服。",
+    "event_types": [],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "endfield": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/zmd/首页",
+    "region": "国服",
+    "verification": "official",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "verification_note": "Wiki首页显示4月3日更新且内容未含丹青渡版本日期。",
+    "event_types": [],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "pgr": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/zspms/研发记录",
+    "region": "国服",
+    "verification": "official",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "verification_note": "首页主线远信回响9/24 11:00–11/5 05:00是活动时间不是卡池；研发记录未找到流光抛诸寰宇或10/29卡池，不能据此补入。",
+    "event_types": [],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "reverse1999": {
+    "label": "Wiki排期待核实",
+    "url": "https://res1999.huijiwiki.com/wiki/征集系统",
+    "region": "国服",
+    "verification": "official",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "verification_note": "BWIKI首页未取得当前征集排期；主要灰机Wiki https://res1999.huijiwiki.com/wiki/征集系统 返回403。",
+    "event_types": [],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "azurlane": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/blhx/碧蓝海事局飓风与雾霭回廊活动专题",
+    "region": "国服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "event_types": [],
+    "verification_note": "专题可确认水星号/塞利米耶号/铁角号/长蛇号限时建造，但正文时间使用MediaWiki EventTimer未展开，不能拿建造耗时当卡池日期。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "bluearchive": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/ba/首页",
+    "region": "国服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "event_types": [],
+    "verification_note": "有日服/国际服/国服入口；国服链接 https://wiki.biligame.com/ba/国服 返回404，未取得国服当期招募。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "girlsfrontline2": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/gf2/首页",
+    "region": "国服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "event_types": [],
+    "verification_note": "Wiki首页角色图鉴为主，未取得当前卡池/版本/前瞻日期。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "pathtonowhere": {
+    "label": "6 条Wiki日程 · 部分类型待核实",
+    "url": "https://wiki.biligame.com/wqmt/追踪一览",
+    "region": "国服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 6,
     "event_types": [
       "banner",
       "version_update"
-    ]
+    ],
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "verified",
+      "banner": "verified"
+    },
+    "server": "cn"
   },
-  "starrail": {
-    "label": "4.7 更新 · 11月11日",
-    "url": "https://prtimes.jp/main/html/rd/p/000000462.000096124.html/",
+  "snowbreak": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/sonw/角色筛选",
+    "region": "国际服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "event_types": [],
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "global"
+  },
+  "nte": {
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/yh/角色设定",
     "region": "国服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "event_types": [],
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "deepspace": {
+    "label": "1 条Wiki日程 · 部分类型待核实",
+    "url": "https://wiki.biligame.com/lysk/「馥夜轻漾」",
+    "region": "国服",
+    "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification": "official",
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "version_update"
-    ]
-  },
-  "zzz": {
-    "label": "国服 · 3.3版本已上线",
-    "url": "https://zzz.mihoyo.com/news/166654",
-    "region": "国服",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification": "official",
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "version_update"
-    ]
-  },
-  "arknights": {
-    "label": "将雪投火 · 11月1日—15日",
-    "url": "https://ak.hypergryph.com/news/4916",
-    "region": "国服",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification": "official",
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
     "event_types": [
       "banner"
-    ]
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "verified"
+    },
+    "server": "cn"
   },
-  "wuwa": {
-    "label": "国服 · 3.8前瞻 · 11月06日 19:00",
-    "url": "https://www.taptap.cn/moment/864937105405511398?group_id=330015",
+  "infinitynikki": {
+    "label": "1 条Wiki日程 · 部分类型待核实",
+    "url": "https://wiki.biligame.com/wxnn/公告-1793182500000",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "livestream"
-    ]
-  },
-  "honkai3": {
-    "label": "国服 · 9.1版本 · 09月24日更新",
-    "url": "https://www.bh3.com/news/695",
-    "region": "国服",
-    "verification": "official",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "更正：原10月22日来自国际服，国服公告为9月24日。",
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
     "event_types": [
       "version_update"
-    ]
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "verified",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
-  "endfield": {
-    "label": "国服 · 丹青渡 · 10月15日更新",
-    "url": "https://endfield.hypergryph.com/news/3805",
+  "shiningnikki": {
+    "label": "Wiki排期待核实",
+    "url": "",
+    "region": "国服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "event_types": [],
+    "verification_note": "尚未找到符合本区服且持续更新的主要Wiki排期页面，三类日程均待核实；不能混用国际服或以媒体补齐。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "tearsofthemis": {
+    "label": "Wiki排期待核实",
+    "url": "https://baike.mihoyo.com/wd/wiki/content/7/detail",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "version_update"
-    ]
+    "event_count": 0,
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+    "event_types": [],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
-  "pgr": {
-    "label": "国服 · 11月05日更新 / 降临狙击卡池",
-    "url": "https://www.taptap.cn/app/130651/topic?sort=created&type=official",
+  "nikke-cn": {
+    "label": "Wiki排期待核实",
+    "url": "",
     "region": "国服",
+    "verification": "pending",
+    "checked_at": "2026-11-02",
+    "event_count": 0,
+    "event_types": [],
+    "verification_note": "尚未找到符合本区服且持续更新的主要Wiki排期页面，三类日程均待核实；不能混用国际服或以媒体补齐。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
+  },
+  "nikke-global": {
+    "label": "2 条Wiki日程 · 部分类型待核实",
+    "url": "https://www.gamekee.com/nikke/725518.html",
+    "region": "国际服",
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 2,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "banner",
-      "version_update"
-    ]
-  },
-  "reverse1999": {
-    "label": "国服 · 4.1版本 · 11月05日更新",
-    "url": "https://sina.cn/news/detail/5357876647822380.html",
-    "region": "国服",
-    "verification": "official",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "version_update"
-    ]
-  },
-  "azurlane": {
-    "label": "国服 · 排期待核实",
-    "url": "https://game.bilibili.com/blhx/",
-    "region": "国服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "bluearchive": {
-    "label": "国服 · 排期待核实",
-    "url": "https://bluearchive-cn.com/",
-    "region": "国服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "girlsfrontline2": {
-    "label": "国服 · 排期待核实",
-    "url": "https://gf2.sunborngame.com/",
-    "region": "国服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "pathtonowhere": {
-    "label": "国服 · 排期待核实",
-    "url": "https://wqmt.aisnogames.com/",
-    "region": "国服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "snowbreak": {
-    "label": "国际服 · 排期待核实",
-    "url": "https://snowbreak.amazingseasun.com/",
-    "region": "国际服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "nte": {
-    "label": "国服 · 排期待核实",
-    "url": "https://yh.wanmei.com/",
-    "region": "国服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "deepspace": {
-    "label": "国服 · 馥夜轻漾 · 至11月05日",
-    "url": "https://www.taptap.cn/app/201633/topic?page=3&sort=published&type=feed",
-    "region": "国服",
-    "verification": "official",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "verification_note": "BWIKI停滞但Gamekee Wiki找到四周年卡池预告，国际服UTC+8。",
     "event_types": [
       "banner"
-    ]
-  },
-  "infinitynikki": {
-    "label": "国服 · 3.0版本 · 11月27日更新",
-    "url": "https://infinitynikki.nuanpaper.com/news/1088",
-    "region": "国服",
-    "verification": "official",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "version_update"
-    ]
-  },
-  "shiningnikki": {
-    "label": "国服 · 排期待核实",
-    "url": "https://nikki4.papegames.cn/",
-    "region": "国服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "tearsofthemis": {
-    "label": "国服 · 轮替女神之影 · 至11月13日",
-    "url": "https://www.sina.cn/news/detail/5359311099790026.html",
-    "region": "国服",
-    "verification": "official",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "banner"
-    ]
-  },
-  "nikke-cn": {
-    "label": "国服 · 排期待核实",
-    "url": "https://nikke.qq.com/",
-    "region": "国服",
-    "verification": "pending",
-    "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
-  },
-  "nikke-global": {
-    "label": "国际服 · 四周年第二阶段 · 11月05日",
-    "url": "https://press.levelinfinite.com/de-DE/THE-BATTLE-FOR-HUMANITYS-FUTURE-ESCALATES-AS-GODDESS-OF-VICTORY-NIKKE-",
-    "region": "国际服",
-    "verification": "official",
-    "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "version_update"
-    ]
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "verified"
+    },
+    "server": "global"
   },
   "fgo": {
-    "label": "国服 · 概念礼装推荐召唤 · 至11月10日",
-    "url": "https://www.sina.cn/news/detail/5357228627329831.html",
+    "label": "10 条Wiki日程 · 部分类型待核实",
+    "url": "https://fgo.wiki/w/模板:卡池一览",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_count": 10,
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
     "event_types": [
       "banner"
-    ]
+    ],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "verified"
+    },
+    "server": "cn"
   },
   "umamusume": {
-    "label": "国服 · 排期待核实",
-    "url": "https://game.bilibili.com/pd/",
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/umamusume/简/【Universe-Naut】新宇宙",
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
   "browndust2": {
-    "label": "国际服 · 排期待核实",
-    "url": "https://www.browndust2.com/en-us/",
+    "label": "2 条Wiki日程 · 部分类型待核实",
+    "url": "https://www.gamekee.com/zsca2/726562.html",
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0,
-    "event_types": []
+    "event_count": 2,
+    "event_types": [
+      "version_update"
+    ],
+    "verification_note": "开发者笔记55仍活跃。新服装11/5斐杰、11/19贝那卡，但卡池具体起止在图片，未读取完整，不能当精确卡池事件。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "verified",
+      "banner": "pending"
+    },
+    "server": "global"
   },
   "limbus": {
-    "label": "国际服 · 排期待核实",
-    "url": "https://gamerscroll.com/zh-cn/rankings/subculture/",
+    "label": "Wiki排期待核实",
+    "url": "https://limbuscompany.wiki.gg/wiki/Banner_History",
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "主要Wiki页面403，未绕过；本轮无法确认当前卡池。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "global"
   },
   "chaoszero": {
-    "label": "国际服 · 排期待核实",
-    "url": "https://chaoszeronightmare.onstove.com/",
+    "label": "Wiki排期待核实",
+    "url": "https://www.gamekee.com/czn/724719.html",
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "Gamekee全球/繁中公告持续更新，不得借用国服10/28排期。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "verified",
+      "banner": "pending"
+    },
+    "server": "global"
   },
   "epicseven": {
-    "label": "国际服 · 排期待核实",
-    "url": "https://epic7.onstove.com/en/brand",
+    "label": "Wiki排期待核实",
+    "url": "https://www.gamekee.com/epic7/723917.html",
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "Gamekee海外服攻略仍活跃，已核实页面主要是10/29已截止项目；茉萝仅预告日期，缺完整起止，不作为当前卡池。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "global"
   },
   "aethergazer": {
-    "label": "国服 · 陪伴服，常规更新已停止",
-    "url": "https://www.taptap.cn/moment/848971240491190431?group_id=295957",
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/dhmmr/卡池列表",
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "Wiki可访问，日历HTML为2333年66月占位，不能解析为有效日程；本轮未从Wiki核实停更/陪伴服，不应仅依据此前非Wiki描述下结论。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
   "tof": {
-    "label": "国际服 · 排期待核实",
-    "url": "https://tof.perfectworld.com/cn/",
+    "label": "Wiki排期待核实",
+    "url": "https://toweroffantasy.fandom.com/wiki/Tower_of_Fantasy_Wiki",
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "版本Wiki搜索结果为2024旧版本；未找到2026当前全球服排期，不代表游戏停更。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "global"
   },
   "duetnightabyss": {
-    "label": "国际服 · 排期待核实",
-    "url": "https://duetnightabyss.dna-panstudio.com/",
+    "label": "Wiki排期待核实",
+    "url": "https://www.gamekee.com/dna/",
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "gagether提供韩服引用的版本索引，非本轮核实的全球完整卡池来源；不能直接采用。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "global"
   },
   "lightnight": {
-    "label": "国服 · 旎梦伴天光复刻 · 至11月08日",
-    "url": "https://www.taptap.cn/moment/865702176905758946?group_id=225937",
+    "label": "Wiki排期待核实",
+    "url": "https://www.gamekee.com/lightandnight/",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-02",
-    "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
-    "event_types": [
-      "banner"
-    ]
+    "event_count": 0,
+    "verification_note": "Gamekee首页可访问，公开索引以2025年内容为主；未找到2026当前收信排期。",
+    "event_types": [],
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
   "beyondworld": {
-    "label": "国服 · 排期待核实",
-    "url": "https://world.163.com/",
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/world/活动时间线",
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "Wiki时间线页面2026-07-07编辑，HTML只输出Vue模板占位，无实际活动数据；不能认定停更或无活动。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
   "onmyoji": {
-    "label": "国服 · 排期待核实",
-    "url": "https://yys.163.com/",
+    "label": "Wiki排期待核实",
+    "url": "https://wiki.biligame.com/yys/首页",
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "BWIKI为剧情百科，2026-10-30仍更新，但没有当前卡池排期；内容更新不等于排期可采集。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
   "projectsekai": {
-    "label": "国服 · 排期待核实",
-    "url": "https://www.taptap.cn/app/223265/topic?type=official",
+    "label": "Wiki排期待核实",
+    "url": "https://pjsekai.fandom.com/zh-tw/wiki/世界計畫_繽紛舞台_feat._初音未來/卡片列表",
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
     "event_count": 0,
-    "event_types": []
+    "event_types": [],
+    "verification_note": "检索到繁体Wiki卡片列表但未确认国服，不能跨服导入。",
+    "wiki_status": {
+      "livestream": "pending",
+      "version_update": "pending",
+      "banner": "pending"
+    },
+    "server": "cn"
   },
   "animecca:yaseinorasubosugaarawareta-tid8021": {
     "original": "野生のラスボスが現れた！ 第2期",

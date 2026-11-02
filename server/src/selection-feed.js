@@ -1,7 +1,6 @@
-import { readFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
+import { loadWikiData, wikiStatus } from './wiki-data.js'
 import { makeCalendar } from './selection-calendar.js'
-const DATA = new URL('../../dist/assets/calendar/data/', import.meta.url)
 export function parseSubscription(raw, catalog) {
   try {
     if(typeof raw!=='string'||raw.length>16000||!/^[A-Za-z0-9_-]+$/.test(raw))return null
@@ -37,7 +36,11 @@ export function selectedAnimeEvents(source, ids, titles) {
   }
   return events
 }
-export function registerSelectionFeed(app,{getAnimeCalendar,loadData=async()=>({catalog:JSON.parse(await readFile(new URL('subscriptions.json',DATA),'utf8')),events:JSON.parse(await readFile(new URL('events.json',DATA),'utf8')).events})}){
+export function registerSelectionFeed(app,{getAnimeCalendar,loadData=loadWikiData}){
+ app.get('/api/calendar/v1/games/status',async(req,reply)=>{
+  try {const data=await loadData();return reply.header('Cache-Control','no-cache').send(wikiStatus(data))}
+  catch {return reply.code(503).send({message:'Wiki status temporarily unavailable'})}
+ })
  app.get('/api/calendar/v1/selection.ics',{config:{rateLimit:{max:30,timeWindow:'1 minute'}}},async(req,reply)=>{
   let data;try{data=await loadData()}catch{return reply.code(503).header('Retry-After','300').send({message:'Subscription data temporarily unavailable'})}
   if(Object.keys(req.query).some(k=>k!=='s'))return reply.code(400).send({message:'Invalid subscription'})

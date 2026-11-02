@@ -1,0 +1,15 @@
+[Unit]
+Description=Update Yuashie calendar from game Wikis
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+User=www-data
+WorkingDirectory=/var/www/yuashie-app
+ExecStart=/usr/bin/python3 scripts/calendar/wiki_sync.py --data-dir dist/assets/calendar/data --state-dir calendar-state
+TimeoutStartSec=240
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/www/yuashie-app/calendar-state

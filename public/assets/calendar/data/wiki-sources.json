@@ -1,0 +1,534 @@
+{
+  "checked_on": "2026-11-02",
+  "policy": "游戏日程仅采用主要游戏Wiki；未进行流量排名，不宣称已验证各站为客观第一。目录候选源不等于当前日程依据；不同区服不混用。",
+  "allowed_hosts": [
+    "baike.mihoyo.com",
+    "fgo.wiki",
+    "limbuscompany.wiki.gg",
+    "pjsekai.fandom.com",
+    "prts.wiki",
+    "res1999.huijiwiki.com",
+    "toweroffantasy.fandom.com",
+    "wiki.biligame.com",
+    "wuwa.huijiwiki.com",
+    "www.gamekee.com"
+  ],
+  "games": [
+    {
+      "game_id": "genshin",
+      "name": "原神",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/ys/祈愿"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "当前祈愿页仅核实7.1下半；7.2版本及卡池本轮未从Wiki取得日期，按Wiki-only规则暂不导出，未推算后续轮换。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "verified"
+      },
+      "adapter": "genshin"
+    },
+    {
+      "game_id": "starrail",
+      "name": "崩坏：星穹铁道",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/sr/跃迁/4.0"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "已检查Wiki；尚未核实的类型不代表无活动。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "partial"
+      },
+      "adapter": "starrail"
+    },
+    {
+      "game_id": "zzz",
+      "name": "绝区零",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/zzz/调频"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "已检查Wiki；尚未核实的类型不代表无活动。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "partial"
+      },
+      "adapter": "zzz"
+    },
+    {
+      "game_id": "arknights",
+      "name": "明日方舟",
+      "server": "cn",
+      "sources": [
+        "https://prts.wiki/w/将雪投火"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "已检查Wiki；尚未核实的类型不代表无活动。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "verified"
+      }
+    },
+    {
+      "game_id": "wuwa",
+      "name": "鸣潮",
+      "server": "cn",
+      "sources": [
+        "https://wuwa.huijiwiki.com/wiki/模板:活动",
+        "https://wiki.biligame.com/wutheringwaves/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "已检查Wiki；尚未核实的类型不代表无活动。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "honkai3",
+      "name": "崩坏3",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/bh3/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Wiki首页未找到9.1；原数据10/22为国际版来源，不能复用于国服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "endfield",
+      "name": "明日方舟：终末地",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/zmd/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Wiki首页显示4月3日更新且内容未含丹青渡版本日期。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "pgr",
+      "name": "战双帕弥什",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/zspms/研发记录"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "首页主线远信回响9/24 11:00–11/5 05:00是活动时间不是卡池；研发记录未找到流光抛诸寰宇或10/29卡池，不能据此补入。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "reverse1999",
+      "name": "重返未来：1999",
+      "server": "cn",
+      "sources": [
+        "https://res1999.huijiwiki.com/wiki/征集系统",
+        "https://wiki.biligame.com/reverse1999/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "BWIKI首页未取得当前征集排期；主要灰机Wiki https://res1999.huijiwiki.com/wiki/征集系统 返回403。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "azurlane",
+      "name": "碧蓝航线",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/blhx/碧蓝海事局飓风与雾霭回廊活动专题"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "专题可确认水星号/塞利米耶号/铁角号/长蛇号限时建造，但正文时间使用MediaWiki EventTimer未展开，不能拿建造耗时当卡池日期。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "bluearchive",
+      "name": "蔚蓝档案",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/ba/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "有日服/国际服/国服入口；国服链接 https://wiki.biligame.com/ba/国服 返回404，未取得国服当期招募。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "girlsfrontline2",
+      "name": "少女前线2：追放",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/gf2/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Wiki首页角色图鉴为主，未取得当前卡池/版本/前瞻日期。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "pathtonowhere",
+      "name": "无期迷途",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/wqmt/追踪一览",
+        "https://wiki.biligame.com/wqmt/预约活动"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "verified",
+        "banner": "verified"
+      },
+      "adapter": "pathtonowhere"
+    },
+    {
+      "game_id": "snowbreak",
+      "name": "尘白禁区",
+      "server": "global",
+      "sources": [
+        "https://wiki.biligame.com/sonw/角色筛选",
+        "https://www.gamekee.com/snow/notice"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "nte",
+      "name": "异环",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/yh/角色设定"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "deepspace",
+      "name": "恋与深空",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/lysk/「馥夜轻漾」"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "verified"
+      }
+    },
+    {
+      "game_id": "infinitynikki",
+      "name": "无限暖暖",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/wxnn/公告-1793182500000"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "verified",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "shiningnikki",
+      "name": "闪耀暖暖",
+      "server": "cn",
+      "sources": [],
+      "checked_on": "2026-11-02",
+      "note": "尚未找到符合本区服且持续更新的主要Wiki排期页面，三类日程均待核实；不能混用国际服或以媒体补齐。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "tearsofthemis",
+      "name": "未定事件簿",
+      "server": "cn",
+      "sources": [
+        "https://baike.mihoyo.com/wd/wiki/content/7/detail"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "nikke-cn",
+      "name": "胜利女神：新的希望",
+      "server": "cn",
+      "sources": [],
+      "checked_on": "2026-11-02",
+      "note": "尚未找到符合本区服且持续更新的主要Wiki排期页面，三类日程均待核实；不能混用国际服或以媒体补齐。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "nikke-global",
+      "name": "胜利女神：妮姬",
+      "server": "global",
+      "sources": [
+        "https://www.gamekee.com/nikke/725518.html",
+        "https://wiki.biligame.com/nikke/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "BWIKI停滞但Gamekee Wiki找到四周年卡池预告，国际服UTC+8。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "verified"
+      }
+    },
+    {
+      "game_id": "fgo",
+      "name": "命运／冠位指定",
+      "server": "cn",
+      "sources": [
+        "https://fgo.wiki/w/模板:卡池一览"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "verified"
+      },
+      "adapter": "fgo"
+    },
+    {
+      "game_id": "umamusume",
+      "name": "闪耀！优俊少女",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/umamusume/简/【Universe-Naut】新宇宙"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "browndust2",
+      "name": "棕色尘埃2",
+      "server": "global",
+      "sources": [
+        "https://www.gamekee.com/zsca2/726562.html"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "开发者笔记55仍活跃。新服装11/5斐杰、11/19贝那卡，但卡池具体起止在图片，未读取完整，不能当精确卡池事件。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "verified",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "limbus",
+      "name": "边狱巴士公司",
+      "server": "global",
+      "sources": [
+        "https://limbuscompany.wiki.gg/wiki/Banner_History"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "主要Wiki页面403，未绕过；本轮无法确认当前卡池。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "chaoszero",
+      "name": "卡厄思梦境",
+      "server": "global",
+      "sources": [
+        "https://www.gamekee.com/czn/724719.html"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Gamekee全球/繁中公告持续更新，不得借用国服10/28排期。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "verified",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "epicseven",
+      "name": "第七史诗",
+      "server": "global",
+      "sources": [
+        "https://www.gamekee.com/epic7/723917.html"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Gamekee海外服攻略仍活跃，已核实页面主要是10/29已截止项目；茉萝仅预告日期，缺完整起止，不作为当前卡池。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "aethergazer",
+      "name": "深空之眼",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/dhmmr/卡池列表"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Wiki可访问，日历HTML为2333年66月占位，不能解析为有效日程；本轮未从Wiki核实停更/陪伴服，不应仅依据此前非Wiki描述下结论。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "tof",
+      "name": "幻塔",
+      "server": "global",
+      "sources": [
+        "https://toweroffantasy.fandom.com/wiki/Tower_of_Fantasy_Wiki"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "版本Wiki搜索结果为2024旧版本；未找到2026当前全球服排期，不代表游戏停更。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "duetnightabyss",
+      "name": "二重螺旋",
+      "server": "global",
+      "sources": [
+        "https://www.gamekee.com/dna/"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "gagether提供韩服引用的版本索引，非本轮核实的全球完整卡池来源；不能直接采用。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "lightnight",
+      "name": "光与夜之恋",
+      "server": "cn",
+      "sources": [
+        "https://www.gamekee.com/lightandnight/"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Gamekee首页可访问，公开索引以2025年内容为主；未找到2026当前收信排期。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "beyondworld",
+      "name": "世界之外",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/world/活动时间线"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "Wiki时间线页面2026-07-07编辑，HTML只输出Vue模板占位，无实际活动数据；不能认定停更或无活动。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "onmyoji",
+      "name": "阴阳师",
+      "server": "cn",
+      "sources": [
+        "https://wiki.biligame.com/yys/首页"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "BWIKI为剧情百科，2026-10-30仍更新，但没有当前卡池排期；内容更新不等于排期可采集。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    },
+    {
+      "game_id": "projectsekai",
+      "name": "初音未来：缤纷舞台",
+      "server": "cn",
+      "sources": [
+        "https://pjsekai.fandom.com/zh-tw/wiki/世界計畫_繽紛舞台_feat._初音未來/卡片列表"
+      ],
+      "checked_on": "2026-11-02",
+      "note": "检索到繁体Wiki卡片列表但未确认国服，不能跨服导入。",
+      "types": {
+        "livestream": "pending",
+        "version_update": "pending",
+        "banner": "pending"
+      }
+    }
+  ]
+}
