@@ -558,13 +558,17 @@ export const metadata = {
     "anilist_id": 172192
   },
   "genshin": {
-    "label": "7.2 更新 · 11月4日",
+    "label": "国服 · 卡池11月03日结束 / 11月04日开启",
     "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167098",
     "region": "国服",
     "checked_at": "2026-11-02",
-    "event_count": 1,
+    "event_count": 11,
     "verification": "official",
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "7.1下半精确区间及结束提醒；7.2上半开启日期、11月24日17:59截止提醒。下半未正式确认的钟点不推算。",
+    "event_types": [
+      "banner",
+      "version_update"
+    ]
   },
   "starrail": {
     "label": "4.7 更新 · 11月11日",
@@ -573,7 +577,10 @@ export const metadata = {
     "checked_at": "2026-11-02",
     "event_count": 1,
     "verification": "official",
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "version_update"
+    ]
   },
   "zzz": {
     "label": "国服 · 3.3版本已上线",
@@ -582,7 +589,10 @@ export const metadata = {
     "checked_at": "2026-11-02",
     "event_count": 1,
     "verification": "official",
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "version_update"
+    ]
   },
   "arknights": {
     "label": "将雪投火 · 11月1日—15日",
@@ -591,7 +601,10 @@ export const metadata = {
     "checked_at": "2026-11-02",
     "event_count": 1,
     "verification": "official",
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "banner"
+    ]
   },
   "wuwa": {
     "label": "国服 · 3.8前瞻 · 11月06日 19:00",
@@ -600,7 +613,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "livestream"
+    ]
   },
   "honkai3": {
     "label": "国服 · 9.1版本 · 09月24日更新",
@@ -609,7 +625,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "更正：原10月22日来自国际服，国服公告为9月24日。"
+    "verification_note": "更正：原10月22日来自国际服，国服公告为9月24日。",
+    "event_types": [
+      "version_update"
+    ]
   },
   "endfield": {
     "label": "国服 · 丹青渡 · 10月15日更新",
@@ -618,7 +637,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "version_update"
+    ]
   },
   "pgr": {
     "label": "国服 · 11月05日更新 / 降临狙击卡池",
@@ -627,7 +649,11 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 2,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "banner",
+      "version_update"
+    ]
   },
   "reverse1999": {
     "label": "国服 · 4.1版本 · 11月05日更新",
@@ -636,7 +662,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "version_update"
+    ]
   },
   "azurlane": {
     "label": "国服 · 排期待核实",
@@ -644,7 +673,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "bluearchive": {
     "label": "国服 · 排期待核实",
@@ -652,7 +682,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "girlsfrontline2": {
     "label": "国服 · 排期待核实",
@@ -660,7 +691,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "pathtonowhere": {
     "label": "国服 · 排期待核实",
@@ -668,7 +700,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "snowbreak": {
     "label": "国际服 · 排期待核实",
@@ -676,7 +709,8 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "nte": {
     "label": "国服 · 排期待核实",
@@ -684,7 +718,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "deepspace": {
     "label": "国服 · 馥夜轻漾 · 至11月05日",
@@ -693,7 +728,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "banner"
+    ]
   },
   "infinitynikki": {
     "label": "国服 · 3.0版本 · 11月27日更新",
@@ -702,7 +740,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "version_update"
+    ]
   },
   "shiningnikki": {
     "label": "国服 · 排期待核实",
@@ -710,7 +751,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "tearsofthemis": {
     "label": "国服 · 轮替女神之影 · 至11月13日",
@@ -719,7 +761,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "banner"
+    ]
   },
   "nikke-cn": {
     "label": "国服 · 排期待核实",
@@ -727,7 +772,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "nikke-global": {
     "label": "国际服 · 四周年第二阶段 · 11月05日",
@@ -736,7 +782,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "version_update"
+    ]
   },
   "fgo": {
     "label": "国服 · 概念礼装推荐召唤 · 至11月10日",
@@ -745,7 +794,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "banner"
+    ]
   },
   "umamusume": {
     "label": "国服 · 排期待核实",
@@ -753,7 +805,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "browndust2": {
     "label": "国际服 · 排期待核实",
@@ -761,7 +814,8 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "limbus": {
     "label": "国际服 · 排期待核实",
@@ -769,7 +823,8 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "chaoszero": {
     "label": "国际服 · 排期待核实",
@@ -777,7 +832,8 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "epicseven": {
     "label": "国际服 · 排期待核实",
@@ -785,7 +841,8 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "aethergazer": {
     "label": "国服 · 陪伴服，常规更新已停止",
@@ -793,7 +850,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "tof": {
     "label": "国际服 · 排期待核实",
@@ -801,7 +859,8 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "duetnightabyss": {
     "label": "国际服 · 排期待核实",
@@ -809,7 +868,8 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "lightnight": {
     "label": "国服 · 旎梦伴天光复刻 · 至11月08日",
@@ -818,7 +878,10 @@ export const metadata = {
     "verification": "official",
     "checked_at": "2026-11-02",
     "event_count": 1,
-    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。"
+    "verification_note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+    "event_types": [
+      "banner"
+    ]
   },
   "beyondworld": {
     "label": "国服 · 排期待核实",
@@ -826,7 +889,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "onmyoji": {
     "label": "国服 · 排期待核实",
@@ -834,7 +898,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "projectsekai": {
     "label": "国服 · 排期待核实",
@@ -842,7 +907,8 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-02",
-    "event_count": 0
+    "event_count": 0,
+    "event_types": []
   },
   "animecca:yaseinorasubosugaarawareta-tid8021": {
     "original": "野生のラスボスが現れた！ 第2期",

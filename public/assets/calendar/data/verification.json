@@ -824,6 +824,96 @@
       "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
       "official_url": "https://www.taptap.cn/moment/865702176905758946?group_id=225937",
       "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "de91ea84-5503-5ca0-a44e-532095789506",
+      "name": "原神 角色祈愿「虚星临渡」·丝柯克",
+      "result": "confirmed",
+      "note": "国服官方公告：10月13日18:00开始，11月3日14:59结束。",
+      "official_url": "https://www.taptap.cn/moment/859033532628993355",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "583f3b72-b7af-5a68-a91f-34f9cbeabf2e",
+      "name": "原神 角色祈愿「虚星临渡」·丝柯克【结束】",
+      "result": "confirmed",
+      "note": "本期祈愿结束提醒；与开启事件分别保留，勾选持续时间时还会生成开放区间。",
+      "official_url": "https://www.taptap.cn/moment/859033532628993355",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "aa9be118-ad55-5730-8812-2574474b0ead",
+      "name": "原神 角色祈愿「莓色香颂」·爱可菲",
+      "result": "confirmed",
+      "note": "国服官方公告：10月13日18:00开始，11月3日14:59结束。",
+      "official_url": "https://www.taptap.cn/moment/859033532628993355",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "039f9c9e-ce02-541d-a55d-5e6745abaf79",
+      "name": "原神 角色祈愿「莓色香颂」·爱可菲【结束】",
+      "result": "confirmed",
+      "note": "本期祈愿结束提醒；与开启事件分别保留，勾选持续时间时还会生成开放区间。",
+      "official_url": "https://www.taptap.cn/moment/859033532628993355",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "0f81166a-00eb-598c-8bca-cc3526606dfd",
+      "name": "原神 武器祈愿「神铸赋形」·苍耀／香韵奏者",
+      "result": "confirmed",
+      "note": "国服官方公告：10月13日18:00开始，11月3日14:59结束。",
+      "official_url": "https://www.taptap.cn/moment/859033532628993355",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "4b319937-24f6-5715-9e79-806cdba29269",
+      "name": "原神 武器祈愿「神铸赋形」·苍耀／香韵奏者【结束】",
+      "result": "confirmed",
+      "note": "本期祈愿结束提醒；与开启事件分别保留，勾选持续时间时还会生成开放区间。",
+      "official_url": "https://www.taptap.cn/moment/859033532628993355",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "cd130008-e35f-5934-852b-db4102a4ceee",
+      "name": "原神 7.2上半角色祈愿 · 米提亚／芙宁娜【开启日】",
+      "result": "official_repost",
+      "note": "官方公告转载：7.2版本更新后开启，11月24日17:59结束。实际开服钟点未承诺，本条仅记录开启日期，不把06:00维护开始时间当成开池时刻；结束时间另有精确提醒。",
+      "official_url": "https://genshininfo.reh.tw/archives/10793",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "a34844e9-bd06-5d53-945e-6fc777687742",
+      "name": "原神 7.2上半角色祈愿 · 米提亚／芙宁娜【结束】",
+      "result": "official_repost",
+      "note": "第一期活动祈愿明确截止时间。首次开启钟点以维护实际完成为准，不推算。",
+      "official_url": "https://genshininfo.reh.tw/archives/10793",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "f2fb4aa5-e81b-538d-b09f-3fd56457e9d0",
+      "name": "原神 7.2上半武器祈愿 · 秘星典谕／静水流涌之辉【开启日】",
+      "result": "official_repost",
+      "note": "官方公告转载：7.2版本更新后开启，11月24日17:59结束。实际开服钟点未承诺，本条仅记录开启日期，不把06:00维护开始时间当成开池时刻；结束时间另有精确提醒。",
+      "official_url": "https://genshininfo.reh.tw/archives/10793",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "5ef38237-cc95-537c-ab3f-2a1ae50f9f7e",
+      "name": "原神 7.2上半武器祈愿 · 秘星典谕／静水流涌之辉【结束】",
+      "result": "official_repost",
+      "note": "第一期活动祈愿明确截止时间。首次开启钟点以维护实际完成为准，不推算。",
+      "official_url": "https://genshininfo.reh.tw/archives/10793",
+      "checked_on": "2026-11-02"
     }
   ]
 }

@@ -21,7 +21,7 @@ function draw(){
   }
   $('#selected-count').textContent=`已选择 ${chosen.size} 个项目`;$('#generate').disabled=!chosen.size;
 }
-function openOptions(id,name,button){editing=id;opener=button;$('#dialog-title').textContent=name;$('#game-coverage').textContent=metadata[id].event_count?metadata[id].label+'；仅导出已收录的事件类型。':metadata[id].label+'；可保存选择，暂无可导出事件。';$('#form-error').textContent='';const config=chosen.get(id)||{types:Object.keys(types),format:'exact',duration:false};
+function openOptions(id,name,button){editing=id;opener=button;$('#dialog-title').textContent=name;$('#game-coverage').textContent=metadata[id].event_count?metadata[id].label+'；已收录：'+(metadata[id].event_types||[]).map(t=>types[t]).join('、')+'。未列出的类型暂未安排。':metadata[id].label+'；可保存选择，暂无可导出事件。';$('#form-error').textContent='';const config=chosen.get(id)||{types:Object.keys(types),format:'exact',duration:false};
   document.querySelectorAll('[name=type]').forEach(x=>x.checked=config.types.includes(x.value));document.querySelectorAll('[name=format]').forEach(x=>x.checked=x.value===config.format);$('#duration').checked=config.duration;$('#remove').disabled=!chosen.has(id);$('#options').showModal();}
 $('#close').onclick=()=>$('#options').close();
 $('#options').addEventListener('close',()=>opener?.focus());
