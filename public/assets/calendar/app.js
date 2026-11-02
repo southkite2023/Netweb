@@ -1,6 +1,6 @@
-import { makeCalendar } from './calendar.mjs';
+import { makeCalendar } from './calendar.js';
 const $ = s => document.querySelector(s);
-import { catalog, metadata } from './catalog.mjs';
+import { catalog, metadata } from './catalog.js';
 const chosen = new Map();
 let editing, opener;
 const types = {livestream:'前瞻',version_update:'版本',banner:'卡池'};
