@@ -110,7 +110,7 @@ function thirdParty(provider) {
       <div class="account-links"><RouterLink :to="link(mode === 'login' ? '/register' : '/login')">{{ label(mode === 'login' ? '注册账号' : '返回登录') }}</RouterLink><RouterLink v-if="mode === 'login' && !smsLogin" :to="link('/forgot-password')">{{ label('忘记密码？') }}</RouterLink></div>
       <template v-if="mode === 'login' && !smsLogin">
         <div class="account-divider">{{ label('其他方式登录') }}</div>
-        <div class="account-providers"><button v-for="p in config?.providers || []" :key="p.id" type="button" :disabled="!p.enabled || busy" @click="thirdParty(p.id)"><span class="account-provider-mark">{{ p.id === 'qq' ? 'Q' : p.id === 'github' ? 'GH' : 'G' }}</span>{{ p.name }}<small v-if="!p.enabled">{{ label('待开通') }}</small></button></div>
+        <div class="account-providers"><button v-for="p in config?.providers || []" :key="p.id" type="button" :disabled="!p.enabled || busy" @click="thirdParty(p.id)"><span class="account-provider-mark">{{ p.id === 'wechat' ? '微' : p.id === 'qq' ? 'Q' : p.id === 'github' ? 'GH' : 'G' }}</span>{{ p.name }}<small v-if="!p.enabled">{{ label('待开通') }}</small></button></div>
       </template>
       <p v-if="message" role="status" class="account-message">{{ message }}</p>
       <p v-if="mode === 'reset' && config && !config.passwordReset" class="form-hint">邮件验证尚未启用，暂时无法自助重置密码。</p>

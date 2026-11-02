@@ -23,7 +23,7 @@ export function accountConfig(env = process.env) {
   return {
     captchaRequired, captchaConfigured: !!(keys && captcha), sms: !!(keys && env.ALIYUN_PNVS_ENABLED === 'true' && env.ALIYUN_PNVS_SIGN_NAME && env.ALIYUN_PNVS_TEMPLATE_CODE && (env.ALIYUN_PNVS_SCHEME_NAME || '').length <= 20), passwordReset: email, emailVerification: email,
     captcha: captchaRequired && captcha ? { sceneId: env.ALIYUN_CAPTCHA_SCENE_ID, prefix: env.ALIYUN_CAPTCHA_PREFIX, region: env.ALIYUN_CAPTCHA_REGION === 'sgp' ? 'sgp' : 'cn' } : null,
-    providers: ['qq','github','google'].map(id => ({ id, name: {qq:'QQ',github:'GitHub',google:'Google'}[id], enabled: !!(env[`OAUTH_${id.toUpperCase()}_CLIENT_ID`] && env[`OAUTH_${id.toUpperCase()}_CLIENT_SECRET`]) })),
+    providers: ['qq','github','google','wechat'].map(id => ({ id, name: {qq:'QQ',github:'GitHub',google:'Google',wechat:'微信'}[id], enabled: !!(env[`OAUTH_${id.toUpperCase()}_CLIENT_ID`] && env[`OAUTH_${id.toUpperCase()}_CLIENT_SECRET`]) })),
   }
 }
 export async function verifyCaptcha(param) {
@@ -33,6 +33,7 @@ export async function verifyCaptcha(param) {
   return result.Code === 'Success' && result.Result?.VerifyResult === true
 }
 const endpoints = {
+  wechat: ['https://open.weixin.qq.com/connect/qrconnect','https://api.weixin.qq.com/sns/oauth2/access_token','snsapi_login'],
   github: ['https://github.com/login/oauth/authorize','https://github.com/login/oauth/access_token','read:user'],
   google: ['https://accounts.google.com/o/oauth2/v2/auth','https://oauth2.googleapis.com/token','openid email profile'],
   qq: ['https://graph.qq.com/oauth2.0/authorize','https://graph.qq.com/oauth2.0/token','get_user_info'],
@@ -41,18 +42,29 @@ export function authorizationUrl(provider, origin, state, verifier, nonce) {
   const [authorize,,scope] = endpoints[provider]
   const url = new URL(authorize)
   url.search = new URLSearchParams({ client_id: process.env[`OAUTH_${provider.toUpperCase()}_CLIENT_ID`], response_type:'code', redirect_uri:`${origin}/api/auth/oauth/${provider}/callback`, scope, state })
-  if (provider !== 'qq') { url.searchParams.set('code_challenge', pkce(verifier)); url.searchParams.set('code_challenge_method','S256') }
+  if (provider === 'wechat') { url.searchParams.set('appid', url.searchParams.get('client_id')); url.searchParams.delete('client_id'); url.hash = 'wechat_redirect' }
+  if (provider !== 'qq' && provider !== 'wechat') { url.searchParams.set('code_challenge', pkce(verifier)); url.searchParams.set('code_challenge_method','S256') }
   if (provider === 'google') { url.searchParams.set('nonce',nonce); url.searchParams.set('prompt','select_account') }
   return url.href
 }
 async function fetchJson(url, options = {}) {
-  const r = await googleFetch(url, { ...options, signal: AbortSignal.timeout(10000), redirect:'error' })
+  const transport = new URL(url).hostname === 'api.weixin.qq.com' ? globalThis.fetch : googleFetch
+  const r = await transport(url, { ...options, signal: AbortSignal.timeout(10000), redirect:'error' })
   if (!r.ok) throw new Error('OAuth upstream unavailable')
   return r.json()
 }
 const googleKeys = createRemoteJWKSet(new URL('https://www.googleapis.com/oauth2/v3/certs'), { [customFetch]: googleFetch })
 export async function oauthIdentity(provider, code, state, origin) {
   const clientId = process.env[`OAUTH_${provider.toUpperCase()}_CLIENT_ID`]
+  if (provider === 'wechat') {
+    const query = new URLSearchParams({ appid:clientId, secret:process.env.OAUTH_WECHAT_CLIENT_SECRET, code, grant_type:'authorization_code' })
+    const token = await fetchJson(`${endpoints.wechat[1]}?${query}`)
+    if (token.errcode || typeof token.access_token !== 'string' || !token.access_token || typeof token.openid !== 'string' || !/^[A-Za-z0-9_-]{1,255}$/.test(token.openid)) throw new Error('WeChat OAuth exchange failed')
+    const user = await fetchJson(`https://api.weixin.qq.com/sns/userinfo?${new URLSearchParams({ access_token:token.access_token, openid:token.openid, lang:'zh_CN' })}`)
+    if (user.errcode || user.openid !== token.openid) throw new Error('Invalid WeChat identity')
+    // Keep app-scoped OpenID stable even when UnionID becomes available later.
+    return { subject:token.openid, name:typeof user.nickname === 'string' && user.nickname.trim() ? user.nickname : '微信用户' }
+  }
   const params = new URLSearchParams({ grant_type:'authorization_code', code, client_id:clientId,
     client_secret:process.env[`OAUTH_${provider.toUpperCase()}_CLIENT_SECRET`], redirect_uri:`${origin}/api/auth/oauth/${provider}/callback` })
   if (provider !== 'qq') params.set('code_verifier',state.verifier)

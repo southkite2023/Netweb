@@ -143,7 +143,7 @@ export function registerAccountMethods(app,pool,options,helpers,services={}) {
   app.delete('/api/auth/methods/:method',limit(5),async(req,reply)=>{
     const user=await requireFresh(req,reply);if(!user)return
     const method=req.params.method
-    if(!['email','phone','password','qq','github','google'].includes(method))return failure(reply,400,'不支持的登录方式。')
+    if(!['email','phone','password','qq','github','google','wechat'].includes(method))return failure(reply,400,'不支持的登录方式。')
     const result=await transaction(async db=>{
       const locked=(await db.query('SELECT * FROM users WHERE id=$1 FOR UPDATE',[user.id])).rows[0]
       const ids=(await db.query('SELECT provider FROM auth_identities WHERE user_id=$1',[user.id])).rows.map(r=>r.provider).filter(p=>p!==method)
