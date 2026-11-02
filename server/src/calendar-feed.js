@@ -1,3 +1,4 @@
+import { registerAccountCalendars } from './account-calendar.js'
 /**
  * Public, read-only multi-show ICS subscription endpoint.
  *
@@ -123,6 +124,7 @@ async function readBoundedResponse(response) {
 }
 
 export function registerCalendarFeed(app, {
+  account,
   fetcher = globalThis.fetch,
   clock = () => Date.now(),
 } = {}) {
@@ -167,6 +169,7 @@ export function registerCalendarFeed(app, {
   }
 
   registerSelectionFeed(app, { getAnimeCalendar: () => getCalendar('span', 'zh-CN') })
+  if(account)registerAccountCalendars(app,{...account,getAnimeCalendar:()=>getCalendar('span','zh-CN')})
 
   app.get('/api/calendar/v1/health', { config: { rateLimit: { max: 60, timeWindow: '1 minute' } } },
     async () => ({ ok: true, service: 'anime-ics-selection', version: 2, languages: ['ja', 'zh-CN'] }))

@@ -50,6 +50,15 @@ test('PostgreSQL migration and full API: independent sessions, CSRF, isolation, 
  const b = await send('POST','/api/auth/register',{ username:'user_b',email:'b@example.test',password:'testPassword99',displayName:'User B' })
  const cb = b.headers['set-cookie'].split(';')[0], userB = b.json().user.id
  assert.equal((await send('GET','/api/sync')).statusCode,401)
+ // Account calendar writes share the real login and global Origin/CSRF protections.
+ assert.equal((await send('GET','/api/calendar/v1/mine')).statusCode,401)
+ const calendarMine=await send('GET','/api/calendar/v1/mine',undefined,c1)
+ assert.equal(calendarMine.statusCode,200);assert.equal(calendarMine.headers['cache-control'],'no-store');assert.equal(calendarMine.json().calendar,null)
+ assert.equal((await send('PUT','/api/calendar/v1/mine',{},c1,{origin:'https://evil.test'})).statusCode,403)
+ assert.equal((await send('PUT','/api/calendar/v1/mine',{},c1,{'x-csrf-token':'wrong'})).statusCode,403)
+ assert.equal((await send('PUT','/api/calendar/v1/mine',{},c1,{'x-calendar-user':String(userB)})).statusCode,409)
+ assert.equal((await send('POST','/api/calendar/v1/mine/new',{},c1,{'x-calendar-user':String(userA)})).statusCode,400)
+
  const noOrigin = await app.inject({ method:'PUT',url:'/api/sync/favorites',headers:{cookie:c1},payload:{path:'/radio',saved:true} })
  assert.equal(noOrigin.statusCode,403)
  assert.equal((await send('GET','/api/auth/csrf',undefined,c1)).headers['cache-control'],'no-store')

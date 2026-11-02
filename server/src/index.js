@@ -50,7 +50,7 @@ app.addHook('onRequest', async (req, reply) => {
   }
 })
 // Public, read-only, canonicalized multi-title anime subscriptions.
-registerCalendarFeed(app)
+registerCalendarFeed(app,{account:{pool,requireUser,origin:ORIGIN}})
 
 app.get('/api/auth/csrf', async (req, reply) => {
   reply.header('Cache-Control', 'no-store')
