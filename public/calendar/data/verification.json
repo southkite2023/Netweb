@@ -1,0 +1,829 @@
+{
+  "checked_on": "2026-11-02",
+  "records": [
+    {
+      "id": "animecca:yaseinorasubosugaarawareta-tid8021",
+      "name": "野生的最终头目出现了！第二季",
+      "result": "conflict",
+      "note": "官网ABEMA周六22:30，第三方23:00；暂不导出，等待逐集公告",
+      "official_url": "https://www.lastboss-anime.com/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:umayuru-furugeto",
+      "name": "赛马娘悠哉短篇：全员入闸！",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": null,
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tenseikizokukanteisukirudenariag-tid8009",
+      "name": "转生贵族靠着鉴定技能一飞冲天 第三季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://kanteiskill.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:shintenisunooujisamaandasebuntin-tid8044",
+      "name": "新网球王子：十七岁以下世界杯 决赛成员决定战",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://tenipuri.jp/u17/selection-match/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:precure-fairies-tid8073",
+      "name": "迷你光之美少女 第四季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.toei-anim.co.jp/petitcure/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:shirubania-famiri-furea-no-karafuru-eburidei",
+      "name": "森林家族：芙蕾雅的缤纷日常",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.sylvanianfamilies.com/ja-jp/special/tv/#broadcast",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "official:fxkurumi",
+      "name": "外汇战士久留美",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://fxkurumi-info.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kizudarakenoseijoyorihoufukuokometeshizu",
+      "name": "向满身伤痕的圣女献上复仇 第二季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://animationid.com/kizudarakeseijo2/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:koorinojouheki-tid8008",
+      "name": "冰之城墙 第二季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://korinojoheki-pr.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:pandorobou",
+      "name": "面包小偷",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://pandorobo-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:aokidenshouwerushusheda",
+      "name": "苍之传承：威尔士与切达",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://welshandshedar-anime.com/#anchor-onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kusuriya-no-hitorigoto-s3",
+      "name": "药屋少女的呢喃 第三季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://kusuriyanohitorigoto.jp/season3/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:temuparuaitemunochikara",
+      "name": "装备我最强",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://tempal-anime.net/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tougen-anki-s2",
+      "name": "桃源暗鬼 第二季",
+      "result": "conflict",
+      "note": "官网日本电视台周五23:30，第三方次日00:00；暂不导出，等待逐集公告",
+      "official_url": "https://tougenanki-anime.com/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:toukyouribenjazusantensensouhen",
+      "name": "东京复仇者 三天战争篇",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://tokyo-revengers-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kerorogunsou",
+      "name": "青蛙军曹☆",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.bn-pictures.co.jp/keroro-anime/tv/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:nezumikun-no-chokki-s2",
+      "name": "小老鼠的背心 第二季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.poplar.co.jp/pr/anime-nezumikun/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:shirotan",
+      "name": "小白海豹",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.tv-asahi.co.jp/sirotan/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:maronieoukokunoshichininnokishi",
+      "name": "七叶树王国的七名骑士",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.nhk-character.com/chara/marronnier/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:suikoden",
+      "name": "幻想水浒传",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://www.suikoden-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tenseishitadaiseijohaseijodearukotoohita",
+      "name": "转生的大圣女一心隐瞒自己的圣女身份",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://daiseijo-anime.com/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:black-clover-s2",
+      "name": "黑色四叶草 第二季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://bclover.jp/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:funbarus",
+      "name": "加油小伙伴",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://funbarus.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:zonbisagashitemasu",
+      "name": "正在寻找僵尸",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://zommasu.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:batekkusufosu",
+      "name": "顶点之力",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://vertexforce.jp/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:majikaruekusupurora",
+      "name": "魔法探索者",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://majieku.com/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "official:nama-anaru",
+      "name": "学生会也有洞！",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://nama-anaru.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:ranmanibunnoichi-tid8012",
+      "name": "乱马二分之一（2026）",
+      "result": "conflict",
+      "note": "官网日本电视台周六24:55，第三方25:00；暂不导出，等待逐集公告",
+      "official_url": "https://ranma-pr.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kashitamaryokuharibobaraidekyouseichoush",
+      "name": "借出的魔力以分期付款强制征收",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://revo-anime.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tanuki-to-kitsune",
+      "name": "狸猫与狐狸",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.tv-tokyo.co.jp/anime/tanukitsu/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:yuruyuru-zukan",
+      "name": "轻松图鉴",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.tv-tokyo.co.jp/anime/yuruyuru/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:punirunzu-puni-4",
+      "name": "噗尼萌 第四季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://www.tv-tokyo.co.jp/anime/punirunes/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:poppu-pappu-porutazu",
+      "name": "噗啪传送门",
+      "result": "episode_confirmed",
+      "note": "官网明确11月1日停播，第5集改为11月8日10:00（日本时间）",
+      "official_url": "https://ppp-anime.jp/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:aonohako-tid8007",
+      "name": "青之箱 第二季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://aonohako-anime.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:aoashi-s2",
+      "name": "青之芦苇 第二季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://aoashi-pr.com/onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:mezametarasaikyousoubitouchuusenmochidat",
+      "name": "醒来后拥有最强装备和宇宙飞船，为了买独栋房子而自由当佣兵",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://saikyosoubi.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:ojisanhakawaiimonogaosuki",
+      "name": "大叔喜欢可爱小玩意",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://ojikawa.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:mahounoshimairuruttoririi-tid8002",
+      "name": "魔法姐妹露露与莉莉 后半篇",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://www.luluttolilly.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tankucheasenshaisu",
+      "name": "战车椅子",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://www.tankchair-anime.com/onair.php",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:yowakimakkusureijounanoniratsuwankonyaku",
+      "name": "明明胆小到极点，却接受了精明未婚夫的赌约",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://yowaki-max-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:hoteruinhyumanzu-tid8016",
+      "name": "杀手旅店 第二季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://hotel-inhumans.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kanatakara",
+      "name": "来自远方",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://kanatakara-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:mausu-kasoru-de-genjitsu-wo-sousa",
+      "name": "能够用鼠标光标操纵现实后，我要尽情点击女孩子",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://maukuri.af-original.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kanojonotomodachi",
+      "name": "她的朋友",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://kanojo-no-tomodachi.deregula.com/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:hitozukiai-ga-nigate-na-miboujin-no-yukionna-san",
+      "name": "不擅长交际的雪女寡妇与诅咒戒指",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://anime-yukionna.af-original.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:dakusamonatodekiteiru",
+      "name": "与黑暗召唤师谈恋爱",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://darksummoner.deregula.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:yuusanchi-from-yuuhachi",
+      "name": "游家日常：游八的故事",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://yusanchi-anime.jp/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:doumosukinahitonihorekusurioiraisaretama",
+      "name": "你好，我是被心上人委托制作恋爱魔药的魔女",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://horemajo-anime.com/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tenseigoburindakedoshitsumonaru",
+      "name": "转生哥布林，有什么问题吗？",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://tengobu-anime.com/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:sairen",
+      "name": "幻境之门",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://psyren-anime.com/on-air",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:romeriasenki",
+      "name": "罗梅莉亚战记",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://romelia-senki.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:mahoushoujoikuseikeikakurisutato",
+      "name": "魔法少女育成计划：重新启动",
+      "result": "conflict",
+      "note": "官网电视东京周一深夜02:00，第三方02:06；暂不导出，等待逐集公告",
+      "official_url": "https://mahoiku.com/anime/restart#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:shiotaiounosatousangaorenidakeamai",
+      "name": "冷淡的佐藤同学只对我撒娇",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://shioama-anime.com/onair.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kyouranreijouniarisutonbyoujakureijounit",
+      "name": "凶乱千金妮娅·利斯顿：弑神武人转生病弱千金的华丽无双录",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://kyoranreijo-pr.com/#anchor-onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:batorusupirittsurizekkainokuu",
+      "name": "战斗之魂：再启 绝界之空",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://www.bn-pictures.co.jp/battlespirits/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:choujunchoujousenpai",
+      "name": "超巡！超条前辈",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://chojun-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tsuihousaretachitofuyomajutsushihakimama",
+      "name": "被逐出队伍的作弊赋予魔术师，悠然享受第二人生",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": null,
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:sasakitopichanshizuntsu",
+      "name": "佐佐木与文鸟小哔 第二季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://sasapi-anime.com/onair.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:sekaisaikyounomajohajimemashita",
+      "name": "我开始当世界最强魔女了",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://sekamajo-anime.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tanteihamoushindeiru",
+      "name": "侦探已经死了。第二季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://tanmoshi-anime.jp/Season2/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:rayearth-2026",
+      "name": "魔法骑士雷阿斯",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://rayearth-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tenseishitarakendeshitatsu",
+      "name": "转生成为魔剑了 第二季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://tenken-anime.com/onair.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:juuoumujindandevain",
+      "name": "兽王武神丹德瓦因",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://gattaishin.com/dandivine/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "official:kikansha-season2",
+      "name": "归还者的魔法要特别 第二季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://returners-magic.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:hyakuyoufudaisankikikeishihen",
+      "name": "百妖谱 第三季京师篇",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://b8station.tv/hyakuyoufu/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:tetsuryomitowizutetsudoumusume",
+      "name": "铁路之旅！与铁道少女同行",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://tetsuryo-anime.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:hyoukennomajutsushigasekaiosuberu",
+      "name": "冰剑的魔术师将要统一世界 第二季",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://hyouken-anime.com/#anchor-onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:beiburedoekkusubeikingudamuhen",
+      "name": "战斗陀螺：贝王国篇",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": null,
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:toaruanbunoaitemu",
+      "name": "某暗部的少女共栖",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://toaru-project.com/item/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:hotaru-no-yomeiri",
+      "name": "萤火虫之婚",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://hotaru-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:shuiro-no-kamen",
+      "name": "朱色面具",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://the-vermilion-mask.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:shikin-onbyoubou",
+      "name": "紫禁御猫房：紫禁城猫警备室",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://nekokeibishitsu-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kyoufukorekuta",
+      "name": "恐怖收藏家",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.nhk-character.com/chara/kyoufucollector/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:yozakurasanchinodaisakusen-tid8011",
+      "name": "夜樱家的大作战 第二季 后半篇",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://mission-yozakura-family.com/onair/02.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:daiyanoesuakutotsusekandoshizun-tid8054",
+      "name": "钻石王牌 第二幕 第二季 后半篇",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://diaace.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:doragon-boru-supa-birusu",
+      "name": "龙珠超 比鲁斯",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://dragonball-super.com/#onair",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:shinjazeronomegamisamatohajimeruisekaiko",
+      "name": "与零信徒女神开始的异世界攻略",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://zero-believers-anime.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:chitosekunharamunebinnonaka-tid8022",
+      "name": "弹珠汽水瓶里的千岁同学 后半篇",
+      "result": "weekly_match",
+      "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+      "official_url": "https://chiramune.com/onair/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:dakumashinjianimeshon",
+      "name": "黑暗机械 动画版",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.fujitv.co.jp/darkmachine_anime/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:munoumajo-bureinresu-witchi",
+      "name": "无脑魔女",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.bs4.jp/brainless-witch/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:dorimurando",
+      "name": "梦境之地",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://www.dreamland-anime.com/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:gerupiyo-s2",
+      "name": "凝胶小鸡 第二季",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://gelpiyo.com",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:watashi-no-shiawase-na-kekkon-tokubetsuhen",
+      "name": "我的幸福婚约 特别篇",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://watakon-anime.com/onair/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kadofaitou-angadodiu-ainzuunmeiseisenhen",
+      "name": "卡片战斗先导者：神圣命运星战篇",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": "https://anime.cf-vanguard.com/vgd/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "animecca:kofun-doctor-coffy-er",
+      "name": "古坟医生科菲 急诊室",
+      "result": "unverified",
+      "note": "官网未取得可确认的当前频道时刻；暂不导出",
+      "official_url": null,
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "genshin",
+      "event_id": "e4a93dde-8488-5033-860b-8b7a0cf8e455",
+      "name": "原神 7.2 版本更新",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167098",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "starrail",
+      "event_id": "8ced4e45-3e4d-57de-9022-ec0a9385a13e",
+      "name": "崩坏：星穹铁道 4.7 版本更新",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://prtimes.jp/main/html/rd/p/000000462.000096124.html/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "arknights",
+      "event_id": "881f808e-f4b2-5505-9c63-9e04a6b335c7",
+      "name": "明日方舟 · 将雪投火限定寻访",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://ak.hypergryph.com/news/4916",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "zzz",
+      "event_id": "dcaeacbc-9743-5284-a76b-00af0a38d027",
+      "name": "绝区零 3.3版本更新",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://zzz.mihoyo.com/news/166654",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "honkai3",
+      "event_id": "04899fb7-49db-5a89-8f2d-2325642ca39f",
+      "name": "崩坏3 国服9.1「时序照新」版本更新",
+      "result": "confirmed",
+      "note": "更正：原10月22日来自国际服，国服公告为9月24日。",
+      "official_url": "https://www.bh3.com/news/695",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "endfield",
+      "event_id": "1a42384d-24db-57c0-9864-9900db2217ed",
+      "name": "明日方舟：终末地 丹青渡版本更新",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://endfield.hypergryph.com/news/3805",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "deepspace",
+      "event_id": "255b0382-5675-5af6-949e-10179b55f39c",
+      "name": "恋与深空 祁煜·馥夜轻漾限时许愿",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://www.taptap.cn/app/201633/topic?page=3&sort=published&type=feed",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "wuwa",
+      "event_id": "d745fb1f-ca77-597e-8a47-923ec6c45dd2",
+      "name": "鸣潮 3.8版本前瞻通讯",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://www.taptap.cn/moment/864937105405511398?group_id=330015",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "pgr",
+      "event_id": "c74608bc-a74b-578f-81ad-6f60048cdcb6",
+      "name": "战双帕弥什「流光抛诸寰宇」版本更新",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://www.taptap.cn/moment/862292081488432698",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "pgr",
+      "event_id": "f5bd3968-6eda-5ac9-b517-f9c3764f5edd",
+      "name": "战双帕弥什 降临狙击：比安卡／七实／海伦汀",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://www.taptap.cn/app/130651/topic?sort=created&type=official",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "reverse1999",
+      "event_id": "a1ab3ffb-3f9f-5101-a346-44aafe197d8b",
+      "name": "重返未来：1999 4.1「亚特兰蒂斯谋杀案」",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://sina.cn/news/detail/5357876647822380.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "infinitynikki",
+      "event_id": "e0db3cbb-57aa-5e4b-8574-cc8698943584",
+      "name": "无限暖暖 3.0版本更新",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://infinitynikki.nuanpaper.com/news/1088",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "tearsofthemis",
+      "event_id": "ca2135bc-90f5-5de7-9bf8-d806603c0a0b",
+      "name": "未定事件簿 轮替女神之影：最佳拍档／风烛引归",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://www.sina.cn/news/detail/5359311099790026.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "nikke-global",
+      "event_id": "d8ef5d1b-402e-5ab7-b2b0-38b69080186b",
+      "name": "胜利女神：妮姬 四周年第二阶段更新",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://press.levelinfinite.com/de-DE/THE-BATTLE-FOR-HUMANITYS-FUTURE-ESCALATES-AS-GODDESS-OF-VICTORY-NIKKE-",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "fgo",
+      "event_id": "5a741b2d-549d-5726-903e-b006bb1613e2",
+      "name": "命运／冠位指定 OVER THE SAME SKY-OCTOBER-推荐召唤",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://www.sina.cn/news/detail/5357228627329831.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "id": "lightnight",
+      "event_id": "8d293122-7f58-5204-b2c2-fa9d71b0f025",
+      "name": "光与夜之恋 旎梦伴天光·复刻Ⅰ",
+      "result": "confirmed",
+      "note": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "official_url": "https://www.taptap.cn/moment/865702176905758946?group_id=225937",
+      "checked_on": "2026-11-02"
+    }
+  ]
+}

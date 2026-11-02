@@ -1,0 +1,3272 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "e4a93dde-8488-5033-860b-8b7a0cf8e455",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "原神 7.2 版本更新",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-04",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167098",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "genshin7.2",
+          "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167098",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "genshin",
+        "server": "cn",
+        "version": "7.2"
+      }
+    },
+    {
+      "id": "8ced4e45-3e4d-57de-9022-ec0a9385a13e",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "崩坏：星穹铁道 4.7 版本更新",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-11",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://prtimes.jp/main/html/rd/p/000000462.000096124.html/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "starrail4.7",
+          "url": "https://prtimes.jp/main/html/rd/p/000000462.000096124.html/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "starrail",
+        "server": "cn",
+        "version": "4.7"
+      }
+    },
+    {
+      "id": "881f808e-f4b2-5505-9c63-9e04a6b335c7",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 将雪投火限定寻访",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-01T12:00:00+08:00",
+      "end": "2026-11-15T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://ak.hypergryph.com/news/4916",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "arknights:4916",
+          "url": "https://ak.hypergryph.com/news/4916",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "arknights",
+        "server": "cn",
+        "version": "2026感谢庆典",
+        "banner_id": "4916"
+      }
+    },
+    {
+      "id": "dcaeacbc-9743-5284-a76b-00af0a38d027",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "绝区零 3.3版本更新",
+      "start": "2026-10-21",
+      "end": null,
+      "time_kind": "date",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "timezone": "Asia/Shanghai",
+      "url": "https://zzz.mihoyo.com/news/166654",
+      "sources": [
+        {
+          "provider": "official",
+          "url": "https://zzz.mihoyo.com/news/166654",
+          "source_id": "zzz:version_update:3.3:绝区零 3.3版本更新",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "game": {
+        "game_id": "zzz",
+        "server": "cn",
+        "version": "3.3"
+      }
+    },
+    {
+      "id": "04899fb7-49db-5a89-8f2d-2325642ca39f",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "崩坏3 国服9.1「时序照新」版本更新",
+      "start": "2026-09-24",
+      "end": null,
+      "time_kind": "date",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.bh3.com/news/695",
+      "sources": [
+        {
+          "provider": "official",
+          "url": "https://www.bh3.com/news/695",
+          "source_id": "honkai3:version_update:9.1:崩坏3 9.1版本更新",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "description": "更正：原10月22日来自国际服，国服公告为9月24日。",
+      "game": {
+        "game_id": "honkai3",
+        "server": "cn",
+        "version": "9.1"
+      }
+    },
+    {
+      "id": "1a42384d-24db-57c0-9864-9900db2217ed",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "明日方舟：终末地 丹青渡版本更新",
+      "start": "2026-10-15",
+      "end": null,
+      "time_kind": "date",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "timezone": "Asia/Shanghai",
+      "url": "https://endfield.hypergryph.com/news/3805",
+      "sources": [
+        {
+          "provider": "official",
+          "url": "https://endfield.hypergryph.com/news/3805",
+          "source_id": "endfield:version_update:丹青渡:明日方舟：终末地 丹青渡版本更新",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "game": {
+        "game_id": "endfield",
+        "server": "cn",
+        "version": "丹青渡"
+      }
+    },
+    {
+      "id": "255b0382-5675-5af6-949e-10179b55f39c",
+      "category": "game",
+      "event_type": "banner",
+      "title": "恋与深空 祁煜·馥夜轻漾限时许愿",
+      "start": "2026-10-27T05:00:00+08:00",
+      "end": "2026-11-05T04:59:00+08:00",
+      "time_kind": "datetime",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.taptap.cn/app/201633/topic?page=3&sort=published&type=feed",
+      "sources": [
+        {
+          "provider": "official",
+          "url": "https://www.taptap.cn/app/201633/topic?page=3&sort=published&type=feed",
+          "source_id": "deepspace:banner:2026-10:恋与深空 祁煜·馥夜轻漾限时许愿",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "game": {
+        "game_id": "deepspace",
+        "server": "cn",
+        "version": "2026-10",
+        "banner_id": "deepspace:banner:2026-10:恋与深空 祁煜·馥夜轻漾限时许愿"
+      }
+    },
+    {
+      "id": "defc6751-db33-5b19-ac98-9076e8ccffda",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "野生的最终头目出现了！第二季 · 第7集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：野生のラスボスが現れた！ 第2期。来源目录频道：Abemaアニメ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T23:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/yaseinorasubosugaarawareta-tid8021",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:yaseinorasubosugaarawareta-tid8021:episode:7",
+          "url": "https://animecca.jp/ja/works/yaseinorasubosugaarawareta-tid8021",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:yaseinorasubosugaarawareta-tid8021",
+        "episode_id": "7",
+        "episode_label": "第7集",
+        "channel": "Abemaアニメ"
+      }
+    },
+    {
+      "id": "7eeccd89-51bf-51b2-91c8-f819c8d98df6",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "赛马娘悠哉短篇：全员入闸！ · 第7集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：うまゆる ふるげ～と！。来源目录频道：YouTube。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T21:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/umayuru-furugeto",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:umayuru-furugeto:episode:7",
+          "url": "https://animecca.jp/ja/works/umayuru-furugeto",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:umayuru-furugeto",
+        "episode_id": "7",
+        "episode_label": "第7集",
+        "channel": "YouTube"
+      }
+    },
+    {
+      "id": "65eb8bac-d86d-5a63-9e9b-71e679f0919d",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "转生贵族靠着鉴定技能一飞冲天 第三季 · 第7集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：転生貴族、鑑定スキルで成り上がる 第3期。来源目录频道：TBS。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T23:40:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/tenseikizokukanteisukirudenariag-tid8009",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tenseikizokukanteisukirudenariag-tid8009:episode:7",
+          "url": "https://animecca.jp/ja/works/tenseikizokukanteisukirudenariag-tid8009",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tenseikizokukanteisukirudenariag-tid8009",
+        "episode_id": "7",
+        "episode_label": "第7集",
+        "channel": "TBS"
+      }
+    },
+    {
+      "id": "ef03880f-40f0-550d-b0d3-f7df53054d36",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "新网球王子：十七岁以下世界杯 决赛成员决定战 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦。来源目录频道：テレビ愛知。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-05T01:36:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/shintenisunooujisamaandasebuntin-tid8044",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:shintenisunooujisamaandasebuntin-tid8044:episode:6",
+          "url": "https://animecca.jp/ja/works/shintenisunooujisamaandasebuntin-tid8044",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:shintenisunooujisamaandasebuntin-tid8044",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ愛知"
+      }
+    },
+    {
+      "id": "3d130626-50e9-5b2d-a5e8-7cbf7fb5bdcc",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "外汇战士久留美 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-05T21:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://fxkurumi-info.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "efuekkususenshikurumichan:onair",
+          "url": "https://fxkurumi-info.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "official:fxkurumi:episode:6",
+          "url": "https://animecca.jp/ja/works/efuekkususenshikurumichan",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "official:fxkurumi",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "AT-X"
+      }
+    },
+    {
+      "id": "5ceef489-e20d-53e1-b874-002aa19a587f",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "向满身伤痕的圣女献上复仇 第二季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：tvk。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T00:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animationid.com/kizudarakeseijo2/#onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "kizudarakenoseijoyorihoufukuokometeshizu:onair",
+          "url": "https://animationid.com/kizudarakeseijo2/#onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kizudarakenoseijoyorihoufukuokometeshizu:episode:6",
+          "url": "https://animecca.jp/ja/works/kizudarakenoseijoyorihoufukuokometeshizu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kizudarakenoseijoyorihoufukuokometeshizu",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "tvk"
+      }
+    },
+    {
+      "id": "23aeb605-4e03-58fd-98a4-71a770a49df3",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "冰之城墙 第二季 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：氷の城壁 第2期。来源目录频道：TBS。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-05T23:56:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/koorinojouheki-tid8008",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:koorinojouheki-tid8008:episode:6",
+          "url": "https://animecca.jp/ja/works/koorinojouheki-tid8008",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:koorinojouheki-tid8008",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TBS"
+      }
+    },
+    {
+      "id": "891cfc03-2745-5a24-a5ea-5792edbfdbb2",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "面包小偷 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：NHK Eテレ。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T18:40:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://pandorobo-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "pandorobou:onair",
+          "url": "https://pandorobo-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:pandorobou:episode:6",
+          "url": "https://animecca.jp/ja/works/pandorobou",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:pandorobou",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "NHK Eテレ"
+      }
+    },
+    {
+      "id": "c01ca213-c6af-5221-b133-3a448eb52917",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "苍之传承：威尔士与切达 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T21:25:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://welshandshedar-anime.com/#anchor-onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "aokidenshouwerushusheda:onair",
+          "url": "https://welshandshedar-anime.com/#anchor-onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:aokidenshouwerushusheda:episode:6",
+          "url": "https://animecca.jp/ja/works/aokidenshouwerushusheda",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:aokidenshouwerushusheda",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "c97ecbb5-4000-526d-9aa2-455309db1039",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "药屋少女的呢喃 第三季 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：薬屋のひとりごと 第3期。来源目录频道：日本テレビ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-06T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/kusuriya-no-hitorigoto-s3",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kusuriya-no-hitorigoto-s3:episode:6",
+          "url": "https://animecca.jp/ja/works/kusuriya-no-hitorigoto-s3",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kusuriya-no-hitorigoto-s3",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "日本テレビ"
+      }
+    },
+    {
+      "id": "f7fa0a8f-4b56-53b8-84e7-6723dda0f718",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "装备我最强 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://tempal-anime.net/onair/index.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "temuparuaitemunochikara:onair",
+          "url": "https://tempal-anime.net/onair/index.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:temuparuaitemunochikara:episode:6",
+          "url": "https://animecca.jp/ja/works/temuparuaitemunochikara",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:temuparuaitemunochikara",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "BS11イレブン"
+      }
+    },
+    {
+      "id": "df345c4f-6665-580a-aac5-74b811df5fbf",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "桃源暗鬼 第二季 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：桃源暗鬼 第二期 〜日光・華厳の滝編〜。来源目录频道：日本テレビ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T00:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/tougen-anki-s2",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tougen-anki-s2:episode:6",
+          "url": "https://animecca.jp/ja/works/tougen-anki-s2",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tougen-anki-s2",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "日本テレビ"
+      }
+    },
+    {
+      "id": "d287b213-1e3d-5af7-8db1-c57630e8d78a",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "东京复仇者 三天战争篇 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TBS。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-07T01:23:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://tokyo-revengers-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "toukyouribenjazusantensensouhen:onair",
+          "url": "https://tokyo-revengers-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:toukyouribenjazusantensensouhen:episode:56",
+          "url": "https://animecca.jp/ja/works/toukyouribenjazusantensensouhen",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:toukyouribenjazusantensensouhen",
+        "episode_id": "56",
+        "episode_label": "第56集",
+        "channel": "TBS"
+      }
+    },
+    {
+      "id": "e6e2216b-d5b4-505d-b7e4-d9e57a74b98d",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "青蛙军曹☆ · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：ケロロ軍曹☆。来源目录频道：テレビ東京。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T09:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/kerorogunsou",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kerorogunsou:episode:6",
+          "url": "https://animecca.jp/ja/works/kerorogunsou",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kerorogunsou",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ東京"
+      }
+    },
+    {
+      "id": "274fcb23-fd0c-51aa-8daa-34c81af492ec",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "小老鼠的背心 第二季 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：ねずみくんのチョッキ 第2期。来源目录频道：NHK Eテレ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T09:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/nezumikun-no-chokki-s2",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:nezumikun-no-chokki-s2:episode:6",
+          "url": "https://animecca.jp/ja/works/nezumikun-no-chokki-s2",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:nezumikun-no-chokki-s2",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "NHK Eテレ"
+      }
+    },
+    {
+      "id": "e228e11e-f0c8-577c-a208-45a3e5cb85ce",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "小白海豹 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：しろたん。来源目录频道：テレビ朝日。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T16:29:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/shirotan",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:shirotan:episode:6",
+          "url": "https://animecca.jp/ja/works/shirotan",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:shirotan",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ朝日"
+      }
+    },
+    {
+      "id": "8e0be605-c610-584e-bde2-fb067537d505",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "七叶树王国的七名骑士 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：マロニエ王国の七人の騎士。来源目录频道：NHK Eテレ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T18:25:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/maronieoukokunoshichininnokishi",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:maronieoukokunoshichininnokishi:episode:6",
+          "url": "https://animecca.jp/ja/works/maronieoukokunoshichininnokishi",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:maronieoukokunoshichininnokishi",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "NHK Eテレ"
+      }
+    },
+    {
+      "id": "72f14c16-5b52-5f34-9757-c4fc9054f824",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "幻想水浒传 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-03T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://www.suikoden-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "suikoden:onair",
+          "url": "https://www.suikoden-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:suikoden:episode:5",
+          "url": "https://animecca.jp/ja/works/suikoden",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:suikoden",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "9bd2a747-5934-50bf-acc2-85a4999566e8",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "转生的大圣女一心隐瞒自己的圣女身份 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-07T22:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://daiseijo-anime.com/onair/index.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "tenseishitadaiseijohaseijodearukotoohita:onair",
+          "url": "https://daiseijo-anime.com/onair/index.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tenseishitadaiseijohaseijodearukotoohita:episode:6",
+          "url": "https://animecca.jp/ja/works/tenseishitadaiseijohaseijodearukotoohita",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tenseishitadaiseijohaseijodearukotoohita",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "BS11イレブン"
+      }
+    },
+    {
+      "id": "7e079c15-e50a-529a-aac7-7ca4128215cf",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "黑色四叶草 第二季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：テレビ東京。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-07T23:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://bclover.jp/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "black-clover-s2:onair",
+          "url": "https://bclover.jp/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:black-clover-s2:episode:6",
+          "url": "https://animecca.jp/ja/works/black-clover-s2",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:black-clover-s2",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ東京"
+      }
+    },
+    {
+      "id": "b3898ef4-44f7-53be-be87-9f5110ae38cd",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "加油小伙伴 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BSよしもと。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-07T23:25:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://funbarus.com/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "funbarus:onair",
+          "url": "https://funbarus.com/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:funbarus:episode:6",
+          "url": "https://animecca.jp/ja/works/funbarus",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:funbarus",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "BSよしもと"
+      }
+    },
+    {
+      "id": "d0d86e4d-89d9-54cb-b1c8-ca1d37c0ca80",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "正在寻找僵尸 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：メ～テレ。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-07T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://zommasu.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "zonbisagashitemasu:onair",
+          "url": "https://zommasu.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:zonbisagashitemasu:episode:6",
+          "url": "https://animecca.jp/ja/works/zonbisagashitemasu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:zonbisagashitemasu",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "メ～テレ"
+      }
+    },
+    {
+      "id": "1fd9dbd4-ad3f-580e-aa99-3b9c28d43302",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "顶点之力 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-07T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://vertexforce.jp/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "batekkusufosu:onair",
+          "url": "https://vertexforce.jp/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:batekkusufosu:episode:6",
+          "url": "https://animecca.jp/ja/works/batekkusufosu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:batekkusufosu",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "BS11イレブン"
+      }
+    },
+    {
+      "id": "7056d501-59c3-584b-b460-0e1dfc1280c8",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "魔法探索者 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T00:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://majieku.com/#onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "majikaruekusupurora:onair",
+          "url": "https://majieku.com/#onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:majikaruekusupurora:episode:6",
+          "url": "https://animecca.jp/ja/works/majikaruekusupurora",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:majikaruekusupurora",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "559f98c6-db3b-5fb2-b2a1-8535f7b4caad",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "学生会也有洞！ · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T00:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://nama-anaru.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "seitokainimoanahaaru:onair",
+          "url": "https://nama-anaru.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "official:nama-anaru:episode:6",
+          "url": "https://animecca.jp/ja/works/seitokainimoanahaaru",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "official:nama-anaru",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "dbb72b4b-3dea-59e9-a2f4-df6cb553bcc2",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "乱马二分之一（2026） · 第30集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：らんま1/2 (2026)。来源目录频道：日本テレビ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T01:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/ranmanibunnoichi-tid8012",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:ranmanibunnoichi-tid8012:episode:30",
+          "url": "https://animecca.jp/ja/works/ranmanibunnoichi-tid8012",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:ranmanibunnoichi-tid8012",
+        "episode_id": "30",
+        "episode_label": "第30集",
+        "channel": "日本テレビ"
+      }
+    },
+    {
+      "id": "6bec9adb-2356-5d97-956c-f9eeef6198fb",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "借出的魔力以分期付款强制征收 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：貸した魔力は【リボ払い】で強制徴収。来源目录频道：テレビ朝日。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T02:25:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/kashitamaryokuharibobaraidekyouseichoush",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kashitamaryokuharibobaraidekyouseichoush:episode:6",
+          "url": "https://animecca.jp/ja/works/kashitamaryokuharibobaraidekyouseichoush",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kashitamaryokuharibobaraidekyouseichoush",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ朝日"
+      }
+    },
+    {
+      "id": "181bb200-98d6-545c-aba8-a4945a3b00e7",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "噗尼萌 第四季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：テレビ東京。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T09:15:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://www.tv-tokyo.co.jp/anime/punirunes/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "punirunzu-puni-4:onair",
+          "url": "https://www.tv-tokyo.co.jp/anime/punirunes/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:punirunzu-puni-4:episode:6",
+          "url": "https://animecca.jp/ja/works/punirunzu-puni-4",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:punirunzu-puni-4",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ東京"
+      }
+    },
+    {
+      "id": "62ee90de-ee7b-5872-92ba-51cfb3531594",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "噗啪传送门 · 第5集",
+      "description": "官网明确11月1日停播，第5集改为11月8日10:00（日本时间）。频道：テレビ朝日。日本播出时间，非国内平台上线时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T10:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://ppp-anime.jp/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "poppu-pappu-porutazu:onair",
+          "url": "https://ppp-anime.jp/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:poppu-pappu-porutazu:episode:6",
+          "url": "https://animecca.jp/ja/works/poppu-pappu-porutazu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:poppu-pappu-porutazu",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ朝日",
+        "episode": 5
+      }
+    },
+    {
+      "id": "cdff6ae8-554f-5c58-81df-d2a0c0b70af7",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "青之箱 第二季 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：アオのハコ Season2。来源目录频道：TBS。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T16:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/aonohako-tid8007",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:aonohako-tid8007:episode:6",
+          "url": "https://animecca.jp/ja/works/aonohako-tid8007",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:aonohako-tid8007",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TBS"
+      }
+    },
+    {
+      "id": "d345ed8e-7946-5a0e-b8ec-d10391d260ef",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "青之芦苇 第二季 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：アオアシ Season2。来源目录频道：NHK Eテレ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T17:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/aoashi-s2",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:aoashi-s2:episode:6",
+          "url": "https://animecca.jp/ja/works/aoashi-s2",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:aoashi-s2",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "NHK Eテレ"
+      }
+    },
+    {
+      "id": "1effb2a6-388c-5db9-b91f-093f25d0bcb4",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "醒来后拥有最强装备和宇宙飞船，为了买独栋房子而自由当佣兵 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T21:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://saikyosoubi.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "mezametarasaikyousoubitouchuusenmochidat:onair",
+          "url": "https://saikyosoubi.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:mezametarasaikyousoubitouchuusenmochidat:episode:6",
+          "url": "https://animecca.jp/ja/works/mezametarasaikyousoubitouchuusenmochidat",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:mezametarasaikyousoubitouchuusenmochidat",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "e42eb520-79fe-5d25-9548-475f7f8a28a6",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "大叔喜欢可爱小玩意 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T22:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://ojikawa.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "ojisanhakawaiimonogaosuki:onair",
+          "url": "https://ojikawa.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:ojisanhakawaiimonogaosuki:episode:6",
+          "url": "https://animecca.jp/ja/works/ojisanhakawaiimonogaosuki",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:ojisanhakawaiimonogaosuki",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "a121deb2-ba62-595e-b6a5-61150e1ff4fd",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "魔法姐妹露露与莉莉 后半篇 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T22:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://www.luluttolilly.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "mahounoshimairuruttoririi-tid8002:onair",
+          "url": "https://www.luluttolilly.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:mahounoshimairuruttoririi-tid8002:episode:18",
+          "url": "https://animecca.jp/ja/works/mahounoshimairuruttoririi-tid8002",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:mahounoshimairuruttoririi-tid8002",
+        "episode_id": "18",
+        "episode_label": "第18集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "b3fe4ec6-16bd-5374-bd84-f7fdd6dd76f8",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "战车椅子 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T23:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://www.tankchair-anime.com/onair.php",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "tankucheasenshaisu:onair",
+          "url": "https://www.tankchair-anime.com/onair.php",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tankucheasenshaisu:episode:6",
+          "url": "https://animecca.jp/ja/works/tankucheasenshaisu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tankucheasenshaisu",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "0175d327-ef9b-59b8-b6bb-fd0bb0d46213",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "明明胆小到极点，却接受了精明未婚夫的赌约 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://yowaki-max-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "yowakimakkusureijounanoniratsuwankonyaku:onair",
+          "url": "https://yowaki-max-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:yowakimakkusureijounanoniratsuwankonyaku:episode:6",
+          "url": "https://animecca.jp/ja/works/yowakimakkusureijounanoniratsuwankonyaku",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:yowakimakkusureijounanoniratsuwankonyaku",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "AT-X"
+      }
+    },
+    {
+      "id": "f8952de0-9f41-54af-af8f-e0c5c6f78f85",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "杀手旅店 第二季 · 第6集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：ホテル・インヒューマンズ 第2期。来源目录频道：テレビ東京。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T23:45:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/hoteruinhyumanzu-tid8016",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:hoteruinhyumanzu-tid8016:episode:6",
+          "url": "https://animecca.jp/ja/works/hoteruinhyumanzu-tid8016",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:hoteruinhyumanzu-tid8016",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "テレビ東京"
+      }
+    },
+    {
+      "id": "e726671c-d2df-5475-bdf0-2c19b5abb5c0",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "来自远方 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-09T00:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://kanatakara-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "kanatakara:onair",
+          "url": "https://kanatakara-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kanatakara:episode:6",
+          "url": "https://animecca.jp/ja/works/kanatakara",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kanatakara",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "a22fa03c-7de4-56b2-9afa-d00f4e3b0fcb",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "能够用鼠标光标操纵现实后，我要尽情点击女孩子 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-09T01:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://maukuri.af-original.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "mausu-kasoru-de-genjitsu-wo-sousa:onair",
+          "url": "https://maukuri.af-original.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:mausu-kasoru-de-genjitsu-wo-sousa:episode:6",
+          "url": "https://animecca.jp/ja/works/mausu-kasoru-de-genjitsu-wo-sousa",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:mausu-kasoru-de-genjitsu-wo-sousa",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "a75f7d5b-75a2-5327-9165-f08e86d6d55f",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "她的朋友 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-09T01:05:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://kanojo-no-tomodachi.deregula.com/#onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "kanojonotomodachi:onair",
+          "url": "https://kanojo-no-tomodachi.deregula.com/#onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kanojonotomodachi:episode:6",
+          "url": "https://animecca.jp/ja/works/kanojonotomodachi",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kanojonotomodachi",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "dcbe56a3-1d87-57fd-8531-64ea785a2cfc",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "不擅长交际的雪女寡妇与诅咒戒指 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-09T01:05:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://anime-yukionna.af-original.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san:onair",
+          "url": "https://anime-yukionna.af-original.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:hitozukiai-ga-nigate-na-miboujin-no-yukionna-san:episode:6",
+          "url": "https://animecca.jp/ja/works/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:hitozukiai-ga-nigate-na-miboujin-no-yukionna-san",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "BS11イレブン"
+      }
+    },
+    {
+      "id": "140c2f42-3433-5692-8433-04284f001c86",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "与黑暗召唤师谈恋爱 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-09T01:20:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://darksummoner.deregula.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "dakusamonatodekiteiru:onair",
+          "url": "https://darksummoner.deregula.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:dakusamonatodekiteiru:episode:6",
+          "url": "https://animecca.jp/ja/works/dakusamonatodekiteiru",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:dakusamonatodekiteiru",
+        "episode_id": "6",
+        "episode_label": "第6集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "edc2d134-4a52-5b94-91db-cab1cd6e9454",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "你好，我是被心上人委托制作恋爱魔药的魔女 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-02T21:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://horemajo-anime.com/onair/index.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "doumosukinahitonihorekusurioiraisaretama:onair",
+          "url": "https://horemajo-anime.com/onair/index.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:doumosukinahitonihorekusurioiraisaretama:episode:5",
+          "url": "https://animecca.jp/ja/works/doumosukinahitonihorekusurioiraisaretama",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:doumosukinahitonihorekusurioiraisaretama",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "AT-X"
+      }
+    },
+    {
+      "id": "23b5b68f-0851-5898-875b-d73d3a8ce07d",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "转生哥布林，有什么问题吗？ · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-02T22:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://tengobu-anime.com/onair/index.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "tenseigoburindakedoshitsumonaru:onair",
+          "url": "https://tengobu-anime.com/onair/index.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tenseigoburindakedoshitsumonaru:episode:5",
+          "url": "https://animecca.jp/ja/works/tenseigoburindakedoshitsumonaru",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tenseigoburindakedoshitsumonaru",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "450a1f1c-f11a-5706-adc8-d8772c6ea482",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "幻境之门 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-02T23:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://psyren-anime.com/on-air",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "sairen:onair",
+          "url": "https://psyren-anime.com/on-air",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:sairen:episode:5",
+          "url": "https://animecca.jp/ja/works/sairen",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:sairen",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "BS11イレブン"
+      }
+    },
+    {
+      "id": "d750cf7c-6494-551e-868e-c603f47ac9ae",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "罗梅莉亚战记 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-02T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://romelia-senki.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "romeriasenki:onair",
+          "url": "https://romelia-senki.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:romeriasenki:episode:5",
+          "url": "https://animecca.jp/ja/works/romeriasenki",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:romeriasenki",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "404e980c-820f-58e5-91d8-1d08bcd81ed2",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "魔法少女育成计划：重新启动 · 第5集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：魔法少女育成計画restart。来源目录频道：テレビ東京。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-03T02:06:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/mahoushoujoikuseikeikakurisutato",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:mahoushoujoikuseikeikakurisutato:episode:5",
+          "url": "https://animecca.jp/ja/works/mahoushoujoikuseikeikakurisutato",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:mahoushoujoikuseikeikakurisutato",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "テレビ東京"
+      }
+    },
+    {
+      "id": "c0c7456d-fee7-58f7-8ee7-e5562fb96701",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "冷淡的佐藤同学只对我撒娇 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-03T20:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://shioama-anime.com/onair.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "shiotaiounosatousangaorenidakeamai:onair",
+          "url": "https://shioama-anime.com/onair.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:shiotaiounosatousangaorenidakeamai:episode:5",
+          "url": "https://animecca.jp/ja/works/shiotaiounosatousangaorenidakeamai",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:shiotaiounosatousangaorenidakeamai",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "AT-X"
+      }
+    },
+    {
+      "id": "b12739ec-c259-59fb-947b-b0111a63e364",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "凶乱千金妮娅·利斯顿：弑神武人转生病弱千金的华丽无双录 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-03T21:25:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://kyoranreijo-pr.com/#anchor-onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "kyouranreijouniarisutonbyoujakureijounit:onair",
+          "url": "https://kyoranreijo-pr.com/#anchor-onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kyouranreijouniarisutonbyoujakureijounit:episode:5",
+          "url": "https://animecca.jp/ja/works/kyouranreijouniarisutonbyoujakureijounit",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kyouranreijouniarisutonbyoujakureijounit",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "307a3beb-e00a-528a-bc06-60e5a402ff40",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "战斗之魂：再启 绝界之空 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-03T23:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://www.bn-pictures.co.jp/battlespirits/#onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "batorusupirittsurizekkainokuu:onair",
+          "url": "https://www.bn-pictures.co.jp/battlespirits/#onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:batorusupirittsurizekkainokuu:episode:5",
+          "url": "https://animecca.jp/ja/works/batorusupirittsurizekkainokuu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:batorusupirittsurizekkainokuu",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "68435d3a-8cc3-555b-9a1e-d7b154f69441",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "超巡！超条前辈 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：東海テレビ。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-03T23:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://chojun-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "choujunchoujousenpai:onair",
+          "url": "https://chojun-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:choujunchoujousenpai:episode:5",
+          "url": "https://animecca.jp/ja/works/choujunchoujousenpai",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:choujunchoujousenpai",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "東海テレビ"
+      }
+    },
+    {
+      "id": "8653146a-c9a2-5ac6-bdf4-a720d2d00297",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "被逐出队伍的作弊赋予魔术师，悠然享受第二人生 · 第5集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～。来源目录频道：テレビ東京。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-04T00:06:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/tsuihousaretachitofuyomajutsushihakimama",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tsuihousaretachitofuyomajutsushihakimama:episode:5",
+          "url": "https://animecca.jp/ja/works/tsuihousaretachitofuyomajutsushihakimama",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tsuihousaretachitofuyomajutsushihakimama",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "テレビ東京"
+      }
+    },
+    {
+      "id": "928db4c6-51e1-5751-ad81-3f2455bcee14",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "佐佐木与文鸟小哔 第二季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-04T22:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://sasapi-anime.com/onair.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "sasakitopichanshizuntsu:onair",
+          "url": "https://sasapi-anime.com/onair.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:sasakitopichanshizuntsu:episode:5",
+          "url": "https://animecca.jp/ja/works/sasakitopichanshizuntsu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:sasakitopichanshizuntsu",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "AT-X"
+      }
+    },
+    {
+      "id": "6be49281-6d95-5511-aac0-6b2181ee63a8",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "我开始当世界最强魔女了 · 第5集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：世界最強の魔女、始めました。来源目录频道：TOKYO MX。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-04T22:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/sekaisaikyounomajohajimemashita",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:sekaisaikyounomajohajimemashita:episode:5",
+          "url": "https://animecca.jp/ja/works/sekaisaikyounomajohajimemashita",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:sekaisaikyounomajohajimemashita",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "a94129fe-4672-5a84-88fd-a165f546ad58",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "侦探已经死了。第二季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-04T22:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://tanmoshi-anime.jp/Season2/onair/index.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "tanteihamoushindeiru:onair",
+          "url": "https://tanmoshi-anime.jp/Season2/onair/index.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tanteihamoushindeiru:episode:5",
+          "url": "https://animecca.jp/ja/works/tanteihamoushindeiru",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tanteihamoushindeiru",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "f0f2376e-ef7c-5b50-a9da-20f72ce58580",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "魔法骑士雷阿斯 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：テレビ朝日。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-04T23:45:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://rayearth-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "rayearth-2026:onair",
+          "url": "https://rayearth-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:rayearth-2026:episode:5",
+          "url": "https://animecca.jp/ja/works/rayearth-2026",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:rayearth-2026",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "テレビ朝日"
+      }
+    },
+    {
+      "id": "f34a8ee0-f342-5327-9e7d-655950d973cd",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "转生成为魔剑了 第二季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-05T00:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://tenken-anime.com/onair.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "tenseishitarakendeshitatsu:onair",
+          "url": "https://tenken-anime.com/onair.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tenseishitarakendeshitatsu:episode:5",
+          "url": "https://animecca.jp/ja/works/tenseishitarakendeshitatsu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tenseishitarakendeshitatsu",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "b114e909-d1b7-5a2a-a0fc-417480a45f17",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "兽王武神丹德瓦因 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-05T00:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://gattaishin.com/dandivine/#onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "juuoumujindandevain:onair",
+          "url": "https://gattaishin.com/dandivine/#onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:juuoumujindandevain:episode:5",
+          "url": "https://animecca.jp/ja/works/juuoumujindandevain",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:juuoumujindandevain",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "61a98094-769f-56fd-a4b6-5f60eb93b43e",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "归还者的魔法要特别 第二季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：フジテレビ。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-05T00:45:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://returners-magic.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "kikanshanomahouhatokubetsudesu:onair",
+          "url": "https://returners-magic.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "official:kikansha-season2:episode:5",
+          "url": "https://animecca.jp/ja/works/kikanshanomahouhatokubetsudesu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "official:kikansha-season2",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "フジテレビ"
+      }
+    },
+    {
+      "id": "e0f99d2c-dab3-506e-bf9d-05a8baed7071",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "百妖谱 第三季京师篇 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：フジテレビ。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-05T01:15:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://b8station.tv/hyakuyoufu/#onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "hyakuyoufudaisankikikeishihen:onair",
+          "url": "https://b8station.tv/hyakuyoufu/#onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:hyakuyoufudaisankikikeishihen:episode:5",
+          "url": "https://animecca.jp/ja/works/hyakuyoufudaisankikikeishihen",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:hyakuyoufudaisankikikeishihen",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "フジテレビ"
+      }
+    },
+    {
+      "id": "2c08c88a-3103-5190-b158-fe7f5a9defb7",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "铁路之旅！与铁道少女同行 · 第5集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：てつりょー！ meet with 鉄道むすめ。来源目录频道：TOKYO MX。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-06T00:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/tetsuryomitowizutetsudoumusume",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:tetsuryomitowizutetsudoumusume:episode:5",
+          "url": "https://animecca.jp/ja/works/tetsuryomitowizutetsudoumusume",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:tetsuryomitowizutetsudoumusume",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "62805583-1850-5e41-aa14-a188e14f5c3d",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "冰剑的魔术师将要统一世界 第二季 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TBS。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T01:28:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://hyouken-anime.com/#anchor-onair",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "hyoukennomajutsushigasekaiosuberu:onair",
+          "url": "https://hyouken-anime.com/#anchor-onair",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:hyoukennomajutsushigasekaiosuberu:episode:5",
+          "url": "https://animecca.jp/ja/works/hyoukennomajutsushigasekaiosuberu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:hyoukennomajutsushigasekaiosuberu",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "TBS"
+      }
+    },
+    {
+      "id": "c753e9e1-1ede-5eb3-b839-725a75692ae8",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "战斗陀螺：贝王国篇 · 第139集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：BEYBLADE X ベイキングダム編。来源目录频道：YouTube。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-06T19:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/beiburedoekkusubeikingudamuhen",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:beiburedoekkusubeikingudamuhen:episode:139",
+          "url": "https://animecca.jp/ja/works/beiburedoekkusubeikingudamuhen",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:beiburedoekkusubeikingudamuhen",
+        "episode_id": "139",
+        "episode_label": "第139集",
+        "channel": "YouTube"
+      }
+    },
+    {
+      "id": "2404e56e-833c-5648-abd3-2e1d581cfd71",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "某暗部的少女共栖 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T22:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://toaru-project.com/item/onair/index.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "toaruanbunoaitemu:onair",
+          "url": "https://toaru-project.com/item/onair/index.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:toaruanbunoaitemu:episode:5",
+          "url": "https://animecca.jp/ja/works/toaruanbunoaitemu",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:toaruanbunoaitemu",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "AT-X"
+      }
+    },
+    {
+      "id": "4a4da034-c96b-58d8-9703-9bc9f84d0e31",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "萤火虫之婚 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：フジテレビ。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://hotaru-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "hotaru-no-yomeiri:onair",
+          "url": "https://hotaru-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:hotaru-no-yomeiri:episode:5",
+          "url": "https://animecca.jp/ja/works/hotaru-no-yomeiri",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:hotaru-no-yomeiri",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "フジテレビ"
+      }
+    },
+    {
+      "id": "6a1bb5aa-0232-5a3a-b628-b900fd43514b",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "朱色面具 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：読売テレビ。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-07T17:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://the-vermilion-mask.com/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "shuiro-no-kamen:onair",
+          "url": "https://the-vermilion-mask.com/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:shuiro-no-kamen:episode:5",
+          "url": "https://animecca.jp/ja/works/shuiro-no-kamen",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:shuiro-no-kamen",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "読売テレビ"
+      }
+    },
+    {
+      "id": "e68a2d89-143c-51ae-a467-be0fe9f40f7e",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "紫禁御猫房：紫禁城猫警备室 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-04T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://nekokeibishitsu-anime.com/onair/",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "shikin-onbyoubou:onair",
+          "url": "https://nekokeibishitsu-anime.com/onair/",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:shikin-onbyoubou:episode:8",
+          "url": "https://animecca.jp/ja/works/shikin-onbyoubou",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:shikin-onbyoubou",
+        "episode_id": "8",
+        "episode_label": "第8集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "ba23d053-766f-55a4-b887-7157fd482d36",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "恐怖收藏家 · 第5集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：恐怖コレクター。来源目录频道：NHK総合。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T23:45:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/kyoufukorekuta",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kyoufukorekuta:episode:5",
+          "url": "https://animecca.jp/ja/works/kyoufukorekuta",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kyoufukorekuta",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "NHK総合"
+      }
+    },
+    {
+      "id": "73fc51a6-cf2b-5cda-a512-f3b67d0a3b29",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "夜樱家的大作战 第二季 后半篇 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TBS。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T17:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://mission-yozakura-family.com/onair/02.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "yozakurasanchinodaisakusen-tid8011:onair",
+          "url": "https://mission-yozakura-family.com/onair/02.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:yozakurasanchinodaisakusen-tid8011:episode:44",
+          "url": "https://animecca.jp/ja/works/yozakurasanchinodaisakusen-tid8011",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:yozakurasanchinodaisakusen-tid8011",
+        "episode_id": "44",
+        "episode_label": "第44集",
+        "channel": "TBS"
+      }
+    },
+    {
+      "id": "5372ffc7-5e3e-513e-bd07-62351c15adfd",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "钻石王牌 第二幕 第二季 后半篇 · 第18集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：ダイヤのA actII -Second Season- 第2クール。来源目录频道：テレビ愛知。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T17:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/daiyanoesuakutotsusekandoshizun-tid8054",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:daiyanoesuakutotsusekandoshizun-tid8054:episode:18",
+          "url": "https://animecca.jp/ja/works/daiyanoesuakutotsusekandoshizun-tid8054",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:daiyanoesuakutotsusekandoshizun-tid8054",
+        "episode_id": "18",
+        "episode_label": "第18集",
+        "channel": "テレビ愛知"
+      }
+    },
+    {
+      "id": "b544225c-b252-5aa7-8ea1-51cad2ee77ed",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "与零信徒女神开始的异世界攻略 · 第5集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：信者ゼロの女神サマと始める異世界攻略。来源目录频道：BS朝日。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T23:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/shinjazeronomegamisamatohajimeruisekaiko",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:shinjazeronomegamisamatohajimeruisekaiko:episode:5",
+          "url": "https://animecca.jp/ja/works/shinjazeronomegamisamatohajimeruisekaiko",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:shinjazeronomegamisamatohajimeruisekaiko",
+        "episode_id": "5",
+        "episode_label": "第5集",
+        "channel": "BS朝日"
+      }
+    },
+    {
+      "id": "1ca1d4bd-778e-53e2-b9c5-1e54b963f593",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "弹珠汽水瓶里的千岁同学 后半篇 · 播出（常规时段）",
+      "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
+      "status": "tentative",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-04T00:30:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://chiramune.com/onair/index.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "chitosekunharamunebinnonaka-tid8022:onair",
+          "url": "https://chiramune.com/onair/index.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        },
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:chitosekunharamunebinnonaka-tid8022:episode:17",
+          "url": "https://animecca.jp/ja/works/chitosekunharamunebinnonaka-tid8022",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:chitosekunharamunebinnonaka-tid8022",
+        "episode_id": "17",
+        "episode_label": "第17集",
+        "channel": "TOKYO MX"
+      }
+    },
+    {
+      "id": "33b5acaa-a4a0-593d-87da-36437581a840",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "黑暗机械 动画版 · 第4集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：DARK MACHINE THE ANIMATION。来源目录频道：フジテレビ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-04T01:45:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/dakumashinjianimeshon",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:dakumashinjianimeshon:episode:4",
+          "url": "https://animecca.jp/ja/works/dakumashinjianimeshon",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:dakumashinjianimeshon",
+        "episode_id": "4",
+        "episode_label": "第4集",
+        "channel": "フジテレビ"
+      }
+    },
+    {
+      "id": "a16f1f35-9d53-5221-af8e-edd44cd4c813",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "梦境之地 · 第4集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：dreamland。来源目录频道：ABCテレビ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T02:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/dorimurando",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:dorimurando:episode:4",
+          "url": "https://animecca.jp/ja/works/dorimurando",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:dorimurando",
+        "episode_id": "4",
+        "episode_label": "第4集",
+        "channel": "ABCテレビ"
+      }
+    },
+    {
+      "id": "6fad19d7-ff6f-58eb-9ef8-db5b55c45d49",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "卡片战斗先导者：神圣命运星战篇 · 第1集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：カードファイト!! ヴァンガード Divinez 運命星戦編。来源目录频道：テレビ愛知。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-07T08:00:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/kadofaitou-angadodiu-ainzuunmeiseisenhen",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kadofaitou-angadodiu-ainzuunmeiseisenhen:episode:1",
+          "url": "https://animecca.jp/ja/works/kadofaitou-angadodiu-ainzuunmeiseisenhen",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kadofaitou-angadodiu-ainzuunmeiseisenhen",
+        "episode_id": "1",
+        "episode_label": "第1集",
+        "channel": "テレビ愛知"
+      }
+    },
+    {
+      "id": "c89d987c-c1f6-5a23-8cd4-35ba9ae94bd3",
+      "category": "anime",
+      "event_type": "episode_airing",
+      "title": "古坟医生科菲 急诊室 · 第1集（待复核）",
+      "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：古墳ドクター コフィーER。来源目录频道：TSKさんいん中央テレビ。仅导出来源列出的下一集，不外推整季。",
+      "status": "tentative",
+      "schedule_state": "unverified",
+      "time_kind": "datetime",
+      "start": "2026-11-08T01:15:00+09:00",
+      "end": null,
+      "timezone": "Asia/Tokyo",
+      "url": "https://animecca.jp/ja/works/kofun-doctor-coffy-er",
+      "sources": [
+        {
+          "provider": "animecca / しょぼいカレンダー",
+          "source_id": "animecca:kofun-doctor-coffy-er:episode:1",
+          "url": "https://animecca.jp/ja/works/kofun-doctor-coffy-er",
+          "checked_at": "2026-11-02T00:00:00Z",
+          "authority": "aggregator"
+        }
+      ],
+      "revision": 2,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "anime": {
+        "series_id": "animecca:kofun-doctor-coffy-er",
+        "episode_id": "1",
+        "episode_label": "第1集",
+        "channel": "TSKさんいん中央テレビ"
+      }
+    },
+    {
+      "id": "d745fb1f-ca77-597e-8a47-923ec6c45dd2",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "鸣潮 3.8版本前瞻通讯",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-06T19:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.taptap.cn/moment/864937105405511398?group_id=330015",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "wuwa:livestream:2026-11-06T19:00:00+08:00",
+          "url": "https://www.taptap.cn/moment/864937105405511398?group_id=330015",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "wuwa",
+        "server": "cn",
+        "version": "3.8"
+      }
+    },
+    {
+      "id": "c74608bc-a74b-578f-81ad-6f60048cdcb6",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "战双帕弥什「流光抛诸寰宇」版本更新",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-05",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.taptap.cn/moment/862292081488432698",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "pgr:version_update:2026-11-05",
+          "url": "https://www.taptap.cn/moment/862292081488432698",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "pgr",
+        "server": "cn",
+        "version": ""
+      }
+    },
+    {
+      "id": "f5bd3968-6eda-5ac9-b517-f9c3764f5edd",
+      "category": "game",
+      "event_type": "banner",
+      "title": "战双帕弥什 降临狙击：比安卡／七实／海伦汀",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-29T07:00:00+08:00",
+      "end": "2026-11-12T06:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.taptap.cn/app/130651/topic?sort=created&type=official",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "pgr:banner:2026-10-29T07:00:00+08:00",
+          "url": "https://www.taptap.cn/app/130651/topic?sort=created&type=official",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "pgr",
+        "server": "cn",
+        "version": ""
+      }
+    },
+    {
+      "id": "a1ab3ffb-3f9f-5101-a346-44aafe197d8b",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "重返未来：1999 4.1「亚特兰蒂斯谋杀案」",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-05",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://sina.cn/news/detail/5357876647822380.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "reverse1999:version_update:2026-11-05",
+          "url": "https://sina.cn/news/detail/5357876647822380.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "reverse1999",
+        "server": "cn",
+        "version": "4.1"
+      }
+    },
+    {
+      "id": "e0db3cbb-57aa-5e4b-8574-cc8698943584",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "无限暖暖 3.0版本更新",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-27",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://infinitynikki.nuanpaper.com/news/1088",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "infinitynikki:version_update:2026-11-27",
+          "url": "https://infinitynikki.nuanpaper.com/news/1088",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "infinitynikki",
+        "server": "cn",
+        "version": "3.0"
+      }
+    },
+    {
+      "id": "ca2135bc-90f5-5de7-9bf8-d806603c0a0b",
+      "category": "game",
+      "event_type": "banner",
+      "title": "未定事件簿 轮替女神之影：最佳拍档／风烛引归",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-30T11:00:00+08:00",
+      "end": "2026-11-13T11:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.sina.cn/news/detail/5359311099790026.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "tearsofthemis:banner:2026-10-30T11:00:00+08:00",
+          "url": "https://www.sina.cn/news/detail/5359311099790026.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "tearsofthemis",
+        "server": "cn",
+        "version": ""
+      }
+    },
+    {
+      "id": "d8ef5d1b-402e-5ab7-b2b0-38b69080186b",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "胜利女神：妮姬 四周年第二阶段更新",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-05",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://press.levelinfinite.com/de-DE/THE-BATTLE-FOR-HUMANITYS-FUTURE-ESCALATES-AS-GODDESS-OF-VICTORY-NIKKE-",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "nikke-global:version_update:2026-11-05",
+          "url": "https://press.levelinfinite.com/de-DE/THE-BATTLE-FOR-HUMANITYS-FUTURE-ESCALATES-AS-GODDESS-OF-VICTORY-NIKKE-",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "nikke-global",
+        "server": "global",
+        "version": ""
+      }
+    },
+    {
+      "id": "5a741b2d-549d-5726-903e-b006bb1613e2",
+      "category": "game",
+      "event_type": "banner",
+      "title": "命运／冠位指定 OVER THE SAME SKY-OCTOBER-推荐召唤",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-27T19:00:00+08:00",
+      "end": "2026-11-10T13:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.sina.cn/news/detail/5357228627329831.html",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "fgo:banner:2026-10-27T19:00:00+08:00",
+          "url": "https://www.sina.cn/news/detail/5357228627329831.html",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "fgo",
+        "server": "cn",
+        "version": ""
+      }
+    },
+    {
+      "id": "8d293122-7f58-5204-b2c2-fa9d71b0f025",
+      "category": "game",
+      "event_type": "banner",
+      "title": "光与夜之恋 旎梦伴天光·复刻Ⅰ",
+      "description": "已核对公告所列日期或时刻；仅日期的事件不推测开服钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-01T05:00:00+08:00",
+      "end": "2026-11-08T04:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.taptap.cn/moment/865702176905758946?group_id=225937",
+      "sources": [
+        {
+          "provider": "official",
+          "source_id": "lightnight:banner:2026-11-01T05:00:00+08:00",
+          "url": "https://www.taptap.cn/moment/865702176905758946?group_id=225937",
+          "checked_at": "2026-11-02T02:00:00Z",
+          "authority": "official"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T00:00:00Z",
+      "updated_at": "2026-11-02T02:00:00Z",
+      "game": {
+        "game_id": "lightnight",
+        "server": "cn",
+        "version": ""
+      }
+    }
+  ]
+}
