@@ -217,7 +217,6 @@ watch(realAnimeUrl, () => { liveCopyState.value = '' })
                 <h4>{{ picker.mergedTitle }}</h4>
                 <p class="quota-fineprint">{{ picker.mergedHint }}</p>
                 <template v-if="supportsSelectedLanguage">
-                  <p role="status" class="quota-fineprint">{{ picker.mergedReady }}</p>
                   <template v-if="mergedUrl">
                     <code class="calendar-live-url">{{ mergedUrl }}</code>
                     <button class="btn btn-secondary" type="button" @click="copyMergedUrl">{{ picker.mergedCopy }}</button>
@@ -228,7 +227,6 @@ watch(realAnimeUrl, () => { liveCopyState.value = '' })
                 <p v-else class="quota-fineprint">{{ seasonLanguage === 'zh-CN' && mergeApiStatus === 'ready' ? picker.chineseMergeUnavailable : picker.mergedUnavailable }}</p>
                 <p role="status" aria-live="polite" class="quota-fineprint">{{ mergedCopyState }}</p>
               </section>
-              <p class="quota-fineprint">{{ picker.selectHint }}</p>
               <button class="btn btn-secondary" type="button" :disabled="!selectedSeasonShows.length" @click="copySelectedShows">{{ picker.copyAll }}</button>
               <p role="status" aria-live="polite" class="quota-fineprint">{{ seasonCopyState }}</p>
               <ul v-if="selectedSeasonShows.length">

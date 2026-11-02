@@ -3,7 +3,6 @@ import { computed } from 'vue'
 import projectArtwork from '../assets/projects/project-004.svg'
 import { useI18n } from 'vue-i18n'
 import { calendarCopy } from '../data/calendar'
-import { animeSeasonCopy } from '../data/animeSeason'
 import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
@@ -13,7 +12,6 @@ const selectionCopy = {
   ja: { open: 'スケジュールを選択', intro: 'ゲームと今期アニメを選び、更新・予告配信・ガチャ・放送予定をカレンダーへ書き出せます。', warning: '選択画面からICSをダウンロードできます。確認状況と更新日は機能ページをご覧ください。継続購読は下の入口から管理できます。' },
 }
 const c = computed(() => ({ ...(calendarCopy[locale.value] || calendarCopy.zh), ...(selectionCopy[locale.value] || selectionCopy.zh) }))
-const p = computed(() => animeSeasonCopy[locale.value] || animeSeasonCopy.zh)
 </script>
 
 <template>
@@ -31,21 +29,8 @@ const p = computed(() => animeSeasonCopy[locale.value] || animeSeasonCopy.zh)
         <figcaption><span v-for="label in c.categories" :key="label">{{ label }}</span></figcaption>
       </figure>
     </div>
-    <p class="calendar-notice">{{ c.warning }}</p>
-    <section class="calendar-live-panel" :aria-label="c.liveAnimeTitle">
-      <p class="quota-eyebrow">LIVE / ANILIST</p>
-      <h2>{{ c.liveAnimeTitle }}</h2>
-      <p>{{ c.liveAnimeDescription }}</p>
-      <div class="calendar-live-actions">
-        <RouterLink to="/projects/004/subscribe#anime-season-picker">{{ p.title }} ↗</RouterLink>
-      </div>
-      <p class="quota-fineprint">{{ p.selectHint }}</p>
-    </section>
     <div class="quota-features"><article v-for="(feature, index) in c.features" :key="feature[0]"><span>0{{ index + 1 }}</span><h2>{{ feature[0] }}</h2><p>{{ feature[1] }}</p></article></div>
-    <div class="calendar-overview">
-      <section><h2>{{ c.scope }}</h2><ul><li v-for="item in c.coverage" :key="item">{{ item }}</li></ul></section>
-      <section><h2>{{ c.how }}</h2><ol><li v-for="step in c.steps" :key="step">{{ step }}</li></ol></section>
-    </div>
+
   </section>
 </template>
 
