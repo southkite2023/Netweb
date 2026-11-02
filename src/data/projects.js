@@ -29,8 +29,8 @@ export const projects = [
   {
     id: '002',
     title: {
-      zh: '星垣',
-      en: 'ASTERION SMP',
+      zh: '星垣 ASTERION SMP',
+      en: '星垣 ASTERION SMP',
       ja: '星垣 ASTERION SMP',
     },
     summary: {
