@@ -6,6 +6,7 @@
  * user account, user token, or outbound user-supplied URL is involved.
  */
 import { createHash } from 'node:crypto'
+import { registerSelectionFeed } from './selection-feed.js'
 
 const TRUSTED_UPSTREAM = 'https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime'
 const MAX_SHOWS = 80
@@ -164,6 +165,8 @@ export function registerCalendarFeed(app, {
       throw error
     }
   }
+
+  registerSelectionFeed(app, { getAnimeCalendar: () => getCalendar('span', 'zh-CN') })
 
   app.get('/api/calendar/v1/health', { config: { rateLimit: { max: 60, timeWindow: '1 minute' } } },
     async () => ({ ok: true, service: 'anime-ics-selection', version: 2, languages: ['ja', 'zh-CN'] }))

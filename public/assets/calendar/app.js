@@ -1,10 +1,11 @@
-import { makeCalendar } from './calendar.js';
+import { subscriptionUrl } from './subscription.js';
 const $ = s => document.querySelector(s);
 import { catalog, metadata } from './catalog.js';
 const chosen = new Map();
 let editing, opener;
 const types = {livestream:'前瞻',version_update:'版本',banner:'卡池'};
 function draw(){
+  $('#subscription-result').hidden=true;
   for(const kind of ['games','anime']){
     const query=$(`#${kind}-search`).value.trim().toLowerCase();
     const list=$(`#${kind}`);list.replaceChildren();
@@ -28,13 +29,26 @@ $('#remove').onclick=()=>{chosen.delete(editing);$('#options').close();draw();};
 $('#options-form').onsubmit=e=>{e.preventDefault();const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}chosen.set(editing,{kind:'games',types:selected,format:$('[name=format]:checked').value,duration:$('#duration').checked});$('#options').close();draw();};
 for(const kind of ['games','anime']){$(`#${kind}-search`).oninput=draw;$(`#${kind}-filter`).onchange=draw;}
 $('#generate').onclick=async()=>{
-  const status=$('#status');const demo=$('#demo').checked;
-  $('#generate').disabled=true;
-  try{const response=await fetch(demo?'../data/samples/events.json':'./data/events.json');if(!response.ok)throw Error('样例加载失败');const {events}=await response.json();const result=makeCalendar(events,chosen);const missing=[...chosen].filter(([id,c])=>!events.some(e=>e.schedule_state==='scheduled'&&e.start&&(c.kind==='anime'?e.category==='anime'&&e.anime.series_id===id:e.category==='game'&&e.game.game_id===id&&c.types.includes(e.event_type)))).map(([id])=>[...catalog.games,...catalog.anime].find(x=>x[0]===id)[1]);
-    if(!result.count){status.textContent='所选项目或事件类型暂无已核实排期，请查看来源或选择其他类型。';return;}
-    const blob=new Blob([result.text],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=demo?'yuashie-fictional-sample.ics':'yuashie-calendar.ics';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent=`已生成 ${result.count} 条${demo?'虚构测试':'来源支持的'}日程。动漫仅导出经官网时段核对的下一次播出；常规周播标为暂定。${missing.length?' 未导出（所选类型暂无排期）：'+missing.join('、'):' 所选项目均有日程。'}`;
-  }catch(error){status.textContent='加载失败，请通过本地服务打开页面后重试。';}finally{$('#generate').disabled=!chosen.size;}
-};draw();
+ const status=$('#status');$('#generate').disabled=true;$('#subscription-result').hidden=true;
+ try{
+  const {url,missing}=subscriptionUrl(chosen,metadata);
+  if(missing.length){status.textContent='以下动漫尚未接入自动更新源，暂不能生成订阅：'+missing.map(id=>catalog.anime.find(x=>x[0]===id)[1]).join('、')+'。请取消这些条目后生成。';return;}
+  if(!url)return;
+  status.textContent='正在检查订阅服务…';
+  const response=await fetch(url,{headers:{Accept:'text/calendar'}});
+  if(!response.ok||!(response.headers.get('content-type')||'').includes('text/calendar'))throw Error('订阅服务暂时不可用，请稍后重试；已添加的订阅链接仍保持有效。');
+  if(subscriptionUrl(chosen,metadata).url!==url)return;
+  const body=await response.text();if(!body.startsWith('BEGIN:VCALENDAR'))throw Error('订阅返回异常，请稍后重试。');
+  $('#subscription-url').value=url;$('#subscribe-open').href=url.replace(/^https:/,'webcal:');$('#subscription-result').hidden=false;
+  status.textContent='订阅链接已生成。请在日历应用中通过网址订阅，后续按客户端刷新频率更新；不要选择导入文件。动漫连接现有自动更新源，游戏随公告数据维护更新。';
+ }catch(error){status.textContent=error.message;}finally{$('#generate').disabled=!chosen.size;}
+};
+$('#copy-subscription').onclick=async()=>{try{await navigator.clipboard.writeText($('#subscription-url').value);$('#status').textContent='已复制订阅链接，请在日历应用中选择“通过网址订阅”。';}catch{$('#subscription-url').focus();$('#subscription-url').select();$('#status').textContent='请手动复制已选中的订阅链接。';}};
+draw();
+fetch('https://southkite2023.github.io/yuashie-calendar/calendar/real/v1/anime/catalog/current-season.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{
+ for(const [id] of catalog.anime){const m=metadata[id];if(!m.anilist_id){m.label='尚未接入自动更新源';m.event_count=0;continue;}const show=data.shows.find(s=>s.id===m.anilist_id);m.event_count=show?.next_airing_at?1:0;m.label=show?.next_airing_at?new Date(show.next_airing_at*1000).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false})+' · 自动更新源':'已接入订阅 · 暂无下一集';}
+ $('#live-updated').textContent='自动更新源：'+data.updated_at+'；动漫时刻为北京时间，来源为社区排期。';draw();
+}).catch(()=>{$('#live-updated').textContent='暂时无法读取自动源目录，请以生成链接时的服务检查为准。';});
 
 const sources=document.querySelector('#sources');
 for(const [id,name] of [...catalog.games,...catalog.anime]){

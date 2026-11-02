@@ -504,7 +504,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-05T21:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 206401
   },
   "official:nama-anaru": {
     "original": "生徒会にも穴はある！",
@@ -528,7 +529,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T00:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 191656
   },
   "official:kikansha-season2": {
     "original": "帰還者の魔法は特別です 第二期",
@@ -552,7 +554,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-05T00:45:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 172192
   },
   "genshin": {
     "label": "7.2 更新 · 11月4日",
@@ -911,7 +914,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T23:40:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 185756
   },
   "animecca:shintenisunooujisamaandasebuntin-tid8044": {
     "original": "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦",
@@ -935,7 +939,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-05T01:36:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 199068
   },
   "animecca:precure-fairies-tid8073": {
     "original": "ぷちきゅあ シーズン4",
@@ -981,7 +986,8 @@ export const metadata = {
     "broadcast_region": "日本",
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 218942
   },
   "animecca:kizudarakenoseijoyorihoufukuokometeshizu": {
     "original": "傷だらけ聖女より報復をこめて Season2",
@@ -1005,7 +1011,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T00:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 212144
   },
   "animecca:koorinojouheki-tid8008": {
     "original": "氷の城壁 第2期",
@@ -1029,7 +1036,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-05T23:56:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 213805
   },
   "animecca:pandorobou": {
     "original": "パンどろぼう",
@@ -1053,7 +1061,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T18:40:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 194207
   },
   "animecca:aokidenshouwerushusheda": {
     "original": "蒼き伝承 ウェルシュ＆シェダー",
@@ -1077,7 +1086,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T21:25:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 216895
   },
   "animecca:kusuriya-no-hitorigoto-s3": {
     "original": "薬屋のひとりごと 第3期",
@@ -1101,7 +1111,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T23:30:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 195516
   },
   "animecca:temuparuaitemunochikara": {
     "original": "テムパル～アイテムの力～",
@@ -1149,7 +1160,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T00:00:00+09:00",
     "event_count": 0,
-    "verification_note": "官网日本电视台周五23:30，第三方次日00:00；暂不导出，等待逐集公告"
+    "verification_note": "官网日本电视台周五23:30，第三方次日00:00；暂不导出，等待逐集公告",
+    "anilist_id": 204650
   },
   "animecca:toukyouribenjazusantensensouhen": {
     "original": "東京リベンジャーズ 三天戦争編",
@@ -1173,7 +1185,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T01:23:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 178083
   },
   "animecca:kerorogunsou": {
     "original": "ケロロ軍曹☆",
@@ -1197,7 +1210,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T09:30:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 216557
   },
   "animecca:nezumikun-no-chokki-s2": {
     "original": "ねずみくんのチョッキ 第2期",
@@ -1221,7 +1235,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T09:30:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 214968
   },
   "animecca:shirotan": {
     "original": "しろたん",
@@ -1245,7 +1260,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T16:29:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 209709
   },
   "animecca:maronieoukokunoshichininnokishi": {
     "original": "マロニエ王国の七人の騎士",
@@ -1269,7 +1285,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T18:25:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 212799
   },
   "animecca:suikoden": {
     "original": "幻想水滸伝",
@@ -1293,7 +1310,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-03T23:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 187316
   },
   "animecca:tenseishitadaiseijohaseijodearukotoohita": {
     "original": "転生した大聖女は、聖女であることをひた隠す",
@@ -1341,7 +1359,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T23:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 195604
   },
   "animecca:funbarus": {
     "original": "ふんばるず",
@@ -1389,7 +1408,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T23:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 199007
   },
   "animecca:batekkusufosu": {
     "original": "バーテックスフォース",
@@ -1413,7 +1433,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T23:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 209562
   },
   "animecca:majikaruekusupurora": {
     "original": "マジカル★エクスプローラー",
@@ -1461,7 +1482,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T01:00:00+09:00",
     "event_count": 0,
-    "verification_note": "官网日本电视台周六24:55，第三方25:00；暂不导出，等待逐集公告"
+    "verification_note": "官网日本电视台周六24:55，第三方25:00；暂不导出，等待逐集公告",
+    "anilist_id": 209872
   },
   "animecca:kashitamaryokuharibobaraidekyouseichoush": {
     "original": "貸した魔力は【リボ払い】で強制徴収",
@@ -1485,7 +1507,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T02:25:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 202250
   },
   "animecca:tanuki-to-kitsune": {
     "original": "タヌキとキツネ",
@@ -1508,7 +1531,8 @@ export const metadata = {
     "broadcast_region": "日本",
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 218011
   },
   "animecca:yuruyuru-zukan": {
     "original": "ゆるゆる図鑑",
@@ -1531,7 +1555,8 @@ export const metadata = {
     "broadcast_region": "日本",
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 213298
   },
   "animecca:punirunzu-puni-4": {
     "original": "ぷにるんず ぷに4",
@@ -1555,7 +1580,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T09:15:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 216860
   },
   "animecca:poppu-pappu-porutazu": {
     "original": "ポップパップポルターズ",
@@ -1579,7 +1605,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T10:00:00+09:00",
     "event_count": 1,
-    "verification_note": "官网明确11月1日停播，第5集改为11月8日10:00（日本时间）"
+    "verification_note": "官网明确11月1日停播，第5集改为11月8日10:00（日本时间）",
+    "anilist_id": 217787
   },
   "animecca:aonohako-tid8007": {
     "original": "アオのハコ Season2",
@@ -1603,7 +1630,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T16:30:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 189123
   },
   "animecca:aoashi-s2": {
     "original": "アオアシ Season2",
@@ -1627,7 +1655,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T17:00:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 191788
   },
   "animecca:mezametarasaikyousoubitouchuusenmochidat": {
     "original": "目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい",
@@ -1651,7 +1680,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T21:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 186541
   },
   "animecca:ojisanhakawaiimonogaosuki": {
     "original": "おじさんはカワイイものがお好き。",
@@ -1675,7 +1705,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T22:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 202079
   },
   "animecca:mahounoshimairuruttoririi-tid8002": {
     "original": "魔法の姉妹ルルットリリィ 第2クール",
@@ -1699,7 +1730,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T22:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 209032
   },
   "animecca:tankucheasenshaisu": {
     "original": "TANK CHAIR-戦車椅子-",
@@ -1723,7 +1755,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T23:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 209499
   },
   "animecca:yowakimakkusureijounanoniratsuwankonyaku": {
     "original": "弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった",
@@ -1747,7 +1780,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T23:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 200455
   },
   "animecca:hoteruinhyumanzu-tid8016": {
     "original": "ホテル・インヒューマンズ 第2期",
@@ -1771,7 +1805,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T23:45:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 199426
   },
   "animecca:kanatakara": {
     "original": "彼方から",
@@ -1795,7 +1830,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-09T00:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 209463
   },
   "animecca:mausu-kasoru-de-genjitsu-wo-sousa": {
     "original": "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
@@ -1819,7 +1855,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-09T01:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 206774
   },
   "animecca:kanojonotomodachi": {
     "original": "彼女の友達",
@@ -1843,7 +1880,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-09T01:05:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 211877
   },
   "animecca:hitozukiai-ga-nigate-na-miboujin-no-yukionna-san": {
     "original": "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
@@ -1891,7 +1929,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-09T01:20:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 208025
   },
   "animecca:yuusanchi-from-yuuhachi": {
     "original": "ゆうさんち！from 遊ハち",
@@ -1914,7 +1953,8 @@ export const metadata = {
     "broadcast_region": "日本",
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 214593
   },
   "animecca:doumosukinahitonihorekusurioiraisaretama": {
     "original": "どうも、好きな人に惚れ薬を依頼された魔女です。",
@@ -1938,7 +1978,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-02T21:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 207191
   },
   "animecca:tenseigoburindakedoshitsumonaru": {
     "original": "転生ゴブリンだけど質問ある？",
@@ -1986,7 +2027,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-02T23:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 204011
   },
   "animecca:romeriasenki": {
     "original": "ロメリア戦記",
@@ -2034,7 +2076,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-03T02:06:00+09:00",
     "event_count": 0,
-    "verification_note": "官网电视东京周一深夜02:00，第三方02:06；暂不导出，等待逐集公告"
+    "verification_note": "官网电视东京周一深夜02:00，第三方02:06；暂不导出，等待逐集公告",
+    "anilist_id": 160803
   },
   "animecca:shiotaiounosatousangaorenidakeamai": {
     "original": "塩対応の佐藤さんが俺にだけ甘い",
@@ -2058,7 +2101,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-03T20:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 209502
   },
   "animecca:kyouranreijouniarisutonbyoujakureijounit": {
     "original": "凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録",
@@ -2082,7 +2126,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-03T21:25:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 206949
   },
   "animecca:batorusupirittsurizekkainokuu": {
     "original": "Battle Spirits [Re] 絶界の空",
@@ -2106,7 +2151,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-03T23:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 187990
   },
   "animecca:choujunchoujousenpai": {
     "original": "超巡！超条先輩",
@@ -2130,7 +2176,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-03T23:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 200294
   },
   "animecca:tsuihousaretachitofuyomajutsushihakimama": {
     "original": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
@@ -2154,7 +2201,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-04T00:06:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 207329
   },
   "animecca:sasakitopichanshizuntsu": {
     "original": "佐々木とピーちゃん Season2",
@@ -2178,7 +2226,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-04T22:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 176314
   },
   "animecca:sekaisaikyounomajohajimemashita": {
     "original": "世界最強の魔女、始めました",
@@ -2202,7 +2251,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-04T22:00:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 211778
   },
   "animecca:tanteihamoushindeiru": {
     "original": "探偵はもう、死んでいる。 Season2",
@@ -2226,7 +2276,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-04T22:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 152677
   },
   "animecca:rayearth-2026": {
     "original": "魔法騎士レイアース",
@@ -2250,7 +2301,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-04T23:45:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 178868
   },
   "animecca:tenseishitarakendeshitatsu": {
     "original": "転生したら剣でしたⅡ",
@@ -2298,7 +2350,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-05T00:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 213068
   },
   "animecca:hyakuyoufudaisankikikeishihen": {
     "original": "百妖譜 第3期京師篇",
@@ -2346,7 +2399,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T00:00:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 199594
   },
   "animecca:hyoukennomajutsushigasekaiosuberu": {
     "original": "冰剣の魔術師が世界を統べるⅡ",
@@ -2370,7 +2424,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T01:28:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 212503
   },
   "animecca:beiburedoekkusubeikingudamuhen": {
     "original": "BEYBLADE X ベイキングダム編",
@@ -2418,7 +2473,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T22:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 186742
   },
   "animecca:hotaru-no-yomeiri": {
     "original": "ホタルの嫁入り",
@@ -2442,7 +2498,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-06T23:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 205909
   },
   "animecca:shuiro-no-kamen": {
     "original": "朱色の仮面",
@@ -2466,7 +2523,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T17:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 195571
   },
   "animecca:shikin-onbyoubou": {
     "original": "紫禁・御猫房〜紫禁城猫警備室〜",
@@ -2514,7 +2572,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T23:45:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 203473
   },
   "animecca:yozakurasanchinodaisakusen-tid8011": {
     "original": "夜桜さんちの大作戦(第2期)第2クール",
@@ -2538,7 +2597,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T17:00:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 213657
   },
   "animecca:daiyanoesuakutotsusekandoshizun-tid8054": {
     "original": "ダイヤのA actII -Second Season- 第2クール",
@@ -2562,7 +2622,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T17:30:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 213658
   },
   "animecca:doragon-boru-supa-birusu": {
     "original": "ドラゴンボール超 ビルス",
@@ -2585,7 +2646,8 @@ export const metadata = {
     "broadcast_region": "日本",
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 206814
   },
   "animecca:shinjazeronomegamisamatohajimeruisekaiko": {
     "original": "信者ゼロの女神サマと始める異世界攻略",
@@ -2609,7 +2671,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-08T23:30:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 205896
   },
   "animecca:chitosekunharamunebinnonaka-tid8022": {
     "original": "千歳くんはラムネ瓶のなか 第2クール",
@@ -2633,7 +2696,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-04T00:30:00+09:00",
     "event_count": 1,
-    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认"
+    "verification_note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
+    "anilist_id": 198727
   },
   "animecca:dakumashinjianimeshon": {
     "original": "DARK MACHINE THE ANIMATION",
@@ -2656,7 +2720,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-04T01:45:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 179876
   },
   "animecca:munoumajo-bureinresu-witchi": {
     "original": "無脳魔女 ブレインレス・ウィッチ",
@@ -2726,7 +2791,8 @@ export const metadata = {
     "broadcast_region": "日本",
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 217282
   },
   "animecca:watashi-no-shiawase-na-kekkon-tokubetsuhen": {
     "original": "わたしの幸せな結婚 特別篇",
@@ -2773,7 +2839,8 @@ export const metadata = {
     "translation_note": "中文显示名为检索译名，部分为本站意译；原名用于识别，不代表官方中文定名",
     "next_airing": "2026-11-07T08:00:00+09:00",
     "event_count": 0,
-    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出"
+    "verification_note": "官网未取得可确认的当前频道时刻；暂不导出",
+    "anilist_id": 214536
   },
   "animecca:kofun-doctor-coffy-er": {
     "original": "古墳ドクター コフィーER",

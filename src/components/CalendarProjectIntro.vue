@@ -8,7 +8,7 @@ import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
 const selectionCopy = {
-  zh: { open: '进入日程选择', intro: '选择关注的游戏与当季动漫，按需导出版本更新、前瞻、卡池和播出时间，放进自己的日历。', warning: '日程选择支持 ICS 文件下载。排期核验状态与更新时间以功能页为准；动态订阅可从下方入口管理。' },
+  zh: { open: '进入日程选择', intro: '选择关注的游戏与当季动漫，生成固定订阅链接，让日历获取后续排期。', warning: '通过固定网址订阅日历。动漫连接定时更新源；游戏随公告数据维护更新。刷新频率由日历客户端决定。' },
   en: { open: 'Choose schedules', intro: 'Choose games and seasonal anime, then export updates, previews, banners and airings to your calendar.', warning: 'Export an ICS file from the schedule picker. Check verification status and freshness there; dynamic subscriptions are available below.' },
   ja: { open: 'スケジュールを選択', intro: 'ゲームと今期アニメを選び、更新・予告配信・ガチャ・放送予定をカレンダーへ書き出せます。', warning: '選択画面からICSをダウンロードできます。確認状況と更新日は機能ページをご覧ください。継続購読は下の入口から管理できます。' },
 }
