@@ -9,7 +9,9 @@ test('WeChat authorization and identity exchange reject upstream failures', asyn
  process.env.OAUTH_WECHAT_CLIENT_ID='test-app'
  process.env.OAUTH_WECHAT_CLIENT_SECRET='test-secret'
  try {
-  assert.equal(accountConfig({}).providers.find(p=>p.id==='wechat').enabled,false)
+  assert.equal(accountConfig({}).providers.some(p=>p.id==='wechat'),false)
+  assert.equal(accountConfig({OAUTH_WECHAT_ENABLED:'true'}).providers.find(p=>p.id==='wechat').enabled,false)
+  assert.equal(accountConfig({OAUTH_WECHAT_ENABLED:'true',OAUTH_WECHAT_CLIENT_ID:'test',OAUTH_WECHAT_CLIENT_SECRET:'secret'}).providers.find(p=>p.id==='wechat').enabled,true)
   const url=new URL(authorizationUrl('wechat','https://yuashie.cn','state-proof','verifier','nonce'))
   assert.equal(url.searchParams.get('appid'),'test-app')
   assert.equal(url.searchParams.get('scope'),'snsapi_login')

@@ -23,7 +23,7 @@ export function accountConfig(env = process.env) {
   return {
     captchaRequired, captchaConfigured: !!(keys && captcha), sms: !!(keys && env.ALIYUN_PNVS_ENABLED === 'true' && env.ALIYUN_PNVS_SIGN_NAME && env.ALIYUN_PNVS_TEMPLATE_CODE && (env.ALIYUN_PNVS_SCHEME_NAME || '').length <= 20), passwordReset: email, emailVerification: email,
     captcha: captchaRequired && captcha ? { sceneId: env.ALIYUN_CAPTCHA_SCENE_ID, prefix: env.ALIYUN_CAPTCHA_PREFIX, region: env.ALIYUN_CAPTCHA_REGION === 'sgp' ? 'sgp' : 'cn' } : null,
-    providers: ['qq','github','google','wechat'].map(id => ({ id, name: {qq:'QQ',github:'GitHub',google:'Google',wechat:'微信'}[id], enabled: !!(env[`OAUTH_${id.toUpperCase()}_CLIENT_ID`] && env[`OAUTH_${id.toUpperCase()}_CLIENT_SECRET`]) })),
+    providers: ['qq','github','google','wechat'].filter(id => id !== 'wechat' || env.OAUTH_WECHAT_ENABLED === 'true').map(id => ({ id, name: {qq:'QQ',github:'GitHub',google:'Google',wechat:'微信'}[id], enabled: !!(env[`OAUTH_${id.toUpperCase()}_CLIENT_ID`] && env[`OAUTH_${id.toUpperCase()}_CLIENT_SECRET`]) })),
   }
 }
 export async function verifyCaptcha(param) {
