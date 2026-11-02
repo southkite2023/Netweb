@@ -54,6 +54,7 @@ const router = createRouter({
       name: 'identity-backup',
       component: IdentityBackupView,
     },
+    { path: '/projects/004/select', name: 'calendar-select', component: () => import('../views/CalendarSelectionView.vue') },
     { path: '/projects/004/subscribe', name: 'calendar-subscribe', component: () => import('../views/CalendarSubscribeView.vue') },
     { path: '/projects/calendar', redirect: '/projects/004' },
     { path: '/projects/calendar/subscribe', redirect: '/projects/004/subscribe' },

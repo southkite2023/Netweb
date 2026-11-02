@@ -8,6 +8,7 @@ import CommentSection from '../components/CommentSection.vue'
 import MinecraftWhitelistPanel from '../components/MinecraftWhitelistPanel.vue'
 import RadioProjectPanel from '../components/RadioProjectPanel.vue'
 import QuotaProjectIntro from '../components/QuotaProjectIntro.vue'
+import CalendarProjectIntro from '../components/CalendarProjectIntro.vue'
 import { localizedField, projects } from '../data/projects'
 
 const route = useRoute()
@@ -25,10 +26,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
         <RouterLink class="detail-back" to="/project">← {{ t('projectArchive.back') }}</RouterLink>
 
         <QuotaProjectIntro v-if="project.id === '001'" />
-        <section v-if="project.id === '004'" class="calendar-selection-panel">
-          <iframe class="calendar-selection-frame" src="/assets/calendar/index.html" title="日程选择：游戏与动漫"></iframe>
-          <RouterLink to="/projects/004/subscribe">管理动态日历订阅 →</RouterLink>
-        </section>
+        <CalendarProjectIntro v-if="project.id === '004'" />
 
         <header v-if="!['001', '004'].includes(project.id)" class="detail-header">
           <div class="detail-kicker">
@@ -91,9 +89,4 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
   align-items: center;
   gap: 12px;
 }
-</style>
-
-<style scoped>
-.calendar-selection-frame { display:block; width:100%; height:1120px; border:0; border-radius:16px; margin:24px 0; background:#f5f6f1; }
-@media(max-width:700px){.calendar-selection-frame{height:1560px;}}
 </style>

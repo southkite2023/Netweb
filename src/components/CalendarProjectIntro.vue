@@ -7,7 +7,12 @@ import { animeSeasonCopy } from '../data/animeSeason'
 import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
-const c = computed(() => calendarCopy[locale.value] || calendarCopy.zh)
+const selectionCopy = {
+  zh: { open: '进入日程选择', intro: '选择关注的游戏与当季动漫，按需导出版本更新、前瞻、卡池和播出时间，放进自己的日历。', warning: '日程选择支持 ICS 文件下载。排期核验状态与更新时间以功能页为准；动态订阅可从下方入口管理。' },
+  en: { open: 'Choose schedules', intro: 'Choose games and seasonal anime, then export updates, previews, banners and airings to your calendar.', warning: 'Export an ICS file from the schedule picker. Check verification status and freshness there; dynamic subscriptions are available below.' },
+  ja: { open: 'スケジュールを選択', intro: 'ゲームと今期アニメを選び、更新・予告配信・ガチャ・放送予定をカレンダーへ書き出せます。', warning: '選択画面からICSをダウンロードできます。確認状況と更新日は機能ページをご覧ください。継続購読は下の入口から管理できます。' },
+}
+const c = computed(() => ({ ...(calendarCopy[locale.value] || calendarCopy.zh), ...(selectionCopy[locale.value] || selectionCopy.zh) }))
 const p = computed(() => animeSeasonCopy[locale.value] || animeSeasonCopy.zh)
 </script>
 
@@ -19,7 +24,7 @@ const p = computed(() => animeSeasonCopy[locale.value] || animeSeasonCopy.zh)
         <p class="quota-wordmark"><span class="quota-symbol" aria-hidden="true">C</span> ACG Calendar</p>
         <h1>{{ c.headline[0] }}<br><span>{{ c.headline[1] }}</span></h1>
         <p class="quota-intro">{{ c.intro }}</p>
-        <RouterLink class="quota-primary" to="/projects/004/subscribe">{{ c.open }} <span aria-hidden="true">↗</span></RouterLink>
+        <RouterLink class="quota-primary" to="/projects/004/select">{{ c.open }} <span aria-hidden="true">↗</span></RouterLink>
       </header>
       <figure class="project-vector-hero">
         <img :src="projectArtwork" width="1280" height="800" alt="ACG Calendar" decoding="async">
