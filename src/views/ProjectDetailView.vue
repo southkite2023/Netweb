@@ -26,7 +26,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
 
         <QuotaProjectIntro v-if="project.id === '001'" />
         <section v-if="project.id === '004'" class="calendar-selection-panel">
-          <iframe class="calendar-selection-frame" src="/calendar/index.html" title="日程选择：游戏与动漫"></iframe>
+          <iframe class="calendar-selection-frame" src="/assets/calendar/index.html" title="日程选择：游戏与动漫"></iframe>
           <RouterLink to="/projects/004/subscribe">管理动态日历订阅 →</RouterLink>
         </section>
 
