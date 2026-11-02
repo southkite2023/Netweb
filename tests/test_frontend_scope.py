@@ -91,8 +91,12 @@ class FrontendScopeTests(unittest.TestCase):
     def test_reviewed_bilingual_calendar_v2_only_exact_pinned_blobs(self):
         root = SCRIPT.parents[1]
         pinned = runpy.run_path(str(SCRIPT))['CALENDAR_ZH_V2_RELEASE_BLOBS']
-        for filename in pinned:
-            self.write(filename, (root / filename).read_text())
+        for filename, blob_sha in pinned.items():
+            # This exception is permanently tied to the historical v2 release,
+            # not the current source (which may contain a newer API upgrade).
+            content = subprocess.run(['git', 'cat-file', 'blob', blob_sha],
+                                     cwd=root, check=True, capture_output=True, text=True).stdout
+            self.write(filename, content)
         target = self.commit('reviewed bilingual API v2')
         self.check(target, False)
         self.check(target, True, zh_v2=True)
@@ -100,16 +104,24 @@ class FrontendScopeTests(unittest.TestCase):
     def test_unpinned_or_extra_backend_changes_never_pass_v2_flag(self):
         root = SCRIPT.parents[1]
         pinned = runpy.run_path(str(SCRIPT))['CALENDAR_ZH_V2_RELEASE_BLOBS']
-        for filename in pinned:
-            self.write(filename, (root / filename).read_text())
+        for filename, blob_sha in pinned.items():
+            # This exception is permanently tied to the historical v2 release,
+            # not the current source (which may contain a newer API upgrade).
+            content = subprocess.run(['git', 'cat-file', 'blob', blob_sha],
+                                     cwd=root, check=True, capture_output=True, text=True).stdout
+            self.write(filename, content)
         self.write('server/src/unknown-privileged-module.js', 'unauthorized code')
         self.check(self.commit('unexpected additional backend file'), False, zh_v2=True)
 
     def test_bilingual_v2_rejects_modified_target_blob(self):
         root = SCRIPT.parents[1]
         pinned = runpy.run_path(str(SCRIPT))['CALENDAR_ZH_V2_RELEASE_BLOBS']
-        for filename in pinned:
-            self.write(filename, (root / filename).read_text())
+        for filename, blob_sha in pinned.items():
+            # This exception is permanently tied to the historical v2 release,
+            # not the current source (which may contain a newer API upgrade).
+            content = subprocess.run(['git', 'cat-file', 'blob', blob_sha],
+                                     cwd=root, check=True, capture_output=True, text=True).stdout
+            self.write(filename, content)
         self.write('server/src/calendar-feed.js', 'modified and not verified')
         self.check(self.commit('tampered backend'), False, zh_v2=True)
 
