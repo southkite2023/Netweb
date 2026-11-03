@@ -5,6 +5,8 @@ import { useRoute, useRouter } from 'vue-router'
 import PrivacyPanel from './components/PrivacyPanel.vue'
 import CloudSyncPanel from './components/CloudSyncPanel.vue'
 import BackToTop from './components/BackToTop.vue'
+import { stopWeather } from './lib/weather'
+import WeatherEffect from './components/WeatherEffect.vue'
 import Live2DCompanion from './components/Live2DCompanion.vue'
 import { experienceCopy } from './data/experience'
 import { directoryEntries } from './data/directory'
@@ -28,6 +30,7 @@ function onKey(event) {
 function retry() { window.location.assign(router.resolve(failedPath.value || route.fullPath).href) }
 function skip() { document.querySelector('main')?.focus() }
 watchEffect(() => {
+  if (['/login', '/register', '/forgot-password'].includes(route.path) || route.path.startsWith('/auth/')) stopWeather()
   const entry = directoryEntries(locale.value).find(item => item.path === route.path)
   const title = entry?.title || ({ 'quota-download': 'Quota Hub', 'quota-guide': 'Quota Hub · Guide', home: c.value.home, projects: c.value.projects, 'not-found': '404', register: c.value.login }[route.name]) || 'Yuashie'
   document.title = title === 'Yuashie' ? title : `${title} · Yuashie`
@@ -50,6 +53,7 @@ onBeforeUnmount(() => {
   <div v-if="navigationPending" class="route-progress" role="status" :aria-label="c.loading"></div>
   <div v-if="offline" class="connection-banner" role="status">{{ c.offline }}</div>
   <RouterView />
+  <WeatherEffect />
   <CloudSyncPanel />
   <PrivacyPanel />
   <div v-if="navigationError" class="route-error" role="alert"><p>{{ c.routeError }}</p><button class="btn btn-primary" @click="retry">{{ c.retry }}</button></div>

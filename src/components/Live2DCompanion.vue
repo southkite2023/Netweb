@@ -1,8 +1,22 @@
 <script setup>
-import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { modelBase, runtimeBase } from 'virtual:live2d-assets'
 import { waitForAssetCache } from '../lib/assetCache'
 
+import { weather, stopWeather } from '../lib/weather'
+import { isLightMode } from '../lib/theme'
+
+const bubbleVisible = ref(false)
+let bubbleTimer
+function say(text) {
+  message.value = text
+  bubbleVisible.value = true
+  clearTimeout(bubbleTimer)
+  bubbleTimer = setTimeout(() => { bubbleVisible.value = false }, 3000)
+}
+function greeting() { return weather.value === 'rain' ? '下雨啦，陪你听一会儿雨。侧边上方按钮可以收起雨幕。' : weather.value === 'meteors' ? '流星来了，许个愿吧！侧边上方按钮可以收起星雨。' : isLightMode.value ? '阳光正好，一起逛逛吧。切换主题偶尔会遇到小雨哦。' : '夜色真好，陪你看看星空。切换主题偶尔会遇到流星哦。' }
+function closeWeather() { stopWeather(); say('天气特效已收好，安心阅读吧。') }
+watch([weather, isLightMode], () => { if (visible.value) say(greeting()) }, { flush: 'sync' })
 const canvas = ref(null)
 const attempt = ref(0)
 const host = ref(null)
@@ -137,6 +151,7 @@ async function initialize() {
     fitModel()
     setAnimation()
     ready.value = true
+    if (visible.value) say(greeting())
     resizeObserver = new ResizeObserver(() => {
       if (!visible.value || !host.value || !app) return
       fitModel()
@@ -161,10 +176,10 @@ async function choose(choice) {
     const applied = await current.expression(choice.name)
     if (current !== model || request !== expressionRequest) return
     if (!applied) throw new Error('Expression unavailable')
-    message.value = choice.line
+    say(choice.line)
     if (!animated.value) { current.update(1000); app.renderer.render(app.stage) }
   } catch (error) {
-    if (current === model) message.value = '这个表情暂时没加载成功，再试一次吧。'
+    if (current === model) say('这个表情暂时没加载成功，再试一次吧。')
   }
 }
 function interact(event) {
@@ -190,7 +205,7 @@ function hide() {
 }
 async function show() {
   visible.value = true
-  message.value = '我是水色小狗，点点我，一起逛逛吧。'
+  say(greeting())
   if (model && ready.value) {
     await nextTick()
     fitModel()
@@ -202,6 +217,7 @@ function retry() { if (initializing) return; dispose(); init() }
 // Keep the companion hidden while warming it, as requested by the owner.
 onMounted(init)
 onBeforeUnmount(() => {
+  clearTimeout(bubbleTimer)
   ++generation
   dispose()
   // Also release a blob created by an outstanding background download.
@@ -211,8 +227,9 @@ onBeforeUnmount(() => {
 
 <template>
   <aside class="live2d-companion" :class="{ 'is-hidden': !visible }" :inert="!visible" :aria-hidden="!visible" aria-label="水色小狗看板娘">
+    <button v-if="weather" class="live2d-close weather-close" type="button" aria-label="关闭全屏天气特效" title="关闭全屏天气特效" @click="closeWeather">☂</button>
     <button class="live2d-close" type="button" aria-label="隐藏看板娘" @click="hide">×</button>
-    <div v-if="ready" class="live2d-bubble" aria-live="polite">{{ message }}</div>
+    <div v-if="ready" class="live2d-bubble" :class="{ faded: !bubbleVisible }" aria-live="polite">{{ message }}</div>
     <div ref="host" class="live2d-stage" role="button" :tabindex="ready ? 0 : -1" aria-label="与水色小狗互动，点击摸摸，回车招手" @pointerdown="interact" @keydown.enter.prevent="choose(choices[4])" @keydown.space.prevent="choose(choices[1])">
       <canvas :key="attempt" ref="canvas" aria-hidden="true" />
     </div>
@@ -221,6 +238,7 @@ onBeforeUnmount(() => {
       <template v-else>加载失败 <button type="button" @click="retry">重新召唤</button></template>
     </div>
   </aside>
+  <button v-if="!visible && weather" class="weather-restore-close" type="button" @click="closeWeather">关闭天气特效</button>
   <button v-if="!visible" class="live2d-restore" type="button" aria-label="召唤看板娘" @click="show"><span aria-hidden="true">✦</span> 召唤看板娘</button>
 </template>
 
@@ -228,11 +246,15 @@ onBeforeUnmount(() => {
 .live2d-companion{position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:34;width:min(260px,calc(100vw - 24px));height:min(280px,42dvh);pointer-events:none;filter:drop-shadow(0 12px 22px #0003)}
 .live2d-companion.is-hidden{visibility:hidden;pointer-events:none}
 .live2d-stage{position:absolute;inset:66px 0 0;pointer-events:auto;cursor:pointer;overflow:hidden;outline-offset:-3px}.live2d-stage canvas{width:100%!important;height:100%!important;display:block}
-.live2d-close{position:absolute;right:0;top:0;z-index:3;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:var(--bg-soft);color:var(--text);font-size:22px;cursor:pointer;pointer-events:auto}
+.live2d-close{position:absolute;right:0;top:50%;z-index:3;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:var(--bg-soft);color:var(--text);font-size:22px;cursor:pointer;pointer-events:auto}
 .live2d-bubble{position:absolute;z-index:2;left:0;right:44px;top:0;padding:10px 13px;border:1px solid var(--line);border-radius:14px 14px 14px 4px;background:var(--bg-soft);color:var(--text);font-size:12px;line-height:1.55;box-shadow:0 4px 18px #0002}
 .live2d-status{position:absolute;left:0;right:0;bottom:12px;text-align:center;padding:12px;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;color:var(--text);font-size:12px;pointer-events:auto}
 .live2d-status button{min-height:32px;padding:4px 9px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--text);font:inherit;font-size:11px;cursor:pointer}
 .live2d-restore{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(18px,env(safe-area-inset-bottom));z-index:35;max-width:calc(100vw - 32px);background:var(--bg-soft);border:1px solid var(--accent);color:var(--text);font:inherit;font-size:.875rem;border-radius:30px;min-height:44px;padding:8px 16px;box-shadow:0 6px 24px #0003;cursor:pointer;display:flex;align-items:center;gap:8px}
 button:focus-visible,.live2d-stage:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media (max-width:760px){.live2d-companion{left:max(8px,env(safe-area-inset-left));width:180px;height:min(220px,36dvh)}.live2d-bubble{font-size:11px;padding:8px 10px}}
+.weather-close{transform:translateY(-44px);font-size:18px}
+.live2d-bubble{transition:opacity .65s ease;pointer-events:none}.live2d-bubble.faded{opacity:0}
+.weather-restore-close{position:fixed;left:16px;bottom:72px;z-index:35;padding:10px 14px;border:1px solid var(--line);border-radius:22px;background:var(--bg-soft);color:var(--text);cursor:pointer}
+@media(prefers-reduced-motion:reduce){.live2d-bubble{transition:none}}
 </style>
