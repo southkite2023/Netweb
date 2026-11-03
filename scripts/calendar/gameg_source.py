@@ -12,6 +12,8 @@ GROUPS = {
     'nte': 'neverness-to-everness/cn', 'azurlane': 'azur-lane/cn',
     'deepspace': 'love-and-deepspace/cn', 'lightnight': 'light-and-night/cn',
     'reverse1999': 'reverse-1999/cn',
+    'hokworld': 'honor-of-kings-world/cn', 'rocoworld': 'roco-world/cn',
+    'duetnightabyss-cn': 'duet-night-abyss/cn', 'miraclenikki': 'miracle-nikki/cn',
 }
 TYPES = {'banner': 'banner', 'preview': 'livestream', 'version': 'version_update', 'maintenance': 'version_update'}
 ZONE = dt.timezone(dt.timedelta(hours=8))
@@ -40,7 +42,9 @@ def import_game(data, game, previous, stamp):
     old = {e['id']: e for e in previous}
     for kind, records in by_type.items():
         if not records:
-            continue  # This category is not covered: keep Wiki fallback, not a claim of non-announcement.
+            label={'banner':'卡池','livestream':'前瞻','version_update':'版本或维护'}[kind]
+            reviews[kind]=dict(status='source_not_listed',label='GameG未收录此类日期',reason=f'已检查GameG国服时间表，该游戏没有{label}记录。不是读取失败，也不能据此认定官方没有公布。',official_status='GameG未收录；官方是否公布尚未核实',sources=[URL],checked_on=stamp[:10])
+            continue
         accepted = []
         unknown = []
         for row in records:
@@ -146,7 +150,7 @@ def fetch_repository(state_dir):
     cache=state_dir/'gameg-source-cache.json'
     if cache.exists():
         saved=json.loads(cache.read_text())
-        if saved.get('source_commit')==commit:return saved
+        if saved.get('source_commit')==commit and {g['key'] for g in saved.get('groups',[])}==set(GROUPS.values()):return saved
     tree=read('git/trees/'+commit+'?recursive=1')
     if tree.get('truncated'):raise ValueError('GameG公开数据目录被截断')
     groups={}

@@ -21,7 +21,7 @@ test('verified game categories have dated preferred-source evidence in their own
   }
   assert.deepEqual(metadata[g.game_id].coverage_types,g.types);
  }
- assert.equal(orderedGames(catalog.games,metadata).length,34);
+ assert.equal(orderedGames(catalog.games,metadata).length,38);
 });
 
 test('every game type has an explicit review reason and never treats a failed search as an official non-announcement',async()=>{
@@ -44,4 +44,15 @@ test('source-listed dates remain visible and count toward display coverage witho
  assert.match(coverageLabel(m),/未确认/);
  assert.deepEqual(orderedGames([['empty',''],['listed','']],{empty:{},listed:m}).map(([id])=>id),['listed','empty']);
  for(const [id] of catalog.games){const meta=metadata[id];if(meta.source_records)for(const records of Object.values(meta.source_records))for(const row of records)assert.ok(row.name&&row.url&&row.start,id);}
+});
+
+
+test('GameG focus covers all fifteen CN games and keeps old international selections distinct',()=>{
+ assert.equal(new Set(catalog.focus_games).size,15);
+ const registry=JSON.parse(readFileSync('public/assets/calendar/data/wiki-sources.json'));
+ const subscriptions=JSON.parse(readFileSync('public/assets/calendar/data/subscriptions.json'));
+ for(const id of catalog.focus_games){const g=registry.games.find(g=>g.game_id===id);assert.equal(g.server,'cn');assert.equal(g.timeline_source.provider,'gameg');assert.ok(subscriptions.games.includes(id));for(const type of ['banner','livestream','version_update'])assert.ok(g.source_reviews[type]?.reason);}
+ assert.ok(catalog.focus_games.includes('duetnightabyss-cn'));
+ assert.ok(!catalog.focus_games.includes('duetnightabyss'));
+ assert.equal(metadata.duetnightabyss.server,'global');
 });

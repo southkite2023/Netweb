@@ -7,9 +7,10 @@ import { dateReview } from './date-status.js';
 import { companies, companyOptions, matchesCompany } from './companies.js';
 const chosen = new Map();
 for(const kind of ['games','anime']){
- for(const [name,count] of companyOptions(catalog[kind])){const option=document.createElement('option');option.value=name;option.textContent=`${name==='__unknown'?'制作公司待补充':name} · ${count}`;$(`#${kind}-filter`).append(option);}
+ for(const [name,count] of companyOptions(kind==='games'?gameList():catalog[kind])){const option=document.createElement('option');option.value=name;option.textContent=`${name==='__unknown'?'制作公司待补充':name} · ${count}`;$(`#${kind}-filter`).append(option);}
 }
 
+function gameList(){return $('#games-scope').value==='all'?catalog.games:catalog.games.filter(([id])=>catalog.focus_games.includes(id));}
 let editing, opener;
 const types = {livestream:'前瞻',version_update:'版本',banner:'卡池'};
 let ready=false,busy=false,saveTimer,editVersion=0,lastSaved=null;
@@ -48,7 +49,7 @@ function draw(){
   for(const kind of ['games','anime']){
     const query=$(`#${kind}-search`).value.trim().toLowerCase();
     const list=$(`#${kind}`);list.replaceChildren();
-    for(const [id,name] of (kind==='games'?orderedGames(catalog.games,metadata):catalog.anime).filter(([id,name])=>[name,metadata[id]?.original,...(metadata[id]?.aliases||[]),...(companies[id]?.names||[])].join(' ').toLowerCase().includes(query) && matchesCompany(id,$(`#${kind}-filter`).value))){
+    for(const [id,name] of (kind==='games'?orderedGames(gameList(),metadata):catalog.anime).filter(([id,name])=>[name,metadata[id]?.original,...(metadata[id]?.aliases||[]),...(companies[id]?.names||[])].join(' ').toLowerCase().includes(query) && matchesCompany(id,$(`#${kind}-filter`).value))){
       const button=document.createElement('button');button.className='item';button.type='button';button.setAttribute('aria-pressed',chosen.has(id));
       const title=document.createElement('strong');title.textContent=name;
       const detail=document.createElement('small');const selection=chosen.get(id);
@@ -57,7 +58,7 @@ function draw(){
       button.title=[name,...(companies[id]?.names||[]),metadata[id].original,metadata[id].label].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.onclick=()=>kind==='games'?openOptions(id,name,button):(chosen.has(id)?chosen.delete(id):chosen.set(id,{kind:'anime'}),selectionChanged());list.append(button);
     }
     if(!list.children.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='没有匹配的项目';list.append(empty);}
-    $(`#${kind}-count`).textContent=`${catalog[kind].length} 项 · ${catalog[kind].filter(([id])=>chosen.has(id)).length} 已选`;
+    const visibleItems=kind==='games'?gameList():catalog[kind];$(`#${kind}-count`).textContent=`${visibleItems.length} 项 · ${visibleItems.filter(([id])=>chosen.has(id)).length} 已选`;
   }
   document.querySelectorAll('.clear-selection').forEach(button=>button.disabled=!chosen.size||!ready||busy||account.paused);
   $('#selected-count').textContent=`已选择 ${chosen.size} 个项目`;$('#generate').disabled=!ready||busy||account.paused||(!chosen.size&&!account.calendar);$('#generate').textContent=account.calendar?'保存到原日历':'创建我的日历';$('#new-calendar').disabled=!account.calendar||busy||account.paused;
@@ -100,6 +101,7 @@ $('#close').onclick=()=>$('#options').close();
 $('#options').addEventListener('close',()=>opener?.focus());
 $('#remove').onclick=()=>{chosen.delete(editing);$('#options').close();selectionChanged();};
 $('#options-form').onsubmit=e=>{e.preventDefault();const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}chosen.set(editing,{kind:'games',types:selected,format:$('[name=format]:checked').value,duration:$('#duration').checked});$('#options').close();selectionChanged();};
+$('#games-scope').onchange=()=>{const filter=$('#games-filter');filter.replaceChildren();const all=document.createElement('option');all.value='all';all.textContent='全部游戏公司';filter.append(all);for(const [name,count] of companyOptions(gameList())){const option=document.createElement('option');option.value=name;option.textContent=name+' · '+count;filter.append(option);}if(auditData)renderWikiAudit(auditData);else draw();};
 for(const kind of ['games','anime']){$(`#${kind}-search`).oninput=draw;$(`#${kind}-filter`).onchange=draw;}
 document.querySelectorAll('.clear-selection').forEach(button=>button.onclick=()=>{chosen.clear();selectionChanged();if(!account.calendar)$('#status').textContent='已清除所有游戏与动漫选择。';});
 $('#generate').onclick=async()=>{
@@ -129,9 +131,12 @@ for(const [id,name] of [...catalog.games,...catalog.anime]){
  p.append(' · '+(m.verification_note||m.label)+' · 核验 '+m.checked_at+' · '+(m.event_count||0)+' 条日程');sources.append(p);
 }
 
+let auditData;
 function renderWikiAudit(data){
+ auditData=data;
  const container=$('#wiki-audit');container.replaceChildren();
  for(const g of data.games){
+  if($('#games-scope').value!=='all'&&!catalog.focus_games.includes(g.game_id))continue;
   const m=metadata[g.game_id];if(!m)continue;
   const monitor=g.monitor||{};m.event_count=g.event_count??m.event_count;m.event_types=g.event_types??m.event_types;m.server=g.server;m.coverage_types={...g.types,...monitor.source_types};m.source_records={...g.source_records,...monitor.source_records};m.source_reviews={...g.source_reviews,...monitor.source_reviews};m.date_summary={...m.date_summary,...g.date_summary,...monitor.date_summary};for(const t of monitor.covered_types||g.covered_types||[])if(m.coverage_types[t]!=='verified')delete m.date_summary[t];if(g.timeline_source)m.url=g.timeline_source.url;
   m.label=coverageLabel(m)+(m.event_count?' · '+m.event_count+'条已收录日程':' · 暂无已收录日程');

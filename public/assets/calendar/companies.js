@@ -1,4 +1,4 @@
-// Games use developers / development groups; anime use animation studios, not publishers.
+// Development companies and animation studios.
 export const companies = {
   "animecca:yaseinorasubosugaarawareta-tid8021": {
     "names": [
@@ -836,6 +836,31 @@ export const companies = {
     ],
     "source": "https://www.sega.jp/game/detail/pjsekai/",
     "checked_at": "2026-11-03"
+  },
+  "hokworld": {
+    "names": [
+      "腾讯（天美工作室群）"
+    ],
+    "source": "https://world.qq.com/"
+  },
+  "rocoworld": {
+    "names": [
+      "腾讯（魔方工作室群）"
+    ],
+    "source": "https://weibo.com/newroco"
+  },
+  "duetnightabyss-cn": {
+    "names": [
+      "英雄游戏（PAN Studio）"
+    ],
+    "source": "https://www.hero.com/p/story.html",
+    "checked_at": "2026-11-03"
+  },
+  "miraclenikki": {
+    "names": [
+      "叠纸游戏"
+    ],
+    "source": "https://center.nikkigames.cn/"
   }
 };
 export function matchesCompany(id, value) {

@@ -31,7 +31,7 @@ class GameGTests(unittest.TestCase):
         events,reviews,_=source.import_game(self.data,self.game,[],STAMP)
         self.assertEqual(events,[]);self.assertEqual(reviews['banner']['status'],'source_uncertain');self.assertIn('不代表官方没有公布',reviews['banner']['reason'])
     def test_replaces_only_covered_types_and_stable_revisions(self):
-        old=[{'id':'wiki','game':{'game_id':'genshin','server':'cn'},'event_type':'banner'}, {'id':'preview','game':{'game_id':'genshin','server':'cn'},'event_type':'livestream'}]
+        old=[{'id':'wiki','game':{'game_id':'genshin','server':'cn'},'event_type':'banner'}, {'id':'preview','game':{'game_id':'other','server':'cn'},'event_type':'livestream'}]
         events,_=source.apply(self.data,[self.game],old,STAMP)
         self.assertNotIn('wiki',[e['id'] for e in events]);self.assertIn('preview',[e['id'] for e in events])
         first=events[-1];events,_=source.apply(self.data,[self.game],events,STAMP)
@@ -67,6 +67,11 @@ class GameGTests(unittest.TestCase):
         self.assertEqual(record['end'],source.iso(END))
         self.assertEqual(record['certainty']['start'],'unknown')
         self.assertEqual(reports['genshin']['source_types']['banner'],'pending')
+    def test_absent_category_is_explicitly_not_listed_not_officially_unannounced(self):
+        _,reviews,_=source.import_game(self.data,self.game,[],STAMP)
+        self.assertEqual(reviews['livestream']['status'],'source_not_listed')
+        self.assertIn('不是读取失败',reviews['livestream']['reason'])
+        self.assertIn('不能据此认定官方没有公布',reviews['livestream']['reason'])
     def test_bad_structure_fails_loudly(self):
         with self.assertRaises(ValueError):source.parse('<html>error</html>')
 if __name__=='__main__':unittest.main()

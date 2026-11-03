@@ -4011,6 +4011,49 @@
       }
     },
     {
+      "id": "8a2662e9-3b85-5a15-ad11-029bbc9f9057",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "原神 · 7.2「坏灭肇始之时」前瞻特别节目",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-23T20:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "genshin-impact/cn/event/preview-7-2",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ys.mihoyo.com/main/news/detail/166992",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ys.mihoyo.com/main/news/detail/167026",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "genshin",
+        "server": "cn"
+      },
+      "source_key": "gameg:genshin-impact/cn/event/preview-7-2:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
       "id": "9d026113-e408-5a11-b977-346946a0e68a",
       "category": "game",
       "event_type": "banner",
@@ -4029,31 +4072,31 @@
           "authority": "community_timeline",
           "source_id": "genshin-impact/cn/event/banner-7-1-phase1",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166385",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166246",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166249",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166251",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4084,13 +4127,13 @@
           "authority": "community_timeline",
           "source_id": "genshin-impact/cn/event/banner-7-1-phase2",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166763",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4121,13 +4164,13 @@
           "authority": "community_timeline",
           "source_id": "genshin-impact/cn/event/banner-7-1-phase2",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166763",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4140,15 +4183,15 @@
       "updated_at": "2026-11-03T01:58:32+00:00"
     },
     {
-      "id": "8a2662e9-3b85-5a15-ad11-029bbc9f9057",
+      "id": "7b9fa5a5-591a-53f4-9793-c5b05eddab93",
       "category": "game",
-      "event_type": "livestream",
-      "title": "原神 · 7.2「坏灭肇始之时」前瞻特别节目",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "event_type": "version_update",
+      "title": "崩坏：星穹铁道 · 4.6 暮色裹挟的秘辛",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。4.7 于 2026/11/11 更新（官方只公布日期，未公布维护时刻）。原 11-09 06:00 是按 6 周周期推算，早于 4.6 卡池 11-10 15:00 与「花藏繁生」11-11 03:59，不能成立；end 按 4.6 维护 06:00 惯例估算，待 4.7 维护预告确认。",
       "status": "confirmed",
       "schedule_state": "scheduled",
       "time_kind": "datetime",
-      "start": "2026-10-23T20:00:00+08:00",
+      "start": "2026-09-28T06:00:00+08:00",
       "end": null,
       "timezone": "Asia/Shanghai",
       "url": "https://www.gameg.site/",
@@ -4156,28 +4199,34 @@
         {
           "provider": "gameg",
           "authority": "community_timeline",
-          "source_id": "genshin-impact/cn/event/preview-7-2",
+          "source_id": "honkai-star-rail/cn/version/4.6",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
-          "url": "https://ys.mihoyo.com/main/news/detail/166992",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "url": "https://sr.mihoyo.com/news/166487",
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
-          "url": "https://ys.mihoyo.com/main/news/detail/167026",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "url": "https://sr.mihoyo.com/news/166489",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://sr.mihoyo.com/news/167108",
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
-        "game_id": "genshin",
+        "game_id": "starrail",
         "server": "cn"
       },
-      "source_key": "gameg:genshin-impact/cn/event/preview-7-2:start",
+      "source_key": "gameg:honkai-star-rail/cn/version/4.6:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -4201,13 +4250,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-hongjun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4238,13 +4287,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-lc-hongjun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4275,13 +4324,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-lc-qingyin",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4312,13 +4361,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-qingyin",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4349,13 +4398,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-shaoaicaiying",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166487",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4386,13 +4435,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-woshenjiren",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166950",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4423,13 +4472,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-canghaicuizhu",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166487",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4460,13 +4509,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-woshenjiren",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166950",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4474,98 +4523,6 @@
         "server": "cn"
       },
       "source_key": "gameg:honkai-star-rail/cn/event/banner-4-6-woshenjiren:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "7b9fa5a5-591a-53f4-9793-c5b05eddab93",
-      "category": "game",
-      "event_type": "version_update",
-      "title": "崩坏：星穹铁道 · 4.6 暮色裹挟的秘辛",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。4.7 于 2026/11/11 更新（官方只公布日期，未公布维护时刻）。原 11-09 06:00 是按 6 周周期推算，早于 4.6 卡池 11-10 15:00 与「花藏繁生」11-11 03:59，不能成立；end 按 4.6 维护 06:00 惯例估算，待 4.7 维护预告确认。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-09-28T06:00:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "honkai-star-rail/cn/version/4.6",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://sr.mihoyo.com/news/166487",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://sr.mihoyo.com/news/166489",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://sr.mihoyo.com/news/167108",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "starrail",
-        "server": "cn"
-      },
-      "source_key": "gameg:honkai-star-rail/cn/version/4.6:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "33b6a438-a2cc-58cc-9610-8456c1c792b7",
-      "category": "game",
-      "event_type": "banner",
-      "title": "绝区零 · 3.3上期限时频段（代理人／音擎） · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。start=10月21日11:00按官方06:00起维护、预计5小时推算；公告只写版本更新后，实际开服分钟待确认。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-11T11:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "zenless-zone-zero/cn/event/banner-3-3-upper",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://zzz.mihoyo.com/news/166922",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://zzz.mihoyo.com/news/166990",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "zzz",
-        "server": "cn"
-      },
-      "source_key": "gameg:zenless-zone-zero/cn/event/banner-3-3-upper:end",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -4589,13 +4546,13 @@
           "authority": "community_timeline",
           "source_id": "zenless-zone-zero/cn/event/maintenance-2026-10-21",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://zzz.mihoyo.com/news/166989",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4626,13 +4583,13 @@
           "authority": "community_timeline",
           "source_id": "zenless-zone-zero/cn/event/preview-3-2",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://zzz.mihoyo.com/news/165853",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4663,13 +4620,13 @@
           "authority": "community_timeline",
           "source_id": "zenless-zone-zero/cn/event/preview-3-3",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://zzz.mihoyo.com/news/166583",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -4682,52 +4639,15 @@
       "updated_at": "2026-11-03T01:58:32+00:00"
     },
     {
-      "id": "a59400e1-c53e-541d-8fa2-8559e48ca19f",
+      "id": "33b6a438-a2cc-58cc-9610-8456c1c792b7",
       "category": "game",
       "event_type": "banner",
-      "title": "明日方舟 · [圣城春日学生寻访]【石白深蓝之夜】限时寻访即将开启",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "title": "绝区零 · 3.3上期限时频段（代理人／音擎） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。start=10月21日11:00按官方06:00起维护、预计5小时推算；公告只写版本更新后，实际开服分钟待确认。",
       "status": "confirmed",
       "schedule_state": "scheduled",
       "time_kind": "datetime",
-      "start": "2026-09-04T12:00:00+08:00",
-      "end": "2026-09-18T03:59:00+08:00",
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-shibai-shenlan-2026-09",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/1457",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-shibai-shenlan-2026-09:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "2907b945-3efd-5bd2-aa4f-69d8b1138ef2",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · [圣城春日学生寻访]【石白深蓝之夜】限时寻访即将开启 · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-09-18T03:59:00+08:00",
+      "start": "2026-11-11T11:59:00+08:00",
       "end": null,
       "timezone": "Asia/Shanghai",
       "url": "https://www.gameg.site/",
@@ -4735,466 +4655,28 @@
         {
           "provider": "gameg",
           "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-shibai-shenlan-2026-09",
+          "source_id": "zenless-zone-zero/cn/event/banner-3-3-upper",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/1457",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-shibai-shenlan-2026-09:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "5dab3609-0461-5974-843a-d269d11c9827",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 「定向甄选」限时寻访（矢量突破#3）",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-09-29T16:00:00+08:00",
-      "end": "2026-10-13T03:59:00+08:00",
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-dingxiang-zhenxuan-3",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "url": "https://zzz.mihoyo.com/news/166922",
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/1455",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "url": "https://zzz.mihoyo.com/news/166990",
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
-        "game_id": "arknights",
+        "game_id": "zzz",
         "server": "cn"
       },
-      "source_key": "gameg:arknights/cn/event/banner-dingxiang-zhenxuan-3:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "56b3d9b7-b8ed-52de-aaa9-b9c1be573b84",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 「海渊巡游」限时寻访（昨日海）",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。该寻访为【标准寻访】类型；10月22日04:00后其余干员加入常驻标准寻访。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-09T12:00:00+08:00",
-      "end": "2026-10-23T03:59:00+08:00",
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-haiyuan-xunyou",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/5101",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-haiyuan-xunyou:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "f4753d26-98fd-50bf-a64b-b8bacb66c7db",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 「定向甄选」限时寻访（矢量突破#3） · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-13T03:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-dingxiang-zhenxuan-3",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/1455",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-dingxiang-zhenxuan-3:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "9ca696aa-9c01-58aa-8420-9e6c096f1d38",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 「海渊巡游」限时寻访（昨日海） · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。该寻访为【标准寻访】类型；10月22日04:00后其余干员加入常驻标准寻访。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-23T03:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-haiyuan-xunyou",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/5101",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-haiyuan-xunyou:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "69356207-1b71-59d2-9141-d3916c3c37a6",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 限定寻访「将雪投火」",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-01T12:00:00+08:00",
-      "end": "2026-11-15T03:59:00+08:00",
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-jiangxuetouhuo",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/4916",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-jiangxuetouhuo:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "826b52a7-a8b9-5c87-8ff6-0e4908787f4c",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 卫戍寻访",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。按公告计划时间记录；同日16:00–17:00有停机维护，不擅自把该卡池起点改成17:00。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-08T16:00:00+08:00",
-      "end": "2026-12-02T03:59:00+08:00",
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-weishu-2026",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-weishu-2026:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "74319323-974f-5314-8536-c966c9d09269",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 中坚甄选",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-12T04:00:00+08:00",
-      "end": "2026-11-26T03:59:00+08:00",
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-zhongjian-zhenxuan-202611",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-zhongjian-zhenxuan-202611:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "f95b7e2a-1f30-549a-a8c8-f0046af035dd",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 限定寻访「将雪投火」 · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-15T03:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-jiangxuetouhuo",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/4916",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-jiangxuetouhuo:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "b13565d6-3ba6-523a-adfd-6e2c15ad4005",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 联合行动特选干员定向寻访",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-15T16:00:00+08:00",
-      "end": "2026-11-29T03:59:00+08:00",
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-joint-action-202611",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-joint-action-202611:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "04afec3f-4826-570f-a430-1719fad93111",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 中坚甄选 · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-26T03:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-zhongjian-zhenxuan-202611",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-zhongjian-zhenxuan-202611:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "e61eb59f-a784-593b-9d5f-5b4505d17097",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 联合行动特选干员定向寻访 · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-11-29T03:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-joint-action-202611",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-joint-action-202611:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "bc72c475-a25e-5aee-b6a7-38eb8247371c",
-      "category": "game",
-      "event_type": "banner",
-      "title": "明日方舟 · 卫戍寻访 · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。按公告计划时间记录；同日16:00–17:00有停机维护，不擅自把该卡池起点改成17:00。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-12-02T03:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights/cn/event/banner-weishu-2026",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "arknights",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights/cn/event/banner-weishu-2026:end",
+      "source_key": "gameg:zenless-zone-zero/cn/event/banner-3-3-upper:end",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -5218,13 +4700,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-08-01-version",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1459",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5255,13 +4737,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-04-version",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/5102",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5292,13 +4774,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-11-flash",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/7367",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5329,13 +4811,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-20-flash",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/4922",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5366,13 +4848,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-29-flash",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/8577",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5403,13 +4885,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-10-24",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1441",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5440,13 +4922,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-11-01",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1440",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5477,13 +4959,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-11-08",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5491,6 +4973,524 @@
         "server": "cn"
       },
       "source_key": "gameg:arknights/cn/event/maintenance-2026-11-08:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "a59400e1-c53e-541d-8fa2-8559e48ca19f",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · [圣城春日学生寻访]【石白深蓝之夜】限时寻访即将开启",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-04T12:00:00+08:00",
+      "end": "2026-09-18T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-shibai-shenlan-2026-09",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/1457",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-shibai-shenlan-2026-09:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "2907b945-3efd-5bd2-aa4f-69d8b1138ef2",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · [圣城春日学生寻访]【石白深蓝之夜】限时寻访即将开启 · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-18T03:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-shibai-shenlan-2026-09",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/1457",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-shibai-shenlan-2026-09:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "5dab3609-0461-5974-843a-d269d11c9827",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 「定向甄选」限时寻访（矢量突破#3）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-29T16:00:00+08:00",
+      "end": "2026-10-13T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-dingxiang-zhenxuan-3",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/1455",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-dingxiang-zhenxuan-3:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "56b3d9b7-b8ed-52de-aaa9-b9c1be573b84",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 「海渊巡游」限时寻访（昨日海）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。该寻访为【标准寻访】类型；10月22日04:00后其余干员加入常驻标准寻访。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-09T12:00:00+08:00",
+      "end": "2026-10-23T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-haiyuan-xunyou",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/5101",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-haiyuan-xunyou:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "f4753d26-98fd-50bf-a64b-b8bacb66c7db",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 「定向甄选」限时寻访（矢量突破#3） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-13T03:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-dingxiang-zhenxuan-3",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/1455",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-dingxiang-zhenxuan-3:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "9ca696aa-9c01-58aa-8420-9e6c096f1d38",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 「海渊巡游」限时寻访（昨日海） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。该寻访为【标准寻访】类型；10月22日04:00后其余干员加入常驻标准寻访。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-23T03:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-haiyuan-xunyou",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/5101",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-haiyuan-xunyou:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "69356207-1b71-59d2-9141-d3916c3c37a6",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 限定寻访「将雪投火」",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-01T12:00:00+08:00",
+      "end": "2026-11-15T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-jiangxuetouhuo",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/4916",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-jiangxuetouhuo:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "826b52a7-a8b9-5c87-8ff6-0e4908787f4c",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 卫戍寻访",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。按公告计划时间记录；同日16:00–17:00有停机维护，不擅自把该卡池起点改成17:00。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T16:00:00+08:00",
+      "end": "2026-12-02T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-weishu-2026",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/0787",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-weishu-2026:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "74319323-974f-5314-8536-c966c9d09269",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 中坚甄选",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-12T04:00:00+08:00",
+      "end": "2026-11-26T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-zhongjian-zhenxuan-202611",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/0787",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-zhongjian-zhenxuan-202611:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "f95b7e2a-1f30-549a-a8c8-f0046af035dd",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 限定寻访「将雪投火」 · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-15T03:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-jiangxuetouhuo",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/4916",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-jiangxuetouhuo:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "b13565d6-3ba6-523a-adfd-6e2c15ad4005",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 联合行动特选干员定向寻访",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-15T16:00:00+08:00",
+      "end": "2026-11-29T03:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-joint-action-202611",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/0787",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-joint-action-202611:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "04afec3f-4826-570f-a430-1719fad93111",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 中坚甄选 · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-26T03:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-zhongjian-zhenxuan-202611",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/0787",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-zhongjian-zhenxuan-202611:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "e61eb59f-a784-593b-9d5f-5b4505d17097",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 联合行动特选干员定向寻访 · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-29T03:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-joint-action-202611",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/0787",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-joint-action-202611:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "bc72c475-a25e-5aee-b6a7-38eb8247371c",
+      "category": "game",
+      "event_type": "banner",
+      "title": "明日方舟 · 卫戍寻访 · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。按公告计划时间记录；同日16:00–17:00有停机维护，不擅自把该卡池起点改成17:00。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-12-02T03:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights/cn/event/banner-weishu-2026",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ak.hypergryph.com/news/0787",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights/cn/event/banner-weishu-2026:end",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -5514,13 +5514,13 @@
           "authority": "community_timeline",
           "source_id": "wuthering-waves/cn/event/maintenance-3-7",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://mc.kurogames.com/main/news/detail/5569",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5528,6 +5528,49 @@
         "server": "cn"
       },
       "source_key": "gameg:wuthering-waves/cn/event/maintenance-3-7:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "535d8136-c47b-5cd6-9a35-e1223bf68d48",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "明日方舟：终末地 · 「雪凇幽梦」版本更新维护",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-02T06:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "arknights-endfield/cn/event/maintenance-2026-09-02-version",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://endfield.hypergryph.com/news/2653",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://endfield.hypergryph.com/news/1164",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "endfield",
+        "server": "cn"
+      },
+      "source_key": "gameg:arknights-endfield/cn/event/maintenance-2026-09-02-version:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -5551,13 +5594,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-dianhui-shenling-1-5",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/2651",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5588,13 +5631,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-xuanli-yicai-1-5",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/2651",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5625,13 +5668,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-donglie-1-5",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/6097",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5662,13 +5705,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-xizhi-shenling-luocao",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5699,13 +5742,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-zuquan-xinliu-tangtang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5736,13 +5779,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-xizhi-shenling-luocao",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5773,13 +5816,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-zuquan-xinliu-tangtang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5787,49 +5830,6 @@
         "server": "cn"
       },
       "source_key": "gameg:arknights-endfield/cn/event/banner-zuquan-xinliu-tangtang:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "535d8136-c47b-5cd6-9a35-e1223bf68d48",
-      "category": "game",
-      "event_type": "version_update",
-      "title": "明日方舟：终末地 · 「雪凇幽梦」版本更新维护",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-09-02T06:00:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "arknights-endfield/cn/event/maintenance-2026-09-02-version",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://endfield.hypergryph.com/news/2653",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://endfield.hypergryph.com/news/1164",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "endfield",
-        "server": "cn"
-      },
-      "source_key": "gameg:arknights-endfield/cn/event/maintenance-2026-09-02-version:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -5853,13 +5853,13 @@
           "authority": "community_timeline",
           "source_id": "reverse-1999/cn/event/maintenance-v4-0",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://re.bluepoch.com/home/detail.html#newsId?102",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5890,13 +5890,13 @@
           "authority": "community_timeline",
           "source_id": "azur-lane/cn/event/maintenance-2026-09-17",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://www.biligame.com/detail/?id=97&sourceFrom=2000310011#!news/18356",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5927,13 +5927,13 @@
           "authority": "community_timeline",
           "source_id": "azur-lane/cn/event/maintenance-2026-09-24",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://wiki.biligame.com/blhx/2026年9月24日10:00港区改建",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5964,13 +5964,13 @@
           "authority": "community_timeline",
           "source_id": "azur-lane/cn/event/maintenance-2026-10-22",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://www.weibo.com/5770760941/RnyR8ot7C",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -5978,154 +5978,6 @@
         "server": "cn"
       },
       "source_key": "gameg:azur-lane/cn/event/maintenance-2026-10-22:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "a54d447e-c251-5b1d-ad47-7a3d7ef644f9",
-      "category": "game",
-      "event_type": "banner",
-      "title": "异环 · 「久梦初醒时」限定棋盘·安魂曲返场（1.4 上半） · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-21T05:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "neverness-to-everness/cn/event/banner-1-4-jiumeng-chuxing",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "nte",
-        "server": "cn"
-      },
-      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-jiumeng-chuxing:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "096ef1c7-61bd-5892-a6fa-8fefb400d557",
-      "category": "game",
-      "event_type": "banner",
-      "title": "异环 · 「夜曲特刊」弧盘研募·最后一朵玫瑰返场（1.4 上半） · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-21T05:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "neverness-to-everness/cn/event/banner-1-4-yequ-meigui",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "nte",
-        "server": "cn"
-      },
-      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-yequ-meigui:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "3e59cfa1-f6f0-5603-84c9-e89c1b1dfeb1",
-      "category": "game",
-      "event_type": "banner",
-      "title": "异环 · 「预言终幕时」限定棋盘·黑羽（1.4 上半） · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 取维护结束时刻作锚点（推算）。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-21T05:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "neverness-to-everness/cn/event/banner-1-4-yuyan-zhongmu",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "nte",
-        "server": "cn"
-      },
-      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-yuyan-zhongmu:end",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "82a7b314-c38f-5b3a-a6d4-bc139eb38d96",
-      "category": "game",
-      "event_type": "banner",
-      "title": "异环 · 「栖羽特刊」弧盘研募·罪与罚（1.4 上半） · 结束提醒",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-21T05:59:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "neverness-to-everness/cn/event/banner-1-4-zuiyufa",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "nte",
-        "server": "cn"
-      },
-      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-zuiyufa:end",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -6149,13 +6001,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-1-4",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20260923/264278.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6186,13 +6038,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-20261015",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20261014/264537.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6223,13 +6075,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-20261016",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20261015/264630.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6260,13 +6112,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-20261017",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20261016/264655.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6297,19 +6149,19 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/preview-1-5",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://www.bilibili.com/opus/1261954317481410582",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20261028/264788.html",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6317,6 +6169,154 @@
         "server": "cn"
       },
       "source_key": "gameg:neverness-to-everness/cn/event/preview-1-5:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "a54d447e-c251-5b1d-ad47-7a3d7ef644f9",
+      "category": "game",
+      "event_type": "banner",
+      "title": "异环 · 「久梦初醒时」限定棋盘·安魂曲返场（1.4 上半） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-21T05:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "neverness-to-everness/cn/event/banner-1-4-jiumeng-chuxing",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "nte",
+        "server": "cn"
+      },
+      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-jiumeng-chuxing:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "096ef1c7-61bd-5892-a6fa-8fefb400d557",
+      "category": "game",
+      "event_type": "banner",
+      "title": "异环 · 「夜曲特刊」弧盘研募·最后一朵玫瑰返场（1.4 上半） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-21T05:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "neverness-to-everness/cn/event/banner-1-4-yequ-meigui",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "nte",
+        "server": "cn"
+      },
+      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-yequ-meigui:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "3e59cfa1-f6f0-5603-84c9-e89c1b1dfeb1",
+      "category": "game",
+      "event_type": "banner",
+      "title": "异环 · 「预言终幕时」限定棋盘·黑羽（1.4 上半） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 取维护结束时刻作锚点（推算）。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-21T05:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "neverness-to-everness/cn/event/banner-1-4-yuyan-zhongmu",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "nte",
+        "server": "cn"
+      },
+      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-yuyan-zhongmu:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "82a7b314-c38f-5b3a-a6d4-bc139eb38d96",
+      "category": "game",
+      "event_type": "banner",
+      "title": "异环 · 「栖羽特刊」弧盘研募·罪与罚（1.4 上半） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。这里只确认结束，开始时间为推算或未知，未导出。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-21T05:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "neverness-to-everness/cn/event/banner-1-4-zuiyufa",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "nte",
+        "server": "cn"
+      },
+      "source_key": "gameg:neverness-to-everness/cn/event/banner-1-4-zuiyufa:end",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -6340,13 +6340,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-shenxinghui-yuandecishun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/85",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6377,13 +6377,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-shenxinghui-yuandecishun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/85",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6414,13 +6414,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-qiyu-fuye-qingyang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/87",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6451,13 +6451,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-qiyu-fuye-qingyang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/87",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6488,13 +6488,13 @@
           "authority": "community_timeline",
           "source_id": "light-and-night/cn/event/banner-yunji-manyou",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://love.qq.com/m/web202106/newsdetail.html?newsid=b6ac7878-5fe8-4532-9615-413db6d76285",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6525,13 +6525,13 @@
           "authority": "community_timeline",
           "source_id": "light-and-night/cn/event/banner-yunji-manyou",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://love.qq.com/m/web202106/newsdetail.html?newsid=b6ac7878-5fe8-4532-9615-413db6d76285",
-          "checked_at": "2026-11-03T02:22:12+00:00"
+          "checked_at": "2026-11-03T02:34:18+00:00"
         }
       ],
       "game": {
@@ -6542,6 +6542,690 @@
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "9acc44a4-19d2-57c1-b865-2fe3d0495433",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "王者荣耀世界 · 9月17日暗影试炼临时维护",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方公告明确暗影试炼于9月17日04:50起关闭，预计08:00结束；实际结束时间以游戏内为准。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-17T04:50:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "honor-of-kings-world/cn/event/maintenance-2026-09-17-shadow-trial",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://world.qq.com/web202603/newsDetail.html?newsid=18863605",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "hokworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:honor-of-kings-world/cn/event/maintenance-2026-09-17-shadow-trial:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "9c524bef-9bc3-50eb-9aa4-1eec5e2a1350",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "王者荣耀世界 · 9月24日版本更新停服维护",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方 9/24 版本更新公告：9月24日02:00-10:00 停服维护，维护结束后开启新版本内容。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-24T02:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "honor-of-kings-world/cn/event/maintenance-2026-09-24",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://world.qq.com/web202603/newsDetail.html?newsid=18880717",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "hokworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:honor-of-kings-world/cn/event/maintenance-2026-09-24:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "f9dc4e5e-4f9f-5245-a7e7-e24d2896665c",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "王者荣耀世界 · 10月15日不停服维护",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方公告的维护计划窗口，适用于国服电脑版和手机版；另有多人玩法临时维护窗口。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-15T05:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "honor-of-kings-world/cn/event/maintenance-2026-10-15",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://world.qq.com/web202603/newsDetail.html?newsid=18916512",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "hokworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:honor-of-kings-world/cn/event/maintenance-2026-10-15:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "4b0d47a9-987e-582b-8cee-042f981b6031",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "王者荣耀世界 · 10月23日不停服更新",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方明确为不停服更新，不是停机维护。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-23T05:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "honor-of-kings-world/cn/event/maintenance-2026-10-23",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://world.qq.com/web202603/newsDetail.html?newsid=18929174",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "hokworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:honor-of-kings-world/cn/event/maintenance-2026-10-23:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "3867e83e-2b93-5692-aebb-3a52a1f51f2d",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "王者荣耀世界 · 10月29日不停服更新",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方明确为不停服更新，不是停机维护。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-29T05:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "honor-of-kings-world/cn/event/maintenance-2026-10-29",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://world.qq.com/web202603/newsDetail.html?newsid=18934615",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "hokworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:honor-of-kings-world/cn/event/maintenance-2026-10-29:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "3419045b-0ffb-55c0-8dd5-86badd3468d4",
+      "category": "game",
+      "event_type": "banner",
+      "title": "王者荣耀世界 · 晶珀灵遇「赏味甜心」",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方公告配图明确新增晶珀灵遇时装【赏味甜心】的上下架时间；为外观奖池，非共鸣角色卡池。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-15T10:00:00+08:00",
+      "end": "2026-12-02T23:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "honor-of-kings-world/cn/event/banner-shangwei-tianxin",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://world.qq.com/web202603/newsDetail.html?newsid=18916398",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "hokworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:honor-of-kings-world/cn/event/banner-shangwei-tianxin:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "6f10cb43-22dc-5b2b-86a3-1cf5db94cde8",
+      "category": "game",
+      "event_type": "banner",
+      "title": "王者荣耀世界 · 晶珀灵遇「赏味甜心」 · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方公告配图明确新增晶珀灵遇时装【赏味甜心】的上下架时间；为外观奖池，非共鸣角色卡池。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-12-02T23:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "honor-of-kings-world/cn/event/banner-shangwei-tianxin",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://world.qq.com/web202603/newsDetail.html?newsid=18916398",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "hokworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:honor-of-kings-world/cn/event/banner-shangwei-tianxin:end",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "6d91a88d-adc9-51a0-9f12-2f8142b3ed3e",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "洛克王国：世界 · S4赛季「月涌狂想」",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方10月29日公告明确11月5日00:00开始赛季更新维护，S4在该时刻进行段位结算；替换此前按56天周期推算的10:00结束。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-10T10:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "roco-world/cn/version/s4",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://rocom.qq.com/main/index.html",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://www.taptap.cn/moment/846771989690453365",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://www.taptap.cn/moment/846848060746107324",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://www.bilibili.com/opus/1264225423188820003",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "rocoworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:roco-world/cn/version/s4:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "30e6ed61-468b-55c9-ada5-791897ffda2e",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "洛克王国：世界 · 11月5日S5赛季版本更新停机维护",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方提示开服时间可能提前或延后。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-05T00:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "roco-world/cn/event/maintenance-s5",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://www.bilibili.com/opus/1264225423188820003",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "rocoworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:roco-world/cn/event/maintenance-s5:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "da27d003-26bc-50d5-b0e5-1be641450f8e",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "洛克王国：世界 · 「快洛惊喜日」官方直播（10月31日）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方两晚各19:00–23:00；type: preview不接受periods，因此按两晚各列一条，不把中间空档连为28小时。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-31T19:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "roco-world/cn/event/preview-kuailuo-20261031",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://www.bilibili.com/opus/1264225423188820003",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "rocoworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:roco-world/cn/event/preview-kuailuo-20261031:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "b08b57df-1f3a-5277-ae76-509f35450bce",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "洛克王国：世界 · 「快洛惊喜日」官方直播（11月01日）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方两晚各19:00–23:00；type: preview不接受periods，因此按两晚各列一条，不把中间空档连为28小时。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-01T19:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "roco-world/cn/event/preview-kuailuo-20261101",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://www.bilibili.com/opus/1264225423188820003",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "rocoworld",
+        "server": "cn"
+      },
+      "source_key": "gameg:roco-world/cn/event/preview-kuailuo-20261101:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "11a57400-7e94-57f6-9d68-340266f6ca43",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "二重螺旋（国服） · 第22只乐园的白兔",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方9/8版本更新说明（皎皎角）：维护 2026年9月8日 08:00-15:00（UTC+8），开服即版本开启；新角色 法露茜（9/8）、梦中的少年/少女（9/8）；圣血·鞭刃/血染织羽 9/29 10:00。end未官宣，按乐园序曲 42 天周期推算 10-21 15:00，待官方下版本公告修正。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-08T15:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "duet-night-abyss/cn/version/di-22-zhi-le-yuan-de-bai-tu",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://dnabbs.yingxiong.com/pc/detail/876890907809416277",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "duetnightabyss-cn",
+        "server": "cn"
+      },
+      "source_key": "gameg:duet-night-abyss/cn/version/di-22-zhi-le-yuan-de-bai-tu:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "e5ef893b-eef5-5e7d-91d1-7f6ba671105d",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "二重螺旋（国服） · 行于破晓版本PC端预下载开启",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。仅PC端预下载；公告未给出预下载结束分钟，按开启单点记录，不杜撰end。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-15T11:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "duet-night-abyss/cn/event/preload-xing-yu-po-xiao",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://dnabbs.yingxiong.com/pc/detail/891748798257169532",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "duetnightabyss-cn",
+        "server": "cn"
+      },
+      "source_key": "gameg:duet-night-abyss/cn/event/preload-xing-yu-po-xiao:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "dada8d1b-03ec-5e2e-bb60-49424dba49ef",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "二重螺旋（国服） · 10月20日版本更新停服维护（行于破晓）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方计划维护08:00-15:00（UTC+8）；公告说明开服时间可能随维护进度提前或推迟。「行于破晓」version记录缺end，暂不填写无法解析的related。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-20T08:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "duet-night-abyss/cn/event/maintenance-2026-10-20",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://dnabbs.yingxiong.com/pc/detail/892126291510165810",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "duetnightabyss-cn",
+        "server": "cn"
+      },
+      "source_key": "gameg:duet-night-abyss/cn/event/maintenance-2026-10-20:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "104e70dc-d70a-5bbe-b7fe-3a1de2a7b5dc",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "二重螺旋（国服） · 10月20日停机维护升级（临时停服，服务器扩容）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方计划临时维护22:30–23:30，开服随维护进度调整；end为计划值，不是实际完成观测。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-20T22:30:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "duet-night-abyss/cn/event/maintenance-2026-10-20-capacity",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://dnabbs.yingxiong.com/pc/detail/893746983733298075",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "duetnightabyss-cn",
+        "server": "cn"
+      },
+      "source_key": "gameg:duet-night-abyss/cn/event/maintenance-2026-10-20-capacity:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "c19e2d0a-1268-5feb-88ad-a725f53630af",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "奇迹暖暖 · 9月24日停服更新（13.4.0版本）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。官方维护公告：9月24日0:00—8:00 停服更新至 13.4.0 版本，开服时间可能因维护进度提前或延迟。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-24T00:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "miracle-nikki/cn/event/maintenance-2026-09-24",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://qjnn.qq.com/webplat/info/news_version3/11785/23142/23143/23148/m14777/202609/991431.shtml",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "miraclenikki",
+        "server": "cn"
+      },
+      "source_key": "gameg:miracle-nikki/cn/event/maintenance-2026-09-24:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "c6aeeb7e-3d7a-55b7-a35b-9fad9ce3ab8c",
+      "category": "game",
+      "event_type": "banner",
+      "title": "奇迹暖暖 · 复刻·克雷尔小屋（信鸽田园主题家具）",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-03T05:00:00+08:00",
+      "end": "2026-11-09T23:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "miracle-nikki/cn/event/banner-kleier-xiaowu-202611",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://qjnn.qq.com/webplat/info/news_version3/11785/23142/23143/23146/m14777/202610/992662.shtml",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "miraclenikki",
+        "server": "cn"
+      },
+      "source_key": "gameg:miracle-nikki/cn/event/banner-kleier-xiaowu-202611:start",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "ada429e7-127c-58d7-adca-218d85092344",
+      "category": "game",
+      "event_type": "banner",
+      "title": "奇迹暖暖 · 复刻·克雷尔小屋（信鸽田园主题家具） · 结束提醒",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-09T23:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "miracle-nikki/cn/event/banner-kleier-xiaowu-202611",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://qjnn.qq.com/webplat/info/news_version3/11785/23142/23143/23146/m14777/202610/992662.shtml",
+          "checked_at": "2026-11-03T02:34:18+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "miraclenikki",
+        "server": "cn"
+      },
+      "source_key": "gameg:miracle-nikki/cn/event/banner-kleier-xiaowu-202611:end",
+      "revision": 1,
+      "created_at": "2026-11-03T02:34:18+00:00",
+      "updated_at": "2026-11-03T02:34:18+00:00"
     }
   ]
 }

@@ -2,9 +2,9 @@
   "checked_on": "2026-11-03",
   "anime_directory_source": "https://animecca.jp/ja/seasons/2026-fall/premieres",
   "scope": "2026秋季目录含电视、网络、短篇、续篇和特别篇；游戏为常见热门二游广义名单，不声称客观穷尽或排行。",
-  "games": 34,
+  "games": 38,
   "anime": 85,
-  "events": 185,
+  "events": 203,
   "with_events": 70,
   "without_events": [
     "崩坏3",
@@ -58,5 +58,23 @@
     "古坟医生科菲 急诊室"
   ],
   "game_wiki_audit": "wiki-sources.json",
-  "game_policy": "GameG first for matching server; Wiki fallback for uncovered types; only confirmed timestamps are exported"
+  "game_policy": "GameG first for matching server; Wiki fallback for uncovered types; only confirmed timestamps are exported",
+  "focus_games": [
+    "genshin",
+    "starrail",
+    "zzz",
+    "arknights",
+    "wuwa",
+    "endfield",
+    "reverse1999",
+    "azurlane",
+    "nte",
+    "deepspace",
+    "lightnight",
+    "hokworld",
+    "rocoworld",
+    "duetnightabyss-cn",
+    "miraclenikki"
+  ],
+  "focus_source_records": 221
 }

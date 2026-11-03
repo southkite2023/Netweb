@@ -350,15 +350,14 @@ export const dateReviews = {
   },
   "azurlane": {
     "livestream": {
-      "status": "date_not_found",
-      "label": "没找到日期",
-      "reason": "已读到10月22日港区改建公告和活动专题，确认维护、建造时间；没有查到前瞻直播日期。",
-      "official_status": "尚未查明官方是否已公布；上述原因是本站的核查结果",
-      "checked_on": "2026-11-03",
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有前瞻记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
       "sources": [
-        "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建",
-        "https://wiki.biligame.com/blhx/碧蓝海事局飓风与雾霭回廊活动专题"
-      ]
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
     },
     "version_update": {
       "status": "recorded",
@@ -567,24 +566,24 @@ export const dateReviews = {
   },
   "deepspace": {
     "livestream": {
-      "status": "date_not_found",
-      "label": "没找到日期",
-      "reason": "已找到BWIKI「馥夜轻漾」卡池页面；该来源只支持卡池日期，这轮没有找到前瞻直播或版本公告的日期。",
-      "official_status": "尚未查明官方是否已公布；上述原因是本站的核查结果",
-      "checked_on": "2026-11-03",
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有前瞻记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
       "sources": [
-        "https://wiki.biligame.com/lysk/「馥夜轻漾」"
-      ]
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
     },
     "version_update": {
-      "status": "date_not_found",
-      "label": "没找到日期",
-      "reason": "已找到BWIKI「馥夜轻漾」卡池页面；该来源只支持卡池日期，这轮没有找到前瞻直播或版本公告的日期。",
-      "official_status": "尚未查明官方是否已公布；上述原因是本站的核查结果",
-      "checked_on": "2026-11-03",
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有版本或维护记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
       "sources": [
-        "https://wiki.biligame.com/lysk/「馥夜轻漾」"
-      ]
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
     },
     "banner": {
       "status": "recorded",
@@ -1079,16 +1078,14 @@ export const dateReviews = {
   },
   "lightnight": {
     "livestream": {
-      "status": "stale",
-      "label": "只找到旧资料",
-      "reason": "已找到BWIKI和Gamekee入口；Gamekee可访问，但公开索引主要是2025年旧内容，本轮没有找到2026年当前日期。",
-      "official_status": "尚未查明官方是否已公布；上述原因是本站的核查结果",
-      "checked_on": "2026-11-03",
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有前瞻记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
       "sources": [
-        "https://wiki.biligame.com/qqlove/首页",
-        "https://wiki.biligame.com/qqlove/活动日历排表·日历版",
-        "https://www.gamekee.com/lightandnight/"
-      ]
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
     },
     "version_update": {
       "status": "source_uncertain",
@@ -1222,6 +1219,149 @@ export const dateReviews = {
         "https://pjsk.moe/zh-cn/information/",
         "https://pjsekai.fandom.com/zh-tw/wiki/世界計畫_繽紛舞台_feat._初音未來/卡片列表"
       ]
+    }
+  },
+  "hokworld": {
+    "version_update": {
+      "status": "recorded",
+      "label": "已收录日期 · GameG",
+      "reason": "优先采用 GameG 国服时间表。本类共 15 条来源记录，已导入 5 个明确确认的时间点。另有 10 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：9月17日不停服维护；起点状态：来源未标确认；站内记录起点：2026-09-17T05:00:00+08:00（未作为确认日期导出）。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://world.qq.com/web202603/newsDetail.html?newsid=18929174",
+        "https://world.qq.com/web202603/newsDetail.html?newsid=18934615"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "livestream": {
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有前瞻记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
+      "sources": [
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "banner": {
+      "status": "recorded",
+      "label": "已收录日期 · GameG",
+      "reason": "优先采用 GameG 国服时间表。本类共 1 条来源记录，已导入 2 个明确确认的时间点。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://world.qq.com/web202603/newsDetail.html?newsid=18916398"
+      ],
+      "checked_on": "2026-11-03"
+    }
+  },
+  "rocoworld": {
+    "version_update": {
+      "status": "recorded",
+      "label": "已收录日期 · GameG",
+      "reason": "优先采用 GameG 国服时间表。本类共 8 条来源记录，已导入 2 个明确确认的时间点。另有 6 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：S4赛季版本停机维护（9月10日）；起点状态：来源未标确认；站内记录起点：2026-09-10T00:00:00+08:00（未作为确认日期导出）。9月10日版本更新公告：更新时间 2026年09月10日00:00-09月10日10:00。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://www.taptap.cn/moment/846848060746107324",
+        "https://www.bilibili.com/opus/1264225423188820003"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "livestream": {
+      "status": "recorded",
+      "label": "已收录日期 · GameG",
+      "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 2 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：S4赛季PV首曝：「洛子人奇妙夜」官方直播；起点状态：来源未标确认；站内记录起点：2026-08-28T19:00:00+08:00（未作为确认日期导出）。官方确认直播并首曝S4赛季PV；S4正式开启时间未公布。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://www.bilibili.com/opus/1264225423188820003"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "banner": {
+      "status": "source_uncertain",
+      "label": "来源有记录，时间未明确确认",
+      "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 0 个明确确认的时间点。另有 3 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：皮卡月刊「天空邮局」限时上架；起点状态：来源未标确认；站内记录起点：2026-09-25T04:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://www.taptap.cn/moment/846848060746107324",
+        "https://www.taptap.cn/moment/850761243533774540",
+        "https://www.taptap.cn/moment/850761243533774540?group_id=228326"
+      ],
+      "checked_on": "2026-11-03"
+    }
+  },
+  "duetnightabyss-cn": {
+    "version_update": {
+      "status": "recorded",
+      "label": "已收录日期 · GameG",
+      "reason": "优先采用 GameG 国服时间表。本类共 13 条来源记录，已导入 4 个明确确认的时间点。另有 9 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：9月8日版本更新停服维护（第22只乐园的白兔）；起点状态：来源未标确认；站内记录起点：2026-09-08T08:00:00+08:00（未作为确认日期导出）。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://dnabbs.yingxiong.com/pc/detail/892126291510165810",
+        "https://dnabbs.yingxiong.com/pc/detail/893746983733298075"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "livestream": {
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有前瞻记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
+      "sources": [
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "banner": {
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有卡池记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
+      "sources": [
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
+    }
+  },
+  "miraclenikki": {
+    "version_update": {
+      "status": "recorded",
+      "label": "已收录日期 · GameG",
+      "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 1 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：13.3.0版本更新维护；起点状态：来源未标确认；站内记录起点：2026-08-21T00:00:00+08:00（未作为确认日期导出）。官方维护公告明确 8月21日00:00-07:00。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://qjnn.qq.com/webplat/info/news_version3/11785/23142/23143/23146/m14777/202608/990085.shtml",
+        "https://qjnn.qq.com/webplat/info/news_version3/11785/23142/23143/23148/m14777/202609/991431.shtml"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "livestream": {
+      "status": "source_not_listed",
+      "label": "GameG未收录此类日期",
+      "reason": "已检查GameG国服时间表，该游戏没有前瞻记录。不是读取失败，也不能据此认定官方没有公布。",
+      "official_status": "GameG未收录；官方是否公布尚未核实",
+      "sources": [
+        "https://www.gameg.site/"
+      ],
+      "checked_on": "2026-11-03"
+    },
+    "banner": {
+      "status": "recorded",
+      "label": "已收录日期 · GameG",
+      "reason": "优先采用 GameG 国服时间表。本类共 7 条来源记录，已导入 2 个明确确认的时间点。另有 6 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：古丽法后院（小屋限时抽奖阁复刻）；起点状态：来源未标确认；站内记录起点：2026-08-16T05:00:00+08:00（未作为确认日期导出）。",
+      "official_status": "来源含未确认时间；不能据此断言官方未公布",
+      "sources": [
+        "https://www.gameg.site/",
+        "https://qjnn.qq.com/webplat/info/news_version3/11785/23142/23143/23147/m14777/202608/989337.shtml",
+        "https://qjnn.qq.com/webplat/info/news_version3/11785/23142/23143/23146/m14777/202610/992662.shtml"
+      ],
+      "checked_on": "2026-11-03"
     }
   }
 };
