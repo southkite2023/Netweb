@@ -414,7 +414,7 @@
       "supplemental_banners": [
         {
           "id": "genshin-7.2-1",
-          "name": "7.2 第一期 · 米提亚、芙宁娜",
+          "name": "7.2 第一期 · 米提亚、芙宁娜及「神铸赋形」",
           "start": "2026-11-04",
           "end": "2026-11-24T17:59:00+08:00",
           "certainty": {
@@ -426,7 +426,7 @@
           "sources": [
             "https://genshin.hoyoverse.com/m/en/news/detail/167098"
           ],
-          "note": "11月4日版本更新后开启，未指定开服钟点。开始提醒按日期记录。"
+          "note": "角色祈愿「万序衍盈」「众水的颂诗」与武器祈愿「神铸赋形」同期开启。11月4日版本更新后开放，开始提醒按日期记录。"
         },
         {
           "id": "genshin-7.2-2",
@@ -443,6 +443,20 @@
             "https://wiki.bittopup.com/zh-CN/genshin/banner"
           ],
           "note": "北京时间。BannerHistory列15:00关闭，Wiki列最后可抽分钟14:59。尚未查到第二期官方精确起止公告，暂不导出为确认提醒。"
+        },
+        {
+          "id": "genshin-7.2-natlan",
+          "name": "7.2 纳塔集录祈愿（联合卡池）",
+          "start": null,
+          "end": null,
+          "certainty": {},
+          "provider": "HoYoverse 版本新闻稿",
+          "url": "https://www.gamespress.com/en-US/Genshin-Impact-Version-72-Arrives-on-November-4-as-Teyvats-Seven-Natio",
+          "sources": [
+            "https://bannerhistory.app/zh/genshin-pickup-history",
+            "https://bannerschedule.com/zh/genshin/7-2-banners/"
+          ],
+          "note": "收录瓦雷莎、恰斯卡、希诺宁、玛拉妮、基尼奇。官方版本新闻稿将集录祈愿列在第二期，BannerHistory 列为 11 月 4 日至 24 日，两处排期冲突。截至 11 月 3 日尚未查到国服集录祈愿精确起止公告，订阅暂不生成时间提醒。"
         }
       ]
     },
