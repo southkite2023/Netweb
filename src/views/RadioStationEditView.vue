@@ -65,7 +65,7 @@ onMounted(load)
           <label class="wide"><span>{{ copy.bio }}</span><textarea v-model="form.bio" maxlength="500" rows="5"></textarea></label>
         </div>
         <p class="form-hint">{{ copy.hint }}</p>
-        <div class="radio-form-actions"><button class="primary-action" :disabled="busy" @click="save">{{ copy.save }}</button><RouterLink v-if="profile" class="secondary-action" :to="`/radio/${profile.callsign}`">{{ copy.public }} →</RouterLink></div>
+        <div class="radio-form-actions"><button class="primary-action" :disabled="busy" @click="save">{{ copy.save }}</button><RouterLink v-if="profile" class="secondary-action" :to="`/003/radio/${profile.callsign}`">{{ copy.public }} →</RouterLink></div>
       </section>
     </main>
   </div><SiteFooter/></div>

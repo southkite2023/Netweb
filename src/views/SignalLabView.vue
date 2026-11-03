@@ -75,7 +75,7 @@ onBeforeUnmount(() => { stop(); clearInterval(clockTimer); document.removeEventL
 <template>
   <div class="signal-page"><div class="container"><SiteNav />
     <main class="experience-main">
-      <header class="experience-heading"><p class="eyebrow">// SIGNAL LAB · 001</p><h1>{{ c.labTitle }}</h1><p>{{ c.labSubtitle }}</p></header>
+      <header class="experience-heading"><p class="eyebrow">// PROJECT 003 · SIGNAL LAB</p><h1>{{ c.labTitle }}</h1><p>{{ c.labSubtitle }}</p></header>
       <div class="signal-console">
         <div class="signal-input-panel">
           <label for="signal-message">{{ c.input }} <span class="field-count">{{ message.length }}/120</span></label>
@@ -93,7 +93,7 @@ onBeforeUnmount(() => { stop(); clearInterval(clockTimer); document.removeEventL
         </div>
       </div>
       <p class="signal-legend">{{ c.legend }}</p>
-      <section class="clock-section"><div class="section-heading"><h2>{{ c.clock }}</h2><RouterLink to="/radio">{{ c.radio }} ↗</RouterLink></div><div class="clock-grid"><div v-for="clock in clocks" :key="clock.zone"><span>{{ clock.zone }}</span><time>{{ clock.time }}</time></div></div><p class="field-note">{{ c.clockNote }}</p></section>
+      <section class="clock-section"><div class="section-heading"><h2>{{ c.clock }}</h2><RouterLink to="/003/radio">{{ c.radio }} ↗</RouterLink></div><div class="clock-grid"><div v-for="clock in clocks" :key="clock.zone"><span>{{ clock.zone }}</span><time>{{ clock.time }}</time></div></div><p class="field-note">{{ c.clockNote }}</p></section>
     </main>
   </div><SiteFooter /></div>
 </template>

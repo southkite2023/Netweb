@@ -10,5 +10,5 @@ const copy = computed(() => ({
   ja: { label:'PROJECT 003 / LIVE SYSTEM', title:'Yuashie Radioへ', text:'コールサインと📻無線IDを登録し、QSOを記録、自作QSLをアップロードし、Yuashie内の他局へ電子QSLを送信できます。', enter:'無線システムへ', features:['コールサイン・A/B/Cクラス','完全なQSOログ','自作QSLテンプレート','サイト内eQSL送受信'] },
 }[locale.value]))
 </script>
-<template><section class="radio-project-panel"><div><span>{{copy.label}}</span><h2>{{copy.title}}</h2><p>{{copy.text}}</p><ul><li v-for="item in copy.features" :key="item">{{item}}</li></ul></div><RouterLink class="primary-action" to="/radio">{{copy.enter}} →</RouterLink></section>
-<section class="lab-invitation"><span class="section-label">SIGNAL LAB / CW</span><h2>{{ c.enterLab }}</h2><p>{{ c.labIntro }}</p><RouterLink class="inline-link" to="/lab">{{ c.lab }} ↗</RouterLink></section></template>
+<template><section class="radio-project-panel"><div><span>{{copy.label}}</span><h2>{{copy.title}}</h2><p>{{copy.text}}</p><ul><li v-for="item in copy.features" :key="item">{{item}}</li></ul></div><RouterLink class="primary-action" to="/003/radio">{{copy.enter}} →</RouterLink></section>
+<section class="lab-invitation"><span class="section-label">SIGNAL LAB / CW</span><h2>{{ c.enterLab }}</h2><p>{{ c.labIntro }}</p><RouterLink class="inline-link" to="/003/lab">{{ c.lab }} ↗</RouterLink></section></template>

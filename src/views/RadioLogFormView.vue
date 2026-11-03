@@ -29,7 +29,7 @@ async function load() {
   error.value=''
   try {
     const radio = await api.radioMe()
-    if (!radio.profile) { router.replace('/radio/station'); return }
+    if (!radio.profile) { router.replace('/003/radio/station'); return }
     if (!editing.value) {
       form.value.qth = radio.profile.qth || ''; form.value.rig = radio.profile.rig || ''; form.value.antenna = radio.profile.antenna || ''; form.value.powerSentW = radio.profile.defaultPowerW ?? ''
       return
@@ -45,7 +45,7 @@ async function save(){
   try{
     const payload={...form.value, mode:form.value.mode==='OTHER'?customMode.value:form.value.mode}
     if(editing.value) await api.updateRadioLog(route.params.id,payload); else await api.createRadioLog(payload)
-    router.push('/radio/log')
+    router.push('/003/radio/log')
   }catch(e){error.value=e.message}finally{busy.value=false}
 }
 onMounted(load)
@@ -73,6 +73,6 @@ onMounted(load)
 <label><span>{{copy.qth}}</span><input v-model="form.qth" maxlength="120"></label><label><span>{{copy.rig}}</span><input v-model="form.rig" maxlength="120"></label><label class="wide"><span>{{copy.antenna}}</span><input v-model="form.antenna" maxlength="160"></label><label class="wide"><span>{{copy.notes}}</span><textarea v-model="form.notes" maxlength="1000" rows="5"></textarea></label>
 </div></section>
 <section class="radio-fieldset"><h2>{{copy.card}}</h2><div class="radio-check-grid"><label><input v-model="form.qslRequested" type="checkbox">{{copy.requested}}</label><label><input v-model="form.qslSent" type="checkbox">{{copy.sent}}</label><label><input v-model="form.qslReceived" type="checkbox">{{copy.received}}</label></div></section>
-<div class="radio-form-actions"><button class="primary-action" :disabled="busy" type="submit">{{copy.save}}</button><RouterLink class="secondary-action" to="/radio/log">{{copy.cancel}}</RouterLink></div>
+<div class="radio-form-actions"><button class="primary-action" :disabled="busy" type="submit">{{copy.save}}</button><RouterLink class="secondary-action" to="/003/radio/log">{{copy.cancel}}</RouterLink></div>
 </form></main></div><SiteFooter/></div>
 </template>

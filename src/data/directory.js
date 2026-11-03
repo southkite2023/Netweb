@@ -18,10 +18,10 @@ export function directoryEntries(locale = 'zh') {
   return [    ...projectEntries(locale),
     { path: '/projects/004/subscribe', title: `Calendar · ${calendar.generator}`, description: calendar.badge, keywords: 'calendar 日历 カレンダー ics 订阅 subscription 購読', category: 'pages', code: 'ICS' },
     ...[
-      ['/lab', 'lab', 'CW morse 摩尔斯 モールス signal 实验'],
-      ['/radio', 'radio', '业余无线电 amateur callsign 呼号 無線'],
-      ['/radio/log', 'log', 'QSO 通联 交信 logbook'],
-      ['/radio/qsl', 'qsl', '收卡 发卡 eQSL cards カード'],
+      ['/003/lab', 'lab', 'CW morse 摩尔斯 モールス signal 实验'],
+      ['/003/radio', 'radio', '业余无线电 amateur callsign 呼号 無線'],
+      ['/003/radio/log', 'log', 'QSO 通联 交信 logbook'],
+      ['/003/radio/qsl', 'qsl', '收卡 发卡 eQSL cards カード'],
       ['/about', 'about', '更新 日志 changelog release バージョン'],
       ['/feedback', 'feedback', 'Bug 建议 suggestion フィードバック'],
       ['/vip', 'vip', '会员 月卡 支付宝 support membership alipay'],
@@ -29,6 +29,6 @@ export function directoryEntries(locale = 'zh') {
       ['/terms', 'terms', '用户 服务 条款 terms 規約'],
       ['/privacy', 'privacyPage', '隐私 privacy プライバシー'],
       ['/works', 'works', '作品 copyright 著作権'],
-    ].map(([path, key, keywords]) => ({ path, title: c[key], description: path, keywords, category: 'pages', code: path === '/lab' ? 'CW' : '↗' })),
+    ].map(([path, key, keywords]) => ({ path, title: c[key], description: path, keywords, category: 'pages', code: path === '/003/lab' ? 'CW' : '↗' })),
   ]
 }

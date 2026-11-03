@@ -25,14 +25,14 @@ test('Morse uses distinct element, letter and word gaps with no extra trailing g
 
 const entries = [
   { path: '/projects/002', title: 'Minecraft 服务器', description: '纯净生存', category: 'projects', keywords: 'game' },
-  { path: '/radio/qsl', title: '电子 QSL', description: '卡片', category: 'pages', keywords: 'card' },
+  { path: '/003/radio/qsl', title: '电子 QSL', description: '卡片', category: 'pages', keywords: 'card' },
 ]
 test('Search handles multilingual text, width, whitespace and combined filters', () => {
   assert.equal(searchEntries(entries, '  ＭＩＮＥＣＲＡＦＴ  服务器 ')[0].path, '/projects/002')
-  assert.equal(searchEntries(entries, '卡片')[0].path, '/radio/qsl')
+  assert.equal(searchEntries(entries, '卡片')[0].path, '/003/radio/qsl')
   assert.equal(searchEntries(entries, '', { category: 'pages' }).length, 1)
-  assert.equal(searchEntries(entries, '', { category: 'saved', favorites: ['/radio/qsl'] })[0].path, '/radio/qsl')
-  assert.deepEqual(searchEntries(entries, 'minecraft', { category: 'saved', favorites: ['/radio/qsl'] }), [])
+  assert.equal(searchEntries(entries, '', { category: 'saved', favorites: ['/003/radio/qsl'] })[0].path, '/003/radio/qsl')
+  assert.deepEqual(searchEntries(entries, 'minecraft', { category: 'saved', favorites: ['/003/radio/qsl'] }), [])
   assert.deepEqual(searchEntries(entries, 'does not exist'), [])
 })
 

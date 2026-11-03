@@ -113,7 +113,7 @@ watch(() => props.projectId, () => {
               <RouterLink :to="`/u/${item.author.username}`"><strong>{{ item.author.displayName }}</strong></RouterLink>
               <span class="comment-handle">@{{ item.author.username }}</span>
               <span v-if="item.author.role === 'admin'" class="comment-admin-mark">◆ {{ copy.admin }}</span>
-              <RouterLink v-if="item.author.radioProfile" class="comment-radio-badge" :to="`/radio/${item.author.radioProfile.callsign}`">📻 {{ item.author.radioProfile.callsign }}</RouterLink>
+              <RouterLink v-if="item.author.radioProfile" class="comment-radio-badge" :to="`/003/radio/${item.author.radioProfile.callsign}`">📻 {{ item.author.radioProfile.callsign }}</RouterLink>
               <span v-if="item.author.equippedBadge" class="comment-badge" :title="item.author.equippedBadge.description">{{ item.author.equippedBadge.emoji }} {{ item.author.equippedBadge.name }}</span>
             </div>
             <p v-if="item.status === 'visible'" class="comment-content">{{ item.content }}</p>
@@ -143,7 +143,7 @@ watch(() => props.projectId, () => {
                     <RouterLink :to="`/u/${reply.author.username}`"><strong>{{ reply.author.displayName }}</strong></RouterLink>
                     <span class="comment-handle">@{{ reply.author.username }}</span>
                     <span v-if="reply.author.role === 'admin'" class="comment-admin-mark">◆ {{ copy.admin }}</span>
-                    <RouterLink v-if="reply.author.radioProfile" class="comment-radio-badge" :to="`/radio/${reply.author.radioProfile.callsign}`">📻 {{ reply.author.radioProfile.callsign }}</RouterLink>
+                    <RouterLink v-if="reply.author.radioProfile" class="comment-radio-badge" :to="`/003/radio/${reply.author.radioProfile.callsign}`">📻 {{ reply.author.radioProfile.callsign }}</RouterLink>
                     <span v-if="reply.author.equippedBadge" class="comment-badge">{{ reply.author.equippedBadge.emoji }} {{ reply.author.equippedBadge.name }}</span>
                   </div>
                   <p v-if="reply.status === 'visible'" class="comment-content">{{ reply.content }}</p>

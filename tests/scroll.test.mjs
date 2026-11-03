@@ -5,7 +5,7 @@ import { scrollBehavior } from '../src/lib/scroll.js'
 const route = (path, query = {}, hash = '') => ({ path, query, hash })
 
 test('download platform changes and other same-page filters preserve the viewport', () => {
-  for (const path of ['/projects/001/download', '/project', '/radio/log']) {
+  for (const path of ['/projects/001/download', '/project', '/003/radio/log']) {
     assert.equal(scrollBehavior(route(path, { platform: 'macOS', q: 'new' }), route(path, { platform: 'Android', q: 'old' })), false)
     assert.equal(scrollBehavior(route(path), route(path, { q: 'old' })), false)
   }
