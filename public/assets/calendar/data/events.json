@@ -4739,6 +4739,586 @@
         "game_id": "chaoszero",
         "server": "global"
       }
+    },
+    {
+      "id": "2c61d104-1e90-557a-ac4d-6c7ec9ee7e0f",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "原神 · 7.2版本前瞻",
+      "description": "Wiki已公布日期；区服：cn。已举行的直播，保留公布记录。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-23T20:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/ys/原神7.2版本前瞻直播总结",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/ys/原神7.2版本前瞻直播总结",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "genshin",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "96a9e908-9c5e-5e0e-aaaa-136176f567b4",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "崩坏：星穹铁道 · 4.7版本前瞻",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-30T19:30:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/sr/4.7版本「此刻，将群星付之一笑」前瞻直播总结",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/sr/4.7版本「此刻，将群星付之一笑」前瞻直播总结",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "starrail",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "a6700d98-5e91-5677-9bd9-73760bd02857",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "崩坏：星穹铁道 · 4.7此刻，将群星付之一笑上线",
+      "description": "Wiki已公布日期；区服：cn。来源只公布上线日期，不推算维护钟点。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-11",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/sr/爻光/媒体",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/sr/爻光/媒体",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "starrail",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "3b8aac11-d60a-58e9-b75c-0f92574e2e1c",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "明日方舟 · 2026感谢庆典前瞻",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-24T19:30:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://prts.wiki/w/制作组通讯/70",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://prts.wiki/w/制作组通讯/70",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "e6738fb7-22e2-500b-bf7e-f12526b4a142",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "明日方舟 · 卫戍协议活动维护",
+      "description": "Wiki已公布日期；区服：cn。活动维护，不是另一个大版本。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-08T16:00:00+08:00",
+      "end": "2026-11-08T17:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://prts.wiki/w/感谢庆典2026/活动公告",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://prts.wiki/w/感谢庆典2026/活动公告",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "arknights",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "564cfcf3-6e9b-59db-acee-273d00e0aab2",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "战双帕弥什 · 远信回响版本维护",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-24T05:00:00+08:00",
+      "end": "2026-09-24T11:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "pgr",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "9948453f-d00b-58b8-94b6-a286bf7b2836",
+      "category": "game",
+      "event_type": "banner",
+      "title": "战双帕弥什 · 阿德莱德·破渊限时研发",
+      "description": "Wiki已公布日期；区服：cn。9月24日更新后开启；11月5日05:00结束，开启按日期记录，不推算维护实际结束时刻。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-09-24",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "pgr",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "26d7520e-5e44-5b79-8ba3-5b8ea5ee210b",
+      "category": "game",
+      "event_type": "banner",
+      "title": "战双帕弥什 · 阿德莱德·破渊限时研发 · 结束提醒",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-05T05:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "pgr",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "ca85247a-111b-58ba-b533-96a104cc9061",
+      "category": "game",
+      "event_type": "banner",
+      "title": "战双帕弥什 · 时崎狂三联动研发",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-09-29T10:00:00+08:00",
+      "end": "2026-11-03T23:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/zspms/《远信回响》版本更新公告",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "pgr",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "a12712d9-da9f-51f1-bc1d-93a46b8f2a29",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "碧蓝航线 · 飓风与雾霭回廊港区改建",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-22T10:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "azurlane",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "e7be95a7-807f-5689-a217-32460b55c614",
+      "category": "game",
+      "event_type": "banner",
+      "title": "碧蓝航线 · 飓风与雾霭回廊限时建造",
+      "description": "Wiki已公布日期；区服：cn。10月22日维护后至11月5日维护；两端实际钟点未明确，不假定维护结束时刻。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-10-22",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "azurlane",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "4fe13dfc-88d7-532e-8286-0c9bf403606f",
+      "category": "game",
+      "event_type": "banner",
+      "title": "碧蓝航线 · 飓风与雾霭回廊限时建造 · 结束提醒",
+      "description": "Wiki已公布日期；区服：cn。11月5日维护时结束，只按日期提醒。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-05",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "azurlane",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "2f5b41e6-80db-5609-af5f-e9632cd57018",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "胜利女神：新的希望 · 10月21日版本更新",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-10-21",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gamekee.com/nikke/724729.html",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://www.gamekee.com/nikke/724729.html",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "nikke-cn",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "0981e299-0022-5e8e-a84f-2826e1333a0a",
+      "category": "game",
+      "event_type": "banner",
+      "title": "胜利女神：新的希望 · 锦木千束限时招募",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-21T04:00:00+08:00",
+      "end": "2026-11-17T23:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gamekee.com/nikke/724729.html",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://www.gamekee.com/nikke/724729.html",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "nikke-cn",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "3539aff3-7430-5518-9274-972e74b23db1",
+      "category": "game",
+      "event_type": "banner",
+      "title": "胜利女神：新的希望 · 井上泷奈限时招募",
+      "description": "Wiki已公布日期；区服：cn。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-28T04:00:00+08:00",
+      "end": "2026-11-17T23:59:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gamekee.com/nikke/724729.html",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://www.gamekee.com/nikke/724729.html",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "nikke-cn",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "6a3cf3e4-75ea-55fd-9534-9fd1b89159ce",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "胜利女神：妮姬 · 四周年特别直播",
+      "description": "Wiki已公布日期；区服：global。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-24T18:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gamekee.com/nikke/723231.html",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://www.gamekee.com/nikke/723231.html",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "nikke-global",
+        "server": "global"
+      }
+    },
+    {
+      "id": "9aa0f6a4-50a8-5226-b1f7-587e52b19abd",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "胜利女神：妮姬 · 四周年版本维护",
+      "description": "Wiki已公布日期；区服：global。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-28T23:00:00+08:00",
+      "end": "2026-10-29T06:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gamekee.com/nikke/725772.html",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://www.gamekee.com/nikke/725772.html",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "nikke-global",
+        "server": "global"
+      }
+    },
+    {
+      "id": "5596aa16-af29-5d54-9fe4-ea219d57f474",
+      "category": "game",
+      "event_type": "banner",
+      "title": "边狱巴士公司 · 10月29日定向提取",
+      "description": "Wiki已公布日期；区服：global。原文KST：10月29日12:00—11月12日10:00；已转换北京时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-29T11:00:00+08:00",
+      "end": "2026-11-12T09:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://limbuscompany.wiki.gg/wiki/Extraction/Banner_History",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://limbuscompany.wiki.gg/wiki/Extraction/Banner_History",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "limbus",
+        "server": "global"
+      }
+    },
+    {
+      "id": "f2dd3a15-f495-5b8c-b27c-e8569d9aa856",
+      "category": "game",
+      "event_type": "banner",
+      "title": "深空之眼 · 协议锚定、协议扩充与常规扩充",
+      "description": "Wiki已公布日期；区服：cn。9月17日维护后开放并常驻；无下一轮截止时间，不推算轮换。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-09-17",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/dhmmr/卡池列表",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/dhmmr/卡池列表",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "aethergazer",
+        "server": "cn"
+      }
+    },
+    {
+      "id": "cc2dcb28-0c83-5d4c-8f53-49478435b2b0",
+      "category": "game",
+      "event_type": "version_update",
+      "title": "世界之外 · 10月28日闪断更新",
+      "description": "Wiki已公布日期；区服：cn。例行闪断更新，不是大版本。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-28T09:45:00+08:00",
+      "end": "2026-10-28T10:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "url": "https://wiki.biligame.com/world/《世界之外》26年10月28日闪断更新公告",
+      "sources": [
+        {
+          "provider": "wiki",
+          "authority": "community_wiki",
+          "url": "https://wiki.biligame.com/world/《世界之外》26年10月28日闪断更新公告",
+          "checked_at": "2026-11-03T00:00:00Z"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-03T00:00:00Z",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "game": {
+        "game_id": "beyondworld",
+        "server": "cn"
+      }
     }
   ]
 }

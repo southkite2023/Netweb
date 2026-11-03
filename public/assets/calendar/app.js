@@ -2,6 +2,7 @@ import { selectionPayload, restoreSelection } from './subscription.js';
 import { AccountCalendar } from './account.js';
 const $ = s => document.querySelector(s);
 import { catalog, metadata } from './catalog.js';
+import { orderedGames, coverageLabel, verifiedTypeCount } from './presentation.js';
 const chosen = new Map();
 let editing, opener;
 const types = {livestream:'前瞻',version_update:'版本',banner:'卡池'};
@@ -41,19 +42,24 @@ function draw(){
   for(const kind of ['games','anime']){
     const query=$(`#${kind}-search`).value.trim().toLowerCase();
     const list=$(`#${kind}`);list.replaceChildren();
-    for(const [id,name] of catalog[kind].filter(([id,name])=>[name,metadata[id]?.original,...(metadata[id]?.aliases||[])].join(' ').toLowerCase().includes(query) && ($(`#${kind}-filter`).value==='all'||($(`#${kind}-filter`).value==='ready'?metadata[id].event_count>0:!metadata[id].event_count)))){
+    for(const [id,name] of (kind==='games'?orderedGames(catalog.games,metadata):catalog.anime).filter(([id,name])=>[name,metadata[id]?.original,...(metadata[id]?.aliases||[])].join(' ').toLowerCase().includes(query) && ($(`#${kind}-filter`).value==='all'||($(`#${kind}-filter`).value==='ready'?metadata[id].event_count>0:!metadata[id].event_count)))){
       const button=document.createElement('button');button.className='item';button.type='button';button.setAttribute('aria-pressed',chosen.has(id));
       const title=document.createElement('strong');title.textContent=name;
       const detail=document.createElement('small');const selection=chosen.get(id);
       detail.textContent=selection&&kind==='games'?selection.types.map(t=>types[t]).join(' / '):metadata[id].label;
-      button.title=[metadata[id].original,metadata[id].label].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.onclick=()=>kind==='games'?openOptions(id,name,button):(chosen.has(id)?chosen.delete(id):chosen.set(id,{kind:'anime'}),selectionChanged());list.append(button);
+      if(kind==='games'){detail.textContent=coverageLabel(metadata[id]);button.dataset.incomplete=verifiedTypeCount(metadata[id])<3;}
+      button.title=[name,metadata[id].original,metadata[id].label].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.onclick=()=>kind==='games'?openOptions(id,name,button):(chosen.has(id)?chosen.delete(id):chosen.set(id,{kind:'anime'}),selectionChanged());list.append(button);
     }
     if(!list.children.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='没有匹配的项目';list.append(empty);}
     $(`#${kind}-count`).textContent=`${catalog[kind].length} 项 · ${catalog[kind].filter(([id])=>chosen.has(id)).length} 已选`;
   }
   $('#selected-count').textContent=`已选择 ${chosen.size} 个项目`;$('#generate').disabled=!ready||busy||account.paused||(!chosen.size&&!account.calendar);$('#generate').textContent=account.calendar?'保存到原日历':'创建我的日历';$('#new-calendar').disabled=!account.calendar||busy||account.paused;
 }
-function openOptions(id,name,button){editing=id;opener=button;$('#dialog-title').textContent=name;const m=metadata[id];const pending=Object.keys(types).filter(t=>!m.event_types?.includes(t));$('#game-coverage').textContent=m.label+'；'+(m.event_types?.length?'已收录：'+m.event_types.map(t=>types[t]).join('、')+'。':'')+(pending.length?'待核实：'+pending.map(t=>types[t]).join('、')+'，不代表没有活动。':'')+' '+(m.monitor_note||'')+' 区服：'+(m.server==='global'?'国际服':'国服')+'。';$('#game-wiki').hidden=!m.url;$('#game-wiki').href=m.url||'#';$('#game-wiki').textContent='查看本游戏 Wiki 来源';$('#form-error').textContent='';const config=chosen.get(id)||{types:Object.keys(types),format:'exact',duration:false};
+function renderDates(meta){
+ const list=$('#game-dates');list.replaceChildren();
+ for(const type of Object.keys(types)){const row=document.createElement('li');const info=meta.date_summary?.[type];row.textContent=types[type]+'：'+(info?info.label:'尚未取得本区服可确认日期');if(info?.url){const link=document.createElement('a');link.href=info.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=' 来源';row.append(link);}list.append(row);}
+}
+function openOptions(id,name,button){editing=id;opener=button;$('#dialog-title').textContent=name;const m=metadata[id];const pending=Object.keys(types).filter(t=>m.coverage_types?.[t]!=='verified');$('#game-coverage').textContent=m.label+'；'+(m.event_types?.length?'已收录：'+m.event_types.map(t=>types[t]).join('、')+'。':'')+(pending.length?'待核实：'+pending.map(t=>types[t]).join('、')+'，不代表没有活动。':'')+' '+(m.monitor_note||'')+' 区服：'+(m.server==='global'?'国际服':'国服')+'。';renderDates(m);$('#game-wiki').hidden=!m.url;$('#game-wiki').href=m.url||'#';$('#game-wiki').textContent='查看本游戏 Wiki 来源';$('#form-error').textContent='';const config=chosen.get(id)||{types:Object.keys(types),format:'exact',duration:false};
   document.querySelectorAll('[name=type]').forEach(x=>x.checked=config.types.includes(x.value));document.querySelectorAll('[name=format]').forEach(x=>x.checked=x.value===config.format);$('#duration').checked=config.duration;$('#remove').disabled=!chosen.has(id);$('#options').showModal();}
 $('#close').onclick=()=>$('#options').close();
 $('#options').addEventListener('close',()=>opener?.focus());
@@ -90,8 +96,8 @@ function renderWikiAudit(data){
  const container=$('#wiki-audit');container.replaceChildren();
  for(const g of data.games){
   const m=metadata[g.game_id];if(!m)continue;
-  const monitor=g.monitor||{};m.event_count=g.event_count;m.event_types=g.event_types;m.server=g.server;
-  m.label=g.event_count?g.event_count+' 条Wiki日程 · 部分类型待核实':'Wiki排期待核实';
+  const monitor=g.monitor||{};m.event_count=g.event_count;m.event_types=g.event_types;m.server=g.server;m.coverage_types=g.types;
+  m.label=coverageLabel(m)+(g.event_count?' · '+g.event_count+'条当前/后续日程':' · 暂无当前/后续日程');
   m.monitor_note=(monitor.mode==='auto'?'卡池自动解析；前瞻和版本待核验。':'仅监测变化，排期待人工核验。')+(monitor.error?'读取或解析失败，保留上次有效数据。':monitor.message||'')+(monitor.stale?'监测已延迟。':'');
   const p=document.createElement('p');const name=document.createElement('strong');name.textContent=g.name+'（'+(g.server==='global'?'国际服':'国服')+'）';p.append(name,' · '+m.label+'。'+m.monitor_note);
   const coverage=Object.entries(g.types).map(([t,v])=>types[t]+'：'+(v==='verified'?'已核实部分排期':v==='partial'?'部分钟点未知':'待核实')).join(' / ');p.append(document.createElement('br'),coverage+'。'+g.note);
