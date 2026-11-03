@@ -1,0 +1,856 @@
+{
+  "schema_version": 1,
+  "policy": "verified official > sourced community > original; never machine translate",
+  "entries": [
+    {
+      "id": "animecca:yaseinorasubosugaarawareta-tid8021",
+      "anilist_id": null,
+      "native_title": "野生のラスボスが現れた！ 第2期",
+      "checked_on": "2026-11-03",
+      "title": "野生的最终BOSS出现了 第2期",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:umayuru-furugeto",
+      "anilist_id": null,
+      "native_title": "うまゆる ふるげ～と！",
+      "checked_on": "2026-11-03",
+      "title": "うまゆる ふるげ～と！",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:tenseikizokukanteisukirudenariag-tid8009",
+      "anilist_id": 185756,
+      "native_title": "転生貴族、鑑定スキルで成り上がる 第3期",
+      "checked_on": "2026-11-03",
+      "title": "转生贵族凭鉴定技能扭转人生 第三季",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/530104",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:shintenisunooujisamaandasebuntin-tid8044",
+      "anilist_id": 199068,
+      "native_title": "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦",
+      "checked_on": "2026-11-03",
+      "title": "新网球王子 U-17 世界杯 决赛成员选拔赛",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/586941",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:precure-fairies-tid8073",
+      "anilist_id": null,
+      "native_title": "ぷちきゅあ シーズン4",
+      "checked_on": "2026-11-03",
+      "title": "ぷちきゅあ シーズン4",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:shirubania-famiri-furea-no-karafuru-eburidei",
+      "anilist_id": 218942,
+      "native_title": "シルバニアファミリー フレアのカラフル・エブリデイ",
+      "checked_on": "2026-11-03",
+      "title": "シルバニアファミリー フレアのカラフル・エブリデイ",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "official:fxkurumi",
+      "anilist_id": 206401,
+      "native_title": "FX戦士くるみちゃん",
+      "checked_on": "2026-11-03",
+      "title": "FX战士久留美",
+      "source_kind": "official",
+      "source_url": "https://www.kadokawa.com.tw/products/9786264351447",
+      "evidence_note": "2026-11-03 核对台湾角川原作漫画正式出版名「FX戰士久留美」；本站简体显示只作戰→战字形转换，不宣称动画大陆授权译名。"
+    },
+    {
+      "id": "animecca:kizudarakenoseijoyorihoufukuokometeshizu",
+      "anilist_id": 212144,
+      "native_title": "傷だらけ聖女より報復をこめて Season2",
+      "checked_on": "2026-11-03",
+      "title": "黑化吧！圣女大人 第二季",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/650428",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:koorinojouheki-tid8008",
+      "anilist_id": 213805,
+      "native_title": "氷の城壁 第2期",
+      "checked_on": "2026-11-03",
+      "title": "冰之城墙 第二季",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/665390",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:pandorobou",
+      "anilist_id": 194207,
+      "native_title": "パンどろぼう",
+      "checked_on": "2026-11-03",
+      "title": "神秘面包小子",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/563508",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:aokidenshouwerushusheda",
+      "anilist_id": 216895,
+      "native_title": "蒼き伝承 ウェルシュ＆シェダー",
+      "checked_on": "2026-11-03",
+      "title": "苍蓝传承",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:kusuriya-no-hitorigoto-s3",
+      "anilist_id": 195516,
+      "native_title": "薬屋のひとりごと 第3期",
+      "checked_on": "2026-11-03",
+      "title": "药屋少女的呢喃 第三季",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/568244",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:temuparuaitemunochikara",
+      "anilist_id": null,
+      "native_title": "テムパル～アイテムの力～",
+      "checked_on": "2026-11-03",
+      "title": "装备我最强",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:tougen-anki-s2",
+      "anilist_id": 204650,
+      "native_title": "桃源暗鬼 第二期 〜日光・華厳の滝編〜",
+      "checked_on": "2026-11-03",
+      "title": "桃源暗鬼 第二期 〜日光・華厳の滝編〜",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:toukyouribenjazusantensensouhen",
+      "anilist_id": 178083,
+      "native_title": "東京リベンジャーズ 三天戦争編",
+      "checked_on": "2026-11-03",
+      "title": "东京复仇者 三天战争篇",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/499474",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:kerorogunsou",
+      "anilist_id": 216557,
+      "native_title": "ケロロ軍曹☆",
+      "checked_on": "2026-11-03",
+      "title": "Keroro军曹☆",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/617273",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:nezumikun-no-chokki-s2",
+      "anilist_id": 214968,
+      "native_title": "ねずみくんのチョッキ 第2期",
+      "checked_on": "2026-11-03",
+      "title": "ねずみくんのチョッキ 第2期",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:shirotan",
+      "anilist_id": 209709,
+      "native_title": "しろたん",
+      "checked_on": "2026-11-03",
+      "title": "海豹小白",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:maronieoukokunoshichininnokishi",
+      "anilist_id": 212799,
+      "native_title": "マロニエ王国の七人の騎士",
+      "checked_on": "2026-11-03",
+      "title": "七叶树王国的七名骑士",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/657084",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:suikoden",
+      "anilist_id": 187316,
+      "native_title": "幻想水滸伝",
+      "checked_on": "2026-11-03",
+      "title": "幻想水浒传",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/541538",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:tenseishitadaiseijohaseijodearukotoohita",
+      "anilist_id": null,
+      "native_title": "転生した大聖女は、聖女であることをひた隠す",
+      "checked_on": "2026-11-03",
+      "title": "转生了的大圣女拼死隐瞒自己身为圣女",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:black-clover-s2",
+      "anilist_id": 195604,
+      "native_title": "ブラッククローバー 2nd Season",
+      "checked_on": "2026-11-03",
+      "title": "黑色五叶草 第2期",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:funbarus",
+      "anilist_id": null,
+      "native_title": "ふんばるず",
+      "checked_on": "2026-11-03",
+      "title": "ふんばるず",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:zonbisagashitemasu",
+      "anilist_id": 199007,
+      "native_title": "#ゾンビさがしてます",
+      "checked_on": "2026-11-03",
+      "title": "僵尸搜寻中",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/586255",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:batekkusufosu",
+      "anilist_id": 209562,
+      "native_title": "バーテックスフォース",
+      "checked_on": "2026-11-03",
+      "title": "至高之力",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/636512",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:majikaruekusupurora",
+      "anilist_id": null,
+      "native_title": "マジカル★エクスプローラー",
+      "checked_on": "2026-11-03",
+      "title": "マジカル★エクスプローラー",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "official:nama-anaru",
+      "anilist_id": 191656,
+      "native_title": "生徒会にも穴はある！",
+      "checked_on": "2026-11-03",
+      "title": "学生会也有洞！",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/554779",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:ranmanibunnoichi-tid8012",
+      "anilist_id": 209872,
+      "native_title": "らんま1/2 (2026)",
+      "checked_on": "2026-11-03",
+      "title": "らんま1/2 (2026)",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:kashitamaryokuharibobaraidekyouseichoush",
+      "anilist_id": 202250,
+      "native_title": "貸した魔力は【リボ払い】で強制徴収",
+      "checked_on": "2026-11-03",
+      "title": "用【循环利息】强制收回借出的魔力",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/606716",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:tanuki-to-kitsune",
+      "anilist_id": 218011,
+      "native_title": "タヌキとキツネ",
+      "checked_on": "2026-11-03",
+      "title": "小狸猫与小狐狸",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/638081",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:yuruyuru-zukan",
+      "anilist_id": 213298,
+      "native_title": "ゆるゆる図鑑",
+      "checked_on": "2026-11-03",
+      "title": "ゆるゆる図鑑",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:punirunzu-puni-4",
+      "anilist_id": 216860,
+      "native_title": "ぷにるんず ぷに4",
+      "checked_on": "2026-11-03",
+      "title": "ぷにるんず ぷに4",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:poppu-pappu-porutazu",
+      "anilist_id": 217787,
+      "native_title": "ポップパップポルターズ",
+      "checked_on": "2026-11-03",
+      "title": "啵普与帕噗与珀尔嗒",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/635258",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:aonohako-tid8007",
+      "anilist_id": 189123,
+      "native_title": "アオのハコ Season2",
+      "checked_on": "2026-11-03",
+      "title": "青春之箱 第2期",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:aoashi-s2",
+      "anilist_id": 191788,
+      "native_title": "アオアシ Season2",
+      "checked_on": "2026-11-03",
+      "title": "青之芦苇 第2期",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:mezametarasaikyousoubitouchuusenmochidat",
+      "anilist_id": 186541,
+      "native_title": "目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい",
+      "checked_on": "2026-11-03",
+      "title": "一觉醒来坐拥神装和飞船我决定以买一套独门独户的房子为目标作为佣兵自由地活下去",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:ojisanhakawaiimonogaosuki",
+      "anilist_id": 202079,
+      "native_title": "おじさんはカワイイものがお好き。",
+      "checked_on": "2026-11-03",
+      "title": "大叔喜欢可爱小玩意",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/605533",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:mahounoshimairuruttoririi-tid8002",
+      "anilist_id": 209032,
+      "native_title": "魔法の姉妹ルルットリリィ 第2クール",
+      "checked_on": "2026-11-03",
+      "title": "魔法姐妹露露特莉莉 第2部分",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/634210",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:tankucheasenshaisu",
+      "anilist_id": 209499,
+      "native_title": "TANK CHAIR-戦車椅子-",
+      "checked_on": "2026-11-03",
+      "title": "战车椅子",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/636023",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:yowakimakkusureijounanoniratsuwankonyaku",
+      "anilist_id": 200455,
+      "native_title": "弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった",
+      "checked_on": "2026-11-03",
+      "title": "极致软弱千金小姐，不小心答应了精明未婚夫的赌局",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/596771",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:hoteruinhyumanzu-tid8016",
+      "anilist_id": 199426,
+      "native_title": "ホテル・インヒューマンズ 第2期",
+      "checked_on": "2026-11-03",
+      "title": "杀手旅店 第二季",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/589775",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:kanatakara",
+      "anilist_id": 209463,
+      "native_title": "彼方から",
+      "checked_on": "2026-11-03",
+      "title": "来自远方",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/636058",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:mausu-kasoru-de-genjitsu-wo-sousa",
+      "anilist_id": 206774,
+      "native_title": "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+      "checked_on": "2026-11-03",
+      "title": "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:kanojonotomodachi",
+      "anilist_id": 211877,
+      "native_title": "彼女の友達",
+      "checked_on": "2026-11-03",
+      "title": "女友的朋友",
+      "source_kind": "official",
+      "source_url": "https://www.kadokawa.com.tw/products/9786263781962",
+      "evidence_note": "2026-11-03 核对台湾角川原作漫画正式出版名「女友的朋友」；与Bangumi动画条目647220一致，不宣称动画大陆授权译名。"
+    },
+    {
+      "id": "animecca:hitozukiai-ga-nigate-na-miboujin-no-yukionna-san",
+      "anilist_id": null,
+      "native_title": "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+      "checked_on": "2026-11-03",
+      "title": "不擅交际的未亡人雪女与诅咒戒指",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:dakusamonatodekiteiru",
+      "anilist_id": 208025,
+      "native_title": "ダークサモナーとデキている",
+      "checked_on": "2026-11-03",
+      "title": "黑暗召唤师在地下恋爱中",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/630160",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:yuusanchi-from-yuuhachi",
+      "anilist_id": 214593,
+      "native_title": "ゆうさんち！from 遊ハち",
+      "checked_on": "2026-11-03",
+      "title": "欢迎光临游之家！from Yu-hachi",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/688204",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:doumosukinahitonihorekusurioiraisaretama",
+      "anilist_id": 207191,
+      "native_title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+      "checked_on": "2026-11-03",
+      "title": "你好，我是受心上人所托来做恋爱药的魔女。",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/624923",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:tenseigoburindakedoshitsumonaru",
+      "anilist_id": null,
+      "native_title": "転生ゴブリンだけど質問ある？",
+      "checked_on": "2026-11-03",
+      "title": "转生成哥布林有什么问题吗",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:sairen",
+      "anilist_id": 204011,
+      "native_title": "PSYREN -サイレン-",
+      "checked_on": "2026-11-03",
+      "title": "PSYREN 决战游戏",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:romeriasenki",
+      "anilist_id": null,
+      "native_title": "ロメリア戦記",
+      "checked_on": "2026-11-03",
+      "title": "罗梅莉亚战记",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:mahoushoujoikuseikeikakurisutato",
+      "anilist_id": 160803,
+      "native_title": "魔法少女育成計画restart",
+      "checked_on": "2026-11-03",
+      "title": "魔法少女育成计划 restart",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/418229",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:shiotaiounosatousangaorenidakeamai",
+      "anilist_id": 209502,
+      "native_title": "塩対応の佐藤さんが俺にだけ甘い",
+      "checked_on": "2026-11-03",
+      "title": "冷淡的佐藤同学只对我撒娇",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/634708",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:kyouranreijouniarisutonbyoujakureijounit",
+      "anilist_id": 206949,
+      "native_title": "凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録",
+      "checked_on": "2026-11-03",
+      "title": "乱世千金 倪亚‧利斯顿转生为娇弱千金的弑神武人华丽无双录",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:batorusupirittsurizekkainokuu",
+      "anilist_id": 187990,
+      "native_title": "Battle Spirits [Re] 絶界の空",
+      "checked_on": "2026-11-03",
+      "title": "战斗之魂[Re] 绝界之空",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/544378",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:choujunchoujousenpai",
+      "anilist_id": 200294,
+      "native_title": "超巡！超条先輩",
+      "checked_on": "2026-11-03",
+      "title": "超巡！超条前辈",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/593565",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:tsuihousaretachitofuyomajutsushihakimama",
+      "anilist_id": 207329,
+      "native_title": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+      "checked_on": "2026-11-03",
+      "title": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:sasakitopichanshizuntsu",
+      "anilist_id": 176314,
+      "native_title": "佐々木とピーちゃん Season2",
+      "checked_on": "2026-11-03",
+      "title": "佐佐木与文鸟小哔 第2期",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:sekaisaikyounomajohajimemashita",
+      "anilist_id": 211778,
+      "native_title": "世界最強の魔女、始めました",
+      "checked_on": "2026-11-03",
+      "title": "世界最强的魔女，就此开始",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/646154",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:tanteihamoushindeiru",
+      "anilist_id": 152677,
+      "native_title": "探偵はもう、死んでいる。 Season2",
+      "checked_on": "2026-11-03",
+      "title": "侦探已死 第2期",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:rayearth-2026",
+      "anilist_id": 178868,
+      "native_title": "魔法騎士レイアース",
+      "checked_on": "2026-11-03",
+      "title": "新 魔法骑士Rayearth",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:tenseishitarakendeshitatsu",
+      "anilist_id": null,
+      "native_title": "転生したら剣でしたⅡ",
+      "checked_on": "2026-11-03",
+      "title": "转生成为魔剑 第2期",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:juuoumujindandevain",
+      "anilist_id": 213068,
+      "native_title": "獣王武神ダンデヴァイン",
+      "checked_on": "2026-11-03",
+      "title": "兽王武神丹帝拜恩",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/657778",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "official:kikansha-season2",
+      "anilist_id": 172192,
+      "native_title": "帰還者の魔法は特別です 第二期",
+      "checked_on": "2026-11-03",
+      "title": "归还者的魔法要特别 第二季",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/471844",
+      "evidence_note": "人工核对同一AniList ID与日文题：第二期/第2期、括号仅为标题字形差异。"
+    },
+    {
+      "id": "animecca:hyakuyoufudaisankikikeishihen",
+      "anilist_id": null,
+      "native_title": "百妖譜 第3期京師篇",
+      "checked_on": "2026-11-03",
+      "title": "百妖譜 第3期京師篇",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:tetsuryomitowizutetsudoumusume",
+      "anilist_id": 199594,
+      "native_title": "てつりょー！ meet with 鉄道むすめ",
+      "checked_on": "2026-11-03",
+      "title": "铁旅！meet with 铁道少女",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/590553",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:hyoukennomajutsushigasekaiosuberu",
+      "anilist_id": 212503,
+      "native_title": "冰剣の魔術師が世界を統べるⅡ",
+      "checked_on": "2026-11-03",
+      "title": "冰剑的魔术师将要统一世界 第二季",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/654294",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:beiburedoekkusubeikingudamuhen",
+      "anilist_id": null,
+      "native_title": "BEYBLADE X ベイキングダム編",
+      "checked_on": "2026-11-03",
+      "title": "BEYBLADE X ベイキングダム編",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:toaruanbunoaitemu",
+      "anilist_id": 186742,
+      "native_title": "とある暗部の少女共棲",
+      "checked_on": "2026-11-03",
+      "title": "某暗部的少女共栖",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/537738",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:hotaru-no-yomeiri",
+      "anilist_id": 205909,
+      "native_title": "ホタルの嫁入り",
+      "checked_on": "2026-11-03",
+      "title": "萤火虫的出嫁",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/621108",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:shuiro-no-kamen",
+      "anilist_id": 195571,
+      "native_title": "朱色の仮面",
+      "checked_on": "2026-11-03",
+      "title": "朱色假面",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/568525",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:shikin-onbyoubou",
+      "anilist_id": null,
+      "native_title": "紫禁・御猫房〜紫禁城猫警備室〜",
+      "checked_on": "2026-11-03",
+      "title": "紫禁・御猫房〜紫禁城猫警備室〜",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:kyoufukorekuta",
+      "anilist_id": 203473,
+      "native_title": "恐怖コレクター",
+      "checked_on": "2026-11-03",
+      "title": "恐怖收集者",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/613256",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:yozakurasanchinodaisakusen-tid8011",
+      "anilist_id": 213657,
+      "native_title": "夜桜さんちの大作戦(第2期)第2クール",
+      "checked_on": "2026-11-03",
+      "title": "夜樱家的大作战 第二季 第2部分",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/664389",
+      "evidence_note": "人工核对同一AniList ID与日文题：第二期/第2期、括号仅为标题字形差异。"
+    },
+    {
+      "id": "animecca:daiyanoesuakutotsusekandoshizun-tid8054",
+      "anilist_id": 213658,
+      "native_title": "ダイヤのA actII -Second Season- 第2クール",
+      "checked_on": "2026-11-03",
+      "title": "钻石王牌 第4期 Part.2 (actⅡ 第2期 Part.2)",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:doragon-boru-supa-birusu",
+      "anilist_id": 206814,
+      "native_title": "ドラゴンボール超 ビルス",
+      "checked_on": "2026-11-03",
+      "title": "龙珠超 比鲁斯",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/623249",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:shinjazeronomegamisamatohajimeruisekaiko",
+      "anilist_id": 205896,
+      "native_title": "信者ゼロの女神サマと始める異世界攻略",
+      "checked_on": "2026-11-03",
+      "title": "和没有信徒的女神大人一起攻略异世界",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/621073",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:chitosekunharamunebinnonaka-tid8022",
+      "anilist_id": 198727,
+      "native_title": "千歳くんはラムネ瓶のなか 第2クール",
+      "checked_on": "2026-11-03",
+      "title": "弹珠汽水瓶里的千岁同学 Part.2",
+      "source_kind": "community",
+      "source_url": "https://yuc.wiki/202610/",
+      "evidence_note": "长门番堂2026年10月表；日文原题规范化后完全一致，社区名称。"
+    },
+    {
+      "id": "animecca:dakumashinjianimeshon",
+      "anilist_id": 179876,
+      "native_title": "DARK MACHINE THE ANIMATION",
+      "checked_on": "2026-11-03",
+      "title": "DARK MACHINE THE ANIMATION",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:munoumajo-bureinresu-witchi",
+      "anilist_id": null,
+      "native_title": "無脳魔女 ブレインレス・ウィッチ",
+      "checked_on": "2026-11-03",
+      "title": "無脳魔女 ブレインレス・ウィッチ",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:dorimurando",
+      "anilist_id": null,
+      "native_title": "dreamland",
+      "checked_on": "2026-11-03",
+      "title": "dreamland",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:gerupiyo-s2",
+      "anilist_id": 217282,
+      "native_title": "ゲルぴよ 第2期",
+      "checked_on": "2026-11-03",
+      "title": "ゲルぴよ 第2期",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:watashi-no-shiawase-na-kekkon-tokubetsuhen",
+      "anilist_id": null,
+      "native_title": "わたしの幸せな結婚 特別篇",
+      "checked_on": "2026-11-03",
+      "title": "わたしの幸せな結婚 特別篇",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    },
+    {
+      "id": "animecca:kadofaitou-angadodiu-ainzuunmeiseisenhen",
+      "anilist_id": 214536,
+      "native_title": "カードファイト!! ヴァンガード Divinez 運命星戦編",
+      "checked_on": "2026-11-03",
+      "title": "卡片战斗先导者 Divinez 命运星战篇",
+      "source_kind": "community",
+      "source_url": "https://bgm.tv/subject/640765",
+      "evidence_note": "Bangumi动画条目与原题严格匹配；社区编辑名称，非官方认证。"
+    },
+    {
+      "id": "animecca:kofun-doctor-coffy-er",
+      "anilist_id": null,
+      "native_title": "古墳ドクター コフィーER",
+      "checked_on": "2026-11-03",
+      "title": "古墳ドクター コフィーER",
+      "source_kind": "original",
+      "source_url": null,
+      "evidence_note": "本轮未核实可靠中文译名，保留原名；不表示不存在官方译名。"
+    }
+  ]
+}

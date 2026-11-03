@@ -5,7 +5,7 @@
       "id": "defc6751-db33-5b19-ac98-9076e8ccffda",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "野生的最终头目出现了！第二季 · 第7集（待复核）",
+      "title": "野生的最终BOSS出现了 第2期 · 第7集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：野生のラスボスが現れた！ 第2期。来源目录频道：Abemaアニメ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -23,9 +23,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:yaseinorasubosugaarawareta-tid8021",
         "episode_id": "7",
@@ -37,7 +37,7 @@
       "id": "7eeccd89-51bf-51b2-91c8-f819c8d98df6",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "赛马娘悠哉短篇：全员入闸！ · 第7集（待复核）",
+      "title": "うまゆる ふるげ～と！ · 第7集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：うまゆる ふるげ～と！。来源目录频道：YouTube。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -55,9 +55,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:umayuru-furugeto",
         "episode_id": "7",
@@ -69,7 +69,7 @@
       "id": "65eb8bac-d86d-5a63-9e9b-71e679f0919d",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "转生贵族靠着鉴定技能一飞冲天 第三季 · 第7集（待复核）",
+      "title": "转生贵族凭鉴定技能扭转人生 第三季 · 第7集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：転生貴族、鑑定スキルで成り上がる 第3期。来源目录频道：TBS。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -87,9 +87,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tenseikizokukanteisukirudenariag-tid8009",
         "episode_id": "7",
@@ -101,7 +101,7 @@
       "id": "ef03880f-40f0-550d-b0d3-f7df53054d36",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "新网球王子：十七岁以下世界杯 决赛成员决定战 · 第6集（待复核）",
+      "title": "新网球王子 U-17 世界杯 决赛成员选拔赛 · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦。来源目录频道：テレビ愛知。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -119,9 +119,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:shintenisunooujisamaandasebuntin-tid8044",
         "episode_id": "6",
@@ -133,7 +133,7 @@
       "id": "3d130626-50e9-5b2d-a5e8-7cbf7fb5bdcc",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "外汇战士久留美 · 播出（常规时段）",
+      "title": "FX战士久留美 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -158,9 +158,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "official:fxkurumi",
         "episode_id": "6",
@@ -172,7 +172,7 @@
       "id": "5ceef489-e20d-53e1-b874-002aa19a587f",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "向满身伤痕的圣女献上复仇 第二季 · 播出（常规时段）",
+      "title": "黑化吧！圣女大人 第二季 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：tvk。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -197,9 +197,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kizudarakenoseijoyorihoufukuokometeshizu",
         "episode_id": "6",
@@ -243,7 +243,7 @@
       "id": "891cfc03-2745-5a24-a5ea-5792edbfdbb2",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "面包小偷 · 播出（常规时段）",
+      "title": "神秘面包小子 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：NHK Eテレ。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -268,9 +268,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:pandorobou",
         "episode_id": "6",
@@ -282,7 +282,7 @@
       "id": "c01ca213-c6af-5221-b133-3a448eb52917",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "苍之传承：威尔士与切达 · 播出（常规时段）",
+      "title": "苍蓝传承 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -307,9 +307,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:aokidenshouwerushusheda",
         "episode_id": "6",
@@ -392,7 +392,7 @@
       "id": "df345c4f-6665-580a-aac5-74b811df5fbf",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "桃源暗鬼 第二季 · 第6集（待复核）",
+      "title": "桃源暗鬼 第二期 〜日光・華厳の滝編〜 · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：桃源暗鬼 第二期 〜日光・華厳の滝編〜。来源目录频道：日本テレビ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -410,9 +410,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tougen-anki-s2",
         "episode_id": "6",
@@ -463,7 +463,7 @@
       "id": "e6e2216b-d5b4-505d-b7e4-d9e57a74b98d",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "青蛙军曹☆ · 第6集（待复核）",
+      "title": "Keroro军曹☆ · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：ケロロ軍曹☆。来源目录频道：テレビ東京。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -481,9 +481,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kerorogunsou",
         "episode_id": "6",
@@ -495,7 +495,7 @@
       "id": "274fcb23-fd0c-51aa-8daa-34c81af492ec",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "小老鼠的背心 第二季 · 第6集（待复核）",
+      "title": "ねずみくんのチョッキ 第2期 · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：ねずみくんのチョッキ 第2期。来源目录频道：NHK Eテレ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -513,9 +513,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:nezumikun-no-chokki-s2",
         "episode_id": "6",
@@ -527,7 +527,7 @@
       "id": "e228e11e-f0c8-577c-a208-45a3e5cb85ce",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "小白海豹 · 第6集（待复核）",
+      "title": "海豹小白 · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：しろたん。来源目录频道：テレビ朝日。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -545,9 +545,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:shirotan",
         "episode_id": "6",
@@ -630,7 +630,7 @@
       "id": "9bd2a747-5934-50bf-acc2-85a4999566e8",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "转生的大圣女一心隐瞒自己的圣女身份 · 播出（常规时段）",
+      "title": "转生了的大圣女拼死隐瞒自己身为圣女 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -655,9 +655,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tenseishitadaiseijohaseijodearukotoohita",
         "episode_id": "6",
@@ -669,7 +669,7 @@
       "id": "7e079c15-e50a-529a-aac7-7ca4128215cf",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "黑色四叶草 第二季 · 播出（常规时段）",
+      "title": "黑色五叶草 第2期 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：テレビ東京。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -694,9 +694,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:black-clover-s2",
         "episode_id": "6",
@@ -708,7 +708,7 @@
       "id": "b3898ef4-44f7-53be-be87-9f5110ae38cd",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "加油小伙伴 · 播出（常规时段）",
+      "title": "ふんばるず · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BSよしもと。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -733,9 +733,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:funbarus",
         "episode_id": "6",
@@ -747,7 +747,7 @@
       "id": "d0d86e4d-89d9-54cb-b1c8-ca1d37c0ca80",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "正在寻找僵尸 · 播出（常规时段）",
+      "title": "僵尸搜寻中 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：メ～テレ。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -772,9 +772,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:zonbisagashitemasu",
         "episode_id": "6",
@@ -786,7 +786,7 @@
       "id": "1fd9dbd4-ad3f-580e-aa99-3b9c28d43302",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "顶点之力 · 播出（常规时段）",
+      "title": "至高之力 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -811,9 +811,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:batekkusufosu",
         "episode_id": "6",
@@ -825,7 +825,7 @@
       "id": "7056d501-59c3-584b-b460-0e1dfc1280c8",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "魔法探索者 · 播出（常规时段）",
+      "title": "マジカル★エクスプローラー · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -850,9 +850,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:majikaruekusupurora",
         "episode_id": "6",
@@ -903,7 +903,7 @@
       "id": "dbb72b4b-3dea-59e9-a2f4-df6cb553bcc2",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "乱马二分之一（2026） · 第30集（待复核）",
+      "title": "らんま1/2 (2026) · 第30集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：らんま1/2 (2026)。来源目录频道：日本テレビ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -921,9 +921,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:ranmanibunnoichi-tid8012",
         "episode_id": "30",
@@ -935,7 +935,7 @@
       "id": "6bec9adb-2356-5d97-956c-f9eeef6198fb",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "借出的魔力以分期付款强制征收 · 第6集（待复核）",
+      "title": "用【循环利息】强制收回借出的魔力 · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：貸した魔力は【リボ払い】で強制徴収。来源目录频道：テレビ朝日。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -953,9 +953,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kashitamaryokuharibobaraidekyouseichoush",
         "episode_id": "6",
@@ -967,7 +967,7 @@
       "id": "181bb200-98d6-545c-aba8-a4945a3b00e7",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "噗尼萌 第四季 · 播出（常规时段）",
+      "title": "ぷにるんず ぷに4 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：テレビ東京。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -992,9 +992,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:punirunzu-puni-4",
         "episode_id": "6",
@@ -1006,7 +1006,7 @@
       "id": "62ee90de-ee7b-5872-92ba-51cfb3531594",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "噗啪传送门 · 第5集",
+      "title": "啵普与帕噗与珀尔嗒 · 第5集",
       "description": "官网明确11月1日停播，第5集改为11月8日10:00（日本时间）。频道：テレビ朝日。日本播出时间，非国内平台上线时间。",
       "status": "confirmed",
       "schedule_state": "scheduled",
@@ -1031,9 +1031,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:poppu-pappu-porutazu",
         "episode_id": "6",
@@ -1046,7 +1046,7 @@
       "id": "cdff6ae8-554f-5c58-81df-d2a0c0b70af7",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "青之箱 第二季 · 第6集（待复核）",
+      "title": "青春之箱 第2期 · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：アオのハコ Season2。来源目录频道：TBS。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -1064,9 +1064,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:aonohako-tid8007",
         "episode_id": "6",
@@ -1078,7 +1078,7 @@
       "id": "d345ed8e-7946-5a0e-b8ec-d10391d260ef",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "青之芦苇 第二季 · 第6集（待复核）",
+      "title": "青之芦苇 第2期 · 第6集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：アオアシ Season2。来源目录频道：NHK Eテレ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -1096,9 +1096,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:aoashi-s2",
         "episode_id": "6",
@@ -1110,7 +1110,7 @@
       "id": "1effb2a6-388c-5db9-b91f-093f25d0bcb4",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "醒来后拥有最强装备和宇宙飞船，为了买独栋房子而自由当佣兵 · 播出（常规时段）",
+      "title": "一觉醒来坐拥神装和飞船我决定以买一套独门独户的房子为目标作为佣兵自由地活下去 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1135,9 +1135,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:mezametarasaikyousoubitouchuusenmochidat",
         "episode_id": "6",
@@ -1188,7 +1188,7 @@
       "id": "a121deb2-ba62-595e-b6a5-61150e1ff4fd",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "魔法姐妹露露与莉莉 后半篇 · 播出（常规时段）",
+      "title": "魔法姐妹露露特莉莉 第2部分 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1213,9 +1213,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:mahounoshimairuruttoririi-tid8002",
         "episode_id": "18",
@@ -1266,7 +1266,7 @@
       "id": "0175d327-ef9b-59b8-b6bb-fd0bb0d46213",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "明明胆小到极点，却接受了精明未婚夫的赌约 · 播出（常规时段）",
+      "title": "极致软弱千金小姐，不小心答应了精明未婚夫的赌局 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1291,9 +1291,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:yowakimakkusureijounanoniratsuwankonyaku",
         "episode_id": "6",
@@ -1376,7 +1376,7 @@
       "id": "a22fa03c-7de4-56b2-9afa-d00f4e3b0fcb",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "能够用鼠标光标操纵现实后，我要尽情点击女孩子 · 播出（常规时段）",
+      "title": "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1401,9 +1401,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:mausu-kasoru-de-genjitsu-wo-sousa",
         "episode_id": "6",
@@ -1415,7 +1415,7 @@
       "id": "a75f7d5b-75a2-5327-9165-f08e86d6d55f",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "她的朋友 · 播出（常规时段）",
+      "title": "女友的朋友 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1440,9 +1440,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kanojonotomodachi",
         "episode_id": "6",
@@ -1454,7 +1454,7 @@
       "id": "dcbe56a3-1d87-57fd-8531-64ea785a2cfc",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "不擅长交际的雪女寡妇与诅咒戒指 · 播出（常规时段）",
+      "title": "不擅交际的未亡人雪女与诅咒戒指 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1479,9 +1479,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:hitozukiai-ga-nigate-na-miboujin-no-yukionna-san",
         "episode_id": "6",
@@ -1493,7 +1493,7 @@
       "id": "140c2f42-3433-5692-8433-04284f001c86",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "与黑暗召唤师谈恋爱 · 播出（常规时段）",
+      "title": "黑暗召唤师在地下恋爱中 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1518,9 +1518,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:dakusamonatodekiteiru",
         "episode_id": "6",
@@ -1532,7 +1532,7 @@
       "id": "edc2d134-4a52-5b94-91db-cab1cd6e9454",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "你好，我是被心上人委托制作恋爱魔药的魔女 · 播出（常规时段）",
+      "title": "你好，我是受心上人所托来做恋爱药的魔女。 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1557,9 +1557,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:doumosukinahitonihorekusurioiraisaretama",
         "episode_id": "5",
@@ -1571,7 +1571,7 @@
       "id": "23b5b68f-0851-5898-875b-d73d3a8ce07d",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "转生哥布林，有什么问题吗？ · 播出（常规时段）",
+      "title": "转生成哥布林有什么问题吗 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1596,9 +1596,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tenseigoburindakedoshitsumonaru",
         "episode_id": "5",
@@ -1610,7 +1610,7 @@
       "id": "450a1f1c-f11a-5706-adc8-d8772c6ea482",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "幻境之门 · 播出（常规时段）",
+      "title": "PSYREN 决战游戏 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：BS11イレブン。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1635,9 +1635,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:sairen",
         "episode_id": "5",
@@ -1688,7 +1688,7 @@
       "id": "404e980c-820f-58e5-91d8-1d08bcd81ed2",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "魔法少女育成计划：重新启动 · 第5集（待复核）",
+      "title": "魔法少女育成计划 restart · 第5集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：魔法少女育成計画restart。来源目录频道：テレビ東京。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -1706,9 +1706,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:mahoushoujoikuseikeikakurisutato",
         "episode_id": "5",
@@ -1759,7 +1759,7 @@
       "id": "b12739ec-c259-59fb-947b-b0111a63e364",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "凶乱千金妮娅·利斯顿：弑神武人转生病弱千金的华丽无双录 · 播出（常规时段）",
+      "title": "乱世千金 倪亚‧利斯顿转生为娇弱千金的弑神武人华丽无双录 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1784,9 +1784,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kyouranreijouniarisutonbyoujakureijounit",
         "episode_id": "5",
@@ -1798,7 +1798,7 @@
       "id": "307a3beb-e00a-528a-bc06-60e5a402ff40",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "战斗之魂：再启 绝界之空 · 播出（常规时段）",
+      "title": "战斗之魂[Re] 绝界之空 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1823,9 +1823,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:batorusupirittsurizekkainokuu",
         "episode_id": "5",
@@ -1876,7 +1876,7 @@
       "id": "8653146a-c9a2-5ac6-bdf4-a720d2d00297",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "被逐出队伍的作弊赋予魔术师，悠然享受第二人生 · 第5集（待复核）",
+      "title": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～ · 第5集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～。来源目录频道：テレビ東京。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -1894,9 +1894,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tsuihousaretachitofuyomajutsushihakimama",
         "episode_id": "5",
@@ -1908,7 +1908,7 @@
       "id": "928db4c6-51e1-5751-ad81-3f2455bcee14",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "佐佐木与文鸟小哔 第二季 · 播出（常规时段）",
+      "title": "佐佐木与文鸟小哔 第2期 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：AT-X。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -1933,9 +1933,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:sasakitopichanshizuntsu",
         "episode_id": "5",
@@ -1947,7 +1947,7 @@
       "id": "6be49281-6d95-5511-aac0-6b2181ee63a8",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "我开始当世界最强魔女了 · 第5集（待复核）",
+      "title": "世界最强的魔女，就此开始 · 第5集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：世界最強の魔女、始めました。来源目录频道：TOKYO MX。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -1965,9 +1965,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:sekaisaikyounomajohajimemashita",
         "episode_id": "5",
@@ -1979,7 +1979,7 @@
       "id": "a94129fe-4672-5a84-88fd-a165f546ad58",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "侦探已经死了。第二季 · 播出（常规时段）",
+      "title": "侦探已死 第2期 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2004,9 +2004,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tanteihamoushindeiru",
         "episode_id": "5",
@@ -2018,7 +2018,7 @@
       "id": "f0f2376e-ef7c-5b50-a9da-20f72ce58580",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "魔法骑士雷阿斯 · 播出（常规时段）",
+      "title": "新 魔法骑士Rayearth · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：テレビ朝日。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2043,9 +2043,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:rayearth-2026",
         "episode_id": "5",
@@ -2057,7 +2057,7 @@
       "id": "f34a8ee0-f342-5327-9e7d-655950d973cd",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "转生成为魔剑了 第二季 · 播出（常规时段）",
+      "title": "转生成为魔剑 第2期 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2082,9 +2082,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tenseishitarakendeshitatsu",
         "episode_id": "5",
@@ -2096,7 +2096,7 @@
       "id": "b114e909-d1b7-5a2a-a0fc-417480a45f17",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "兽王武神丹德瓦因 · 播出（常规时段）",
+      "title": "兽王武神丹帝拜恩 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2121,9 +2121,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:juuoumujindandevain",
         "episode_id": "5",
@@ -2160,9 +2160,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 4,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:44Z",
       "anime": {
         "series_id": "official:kikansha-season2",
         "episode_id": "5",
@@ -2174,7 +2174,7 @@
       "id": "e0f99d2c-dab3-506e-bf9d-05a8baed7071",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "百妖谱 第三季京师篇 · 播出（常规时段）",
+      "title": "百妖譜 第3期京師篇 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：フジテレビ。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2199,9 +2199,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:hyakuyoufudaisankikikeishihen",
         "episode_id": "5",
@@ -2213,7 +2213,7 @@
       "id": "2c08c88a-3103-5190-b158-fe7f5a9defb7",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "铁路之旅！与铁道少女同行 · 第5集（待复核）",
+      "title": "铁旅！meet with 铁道少女 · 第5集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：てつりょー！ meet with 鉄道むすめ。来源目录频道：TOKYO MX。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2231,9 +2231,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:tetsuryomitowizutetsudoumusume",
         "episode_id": "5",
@@ -2284,7 +2284,7 @@
       "id": "c753e9e1-1ede-5eb3-b839-725a75692ae8",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "战斗陀螺：贝王国篇 · 第139集（待复核）",
+      "title": "BEYBLADE X ベイキングダム編 · 第139集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：BEYBLADE X ベイキングダム編。来源目录频道：YouTube。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2302,9 +2302,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:beiburedoekkusubeikingudamuhen",
         "episode_id": "139",
@@ -2355,7 +2355,7 @@
       "id": "4a4da034-c96b-58d8-9703-9bc9f84d0e31",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "萤火虫之婚 · 播出（常规时段）",
+      "title": "萤火虫的出嫁 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：フジテレビ。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2380,9 +2380,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:hotaru-no-yomeiri",
         "episode_id": "5",
@@ -2394,7 +2394,7 @@
       "id": "6a1bb5aa-0232-5a3a-b628-b900fd43514b",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "朱色面具 · 播出（常规时段）",
+      "title": "朱色假面 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：読売テレビ。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2419,9 +2419,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:shuiro-no-kamen",
         "episode_id": "5",
@@ -2433,7 +2433,7 @@
       "id": "e68a2d89-143c-51ae-a467-be0fe9f40f7e",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "紫禁御猫房：紫禁城猫警备室 · 播出（常规时段）",
+      "title": "紫禁・御猫房〜紫禁城猫警備室〜 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2458,9 +2458,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:shikin-onbyoubou",
         "episode_id": "8",
@@ -2472,7 +2472,7 @@
       "id": "ba23d053-766f-55a4-b887-7157fd482d36",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "恐怖收藏家 · 第5集（待复核）",
+      "title": "恐怖收集者 · 第5集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：恐怖コレクター。来源目录频道：NHK総合。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2490,9 +2490,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kyoufukorekuta",
         "episode_id": "5",
@@ -2504,7 +2504,7 @@
       "id": "73fc51a6-cf2b-5cda-a512-f3b67d0a3b29",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "夜樱家的大作战 第二季 后半篇 · 播出（常规时段）",
+      "title": "夜樱家的大作战 第二季 第2部分 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TBS。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2529,9 +2529,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 4,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:44Z",
       "anime": {
         "series_id": "animecca:yozakurasanchinodaisakusen-tid8011",
         "episode_id": "44",
@@ -2543,7 +2543,7 @@
       "id": "5372ffc7-5e3e-513e-bd07-62351c15adfd",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "钻石王牌 第二幕 第二季 后半篇 · 第18集（待复核）",
+      "title": "钻石王牌 第4期 Part.2 (actⅡ 第2期 Part.2) · 第18集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：ダイヤのA actII -Second Season- 第2クール。来源目录频道：テレビ愛知。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2561,9 +2561,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:daiyanoesuakutotsusekandoshizun-tid8054",
         "episode_id": "18",
@@ -2575,7 +2575,7 @@
       "id": "b544225c-b252-5aa7-8ea1-51cad2ee77ed",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "与零信徒女神开始的异世界攻略 · 第5集（待复核）",
+      "title": "和没有信徒的女神大人一起攻略异世界 · 第5集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：信者ゼロの女神サマと始める異世界攻略。来源目录频道：BS朝日。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2593,9 +2593,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:shinjazeronomegamisamatohajimeruisekaiko",
         "episode_id": "5",
@@ -2607,7 +2607,7 @@
       "id": "1ca1d4bd-778e-53e2-b9c5-1e54b963f593",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "弹珠汽水瓶里的千岁同学 后半篇 · 播出（常规时段）",
+      "title": "弹珠汽水瓶里的千岁同学 Part.2 · 播出（常规时段）",
       "description": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认。频道：TOKYO MX。日本播出时间，非国内平台上线时间。",
       "status": "tentative",
       "schedule_state": "scheduled",
@@ -2632,9 +2632,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:chitosekunharamunebinnonaka-tid8022",
         "episode_id": "17",
@@ -2646,7 +2646,7 @@
       "id": "33b5acaa-a4a0-593d-87da-36437581a840",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "黑暗机械 动画版 · 第4集（待复核）",
+      "title": "DARK MACHINE THE ANIMATION · 第4集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：DARK MACHINE THE ANIMATION。来源目录频道：フジテレビ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2664,9 +2664,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:dakumashinjianimeshon",
         "episode_id": "4",
@@ -2678,7 +2678,7 @@
       "id": "a16f1f35-9d53-5221-af8e-edd44cd4c813",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "梦境之地 · 第4集（待复核）",
+      "title": "dreamland · 第4集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：dreamland。来源目录频道：ABCテレビ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2696,9 +2696,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:dorimurando",
         "episode_id": "4",
@@ -2710,7 +2710,7 @@
       "id": "6fad19d7-ff6f-58eb-9ef8-db5b55c45d49",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "卡片战斗先导者：神圣命运星战篇 · 第1集（待复核）",
+      "title": "卡片战斗先导者 Divinez 命运星战篇 · 第1集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：カードファイト!! ヴァンガード Divinez 運命星戦編。来源目录频道：テレビ愛知。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2728,9 +2728,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kadofaitou-angadodiu-ainzuunmeiseisenhen",
         "episode_id": "1",
@@ -2742,7 +2742,7 @@
       "id": "c89d987c-c1f6-5a23-8cd4-35ba9ae94bd3",
       "category": "anime",
       "event_type": "episode_airing",
-      "title": "古坟医生科菲 急诊室 · 第1集（待复核）",
+      "title": "古墳ドクター コフィーER · 第1集（待复核）",
       "description": "第三方逐集排期，非官方逐集确认。日本播出时间，不代表国内平台上线。原名：古墳ドクター コフィーER。来源目录频道：TSKさんいん中央テレビ。仅导出来源列出的下一集，不外推整季。",
       "status": "tentative",
       "schedule_state": "unverified",
@@ -2760,9 +2760,9 @@
           "authority": "aggregator"
         }
       ],
-      "revision": 2,
+      "revision": 3,
       "created_at": "2026-11-02T00:00:00Z",
-      "updated_at": "2026-11-02T02:00:00Z",
+      "updated_at": "2026-11-03T05:30:11Z",
       "anime": {
         "series_id": "animecca:kofun-doctor-coffy-er",
         "episode_id": "1",

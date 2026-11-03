@@ -83,3 +83,9 @@ No favorites or account information is sent to the calendar backend. Source data
 and stable per-title feeds are published by the calendar repository's scheduled
 GitHub Actions workflow. Frontend catalog loading errors are displayed explicitly;
 previously subscribed URLs keep working independently of the website.
+
+## Reviewed anime titles (2026-11-03)
+
+`public/assets/calendar/data/anime-titles.json` is the stable-ID registry for all 85 picker entries. Prefer individually verified official Chinese publisher titles, then exact-original matches in Bangumi or the 2026-10 yuc.wiki table. Unverified names retain the original; no machine translation. Publisher evidence here is for the original manga, not a claim of a mainland anime license. Each record includes its source, date and scope. The current audit has 2 official publisher titles, 62 community titles and 21 original fallbacks. These fallbacks mean not verified in this audit, not that no official translation exists.
+
+After changing or refreshing the catalog, run `node scripts/calendar/apply-anime-titles.mjs`. It rejects missing registry IDs or original-title mismatches, updates picker, subscription names, audit labels and snapshot events together, and preserves event IDs/times while increasing revision for renamed events. `npm test` checks registry coverage and known corrections. The upstream operational ICS registry lives in southkite2023/yuashie-calendar; its publisher overrides take priority on every refresh.

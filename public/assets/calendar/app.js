@@ -157,7 +157,8 @@ const sources=document.querySelector('#sources');
 for(const [id,name] of [...catalog.games,...catalog.anime]){
  const m=metadata[id];const p=document.createElement('p');const a=document.createElement(m.url?'a':'span');if(m.url)a.href=m.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=name+' · '+(m.original||m.label);p.append(a);
  if(m.official_url){const official=document.createElement('a');official.href=m.official_url;official.target='_blank';official.rel='noopener noreferrer';official.textContent=' 作品官网';p.append(' / ',official);}
- const company=companies[id];if(company?.names.length){const link=document.createElement('a');link.href=company.source;link.target='_blank';link.rel='noopener noreferrer';link.textContent=' · '+company.names.join(' / ');p.append(link);}
+ if(m.title_source_url){const titleSource=document.createElement('a');titleSource.href=m.title_source_url;titleSource.target='_blank';titleSource.rel='noopener noreferrer';titleSource.textContent=' · 中文名来源（'+(m.title_source_kind==='official'?'官方出版':'社区')+'）';p.append(titleSource);}else if(m.title_source_kind==='original'){p.append(' · 中文名未核实，保留原名');}
+  const company=companies[id];if(company?.names.length){const link=document.createElement('a');link.href=company.source;link.target='_blank';link.rel='noopener noreferrer';link.textContent=' · '+company.names.join(' / ');p.append(link);}
  p.append(' · '+(m.verification_note||m.label)+' · 核验 '+m.checked_at+' · '+(m.event_count||0)+' 条日程');sources.append(p);
 }
 

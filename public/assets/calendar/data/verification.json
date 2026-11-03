@@ -3,7 +3,7 @@
   "records": [
     {
       "id": "animecca:yaseinorasubosugaarawareta-tid8021",
-      "name": "野生的最终头目出现了！第二季",
+      "name": "野生的最终BOSS出现了 第2期",
       "result": "conflict",
       "note": "官网ABEMA周六22:30，第三方23:00；暂不导出，等待逐集公告",
       "official_url": "https://www.lastboss-anime.com/onair/index.html",
@@ -11,7 +11,7 @@
     },
     {
       "id": "animecca:umayuru-furugeto",
-      "name": "赛马娘悠哉短篇：全员入闸！",
+      "name": "うまゆる ふるげ～と！",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": null,
@@ -19,7 +19,7 @@
     },
     {
       "id": "animecca:tenseikizokukanteisukirudenariag-tid8009",
-      "name": "转生贵族靠着鉴定技能一飞冲天 第三季",
+      "name": "转生贵族凭鉴定技能扭转人生 第三季",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://kanteiskill.com/",
@@ -27,7 +27,7 @@
     },
     {
       "id": "animecca:shintenisunooujisamaandasebuntin-tid8044",
-      "name": "新网球王子：十七岁以下世界杯 决赛成员决定战",
+      "name": "新网球王子 U-17 世界杯 决赛成员选拔赛",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://tenipuri.jp/u17/selection-match/",
@@ -35,7 +35,7 @@
     },
     {
       "id": "animecca:precure-fairies-tid8073",
-      "name": "迷你光之美少女 第四季",
+      "name": "ぷちきゅあ シーズン4",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.toei-anim.co.jp/petitcure/",
@@ -43,7 +43,7 @@
     },
     {
       "id": "animecca:shirubania-famiri-furea-no-karafuru-eburidei",
-      "name": "森林家族：芙蕾雅的缤纷日常",
+      "name": "シルバニアファミリー フレアのカラフル・エブリデイ",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.sylvanianfamilies.com/ja-jp/special/tv/#broadcast",
@@ -51,7 +51,7 @@
     },
     {
       "id": "official:fxkurumi",
-      "name": "外汇战士久留美",
+      "name": "FX战士久留美",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://fxkurumi-info.com/onair/",
@@ -59,7 +59,7 @@
     },
     {
       "id": "animecca:kizudarakenoseijoyorihoufukuokometeshizu",
-      "name": "向满身伤痕的圣女献上复仇 第二季",
+      "name": "黑化吧！圣女大人 第二季",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://animationid.com/kizudarakeseijo2/#onair",
@@ -75,7 +75,7 @@
     },
     {
       "id": "animecca:pandorobou",
-      "name": "面包小偷",
+      "name": "神秘面包小子",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://pandorobo-anime.com/onair/",
@@ -83,7 +83,7 @@
     },
     {
       "id": "animecca:aokidenshouwerushusheda",
-      "name": "苍之传承：威尔士与切达",
+      "name": "苍蓝传承",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://welshandshedar-anime.com/#anchor-onair",
@@ -107,7 +107,7 @@
     },
     {
       "id": "animecca:tougen-anki-s2",
-      "name": "桃源暗鬼 第二季",
+      "name": "桃源暗鬼 第二期 〜日光・華厳の滝編〜",
       "result": "conflict",
       "note": "官网日本电视台周五23:30，第三方次日00:00；暂不导出，等待逐集公告",
       "official_url": "https://tougenanki-anime.com/#onair",
@@ -123,7 +123,7 @@
     },
     {
       "id": "animecca:kerorogunsou",
-      "name": "青蛙军曹☆",
+      "name": "Keroro军曹☆",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.bn-pictures.co.jp/keroro-anime/tv/",
@@ -131,7 +131,7 @@
     },
     {
       "id": "animecca:nezumikun-no-chokki-s2",
-      "name": "小老鼠的背心 第二季",
+      "name": "ねずみくんのチョッキ 第2期",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.poplar.co.jp/pr/anime-nezumikun/",
@@ -139,7 +139,7 @@
     },
     {
       "id": "animecca:shirotan",
-      "name": "小白海豹",
+      "name": "海豹小白",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.tv-asahi.co.jp/sirotan/",
@@ -163,7 +163,7 @@
     },
     {
       "id": "animecca:tenseishitadaiseijohaseijodearukotoohita",
-      "name": "转生的大圣女一心隐瞒自己的圣女身份",
+      "name": "转生了的大圣女拼死隐瞒自己身为圣女",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://daiseijo-anime.com/onair/index.html",
@@ -171,7 +171,7 @@
     },
     {
       "id": "animecca:black-clover-s2",
-      "name": "黑色四叶草 第二季",
+      "name": "黑色五叶草 第2期",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://bclover.jp/onair/",
@@ -179,7 +179,7 @@
     },
     {
       "id": "animecca:funbarus",
-      "name": "加油小伙伴",
+      "name": "ふんばるず",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://funbarus.com/",
@@ -187,7 +187,7 @@
     },
     {
       "id": "animecca:zonbisagashitemasu",
-      "name": "正在寻找僵尸",
+      "name": "僵尸搜寻中",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://zommasu.com/onair/",
@@ -195,7 +195,7 @@
     },
     {
       "id": "animecca:batekkusufosu",
-      "name": "顶点之力",
+      "name": "至高之力",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://vertexforce.jp/onair/",
@@ -203,7 +203,7 @@
     },
     {
       "id": "animecca:majikaruekusupurora",
-      "name": "魔法探索者",
+      "name": "マジカル★エクスプローラー",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://majieku.com/#onair",
@@ -219,7 +219,7 @@
     },
     {
       "id": "animecca:ranmanibunnoichi-tid8012",
-      "name": "乱马二分之一（2026）",
+      "name": "らんま1/2 (2026)",
       "result": "conflict",
       "note": "官网日本电视台周六24:55，第三方25:00；暂不导出，等待逐集公告",
       "official_url": "https://ranma-pr.com/onair/",
@@ -227,7 +227,7 @@
     },
     {
       "id": "animecca:kashitamaryokuharibobaraidekyouseichoush",
-      "name": "借出的魔力以分期付款强制征收",
+      "name": "用【循环利息】强制收回借出的魔力",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://revo-anime.com/",
@@ -235,7 +235,7 @@
     },
     {
       "id": "animecca:tanuki-to-kitsune",
-      "name": "狸猫与狐狸",
+      "name": "小狸猫与小狐狸",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.tv-tokyo.co.jp/anime/tanukitsu/",
@@ -243,7 +243,7 @@
     },
     {
       "id": "animecca:yuruyuru-zukan",
-      "name": "轻松图鉴",
+      "name": "ゆるゆる図鑑",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.tv-tokyo.co.jp/anime/yuruyuru/",
@@ -251,7 +251,7 @@
     },
     {
       "id": "animecca:punirunzu-puni-4",
-      "name": "噗尼萌 第四季",
+      "name": "ぷにるんず ぷに4",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://www.tv-tokyo.co.jp/anime/punirunes/onair/",
@@ -259,7 +259,7 @@
     },
     {
       "id": "animecca:poppu-pappu-porutazu",
-      "name": "噗啪传送门",
+      "name": "啵普与帕噗与珀尔嗒",
       "result": "episode_confirmed",
       "note": "官网明确11月1日停播，第5集改为11月8日10:00（日本时间）",
       "official_url": "https://ppp-anime.jp/onair/",
@@ -267,7 +267,7 @@
     },
     {
       "id": "animecca:aonohako-tid8007",
-      "name": "青之箱 第二季",
+      "name": "青春之箱 第2期",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://aonohako-anime.com/",
@@ -275,7 +275,7 @@
     },
     {
       "id": "animecca:aoashi-s2",
-      "name": "青之芦苇 第二季",
+      "name": "青之芦苇 第2期",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://aoashi-pr.com/onair",
@@ -283,7 +283,7 @@
     },
     {
       "id": "animecca:mezametarasaikyousoubitouchuusenmochidat",
-      "name": "醒来后拥有最强装备和宇宙飞船，为了买独栋房子而自由当佣兵",
+      "name": "一觉醒来坐拥神装和飞船我决定以买一套独门独户的房子为目标作为佣兵自由地活下去",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://saikyosoubi.com/onair/",
@@ -299,7 +299,7 @@
     },
     {
       "id": "animecca:mahounoshimairuruttoririi-tid8002",
-      "name": "魔法姐妹露露与莉莉 后半篇",
+      "name": "魔法姐妹露露特莉莉 第2部分",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://www.luluttolilly.com/onair/",
@@ -315,7 +315,7 @@
     },
     {
       "id": "animecca:yowakimakkusureijounanoniratsuwankonyaku",
-      "name": "明明胆小到极点，却接受了精明未婚夫的赌约",
+      "name": "极致软弱千金小姐，不小心答应了精明未婚夫的赌局",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://yowaki-max-anime.com/onair/",
@@ -339,7 +339,7 @@
     },
     {
       "id": "animecca:mausu-kasoru-de-genjitsu-wo-sousa",
-      "name": "能够用鼠标光标操纵现实后，我要尽情点击女孩子",
+      "name": "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://maukuri.af-original.com/onair/",
@@ -347,7 +347,7 @@
     },
     {
       "id": "animecca:kanojonotomodachi",
-      "name": "她的朋友",
+      "name": "女友的朋友",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://kanojo-no-tomodachi.deregula.com/#onair",
@@ -355,7 +355,7 @@
     },
     {
       "id": "animecca:hitozukiai-ga-nigate-na-miboujin-no-yukionna-san",
-      "name": "不擅长交际的雪女寡妇与诅咒戒指",
+      "name": "不擅交际的未亡人雪女与诅咒戒指",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://anime-yukionna.af-original.com/onair/",
@@ -363,7 +363,7 @@
     },
     {
       "id": "animecca:dakusamonatodekiteiru",
-      "name": "与黑暗召唤师谈恋爱",
+      "name": "黑暗召唤师在地下恋爱中",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://darksummoner.deregula.com/onair/",
@@ -371,7 +371,7 @@
     },
     {
       "id": "animecca:yuusanchi-from-yuuhachi",
-      "name": "游家日常：游八的故事",
+      "name": "欢迎光临游之家！from Yu-hachi",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://yusanchi-anime.jp/#onair",
@@ -379,7 +379,7 @@
     },
     {
       "id": "animecca:doumosukinahitonihorekusurioiraisaretama",
-      "name": "你好，我是被心上人委托制作恋爱魔药的魔女",
+      "name": "你好，我是受心上人所托来做恋爱药的魔女。",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://horemajo-anime.com/onair/index.html",
@@ -387,7 +387,7 @@
     },
     {
       "id": "animecca:tenseigoburindakedoshitsumonaru",
-      "name": "转生哥布林，有什么问题吗？",
+      "name": "转生成哥布林有什么问题吗",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://tengobu-anime.com/onair/index.html",
@@ -395,7 +395,7 @@
     },
     {
       "id": "animecca:sairen",
-      "name": "幻境之门",
+      "name": "PSYREN 决战游戏",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://psyren-anime.com/on-air",
@@ -411,7 +411,7 @@
     },
     {
       "id": "animecca:mahoushoujoikuseikeikakurisutato",
-      "name": "魔法少女育成计划：重新启动",
+      "name": "魔法少女育成计划 restart",
       "result": "conflict",
       "note": "官网电视东京周一深夜02:00，第三方02:06；暂不导出，等待逐集公告",
       "official_url": "https://mahoiku.com/anime/restart#onair",
@@ -427,7 +427,7 @@
     },
     {
       "id": "animecca:kyouranreijouniarisutonbyoujakureijounit",
-      "name": "凶乱千金妮娅·利斯顿：弑神武人转生病弱千金的华丽无双录",
+      "name": "乱世千金 倪亚‧利斯顿转生为娇弱千金的弑神武人华丽无双录",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://kyoranreijo-pr.com/#anchor-onair",
@@ -435,7 +435,7 @@
     },
     {
       "id": "animecca:batorusupirittsurizekkainokuu",
-      "name": "战斗之魂：再启 绝界之空",
+      "name": "战斗之魂[Re] 绝界之空",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://www.bn-pictures.co.jp/battlespirits/#onair",
@@ -451,7 +451,7 @@
     },
     {
       "id": "animecca:tsuihousaretachitofuyomajutsushihakimama",
-      "name": "被逐出队伍的作弊赋予魔术师，悠然享受第二人生",
+      "name": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": null,
@@ -459,7 +459,7 @@
     },
     {
       "id": "animecca:sasakitopichanshizuntsu",
-      "name": "佐佐木与文鸟小哔 第二季",
+      "name": "佐佐木与文鸟小哔 第2期",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://sasapi-anime.com/onair.html",
@@ -467,7 +467,7 @@
     },
     {
       "id": "animecca:sekaisaikyounomajohajimemashita",
-      "name": "我开始当世界最强魔女了",
+      "name": "世界最强的魔女，就此开始",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://sekamajo-anime.com/",
@@ -475,7 +475,7 @@
     },
     {
       "id": "animecca:tanteihamoushindeiru",
-      "name": "侦探已经死了。第二季",
+      "name": "侦探已死 第2期",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://tanmoshi-anime.jp/Season2/onair/index.html",
@@ -483,7 +483,7 @@
     },
     {
       "id": "animecca:rayearth-2026",
-      "name": "魔法骑士雷阿斯",
+      "name": "新 魔法骑士Rayearth",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://rayearth-anime.com/onair/",
@@ -491,7 +491,7 @@
     },
     {
       "id": "animecca:tenseishitarakendeshitatsu",
-      "name": "转生成为魔剑了 第二季",
+      "name": "转生成为魔剑 第2期",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://tenken-anime.com/onair.html",
@@ -499,7 +499,7 @@
     },
     {
       "id": "animecca:juuoumujindandevain",
-      "name": "兽王武神丹德瓦因",
+      "name": "兽王武神丹帝拜恩",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://gattaishin.com/dandivine/#onair",
@@ -515,7 +515,7 @@
     },
     {
       "id": "animecca:hyakuyoufudaisankikikeishihen",
-      "name": "百妖谱 第三季京师篇",
+      "name": "百妖譜 第3期京師篇",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://b8station.tv/hyakuyoufu/#onair",
@@ -523,7 +523,7 @@
     },
     {
       "id": "animecca:tetsuryomitowizutetsudoumusume",
-      "name": "铁路之旅！与铁道少女同行",
+      "name": "铁旅！meet with 铁道少女",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://tetsuryo-anime.com/",
@@ -539,7 +539,7 @@
     },
     {
       "id": "animecca:beiburedoekkusubeikingudamuhen",
-      "name": "战斗陀螺：贝王国篇",
+      "name": "BEYBLADE X ベイキングダム編",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": null,
@@ -555,7 +555,7 @@
     },
     {
       "id": "animecca:hotaru-no-yomeiri",
-      "name": "萤火虫之婚",
+      "name": "萤火虫的出嫁",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://hotaru-anime.com/onair/",
@@ -563,7 +563,7 @@
     },
     {
       "id": "animecca:shuiro-no-kamen",
-      "name": "朱色面具",
+      "name": "朱色假面",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://the-vermilion-mask.com/",
@@ -571,7 +571,7 @@
     },
     {
       "id": "animecca:shikin-onbyoubou",
-      "name": "紫禁御猫房：紫禁城猫警备室",
+      "name": "紫禁・御猫房〜紫禁城猫警備室〜",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://nekokeibishitsu-anime.com/onair/",
@@ -579,7 +579,7 @@
     },
     {
       "id": "animecca:kyoufukorekuta",
-      "name": "恐怖收藏家",
+      "name": "恐怖收集者",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.nhk-character.com/chara/kyoufucollector/",
@@ -587,7 +587,7 @@
     },
     {
       "id": "animecca:yozakurasanchinodaisakusen-tid8011",
-      "name": "夜樱家的大作战 第二季 后半篇",
+      "name": "夜樱家的大作战 第二季 第2部分",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://mission-yozakura-family.com/onair/02.html",
@@ -595,7 +595,7 @@
     },
     {
       "id": "animecca:daiyanoesuakutotsusekandoshizun-tid8054",
-      "name": "钻石王牌 第二幕 第二季 后半篇",
+      "name": "钻石王牌 第4期 Part.2 (actⅡ 第2期 Part.2)",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://diaace.com/",
@@ -611,7 +611,7 @@
     },
     {
       "id": "animecca:shinjazeronomegamisamatohajimeruisekaiko",
-      "name": "与零信徒女神开始的异世界攻略",
+      "name": "和没有信徒的女神大人一起攻略异世界",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://zero-believers-anime.com/",
@@ -619,7 +619,7 @@
     },
     {
       "id": "animecca:chitosekunharamunebinnonaka-tid8022",
-      "name": "弹珠汽水瓶里的千岁同学 后半篇",
+      "name": "弹珠汽水瓶里的千岁同学 Part.2",
       "result": "weekly_match",
       "note": "已核对官网当前季度、频道与常规周播时刻；具体集数及临时改期尚未逐集确认",
       "official_url": "https://chiramune.com/onair/index.html",
@@ -627,7 +627,7 @@
     },
     {
       "id": "animecca:dakumashinjianimeshon",
-      "name": "黑暗机械 动画版",
+      "name": "DARK MACHINE THE ANIMATION",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.fujitv.co.jp/darkmachine_anime/onair/",
@@ -635,7 +635,7 @@
     },
     {
       "id": "animecca:munoumajo-bureinresu-witchi",
-      "name": "无脑魔女",
+      "name": "無脳魔女 ブレインレス・ウィッチ",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.bs4.jp/brainless-witch/",
@@ -643,7 +643,7 @@
     },
     {
       "id": "animecca:dorimurando",
-      "name": "梦境之地",
+      "name": "dreamland",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://www.dreamland-anime.com/",
@@ -651,7 +651,7 @@
     },
     {
       "id": "animecca:gerupiyo-s2",
-      "name": "凝胶小鸡 第二季",
+      "name": "ゲルぴよ 第2期",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://gelpiyo.com",
@@ -659,7 +659,7 @@
     },
     {
       "id": "animecca:watashi-no-shiawase-na-kekkon-tokubetsuhen",
-      "name": "我的幸福婚约 特别篇",
+      "name": "わたしの幸せな結婚 特別篇",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://watakon-anime.com/onair/",
@@ -667,7 +667,7 @@
     },
     {
       "id": "animecca:kadofaitou-angadodiu-ainzuunmeiseisenhen",
-      "name": "卡片战斗先导者：神圣命运星战篇",
+      "name": "卡片战斗先导者 Divinez 命运星战篇",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": "https://anime.cf-vanguard.com/vgd/",
@@ -675,7 +675,7 @@
     },
     {
       "id": "animecca:kofun-doctor-coffy-er",
-      "name": "古坟医生科菲 急诊室",
+      "name": "古墳ドクター コフィーER",
       "result": "unverified",
       "note": "官网未取得可确认的当前频道时刻；暂不导出",
       "official_url": null,
