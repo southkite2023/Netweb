@@ -37,3 +37,8 @@ dialog{max-height:93dvh;overflow:auto;overscroll-behavior:contain}#options{width
 .mobile-switch{display:none}
 @media(max-width:650px){.mobile-switch{display:flex;gap:4px}.mobile-switch button{flex:1;padding:4px;font-size:13px}.mobile-switch [aria-pressed=true]{background:var(--selected);border-color:var(--accent)}.columns{grid-template-rows:minmax(0,1fr);gap:0}.columns[data-pane=games]>section:last-child,.columns[data-pane=anime]>section:first-child{display:none}.columns section+section{border:0;padding:0}footer .primary{min-width:0}footer button{padding:7px;font-size:12px}}
 @media(max-height:480px){main{padding-block:3px;gap:2px}main>header{display:none}.items{grid-auto-rows:44px}.item{height:44px}.account-panel{padding-block:1px}}
+
+#options legend{font-size:15px}
+#options fieldset label,#options .duration{display:inline-flex;align-items:center;gap:6px;font-size:16px;min-height:28px;cursor:pointer}
+#options input[type=checkbox]{width:18px;height:18px;flex:none;margin:0}
+#weapon-option{padding-inline-start:12px}

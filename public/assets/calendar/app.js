@@ -103,12 +103,15 @@ function renderDates(id,meta){
  const list=$('#game-dates');list.replaceChildren();
  for(const type of ['banner','livestream','version_update'])list.append(dateRow(id,type,meta));
 }
+// Independent weapon or weapon-equivalent draws (including light cones and W-Engines).
+const weaponPoolGames=new Set(['genshin','starrail','zzz','wuwa','honkai3','endfield','pgr','girlsfrontline2','snowbreak','nte','browndust2','aethergazer','tof']);
 const bannerToggle=$('[name=type][value=banner]');
-bannerToggle.onchange=()=>{$('#include-weapons').disabled=!bannerToggle.checked;};
+bannerToggle.onchange=()=>{$('#include-weapons').disabled=!weaponPoolGames.has(editing)||!bannerToggle.checked;};
 function openOptions(id,name,button){
  editing=id;opener=button;$('#dialog-title').textContent=name;$('#form-error').textContent='';
  const config=chosen.get(id)||{};document.querySelectorAll('[name=type]').forEach(x=>x.checked=(config.types||Object.keys(types)).includes(x.value));
  document.querySelectorAll('[name=boundary]').forEach(x=>{const saved=config.boundaries||'start';x.checked=saved==='both'||saved===x.value;});
+ $('#weapon-option').hidden=!weaponPoolGames.has(id);
  $('#include-weapons').checked=config.weapons!==false;bannerToggle.onchange();
  $('#duration').checked=!!config.duration;$('#remove').disabled=!chosen.has(id);$('#options').showModal();
 }
@@ -125,7 +128,7 @@ $('#close').onclick=()=>$('#options').close();
 $('#options').addEventListener('close',()=>{(opener?.isConnected?opener:document.querySelector('.item[data-item="'+CSS.escape(editing)+'"]'))?.focus({preventScroll:true});});
 $('#remove').onclick=()=>{chosen.delete(editing);$('#options').close();selectionChanged();};
 $('#options-form').onsubmit=e=>{
- e.preventDefault();const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}const edges=[...document.querySelectorAll('[name=boundary]:checked')].map(x=>x.value);if(!edges.length){$('#form-error').textContent='开始时间和结束时间至少勾选一项。';return;}chosen.set(editing,{kind:'games',types:selected,weapons:$('#include-weapons').checked,format:'exact',duration:$('#duration').checked,boundaries:edges.length===2?'both':edges[0]});
+ e.preventDefault();const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}const edges=[...document.querySelectorAll('[name=boundary]:checked')].map(x=>x.value);if(!edges.length){$('#form-error').textContent='开始时间和结束时间至少勾选一项。';return;}chosen.set(editing,{kind:'games',types:selected,...(weaponPoolGames.has(editing)?{weapons:$('#include-weapons').checked}:{}),format:'exact',duration:$('#duration').checked,boundaries:edges.length===2?'both':edges[0]});
  $('#options').close();selectionChanged();
 };
 $('#games-scope').onchange=()=>{const filter=$('#games-filter');filter.replaceChildren();const all=document.createElement('option');all.value='all';all.textContent='全部游戏公司';filter.append(all);for(const [name,count] of companyOptions(gameList())){const option=document.createElement('option');option.value=name;option.textContent=name+' · '+count;filter.append(option);}if(auditData)renderWikiAudit(auditData);else draw();};
