@@ -3,7 +3,16 @@ const utc=s=>new Date(s).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'
 function fold(line){let out='',part='';for(const ch of line){if(new TextEncoder().encode(part+ch).length>75){out+=part+'\r\n';part=' ';}part+=ch;}return out+part;}
 export function makeCalendar(events,selections){
   const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//yuashie-calendar//Selection//ZH','CALSCALE:GREGORIAN'];let count=0;
-  for(const e of events){const id=e.category==='game'?e.game.game_id:e.category==='anime'?e.anime.series_id:null;const config=selections.get(id);if(!config||e.schedule_state!=='scheduled'||!e.start)continue;if(e.category==='game'&&!config.types.includes(e.event_type))continue;
+  const endKeys=new Set(events.filter(e=>e.category==='game'&&(e.boundary==='end'||/:end$/.test(e.source_key||e.wiki_key||'')||/结束提醒$/.test(e.title))).map(e=>e.game.game_id+'|'+e.title.replace(/ · 结束提醒$/,'')+'|'+e.start));
+  const expanded=[];
+  for(const e of events){
+    const edges=selections.get(e.game?.game_id)?.boundaries;
+    if(!edges||e.category!=='game'){expanded.push(e);continue;}
+    const end=e.boundary==='end'||/:end$/.test(e.source_key||e.wiki_key||'')||/结束提醒$/.test(e.title);
+    if(edges==='both'||edges===(end?'end':'start'))expanded.push(e);
+    if(!end&&edges!=='start'&&e.end&&!endKeys.has(e.game.game_id+'|'+e.title+'|'+e.end))expanded.push({...e,id:e.id+'-end',title:e.title+' · 结束提醒',start:e.end,end:null,time_kind:e.end.includes('T')?'datetime':'date'});
+  }
+  for(const e of expanded){const id=e.category==='game'?e.game.game_id:e.category==='anime'?e.anime.series_id:null;const config=selections.get(id);if(!config||e.schedule_state!=='scheduled'||!e.start)continue;if(e.category==='game'&&!config.types.includes(e.event_type))continue;
     // Anime always exports a precise airing start, without an inferred duration.
     if(e.category==='anime'&&e.time_kind!=='datetime')continue;
     const dateOnly=e.time_kind==='date'||config.format==='date';

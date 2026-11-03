@@ -6,7 +6,12 @@ export async function loadWikiData() {
   let state
   try { state=JSON.parse(await readFile(STATE,'utf8')); if(!Array.isArray(state.events))state=null } catch { state=null }
   // A timer never modifies the deployed snapshot; a broken state falls back to that verified Wiki snapshot.
-  return { catalog, events:state?.events||snapshot.events, registry, state }
+  const events=(state?.events||snapshot.events).filter(e=>!e.official_supplement)
+  for(const e of snapshot.events.filter(e=>e.official_supplement)){
+    const covered=events.some(x=>x.game?.game_id===e.game.game_id&&x.event_type==='banner'&&x.start?.slice(0,10)===e.start.slice(0,10)&&x.source_key?.endsWith(':'+e.boundary))
+    if(!covered)events.push(e)
+  }
+  return { catalog, events, registry, state }
 }
 export function wikiStatus(data, now=new Date()) {
   const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(now)
