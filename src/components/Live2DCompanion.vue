@@ -230,7 +230,7 @@ onBeforeUnmount(() => {
     <button v-if="weather" class="live2d-close weather-close" type="button" aria-label="关闭全屏天气特效" title="关闭全屏天气特效" @click="closeWeather">☂</button>
     <button class="live2d-close" type="button" aria-label="隐藏看板娘" @click="hide">×</button>
     <div v-if="ready" class="live2d-bubble" :class="{ faded: !bubbleVisible }" aria-live="polite">{{ message }}</div>
-    <div ref="host" class="live2d-stage" role="button" :tabindex="ready ? 0 : -1" aria-label="与水色小狗互动，点击摸摸，回车招手" @pointerdown="interact" @keydown.enter.prevent="choose(choices[4])" @keydown.space.prevent="choose(choices[1])">
+    <div ref="host" class="live2d-stage" role="button" :tabindex="ready ? 0 : -1" aria-label="与水色小狗互动，点击摸摸，回车招手" @click="interact" @keydown.enter.prevent="choose(choices[4])" @keydown.space.prevent="choose(choices[1])">
       <canvas :key="attempt" ref="canvas" aria-hidden="true" />
     </div>
     <div v-if="!ready" class="live2d-status" role="status">

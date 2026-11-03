@@ -1,7 +1,7 @@
 /* Cache only the Astracct PWA shell; exclude API and user data. */
 const ROOT='/assets/astracct/';
-const CACHE='astracct-shell-20261103-v11';
-const SHELL=[ROOT,ROOT+'index.html',ROOT+'styles.css',ROOT+'app.js',ROOT+'manifest.json',ROOT+'icon.svg',ROOT+'icon-192.png',ROOT+'icon-512.png'];
+const CACHE='astracct-shell-20261103-v12';
+const SHELL=[ROOT,ROOT+'index.html',ROOT+'styles.css',ROOT+'app.js',ROOT+'button-targets.js',ROOT+'manifest.json',ROOT+'icon.svg',ROOT+'icon-192.png',ROOT+'icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(Promise.all([
   caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith('astracct-shell-')&&n!==CACHE).map(n=>caches.delete(n)))),
