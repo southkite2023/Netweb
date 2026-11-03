@@ -51,6 +51,7 @@
   .admin-profile-panel, .admin-feedback-card, .contribution-section,
   .vip-intro, .vip-notes, .vip-afdian-panel, .afdian-embed,
   .minecraft-access, .minecraft-access-panel, .minecraft-status-row,
+  .rh-hero, .rh-identity, .rh-lab-card, .rh-workspace, .rh-tool-grid > a,
   .radio-empty-panel, .radio-bind-callout, .radio-station-strip,
   .radio-stat-grid, .radio-section, .radio-table-wrap,
   .radio-form-panel, .radio-fieldset, .qsl-upload-panel,
@@ -67,6 +68,7 @@
 
 /* Small inset containers, chips, message rows and editable fields. */
 :root :is(
+  .rh-state,
   .afdian-qr, .minecraft-server-address, .minecraft-bound-id,
   .radio-subnav-links a, .radio-callsign-chip, .radio-identity-badge,
   .comment-radio-badge, .qsl-tabs, .qsl-tabs button,
