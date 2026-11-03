@@ -8,6 +8,8 @@ import { experienceCopy } from '../data/experience'
 import { latestRelease } from '../data/latestRelease'
 import { SITE_VERSION } from '../data/version'
 import { openCommands } from '../lib/navigation'
+import { isLightMode } from '../lib/theme'
+import dayBanner from '../assets/hero-day-observatory.jpg'
 import heroBanner from '../assets/hero-starry-observatory.jpg'
 
 const { t, locale } = useI18n()
@@ -25,7 +27,7 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
       <div class="home-announcement"><span class="announcement-mark" aria-hidden="true">↗</span><RouterLink to="/about">{{ c.latest }} · {{ latest.title }}</RouterLink><span class="announcement-version">v{{ SITE_VERSION }}</span></div>
       <div class="hero home-hero">
         <div class="hero-feature">
-          <div class="hero-signal-art" aria-hidden="true"><img :src="heroBanner" alt="" width="2400" height="1024" decoding="async" fetchpriority="high"><span class="signal-coordinate">YU / 001</span></div>
+          <div class="hero-signal-art" aria-hidden="true"><img :src="isLightMode ? dayBanner : heroBanner" alt="" width="2400" height="1024" decoding="async" fetchpriority="high"><span class="signal-coordinate">YU / 001</span></div>
           <div class="eyebrow">
             {{ t('hero.eyebrow') }}
           </div>
