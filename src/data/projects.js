@@ -72,8 +72,9 @@ export const projects = [
     type: { zh: '业余无线电 / Web 应用', en: 'Amateur Radio / Web App', ja: 'アマチュア無線 / Webアプリ' },
     version: '0.3.0',
     year: '2026',
-    image: new URL('../assets/projects/project-003.svg', import.meta.url).href,
-    imageWidth: 1280, imageHeight: 800,
+    image: new URL('../assets/projects/project-003-night.webp', import.meta.url).href,
+    imageLight: new URL('../assets/projects/project-003-day.webp', import.meta.url).href,
+    imageWidth: 1600, imageHeight: 900,
   },
   {
     id: '004',
