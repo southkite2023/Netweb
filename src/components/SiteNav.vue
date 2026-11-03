@@ -49,7 +49,7 @@ onBeforeUnmount(() => { timers.forEach(clearTimeout) })
 <template>
   <nav class="site-nav" :class="{ 'menu-open': mobileMenuOpen }" :aria-label="c.menu" @keydown="escapeMenu">
     <div class="brand-cluster">
-      <RouterLink to="/" class="brand" :class="{ 'archive-glitch': brandGlitch }" @click="handleBrandClick"><img class="yuashie-wordmark" src="../assets/yuashie-cloud-wordmark.png" alt="YUASHIE" width="222" height="34"></RouterLink>
+      <RouterLink to="/" class="brand" :class="{ 'archive-glitch': brandGlitch }" @click="handleBrandClick"><img class="yuashie-wordmark" src="../assets/yuashie-sakura-wordmark.png" alt="YUASHIE" width="222" height="34"></RouterLink>
       <button class="theme-toggle" type="button" :aria-label="isLightMode ? c.dark : c.light" :title="isLightMode ? c.dark : c.light" :aria-pressed="isLightMode" @click="toggleTheme"><svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
         <path v-if="isLightMode" d="M20.5 13.1A8.6 8.6 0 0 1 10.9 3.5a8.6 8.6 0 1 0 9.6 9.6Z" />
         <g v-else>
