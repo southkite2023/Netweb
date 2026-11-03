@@ -13,6 +13,7 @@ import urllib.request
 
 REPO = 'southkite2023/quota-hub'
 PATTERN = re.compile(r'^(?:quota-hub|astracct)-(\d+\.\d+\.\d+)-(android|universal|arm64-v8a|armeabi-v7a|x86_64|windows-x64|macos-universal)\.(apk|zip|dmg)$')
+LINUX_PATTERN = re.compile(r"^Astracct-Linux-(\d+\.\d+\.\d+)-(x86_64|aarch64)\.(deb|rpm|AppImage|tar\.gz)$")
 MAX_SIZE = 512 * 1024 * 1024
 
 def request(url, binary=False):
@@ -26,6 +27,17 @@ def select(releases):
             continue
         for asset in release['assets']:
             match = PATTERN.fullmatch(asset['name'])
+            linux = LINUX_PATTERN.fullmatch(asset['name'])
+            if linux:
+                version, cpu, extension = linux.groups()
+                if release['tag_name'] != 'v' + version: continue
+                digest = asset.get('digest') or ''
+                if not re.fullmatch(r'sha256:[a-f0-9]{64}', digest) or not 0 < asset['size'] <= MAX_SIZE:
+                    raise ValueError('Invalid Linux asset: ' + asset['name'])
+                key = 'linux:' + cpu + ':' + extension
+                if key not in selected or tuple(map(int, version.split('.'))) > tuple(map(int, selected[key]['version'].split('.'))):
+                    selected[key] = {'platform': 'linux', 'architecture': cpu, 'format': extension, 'version': version, 'file': asset['name'], 'bytes': asset['size'], 'sha256': digest[7:], 'source': asset['browser_download_url'], '_download': f"https://api.github.com/repos/{REPO}/releases/assets/{int(asset['id'])}?mirror={digest[7:23]}", 'releaseUrl': release['html_url']}
+                continue
             if not match or release['tag_name'] != 'v' + match[1]:
                 continue
             version, variant, extension = match.groups()
@@ -93,7 +105,8 @@ def sync(root):
             finally:
                 Path(temporary).unlink(missing_ok=True)
         item['url'] = 'https://yuashie.cn/downloads/astracct/v' + item['version'] + '/' + item['file']
-    manifest = {'schema': 1, 'channel': 'public-testing', 'packages': [item for item in packages if not item['file'].endswith('.dmg')],
+    manifest = {'schema': 1, 'channel': 'public-testing', 'packages': [item for item in packages if item['platform'] != 'linux' and not item['file'].endswith('.dmg')],
+                'linuxPackages': [item for item in packages if item['platform'] == 'linux'],
                 'installers': [item for item in packages if item['file'].endswith('.dmg')]}
     fd, temporary = tempfile.mkstemp(dir=root, prefix='.manifest-')
     try:
