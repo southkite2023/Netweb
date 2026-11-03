@@ -11,7 +11,7 @@ for(const kind of ['games','anime']){
 }
 
 function gameList(){return $('#games-scope').value==='all'?catalog.games:catalog.games.filter(([id])=>catalog.focus_games.includes(id));}
-let editing, opener;
+let editing, editingKind, opener;
 const types = {livestream:'前瞻',version_update:'版本',banner:'卡池'};
 let ready=false,busy=false,saveTimer,editVersion=0,lastSaved=null;
 const account=new AccountCalendar({onChange:calendar=>{
@@ -55,7 +55,7 @@ function draw(){
       const detail=document.createElement('small');const selection=chosen.get(id);
       detail.textContent=selection&&kind==='games'?selection.types.map(t=>types[t]).join(' / '):metadata[id].label;
       if(kind==='games'){detail.textContent=coverageLabel(metadata[id]);button.dataset.incomplete=availableTypeCount(metadata[id])<3;}
-      button.title=[name,...(companies[id]?.names||[]),metadata[id].original,metadata[id].label].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.onclick=()=>kind==='games'?openOptions(id,name,button):(chosen.has(id)?chosen.delete(id):chosen.set(id,{kind:'anime'}),selectionChanged());list.append(button);
+      button.title=[name,...(companies[id]?.names||[]),metadata[id].original,metadata[id].label].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.dataset.item=id;button.onclick=()=>openOptions(id,name,button,kind);list.append(button);
     }
     if(!list.children.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='没有匹配的项目';list.append(empty);}
     const visibleItems=kind==='games'?gameList():catalog[kind];$(`#${kind}-count`).textContent=`${visibleItems.length} 项 · ${visibleItems.filter(([id])=>chosen.has(id)).length} 已选`;
@@ -95,18 +95,36 @@ function renderDates(id,meta){
  const list=$('#game-dates');list.replaceChildren();
  for(const type of Object.keys(types))list.append(dateRow(id,type,meta));
 }
-function openOptions(id,name,button){editing=id;opener=button;$('#dialog-title').textContent=name;const m=metadata[id];$('#game-coverage').textContent='区服：'+(m.server==='global'?'国际服':'国服')+'。三类核查结果如下；已收录日期可能是历史记录，请看具体版本和时间。';renderDates(id,m);$('#game-wiki').hidden=!m.url;$('#game-wiki').href=m.url||'#';$('#game-wiki').textContent='查看本游戏主要日期来源';$('#form-error').textContent='';const config=chosen.get(id)||{types:Object.keys(types),format:'exact',duration:false};
-  document.querySelectorAll('[name=type]').forEach(x=>x.checked=config.types.includes(x.value));document.querySelectorAll('[name=format]').forEach(x=>x.checked=x.value===config.format);$('#duration').checked=config.duration;$('#remove').disabled=!chosen.has(id);$('#options').showModal();}
+function openOptions(id,name,button,kind){
+ editing=id;editingKind=kind;opener=button;$('#dialog-title').textContent=name;$('#form-error').textContent='';
+ const game=kind==='games';$('#game-controls').hidden=!game;$('#anime-control').hidden=game;
+ const config=chosen.get(id)||{};document.querySelectorAll('[name=type]').forEach(x=>x.checked=(config.types||Object.keys(types)).includes(x.value));
+ document.querySelectorAll('[name=format]').forEach(x=>x.checked=x.value===(config.format||'exact'));
+ $('#duration').checked=!!config.duration;$('#anime-release').checked=true;$('#remove').disabled=!chosen.has(id);$('#options').showModal();
+}
+$('#open-details').onclick=()=>{
+ const m=metadata[editing],game=editingKind==='games';$('#detail-title').textContent=$('#dialog-title').textContent+' · 详情';
+ $('#game-coverage').textContent=game?'区服：'+(m.server==='global'?'国际服':'国服')+'。以下日期可能包含历史记录。':[m.original,m.label].filter(Boolean).join(' · ');
+ $('#duration-note').hidden=!game;$('#game-dates').replaceChildren();if(game)renderDates(editing,m);
+ $('#game-wiki').hidden=!m.url;$('#game-wiki').href=m.url||'#';$('#game-wiki').textContent='查看主要来源';$('#item-details').showModal();
+};
+$('#open-tools').onclick=()=>$('#calendar-tools').showModal();
+document.querySelectorAll('[data-dismiss]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+document.querySelectorAll('.mobile-switch button').forEach(b=>b.onclick=()=>{ $('.columns').dataset.pane=b.dataset.pane;document.querySelectorAll('.mobile-switch button').forEach(x=>x.setAttribute('aria-pressed',x===b));});
 $('#close').onclick=()=>$('#options').close();
-$('#options').addEventListener('close',()=>opener?.focus());
+$('#options').addEventListener('close',()=>{(opener?.isConnected?opener:document.querySelector('.item[data-item="'+CSS.escape(editing)+'"]'))?.focus({preventScroll:true});});
 $('#remove').onclick=()=>{chosen.delete(editing);$('#options').close();selectionChanged();};
-$('#options-form').onsubmit=e=>{e.preventDefault();const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}chosen.set(editing,{kind:'games',types:selected,format:$('[name=format]:checked').value,duration:$('#duration').checked});$('#options').close();selectionChanged();};
+$('#options-form').onsubmit=e=>{
+ e.preventDefault();if(editingKind==='anime'){if($('#anime-release').checked)chosen.set(editing,{kind:'anime'});else chosen.delete(editing);}
+ else{const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}chosen.set(editing,{kind:'games',types:selected,format:$('[name=format]:checked').value,duration:$('#duration').checked});}
+ $('#options').close();selectionChanged();
+};
 $('#games-scope').onchange=()=>{const filter=$('#games-filter');filter.replaceChildren();const all=document.createElement('option');all.value='all';all.textContent='全部游戏公司';filter.append(all);for(const [name,count] of companyOptions(gameList())){const option=document.createElement('option');option.value=name;option.textContent=name+' · '+count;filter.append(option);}if(auditData)renderWikiAudit(auditData);else draw();};
 for(const kind of ['games','anime']){$(`#${kind}-search`).oninput=draw;$(`#${kind}-filter`).onchange=draw;}
 document.querySelectorAll('.clear-selection').forEach(button=>button.onclick=()=>{chosen.clear();selectionChanged();if(!account.calendar)$('#status').textContent='已清除所有游戏与动漫选择。';});
 $('#generate').onclick=async()=>{
  if(!account.user){window.top.location.href='/login?redirect='+encodeURIComponent('/projects/004/select');return;}
- await persist(true);
+ if(await persist(true))$('#calendar-tools').showModal();
 };
 $('#new-calendar').onclick=async()=>{
  if(await persist(true))$('#new-calendar-confirm').showModal();

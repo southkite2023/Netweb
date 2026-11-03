@@ -9,7 +9,7 @@ function receiveTheme(event) {
 onMounted(()=>window.addEventListener('message',receiveTheme))
 onBeforeUnmount(()=>window.removeEventListener('message',receiveTheme))
 import SiteNav from '../components/SiteNav.vue'
-import SiteFooter from '../components/SiteFooter.vue'
+
 </script>
 
 <template>
@@ -17,17 +17,20 @@ import SiteFooter from '../components/SiteFooter.vue'
     <div class="container">
       <SiteNav />
       <main class="calendar-selection-main">
-        <RouterLink class="detail-back" to="/projects/004">← 返回日历项目介绍</RouterLink>
+        <div class="picker-links"><RouterLink class="detail-back" to="/projects/004">← 返回日历项目介绍</RouterLink>
+        <RouterLink to="/projects/004/subscribe">管理动态日历订阅 →</RouterLink></div>
         <iframe ref="frame" class="calendar-selection-frame" src="/assets/calendar/index.html" title="日程选择：游戏与动漫"></iframe>
-        <RouterLink to="/projects/004/subscribe">管理动态日历订阅 →</RouterLink>
       </main>
     </div>
-    <SiteFooter />
+
   </div>
 </template>
 
 <style scoped>
-.calendar-selection-main { padding:40px 0 64px; }
-.calendar-selection-frame { display:block; width:100%; height:1120px; border:0; border-radius:16px; margin:24px 0; background:var(--bg); }
-@media(max-width:700px){.calendar-selection-frame{height:1560px;}}
+.calendar-selection-page{height:100vh;height:100dvh}
+.calendar-selection-page>.container{height:100%;display:flex;flex-direction:column}
+.calendar-selection-main{flex:1;min-height:0;display:flex;flex-direction:column;padding:0 0 6px}
+.picker-links{display:flex;justify-content:space-between;align-items:center;padding:3px 0;font-size:12px}
+.picker-links a{margin:0}
+.calendar-selection-frame{display:block;width:100%;flex:1;min-height:0;border:0;border-radius:12px;background:var(--bg)}
 </style>
