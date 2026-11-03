@@ -23,8 +23,8 @@ export const projects = [
     get version() { return quotaRelease.latestVersion },
     repository: 'https://github.com/southkite2023/quota-hub',
     year: '2026',
-    image: new URL('../assets/projects/project-001.svg', import.meta.url).href,
-    imageWidth: 1280, imageHeight: 800,
+    image: new URL('../assets/projects/project-001-cover.webp', import.meta.url).href,
+    imageWidth: 1200, imageHeight: 675,
   },
   {
     id: '002',
