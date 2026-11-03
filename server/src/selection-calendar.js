@@ -66,7 +66,7 @@ function calendarTitle(event) {
     const version=releaseNumber(event,raw);
     if (version) {
       if (name.startsWith(version)) name=name.slice(version.length).replace(/^(?:赛季|版本)?\s*/,'');
-      label=(name?'「'+name+'」':'')+version+' ';
+      label='「'+[version,name].filter(Boolean).join(' ')+'」';
     } else {
       label='「'+name+'」';
     }
@@ -91,7 +91,7 @@ export function makeCalendar(events,selections){
     const dateOnly=e.time_kind==='date'||config.format==='date';
     const boundary=s=>dateOnly?s.slice(0,10).replace(/-/g,''):utc(s);
     const summary=calendarTitle(e);
-    lines.push('BEGIN:VEVENT',`UID:${e.id}@calendar.yuashie.cn`,`DTSTAMP:${utc(e.updated_at)}`,`SEQUENCE:${e.revision+(summary!==e.title?1:0)+(e.category==='game' && ['livestream','version_update'].includes(e.event_type) && releaseNumber(e,e.title.split(' · ').slice(1).join(' · '))?1:0)}`,`SUMMARY:${escapeText(summary)}`,`STATUS:${e.status.toUpperCase()}`,`DTSTART${dateOnly?';VALUE=DATE':''}:${boundary(e.start)}`);
+    lines.push('BEGIN:VEVENT',`UID:${e.id}@calendar.yuashie.cn`,`DTSTAMP:${utc(e.updated_at)}`,`SEQUENCE:${e.revision+(summary!==e.title?1:0)+(e.category==='game' && ['livestream','version_update'].includes(e.event_type) && releaseNumber(e,e.title.split(' · ').slice(1).join(' · '))?2:0)}`,`SUMMARY:${escapeText(summary)}`,`STATUS:${e.status.toUpperCase()}`,`DTSTART${dateOnly?';VALUE=DATE':''}:${boundary(e.start)}`);
     if(config.kind==='games'&&config.duration&&e.end){let end=boundary(e.end);if(dateOnly){const hasPartialDay=e.time_kind==='datetime'&&!/T00:00:00(?:[+-]|Z)/.test(e.end);if(hasPartialDay||end<=boundary(e.start)){const next=new Date((end<=boundary(e.start)?e.start:e.end).slice(0,10)+'T00:00:00Z');next.setUTCDate(next.getUTCDate()+1);end=next.toISOString().slice(0,10).replace(/-/g,'');}}lines.push(`DTEND${dateOnly?';VALUE=DATE':''}:${end}`);}
     lines.push(`DESCRIPTION:${escapeText((summary!==e.title?'原始标题：'+e.title+'\n':'')+(e.description||'')+'\n原始时间：'+e.start+' → '+(e.end||'结束未知')+'\n'+e.sources.map(s=>'来源：'+s.url).join('\n'))}`,`URL:${e.url}`,'TRANSP:TRANSPARENT','END:VEVENT');count++;
   }
