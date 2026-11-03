@@ -9,11 +9,12 @@ export function parseSubscription(raw, catalog, {allowEmpty=false}={}) {
     if(v!==1||!Array.isArray(games)||games.length>40||!Array.isArray(anime)||anime.length>85||(!allowEmpty&&!games.length&&!anime.length))return null
     const selected=new Map()
     for(const row of games){
-      if(!Array.isArray(row)||![4,5].includes(row.length))return null
-      const [id,types,format,duration,boundaries]=row
-      if(row.length===5&&!['both','start','end'].includes(boundaries))return null
+      if(!Array.isArray(row)||![4,5,6].includes(row.length))return null
+      const [id,types,format,duration,boundaries,weapons]=row
+      if(row.length>=5&&!['both','start','end'].includes(boundaries))return null
+      if(row.length===6&&typeof weapons!=='boolean')return null
       if(!catalog.games.includes(id)||selected.has(id)||!Array.isArray(types)||!types.length||types.length>3||types.some(t=>!['livestream','version_update','banner'].includes(t))||!['date','exact'].includes(format)||typeof duration!=='boolean')return null
-      selected.set(id,{kind:'games',types,format,duration,...(boundaries?{boundaries}:{})})
+      selected.set(id,{kind:'games',types,format,duration,...(weapons===false?{weapons:false}:{}),...(boundaries?{boundaries}:{})})
     }
     if(anime.some(id=>!Number.isSafeInteger(id)||!Object.hasOwn(catalog.anime,String(id)))||new Set(anime).size!==anime.length)return null
     return {games:selected,anime}
