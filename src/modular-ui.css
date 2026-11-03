@@ -84,6 +84,7 @@ body::before { display: none; }
 .hero-caption { position: relative; display: flex; justify-content: space-between; width: 100%; margin-top: auto; padding-top: 32px; color: #a7b9ac; font: 10px/1.5 ui-monospace, monospace; letter-spacing: .13em; }
 .hero-signal-art { position: absolute; z-index: -1; inset: 0; overflow: hidden; background: #08090c; }
 .hero-signal-art img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
+.hero-signal-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #08090c80 0%, #08090c4d 42%, #08090c0a 100%); }
 .signal-coordinate { position: absolute; z-index: 1; right: 24px; top: 25px; color: #a5c993; font: 10px ui-monospace, monospace; letter-spacing: .2em; }
 .node-panel { width: 100%; transform: none; align-self: stretch; border-radius: 12px; box-shadow: none; background: var(--card); }
 .node-panel .terminal-top { padding: 15px 20px; }
