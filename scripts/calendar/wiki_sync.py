@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Fixed Wiki sources only. Never infer maintenance completion or cross server dates."""
+"""GameG first, fixed Wiki fallback. Never infer completion or cross-server dates."""
 import argparse, datetime as dt, hashlib, json, os, re, time, urllib.request, urllib.parse, uuid
 from html.parser import HTMLParser
 from pathlib import Path
+import gameg_source
 
 class Node:
     def __init__(self, tag='', attrs=()): self.tag=tag; self.attrs=dict(attrs); self.children=[]
@@ -103,20 +104,46 @@ def write_json(path,data):
     temp=path.with_suffix('.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');os.replace(temp,path)
 
 def sync(data_dir,state_dir,fixture_dir=None):
+    deadline=time.monotonic()+180
     registry=json.loads((data_dir/'wiki-sources.json').read_text());state_dir.mkdir(parents=True,exist_ok=True)
     previous=json.loads((state_dir/'wiki-state.json').read_text()) if (state_dir/'wiki-state.json').exists() else {'events':json.loads((data_dir/'events.json').read_text())['events'],'games':{}}
     stamp=dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'); today=dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date()
     snapshot=json.loads((data_dir/'events.json').read_text())['events']
     merged={e['id']:e for e in snapshot}
     # Preserve automatic discoveries across releases; fresh reviewed manual rows come from the deployed snapshot.
+    covered={g['game_id']:g.get('covered_types',[]) for g in registry['games'] if g.get('timeline_source')}
     for e in previous['events']:
-        if e.get('wiki_key') and (e['id'] not in merged or e.get('revision',1)>=merged[e['id']].get('revision',1)):merged[e['id']]=e
+        if e.get('wiki_key') and e.get('event_type') in covered.get(e.get('game',{}).get('game_id'),[]):continue
+        if (e.get('wiki_key') or e.get('source_key')) and (e['id'] not in merged or e.get('revision',1)>=merged[e['id']].get('revision',1)):merged[e['id']]=e
     result={'updated_at':stamp,'interval_minutes':5,'events':list(merged.values()),'games':{}}
+    gameg_reports = {}; gameg_error = None
+    if any(g.get('timeline_source',{}).get('provider')=='gameg' for g in registry['games']):
+        try:
+            if fixture_dir:
+                html=(fixture_dir/'gameg.html').read_text()
+                gameg_data=gameg_source.parse(html)
+            else:
+                # Website denies server requests. Use the public data repository linked by the site.
+                gameg_data=gameg_source.fetch_repository(state_dir)
+            result['events'],gameg_reports=gameg_source.apply(gameg_data,registry['games'],result['events'],stamp)
+        except Exception as exc:
+            gameg_error=str(exc)[:160]
     # Serial queue imposes at least 2 seconds between Wiki requests. No anti-bot bypass or media fallback.
     for game in registry['games']:
         gid=game['game_id']; last=previous.get('games',{}).get(gid,{});status=dict(last,checked_at=stamp,mode='auto' if game.get('adapter') else 'watch',message='')
         status.pop('error',None)
+        if game.get('timeline_source',{}).get('provider')=='gameg':
+            report=gameg_reports.get(gid)
+            if report:
+                status.update(report,mode='auto',last_success_at=stamp,parsed_at=stamp,message='GameG时间表每5分钟检查；只导出来源明确确认的时间。')
+            else:
+                status.update(mode='auto',error=gameg_error or 'GameG分组缺失',message='GameG读取或解析失败，保留上次有效记录，不用低优先级来源覆盖。')
+            result['games'][gid]=status
+            # Covered banners cannot be reintroduced from the old Wiki adapter.
+            if 'banner' in (report or game).get('covered_types',[]):
+                continue
         try:
+            if time.monotonic()>deadline:raise TimeoutError('本轮检查队列超时，沿用上次有效记录')
             if not game['sources']: raise ValueError('尚未找到符合区服的主要Wiki排期页面')
             url=game['sources'][0]; parsed=urllib.parse.urlsplit(url)
             if parsed.scheme!='https' or parsed.hostname not in registry['allowed_hosts']:raise ValueError('不在Wiki白名单')

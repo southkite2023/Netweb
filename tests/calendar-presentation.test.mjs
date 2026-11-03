@@ -11,13 +11,13 @@ test('complete game dates precede partial dates regardless of event volume; ties
  assert.equal(coverageLabel(metadata.complete),'三类日期已收录');
  assert.match(coverageLabel(metadata.one),/1\/3/);
 });
-test('verified game categories have dated Wiki evidence in their own server', () => {
+test('verified game categories have dated preferred-source evidence in their own server', () => {
  const {events}=JSON.parse(readFileSync('public/assets/calendar/data/events.json','utf8'));
  const registry=JSON.parse(readFileSync('public/assets/calendar/data/wiki-sources.json','utf8'));
  assert.equal(new Set(events.map(e=>e.id)).size,events.length);
  for(const g of registry.games){
   for(const [type,status] of Object.entries(g.types))if(status==='verified'){
-   assert.ok(events.some(e=>e.game?.game_id===g.game_id&&e.game.server===g.server&&e.event_type===type&&e.schedule_state==='scheduled'&&e.start&&e.sources.some(s=>s.authority==='community_wiki')),`${g.game_id} ${type}`);
+   assert.ok(events.some(e=>e.game?.game_id===g.game_id&&e.game.server===g.server&&e.event_type===type&&e.schedule_state==='scheduled'&&e.start&&e.sources.some(s=>['community_wiki','community_timeline'].includes(s.authority))),`${g.game_id} ${type}`);
   }
   assert.deepEqual(metadata[g.game_id].coverage_types,g.types);
  }
@@ -30,9 +30,9 @@ test('every game type has an explicit review reason and never treats a failed se
   const r=dateReviews[id]?.[type];assert.ok(r?.reason&&r?.label&&r?.checked_on,`${id}/${type}`);assert.ok(r.sources.length);
   if(r.status==='not_announced')assert.ok(r.official_evidence?.url&&r.official_evidence?.scope,'Official non-announcement requires scoped official evidence');
  }
- assert.equal(dateReview('reverse1999','banner').status,'read_failed');
+ assert.equal(dateReview('reverse1999','banner').status,'source_uncertain');
  assert.equal(dateReview('bluearchive','banner').status,'conflict');
  assert.equal(dateReview('infinitynikki','banner').status,'unread_image');
- assert.equal(dateReview('zzz','version_update').status,'announced_unimported');
+ assert.equal(dateReview('zzz','version_update').status,'recorded');
  assert.equal(dateReview('unknown','banner').status,'not_checked');
 });

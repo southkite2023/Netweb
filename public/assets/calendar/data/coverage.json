@@ -4,27 +4,19 @@
   "scope": "2026秋季目录含电视、网络、短篇、续篇和特别篇；游戏为常见热门二游广义名单，不声称客观穷尽或排行。",
   "games": 34,
   "anime": 85,
-  "events": 162,
-  "with_events": 62,
+  "events": 185,
+  "with_events": 70,
   "without_events": [
-    "鸣潮",
     "崩坏3",
-    "明日方舟：终末地",
-    "重返未来：1999",
     "蔚蓝档案",
     "少女前线2：追放",
     "尘白禁区",
-    "异环",
     "闪耀暖暖",
     "未定事件簿",
     "闪耀！优俊少女",
-    "卡厄思梦境",
     "第七史诗",
-    "深空之眼",
     "幻塔",
     "二重螺旋",
-    "光与夜之恋",
-    "世界之外",
     "阴阳师",
     "初音未来：缤纷舞台",
     "野生的最终头目出现了！第二季",
@@ -66,5 +58,5 @@
     "古坟医生科菲 急诊室"
   ],
   "game_wiki_audit": "wiki-sources.json",
-  "game_policy": "Wiki-only; unknown is not no schedule"
+  "game_policy": "GameG first for matching server; Wiki fallback for uncovered types; only confirmed timestamps are exported"
 }

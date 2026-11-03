@@ -558,10 +558,10 @@ export const metadata = {
   },
   "genshin": {
     "label": "2/3 类已核实",
-    "url": "https://wiki.biligame.com/ys/祈愿",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "checked_at": "2026-11-03",
-    "event_count": 6,
+    "event_count": 4,
     "verification": "official",
     "verification_note": "当前祈愿页仅核实7.1下半；7.2版本及卡池本轮未从Wiki取得日期，按Wiki-only规则暂不导出，未推算后续轮换。",
     "event_types": [
@@ -580,21 +580,66 @@ export const metadata = {
     },
     "date_summary": {
       "livestream": {
-        "label": "2026-10-23 20:00:00 · 7.2版本前瞻（已举行）",
-        "url": "https://wiki.biligame.com/ys/原神7.2版本前瞻直播总结"
+        "label": "原神 · 7.2「坏灭肇始之时」前瞻特别节目：2026-10-23 20:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
       },
       "banner": {
-        "label": "2026-10-13 18:00:00 → 2026-11-03 14:59:00 · 莓色香颂（「明绚千韵·爱可菲(冰)」）",
-        "url": "https://wiki.biligame.com/ys/祈愿"
+        "label": "原神 · 7.1版本活动祈愿预告第二期 · 结束提醒：2026-11-03 14:59:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 1 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7.1「往冥府的安魂歌」前瞻特别节目；起点状态：未知；站内记录起点：2026-09-12T20:00:00+08:00（未作为确认日期导出）。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ys.mihoyo.com/main/news/detail/166006",
+          "https://ys.mihoyo.com/main/news/detail/166992",
+          "https://ys.mihoyo.com/main/news/detail/167026"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 9 条来源记录，已导入 3 个明确确认的时间点。另有 8 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7.1 第一期活动祈愿（煦风欢舞时/涌浪叙歌/神铸赋形）；起点状态：推算；站内记录起点：2026-09-23T06:00:00+08:00（未作为确认日期导出）。官方预告原文为「2026/09/23 7.1版本更新后 ~ 2026/10/13 17:59」；start 取 7.1 维护开始时刻作锚点（维护预告 9/23 06:00 起、预计 5 小时），实际开放以维护完成为准。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ys.mihoyo.com/main/news/detail/166385",
+          "https://ys.mihoyo.com/main/news/detail/166246",
+          "https://ys.mihoyo.com/main/news/detail/166249",
+          "https://ys.mihoyo.com/main/news/detail/166251",
+          "https://ys.mihoyo.com/main/news/detail/166763"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 5 条来源记录，已导入 0 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7.1 往冥府的安魂歌；起点状态：未知；站内记录起点：2026-09-23T06:00:00+08:00（未作为确认日期导出）。维护窗口 09-23 06:00 起预计 5 小时（官方维护预告确认）；end 官方未公布，按 42 天版本周期推算 11-04 06:00 维护，待官方公告。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ys.mihoyo.com/main/news/detail/165618",
+          "https://ys.mihoyo.com/main/news/detail/165682",
+          "https://ys.mihoyo.com/main/news/detail/165475",
+          "https://ys.mihoyo.com/main/news/detail/166385",
+          "https://ys.mihoyo.com/main/news/detail/166259"
+        ],
+        "checked_on": "2026-11-03"
       }
     }
   },
   "starrail": {
     "label": "三类日期已核实",
-    "url": "https://wiki.biligame.com/sr/跃迁/4.0",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "checked_at": "2026-11-03",
-    "event_count": 15,
+    "event_count": 9,
     "verification": "official",
     "verification_note": "4.7直播及上线日期已取得，覆盖旧pending结论。",
     "event_types": [
@@ -608,28 +653,66 @@ export const metadata = {
     },
     "server": "cn",
     "coverage_types": {
-      "livestream": "verified",
+      "livestream": "pending",
       "version_update": "verified",
       "banner": "verified"
     },
     "date_summary": {
-      "livestream": {
-        "label": "2026-10-30 19:30:00 · 4.7版本前瞻（已举行）",
-        "url": "https://wiki.biligame.com/sr/4.7版本「此刻，将群星付之一笑」前瞻直播总结"
-      },
       "version_update": {
-        "label": "2026-11-11 · 4.7此刻，将群星付之一笑上线",
-        "url": "https://wiki.biligame.com/sr/爻光/媒体"
+        "label": "崩坏：星穹铁道 · 4.6 暮色裹挟的秘辛：2026-09-28 06:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
       },
       "banner": {
-        "label": "2026-12-02 12:00:00 → 2026-12-22 15:00:00 · 铭心之萃（黄泉（虚无•雷） 丹恒•饮月（毁灭•虚数） 景元（智识•雷））",
-        "url": "https://wiki.biligame.com/sr/跃迁/4.0"
+        "label": "崩坏：星穹铁道 · 「我身即刃」千冶·刃复刻 + 「溯回忆象·灼尽炼狱的新骸」光锥跃迁（4.6 其二） · 结束提醒：2026-11-10 15:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：4.5「挥掷千星的筹码」前瞻特别节目；起点状态：未知；站内记录起点：2026-08-14T19:30:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.miyoushe.com/sr/article/76412990",
+          "https://www.bilibili.com/video/BV1TkTs6TEN2/",
+          "https://www.miyoushe.com/sr/article/77328417"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 14 条来源记录，已导入 8 个明确确认的时间点。另有 13 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「沧海萃珠」真珠 + 「流光定影·献给明日的色彩」光锥跃迁；起点状态：推算；站内记录起点：2026-09-28T06:00:00+08:00（未作为确认日期导出）。官方原文「2026/09/28 4.6版本更新后 - 2026/11/10 15:00」；start 取 4.6 维护开始时刻作锚点（维护预告 9/28 06:00 起、预计 5 小时）。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://sr.mihoyo.com/news/166487",
+          "https://sr.mihoyo.com/news/166950"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 1 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：4.5 挥掷千星的筹码；起点状态：未知；站内记录起点：2026-08-26T06:00:00+08:00（未作为确认日期导出）。官方 4.5 更新说明明确版本持续至 2026/09/28 06:00；start 为官方维护开始时刻，替换此前按周期推算的 10/07 结束时间。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://sr.mihoyo.com/news/165896",
+          "https://sr.mihoyo.com/news/165210",
+          "https://sr.mihoyo.com/news/166487",
+          "https://sr.mihoyo.com/news/166489",
+          "https://sr.mihoyo.com/news/167108"
+        ],
+        "checked_on": "2026-11-03"
       }
     }
   },
   "zzz": {
     "label": "0/3 类已核实",
-    "url": "https://wiki.biligame.com/zzz/调频",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "checked_at": "2026-11-03",
     "event_count": 4,
@@ -645,23 +728,69 @@ export const metadata = {
     },
     "server": "cn",
     "coverage_types": {
-      "livestream": "pending",
-      "version_update": "pending",
-      "banner": "partial"
+      "livestream": "verified",
+      "version_update": "verified",
+      "banner": "verified"
     },
     "date_summary": {
       "banner": {
-        "label": "2026-09-30 12:00:00 → 2026-10-20 14:59:59 · 烬夜安眠（[ 洛克茜（击破·风） ]）",
-        "url": "https://wiki.biligame.com/zzz/调频"
+        "label": "绝区零 · 3.3上期限时频段（代理人／音擎） · 结束提醒：2026-11-11 11:59:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      },
+      "livestream": {
+        "label": "绝区零 · 《绝区零》3.3版本「重返天空的旅程」前瞻特别节目预告：2026-10-09 19:30:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      },
+      "version_update": {
+        "label": "绝区零 · 3.3版本更新停机维护：2026-10-21 06:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 2 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.1 前瞻特别节目；起点状态：未知；站内记录起点：2026-07-17T19:30:00+08:00（未作为确认日期导出）。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://zzz.mihoyo.com/news/165853",
+          "https://zzz.mihoyo.com/news/166583"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 7 条来源记录，已导入 1 个明确确认的时间点。另有 7 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.3上期限时频段（代理人／音擎）；起点状态：预计；站内记录起点：2026-10-21T11:00:00+08:00（未作为确认日期导出）。start=10月21日11:00按官方06:00起维护、预计5小时推算；公告只写版本更新后，实际开服分钟待确认。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://zzz.mihoyo.com/news/165758",
+          "https://zzz.mihoyo.com/news/166922",
+          "https://zzz.mihoyo.com/news/166990"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 1 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.3 重返天空的旅程（版本）；起点状态：预计；站内记录起点：2026-10-21T11:00:00+08:00（未作为确认日期导出）。start=10月21日11:00按官方06:00起维护、预计5小时推算；公告只写版本更新后，实际开服分钟待确认。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://zzz.mihoyo.com/news/166989"
+        ],
+        "checked_on": "2026-11-03"
       }
     }
   },
   "arknights": {
     "label": "三类日期已核实",
-    "url": "https://prts.wiki/w/将雪投火",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "checked_at": "2026-11-03",
-    "event_count": 2,
+    "event_count": 22,
     "verification": "official",
     "verification_note": "已检查Wiki；尚未核实的类型不代表无活动。",
     "event_types": [
@@ -675,32 +804,64 @@ export const metadata = {
     },
     "server": "cn",
     "coverage_types": {
-      "livestream": "verified",
+      "livestream": "pending",
       "version_update": "verified",
       "banner": "verified"
     },
     "date_summary": {
-      "livestream": {
-        "label": "2026-10-24 19:30:00 · 2026感谢庆典前瞻（已举行）",
-        "url": "https://prts.wiki/w/制作组通讯/70"
-      },
       "version_update": {
-        "label": "2026-11-08 16:00:00 → 2026-11-08 17:00:00 · 卫戍协议活动维护",
-        "url": "https://prts.wiki/w/感谢庆典2026/活动公告"
+        "label": "明日方舟 · 11月8日服务器停机维护：2026-11-08 16:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
       },
       "banner": {
-        "label": "2026-11-01 12:00:00 → 2026-11-15 03:59:00 · 将雪投火",
-        "url": "https://prts.wiki/w/将雪投火"
+        "label": "明日方舟 · 卫戍寻访 · 结束提醒：2026-12-02 03:59:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 1 条来源记录，已导入 0 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：2026夏日嘉年华特别通讯（前瞻直播）；起点状态：未知；站内记录起点：2026-07-25T19:30:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ak.hypergryph.com/news/9684"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 12 条来源记录，已导入 14 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：中坚甄选；起点状态：未知；站内记录起点：2026-08-20T04:00:00+08:00（未作为确认日期导出）。自选2位六星+3位五星（6★范围：号角/黑键/卡涅利安/帕拉斯/嵯峨/棘刺/瑕光/异客/刻俄柏/闪灵/赫拉格/阿）",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ak.hypergryph.com/news/0787"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 9 条来源记录，已导入 8 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：08月18日闪断更新维护；起点状态：未知；站内记录起点：2026-08-18T16:00:00+08:00（未作为确认日期导出）。官方公告确认的闪断维护窗口。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ak.hypergryph.com/news/1440",
+          "https://ak.hypergryph.com/news/0787"
+        ],
+        "checked_on": "2026-11-03"
       }
     }
   },
   "wuwa": {
     "label": "0/3 类已核实",
-    "url": "https://wuwa.huijiwiki.com/wiki/模板:活动",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 1,
     "verification_note": "BWIKI活动区仍更新，但角色轮换区落后；灰机Wiki直读受阻。活动日期与卡池日期必须分开，日期可以从EventTimer的data-start/data-end属性读取。",
     "event_types": [],
     "wiki_status": {
@@ -711,10 +872,54 @@ export const metadata = {
     "server": "cn",
     "coverage_types": {
       "livestream": "pending",
-      "version_update": "pending",
+      "version_update": "verified",
       "banner": "pending"
     },
-    "date_summary": {}
+    "date_summary": {
+      "version_update": {
+        "label": "鸣潮 · 3.7「镜锁妄世，心照红尘」版本更新维护：2026-09-30 04:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.6 前瞻通讯（蜃云灯影，凡尘剑心）；起点状态：未知；站内记录起点：2026-08-07T19:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.taptap.cn/moment/816773606133467269",
+          "https://www.taptap.cn/moment/832320560661794450",
+          "https://www.taptap.cn/moment/834834170424331519"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 4 条来源记录，已导入 0 个明确确认的时间点。另有 4 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.6 第二期卡池「身赴三途」（景燃 + 绯雪、莫宁复刻）；起点状态：未知；站内记录起点：2026-09-09T10:00:00+08:00（未作为确认日期导出）。阵容与唤取名已官宣（维护预告+前瞻：景燃为 3.6 新五星）；起止分钟按 3.5 惯例预估，待官方唤取说明这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.taptap.cn/moment/836917677271287865",
+          "https://www.taptap.cn/moment/834851999445944775"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 1 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.7 镜锁妄世，心照红尘；起点状态：未知；站内记录起点：2026-09-30T11:00:00+08:00（未作为确认日期导出）。start 取 3.7 维护结束时刻（官方确认维护 09-30 04:00~11:00，开服即版本开始）；end 官方未公布，按约 41 天版本周期推算 11-10 04:00 维护，待官方公告。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.taptap.cn/moment/836917677271287865",
+          "https://mc.kurogames.com/main/news/detail/5569"
+        ],
+        "checked_on": "2026-11-03"
+      }
+    }
   },
   "honkai3": {
     "label": "0/3 类已核实",
@@ -740,11 +945,11 @@ export const metadata = {
   },
   "endfield": {
     "label": "0/3 类已核实",
-    "url": "https://wiki.biligame.com/zmd/首页",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 8,
     "verification_note": "Wiki首页显示4月3日更新且内容未含丹青渡版本日期。",
     "event_types": [],
     "wiki_status": {
@@ -755,10 +960,57 @@ export const metadata = {
     "server": "cn",
     "coverage_types": {
       "livestream": "pending",
-      "version_update": "pending",
-      "banner": "pending"
+      "version_update": "verified",
+      "banner": "verified"
     },
-    "date_summary": {}
+    "date_summary": {
+      "version_update": {
+        "label": "明日方舟：终末地 · 「雪凇幽梦」版本更新维护：2026-09-02 06:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      },
+      "banner": {
+        "label": "明日方舟：终末地 · 「祖泉的新流」重构寻访（汤汤） · 结束提醒：2026-11-19 11:59:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「雪凇幽梦」版本前瞻特别节目；起点状态：未知；站内记录起点：2026-08-21T19:30:00+08:00（未作为确认日期导出）。官方B站账号发布的前瞻预告；未将其错误关联到尚未入库的 1.5 版本。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://live.bilibili.com/1921300321",
+          "https://www.bilibili.com/video/BV1VQ8i6uEr4/"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 9 条来源记录，已导入 7 个明确确认的时间点。另有 7 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「点绘申领」重构申领#1（艺术暴君·手铳）；起点状态：已确认；站内记录起点：2026-09-24T12:00:00+08:00（未作为确认日期导出）。官方公告开放时间「2026/09/24 12:00（服务器时间） - 版本更新维护前」；结束无确切时刻，不推算。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://endfield.hypergryph.com/news/3893"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 1 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.4 武陵决战篇·向渊行；起点状态：未知；站内记录起点：2026-07-16T12:00:00+08:00（未作为确认日期导出）。1.5 版本维护公告明确 09/02 06:00-12:00；版本切换边界取维护完成时刻，替换此前按周期推算的 09/03 12:00。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://endfield.hypergryph.com/news/9335",
+          "https://endfield.hypergryph.com/news/2653",
+          "https://endfield.hypergryph.com/news/1164"
+        ],
+        "checked_on": "2026-11-03"
+      }
+    }
   },
   "pgr": {
     "label": "2/3 类已核实",
@@ -766,7 +1018,7 @@ export const metadata = {
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-03",
-    "event_count": 2,
+    "event_count": 4,
     "verification_note": "已从版本更新公告核实维护与研发池，纠正旧记录仅看首页活动时间而未深入公告的遗漏。后续从公告索引继续查新版本。",
     "event_types": [
       "banner"
@@ -795,11 +1047,11 @@ export const metadata = {
   },
   "reverse1999": {
     "label": "0/3 类已核实",
-    "url": "https://res1999.huijiwiki.com/wiki/征集系统",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 1,
     "verification_note": "BWIKI首页未取得当前征集排期；主要灰机Wiki https://res1999.huijiwiki.com/wiki/征集系统 返回403。",
     "event_types": [],
     "wiki_status": {
@@ -810,18 +1062,63 @@ export const metadata = {
     "server": "cn",
     "coverage_types": {
       "livestream": "pending",
-      "version_update": "pending",
+      "version_update": "verified",
       "banner": "pending"
     },
-    "date_summary": {}
+    "date_summary": {
+      "version_update": {
+        "label": "重返未来：1999 · 4.0「应门者」版本更新维护公告：2026-09-24 05:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：原子之心联动特别发布会；起点状态：未知；站内记录起点：2026-07-10T20:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.bilibili.com/opus/1191368986720206921",
+          "https://re.bluepoch.com/home/detail.html#newsId?91",
+          "https://re.bluepoch.com/home/detail.html#newsId?97"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 0 个明确确认的时间点。另有 3 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：轮换征集【现实破译法】哑谜UP；起点状态：未知；站内记录起点：2026-08-18T05:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.taptap.cn/moment/836688189249817034",
+          "https://www.taptap.cn/moment/837399955491520927"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 11 条来源记录，已导入 1 个明确确认的时间点。另有 10 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.9「重燃！流金之海」；起点状态：未知；站内记录起点：2026-08-13T10:00:00+08:00（未作为确认日期导出）。当前版本；结束时间由官方活动/征集公告锚定（湖的涟漪/箱中数鸭节等均 9/24 04:59 截止）维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://re.bluepoch.com/home/detail.html#newsId?98",
+          "https://www.taptap.cn/moment/836567802100842914",
+          "https://re.bluepoch.com/home/detail.html#newsId?102"
+        ],
+        "checked_on": "2026-11-03"
+      }
+    }
   },
   "azurlane": {
     "label": "2/3 类已核实",
-    "url": "https://wiki.biligame.com/blhx/碧蓝海事局飓风与雾霭回廊活动专题",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-03",
-    "event_count": 1,
+    "event_count": 3,
     "event_types": [
       "banner"
     ],
@@ -835,16 +1132,39 @@ export const metadata = {
     "coverage_types": {
       "livestream": "pending",
       "version_update": "verified",
-      "banner": "verified"
+      "banner": "pending"
     },
     "date_summary": {
       "version_update": {
-        "label": "2026-10-22 10:00:00 · 飓风与雾霭回廊港区改建",
-        "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建"
-      },
+        "label": "碧蓝航线 · 2026年10月22日港区改建：2026-10-22 10:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
       "banner": {
-        "label": "2026-10-22 · 飓风与雾霭回廊限时建造",
-        "url": "https://wiki.biligame.com/blhx/2026年10月22日10:00港区改建"
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：沉溺于星光之城限时建造；起点状态：未知；站内记录起点：2026-08-13T16:00:00+08:00（未作为确认日期导出）。约：end 为 8/27 维护开始；本宁顿（超稀有2.0%）、维克斯堡（超稀有2.0%）、柯莱特（超稀有0.5%）、哈里森（精锐2.5%）这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://wiki.biligame.com/blhx/2026年7月23日10:00港区改建",
+          "https://wiki.biligame.com/blhx/2026年8月13日10:00港区改建",
+          "https://www.biligame.com/detail/?id=97&sourceFrom=2000310011#!news/18247"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 4 条来源记录，已导入 3 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：2026年8月13日港区改建；起点状态：未知；站内记录起点：2026-08-13T10:00:00+08:00（未作为确认日期导出）。官方维护窗口 10:00~16:00；维护后开启大型活动「沉溺于星光之城」维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://wiki.biligame.com/blhx/2026年9月24日10:00港区改建",
+          "https://www.weibo.com/5770760941/RnyR8ot7C"
+        ],
+        "checked_on": "2026-11-03"
       }
     }
   },
@@ -898,7 +1218,7 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-03",
-    "event_count": 6,
+    "event_count": 13,
     "event_types": [
       "banner",
       "version_update"
@@ -950,11 +1270,11 @@ export const metadata = {
   },
   "nte": {
     "label": "0/3 类已核实",
-    "url": "https://wiki.biligame.com/yh/角色设定",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 9,
     "event_types": [],
     "verification_note": "新增环世全鉴Wiki候选，其9/24—10/15等日期与其他站版本记录不一致，尚未完成区服与原公告交叉核验，不导出为已核实排期。",
     "wiki_status": {
@@ -964,19 +1284,71 @@ export const metadata = {
     },
     "server": "cn",
     "coverage_types": {
-      "livestream": "pending",
-      "version_update": "pending",
-      "banner": "pending"
+      "livestream": "verified",
+      "version_update": "verified",
+      "banner": "verified"
     },
-    "date_summary": {}
+    "date_summary": {
+      "livestream": {
+        "label": "异环 · 1.5 版本前瞻特别节目：2026-10-28 19:30:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      },
+      "version_update": {
+        "label": "异环 · 10月17日不停服更新：2026-10-17 02:00:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      },
+      "banner": {
+        "label": "异环 · 「栖羽特刊」弧盘研募·罪与罚（1.4 上半） · 结束提醒：2026-10-21 05:59:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "livestream": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 1 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.3 雾中朔望星回 前瞻特别节目；起点状态：未知；站内记录起点：2026-08-08T19:30:00+08:00（未作为确认日期导出）。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://yh.wanmei.com/news/gamenews/20260808/263494.html",
+          "https://www.bilibili.com/opus/1231894558697062425",
+          "https://www.bilibili.com/opus/1261954317481410582",
+          "https://yh.wanmei.com/news/gamebroad/20261028/264788.html"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 14 条来源记录，已导入 4 个明确确认的时间点。另有 14 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「久梦初醒时」限定棋盘·安魂曲返场（1.4 上半）；起点状态：推算；站内记录起点：2026-09-30T11:00:00+08:00（未作为确认日期导出）。官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 10 条来源记录，已导入 4 个明确确认的时间点。另有 6 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.4 祷歌为谁而诵；起点状态：未知；站内记录起点：2026-09-30T11:00:00+08:00（未作为确认日期导出）。start 取 1.4 维护结束时刻（官方公告维护 9/30 06:00-11:00，维护完成后开启）；end 官方未直接宣布，按官方活动时间表（黑羽的邀请函/全站深境/骏影疾驰统一 11/11 05:59 截止）预估。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://yh.wanmei.com/news/gamebroad/20261015/264630.html",
+          "https://yh.wanmei.com/news/gamebroad/20261016/264655.html"
+        ],
+        "checked_on": "2026-11-03"
+      }
+    }
   },
   "deepspace": {
     "label": "1/3 类已核实",
-    "url": "https://wiki.biligame.com/lysk/「馥夜轻漾」",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-03",
-    "event_count": 1,
+    "event_count": 4,
     "verification_note": "未从主要Wiki核实当前排期，不可沿用媒体来源或混用别服。",
     "event_types": [
       "banner"
@@ -994,8 +1366,22 @@ export const metadata = {
     },
     "date_summary": {
       "banner": {
-        "label": "2026-10-27 05:00:00 → 2026-11-05 04:59:00 · 祁煜·馥夜轻漾",
-        "url": "https://wiki.biligame.com/lysk/「馥夜轻漾」"
+        "label": "恋与深空 · 限时卡池「祁煜·馥夜轻漾」五星思念限时UP许愿 · 结束提醒：2026-11-05 04:59:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 4 个明确确认的时间点。另有 4 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「如若午夜无眠」五星限时UP许愿（NO.01）；起点状态：未知；站内记录起点：2026-09-22T10:00:00+08:00（未作为确认日期导出）。官方活动一览：09/22 更新后 ▶ 10/10 04:59AM；五选三限定五星（沈星回·如栖璨空/黎深·繁夜让渡/祁煜·赴予醺色/秦彻·华筵和奏/夏以昼·盛宵尽夺），占五星概率75%；起始按官方维护预计结束时间10:00记录。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://deepspace.papegames.com/news/85",
+          "https://deepspace.papegames.com/news/87"
+        ],
+        "checked_on": "2026-11-03"
       }
     }
   },
@@ -1078,7 +1464,7 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-03",
-    "event_count": 2,
+    "event_count": 3,
     "event_types": [
       "banner"
     ],
@@ -1111,7 +1497,7 @@ export const metadata = {
     "region": "国际服",
     "verification": "official",
     "checked_at": "2026-11-03",
-    "event_count": 2,
+    "event_count": 5,
     "verification_note": "已找到三类日期；日文UTC+9须换算后保留原时区。",
     "event_types": [
       "banner"
@@ -1257,7 +1643,7 @@ export const metadata = {
     "region": "国际服",
     "verification": "pending",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 1,
     "event_types": [],
     "verification_note": "Gamekee全球/繁中公告持续更新，不得借用国服10/28排期。",
     "wiki_status": {
@@ -1306,7 +1692,7 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 1,
     "event_types": [],
     "verification_note": "首页日历占位无效，但卡池列表可读到9/17开始的常驻探测；未核实的停更说法不录为事实。",
     "wiki_status": {
@@ -1373,11 +1759,11 @@ export const metadata = {
   },
   "lightnight": {
     "label": "0/3 类已核实",
-    "url": "https://www.gamekee.com/lightandnight/",
+    "url": "https://www.gameg.site/",
     "region": "国服",
     "verification": "official",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 2,
     "verification_note": "Gamekee首页可访问，公开索引以2025年内容为主；未找到2026当前收信排期。",
     "event_types": [],
     "wiki_status": {
@@ -1389,9 +1775,41 @@ export const metadata = {
     "coverage_types": {
       "livestream": "pending",
       "version_update": "pending",
-      "banner": "pending"
+      "banner": "verified"
     },
-    "date_summary": {}
+    "date_summary": {
+      "banner": {
+        "label": "光与夜之恋 · 限定收信「云际漫游」（夏鸣星・时旅霁乡） · 结束提醒：2026-11-01 04:59:00+08:00（北京时间；可能为历史记录）",
+        "url": "https://www.gameg.site/"
+      }
+    },
+    "source_reviews": {
+      "banner": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 10 条来源记录，已导入 2 个明确确认的时间点。另有 9 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：限定收信「迷城无间」（金港往事系列限定卡池）；起点状态：未知；站内记录起点：2026-08-16T05:00:00+08:00（未作为确认日期导出）。萧逸・刀锋本色、陆沉・覆潮归港、齐司礼・业火鉴心、查理苏・逆路重影、夏鸣星・金流暗渡",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://love.qq.com/m/web202106/newsdetail.html?newsid=7dcfd730-23e8-4762-9c55-28fc89383ed5",
+          "https://love.qq.com/m/web202106/newsdetail.html?newsid=f4035273-83db-4e52-bc20-5179d39d3d0a",
+          "https://love.qq.com/m/web202106/newsdetail.html?newsid=b6ac7878-5fe8-4532-9615-413db6d76285"
+        ],
+        "checked_on": "2026-11-03"
+      },
+      "version_update": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7月17日停服维护（5小时）；起点状态：未知；站内记录起点：2026-07-17T02:00:00+08:00（未作为确认日期导出）。维护后开启限时活动「绘梦繁花」二阶段等维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://love.qq.com/m/web202106/newsdetail.html?newsid=7942a7f4-0e1c-4f67-86e4-d73687a7e9a4",
+          "https://love.qq.com/m/web202106/newsdetail.html?newsid=e988be3c-3bb2-4806-b2f9-5db4e861482d"
+        ],
+        "checked_on": "2026-11-03"
+      }
+    }
   },
   "beyondworld": {
     "label": "1/3 类已核实",
@@ -1399,7 +1817,7 @@ export const metadata = {
     "region": "国服",
     "verification": "pending",
     "checked_at": "2026-11-03",
-    "event_count": 0,
+    "event_count": 1,
     "event_types": [],
     "verification_note": "活动时间线动态模板无正文，但公告分类可读到10/28更新；不能认定Wiki停更。",
     "wiki_status": {
