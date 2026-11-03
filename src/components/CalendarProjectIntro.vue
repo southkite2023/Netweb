@@ -1,11 +1,14 @@
 <script setup>
 import { computed } from 'vue'
-import projectArtwork from '../assets/projects/project-004.svg'
+import { projects } from '../data/projects'
+import { isLightMode } from '../lib/theme'
 import { useI18n } from 'vue-i18n'
 import { calendarCopy } from '../data/calendar'
 import '../quota-hub.css'
 import '../calendar.css'
 const { locale } = useI18n()
+const project004 = projects.find(project => project.id === '004')
+const projectArtwork = computed(() => isLightMode.value && project004.imageLight ? project004.imageLight : project004.image)
 const selectionCopy = {
   zh: { open: '进入日程选择', intro: '选择关注的游戏与当季动漫，生成固定订阅链接，让日历获取后续排期。', warning: '通过固定网址订阅日历。动漫连接定时更新源；游戏随公告数据维护更新。刷新频率由日历客户端决定。' },
   en: { open: 'Choose schedules', intro: 'Choose games and seasonal anime, then export updates, previews, banners and airings to your calendar.', warning: 'Export an ICS file from the schedule picker. Check verification status and freshness there; dynamic subscriptions are available below.' },
@@ -25,7 +28,7 @@ const c = computed(() => ({ ...(calendarCopy[locale.value] || calendarCopy.zh), 
         <RouterLink class="quota-primary" to="/projects/004/select">{{ c.open }} <span aria-hidden="true">↗</span></RouterLink>
       </header>
       <figure class="project-vector-hero">
-        <img :src="projectArtwork" width="1280" height="800" alt="ACG Calendar" decoding="async">
+        <img :src="projectArtwork" width="1600" height="900" alt="ACG Calendar" decoding="async">
         <figcaption><span v-for="label in c.categories" :key="label">{{ label }}</span></figcaption>
       </figure>
     </div>
