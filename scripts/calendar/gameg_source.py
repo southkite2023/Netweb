@@ -69,7 +69,7 @@ def import_game(data, game, previous, stamp):
         reason = f'优先采用 GameG 国服时间表。本类共 {len(records)} 条来源记录，已导入 {len(accepted)} 个明确确认的时间点。'
         if unknown:
             latest = max(unknown, key=lambda r:r.get('start',0))
-            certainty_label = dict(confirmed='已确认',inferred='推算',estimated='预计',unknown='未知').get(latest.get('timeCertainty',{}).get('start','unknown'),'未知')
+            certainty_label = dict(confirmed='已确认',inferred='推算',estimated='预计',unknown='来源未标确认').get(latest.get('timeCertainty',{}).get('start','unknown'),'来源未标确认')
             displayed_start = iso(latest['start']) if latest.get('start') else '未提供'
             reason += f'另有 {len(unknown)} 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：{latest["name"]}；起点状态：{certainty_label}；站内记录起点：{displayed_start}（未作为确认日期导出）。'+latest.get('note','')
         if kind == 'version_update':
@@ -91,7 +91,14 @@ def apply(data, games, events, stamp):
         current, reviews, summaries = import_game(data, game, events, stamp)
         gid = game['game_id']
         events = [e for e in events if not (e.get('game',{}).get('game_id') == gid and e.get('game',{}).get('server') == game['server'] and e.get('event_type') in reviews)] + current
-        reports[gid] = dict(source_reviews=reviews, date_summary=summaries, source_types={t:'verified' if r['status']=='recorded' else 'pending' for t,r in reviews.items()}, covered_types=list(reviews), source='GameG', source_url=URL)
+        group=next(g for g in data['groups'] if g['key']==GROUPS[gid])
+        source_records={t:[] for t in reviews}
+        for r in group.get('versions',[])+group.get('events',[]):
+            t=TYPES.get(r.get('typeId'))
+            if t not in source_records:continue
+            source_records[t].append(dict(id=r['key'],name=r['name'],start=iso(r['start']) if r.get('start') else None,end=iso(r['end']) if r.get('end') else None,certainty=r.get('timeCertainty',{}),note=r.get('note',''),sources=r.get('sources',[]),url=URL))
+        for rows in source_records.values():rows.sort(key=lambda r:r.get('start') or '',reverse=True)
+        reports[gid] = dict(source_records=source_records,source_reviews=reviews, date_summary=summaries, source_types={t:'verified' if r['status']=='recorded' else 'pending' for t,r in reviews.items()}, covered_types=list(reviews), source='GameG', source_url=URL)
     return events, reports
 
 

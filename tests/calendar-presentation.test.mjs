@@ -36,3 +36,12 @@ test('every game type has an explicit review reason and never treats a failed se
  assert.equal(dateReview('zzz','version_update').status,'recorded');
  assert.equal(dateReview('unknown','banner').status,'not_checked');
 });
+
+
+test('source-listed dates remain visible and count toward display coverage without becoming verified',()=>{
+ const m={coverage_types:{banner:'pending',livestream:'verified',version_update:'pending'},source_records:{banner:[{start:'2026-11-01'}],version_update:[{start:'2026-11-02'}]}};
+ assert.match(coverageLabel(m),/三类日期已列出/);
+ assert.match(coverageLabel(m),/未确认/);
+ assert.deepEqual(orderedGames([['empty',''],['listed','']],{empty:{},listed:m}).map(([id])=>id),['listed','empty']);
+ for(const [id] of catalog.games){const meta=metadata[id];if(meta.source_records)for(const records of Object.values(meta.source_records))for(const row of records)assert.ok(row.name&&row.url&&row.start,id);}
+});

@@ -589,19 +589,6 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "recorded",
-        "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 1 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7.1「往冥府的安魂歌」前瞻特别节目；起点状态：未知；站内记录起点：2026-09-12T20:00:00+08:00（未作为确认日期导出）。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://ys.mihoyo.com/main/news/detail/166006",
-          "https://ys.mihoyo.com/main/news/detail/166992",
-          "https://ys.mihoyo.com/main/news/detail/167026"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
@@ -620,7 +607,7 @@ export const metadata = {
       "version_update": {
         "status": "source_uncertain",
         "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 5 条来源记录，已导入 0 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7.1 往冥府的安魂歌；起点状态：未知；站内记录起点：2026-09-23T06:00:00+08:00（未作为确认日期导出）。维护窗口 09-23 06:00 起预计 5 小时（官方维护预告确认）；end 官方未公布，按 42 天版本周期推算 11-04 06:00 维护，待官方公告。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "reason": "优先采用 GameG 国服时间表。本类共 5 条来源记录，已导入 0 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7.1 往冥府的安魂歌；起点状态：来源未标确认；站内记录起点：2026-09-23T06:00:00+08:00（未作为确认日期导出）。维护窗口 09-23 06:00 起预计 5 小时（官方维护预告确认）；end 官方未公布，按 42 天版本周期推算 11-04 06:00 维护，待官方公告。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -631,7 +618,324 @@ export const metadata = {
           "https://ys.mihoyo.com/main/news/detail/166259"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 1 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7.1「往冥府的安魂歌」前瞻特别节目；起点状态：来源未标确认；站内记录起点：2026-09-12T20:00:00+08:00（未作为确认日期导出）。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ys.mihoyo.com/main/news/detail/166006",
+          "https://ys.mihoyo.com/main/news/detail/166992",
+          "https://ys.mihoyo.com/main/news/detail/167026"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "genshin-impact/cn/event/banner-7-1-phase2",
+          "name": "7.1版本活动祈愿预告第二期",
+          "start": "2026-10-13T18:00:00+08:00",
+          "end": "2026-11-03T14:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/166763"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-7-1-phase1",
+          "name": "7.1 第一期活动祈愿（煦风欢舞时/涌浪叙歌/神铸赋形）",
+          "start": "2026-09-23T06:00:00+08:00",
+          "end": "2026-10-13T17:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方预告原文为「2026/09/23 7.1版本更新后 ~ 2026/10/13 17:59」；start 取 7.1 维护开始时刻作锚点（维护预告 9/23 06:00 起、预计 5 小时），实际开放以维护完成为准。",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/166385",
+            "https://ys.mihoyo.com/main/news/detail/166246",
+            "https://ys.mihoyo.com/main/news/detail/166249",
+            "https://ys.mihoyo.com/main/news/detail/166251"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-7-0-lower",
+          "name": "7.0 下半卡池（伊涅芙+菲林斯）",
+          "start": "2026-09-02T18:00:00+08:00",
+          "end": "2026-09-22T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "阵容来自官方前瞻回顾长图；祈愿预告第二期未发布，起止为社区估算（按惯例第二期=上半结束后次日 18:00 ~ 版本末日 14:59）",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165472"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-7-0-upper",
+          "name": "7.0 上半卡池（奥黛塔+阿蕾奇诺，4星阿罗夏/砂糖/琳妮特）",
+          "start": "2026-08-12T06:00:00+08:00",
+          "end": "2026-09-01T17:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "祈愿预告第一期官方时间 08/12 版本更新后 ~ 09/01 17:59；起始时刻官方仅写「版本更新后」，取维护开始 06:00",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165658",
+            "https://ys.mihoyo.com/main/news/detail/165690",
+            "https://ys.mihoyo.com/main/news/detail/165691"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-7-0-upper-weapon",
+          "name": "7.0 上半武器祈愿「神铸赋形」（白湖冬羽+赤月之形）",
+          "start": "2026-08-12T06:00:00+08:00",
+          "end": "2026-09-01T17:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方祈愿预告第一期同窗口 08/12 更新后 ~ 09/01 17:59；起始取维护开始 06:00",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165658",
+            "https://ys.mihoyo.com/main/news/detail/165692"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-luna-8-p2",
+          "name": "月之八 第二期角色祈愿（哥伦比娅+雷电将军）",
+          "start": "2026-07-21T18:00:00+08:00",
+          "end": "2026-08-11T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165302"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-luna-8-p2-weapon",
+          "name": "月之八 第二期武器祈愿（帷间夜曲+薙草之稻光）",
+          "start": "2026-07-21T18:00:00+08:00",
+          "end": "2026-08-11T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165315"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-luna-8-p1",
+          "name": "月之八 第一期角色祈愿（桑多涅+茜特菈莉）",
+          "start": "2026-07-01T06:00:00+08:00",
+          "end": "2026-07-21T17:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165062"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/banner-luna-8-p1-weapon",
+          "name": "月之八 第一期武器祈愿（超越之匙+祭星者之望）",
+          "start": "2026-07-01T06:00:00+08:00",
+          "end": "2026-07-21T17:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165062"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "genshin-impact/cn/version/7.1",
+          "name": "7.1 往冥府的安魂歌",
+          "start": "2026-09-23T06:00:00+08:00",
+          "end": "2026-11-04T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "维护窗口 09-23 06:00 起预计 5 小时（官方维护预告确认）；end 官方未公布，按 42 天版本周期推算 11-04 06:00 维护，待官方公告。",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/166385",
+            "https://ys.mihoyo.com/main/news/detail/166259"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/version/7.0",
+          "name": "7.0 无神怜爱的雪国",
+          "start": "2026-08-12T06:00:00+08:00",
+          "end": "2026-09-23T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "7.1 维护预告确认 09-23 06:00 起进行 7.1 版本维护，7.0 于该时刻结束（替换此前按 42 天周期推算的 09-22 18:00）；维护预计 5 小时。",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165618",
+            "https://ys.mihoyo.com/main/news/detail/165682",
+            "https://ys.mihoyo.com/main/news/detail/165475",
+            "https://ys.mihoyo.com/main/news/detail/166385"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/version/luna-8",
+          "name": "月之八 空月之歌·谐谑（映夏！归乡？千灵节！）",
+          "start": "2026-07-01T06:00:00+08:00",
+          "end": "2026-08-11T18:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "end 为版本切换惯例；末期满卡池官方止于 08-11 14:59",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165028",
+            "https://ys.mihoyo.com/main/news/detail/165097"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/version/luna-7",
+          "name": "月之七 空月之歌·行律",
+          "start": "2026-05-20T06:00:00+08:00",
+          "end": "2026-06-30T18:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "end 为版本切换惯例（官方仅写「版本结束前」）",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/164216",
+            "https://ys.mihoyo.com/main/news/detail/164263"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/version/luna-6",
+          "name": "月之六 空月之歌·旋舞",
+          "start": "2026-04-08T06:00:00+08:00",
+          "end": "2026-05-19T18:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "end 为版本切换惯例（官方仅写「版本结束前」）",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/163422",
+            "https://ys.mihoyo.com/main/news/detail/163470"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "genshin-impact/cn/event/preview-7-2",
+          "name": "7.2「坏灭肇始之时」前瞻特别节目",
+          "start": "2026-10-23T20:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/166992",
+            "https://ys.mihoyo.com/main/news/detail/167026"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/preview-7-1",
+          "name": "7.1「往冥府的安魂歌」前瞻特别节目",
+          "start": "2026-09-12T20:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/166006"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/preview-7-0",
+          "name": "7.0 前瞻直播",
+          "start": "2026-07-31T20:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/165422"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/preview-luna-8",
+          "name": "月之八 前瞻直播",
+          "start": "2026-06-18T20:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/164767"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/preview-luna-7",
+          "name": "月之七 前瞻直播",
+          "start": "2026-05-08T20:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/163860"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "genshin-impact/cn/event/preview-luna-6",
+          "name": "月之六 前瞻直播",
+          "start": "2026-03-27T20:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ys.mihoyo.com/main/news/detail/163278"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "starrail": {
@@ -668,19 +972,6 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "source_uncertain",
-        "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：4.5「挥掷千星的筹码」前瞻特别节目；起点状态：未知；站内记录起点：2026-08-14T19:30:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://www.miyoushe.com/sr/article/76412990",
-          "https://www.bilibili.com/video/BV1TkTs6TEN2/",
-          "https://www.miyoushe.com/sr/article/77328417"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
@@ -696,7 +987,7 @@ export const metadata = {
       "version_update": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 1 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：4.5 挥掷千星的筹码；起点状态：未知；站内记录起点：2026-08-26T06:00:00+08:00（未作为确认日期导出）。官方 4.5 更新说明明确版本持续至 2026/09/28 06:00；start 为官方维护开始时刻，替换此前按周期推算的 10/07 结束时间。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 1 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：4.5 挥掷千星的筹码；起点状态：来源未标确认；站内记录起点：2026-08-26T06:00:00+08:00（未作为确认日期导出）。官方 4.5 更新说明明确版本持续至 2026/09/28 06:00；start 为官方维护开始时刻，替换此前按周期推算的 10/07 结束时间。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -707,7 +998,307 @@ export const metadata = {
           "https://sr.mihoyo.com/news/167108"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：4.5「挥掷千星的筹码」前瞻特别节目；起点状态：来源未标确认；站内记录起点：2026-08-14T19:30:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.miyoushe.com/sr/article/76412990",
+          "https://www.bilibili.com/video/BV1TkTs6TEN2/",
+          "https://www.miyoushe.com/sr/article/77328417"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-6-woshenjiren",
+          "name": "「我身即刃」千冶·刃复刻 + 「溯回忆象·灼尽炼狱的新骸」光锥跃迁（4.6 其二）",
+          "start": "2026-10-21T12:00:00+08:00",
+          "end": "2026-11-10T15:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://sr.mihoyo.com/news/166950"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-6-canghaicuizhu",
+          "name": "「沧海萃珠」真珠 + 「流光定影·献给明日的色彩」光锥跃迁",
+          "start": "2026-09-28T06:00:00+08:00",
+          "end": "2026-11-10T15:00:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方原文「2026/09/28 4.6版本更新后 - 2026/11/10 15:00」；start 取 4.6 维护开始时刻作锚点（维护预告 9/28 06:00 起、预计 5 小时）。",
+          "sources": [
+            "https://sr.mihoyo.com/news/166487"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-6-shaoaicaiying",
+          "name": "「韶艾裁英」绯英复刻 + 「溯回忆象·邂逅于下一个花季」光锥跃迁",
+          "start": "2026-09-28T06:00:00+08:00",
+          "end": "2026-10-21T11:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方原文「2026/09/28 4.6版本更新后 - 2026/10/21 11:59」；start 按维护开始时刻推算。",
+          "sources": [
+            "https://sr.mihoyo.com/news/166487"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-5-hongjun",
+          "name": "「虹隽晨昏」角色活动跃迁",
+          "start": "2026-08-26T06:00:00+08:00",
+          "end": "2026-09-12T11:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方写 4.5 版本更新后；起点以 4.5 官方维护开始 08/26 06:00 作为推算锚点。",
+          "sources": [
+            "https://sr.mihoyo.com/news/165883"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-5-lc-hongjun",
+          "name": "「溯回忆象·愿虹光永驻天空」光锥活动跃迁",
+          "start": "2026-08-26T06:00:00+08:00",
+          "end": "2026-09-12T11:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方写 4.5 版本更新后；起点以 4.5 官方维护开始 08/26 06:00 作为推算锚点。",
+          "sources": [
+            "https://sr.mihoyo.com/news/165883"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-5-lc-qingyin",
+          "name": "「流光定影·你将起身歌唱」光锥活动跃迁",
+          "start": "2026-08-26T06:00:00+08:00",
+          "end": "2026-09-12T11:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方写 4.5 版本更新后；起点以 4.5 官方维护开始 08/26 06:00 作为推算锚点。",
+          "sources": [
+            "https://sr.mihoyo.com/news/165883"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-5-qingyin",
+          "name": "「晴音和鸣」角色活动跃迁",
+          "start": "2026-08-26T06:00:00+08:00",
+          "end": "2026-09-12T11:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方写 4.5 版本更新后；起点以 4.5 官方维护开始 08/26 06:00 作为推算锚点。",
+          "sources": [
+            "https://sr.mihoyo.com/news/165883"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-4-lc-lower",
+          "name": "「真意之汇」光锥跃迁：金血铭刻的时代/生命当付之一炬/命运从未公平",
+          "start": "2026-08-05T12:00:00+08:00",
+          "end": "2026-08-25T15:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://sr.mihoyo.com/news/165506"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-4-lower",
+          "name": "4.4 下半卡池：刻律德菈/那刻夏/砂金返场",
+          "start": "2026-08-05T12:00:00+08:00",
+          "end": "2026-08-25T15:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://sr.mihoyo.com/news/165506"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-fate",
+          "name": "Fate[UBW] 联动跃迁：远坂凛/吉尔伽美什",
+          "start": "2026-07-24T12:00:00+08:00",
+          "end": "2026-08-25T15:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "开始时刻官方确认 12:00；官方称「长期开放，无关闭时间」，end 按版本跃迁统一 08/25 15:00 推算",
+          "sources": [
+            "https://sr.mihoyo.com/news/165117"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-fate-lc",
+          "name": "Fate[UBW] 光锥联动跃迁：万华骄芒/神代金扉",
+          "start": "2026-07-24T12:00:00+08:00",
+          "end": "2026-08-25T15:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "开始时刻官方确认 12:00；官方称「长期开放，无关闭时间」，end 按版本跃迁统一 08/25 15:00 推算",
+          "sources": [
+            "https://sr.mihoyo.com/news/165117"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-4-jizi",
+          "name": "「拓星启明」姬子·启行（全版本）",
+          "start": "2026-07-15T11:00:00+08:00",
+          "end": "2026-08-25T15:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://sr.mihoyo.com/news/165208"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-4-lc-jizi",
+          "name": "「流光定影·当一颗星照亮夜空」光锥跃迁",
+          "start": "2026-07-15T11:00:00+08:00",
+          "end": "2026-08-25T15:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "起始官方写「4.4版本更新后」，11:00 按维护 5 小时推算",
+          "sources": [
+            "https://sr.mihoyo.com/news/165506"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/banner-4-4-upper",
+          "name": "4.4 上半返场：火花/丹恒·腾荒/长夜月",
+          "start": "2026-07-15T11:00:00+08:00",
+          "end": "2026-08-05T11:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://sr.mihoyo.com/news/165208"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "honkai-star-rail/cn/version/4.6",
+          "name": "4.6 暮色裹挟的秘辛",
+          "start": "2026-09-28T06:00:00+08:00",
+          "end": "2026-11-11T06:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "estimated"
+          },
+          "note": "4.7 于 2026/11/11 更新（官方只公布日期，未公布维护时刻）。原 11-09 06:00 是按 6 周周期推算，早于 4.6 卡池 11-10 15:00 与「花藏繁生」11-11 03:59，不能成立；end 按 4.6 维护 06:00 惯例估算，待 4.7 维护预告确认。",
+          "sources": [
+            "https://sr.mihoyo.com/news/166487",
+            "https://sr.mihoyo.com/news/166489",
+            "https://sr.mihoyo.com/news/167108"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/version/4.5",
+          "name": "4.5 挥掷千星的筹码",
+          "start": "2026-08-26T06:00:00+08:00",
+          "end": "2026-09-28T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方 4.5 更新说明明确版本持续至 2026/09/28 06:00；start 为官方维护开始时刻，替换此前按周期推算的 10/07 结束时间。",
+          "sources": [
+            "https://sr.mihoyo.com/news/165896",
+            "https://sr.mihoyo.com/news/165210"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/version/4.4",
+          "name": "4.4 鸣笛于归寂之时",
+          "start": "2026-07-15T06:00:00+08:00",
+          "end": "2026-08-26T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "版本持续时间为官方更新说明原文；end 即 4.5 维护开始",
+          "sources": [
+            "https://sr.mihoyo.com/news/165187",
+            "https://sr.mihoyo.com/news/165210"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "honkai-star-rail/cn/event/preview-4-5",
+          "name": "4.5「挥掷千星的筹码」前瞻特别节目",
+          "start": "2026-08-14T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.miyoushe.com/sr/article/77328417"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "honkai-star-rail/cn/event/preview-4-4",
+          "name": "4.4 前瞻特别节目",
+          "start": "2026-07-03T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.miyoushe.com/sr/article/76412990",
+            "https://www.bilibili.com/video/BV1TkTs6TEN2/"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "zzz": {
@@ -747,18 +1338,6 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "recorded",
-        "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 2 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.1 前瞻特别节目；起点状态：未知；站内记录起点：2026-07-17T19:30:00+08:00（未作为确认日期导出）。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://zzz.mihoyo.com/news/165853",
-          "https://zzz.mihoyo.com/news/166583"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
@@ -782,7 +1361,213 @@ export const metadata = {
           "https://zzz.mihoyo.com/news/166989"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 2 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.1 前瞻特别节目；起点状态：来源未标确认；站内记录起点：2026-07-17T19:30:00+08:00（未作为确认日期导出）。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://zzz.mihoyo.com/news/165853",
+          "https://zzz.mihoyo.com/news/166583"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "zenless-zone-zero/cn/event/banner-3-3-upper",
+          "name": "3.3上期限时频段（代理人／音擎）",
+          "start": "2026-10-21T11:00:00+08:00",
+          "end": "2026-11-11T11:59:00+08:00",
+          "certainty": {
+            "start": "estimated",
+            "end": "confirmed"
+          },
+          "note": "start=10月21日11:00按官方06:00起维护、预计5小时推算；公告只写版本更新后，实际开服分钟待确认。",
+          "sources": [
+            "https://zzz.mihoyo.com/news/166922",
+            "https://zzz.mihoyo.com/news/166990"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/banner-3-1-engine-rerun-second",
+          "name": "下半音擎回响频段（昨夜来电/狸法七变化/残心青囊自选）",
+          "start": "2026-08-19T12:00:00+08:00",
+          "end": "2026-09-08T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165758"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/banner-3-1-engine-second",
+          "name": "下半音擎频段「骁骑礼赞」",
+          "start": "2026-08-19T12:00:00+08:00",
+          "end": "2026-09-08T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "同期A级音擎为「含羞恶面」「好斗的阿炮」。",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165758"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/banner-3-1-rerun-second",
+          "name": "下半独家重映频段（琉音/浮波柚叶/浅羽悠真自选）",
+          "start": "2026-08-19T12:00:00+08:00",
+          "end": "2026-09-08T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165758"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/banner-3-1-second",
+          "name": "下半卡池「直到天空沉落」希格莉德",
+          "start": "2026-08-19T12:00:00+08:00",
+          "end": "2026-09-08T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方下期限时频段公告明确代理人与音擎调频时间",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165758"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/banner-3-1-first",
+          "name": "上半卡池「复乐园」蕾米埃尔 + 爱芮复刻",
+          "start": "2026-07-29T11:00:00+08:00",
+          "end": "2026-08-19T11:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "下半希格莉德时装官方明确 08/19 12:00 起，反推上半 08/19 11:59 止",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165375"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/banner-3-1-leimiel",
+          "name": "「复乐园」蕾米埃尔池（整版本）",
+          "start": "2026-07-29T11:00:00+08:00",
+          "end": "2026-09-08T14:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "周年版本特殊结构，蕾米埃尔池延续整个版本（含音擎「空羽复归之诗」）",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165375"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "zenless-zone-zero/cn/version/3.3",
+          "name": "3.3 重返天空的旅程（版本）",
+          "start": "2026-10-21T11:00:00+08:00",
+          "end": "2026-12-02T06:00:00+08:00",
+          "certainty": {
+            "start": "estimated",
+            "end": "confirmed"
+          },
+          "note": "start=10月21日11:00按官方06:00起维护、预计5小时推算；公告只写版本更新后，实际开服分钟待确认。",
+          "sources": [
+            "https://zzz.mihoyo.com/news/166989"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/maintenance-2026-10-21",
+          "name": "3.3版本更新停机维护",
+          "start": "2026-10-21T06:00:00+08:00",
+          "end": "2026-10-21T11:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "estimated"
+          },
+          "note": "官方维护从10月21日06:00开始、预计5小时；end=11:00为官方工期推算，不是实际开服确认。",
+          "sources": [
+            "https://zzz.mihoyo.com/news/166989"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/version/3.1",
+          "name": "3.1 漫长的告别（两周年版本）",
+          "start": "2026-07-29T11:00:00+08:00",
+          "end": "2026-09-09T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "国服维护 07/29 06:00 开始、约11:00开服；版本共42天，官方明确结束 09/09 06:00",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165415"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "zenless-zone-zero/cn/event/preview-3-3",
+          "name": "《绝区零》3.3版本「重返天空的旅程」前瞻特别节目预告",
+          "start": "2026-10-09T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://zzz.mihoyo.com/news/166583"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/preview-3-2",
+          "name": "《绝区零》3.2版本「她与她的隐秘往事」前瞻特别节目预告",
+          "start": "2026-08-28T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165853"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "zenless-zone-zero/cn/event/preview-3-1",
+          "name": "3.1 前瞻特别节目",
+          "start": "2026-07-17T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://zzz.mihoyo.com/news/165272"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "arknights": {
@@ -819,21 +1604,10 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "source_uncertain",
-        "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 1 条来源记录，已导入 0 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：2026夏日嘉年华特别通讯（前瞻直播）；起点状态：未知；站内记录起点：2026-07-25T19:30:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://ak.hypergryph.com/news/9684"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 12 条来源记录，已导入 14 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：中坚甄选；起点状态：未知；站内记录起点：2026-08-20T04:00:00+08:00（未作为确认日期导出）。自选2位六星+3位五星（6★范围：号角/黑键/卡涅利安/帕拉斯/嵯峨/棘刺/瑕光/异客/刻俄柏/闪灵/赫拉格/阿）",
+        "reason": "优先采用 GameG 国服时间表。本类共 12 条来源记录，已导入 14 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：中坚甄选；起点状态：来源未标确认；站内记录起点：2026-08-20T04:00:00+08:00（未作为确认日期导出）。自选2位六星+3位五星（6★范围：号角/黑键/卡涅利安/帕拉斯/嵯峨/棘刺/瑕光/异客/刻俄柏/闪灵/赫拉格/阿）",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -844,7 +1618,7 @@ export const metadata = {
       "version_update": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 9 条来源记录，已导入 8 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：08月18日闪断更新维护；起点状态：未知；站内记录起点：2026-08-18T16:00:00+08:00（未作为确认日期导出）。官方公告确认的闪断维护窗口。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "reason": "优先采用 GameG 国服时间表。本类共 9 条来源记录，已导入 8 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：08月18日闪断更新维护；起点状态：来源未标确认；站内记录起点：2026-08-18T16:00:00+08:00（未作为确认日期导出）。官方公告确认的闪断维护窗口。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -852,7 +1626,350 @@ export const metadata = {
           "https://ak.hypergryph.com/news/0787"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 1 条来源记录，已导入 0 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：2026夏日嘉年华特别通讯（前瞻直播）；起点状态：来源未标确认；站内记录起点：2026-07-25T19:30:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://ak.hypergryph.com/news/9684"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "arknights/cn/event/banner-joint-action-202611",
+          "name": "联合行动特选干员定向寻访",
+          "start": "2026-11-15T16:00:00+08:00",
+          "end": "2026-11-29T03:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/0787"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-zhongjian-zhenxuan-202611",
+          "name": "中坚甄选",
+          "start": "2026-11-12T04:00:00+08:00",
+          "end": "2026-11-26T03:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/0787"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-weishu-2026",
+          "name": "卫戍寻访",
+          "start": "2026-11-08T16:00:00+08:00",
+          "end": "2026-12-02T03:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "按公告计划时间记录；同日16:00–17:00有停机维护，不擅自把该卡池起点改成17:00。",
+          "sources": [
+            "https://ak.hypergryph.com/news/0787"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-jiangxuetouhuo",
+          "name": "限定寻访「将雪投火」",
+          "start": "2026-11-01T12:00:00+08:00",
+          "end": "2026-11-15T03:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/4916"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-haiyuan-xunyou",
+          "name": "「海渊巡游」限时寻访（昨日海）",
+          "start": "2026-10-09T12:00:00+08:00",
+          "end": "2026-10-23T03:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "该寻访为【标准寻访】类型；10月22日04:00后其余干员加入常驻标准寻访。",
+          "sources": [
+            "https://ak.hypergryph.com/news/5101"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-dingxiang-zhenxuan-3",
+          "name": "「定向甄选」限时寻访（矢量突破#3）",
+          "start": "2026-09-29T16:00:00+08:00",
+          "end": "2026-10-13T03:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/1455"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-shibai-shenlan-2026-09",
+          "name": "[圣城春日学生寻访]【石白深蓝之夜】限时寻访即将开启",
+          "start": "2026-09-04T12:00:00+08:00",
+          "end": "2026-09-18T03:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/1457"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-zhongjian",
+          "name": "中坚甄选",
+          "start": "2026-08-20T04:00:00+08:00",
+          "end": "2026-09-03T03:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "自选2位六星+3位五星（6★范围：号角/黑键/卡涅利安/帕拉斯/嵯峨/棘刺/瑕光/异客/刻俄柏/闪灵/赫拉格/阿）",
+          "sources": [
+            "https://ak.hypergryph.com/news/8571"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-lianhe",
+          "name": "【联合行动】特选干员定向寻访（忍冬/赤刃明霄陈/遥/死芒）",
+          "start": "2026-08-18T16:00:00+08:00",
+          "end": "2026-09-01T03:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/8571"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-chejigu",
+          "name": "限定寻访【车辙与风的归所】（予愿安洁莉娜/珊比/斩业星熊/佩佩/纯烬艾雅法拉/嘉辛塔）",
+          "start": "2026-08-01T12:00:00+08:00",
+          "end": "2026-08-15T03:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "限定寻访·夏季；累计300抽额外赠限定干员予愿安洁莉娜",
+          "sources": [
+            "https://ak.hypergryph.com/news/8571",
+            "https://ak.hypergryph.com/news/6247"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-yongbumuluo",
+          "name": "限时寻访【永不落幕】复刻（酒神）",
+          "start": "2026-07-20T16:00:00+08:00",
+          "end": "2026-08-03T03:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/5107"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/banner-quedingxing",
+          "name": "限时寻访【确定性混沌】（谬因/佩德洛/钼铅）",
+          "start": "2026-07-10T12:00:00+08:00",
+          "end": "2026-07-24T03:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/9686"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "arknights/cn/event/maintenance-2026-11-08",
+          "name": "11月8日服务器停机维护",
+          "start": "2026-11-08T16:00:00+08:00",
+          "end": "2026-11-08T17:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/0787"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-11-01",
+          "name": "11月1日版本更新停机维护",
+          "start": "2026-11-01T06:00:00+08:00",
+          "end": "2026-11-01T12:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/1440"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-10-24",
+          "name": "10月24日闪断更新",
+          "start": "2026-10-24T21:30:00+08:00",
+          "end": "2026-10-24T21:40:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/1441"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-09-29-flash",
+          "name": "[明日方舟]09月29日16:00闪断更新公告",
+          "start": "2026-09-29T16:00:00+08:00",
+          "end": "2026-09-29T16:10:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/8577"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-09-20-flash",
+          "name": "09月20日闪断更新维护",
+          "start": "2026-09-20T16:00:00+08:00",
+          "end": "2026-09-20T16:10:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "官方公告确认的闪断维护窗口。",
+          "sources": [
+            "https://ak.hypergryph.com/news/4922"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-09-11-flash",
+          "name": "09月11日闪断更新维护",
+          "start": "2026-09-11T16:00:00+08:00",
+          "end": "2026-09-11T16:10:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "官方公告确认的闪断维护窗口。",
+          "sources": [
+            "https://ak.hypergryph.com/news/7367"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-09-04-version",
+          "name": "[明日方舟]09月04日06:00版本更新停机维护公告",
+          "start": "2026-09-04T06:00:00+08:00",
+          "end": "2026-09-04T12:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/5102"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-08-18-flash",
+          "name": "08月18日闪断更新维护",
+          "start": "2026-08-18T16:00:00+08:00",
+          "end": "2026-08-18T16:10:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方公告确认的闪断维护窗口。",
+          "sources": [
+            "https://ak.hypergryph.com/news/2810"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights/cn/event/maintenance-2026-08-01-version",
+          "name": "[明日方舟]08月01日06:00版本更新停机维护公告",
+          "start": "2026-08-01T06:00:00+08:00",
+          "end": "2026-08-01T12:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/1459"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "arknights/cn/event/preview-summer-comm",
+          "name": "2026夏日嘉年华特别通讯（前瞻直播）",
+          "start": "2026-07-25T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://ak.hypergryph.com/news/9684"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "wuwa": {
@@ -882,23 +1999,10 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "source_uncertain",
-        "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.6 前瞻通讯（蜃云灯影，凡尘剑心）；起点状态：未知；站内记录起点：2026-08-07T19:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://www.taptap.cn/moment/816773606133467269",
-          "https://www.taptap.cn/moment/832320560661794450",
-          "https://www.taptap.cn/moment/834834170424331519"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "source_uncertain",
         "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 4 条来源记录，已导入 0 个明确确认的时间点。另有 4 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.6 第二期卡池「身赴三途」（景燃 + 绯雪、莫宁复刻）；起点状态：未知；站内记录起点：2026-09-09T10:00:00+08:00（未作为确认日期导出）。阵容与唤取名已官宣（维护预告+前瞻：景燃为 3.6 新五星）；起止分钟按 3.5 惯例预估，待官方唤取说明这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "reason": "优先采用 GameG 国服时间表。本类共 4 条来源记录，已导入 0 个明确确认的时间点。另有 4 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.6 第二期卡池「身赴三途」（景燃 + 绯雪、莫宁复刻）；起点状态：来源未标确认；站内记录起点：2026-09-09T10:00:00+08:00（未作为确认日期导出）。阵容与唤取名已官宣（维护预告+前瞻：景燃为 3.6 新五星）；起止分钟按 3.5 惯例预估，待官方唤取说明这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -910,7 +2014,7 @@ export const metadata = {
       "version_update": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 1 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.7 镜锁妄世，心照红尘；起点状态：未知；站内记录起点：2026-09-30T11:00:00+08:00（未作为确认日期导出）。start 取 3.7 维护结束时刻（官方确认维护 09-30 04:00~11:00，开服即版本开始）；end 官方未公布，按约 41 天版本周期推算 11-10 04:00 维护，待官方公告。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 1 个明确确认的时间点。另有 5 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.7 镜锁妄世，心照红尘；起点状态：来源未标确认；站内记录起点：2026-09-30T11:00:00+08:00（未作为确认日期导出）。start 取 3.7 维护结束时刻（官方确认维护 09-30 04:00~11:00，开服即版本开始）；end 官方未公布，按约 41 天版本周期推算 11-10 04:00 维护，待官方公告。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -918,7 +2022,204 @@ export const metadata = {
           "https://mc.kurogames.com/main/news/detail/5569"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.6 前瞻通讯（蜃云灯影，凡尘剑心）；起点状态：来源未标确认；站内记录起点：2026-08-07T19:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.taptap.cn/moment/816773606133467269",
+          "https://www.taptap.cn/moment/832320560661794450",
+          "https://www.taptap.cn/moment/834834170424331519"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "wuthering-waves/cn/event/banner-3-6-2",
+          "name": "3.6 第二期卡池「身赴三途」（景燃 + 绯雪、莫宁复刻）",
+          "start": "2026-09-09T10:00:00+08:00",
+          "end": "2026-09-29T11:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "阵容与唤取名已官宣（维护预告+前瞻：景燃为 3.6 新五星）；起止分钟按 3.5 惯例预估，待官方唤取说明",
+          "sources": [
+            "https://www.taptap.cn/moment/836917677271287865",
+            "https://www.taptap.cn/moment/834851999445944775"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/event/banner-3-6-1",
+          "name": "3.6 第一期卡池「仙风玉影水天清」（清宵 + 达妮娅复刻）",
+          "start": "2026-08-20T11:00:00+08:00",
+          "end": "2026-09-10T09:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "阵容与唤取名已官宣；开始时间按维护结束后 11:00 落点，结束时间已由官方唤取说明确认",
+          "sources": [
+            "https://www.taptap.cn/moment/836917677271287865",
+            "https://www.taptap.cn/moment/834851999445944775"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/event/banner-3-5-2",
+          "name": "3.5 第二期卡池「斟雨祝荷风」（穗穗）",
+          "start": "2026-07-30T10:00:00+08:00",
+          "end": "2026-08-19T11:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/831229702461984338"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/event/banner-3-5-1",
+          "name": "3.5 第一期卡池「牵翎祈万声」（秧秧·玄翎）",
+          "start": "2026-07-10T11:00:00+08:00",
+          "end": "2026-07-30T09:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/823990478138507460"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "wuthering-waves/cn/version/3.7",
+          "name": "3.7 镜锁妄世，心照红尘",
+          "start": "2026-09-30T11:00:00+08:00",
+          "end": "2026-11-10T04:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "start 取 3.7 维护结束时刻（官方确认维护 09-30 04:00~11:00，开服即版本开始）；end 官方未公布，按约 41 天版本周期推算 11-10 04:00 维护，待官方公告。",
+          "sources": [
+            "https://mc.kurogames.com/main/news/detail/5569"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/event/maintenance-3-7",
+          "name": "3.7「镜锁妄世，心照红尘」版本更新维护",
+          "start": "2026-09-30T04:00:00+08:00",
+          "end": "2026-09-30T11:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "官方 3.7 版本内容说明：更新维护时间 2026年9月30日04:00 ~ 11:00（UTC+8）。",
+          "sources": [
+            "https://mc.kurogames.com/main/news/detail/5569"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/version/3.6",
+          "name": "3.6 蜃云灯影，凡尘剑心",
+          "start": "2026-08-20T11:00:00+08:00",
+          "end": "2026-09-30T04:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "维护 08-20 04:00~11:00 官方已确认（11:00 开服即版本开始）；end 09-30 04:00 已由官方 3.7 版本内容说明确认（3.7 维护 09-30 04:00~11:00）。",
+          "sources": [
+            "https://www.taptap.cn/moment/836917677271287865",
+            "https://www.taptap.cn/moment/834851999445944775",
+            "https://mc.kurogames.com/main/news/detail/5569"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/event/maintenance-3-6",
+          "name": "3.6 版本更新维护",
+          "start": "2026-08-20T04:00:00+08:00",
+          "end": "2026-08-20T11:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/836917677271287865"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/version/3.5",
+          "name": "3.5 遗音扶剑，荡梦而歌",
+          "start": "2026-07-10T11:00:00+08:00",
+          "end": "2026-08-20T04:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "结束时刻已由官方 3.6 维护预告确认（维护 08-20 04:00 开始，演唱会礼包下架至 08-20 03:59）",
+          "sources": [
+            "https://mc.kurogames.com/main/news/detail/5004",
+            "https://mc.kurogames.com/main/news/detail/5110",
+            "https://www.taptap.cn/moment/836917677271287865"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/event/maintenance-3-5",
+          "name": "3.5 版本更新维护",
+          "start": "2026-07-10T04:00:00+08:00",
+          "end": "2026-07-10T11:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://mc.kurogames.com/main/news/detail/5004"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "wuthering-waves/cn/event/preview-3-6",
+          "name": "3.6 前瞻通讯（蜃云灯影，凡尘剑心）",
+          "start": "2026-08-07T19:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/832320560661794450",
+            "https://www.taptap.cn/moment/834834170424331519"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "wuthering-waves/cn/event/preview-3-5",
+          "name": "3.5 前瞻通讯",
+          "start": "2026-06-26T19:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/816773606133467269"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "honkai3": {
@@ -974,18 +2275,6 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "source_uncertain",
-        "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「雪凇幽梦」版本前瞻特别节目；起点状态：未知；站内记录起点：2026-08-21T19:30:00+08:00（未作为确认日期导出）。官方B站账号发布的前瞻预告；未将其错误关联到尚未入库的 1.5 版本。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://live.bilibili.com/1921300321",
-          "https://www.bilibili.com/video/BV1VQ8i6uEr4/"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
@@ -1000,7 +2289,7 @@ export const metadata = {
       "version_update": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 1 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.4 武陵决战篇·向渊行；起点状态：未知；站内记录起点：2026-07-16T12:00:00+08:00（未作为确认日期导出）。1.5 版本维护公告明确 09/02 06:00-12:00；版本切换边界取维护完成时刻，替换此前按周期推算的 09/03 12:00。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 1 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.4 武陵决战篇·向渊行；起点状态：来源未标确认；站内记录起点：2026-07-16T12:00:00+08:00（未作为确认日期导出）。1.5 版本维护公告明确 09/02 06:00-12:00；版本切换边界取维护完成时刻，替换此前按周期推算的 09/03 12:00。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1009,7 +2298,215 @@ export const metadata = {
           "https://endfield.hypergryph.com/news/1164"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「雪凇幽梦」版本前瞻特别节目；起点状态：来源未标确认；站内记录起点：2026-08-21T19:30:00+08:00（未作为确认日期导出）。官方B站账号发布的前瞻预告；未将其错误关联到尚未入库的 1.5 版本。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://live.bilibili.com/1921300321",
+          "https://www.bilibili.com/video/BV1VQ8i6uEr4/"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "arknights-endfield/cn/event/banner-xizhi-shenling-luocao",
+          "name": "「细枝申领」重构申领（落草）",
+          "start": "2026-10-29T12:00:00+08:00",
+          "end": "2026-11-19T11:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://endfield.hypergryph.com/news/3893"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-zuquan-xinliu-tangtang",
+          "name": "「祖泉的新流」重构寻访（汤汤）",
+          "start": "2026-10-29T12:00:00+08:00",
+          "end": "2026-11-19T11:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://endfield.hypergryph.com/news/3893"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-dianhui-shenling-1-5",
+          "name": "「点绘申领」重构申领#1（艺术暴君·手铳）",
+          "start": "2026-09-24T12:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "confirmed"
+          },
+          "note": "官方公告开放时间「2026/09/24 12:00（服务器时间） - 版本更新维护前」；结束无确切时刻，不推算。",
+          "sources": [
+            "https://endfield.hypergryph.com/news/2651"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-xuanli-yicai-1-5",
+          "name": "「绚丽异彩」重构寻访（伊冯）",
+          "start": "2026-09-24T12:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "confirmed"
+          },
+          "note": "官方公告开放时间「2026/09/24 12:00（服务器时间） - 版本更新维护前」；结束无确切时刻，不推算。",
+          "sources": [
+            "https://endfield.hypergryph.com/news/2651"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-donglie-1-5",
+          "name": "「冬猎」特许寻访",
+          "start": "2026-09-02T12:00:00+08:00",
+          "end": "2026-09-30T11:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方写「雪凇幽梦」版本开启后；起点取 09/02 维护完成时刻，实际开服/寻访开放分钟未单独确认。",
+          "sources": [
+            "https://endfield.hypergryph.com/news/6097"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-chenxing",
+          "name": "「晨星于此闪耀」特许寻访（梨诺）",
+          "start": "2026-08-09T12:00:00+08:00",
+          "end": "2026-09-03T12:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方原文：08/09 12:00 - 版本更新维护前；end 按版本推算",
+          "sources": [
+            "https://endfield.hypergryph.com/news/1165"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-mingyao",
+          "name": "「明曜申领」武器池（曜夜的首演）",
+          "start": "2026-08-09T12:00:00+08:00",
+          "end": "2026-09-03T12:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方原文：08/09 12:00 开启，于3次特许寻访后结束；end 按版本推算",
+          "sources": [
+            "https://endfield.hypergryph.com/news/7216"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-junlie",
+          "name": "「军列申领」武器池（四二式·肃阵）",
+          "start": "2026-07-16T12:00:00+08:00",
+          "end": "2026-08-09T11:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方原文：于3次特许寻访后结束（与临渊望北同期起，精确结束未公布）",
+          "sources": [
+            "https://endfield.hypergryph.com/news/3802"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/banner-linuanwangbei",
+          "name": "「临渊望北」特许寻访（诀）",
+          "start": "2026-07-16T12:00:00+08:00",
+          "end": "2026-08-09T11:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://endfield.hypergryph.com/news/8545"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "arknights-endfield/cn/event/maintenance-2026-09-02-version",
+          "name": "「雪凇幽梦」版本更新维护",
+          "start": "2026-09-02T06:00:00+08:00",
+          "end": "2026-09-02T12:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://endfield.hypergryph.com/news/2653",
+            "https://endfield.hypergryph.com/news/1164"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/version/1.4",
+          "name": "1.4 武陵决战篇·向渊行",
+          "start": "2026-07-16T12:00:00+08:00",
+          "end": "2026-09-02T12:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "1.5 版本维护公告明确 09/02 06:00-12:00；版本切换边界取维护完成时刻，替换此前按周期推算的 09/03 12:00。",
+          "sources": [
+            "https://endfield.hypergryph.com/news/9335",
+            "https://endfield.hypergryph.com/news/2653"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "arknights-endfield/cn/event/preview-1-5-xuedongyoumeng",
+          "name": "「雪凇幽梦」版本前瞻特别节目",
+          "start": "2026-08-21T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方B站账号发布的前瞻预告；未将其错误关联到尚未入库的 1.5 版本。",
+          "sources": [
+            "https://www.bilibili.com/video/BV1VQ8i6uEr4/"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "arknights-endfield/cn/event/preview-1-4",
+          "name": "相伴庆典&1.4 版本前瞻特别节目",
+          "start": "2026-07-10T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://live.bilibili.com/1921300321"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "pgr": {
@@ -1072,23 +2569,10 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "source_uncertain",
-        "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：原子之心联动特别发布会；起点状态：未知；站内记录起点：2026-07-10T20:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://www.bilibili.com/opus/1191368986720206921",
-          "https://re.bluepoch.com/home/detail.html#newsId?91",
-          "https://re.bluepoch.com/home/detail.html#newsId?97"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "source_uncertain",
         "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 0 个明确确认的时间点。另有 3 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：轮换征集【现实破译法】哑谜UP；起点状态：未知；站内记录起点：2026-08-18T05:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "reason": "优先采用 GameG 国服时间表。本类共 3 条来源记录，已导入 0 个明确确认的时间点。另有 3 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：轮换征集【现实破译法】哑谜UP；起点状态：来源未标确认；站内记录起点：2026-08-18T05:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1100,7 +2584,7 @@ export const metadata = {
       "version_update": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 11 条来源记录，已导入 1 个明确确认的时间点。另有 10 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.9「重燃！流金之海」；起点状态：未知；站内记录起点：2026-08-13T10:00:00+08:00（未作为确认日期导出）。当前版本；结束时间由官方活动/征集公告锚定（湖的涟漪/箱中数鸭节等均 9/24 04:59 截止）维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "reason": "优先采用 GameG 国服时间表。本类共 11 条来源记录，已导入 1 个明确确认的时间点。另有 10 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：3.9「重燃！流金之海」；起点状态：来源未标确认；站内记录起点：2026-08-13T10:00:00+08:00（未作为确认日期导出）。当前版本；结束时间由官方活动/征集公告锚定（湖的涟漪/箱中数鸭节等均 9/24 04:59 截止）维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1109,7 +2593,256 @@ export const metadata = {
           "https://re.bluepoch.com/home/detail.html#newsId?102"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "source_uncertain",
+        "label": "来源有记录，时间未明确确认",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：原子之心联动特别发布会；起点状态：来源未标确认；站内记录起点：2026-07-10T20:00:00+08:00（未作为确认日期导出）。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://www.bilibili.com/opus/1191368986720206921",
+          "https://re.bluepoch.com/home/detail.html#newsId?91",
+          "https://re.bluepoch.com/home/detail.html#newsId?97"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "reverse-1999/cn/event/banner-3-9-yami-rotation",
+          "name": "轮换征集【现实破译法】哑谜UP",
+          "start": "2026-08-18T05:00:00+08:00",
+          "end": "2026-09-01T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/837399955491520927"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/event/banner-3-9-fire",
+          "name": "活动征集【烈火悬流无尽】赫多涅UP",
+          "start": "2026-08-13T10:00:00+08:00",
+          "end": "2026-09-03T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/836687452667118061"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/event/banner-3-9-lake",
+          "name": "自选征集【湖的涟漪】自选六星UP",
+          "start": "2026-08-13T10:00:00+08:00",
+          "end": "2026-09-24T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.taptap.cn/moment/836688189249817034"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "reverse-1999/cn/event/maintenance-v4-0",
+          "name": "4.0「应门者」版本更新维护公告",
+          "start": "2026-09-24T05:00:00+08:00",
+          "end": "2026-09-24T10:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?102"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-9",
+          "name": "3.9「重燃！流金之海」",
+          "start": "2026-08-13T10:00:00+08:00",
+          "end": "2026-09-24T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "当前版本；结束时间由官方活动/征集公告锚定（湖的涟漪/箱中数鸭节等均 9/24 04:59 截止）",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?98",
+            "https://www.taptap.cn/moment/836567802100842914"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/event/cn-re1999-2026-08-13-maintenance-39",
+          "name": "3.9「重燃！流金之海」版本更新维护",
+          "start": "2026-08-13T06:00:00+08:00",
+          "end": "2026-08-13T10:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方公告明确维护窗口。",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?98"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/event/maintenance-3-9",
+          "name": "3.9「重燃！流金之海」版本更新维护",
+          "start": "2026-08-13T06:00:00+08:00",
+          "end": "2026-08-13T10:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?98",
+            "https://www.taptap.cn/moment/836567802100842914"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-8-5",
+          "name": "原子之心联动「聚合浪潮」(3.8.5)",
+          "start": "2026-07-23T10:00:00+08:00",
+          "end": "2026-08-13T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "21天特殊联动版本，维护提前至 05:00-10:00",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?95"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-8",
+          "name": "3.8「世纪末尺度」",
+          "start": "2026-06-11T10:00:00+08:00",
+          "end": "2026-07-23T05:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?94"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-7",
+          "name": "3.7「他者的悲哀」",
+          "start": "2026-04-30T10:00:00+08:00",
+          "end": "2026-06-11T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "三周年特别版本，强制更新，维护 05:00-10:00",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?92"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-6",
+          "name": "3.6「人们向何处去」",
+          "start": "2026-04-09T10:00:00+08:00",
+          "end": "2026-04-30T05:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?89"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-5",
+          "name": "3.5「绿松石蛇俱乐部」",
+          "start": "2026-03-05T10:00:00+08:00",
+          "end": "2026-04-09T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?87"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-4",
+          "name": "3.4「不老春」",
+          "start": "2026-01-20T10:00:00+08:00",
+          "end": "2026-03-05T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "强制更新版本，维护 05:00-10:00",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?83"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/version/v3-3",
+          "name": "3.3「远征记」",
+          "start": "2025-12-11T10:00:00+08:00",
+          "end": "2026-01-20T05:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "跨年版本；结束=3.4维护开始",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?81"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "reverse-1999/cn/event/preview-atomic-heart",
+          "name": "原子之心联动特别发布会",
+          "start": "2026-07-10T20:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://re.bluepoch.com/home/detail.html#newsId?97"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "reverse-1999/cn/event/preview-3-7-anniversary",
+          "name": "3.7 三周年特别前瞻节目",
+          "start": "2026-04-18T19:00:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://www.bilibili.com/opus/1191368986720206921",
+            "https://re.bluepoch.com/home/detail.html#newsId?91"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "azurlane": {
@@ -1144,7 +2877,7 @@ export const metadata = {
       "banner": {
         "status": "source_uncertain",
         "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：沉溺于星光之城限时建造；起点状态：未知；站内记录起点：2026-08-13T16:00:00+08:00（未作为确认日期导出）。约：end 为 8/27 维护开始；本宁顿（超稀有2.0%）、维克斯堡（超稀有2.0%）、柯莱特（超稀有0.5%）、哈里森（精锐2.5%）这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：沉溺于星光之城限时建造；起点状态：来源未标确认；站内记录起点：2026-08-13T16:00:00+08:00（未作为确认日期导出）。约：end 为 8/27 维护开始；本宁顿（超稀有2.0%）、维克斯堡（超稀有2.0%）、柯莱特（超稀有0.5%）、哈里森（精锐2.5%）这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1157,7 +2890,7 @@ export const metadata = {
       "version_update": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 4 条来源记录，已导入 3 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：2026年8月13日港区改建；起点状态：未知；站内记录起点：2026-08-13T10:00:00+08:00（未作为确认日期导出）。官方维护窗口 10:00~16:00；维护后开启大型活动「沉溺于星光之城」维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "reason": "优先采用 GameG 国服时间表。本类共 4 条来源记录，已导入 3 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：2026年8月13日港区改建；起点状态：来源未标确认；站内记录起点：2026-08-13T10:00:00+08:00（未作为确认日期导出）。官方维护窗口 10:00~16:00；维护后开启大型活动「沉溺于星光之城」维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1166,6 +2899,101 @@ export const metadata = {
         ],
         "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "azur-lane/cn/event/banner-xingguang",
+          "name": "沉溺于星光之城限时建造",
+          "start": "2026-08-13T16:00:00+08:00",
+          "end": "2026-08-27T10:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "约：end 为 8/27 维护开始；本宁顿（超稀有2.0%）、维克斯堡（超稀有2.0%）、柯莱特（超稀有0.5%）、哈里森（精锐2.5%）",
+          "sources": [
+            "https://wiki.biligame.com/blhx/2026年8月13日10:00港区改建",
+            "https://www.biligame.com/detail/?id=97&sourceFrom=2000310011#!news/18247"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "azur-lane/cn/event/banner-guaitan",
+          "name": "怪谈纪实：逃离白夜山庄！限时建造",
+          "start": "2026-07-23T16:00:00+08:00",
+          "end": "2026-08-06T10:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方维护窗口 7/23 10:00~16:00；end 约 8/6 维护开始；华丽（超稀有2%）、萨里（超稀有2%）",
+          "sources": [
+            "https://wiki.biligame.com/blhx/2026年7月23日10:00港区改建"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "azur-lane/cn/event/maintenance-2026-10-22",
+          "name": "2026年10月22日港区改建",
+          "start": "2026-10-22T10:00:00+08:00",
+          "end": "2026-10-22T16:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://www.weibo.com/5770760941/RnyR8ot7C"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "azur-lane/cn/event/maintenance-2026-09-24",
+          "name": "9月24日港区改建（幽影迷城版本）",
+          "start": "2026-09-24T10:00:00+08:00",
+          "end": "2026-09-24T16:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://wiki.biligame.com/blhx/2026年9月24日10:00港区改建"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "azur-lane/cn/event/maintenance-2026-09-17",
+          "name": "2026年9月17日港区改建",
+          "start": "2026-09-17T10:00:00+08:00",
+          "end": "2026-09-17T15:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://www.biligame.com/detail/?id=97&sourceFrom=2000310011#!news/18356"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "azur-lane/cn/event/maintenance-0813",
+          "name": "2026年8月13日港区改建",
+          "start": "2026-08-13T10:00:00+08:00",
+          "end": "2026-08-13T16:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方维护窗口 10:00~16:00；维护后开启大型活动「沉溺于星光之城」",
+          "sources": [
+            "https://wiki.biligame.com/blhx/2026年8月13日10:00港区改建",
+            "https://www.biligame.com/detail/?id=97&sourceFrom=2000310011#!news/18247"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "bluearchive": {
@@ -1303,20 +3131,6 @@ export const metadata = {
       }
     },
     "source_reviews": {
-      "livestream": {
-        "status": "recorded",
-        "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 1 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.3 雾中朔望星回 前瞻特别节目；起点状态：未知；站内记录起点：2026-08-08T19:30:00+08:00（未作为确认日期导出）。",
-        "official_status": "来源含未确认时间；不能据此断言官方未公布",
-        "sources": [
-          "https://www.gameg.site/",
-          "https://yh.wanmei.com/news/gamenews/20260808/263494.html",
-          "https://www.bilibili.com/opus/1231894558697062425",
-          "https://www.bilibili.com/opus/1261954317481410582",
-          "https://yh.wanmei.com/news/gamebroad/20261028/264788.html"
-        ],
-        "checked_on": "2026-11-03"
-      },
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
@@ -1331,7 +3145,7 @@ export const metadata = {
       "version_update": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 10 条来源记录，已导入 4 个明确确认的时间点。另有 6 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.4 祷歌为谁而诵；起点状态：未知；站内记录起点：2026-09-30T11:00:00+08:00（未作为确认日期导出）。start 取 1.4 维护结束时刻（官方公告维护 9/30 06:00-11:00，维护完成后开启）；end 官方未直接宣布，按官方活动时间表（黑羽的邀请函/全站深境/骏影疾驰统一 11/11 05:59 截止）预估。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
+        "reason": "优先采用 GameG 国服时间表。本类共 10 条来源记录，已导入 4 个明确确认的时间点。另有 6 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.4 祷歌为谁而诵；起点状态：来源未标确认；站内记录起点：2026-09-30T11:00:00+08:00（未作为确认日期导出）。start 取 1.4 维护结束时刻（官方公告维护 9/30 06:00-11:00，维护完成后开启）；end 官方未直接宣布，按官方活动时间表（黑羽的邀请函/全站深境/骏影疾驰统一 11/11 05:59 截止）预估。维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1339,7 +3153,410 @@ export const metadata = {
           "https://yh.wanmei.com/news/gamebroad/20261016/264655.html"
         ],
         "checked_on": "2026-11-03"
+      },
+      "livestream": {
+        "status": "recorded",
+        "label": "已收录日期 · GameG",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 1 个明确确认的时间点。另有 1 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：1.3 雾中朔望星回 前瞻特别节目；起点状态：来源未标确认；站内记录起点：2026-08-08T19:30:00+08:00（未作为确认日期导出）。",
+        "official_status": "来源含未确认时间；不能据此断言官方未公布",
+        "sources": [
+          "https://www.gameg.site/",
+          "https://yh.wanmei.com/news/gamenews/20260808/263494.html",
+          "https://www.bilibili.com/opus/1231894558697062425",
+          "https://www.bilibili.com/opus/1261954317481410582",
+          "https://yh.wanmei.com/news/gamebroad/20261028/264788.html"
+        ],
+        "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-4-jiumeng-chuxing",
+          "name": "「久梦初醒时」限定棋盘·安魂曲返场（1.4 上半）",
+          "start": "2026-09-30T11:00:00+08:00",
+          "end": "2026-10-21T05:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
+          "sources": [
+            "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-4-yequ-meigui",
+          "name": "「夜曲特刊」弧盘研募·最后一朵玫瑰返场（1.4 上半）",
+          "start": "2026-09-30T11:00:00+08:00",
+          "end": "2026-10-21T05:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
+          "sources": [
+            "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-4-yuyan-zhongmu",
+          "name": "「预言终幕时」限定棋盘·黑羽（1.4 上半）",
+          "start": "2026-09-30T11:00:00+08:00",
+          "end": "2026-10-21T05:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 取维护结束时刻作锚点（推算）。",
+          "sources": [
+            "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-4-zuiyufa",
+          "name": "「栖羽特刊」弧盘研募·罪与罚（1.4 上半）",
+          "start": "2026-09-30T11:00:00+08:00",
+          "end": "2026-10-21T05:59:00+08:00",
+          "certainty": {
+            "start": "inferred",
+            "end": "confirmed"
+          },
+          "note": "官方原文「9月30日版本更新后-10月21日05:59(UTC+8)」；start 按维护结束时刻推算。",
+          "sources": [
+            "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-3-hupan-2",
+          "name": "弧盘研募第二期（苍月+万籁特刊）",
+          "start": "2026-09-03T11:00:00+08:00",
+          "end": "2026-09-24T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "来自官方前瞻回顾长图；独立公告未发布，start 11:00 按维护惯例推算",
+          "sources": [
+            "https://yh.wanmei.com/news/gamenews/20260808/263494.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-3-lingke",
+          "name": "「全频带漫游中！」限定棋盘·灵可（1.3 下半）",
+          "start": "2026-09-03T11:00:00+08:00",
+          "end": "2026-09-24T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "9/3 版本更新维护后开启（官方前瞻）；独立卡池公告未发布，start 11:00 按维护惯例推算",
+          "sources": [
+            "https://yh.wanmei.com/news/gamenews/20260808/263494.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-3-xun",
+          "name": "「独酌胧月流」限定棋盘·浔复刻（1.3 下半）",
+          "start": "2026-09-03T11:00:00+08:00",
+          "end": "2026-09-24T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "9/3 版本更新维护后开启（官方前瞻）；独立卡池公告未发布，start 11:00 按维护惯例推算",
+          "sources": [
+            "https://yh.wanmei.com/news/gamenews/20260808/263494.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-3-canji",
+          "name": "「惑心谲影」限定棋盘·残虹（1.3 上半）",
+          "start": "2026-08-13T11:00:00+08:00",
+          "end": "2026-09-03T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260812/263537.html",
+            "https://www.taptap.cn/moment/836615080601715421",
+            "https://www.taptap.cn/moment/835869801250293942"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-3-hupan-1",
+          "name": "弧盘研募第一期（「摄心特刊」噬心诡刃 + 「猛虎特刊」预备备）",
+          "start": "2026-08-13T11:00:00+08:00",
+          "end": "2026-09-03T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260812/263537.html",
+            "https://www.taptap.cn/moment/836615080601715421"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-3-nanali",
+          "name": "「王牌一代目」限定棋盘·娜娜莉复刻（1.3 上半）",
+          "start": "2026-08-13T11:00:00+08:00",
+          "end": "2026-09-03T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260812/263537.html",
+            "https://www.taptap.cn/moment/836615080601715421",
+            "https://www.taptap.cn/moment/835872258634286829"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-2-qimen",
+          "name": "「启门特刊」弧盘研募（1.2 下半）",
+          "start": "2026-07-23T11:00:00+08:00",
+          "end": "2026-08-13T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260722/263234.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-2-yiluoyi",
+          "name": "「生命线」限定棋盘·伊洛伊（1.2 下半）",
+          "start": "2026-07-23T11:00:00+08:00",
+          "end": "2026-08-13T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260722/263234.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-2-jueyi",
+          "name": "「决意特刊」弧盘研募（1.2 上半）",
+          "start": "2026-07-02T11:00:00+08:00",
+          "end": "2026-07-23T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260701/262943.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/banner-1-2-zhenhong",
+          "name": "「破晓前」限定棋盘·真红（1.2 上半）",
+          "start": "2026-07-02T11:00:00+08:00",
+          "end": "2026-07-23T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260701/262943.html"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "neverness-to-everness/cn/event/maintenance-20261017",
+          "name": "10月17日不停服更新",
+          "start": "2026-10-17T02:00:00+08:00",
+          "end": "2026-10-17T06:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "estimated"
+          },
+          "note": "官方公告确认预计不停服更新窗口；具体结束时间可能随更新进度提前或延后，并非实际完成时间。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20261016/264655.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/maintenance-20261016",
+          "name": "10月16日不停服更新",
+          "start": "2026-10-16T02:00:00+08:00",
+          "end": "2026-10-16T06:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "estimated"
+          },
+          "note": "官方公告确认预计不停服更新窗口；具体结束时间可能随更新进度提前或延后，并非实际完成时间。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20261015/264630.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/maintenance-20261015",
+          "name": "10月15日停服维护",
+          "start": "2026-10-15T06:00:00+08:00",
+          "end": "2026-10-15T11:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "estimated"
+          },
+          "note": "官方计划维护窗口 06:00-11:00；实际结束可能提前或延后。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20261014/264537.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/version/1.4",
+          "name": "1.4 祷歌为谁而诵",
+          "start": "2026-09-30T11:00:00+08:00",
+          "end": "2026-11-11T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "start 取 1.4 维护结束时刻（官方公告维护 9/30 06:00-11:00，维护完成后开启）；end 官方未直接宣布，按官方活动时间表（黑羽的邀请函/全站深境/骏影疾驰统一 11/11 05:59 截止）预估。",
+          "sources": [
+            "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/maintenance-1-4",
+          "name": "1.4「祷歌为谁而诵」版本更新维护",
+          "start": "2026-09-24T06:00:00+08:00",
+          "end": "2026-09-24T11:00:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "estimated"
+          },
+          "note": "国服公告确认计划维护窗口为 2026年9月24日06:00 - 11:00；结束时刻可能按实际进度提前或延后。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260923/264278.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/maintenance-20260821",
+          "name": "8月21日不停服更新",
+          "start": "2026-08-21T02:00:00+08:00",
+          "end": "2026-08-21T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方公告确认预计 02:00-06:00 更新。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260821/263671.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/maintenance-20260820",
+          "name": "8月20日不停服更新",
+          "start": "2026-08-20T02:00:00+08:00",
+          "end": "2026-08-20T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方公告确认预计 02:00-06:00 更新。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260819/263646.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/maintenance-20260818",
+          "name": "8月18日不停服更新",
+          "start": "2026-08-18T02:00:00+08:00",
+          "end": "2026-08-18T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方公告确认北京时间 02:00-06:00 更新。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamenews/20260818/263613.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/version/1.3",
+          "name": "1.3 雾中朔望星回",
+          "start": "2026-08-13T11:00:00+08:00",
+          "end": "2026-09-30T06:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "维护窗口 8/13 06:00-11:00 官方确认，开服按维护结束 11:00；end 原按官方活动时间表预估 9/24 05:59，后由 1.4 更新公告确认 1.4 维护于 9/30 06:00-11:00 进行，1.3 实际结束于 9/30 06:00（维护开始）。",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260812/263537.html",
+            "https://www.taptap.cn/moment/836615080601715421",
+            "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/version/1.2",
+          "name": "1.2 九百九十九夜",
+          "start": "2026-07-02T11:00:00+08:00",
+          "end": "2026-08-13T05:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamebroad/20260701/262943.html"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "livestream": [
+        {
+          "id": "neverness-to-everness/cn/event/preview-1-5",
+          "name": "1.5 版本前瞻特别节目",
+          "start": "2026-10-28T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://www.bilibili.com/opus/1261954317481410582",
+            "https://yh.wanmei.com/news/gamebroad/20261028/264788.html"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "neverness-to-everness/cn/event/preview-1-3",
+          "name": "1.3 雾中朔望星回 前瞻特别节目",
+          "start": "2026-08-08T19:30:00+08:00",
+          "end": null,
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://yh.wanmei.com/news/gamenews/20260808/263494.html",
+            "https://www.bilibili.com/opus/1231894558697062425"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "deepspace": {
@@ -1374,7 +3591,7 @@ export const metadata = {
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 4 个明确确认的时间点。另有 4 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「如若午夜无眠」五星限时UP许愿（NO.01）；起点状态：未知；站内记录起点：2026-09-22T10:00:00+08:00（未作为确认日期导出）。官方活动一览：09/22 更新后 ▶ 10/10 04:59AM；五选三限定五星（沈星回·如栖璨空/黎深·繁夜让渡/祁煜·赴予醺色/秦彻·华筵和奏/夏以昼·盛宵尽夺），占五星概率75%；起始按官方维护预计结束时间10:00记录。",
+        "reason": "优先采用 GameG 国服时间表。本类共 6 条来源记录，已导入 4 个明确确认的时间点。另有 4 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：「如若午夜无眠」五星限时UP许愿（NO.01）；起点状态：来源未标确认；站内记录起点：2026-09-22T10:00:00+08:00（未作为确认日期导出）。官方活动一览：09/22 更新后 ▶ 10/10 04:59AM；五选三限定五星（沈星回·如栖璨空/黎深·繁夜让渡/祁煜·赴予醺色/秦彻·华筵和奏/夏以昼·盛宵尽夺），占五星概率75%；起始按官方维护预计结束时间10:00记录。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1383,6 +3600,97 @@ export const metadata = {
         ],
         "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "love-and-deepspace/cn/event/banner-qiyu-fuye-qingyang",
+          "name": "限时卡池「祁煜·馥夜轻漾」五星思念限时UP许愿",
+          "start": "2026-10-27T05:00:00+08:00",
+          "end": "2026-11-05T04:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://deepspace.papegames.com/news/87"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "love-and-deepspace/cn/event/banner-shenxinghui-yuandecishun",
+          "name": "限时卡池「沈星回·愿得此瞬」",
+          "start": "2026-10-11T05:00:00+08:00",
+          "end": "2026-10-18T04:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "沈星回2026生日限定五星思念；官网正文明确起止分钟，活动结束后暂无获取途径，不进入常驻许愿极空回响。",
+          "sources": [
+            "https://deepspace.papegames.com/news/85"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "love-and-deepspace/cn/event/event-ruoruo-wuye-wumian-up",
+          "name": "「如若午夜无眠」五星限时UP许愿（NO.01）",
+          "start": "2026-09-22T10:00:00+08:00",
+          "end": "2026-10-10T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方活动一览：09/22 更新后 ▶ 10/10 04:59AM；五选三限定五星（沈星回·如栖璨空/黎深·繁夜让渡/祁煜·赴予醺色/秦彻·华筵和奏/夏以昼·盛宵尽夺），占五星概率75%；起始按官方维护预计结束时间10:00记录。",
+          "sources": [
+            "https://deepspace.papegames.com/news/84"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "love-and-deepspace/cn/event/banner-qiyu-pazhenzi",
+          "name": "限时卡池「破阵子」—祁煜·玄面昭昭、祁煜·玄面无相",
+          "start": "2026-08-17T10:00:00+08:00",
+          "end": "2026-08-31T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方公告原文为“8月17日更新后~8月31日上午4:59”；起始按官方维护预计结束时间10:00记录，实际开服可能提前或延后。",
+          "sources": [
+            "https://deepspace.papegames.com/news/82",
+            "https://www.taptap.cn/moment/837302443191570238"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "love-and-deepspace/cn/event/banner-xiayizhou-wanlijieyun",
+          "name": "限时卡池「夏以昼·万里皆予你」（生日活动）",
+          "start": "2026-06-08T05:00:00+08:00",
+          "end": "2026-06-15T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "夏以昼生日活动；云梦之礼 6/8 5:00~6/15 4:59；视频电话/特别互动 6/13 0:00~6/15 4:59",
+          "sources": [
+            "https://deepspace.papegames.com/news/78"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "love-and-deepspace/cn/event/banner-qinche-aimao",
+          "name": "限时卡池「秦彻·爱猫及喵」",
+          "start": "2026-05-22T05:00:00+08:00",
+          "end": "2026-05-31T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "官方公告原文精确时间 2026-05-22 05:00 ~ 05-31 04:59",
+          "sources": [
+            "https://deepspace.papegames.com/news/77"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "infinitynikki": {
@@ -1787,7 +4095,7 @@ export const metadata = {
       "banner": {
         "status": "recorded",
         "label": "已收录日期 · GameG",
-        "reason": "优先采用 GameG 国服时间表。本类共 10 条来源记录，已导入 2 个明确确认的时间点。另有 9 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：限定收信「迷城无间」（金港往事系列限定卡池）；起点状态：未知；站内记录起点：2026-08-16T05:00:00+08:00（未作为确认日期导出）。萧逸・刀锋本色、陆沉・覆潮归港、齐司礼・业火鉴心、查理苏・逆路重影、夏鸣星・金流暗渡",
+        "reason": "优先采用 GameG 国服时间表。本类共 10 条来源记录，已导入 2 个明确确认的时间点。另有 9 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：限定收信「迷城无间」（金港往事系列限定卡池）；起点状态：来源未标确认；站内记录起点：2026-08-16T05:00:00+08:00（未作为确认日期导出）。萧逸・刀锋本色、陆沉・覆潮归港、齐司礼・业火鉴心、查理苏・逆路重影、夏鸣星・金流暗渡",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1800,7 +4108,7 @@ export const metadata = {
       "version_update": {
         "status": "source_uncertain",
         "label": "来源有记录，时间未明确确认",
-        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7月17日停服维护（5小时）；起点状态：未知；站内记录起点：2026-07-17T02:00:00+08:00（未作为确认日期导出）。维护后开启限时活动「绘梦繁花」二阶段等维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
+        "reason": "优先采用 GameG 国服时间表。本类共 2 条来源记录，已导入 0 个明确确认的时间点。另有 2 条记录含推算或未知时间，不将这些时刻导出为已公布日期。例如：7月17日停服维护（5小时）；起点状态：来源未标确认；站内记录起点：2026-07-17T02:00:00+08:00（未作为确认日期导出）。维护后开启限时活动「绘梦繁花」二阶段等维护条目只提醒明确的维护开始，不把预计维护结束当成开服时刻。这是来源确认程度不足，不代表官方没有公布；仍需核对其引用公告。",
         "official_status": "来源含未确认时间；不能据此断言官方未公布",
         "sources": [
           "https://www.gameg.site/",
@@ -1809,6 +4117,182 @@ export const metadata = {
         ],
         "checked_on": "2026-11-03"
       }
+    },
+    "source_records": {
+      "banner": [
+        {
+          "id": "light-and-night/cn/event/banner-yunji-manyou",
+          "name": "限定收信「云际漫游」（夏鸣星・时旅霁乡）",
+          "start": "2026-10-24T05:00:00+08:00",
+          "end": "2026-11-01T04:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=b6ac7878-5fe8-4532-9615-413db6d76285"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-micheng-wujian",
+          "name": "限定收信「迷城无间」（金港往事系列限定卡池）",
+          "start": "2026-08-16T05:00:00+08:00",
+          "end": "2026-08-28T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "萧逸・刀锋本色、陆沉・覆潮归港、齐司礼・业火鉴心、查理苏・逆路重影、夏鸣星・金流暗渡",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=7dcfd730-23e8-4762-9c55-28fc89383ed5",
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=f4035273-83db-4e52-bc20-5179d39d3d0a"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-lanlang-chuanlinhai",
+          "name": "限定收信复刻「澜声穿林海[复刻Ⅱ]」（萧逸・林野沁色）",
+          "start": "2026-08-06T05:00:00+08:00",
+          "end": "2026-08-14T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=0076b833-1447-44e1-a6b0-b2fdb4072d1e"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-piaoyou-zhenzhongshu",
+          "name": "限定收信复刻「飘悠枕中书[复刻Ⅰ]」（陆沉・羽梦舞曲）",
+          "start": "2026-07-29T05:00:00+08:00",
+          "end": "2026-08-05T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=5ca9f23c-13b9-44e1-9836-cbb99c089ab5"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-jinxiang-renjian",
+          "name": "限定收信「逆时回响」（查理苏・鎏砂覆吻）",
+          "start": "2026-07-20T05:00:00+08:00",
+          "end": "2026-07-28T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=73436a0c-5bfc-4e23-ace6-009f768584f6"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-zaici-rihuo",
+          "name": "限定收信「再次日落」（齐司礼・向遥远星）",
+          "start": "2026-07-12T05:00:00+08:00",
+          "end": "2026-07-20T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=89747175-ef37-4de3-b1a9-58245815be1a"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-tonggui-fuzhaoxi",
+          "name": "限定收信「同轨赴朝夕」（五周年纪念限定收信）",
+          "start": "2026-06-16T05:00:00+08:00",
+          "end": "2026-06-26T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "萧逸・真爱定律、陆沉・终于此爱、齐司礼・缘深若斯、查理苏・余生天地、夏鸣星・命弦初响",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=36ed4c5c-4b47-442f-b5be-f4b585083274"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-linjie-yuetao",
+          "name": "限定收信预告「临界跃迁」",
+          "start": "2026-06-08T05:00:00+08:00",
+          "end": "2026-06-16T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=4fe24ff5-3511-4e4c-ad08-bf261b30950e"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-mengyu-huoyu",
+          "name": "限定收信「羁梦幻谕・惑欲」",
+          "start": "2026-02-27T05:00:00+08:00",
+          "end": "2026-03-07T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=d4dbd0df-9b8d-45b7-b634-5ac6e9598de4"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/banner-mengyu-chiye",
+          "name": "限定收信「羁梦幻谕・驰野」（萧逸・驰野）",
+          "start": "2026-01-10T05:00:00+08:00",
+          "end": "2026-01-18T04:59:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=8894f750-e35b-4963-a81a-89797478c29b"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ],
+      "version_update": [
+        {
+          "id": "light-and-night/cn/event/maint-2026-07-17",
+          "name": "7月17日停服维护（5小时）",
+          "start": "2026-07-17T02:00:00+08:00",
+          "end": "2026-07-17T07:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "维护后开启限时活动「绘梦繁花」二阶段等",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=e988be3c-3bb2-4806-b2f9-5db4e861482d"
+          ],
+          "url": "https://www.gameg.site/"
+        },
+        {
+          "id": "light-and-night/cn/event/maint-2026-04-07",
+          "name": "4月7日停服维护（5小时）",
+          "start": "2026-04-07T00:00:00+08:00",
+          "end": "2026-04-07T05:00:00+08:00",
+          "certainty": {
+            "start": "unknown"
+          },
+          "note": "维护后开启限时活动「侦探请就位」、限定收信「寂静撞击：2624[复刻Ⅰ]」等",
+          "sources": [
+            "https://love.qq.com/m/web202106/newsdetail.html?newsid=7942a7f4-0e1c-4f67-86e4-d73687a7e9a4"
+          ],
+          "url": "https://www.gameg.site/"
+        }
+      ]
     }
   },
   "beyondworld": {

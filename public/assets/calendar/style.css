@@ -19,3 +19,5 @@ input,select,dialog{color:var(--text);background:var(--surface)}a,#sources a,#ga
 @media(max-width:380px){main{padding-inline:12px}.filter{gap:5px}.clear-selection{padding-inline:6px}}
 
 #options{width:min(640px,calc(100% - 32px));max-height:90dvh;overflow:auto}.date-review{padding:12px 0;border-bottom:1px solid var(--line)}.date-review>strong{font-size:13px}.date-review p{font-size:12px;margin:6px 0;line-height:1.7}.date-review .recorded-date{color:var(--text)}.date-review details{margin:8px 0 0}.date-review a{overflow-wrap:anywhere}.audit-date-reviews{padding-left:0;list-style:none}.audit-game{padding:16px 0;border-bottom:1px solid var(--line)}
+
+.source-record{padding:10px 12px;margin:8px 0;border:1px solid var(--line);border-radius:12px}.source-record>strong{font-size:12px}.source-record p{margin:4px 0}.source-records a{font-size:12px}

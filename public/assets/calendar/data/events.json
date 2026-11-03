@@ -4011,49 +4011,6 @@
       }
     },
     {
-      "id": "8a2662e9-3b85-5a15-ad11-029bbc9f9057",
-      "category": "game",
-      "event_type": "livestream",
-      "title": "原神 · 7.2「坏灭肇始之时」前瞻特别节目",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-23T20:00:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "genshin-impact/cn/event/preview-7-2",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ys.mihoyo.com/main/news/detail/166992",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://ys.mihoyo.com/main/news/detail/167026",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "genshin",
-        "server": "cn"
-      },
-      "source_key": "gameg:genshin-impact/cn/event/preview-7-2:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
       "id": "9d026113-e408-5a11-b977-346946a0e68a",
       "category": "game",
       "event_type": "banner",
@@ -4072,31 +4029,31 @@
           "authority": "community_timeline",
           "source_id": "genshin-impact/cn/event/banner-7-1-phase1",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166385",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166246",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166249",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166251",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4127,13 +4084,13 @@
           "authority": "community_timeline",
           "source_id": "genshin-impact/cn/event/banner-7-1-phase2",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166763",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4164,13 +4121,13 @@
           "authority": "community_timeline",
           "source_id": "genshin-impact/cn/event/banner-7-1-phase2",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ys.mihoyo.com/main/news/detail/166763",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4178,6 +4135,49 @@
         "server": "cn"
       },
       "source_key": "gameg:genshin-impact/cn/event/banner-7-1-phase2:end",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "8a2662e9-3b85-5a15-ad11-029bbc9f9057",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "原神 · 7.2「坏灭肇始之时」前瞻特别节目",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-23T20:00:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "genshin-impact/cn/event/preview-7-2",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ys.mihoyo.com/main/news/detail/166992",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://ys.mihoyo.com/main/news/detail/167026",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "genshin",
+        "server": "cn"
+      },
+      "source_key": "gameg:genshin-impact/cn/event/preview-7-2:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -4201,13 +4201,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-hongjun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4238,13 +4238,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-lc-hongjun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4275,13 +4275,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-lc-qingyin",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4312,13 +4312,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-5-qingyin",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/165883",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4349,13 +4349,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-shaoaicaiying",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166487",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4386,13 +4386,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-woshenjiren",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166950",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4423,13 +4423,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-canghaicuizhu",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166487",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4460,13 +4460,13 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/event/banner-4-6-woshenjiren",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166950",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4497,25 +4497,25 @@
           "authority": "community_timeline",
           "source_id": "honkai-star-rail/cn/version/4.6",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166487",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/166489",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://sr.mihoyo.com/news/167108",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4523,80 +4523,6 @@
         "server": "cn"
       },
       "source_key": "gameg:honkai-star-rail/cn/version/4.6:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "3fa03241-6d37-53c3-9ea9-421f80aafa30",
-      "category": "game",
-      "event_type": "livestream",
-      "title": "绝区零 · 《绝区零》3.2版本「她与她的隐秘往事」前瞻特别节目预告",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-08-28T19:30:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "zenless-zone-zero/cn/event/preview-3-2",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://zzz.mihoyo.com/news/165853",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "zzz",
-        "server": "cn"
-      },
-      "source_key": "gameg:zenless-zone-zero/cn/event/preview-3-2:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "666c6c4b-ddab-552e-85f1-9258093f76d6",
-      "category": "game",
-      "event_type": "livestream",
-      "title": "绝区零 · 《绝区零》3.3版本「重返天空的旅程」前瞻特别节目预告",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-09T19:30:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "zenless-zone-zero/cn/event/preview-3-3",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://zzz.mihoyo.com/news/166583",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "zzz",
-        "server": "cn"
-      },
-      "source_key": "gameg:zenless-zone-zero/cn/event/preview-3-3:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -4620,19 +4546,19 @@
           "authority": "community_timeline",
           "source_id": "zenless-zone-zero/cn/event/banner-3-3-upper",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://zzz.mihoyo.com/news/166922",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://zzz.mihoyo.com/news/166990",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4663,13 +4589,13 @@
           "authority": "community_timeline",
           "source_id": "zenless-zone-zero/cn/event/maintenance-2026-10-21",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://zzz.mihoyo.com/news/166989",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4677,6 +4603,80 @@
         "server": "cn"
       },
       "source_key": "gameg:zenless-zone-zero/cn/event/maintenance-2026-10-21:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "3fa03241-6d37-53c3-9ea9-421f80aafa30",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "绝区零 · 《绝区零》3.2版本「她与她的隐秘往事」前瞻特别节目预告",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-08-28T19:30:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "zenless-zone-zero/cn/event/preview-3-2",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://zzz.mihoyo.com/news/165853",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "zzz",
+        "server": "cn"
+      },
+      "source_key": "gameg:zenless-zone-zero/cn/event/preview-3-2:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "666c6c4b-ddab-552e-85f1-9258093f76d6",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "绝区零 · 《绝区零》3.3版本「重返天空的旅程」前瞻特别节目预告",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-09T19:30:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "zenless-zone-zero/cn/event/preview-3-3",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://zzz.mihoyo.com/news/166583",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "zzz",
+        "server": "cn"
+      },
+      "source_key": "gameg:zenless-zone-zero/cn/event/preview-3-3:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -4700,13 +4700,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-shibai-shenlan-2026-09",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1457",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4737,13 +4737,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-shibai-shenlan-2026-09",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1457",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4774,13 +4774,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-dingxiang-zhenxuan-3",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1455",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4811,13 +4811,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-haiyuan-xunyou",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/5101",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4848,13 +4848,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-dingxiang-zhenxuan-3",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1455",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4885,13 +4885,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-haiyuan-xunyou",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/5101",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4922,13 +4922,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-jiangxuetouhuo",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/4916",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4959,13 +4959,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-weishu-2026",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -4996,13 +4996,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-zhongjian-zhenxuan-202611",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5033,13 +5033,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-jiangxuetouhuo",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/4916",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5070,13 +5070,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-joint-action-202611",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5107,13 +5107,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-zhongjian-zhenxuan-202611",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5144,13 +5144,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-joint-action-202611",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5181,13 +5181,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/banner-weishu-2026",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5218,13 +5218,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-08-01-version",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1459",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5255,13 +5255,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-04-version",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/5102",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5292,13 +5292,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-11-flash",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/7367",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5329,13 +5329,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-20-flash",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/4922",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5366,13 +5366,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-09-29-flash",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/8577",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5403,13 +5403,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-10-24",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1441",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5440,13 +5440,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-11-01",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/1440",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5477,13 +5477,13 @@
           "authority": "community_timeline",
           "source_id": "arknights/cn/event/maintenance-2026-11-08",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://ak.hypergryph.com/news/0787",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5514,13 +5514,13 @@
           "authority": "community_timeline",
           "source_id": "wuthering-waves/cn/event/maintenance-3-7",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://mc.kurogames.com/main/news/detail/5569",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5551,13 +5551,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-dianhui-shenling-1-5",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/2651",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5588,13 +5588,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-xuanli-yicai-1-5",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/2651",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5625,13 +5625,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-donglie-1-5",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/6097",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5662,13 +5662,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-xizhi-shenling-luocao",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5699,13 +5699,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-zuquan-xinliu-tangtang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5736,13 +5736,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-xizhi-shenling-luocao",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5773,13 +5773,13 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/banner-zuquan-xinliu-tangtang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/3893",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5810,19 +5810,19 @@
           "authority": "community_timeline",
           "source_id": "arknights-endfield/cn/event/maintenance-2026-09-02-version",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/2653",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://endfield.hypergryph.com/news/1164",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5853,13 +5853,13 @@
           "authority": "community_timeline",
           "source_id": "reverse-1999/cn/event/maintenance-v4-0",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://re.bluepoch.com/home/detail.html#newsId?102",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5890,13 +5890,13 @@
           "authority": "community_timeline",
           "source_id": "azur-lane/cn/event/maintenance-2026-09-17",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://www.biligame.com/detail/?id=97&sourceFrom=2000310011#!news/18356",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5927,13 +5927,13 @@
           "authority": "community_timeline",
           "source_id": "azur-lane/cn/event/maintenance-2026-09-24",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://wiki.biligame.com/blhx/2026年9月24日10:00港区改建",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5964,13 +5964,13 @@
           "authority": "community_timeline",
           "source_id": "azur-lane/cn/event/maintenance-2026-10-22",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://www.weibo.com/5770760941/RnyR8ot7C",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -5978,49 +5978,6 @@
         "server": "cn"
       },
       "source_key": "gameg:azur-lane/cn/event/maintenance-2026-10-22:start",
-      "revision": 1,
-      "created_at": "2026-11-03T01:58:32+00:00",
-      "updated_at": "2026-11-03T01:58:32+00:00"
-    },
-    {
-      "id": "7dcbe081-3510-5335-bd0c-71f1dd5556a7",
-      "category": "game",
-      "event_type": "livestream",
-      "title": "异环 · 1.5 版本前瞻特别节目",
-      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
-      "status": "confirmed",
-      "schedule_state": "scheduled",
-      "time_kind": "datetime",
-      "start": "2026-10-28T19:30:00+08:00",
-      "end": null,
-      "timezone": "Asia/Shanghai",
-      "url": "https://www.gameg.site/",
-      "sources": [
-        {
-          "provider": "gameg",
-          "authority": "community_timeline",
-          "source_id": "neverness-to-everness/cn/event/preview-1-5",
-          "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://www.bilibili.com/opus/1261954317481410582",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        },
-        {
-          "provider": "GameG引用原公告",
-          "authority": "source_reference",
-          "url": "https://yh.wanmei.com/news/gamebroad/20261028/264788.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
-        }
-      ],
-      "game": {
-        "game_id": "nte",
-        "server": "cn"
-      },
-      "source_key": "gameg:neverness-to-everness/cn/event/preview-1-5:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -6044,13 +6001,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/banner-1-4-jiumeng-chuxing",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6081,13 +6038,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/banner-1-4-yequ-meigui",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6118,13 +6075,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/banner-1-4-yuyan-zhongmu",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6155,13 +6112,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/banner-1-4-zuiyufa",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://nte.perfectworld.com/cn/article/news/gamenews/20260929/264407.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6192,13 +6149,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-1-4",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20260923/264278.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6229,13 +6186,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-20261015",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20261014/264537.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6266,13 +6223,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-20261016",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20261015/264630.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6303,13 +6260,13 @@
           "authority": "community_timeline",
           "source_id": "neverness-to-everness/cn/event/maintenance-20261017",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://yh.wanmei.com/news/gamebroad/20261016/264655.html",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6317,6 +6274,49 @@
         "server": "cn"
       },
       "source_key": "gameg:neverness-to-everness/cn/event/maintenance-20261017:start",
+      "revision": 1,
+      "created_at": "2026-11-03T01:58:32+00:00",
+      "updated_at": "2026-11-03T01:58:32+00:00"
+    },
+    {
+      "id": "7dcbe081-3510-5335-bd0c-71f1dd5556a7",
+      "category": "game",
+      "event_type": "livestream",
+      "title": "异环 · 1.5 版本前瞻特别节目",
+      "description": "来源：GameG 二游时间表（社区整理）；国服，北京时间。仅采用来源标为confirmed的时间。",
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-10-28T19:30:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "url": "https://www.gameg.site/",
+      "sources": [
+        {
+          "provider": "gameg",
+          "authority": "community_timeline",
+          "source_id": "neverness-to-everness/cn/event/preview-1-5",
+          "url": "https://www.gameg.site/",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://www.bilibili.com/opus/1261954317481410582",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        },
+        {
+          "provider": "GameG引用原公告",
+          "authority": "source_reference",
+          "url": "https://yh.wanmei.com/news/gamebroad/20261028/264788.html",
+          "checked_at": "2026-11-03T02:22:12+00:00"
+        }
+      ],
+      "game": {
+        "game_id": "nte",
+        "server": "cn"
+      },
+      "source_key": "gameg:neverness-to-everness/cn/event/preview-1-5:start",
       "revision": 1,
       "created_at": "2026-11-03T01:58:32+00:00",
       "updated_at": "2026-11-03T01:58:32+00:00"
@@ -6340,13 +6340,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-shenxinghui-yuandecishun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/85",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6377,13 +6377,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-shenxinghui-yuandecishun",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/85",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6414,13 +6414,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-qiyu-fuye-qingyang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/87",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6451,13 +6451,13 @@
           "authority": "community_timeline",
           "source_id": "love-and-deepspace/cn/event/banner-qiyu-fuye-qingyang",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://deepspace.papegames.com/news/87",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6488,13 +6488,13 @@
           "authority": "community_timeline",
           "source_id": "light-and-night/cn/event/banner-yunji-manyou",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://love.qq.com/m/web202106/newsdetail.html?newsid=b6ac7878-5fe8-4532-9615-413db6d76285",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {
@@ -6525,13 +6525,13 @@
           "authority": "community_timeline",
           "source_id": "light-and-night/cn/event/banner-yunji-manyou",
           "url": "https://www.gameg.site/",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         },
         {
           "provider": "GameG引用原公告",
           "authority": "source_reference",
           "url": "https://love.qq.com/m/web202106/newsdetail.html?newsid=b6ac7878-5fe8-4532-9615-413db6d76285",
-          "checked_at": "2026-11-03T01:59:06+00:00"
+          "checked_at": "2026-11-03T02:22:12+00:00"
         }
       ],
       "game": {

@@ -58,6 +58,15 @@ class GameGTests(unittest.TestCase):
         self.assertEqual(row['timeCertainty'],{'start':'unknown'})
         self.assertEqual(source.iso(row['start']),'2026-10-23T20:00:00+08:00')
         self.assertEqual(row['key'],'genshin-impact/cn/event/a')
+    def test_unknown_source_dates_are_visible_without_creating_confirmed_events(self):
+        self.row['timeCertainty']={'start':'unknown'}
+        events,reports=source.apply(self.data,[self.game],[],STAMP)
+        self.assertEqual(events,[])
+        record=reports['genshin']['source_records']['banner'][0]
+        self.assertEqual(record['start'],source.iso(START))
+        self.assertEqual(record['end'],source.iso(END))
+        self.assertEqual(record['certainty']['start'],'unknown')
+        self.assertEqual(reports['genshin']['source_types']['banner'],'pending')
     def test_bad_structure_fails_loudly(self):
         with self.assertRaises(ValueError):source.parse('<html>error</html>')
 if __name__=='__main__':unittest.main()

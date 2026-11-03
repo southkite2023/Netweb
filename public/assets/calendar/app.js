@@ -2,7 +2,7 @@ import { selectionPayload, restoreSelection } from './subscription.js';
 import { AccountCalendar } from './account.js';
 const $ = s => document.querySelector(s);
 import { catalog, metadata } from './catalog.js';
-import { orderedGames, coverageLabel, verifiedTypeCount } from './presentation.js';
+import { orderedGames, coverageLabel, availableTypeCount } from './presentation.js';
 import { dateReview } from './date-status.js';
 import { companies, companyOptions, matchesCompany } from './companies.js';
 const chosen = new Map();
@@ -53,7 +53,7 @@ function draw(){
       const title=document.createElement('strong');title.textContent=name;
       const detail=document.createElement('small');const selection=chosen.get(id);
       detail.textContent=selection&&kind==='games'?selection.types.map(t=>types[t]).join(' / '):metadata[id].label;
-      if(kind==='games'){detail.textContent=coverageLabel(metadata[id]);button.dataset.incomplete=verifiedTypeCount(metadata[id])<3;}
+      if(kind==='games'){detail.textContent=coverageLabel(metadata[id]);button.dataset.incomplete=availableTypeCount(metadata[id])<3;}
       button.title=[name,...(companies[id]?.names||[]),metadata[id].original,metadata[id].label].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.onclick=()=>kind==='games'?openOptions(id,name,button):(chosen.has(id)?chosen.delete(id):chosen.set(id,{kind:'anime'}),selectionChanged());list.append(button);
     }
     if(!list.children.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='没有匹配的项目';list.append(empty);}
@@ -66,8 +66,25 @@ function dateRow(id,type,meta){
  const review=dateReview(id,type,meta),row=document.createElement('li');row.className='date-review';
  const title=document.createElement('strong');title.textContent=types[type]+'：'+review.label;row.append(title);
  const reason=document.createElement('p');reason.textContent=review.reason;row.append(reason);
+ const records=meta.source_records?.[type]||[];
+ if(records.length){
+  title.textContent=types[type]+'：来源已列出 '+records.length+' 条日期';
+  const labels={confirmed:'已确认',inferred:'推算',estimated:'预计',unknown:'来源未标确认'};
+  const time=value=>value?value.replace('T',' ').replace('+08:00',''):'未提供';
+  const list=document.createElement('div');list.className='source-records';
+  for(const [index,record] of records.entries()){
+   const item=document.createElement('div');item.className='source-record';
+   const name=document.createElement('strong');name.textContent=record.name;item.append(name);
+   for(const boundary of ['start','end'])if(record[boundary]){const line=document.createElement('p');line.textContent=(boundary==='start'?'开始：':'结束：')+time(record[boundary])+'（北京时间） · '+(labels[record.certainty?.[boundary]]||labels.unknown);item.append(line);}
+   if(record.note){const note=document.createElement('p');note.textContent=record.note;item.append(note);}
+   const link=document.createElement('a');link.href=record.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='GameG 来源';item.append(link);
+   for(const url of record.sources||[]){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='引用公告';item.append(' · ',a);}
+   if(index<3)list.append(item);else{let more=list.querySelector('details');if(!more){more=document.createElement('details');const summary=document.createElement('summary');summary.textContent='展开其余 '+(records.length-3)+' 条来源记录';more.append(summary);list.append(more);}more.append(item);}
+  }
+  row.append(list);
+ }
  const info=meta.date_summary?.[type];
- if(info){const date=document.createElement('p');date.className='recorded-date';date.textContent='已收录记录：'+info.label;row.append(date);}
+ if(info&&!records.length){const date=document.createElement('p');date.className='recorded-date';date.textContent='已收录记录：'+info.label;row.append(date);}
  if(review.status!=='recorded'){const official=document.createElement('p');official.textContent='官方公布情况：'+review.official_status;row.append(official);}
  const evidence=document.createElement('details'),summary=document.createElement('summary');summary.textContent='核查日期：'+review.checked_on+' · 查看查过的来源';evidence.append(summary);
  for(const url of [...new Set([info?.url,...review.sources].filter(Boolean))]){const line=document.createElement('p'),link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';try{link.textContent=decodeURI(url);}catch{link.textContent=url;}line.append(link);evidence.append(line);}
@@ -116,7 +133,7 @@ function renderWikiAudit(data){
  const container=$('#wiki-audit');container.replaceChildren();
  for(const g of data.games){
   const m=metadata[g.game_id];if(!m)continue;
-  const monitor=g.monitor||{};m.event_count=g.event_count??m.event_count;m.event_types=g.event_types??m.event_types;m.server=g.server;m.coverage_types={...g.types,...monitor.source_types};m.source_reviews={...g.source_reviews,...monitor.source_reviews};m.date_summary={...m.date_summary,...g.date_summary,...monitor.date_summary};for(const t of monitor.covered_types||g.covered_types||[])if(m.coverage_types[t]!=='verified')delete m.date_summary[t];if(g.timeline_source)m.url=g.timeline_source.url;
+  const monitor=g.monitor||{};m.event_count=g.event_count??m.event_count;m.event_types=g.event_types??m.event_types;m.server=g.server;m.coverage_types={...g.types,...monitor.source_types};m.source_records={...g.source_records,...monitor.source_records};m.source_reviews={...g.source_reviews,...monitor.source_reviews};m.date_summary={...m.date_summary,...g.date_summary,...monitor.date_summary};for(const t of monitor.covered_types||g.covered_types||[])if(m.coverage_types[t]!=='verified')delete m.date_summary[t];if(g.timeline_source)m.url=g.timeline_source.url;
   m.label=coverageLabel(m)+(m.event_count?' · '+m.event_count+'条已收录日程':' · 暂无已收录日程');
   m.monitor_note=!g.monitor?'自动监测状态尚未读取；以下是逐项核查记录。':(monitor.mode==='auto'?'日期来源自动检查。':'目前只自动监测Wiki页面变化，不自动提取新日期。')+(monitor.error?'读取或解析失败，保留上次有效数据。':monitor.message||'')+(monitor.stale?'监测已延迟。':'');
   const p=document.createElement('div');p.className='audit-game';const name=document.createElement('strong');name.textContent=g.name+'（'+(g.server==='global'?'国际服':'国服')+'）';p.append(name,' · '+m.label+'。'+m.monitor_note);
