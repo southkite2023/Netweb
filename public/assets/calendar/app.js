@@ -5,12 +5,19 @@ import { catalog, metadata } from './catalog.js';
 import { orderedGames, coverageLabel, availableTypeCount } from './presentation.js';
 import { dateReview } from './date-status.js';
 import { companies, companyOptions, matchesCompany } from './companies.js';
+import { gamesForRegion, followSiteLanguage, regionLabels } from './regions.js';
 const chosen = new Map();
-for(const kind of ['games','anime']){
- for(const [name,count] of companyOptions(kind==='games'?gameList():catalog[kind])){const option=document.createElement('option');option.value=name;option.textContent=`${name==='__unknown'?'制作公司待补充':name} · ${count}`;$(`#${kind}-filter`).append(option);}
+for(const kind of ['anime']){
+ for(const [name,count] of companyOptions(catalog[kind])){const option=document.createElement('option');option.value=name;option.textContent=`${name==='__unknown'?'制作公司待补充':name} · ${count}`;$(`#${kind}-filter`).append(option);}
 }
 
-function gameList(){return $('#games-scope').value==='all'?catalog.games:catalog.games.filter(([id])=>catalog.focus_games.includes(id));}
+function gameList(){return gamesForRegion(catalog.games,metadata,$('#games-filter').value,$('#games-scope').value,catalog.focus_games);}
+function regionChanged(){
+ const region=$('#games-filter').value;
+ if(region!=='cn')$('#games-scope').value='all';
+ $('#games-scope').disabled=region!=='cn';
+ if(auditData)renderWikiAudit(auditData);else draw();
+}
 let editing, opener;
 const types = {livestream:'前瞻',version_update:'版本',banner:'卡池'};
 let ready=false,busy=false,saveTimer,editVersion=0,lastSaved=null;
@@ -49,7 +56,7 @@ function draw(){
   for(const kind of ['games','anime']){
     const query=$(`#${kind}-search`).value.trim().toLowerCase();
     const list=$(`#${kind}`);list.replaceChildren();
-    for(const [id,name] of (kind==='games'?orderedGames(gameList(),metadata):catalog.anime).filter(([id,name])=>[name,metadata[id]?.original,...(metadata[id]?.aliases||[]),...(companies[id]?.names||[])].join(' ').toLowerCase().includes(query) && matchesCompany(id,$(`#${kind}-filter`).value))){
+    for(const [id,name] of (kind==='games'?orderedGames(gameList(),metadata):catalog.anime).filter(([id,name])=>[name,metadata[id]?.original,...(metadata[id]?.aliases||[]),...(companies[id]?.names||[])].join(' ').toLowerCase().includes(query) && (kind==='games'||matchesCompany(id,$('#anime-filter').value)))){
       const button=document.createElement('button');button.className='item';button.type='button';button.setAttribute('aria-pressed',chosen.has(id));
       const title=document.createElement('strong');title.textContent=name;
       const detail=document.createElement('small');const selection=chosen.get(id);
@@ -63,7 +70,7 @@ function draw(){
         list.querySelector('[data-item="'+CSS.escape(id)+'"]')?.focus({preventScroll:true});
       };list.append(button);
     }
-    if(!list.children.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='没有匹配的项目';list.append(empty);}
+    if(!list.children.length){const empty=document.createElement('p');empty.className='empty';empty.textContent=kind==='games'&&!gameList().length?'尚未接入'+regionLabels[$('#games-filter').value]+'游戏日程':'没有匹配的项目';list.append(empty);}
     const visibleItems=kind==='games'?gameList():catalog[kind];$(`#${kind}-count`).textContent=`${visibleItems.length} 项 · ${visibleItems.filter(([id])=>chosen.has(id)).length} 已选`;
   }
   document.querySelectorAll('.clear-selection').forEach(button=>button.disabled=!chosen.size||!ready||busy||account.paused);
@@ -117,7 +124,7 @@ function openOptions(id,name,button){
 }
 $('#open-details').onclick=()=>{
  const m=metadata[editing];$('#detail-title').textContent=$('#dialog-title').textContent+' · 详情';
- $('#game-coverage').textContent='区服：'+(m.server==='global'?'国际服':'国服')+'。以下日期可能包含历史记录。';
+ $('#game-coverage').textContent='区服：'+(regionLabels[m.server]||'区服待核实')+'。以下日期可能包含历史记录。';
  renderDates(editing,m);
  $('#game-wiki').hidden=!m.url;$('#game-wiki').href=m.url||'#';$('#game-wiki').textContent='查看主要来源';$('#item-details').showModal();
 };
@@ -131,8 +138,11 @@ $('#options-form').onsubmit=e=>{
  e.preventDefault();const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}const edges=[...document.querySelectorAll('[name=boundary]:checked')].map(x=>x.value);if(!edges.length){$('#form-error').textContent='开始时间和结束时间至少勾选一项。';return;}chosen.set(editing,{kind:'games',types:selected,...(weaponPoolGames.has(editing)?{weapons:$('#include-weapons').checked}:{}),format:'exact',duration:$('#duration').checked,boundaries:edges.length===2?'both':edges[0]});
  $('#options').close();selectionChanged();
 };
-$('#games-scope').onchange=()=>{const filter=$('#games-filter');filter.replaceChildren();const all=document.createElement('option');all.value='all';all.textContent='全部游戏公司';filter.append(all);for(const [name,count] of companyOptions(gameList())){const option=document.createElement('option');option.value=name;option.textContent=name+' · '+count;filter.append(option);}if(auditData)renderWikiAudit(auditData);else draw();};
-for(const kind of ['games','anime']){$(`#${kind}-search`).oninput=draw;$(`#${kind}-filter`).onchange=draw;}
+$('#games-scope').onchange=()=>{if(auditData)renderWikiAudit(auditData);else draw();};
+$('#games-filter').onchange=regionChanged;
+$('#games-search').oninput=draw;
+$('#anime-search').oninput=draw;
+$('#anime-filter').onchange=draw;
 document.querySelectorAll('.clear-selection').forEach(button=>button.onclick=()=>{chosen.clear();selectionChanged();if(!account.calendar)$('#status').textContent='已清除所有游戏与动漫选择。';});
 $('#generate').onclick=async()=>{
  if(!account.user){window.top.location.href='/login?redirect='+encodeURIComponent('/projects/004/select');return;}
@@ -167,12 +177,12 @@ function renderWikiAudit(data){
  auditData=data;
  const container=$('#wiki-audit');container.replaceChildren();
  for(const g of data.games){
-  if($('#games-scope').value!=='all'&&!catalog.focus_games.includes(g.game_id))continue;
   const m=metadata[g.game_id];if(!m)continue;
   m.supplemental_banners=g.supplemental_banners||[];const monitor=g.monitor||{};m.event_count=g.event_count??m.event_count;m.event_types=g.event_types??m.event_types;m.server=g.server;m.coverage_types={...g.types,...monitor.source_types};m.source_records={...g.source_records,...monitor.source_records};m.source_reviews={...g.source_reviews,...monitor.source_reviews};m.date_summary={...m.date_summary,...g.date_summary,...monitor.date_summary};for(const t of monitor.covered_types||g.covered_types||[])if(m.coverage_types[t]!=='verified')delete m.date_summary[t];if(g.timeline_source)m.url=g.timeline_source.url;
   m.label=coverageLabel(m)+(m.event_count?' · '+m.event_count+'条已收录日程':' · 暂无已收录日程');
   m.monitor_note=!g.monitor?'自动监测状态尚未读取；以下是逐项核查记录。':(monitor.mode==='auto'?'日期来源自动检查。':'目前只自动监测Wiki页面变化，不自动提取新日期。')+(monitor.error?'读取或解析失败，保留上次有效数据。':monitor.message||'')+(monitor.stale?'监测已延迟。':'');
-  const p=document.createElement('div');p.className='audit-game';const name=document.createElement('strong');name.textContent=g.name+'（'+(g.server==='global'?'国际服':'国服')+'）';p.append(name,' · '+m.label+'。'+m.monitor_note);
+  if(!gameList().some(([id])=>id===g.game_id))continue;
+  const p=document.createElement('div');p.className='audit-game';const name=document.createElement('strong');name.textContent=g.name+'（'+(regionLabels[g.server]||'区服待核实')+'）';p.append(name,' · '+m.label+'。'+m.monitor_note);
   const results=document.createElement('ul');results.className='audit-date-reviews';for(const type of Object.keys(types))results.append(dateRow(g.game_id,type,m));p.append(results);
   for(const url of [...new Set([g.timeline_source?.url,...g.sources].filter(Boolean))]){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=url.includes('gameg.site')?' GameG 主要来源':' Wiki 备选来源';p.append(' · ',a);}
   if(monitor.last_success_at)p.append(' · 读取成功 '+new Date(monitor.last_success_at).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai'}));
@@ -182,3 +192,5 @@ function renderWikiAudit(data){
 }
 fetch('data/wiki-sources.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{if(!$('#wiki-audit').dataset.live)renderWikiAudit(data);}).catch(()=>{$('#wiki-audit').textContent='核查目录读取失败，请点开游戏查看逐项说明。';});
 fetch('/api/calendar/v1/games/status').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{$('#wiki-audit').dataset.live='true';renderWikiAudit(data);}).catch(()=>{$('#wiki-updated').textContent='暂时无法读取来源监测状态；当前显示已核验快照，不能保证即时更新。';});
+
+followSiteLanguage(window,region=>{$('#games-filter').value=region;regionChanged();});
