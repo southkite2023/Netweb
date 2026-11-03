@@ -1,7 +1,27 @@
 const escapeText=s=>String(s).replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,');
 const utc=s=>new Date(s).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
 function fold(line){let out='',part='';for(const ch of line){if(new TextEncoder().encode(part+ch).length>75){out+=part+'\r\n';part=' ';}part+=ch;}return out+part;}
-// Source titles stay in the description. SUMMARY is the short title shown in calendars.
+// Roster scope and spelling follow Hypergryph announcements /news/0787, /4916, /5101, /1455 and /1457.
+const rosterNotes={
+ 'banner-joint-action-202611':'仅出现以下六星、五星干员：\n六星：林、赤刃明霄陈、可露希尔、焰影苇草\n五星：钼铅、佩德洛、刺玫、历阵锐枪芬、诺威尔、青枳',
+ 'banner-weishu-2026':'六星仅出现：Mon3tr、烛煌、真言、逻各斯、乌尔比安、引星棘刺、锏、玛恩纳、忍冬、白铁',
+ 'banner-zhongjian-zhenxuan-202611':'六星自选 2：老鲤、艾丽妮、凯尔希、水月、远牙、泥岩、早露、夜莺、斯卡蒂、陈、安洁莉娜、傀影\n五星自选 3：濯尘芙蓉、赤冬、绮良、羽毛笔、极光、絮雨、白面鸮、安哲拉、临光、送葬人、槐琥、真理、苇草、四月、断崖、爱丽丝、蜜蜡、石棉、乌有、熔泉、贾维、慑砂、燧石、奥斯塔',
+ 'banner-dingxiang-zhenxuan-3':'六星自选 3：Mon3tr、圣聆初雪、贝洛内、真言、锏、烛煌\n五星自选 3：渡桥、吉星、寻澜、明椒、响石、复奏',
+ 'banner-shibai-shenlan-2026-09':'概率提升：六星结城理；五星埃癸斯、岳羽由加莉',
+ 'banner-haiyuan-xunyou':'概率提升：六星克莱门莎；五星德·托莱多、火哨',
+ 'banner-jiangxuetouhuo':'概率提升：六星塔露拉、冻河；五星奥尔佳\n其余六星中权重提高：凛御银灰、新约能天使、荒芜拉普兰德',
+};
+function poolVariants(e){
+ if(e.category!=='game'||e.event_type!=='banner')return [e];
+ const raw=e.title.replace(/ · 结束提醒$/,'');
+ const pair=raw.match(/ \+ 「(?:溯回忆象|流光定影)·([^」]+)」光锥/);
+ let weapon=pair?[pair[1]]:null;
+ if(/原神 · 7\.2 第一期/.test(raw))weapon=['秘星典谕','静水流涌之辉'];
+ if(/神铸赋形/.test(raw))weapon=['神铸赋形'];
+ if(/代理人[／/]音擎/.test(raw))weapon=['音擎'];
+ if(weapon)return [e,{...e,id:e.id+'-weapon',weapon:true,weaponNames:weapon}];
+ return /武器|光锥|音擎|弧盘研募|重构申领/.test(raw)?[{...e,weapon:true}]:[e];
+}
 function bannerSubjects(game, raw) {
   if (game === '原神') {
     if (/7\.1 第一期活动祈愿/.test(raw)) return ['薇斯纳','沃雅妮莎'];
@@ -60,7 +80,7 @@ function calendarTitle(event) {
   if (!action) return event.title;
   let label;
   if (event.event_type==='banner') {
-    label=bannerSubjects(game,raw).map(name=>'「'+name+'」').join('');
+    label=(event.weaponNames||bannerSubjects(game,raw)).map(name=>'「'+name+'」').join('');
   } else {
     let name=versionSubject(raw,game);
     const version=releaseNumber(event,raw);
@@ -85,15 +105,19 @@ export function makeCalendar(events,selections){
     if(edges==='both'||edges===(end?'end':'start'))expanded.push(e);
     if(!end&&edges!=='start'&&e.end&&!endKeys.has(e.game.game_id+'|'+e.title+'|'+e.end))expanded.push({...e,id:e.id+'-end',title:e.title+' · 结束提醒',start:e.end,end:null,time_kind:e.end.includes('T')?'datetime':'date'});
   }
-  for(const e of expanded){const id=e.category==='game'?e.game.game_id:e.category==='anime'?e.anime.series_id:null;const config=selections.get(id);if(!config||e.schedule_state!=='scheduled'||!e.start)continue;if(e.category==='game'&&!config.types.includes(e.event_type))continue;
+  for(const e of expanded.flatMap(poolVariants)){const id=e.category==='game'?e.game.game_id:e.category==='anime'?e.anime.series_id:null;const config=selections.get(id);if(!config||e.schedule_state!=='scheduled'||!e.start)continue;if(e.category==='game'&&!config.types.includes(e.event_type))continue;
+    if(e.weapon&&config.weapons===false)continue;
     // Anime always exports a precise airing start, without an inferred duration.
     if(e.category==='anime'&&e.time_kind!=='datetime')continue;
     const dateOnly=e.time_kind==='date'||config.format==='date';
     const boundary=s=>dateOnly?s.slice(0,10).replace(/-/g,''):utc(s);
     const summary=calendarTitle(e);
-    lines.push('BEGIN:VEVENT',`UID:${e.id}@calendar.yuashie.cn`,`DTSTAMP:${utc(e.updated_at)}`,`SEQUENCE:${e.revision+(summary!==e.title?1:0)+(e.category==='game' && ['livestream','version_update'].includes(e.event_type) && releaseNumber(e,e.title.split(' · ').slice(1).join(' · '))?2:0)}`,`SUMMARY:${escapeText(summary)}`,`STATUS:${e.status.toUpperCase()}`,`DTSTART${dateOnly?';VALUE=DATE':''}:${boundary(e.start)}`);
+    lines.push('BEGIN:VEVENT',`UID:${e.id}@calendar.yuashie.cn`,`DTSTAMP:${utc(e.updated_at)}`,`SEQUENCE:${e.revision+(e.category==='game'?4:0)+(summary!==e.title?1:0)+(e.category==='game' && ['livestream','version_update'].includes(e.event_type) && releaseNumber(e,e.title.split(' · ').slice(1).join(' · '))?2:0)}`,`SUMMARY:${escapeText(summary)}`,`STATUS:${e.status.toUpperCase()}`,`DTSTART${dateOnly?';VALUE=DATE':''}:${boundary(e.start)}`);
     if(config.kind==='games'&&config.duration&&e.end){let end=boundary(e.end);if(dateOnly){const hasPartialDay=e.time_kind==='datetime'&&!/T00:00:00(?:[+-]|Z)/.test(e.end);if(hasPartialDay||end<=boundary(e.start)){const next=new Date((end<=boundary(e.start)?e.start:e.end).slice(0,10)+'T00:00:00Z');next.setUTCDate(next.getUTCDate()+1);end=next.toISOString().slice(0,10).replace(/-/g,'');}}lines.push(`DTEND${dateOnly?';VALUE=DATE':''}:${end}`);}
-    lines.push(`DESCRIPTION:${escapeText((summary!==e.title?'原始标题：'+e.title+'\n':'')+(e.description||'')+'\n原始时间：'+e.start+' → '+(e.end||'结束未知')+'\n'+e.sources.map(s=>'来源：'+s.url).join('\n'))}`,`URL:${e.url}`,'TRANSP:TRANSPARENT','END:VEVENT');count++;
+    const key=e.source_key?.match(/arknights\/cn\/event\/([^:]+):/)?.[1];
+    const note=rosterNotes[key]||e.calendar_note||(e.weapon?'武器池':'');
+    if(note)lines.push(`DESCRIPTION:${escapeText(note)}`);
+    lines.push(`URL:${e.sources?.find(s=>s.provider==='GameG引用原公告')?.url||e.url}`,'TRANSP:TRANSPARENT','END:VEVENT');count++;
   }
   lines.push('END:VCALENDAR');return {count,text:lines.map(fold).join('\r\n')+'\r\n'};
 }

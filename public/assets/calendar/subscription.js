@@ -2,7 +2,7 @@ export function subscriptionUrl(chosen,metadata){
  const games=[],anime=[],missing=[]
  for(const [id,c] of chosen){
   if(c.kind==='anime'){if(metadata[id]?.anilist_id)anime.push(metadata[id].anilist_id);else missing.push(id)}
-  else games.push([id,[...new Set(c.types)].sort(),c.format,c.duration,...(c.boundaries?[c.boundaries]:[])])
+  else games.push([id,[...new Set(c.types)].sort(),c.format,c.duration,...(c.weapons===false?[c.boundaries||'both',false]:c.boundaries?[c.boundaries]:[])])
  }
  if(missing.length)return {url:null,missing}
  if(!games.length&&!anime.length)return {url:null,missing:[]}
@@ -20,7 +20,7 @@ export function selectionPayload(chosen,metadata){
 export function restoreSelection(encoded,metadata){
  const [v,games,anime]=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(encoded.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0))))
  if(v!==1)throw Error('不支持的日历设置')
- const chosen=new Map(games.map(([id,types,format,duration,boundaries])=>[id,{kind:'games',types,format,duration,...(boundaries?{boundaries}:{})}]))
+ const chosen=new Map(games.map(([id,types,format,duration,boundaries,weapons])=>[id,{kind:'games',types,format,duration,...(weapons===false?{weapons:false}:{}),...(boundaries?{boundaries}:{})}]))
  for(const anilist of anime){const id=Object.keys(metadata).find(id=>metadata[id].anilist_id===anilist);if(!id)throw Error('日历中有暂不能显示的动漫，请稍后重试');chosen.set(id,{kind:'anime'})}
  return chosen
 }
