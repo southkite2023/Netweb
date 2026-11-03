@@ -112,12 +112,12 @@ const messages = {
       closingText: '无论是否成为会员，都感谢你愿意花时间来到这个站点。对我而言，真正重要的是它能够持续被使用、被提出问题，也被一点点做得更好。'
     },
     manifesto: {
-      title: '宣言',
-      quote: '好奇心是比确定性更可靠的指南针。',
+      quote: '于暴雨中行走，伞是倒划天空的船',
       p1: '这个网站是一个不断变化的空间。',
       p2: '新的项目会在这里出现，旧的想法也可能消失。如有喜欢，可自行存档。'
     },
     footer: {
+      specialThanks: '特别鸣谢：',
       status: '节点状态：运行正常'
     }
   },
@@ -232,12 +232,12 @@ const messages = {
       closingText: 'Whether or not you become a member, thank you for spending some time here. What matters most to me is that this site keeps being used, questioned and gradually improved.'
     },
     manifesto: {
-      title: 'MANIFESTO',
-      quote: 'Curiosity is a better compass than certainty.',
+      quote: 'Walking through a downpour, an umbrella is a boat rowing across the sky upside down.',
       p1: 'This website is not a finished product. It is an evolving system.',
       p2: 'New projects will appear here. Old ideas may disappear. What remains is the process of exploration itself.'
     },
     footer: {
+      specialThanks: 'Special thanks:',
       status: 'NODE STATUS: OPERATIONAL'
     }
   },
@@ -352,12 +352,12 @@ const messages = {
       closingText: 'メンバーになるかどうかにかかわらず、このサイトに時間を使ってくれたことに感謝しています。使われ、疑問を投げかけられ、少しずつ良くなっていくことが、私にとって一番大切です。'
     },
     manifesto: {
-      title: 'マニフェスト',
-      quote: '確信よりも、好奇心のほうが優れた羅針盤だ。',
+      quote: '豪雨の中を歩く。傘は、空を逆さまに漕ぎ渡る船。',
       p1: 'このウェブサイトは完成品ではありません。進化し続けるシステムです。',
       p2: '新しいプロジェクトが現れ、古いアイデアは消えていくかもしれません。残るのは探求そのものです。'
     },
     footer: {
+      specialThanks: '特別感謝：',
       status: 'ノード状態：正常稼働'
     }
   }

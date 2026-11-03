@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteNav from '../components/SiteNav.vue'
-import { localizedField, projects } from '../data/projects'
+import { projects } from '../data/projects'
 import { experienceCopy } from '../data/experience'
 import { latestRelease } from '../data/latestRelease'
 import { SITE_VERSION } from '../data/version'
@@ -13,7 +13,6 @@ import dayBanner from '../assets/hero-day-observatory.jpg'
 import heroBanner from '../assets/hero-starry-observatory.jpg'
 
 const { t, locale } = useI18n()
-const featuredProjects = projects.slice(0, 3)
 const c = computed(() => experienceCopy[locale.value] || experienceCopy.zh)
 const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
 </script>
@@ -63,44 +62,10 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
         </aside>
       </div>
 
-    <section class="home-selected">
+    <section class="home-manifesto" aria-labelledby="home-quote">
       <div>
-        <div class="section-heading"><div><p class="section-label">01 / SELECTED PROJECTS</p><h2>{{ c.featured }}</h2><p>{{ c.featuredIntro }}</p></div><RouterLink to="/project">{{ c.projects }} ↗</RouterLink></div>
-
-        <div class="home-project-grid">
-          <RouterLink
-            v-for="project in featuredProjects"
-            :key="project.id"
-            class="home-project-card"
-            :to="`/projects/${project.id}`"
-          >
-            <img
-              class="home-project-image"
-              loading="lazy" decoding="async" width="640" height="480"
-              :src="project.image"
-              :alt="localizedField(project, 'title', locale)"
-            >
-
-            <div class="home-project-copy">
-              <span class="home-project-meta"><span>PROJECT / {{ project.id }}</span><span>{{ localizedField(project, 'status', locale) }}</span></span>
-              <h3>{{ localizedField(project, 'title', locale) }}</h3>
-              <p>{{ localizedField(project, 'summary', locale) }}</p>
-            </div>
-
-            <span class="home-project-arrow" aria-hidden="true">↗</span>
-          </RouterLink>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-manifesto">
-      <div>
-        <div class="section-label">
-          02 / {{ t('manifesto.title') }}
-        </div>
-
         <div class="quote">
-          <h2>
+          <h2 id="home-quote">
             {{ t('manifesto.quote') }}
           </h2>
 
@@ -116,10 +81,34 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
     </section>
       </main>
     </div>
-    <SiteFooter />
+    <SiteFooter>
+      <p class="home-thanks"><span>{{ t('footer.specialThanks') }}</span><a href="https://openai.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a></p>
+    </SiteFooter>
   </div>
 </template>
 
 <style scoped>
-.home-play-link{display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:.875rem;line-height:1.6;color:var(--intro-text)}.home-play-link>span:first-child,.home-play-link>span:last-child{color:var(--accent)}.home-play-link>span:nth-child(2){flex:1}.home-play-link:hover{color:var(--accent)}
+.home-thanks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 .4em;
+  margin: 0;
+  padding-inline-end: 76px;
+  min-height: 44px;
+  line-height: 1.8;
+}
+.home-thanks a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.home-thanks a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
 </style>

@@ -19,6 +19,7 @@ import beianIcon from '../assets/beian-icon.png'
           <img loading="lazy" decoding="async" class="beian-icon" :src="beianIcon" alt="" aria-hidden="true"><span>川公网安备51050202000608号</span>
         </a>
       </div>
+      <slot />
     </div>
   </footer>
 </template>
