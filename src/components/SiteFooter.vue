@@ -10,7 +10,10 @@ import beianIcon from '../assets/beian-icon.png'
     <div class="container footer-content">
       <div class="footer-main">
         <span>Copyright © 2026-至今 北住孤居</span>
-        <RouterLink to="/about">YUASHIE · v{{ SITE_VERSION }}</RouterLink>
+        <div class="footer-version">
+          <RouterLink to="/about">YUASHIE · v{{ SITE_VERSION }}</RouterLink>
+          <slot />
+        </div>
       </div>
       <LegalLinks />
       <div class="filing-links">
@@ -19,7 +22,18 @@ import beianIcon from '../assets/beian-icon.png'
           <img loading="lazy" decoding="async" class="beian-icon" :src="beianIcon" alt="" aria-hidden="true"><span>川公网安备51050202000608号</span>
         </a>
       </div>
-      <slot />
     </div>
   </footer>
 </template>
+
+<style scoped>
+.footer-version {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+@media (max-width: 820px) {
+  .footer-version { align-items: flex-start; }
+}
+</style>

@@ -95,17 +95,15 @@ const latest = computed(() => latestRelease[locale.value] || latestRelease.zh)
   flex-wrap: wrap;
   gap: 0 .4em;
   margin: 0;
-  padding-inline-end: 76px;
-  min-height: 44px;
+  min-height: 24px;
   line-height: 1.8;
 }
 .home-thanks a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 24px;
   color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 .home-thanks a:focus-visible {
   outline: 2px solid var(--accent);
