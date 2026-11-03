@@ -10,7 +10,7 @@ export function assetCachePlugin() {
     name: 'yuashie-asset-cache',
     configResolved(config) {
       root = config.root
-      icons = ['favicon.png', 'apple-touch-icon.png'].map(name => {
+      icons = ['favicon.png', 'favicon.svg', 'apple-touch-icon.png'].map(name => {
         const data = readFileSync(resolve(root, 'public', name))
         return { name, data, url: `/assets/cached/icons/${digest(data)}/${name}` }
       })
@@ -22,7 +22,7 @@ export function assetCachePlugin() {
       }))
     },
     transformIndexHtml(html) {
-      for (const icon of icons) html = html.replace(`/${icon.name}?v=3`, icon.url)
+      for (const icon of icons) html = html.replace(`/${icon.name}?v=4`, icon.url)
       return html
     },
     resolveId(id) { if (id === 'virtual:live2d-assets') return virtual },
