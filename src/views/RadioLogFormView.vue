@@ -52,12 +52,12 @@ onMounted(load)
 </script>
 
 <template>
-<div class="radio-page"><div class="container"><SiteNav/><RadioSubnav/><main class="radio-main radio-form-main">
+<div class="radio-page radio-qso-page"><div class="container"><SiteNav/><RadioSubnav/><main class="radio-main radio-form-main radio-qso-main">
 <header class="radio-hero compact"><p class="auth-kicker">{{copy.kicker}}</p><h1>{{copy.title}}</h1><p>{{copy.intro}}</p></header>
 <PrivacyNotice kind="radioLog" />
 <p v-if="error" class="form-error">{{error}}</p>
 <form class="radio-form-panel" @submit.prevent="save">
-<section class="radio-fieldset"><h2>{{copy.basic}}</h2><div class="radio-form-grid">
+<section class="radio-fieldset qso-basic"><h2>{{copy.basic}}</h2><div class="radio-form-grid">
 <label><span>{{copy.call}}</span><input v-model.trim="form.remoteCallsign" maxlength="20" required placeholder="JA1XXX" @input="form.remoteCallsign=form.remoteCallsign.toUpperCase()"></label>
 <label><span>{{copy.date}}</span><input v-model="form.date" type="date" required></label>
 <label><span>{{copy.time}}</span><input v-model="form.time" type="time" required></label>
@@ -65,14 +65,74 @@ onMounted(load)
 <label><span>{{copy.mode}}</span><select v-model="form.mode"><option v-for="mode in modes" :key="mode" :value="mode">{{mode}}</option><option value="OTHER">OTHER</option></select></label>
 <label v-if="form.mode==='OTHER'"><span>{{copy.custom}}</span><input v-model.trim="customMode" maxlength="20" required placeholder="FREEDV"></label>
 </div></section>
-<section class="radio-fieldset"><h2>{{copy.signal}}</h2><div class="radio-form-grid">
+<section class="radio-fieldset qso-signal"><h2>{{copy.signal}}</h2><div class="radio-form-grid">
 <label><span>{{copy.rstS}}</span><input v-model.trim="form.rstSent" maxlength="12" placeholder="59"></label><label><span>{{copy.rstR}}</span><input v-model.trim="form.rstReceived" maxlength="12" placeholder="59"></label>
 <label><span>{{copy.powerS}}</span><input v-model="form.powerSentW" type="number" min="0" step="0.1" placeholder="20"></label><label><span>{{copy.powerR}}</span><input v-model="form.powerReceivedW" type="number" min="0" step="0.1" placeholder="100"></label>
 </div></section>
-<section class="radio-fieldset"><h2>{{copy.station}}</h2><div class="radio-form-grid">
-<label><span>{{copy.qth}}</span><input v-model="form.qth" maxlength="120"></label><label><span>{{copy.rig}}</span><input v-model="form.rig" maxlength="120"></label><label class="wide"><span>{{copy.antenna}}</span><input v-model="form.antenna" maxlength="160"></label><label class="wide"><span>{{copy.notes}}</span><textarea v-model="form.notes" maxlength="1000" rows="5"></textarea></label>
+<section class="radio-fieldset qso-station"><h2>{{copy.station}}</h2><div class="radio-form-grid">
+<label><span>{{copy.qth}}</span><input v-model="form.qth" maxlength="120"></label><label><span>{{copy.rig}}</span><input v-model="form.rig" maxlength="120"></label><label><span>{{copy.antenna}}</span><input v-model="form.antenna" maxlength="160"></label><label class="wide"><span>{{copy.notes}}</span><textarea v-model="form.notes" maxlength="1000" rows="2"></textarea></label>
 </div></section>
 <section class="radio-fieldset"><h2>{{copy.card}}</h2><div class="radio-check-grid"><label><input v-model="form.qslRequested" type="checkbox">{{copy.requested}}</label><label><input v-model="form.qslSent" type="checkbox">{{copy.sent}}</label><label><input v-model="form.qslReceived" type="checkbox">{{copy.received}}</label></div></section>
 <div class="radio-form-actions"><button class="primary-action" :disabled="busy" type="submit">{{copy.save}}</button><RouterLink class="secondary-action" to="/003/radio/log">{{copy.cancel}}</RouterLink></div>
 </form></main></div><SiteFooter/></div>
 </template>
+
+<style scoped>
+/* Keep the complete QSO entry within a typical desktop viewport. */
+.radio-qso-page {
+  --glass-surface: rgba(26, 32, 35, .62);
+  --glass-border: rgba(210, 231, 220, .16);
+  --glass-highlight: rgba(255, 255, 255, .07);
+  background: radial-gradient(ellipse at 10% 30%, rgba(181, 228, 129, .09), transparent 60%), var(--bg);
+}
+:root[data-theme="light"] .radio-qso-page {
+  --glass-surface: rgba(255, 255, 255, .62);
+  --glass-border: rgba(65, 90, 72, .18);
+  --glass-highlight: rgba(255, 255, 255, .65);
+}
+.radio-qso-main { max-width: 1160px; min-height: 0; padding: 16px 0 24px; }
+.radio-hero.compact { max-width: none; margin-bottom: 12px; }
+.radio-hero.compact h1 { font-size: 30px; line-height: 1.2; letter-spacing: -.03em; margin: 5px 0 6px; }
+.radio-hero.compact > p:not(.auth-kicker) { max-width: none; font-size: 12px; line-height: 1.5; }
+.auth-kicker { font-size: 9px; }
+.radio-qso-main :deep(.privacy-notice) { margin: 0 0 12px; padding: 9px 12px; gap: 10px; font-size: 11px; line-height: 1.5; }
+.radio-qso-main :deep(.privacy-notice p) { margin: 0; font-size: inherit; line-height: inherit; }
+.radio-qso-main :deep(.privacy-notice a) { padding: 0; font-size: 10px; }
+.form-error { margin: 0 0 8px; padding: 5px 10px; font-size: 11px; }
+.radio-form-panel { padding: 14px 18px; background: var(--glass-surface); -webkit-backdrop-filter: blur(22px) saturate(145%); backdrop-filter: blur(22px) saturate(145%); }
+.radio-fieldset { padding: 8px 0; }
+.radio-fieldset h2 { font-size: 10px; margin-bottom: 8px; }
+.radio-form-grid { gap: 8px 12px; }
+.qso-basic .radio-form-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.qso-signal .radio-form-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.qso-station .radio-form-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.radio-form-grid label { min-width: 0; gap: 4px; font-size: 10px; letter-spacing: .03em; }
+.radio-form-grid input, .radio-form-grid select, .radio-form-grid textarea { min-width: 0; min-height: 32px; height: 32px; padding: 5px 9px; font-family: inherit; font-size: 12px; line-height: 1.5; }
+.radio-form-grid textarea { height: 44px; min-height: 44px; resize: vertical; }
+.radio-check-grid { gap: 10px 22px; }
+.radio-check-grid label { font-size: 12px; gap: 6px; }
+.radio-check-grid input { width: 15px; height: 15px; }
+.radio-form-actions { margin-top: 8px; gap: 8px; }
+.radio-form-actions .primary-action, .radio-form-actions .secondary-action { min-height: 34px; padding: 7px 14px; font-size: 12px; }
+@media (min-width: 1001px) {
+  .radio-fieldset { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; align-items: start; }
+  .radio-fieldset h2 { padding-top: 4px; margin: 0; }
+  .radio-qso-main :deep(.privacy-notice) { display: flex; align-items: center; }
+  .radio-qso-main :deep(.privacy-notice a) { flex-shrink: 0; }
+}
+@media (max-width: 1000px) {
+  .qso-basic .radio-form-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .radio-qso-main { padding-top: 16px; }
+  .radio-hero.compact h1 { font-size: 26px; }
+  .radio-form-panel { padding: 14px; }
+  .qso-basic .radio-form-grid, .qso-signal .radio-form-grid, .qso-station .radio-form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .radio-form-grid label.wide { grid-column: 1 / -1; }
+  .radio-form-grid input, .radio-form-grid select { height: 36px; min-height: 36px; font-size: 16px; }
+  .radio-form-grid textarea { font-size: 16px; }
+  .radio-check-grid { display: flex; flex-wrap: wrap; gap: 10px 14px; }
+  .radio-form-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .radio-form-actions > * { justify-content: center; }
+}
+</style>
