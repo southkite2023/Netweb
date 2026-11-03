@@ -47,8 +47,9 @@ export const projects = [
     type: { zh: '游戏服务器', en: 'Game server', ja: 'ゲームサーバー' },
     version: '26.2',
     year: '2026',
-    image: new URL('../assets/projects/project-002.svg', import.meta.url).href,
-    imageWidth: 1280, imageHeight: 800,
+    image: new URL('../assets/projects/project-002-night.webp', import.meta.url).href,
+    imageLight: new URL('../assets/projects/project-002-day.webp', import.meta.url).href,
+    imageWidth: 1600, imageHeight: 900,
   },
   {
     id: '003',

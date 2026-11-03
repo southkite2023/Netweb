@@ -1,4 +1,5 @@
 import { projects, localizedField } from './projects'
+import { isLightMode } from '../lib/theme'
 import { experienceCopy } from './experience'
 import { calendarCopy } from './calendar'
 
@@ -6,7 +7,8 @@ export function projectEntries(locale = 'zh') {
   return projects.map(project => ({
     path: `/projects/${project.id}`, href: project.externalUrl,
     title: localizedField(project, 'title', locale), description: localizedField(project, 'summary', locale),
-    category: 'projects', code: project.id, image: project.image,
+    category: 'projects', code: project.id,
+    image: project.imageLight && isLightMode.value ? project.imageLight : project.image,
     keywords: Object.values(project.title).join(' ') + ' ' + Object.values(project.type).join(' '),
   }))
 }

@@ -10,6 +10,7 @@ import RadioProjectPanel from '../components/RadioProjectPanel.vue'
 import QuotaProjectIntro from '../components/QuotaProjectIntro.vue'
 import CalendarProjectIntro from '../components/CalendarProjectIntro.vue'
 import { localizedField, projects } from '../data/projects'
+import { isLightMode } from '../lib/theme'
 
 const route = useRoute()
 const { t, locale } = useI18n()
@@ -38,7 +39,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
         </header>
 
         <figure v-if="!['001', '004'].includes(project.id)" class="detail-visual">
-          <img decoding="async" :width="project.imageWidth" :height="project.imageHeight" :src="project.image" :alt="localizedField(project, 'title', locale)">
+          <img decoding="async" :width="project.imageWidth" :height="project.imageHeight" :src="project.imageLight && isLightMode ? project.imageLight : project.image" :alt="localizedField(project, 'title', locale)">
         </figure>
 
         <section v-if="!['001', '004'].includes(project.id)" class="detail-content">
