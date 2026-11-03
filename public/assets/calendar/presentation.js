@@ -9,6 +9,6 @@ export function orderedGames(games, metadata) {
 }
 export function coverageLabel(meta) {
   const count = verifiedTypeCount(meta);
-  if(!count && gameTypes.some(type => meta.coverage_types?.[type] === 'partial')) return '已知部分日期 · 尚有缺项';
-  return count === 3 ? '三类日期已核实' : count ? `${count}/3 类已核实 · 缺项后续补充` : '尚缺三类日期';
+  if(!count && gameTypes.some(type => meta.coverage_types?.[type] === 'partial')) return '已知部分日期 · 查看缺项原因';
+  return count === 3 ? '三类日期已收录' : count ? `${count}/3 类已收录 · 查看缺项原因` : '未收录日期 · 查看原因';
 }
