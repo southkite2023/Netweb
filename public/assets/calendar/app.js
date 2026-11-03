@@ -67,7 +67,7 @@ function dateRow(id,type,meta){
  const review=dateReview(id,type,meta),row=document.createElement('li');row.className='date-review';
  const title=document.createElement('strong');title.textContent=types[type]+'：'+review.label;row.append(title);
  const reason=document.createElement('p');reason.textContent=review.reason;row.append(reason);
- const records=meta.source_records?.[type]||[];
+ const original=meta.source_records?.[type]||[];const extra=type==='banner'?(meta.supplemental_banners||[]).filter(r=>!original.some(o=>o.start?.slice(0,10)===r.start.slice(0,10)&&o.end?.slice(0,10)===r.end.slice(0,10))):[];const records=[...extra,...original].sort((a,b)=>(b.start||'').localeCompare(a.start||''));
  if(records.length){
   title.textContent=types[type]+'：来源已列出 '+records.length+' 条日期';
   const labels={confirmed:'已确认',inferred:'推算',estimated:'预计',unknown:'来源未标确认'};
@@ -78,7 +78,7 @@ function dateRow(id,type,meta){
    const name=document.createElement('strong');name.textContent=record.name;item.append(name);
    for(const boundary of ['start','end'])if(record[boundary]){const line=document.createElement('p');line.textContent=(boundary==='start'?'开始：':'结束：')+time(record[boundary])+'（北京时间） · '+(labels[record.certainty?.[boundary]]||labels.unknown);item.append(line);}
    if(record.note){const note=document.createElement('p');note.textContent=record.note;item.append(note);}
-   const link=document.createElement('a');link.href=record.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='GameG 来源';item.append(link);
+   const link=document.createElement('a');link.href=record.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=record.provider||'GameG 来源';item.append(link);
    for(const url of record.sources||[]){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='引用公告';item.append(' · ',a);}
    if(index<3)list.append(item);else{let more=list.querySelector('details');if(!more){more=document.createElement('details');const summary=document.createElement('summary');summary.textContent='展开其余 '+(records.length-3)+' 条来源记录';more.append(summary);list.append(more);}more.append(item);}
   }
@@ -99,7 +99,8 @@ function openOptions(id,name,button,kind){
  editing=id;editingKind=kind;opener=button;$('#dialog-title').textContent=name;$('#form-error').textContent='';
  const game=kind==='games';$('#game-controls').hidden=!game;$('#anime-control').hidden=game;
  const config=chosen.get(id)||{};document.querySelectorAll('[name=type]').forEach(x=>x.checked=(config.types||Object.keys(types)).includes(x.value));
- document.querySelectorAll('[name=format]').forEach(x=>x.checked=x.value===(config.format||'exact'));
+ document.querySelectorAll('[name=boundary]').forEach(x=>{x.checked=!config.boundaries||config.boundaries==='both'||config.boundaries===x.value;});
+ const latest=metadata[id].supplemental_banners||[];$('#banner-highlight').hidden=!game||!latest.length;$('#banner-highlight').textContent=latest.map(r=>r.name+'：'+r.start.slice(5,10)+' 至 '+r.end.slice(5,10)+(r.certainty.end==='confirmed'?'':'（社区排期）')).join('；');
  $('#duration').checked=!!config.duration;$('#anime-release').checked=true;$('#remove').disabled=!chosen.has(id);$('#options').showModal();
 }
 $('#open-details').onclick=()=>{
@@ -116,7 +117,7 @@ $('#options').addEventListener('close',()=>{(opener?.isConnected?opener:document
 $('#remove').onclick=()=>{chosen.delete(editing);$('#options').close();selectionChanged();};
 $('#options-form').onsubmit=e=>{
  e.preventDefault();if(editingKind==='anime'){if($('#anime-release').checked)chosen.set(editing,{kind:'anime'});else chosen.delete(editing);}
- else{const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}chosen.set(editing,{kind:'games',types:selected,format:$('[name=format]:checked').value,duration:$('#duration').checked});}
+ else{const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}const edges=[...document.querySelectorAll('[name=boundary]:checked')].map(x=>x.value);if(!edges.length){$('#form-error').textContent='开始时间和结束时间至少勾选一项。';return;}chosen.set(editing,{kind:'games',types:selected,format:'exact',duration:$('#duration').checked,boundaries:edges.length===2?'both':edges[0]});}
  $('#options').close();selectionChanged();
 };
 $('#games-scope').onchange=()=>{const filter=$('#games-filter');filter.replaceChildren();const all=document.createElement('option');all.value='all';all.textContent='全部游戏公司';filter.append(all);for(const [name,count] of companyOptions(gameList())){const option=document.createElement('option');option.value=name;option.textContent=name+' · '+count;filter.append(option);}if(auditData)renderWikiAudit(auditData);else draw();};
@@ -156,7 +157,7 @@ function renderWikiAudit(data){
  for(const g of data.games){
   if($('#games-scope').value!=='all'&&!catalog.focus_games.includes(g.game_id))continue;
   const m=metadata[g.game_id];if(!m)continue;
-  const monitor=g.monitor||{};m.event_count=g.event_count??m.event_count;m.event_types=g.event_types??m.event_types;m.server=g.server;m.coverage_types={...g.types,...monitor.source_types};m.source_records={...g.source_records,...monitor.source_records};m.source_reviews={...g.source_reviews,...monitor.source_reviews};m.date_summary={...m.date_summary,...g.date_summary,...monitor.date_summary};for(const t of monitor.covered_types||g.covered_types||[])if(m.coverage_types[t]!=='verified')delete m.date_summary[t];if(g.timeline_source)m.url=g.timeline_source.url;
+  m.supplemental_banners=g.supplemental_banners||[];const monitor=g.monitor||{};m.event_count=g.event_count??m.event_count;m.event_types=g.event_types??m.event_types;m.server=g.server;m.coverage_types={...g.types,...monitor.source_types};m.source_records={...g.source_records,...monitor.source_records};m.source_reviews={...g.source_reviews,...monitor.source_reviews};m.date_summary={...m.date_summary,...g.date_summary,...monitor.date_summary};for(const t of monitor.covered_types||g.covered_types||[])if(m.coverage_types[t]!=='verified')delete m.date_summary[t];if(g.timeline_source)m.url=g.timeline_source.url;
   m.label=coverageLabel(m)+(m.event_count?' · '+m.event_count+'条已收录日程':' · 暂无已收录日程');
   m.monitor_note=!g.monitor?'自动监测状态尚未读取；以下是逐项核查记录。':(monitor.mode==='auto'?'日期来源自动检查。':'目前只自动监测Wiki页面变化，不自动提取新日期。')+(monitor.error?'读取或解析失败，保留上次有效数据。':monitor.message||'')+(monitor.stale?'监测已延迟。':'');
   const p=document.createElement('div');p.className='audit-game';const name=document.createElement('strong');name.textContent=g.name+'（'+(g.server==='global'?'国际服':'国服')+'）';p.append(name,' · '+m.label+'。'+m.monitor_note);

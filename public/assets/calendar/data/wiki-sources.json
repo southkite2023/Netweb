@@ -410,7 +410,41 @@
             "url": "https://www.gameg.site/"
           }
         ]
-      }
+      },
+      "supplemental_banners": [
+        {
+          "id": "genshin-7.2-1",
+          "name": "7.2 第一期 · 米提亚、芙宁娜",
+          "start": "2026-11-04",
+          "end": "2026-11-24T17:59:00+08:00",
+          "certainty": {
+            "start": "confirmed",
+            "end": "confirmed"
+          },
+          "provider": "原神官方公告",
+          "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167139",
+          "sources": [
+            "https://genshin.hoyoverse.com/m/en/news/detail/167098"
+          ],
+          "note": "11月4日版本更新后开启，未指定开服钟点。开始提醒按日期记录。"
+        },
+        {
+          "id": "genshin-7.2-2",
+          "name": "7.2 第二期 · 兹白、莉奈娅",
+          "start": "2026-11-24T18:00:00+08:00",
+          "end": "2026-12-15T15:00:00+08:00",
+          "certainty": {
+            "start": "estimated",
+            "end": "estimated"
+          },
+          "provider": "BannerHistory 排期",
+          "url": "https://bannerhistory.app/zh/genshin-pickup-history",
+          "sources": [
+            "https://wiki.bittopup.com/zh-CN/genshin/banner"
+          ],
+          "note": "北京时间。BannerHistory列15:00关闭，Wiki列最后可抽分钟14:59。尚未查到第二期官方精确起止公告，暂不导出为确认提醒。"
+        }
+      ]
     },
     {
       "game_id": "starrail",

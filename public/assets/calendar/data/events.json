@@ -7226,6 +7226,62 @@
       "revision": 1,
       "created_at": "2026-11-03T02:34:18+00:00",
       "updated_at": "2026-11-03T02:34:18+00:00"
+    },
+    {
+      "id": "ff38f7cc-ba4a-5531-970a-7938bf58a1b0",
+      "category": "game",
+      "game": {
+        "game_id": "genshin",
+        "server": "cn"
+      },
+      "event_type": "banner",
+      "title": "原神 · 7.2 第一期 · 米提亚、芙宁娜",
+      "description": "11月4日版本更新后开启，未指定开服钟点。开始提醒按日期记录。",
+      "boundary": "start",
+      "official_supplement": true,
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "date",
+      "start": "2026-11-04",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "sources": [
+        {
+          "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167139",
+          "provider": "原神官方公告"
+        }
+      ],
+      "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167139",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "revision": 1
+    },
+    {
+      "id": "dc86e629-7ef2-5e1a-8d09-dbe4d02f8264",
+      "category": "game",
+      "game": {
+        "game_id": "genshin",
+        "server": "cn"
+      },
+      "event_type": "banner",
+      "title": "原神 · 7.2 第一期 · 米提亚、芙宁娜 · 结束提醒",
+      "description": "11月4日版本更新后开启，未指定开服钟点。开始提醒按日期记录。",
+      "boundary": "end",
+      "official_supplement": true,
+      "status": "confirmed",
+      "schedule_state": "scheduled",
+      "time_kind": "datetime",
+      "start": "2026-11-24T17:59:00+08:00",
+      "end": null,
+      "timezone": "Asia/Shanghai",
+      "sources": [
+        {
+          "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167139",
+          "provider": "原神官方公告"
+        }
+      ],
+      "url": "https://genshin.hoyoverse.com/zh-tw/news/detail/167139",
+      "updated_at": "2026-11-03T00:00:00Z",
+      "revision": 1
     }
   ]
 }
