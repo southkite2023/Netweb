@@ -138,9 +138,10 @@ export const projects = [
         "ja": "現在は紹介のみで、機能は本サイトに未接続です。進捗はGitHubをご覧ください。"
     },
     "year": "2026",
-    "imageWidth": 1280,
-    "imageHeight": 800,
-    image: new URL('../assets/projects/project-005.svg', import.meta.url).href,
+    "imageWidth": 1600,
+    "imageHeight": 900,
+    image: new URL('../assets/projects/project-005-night.webp', import.meta.url).href,
+    imageLight: new URL('../assets/projects/project-005-day.webp', import.meta.url).href,
   },
   {
     "id": "006",
