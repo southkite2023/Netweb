@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { api } from '../lib/api'
 import { auth } from '../lib/auth'
 
-const SERVER_ADDRESS = 's205.singsi.cn:19854'
+const SERVER_ADDRESS = '139.155.146.68:25565'
 const { locale } = useI18n()
 const minecraftName = ref('')
 const account = ref(null)
@@ -17,7 +17,7 @@ const copy = computed(() => ({
   zh: {
     label: '02 / SERVER ACCESS',
     title: '加入服务器白名单',
-    intro: '使用你的 YUASHIE Account 绑定一个 Minecraft Java Edition ID。每个网站账号只能绑定一个 MC ID，同一个 MC ID 也只能绑定一次。',
+    intro: '登录网站后填写你的 Minecraft Java 玩家名，查询官方 UUID 后自动加入白名单，无需审核或 Microsoft 授权。进服时仍需正版登录。每个网站账号绑定一个 MC ID。',
     loginTitle: '需要先登录',
     loginText: '白名单登记与网站账号绑定。登录后会自动返回项目 002。',
     login: '登录后登记',
@@ -41,7 +41,7 @@ const copy = computed(() => ({
   en: {
     label: '02 / SERVER ACCESS',
     title: 'Join the server whitelist',
-    intro: 'Bind one Minecraft Java Edition ID to your YUASHIE Account. Each site account can bind one MC ID, and each MC ID can only be bound once.',
+    intro: 'Enter your Java player name. The site resolves its official UUID and adds it automatically, with no review or Microsoft callback. Joining the game still requires an official authenticated session. One ID per site account.',
     loginTitle: 'Sign in required',
     loginText: 'Whitelist registration is tied to your site account. You will return to Project 002 after signing in.',
     login: 'Sign in to register',
@@ -65,7 +65,7 @@ const copy = computed(() => ({
   ja: {
     label: '02 / SERVER ACCESS',
     title: 'サーバーのホワイトリストに参加',
-    intro: 'YUASHIE Account に Minecraft Java Edition の ID を1つ紐付けます。サイトアカウント1つにつきMC IDは1つ、同じMC IDも1回だけ登録できます。',
+    intro: 'Java版のプレイヤー名を入力すると、公式UUIDを取得して自動追加します。承認やMicrosoft認証画面は不要です。ゲームへの接続には正規のログインが必要です。',
     loginTitle: 'ログインが必要です',
     loginText: 'ホワイトリスト登録はサイトアカウントに紐付きます。ログイン後、自動的に Project 002 に戻ります。',
     login: 'ログインして登録',
@@ -101,7 +101,17 @@ async function loadAccount() {
   loading.value = true
   error.value = ''
   try {
-    account.value = (await api.minecraftAccount()).account
+    const data = await api.minecraftAccount()
+    account.value = data.account
+    if (account.value && !account.value.uuid) account.value.status = 'pending'
+    if (data.access === 'removed') {
+      account.value.status = 'error'
+      account.value.syncMessage = '管理员已移除白名单，网站不会自动补回。请联系管理员。'
+    }
+    if (data.access === 'unavailable') {
+      account.value.status = 'error'
+      account.value.syncMessage = '暂时无法查询服务器，请稍后刷新。'
+    }
   } catch (e) {
     error.value = e.message
   } finally {
@@ -186,7 +196,8 @@ watch(() => [auth.ready, auth.user?.id], loadAccount, { immediate: true })
           <strong :class="`minecraft-status-${account.status}`">{{ statusText }}</strong>
         </div>
         <p class="minecraft-lock-note">{{ copy.locked }}</p>
-        <button v-if="account.status !== 'active'" class="secondary-action" type="button" :disabled="busy" @click="retrySync">
+        <p v-if="account.syncMessage" role="status">{{ account.syncMessage }}</p>
+        <button v-if="account.status !== 'active' && !account.syncedAt" class="secondary-action" type="button" :disabled="busy" @click="retrySync">
           {{ busy ? copy.retrying : copy.retry }}
         </button>
       </div>
