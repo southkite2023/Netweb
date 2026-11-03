@@ -1,3 +1,4 @@
+import { registerMinecraft } from './minecraft.js'
 import { registerMembership } from './membership.js'
 import { registerCalendarFeed } from './calendar-feed.js'
 import Fastify from 'fastify'
@@ -36,8 +37,6 @@ await app.register(rateLimit, { max: 120, timeWindow: '1 minute' })
 app.addHook('onRequest', async (req, reply) => {
   // Only this exact payment callback bypasses browser CSRF; the handler requires an Alipay signature.
   if (req.method === 'POST' && req.url.split('?')[0] === '/api/payments/alipay/notify') return
-  // Bridge callbacks use independently validated bearer credentials, never browser sessions.
-  if (/^\/api\/minecraft\/bridge\/\d+\/(complete|fail)$/.test(req.url.split('?')[0]) && !req.cookies[COOKIE]) return
   if (!['GET', 'HEAD', 'OPTIONS'].includes(req.method)) {
     if (req.headers.origin !== ORIGIN || req.headers['sec-fetch-site'] === 'cross-site') {
       return reply.code(403).send({ message: 'Invalid request origin.' })
@@ -475,159 +474,7 @@ app.patch('/api/users/me/badge', async (req, reply) => {
   return { user: await publicUser(rows[0]) }
 })
 
-function minecraftAccount(row) {
-  if (!row) return null
-  return {
-    minecraftName: row.minecraft_name,
-    status: row.status,
-    syncMessage: row.sync_message || '',
-    syncedAt: row.synced_at,
-    createdAt: row.created_at,
-    updatedAt: row.updated_at,
-  }
-}
-
-function bridgeToken() {
-  return (process.env.MC_BRIDGE_TOKEN || process.env.MC_RCON_PASSWORD || '').trim()
-}
-
-function secureTextEqual(left, right) {
-  const a = Buffer.from(String(left || ''), 'utf8')
-  const b = Buffer.from(String(right || ''), 'utf8')
-  return a.length === b.length && a.length > 0 && crypto.timingSafeEqual(a, b)
-}
-
-async function requireMinecraftBridge(req, reply) {
-  const expected = bridgeToken()
-  if (!expected) {
-    reply.code(503).send('Minecraft bridge authentication is not configured.')
-    return false
-  }
-  const header = String(req.headers.authorization || '')
-  const provided = header.startsWith('Bearer ') ? header.slice(7).trim() : ''
-  if (!secureTextEqual(provided, expected)) {
-    reply.code(401).send('Unauthorized.')
-    return false
-  }
-  return true
-}
-
-app.get('/api/minecraft/me', async (req, reply) => {
-  const user = await requireUser(req, reply)
-  if (!user) return
-  const { rows } = await pool.query('SELECT * FROM minecraft_accounts WHERE user_id=$1', [user.id])
-  return { account: minecraftAccount(rows[0]) }
-})
-
-app.post('/api/minecraft/bind', {
-  config: { rateLimit: { max: 3, timeWindow: '1 day' } },
-}, async (req, reply) => {
-  const user = await requireUser(req, reply)
-  if (!user) return
-  const minecraftName = String(req.body?.minecraftName || '').trim()
-  if (!/^[A-Za-z0-9_]{3,16}$/.test(minecraftName)) {
-    return reply.code(400).send({ message: 'Minecraft ID must be 3-16 letters, numbers, or underscores.' })
-  }
-
-  try {
-    const { rows } = await pool.query(`
-      INSERT INTO minecraft_accounts(user_id,minecraft_name,status,sync_message)
-      VALUES($1,$2,'pending','Waiting for Minecraft server bridge.')
-      RETURNING *
-    `, [user.id, minecraftName])
-    return reply.code(202).send({ account: minecraftAccount(rows[0]) })
-  } catch (error) {
-    if (error.code === '23505') {
-      const { rows: own } = await pool.query('SELECT * FROM minecraft_accounts WHERE user_id=$1', [user.id])
-      if (own[0]) return reply.code(409).send({ message: 'This Yuashie Account has already bound a Minecraft ID.' })
-      return reply.code(409).send({ message: 'This Minecraft ID is already bound to another Yuashie Account.' })
-    }
-    throw error
-  }
-})
-
-app.post('/api/minecraft/sync', {
-  config: { rateLimit: { max: 6, timeWindow: '1 hour' } },
-}, async (req, reply) => {
-  const user = await requireUser(req, reply)
-  if (!user) return
-  const { rows } = await pool.query('SELECT * FROM minecraft_accounts WHERE user_id=$1', [user.id])
-  if (!rows[0]) return reply.code(404).send({ message: 'No Minecraft ID is bound to this account.' })
-  if (rows[0].status === 'active') return { account: minecraftAccount(rows[0]) }
-  const { rows: updated } = await pool.query(`
-    UPDATE minecraft_accounts
-    SET status='pending',sync_message='Waiting for Minecraft server bridge.',updated_at=NOW()
-    WHERE user_id=$1
-    RETURNING *
-  `, [user.id])
-  return reply.code(202).send({ account: minecraftAccount(updated[0]) })
-})
-
-// Private pull endpoint used by YuashieWhitelistBridge. The response is TSV
-// rather than JSON so the Paper plugin stays dependency-free.
-app.get('/api/minecraft/bridge/pending', async (req, reply) => {
-  if (!await requireMinecraftBridge(req, reply)) return
-  const requestedLimit = Number(req.query?.limit || 50)
-  const limit = Number.isInteger(requestedLimit) ? Math.max(1, Math.min(requestedLimit, 200)) : 50
-  const { rows } = await pool.query(`
-    SELECT id,minecraft_name
-    FROM minecraft_accounts
-    WHERE status='pending'
-    ORDER BY created_at ASC,id ASC
-    LIMIT $1
-  `, [limit])
-  const body = rows.map(row => `${row.id}\t${row.minecraft_name}`).join('\n')
-  return reply.type('text/plain; charset=utf-8').send(body)
-})
-
-app.post('/api/minecraft/bridge/:id/complete', async (req, reply) => {
-  if (!await requireMinecraftBridge(req, reply)) return
-  const id = Number(req.params.id)
-  if (!Number.isSafeInteger(id) || id <= 0) return reply.code(400).type('text/plain').send('Invalid binding id.')
-
-  const client = await pool.connect()
-  try {
-    await client.query('BEGIN')
-    const { rows } = await client.query(`
-      UPDATE minecraft_accounts
-      SET status='active',sync_message='Whitelisted by YuashieWhitelistBridge.',synced_at=NOW(),updated_at=NOW()
-      WHERE id=$1
-      RETURNING user_id
-    `, [id])
-    if (!rows[0]) {
-      await client.query('ROLLBACK')
-      return reply.code(404).type('text/plain').send('Binding not found.')
-    }
-    await client.query(`
-      INSERT INTO user_badges(user_id,badge_key,source)
-      VALUES($1,'minecraft_pioneer','automatic')
-      ON CONFLICT DO NOTHING
-    `, [rows[0].user_id])
-    await client.query('COMMIT')
-    return reply.type('text/plain').send('OK')
-  } catch (error) {
-    await client.query('ROLLBACK')
-    throw error
-  } finally {
-    client.release()
-  }
-})
-
-app.post('/api/minecraft/bridge/:id/fail', {
-  bodyLimit: 2048,
-}, async (req, reply) => {
-  if (!await requireMinecraftBridge(req, reply)) return
-  const id = Number(req.params.id)
-  if (!Number.isSafeInteger(id) || id <= 0) return reply.code(400).type('text/plain').send('Invalid binding id.')
-  const message = String(req.body || 'Minecraft whitelist operation failed.').replace(/[\r\n]+/g, ' ').slice(0, 1000)
-  const { rowCount } = await pool.query(`
-    UPDATE minecraft_accounts
-    SET status='error',sync_message=$1,updated_at=NOW()
-    WHERE id=$2
-  `, [message, id])
-  if (!rowCount) return reply.code(404).type('text/plain').send('Binding not found.')
-  return reply.type('text/plain').send('OK')
-})
+registerMinecraft(app, { pool, requireUser, origin: ORIGIN, cookieName: COOKIE })
 
 app.get('/api/projects/:projectId/comments', async (req, reply) => {
   const projectId = req.params.projectId
