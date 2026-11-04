@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { api } from '../lib/api'
 import { auth } from '../lib/auth'
 
-const SERVER_ADDRESS = '139.155.146.68:25565'
+const SERVER_ADDRESS = 'mc.yuashie.cn'
 const { locale } = useI18n()
 const minecraftName = ref('')
 const account = ref(null)
@@ -12,6 +12,7 @@ const loading = ref(false)
 const busy = ref(false)
 const error = ref('')
 const copied = ref(false)
+const copyFailed = ref(false)
 
 const copy = computed(() => ({
   zh: {
@@ -148,12 +149,14 @@ async function retrySync() {
 }
 
 async function copyServerAddress() {
+  copyFailed.value = false
   try {
     await navigator.clipboard.writeText(SERVER_ADDRESS)
     copied.value = true
     setTimeout(() => { copied.value = false }, 1600)
   } catch {
     copied.value = false
+    copyFailed.value = true
   }
 }
 
@@ -168,9 +171,9 @@ watch(() => [auth.ready, auth.user?.id], loadAccount, { immediate: true })
       <p>{{ copy.intro }}</p>
       <div class="minecraft-server-address">
         <span>{{ copy.server }}</span>
-        <strong>{{ SERVER_ADDRESS }}</strong>
-        <button type="button" @click="copyServerAddress">{{ copied ? copy.copied : copy.copyAddress }}</button>
+        <button class="address-copy" type="button" @click="copyServerAddress" :aria-label="`${copy.copyAddress}: ${SERVER_ADDRESS}`"><strong>{{ SERVER_ADDRESS }}</strong><span aria-live="polite">{{ copied ? copy.copied : copy.copyAddress }} {{ copied ? '✓' : '↗' }}</span></button>
       </div>
+      <p v-if="copyFailed" role="status">{{ locale === 'zh' ? '复制未成功，请长按或选中地址手动复制。' : locale === 'ja' ? 'アドレスを選択して手動でコピーしてください。' : 'Select the address and copy it manually.' }}</p>
     </div>
 
     <div class="minecraft-access-panel">
@@ -227,3 +230,17 @@ watch(() => [auth.ready, auth.user?.id], loadAccount, { immediate: true })
     </div>
   </section>
 </template>
+
+<style scoped>
+.minecraft-access{gap:clamp(28px,5vw,80px);align-items:start}
+.minecraft-access-copy h2{font-size:clamp(28px,3.5vw,44px);line-height:1.2}
+.minecraft-access-copy .section-label{margin-bottom:20px}
+.minecraft-server-address{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 9%,transparent),transparent)}
+.minecraft-server-address>.address-copy{display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;padding:12px 0;color:var(--text);text-decoration:none;min-width:0}
+.address-copy strong{font:600 clamp(20px,2.6vw,30px) monospace;letter-spacing:-.04em;overflow-wrap:anywhere;user-select:text}
+.address-copy span{color:var(--accent);font-size:12px;flex-shrink:0}
+.address-copy:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius:4px}
+.address-copy:hover strong{color:var(--accent)}
+.minecraft-access-panel{border-radius:20px;padding:32px;min-height:0}
+@media(max-width:480px){.minecraft-server-address{padding:18px}.minecraft-server-address>.address-copy{align-items:flex-start;flex-direction:column}.minecraft-access-panel{padding:24px}}
+</style>

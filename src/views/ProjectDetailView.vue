@@ -23,7 +23,7 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
     <div class="container">
       <SiteNav />
 
-      <main v-if="project" class="project-detail-main">
+      <main v-if="project" class="project-detail-main" :class="{ 'minecraft-detail': project.id === '002' }">
         <RouterLink class="detail-back" to="/project">← {{ t('projectArchive.back') }}</RouterLink>
 
         <QuotaProjectIntro v-if="project.id === '001'" />
@@ -90,4 +90,10 @@ const nextProject = computed(() => projects[projects.findIndex(item => item.id =
   align-items: center;
   gap: 12px;
 }
+.minecraft-detail .detail-header{padding-bottom:32px}
+.minecraft-detail .detail-visual{border-radius:24px;overflow:hidden;max-height:520px}
+.minecraft-detail .detail-visual img{width:100%;height:100%;object-fit:cover}
+.minecraft-detail .detail-content{gap:clamp(28px,6vw,96px)}
+.minecraft-detail .detail-meta{padding:24px;border:1px solid var(--line);border-radius:18px;align-self:start;background:color-mix(in srgb,var(--accent) 3%,transparent)}
+@media(max-width:600px){.minecraft-detail .detail-visual{border-radius:14px}.minecraft-detail .detail-meta{padding:18px}}
 </style>

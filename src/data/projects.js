@@ -39,9 +39,9 @@ export const projects = [
       ja: 'Minecraftサーバー Beyond the Stars, Build Our World.',
     },
     description: {
-      zh: '一个专注原版玩法的纯净生存服务器。服务器地址：139.155.146.68:25565，版本：26.3。',
-      en: 'A vanilla survival server focused on the original Minecraft experience. Server: 139.155.146.68:25565. Version: 26.3.',
-      ja: 'Minecraft本来の体験を楽しむバニラサバイバルサーバーです。サーバー：139.155.146.68:25565、バージョン：26.3。',
+      zh: '一个专注原版玩法的纯净生存服务器。服务器地址：mc.yuashie.cn，版本：26.3。',
+      en: 'A vanilla survival server focused on the original Minecraft experience. Server: mc.yuashie.cn. Version: 26.3.',
+      ja: 'Minecraft本来の体験を楽しむバニラサバイバルサーバーです。サーバー：mc.yuashie.cn、バージョン：26.3。',
     },
     status: { zh: '纯净生存', en: 'Vanilla Survival', ja: 'バニラサバイバル' },
     type: { zh: '游戏服务器', en: 'Game server', ja: 'ゲームサーバー' },
