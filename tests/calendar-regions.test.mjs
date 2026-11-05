@@ -9,11 +9,13 @@ test('main-site locales select the corresponding real server, including language
  for(const lang of ['ja','ja-JP'])assert.equal(regionForLanguage(lang),'jp');
  for(const lang of ['zh','zh-CN','zh-TW',null])assert.equal(regionForLanguage(lang),'cn');
 });
-test('server filtering respects CN focus, exposes international records and never relabels them as Japanese',()=>{
- const cn=gamesForRegion(catalog.games,metadata,'cn','gameg',catalog.focus_games);
- assert.equal(cn.length,15);
+test('server filtering combines catalog and GameG entries, exposes international records and never relabels them as Japanese',()=>{
+ const cn=gamesForRegion(catalog.games,metadata,'cn');
+ assert.ok(catalog.focus_games.every(id=>cn.some(([key])=>key===id)));
+ assert.ok(cn.some(([id])=>id==='pgr'));
+ assert.equal(new Set(cn.map(([id])=>id)).size,cn.length);
  assert.ok(cn.every(([id])=>metadata[id].server==='cn'));
- const global=gamesForRegion(catalog.games,metadata,'global','gameg',catalog.focus_games);
+ const global=gamesForRegion(catalog.games,metadata,'global');
  assert.ok(global.length>0);assert.ok(global.some(([id])=>id==='duetnightabyss'));
  assert.ok(!global.some(([id])=>id==='duetnightabyss-cn'));
  assert.deepEqual(gamesForRegion(catalog.games,metadata,'jp'),[]);

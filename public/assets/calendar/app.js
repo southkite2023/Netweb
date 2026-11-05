@@ -2,7 +2,7 @@ import { selectionPayload, restoreSelection } from './subscription.js';
 import { AccountCalendar } from './account.js';
 const $ = s => document.querySelector(s);
 import { catalog, metadata } from './catalog.js';
-import { orderedGames, coverageLabel, availableTypeCount } from './presentation.js';
+import { orderedGames, coverageLabel, availableTypes } from './presentation.js';
 import { dateReview } from './date-status.js';
 import { companies, companyOptions, matchesCompany } from './companies.js';
 import { gamesForRegion, followSiteLanguage, regionLabels } from './regions.js';
@@ -11,11 +11,8 @@ for(const kind of ['anime']){
  for(const [name,count] of companyOptions(catalog[kind])){const option=document.createElement('option');option.value=name;option.textContent=`${name==='__unknown'?'制作公司待补充':name} · ${count}`;$(`#${kind}-filter`).append(option);}
 }
 
-function gameList(){return gamesForRegion(catalog.games,metadata,$('#games-filter').value,$('#games-scope').value,catalog.focus_games);}
+function gameList(){return gamesForRegion(catalog.games,metadata,$('#games-filter').value);}
 function regionChanged(){
- const region=$('#games-filter').value;
- if(region!=='cn')$('#games-scope').value='all';
- $('#games-scope').disabled=region!=='cn';
  if(auditData)renderWikiAudit(auditData);else draw();
 }
 let editing, opener;
@@ -61,8 +58,8 @@ function draw(){
       const title=document.createElement('strong');title.textContent=name;
       const detail=document.createElement('small');const selection=chosen.get(id);
       detail.textContent=selection&&kind==='games'?selection.types.map(t=>types[t]).join(' / '):metadata[id].label;
-      if(kind==='games'){detail.textContent=coverageLabel(metadata[id]);button.dataset.incomplete=availableTypeCount(metadata[id])<3;}
-      button.title=[name,...(companies[id]?.names||[]),metadata[id].original,metadata[id].label].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.dataset.item=id;button.onclick=()=>{
+      if(kind==='games'){detail.textContent=coverageLabel(metadata[id]);}
+      button.title=[name,...(companies[id]?.names||[]),metadata[id].original,detail.textContent].filter(Boolean).join(' · ');button.append(title,detail);button.disabled=!ready||account.paused;button.dataset.item=id;button.onclick=()=>{
         if(kind==='games'){openOptions(id,name,button);return;}
         if(chosen.has(id))chosen.delete(id);
         else chosen.set(id,{kind:'anime'});
@@ -108,7 +105,7 @@ function dateRow(id,type,meta){
 }
 function renderDates(id,meta){
  const list=$('#game-dates');list.replaceChildren();
- for(const type of ['banner','livestream','version_update'])list.append(dateRow(id,type,meta));
+ for(const type of availableTypes(meta))list.append(dateRow(id,type,meta));
 }
 // Independent weapon or weapon-equivalent draws (including light cones and W-Engines).
 const weaponPoolGames=new Set(['genshin','starrail','zzz','wuwa','honkai3','endfield','pgr','girlsfrontline2','snowbreak','nte','browndust2','aethergazer','tof']);
@@ -116,9 +113,16 @@ const bannerToggle=$('[name=type][value=banner]');
 bannerToggle.onchange=()=>{$('#include-weapons').disabled=!weaponPoolGames.has(editing)||!bannerToggle.checked;};
 function openOptions(id,name,button){
  editing=id;opener=button;$('#dialog-title').textContent=name;$('#form-error').textContent='';
- const config=chosen.get(id)||{};document.querySelectorAll('[name=type]').forEach(x=>x.checked=(config.types||Object.keys(types)).includes(x.value));
+ const config=chosen.get(id)||{};
+ const available=availableTypes(metadata[id]);
+ $('#no-game-dates').hidden=available.length>0;
+ for(const input of document.querySelectorAll('[name=type]')){
+  input.disabled=!available.includes(input.value);
+  input.closest('label').hidden=input.disabled;
+  input.checked=!input.disabled && (config.types||available).includes(input.value);
+ }
  document.querySelectorAll('[name=boundary]').forEach(x=>{const saved=config.boundaries||'start';x.checked=saved==='both'||saved===x.value;});
- $('#weapon-option').hidden=!weaponPoolGames.has(id);
+ $('#weapon-option').hidden=!weaponPoolGames.has(id)||!available.includes('banner');
  $('#include-weapons').checked=config.weapons!==false;bannerToggle.onchange();
  $('#duration').checked=!!config.duration;$('#remove').disabled=!chosen.has(id);$('#options').showModal();
 }
@@ -135,10 +139,9 @@ $('#close').onclick=()=>$('#options').close();
 $('#options').addEventListener('close',()=>{(opener?.isConnected?opener:document.querySelector('.item[data-item="'+CSS.escape(editing)+'"]'))?.focus({preventScroll:true});});
 $('#remove').onclick=()=>{chosen.delete(editing);$('#options').close();selectionChanged();};
 $('#options-form').onsubmit=e=>{
- e.preventDefault();const selected=[...document.querySelectorAll('[name=type]:checked')].map(x=>x.value);if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}const edges=[...document.querySelectorAll('[name=boundary]:checked')].map(x=>x.value);if(!edges.length){$('#form-error').textContent='开始时间和结束时间至少勾选一项。';return;}chosen.set(editing,{kind:'games',types:selected,...(weaponPoolGames.has(editing)?{weapons:$('#include-weapons').checked}:{}),format:'exact',duration:$('#duration').checked,boundaries:edges.length===2?'both':edges[0]});
+ e.preventDefault();const selected=$('#no-game-dates').hidden ? [...document.querySelectorAll('[name=type]:checked')].map(x=>x.value) : (chosen.get(editing)?.types||Object.keys(types));if(!selected.length){$('#form-error').textContent='请至少选择一种生成内容。';return;}const edges=[...document.querySelectorAll('[name=boundary]:checked')].map(x=>x.value);if(!edges.length){$('#form-error').textContent='开始时间和结束时间至少勾选一项。';return;}chosen.set(editing,{kind:'games',types:selected,...(weaponPoolGames.has(editing)?{weapons:$('#include-weapons').checked}:{}),format:'exact',duration:$('#duration').checked,boundaries:edges.length===2?'both':edges[0]});
  $('#options').close();selectionChanged();
 };
-$('#games-scope').onchange=()=>{if(auditData)renderWikiAudit(auditData);else draw();};
 $('#games-filter').onchange=regionChanged;
 $('#games-search').oninput=draw;
 $('#anime-search').oninput=draw;
@@ -183,7 +186,7 @@ function renderWikiAudit(data){
   m.monitor_note=!g.monitor?'自动监测状态尚未读取；以下是逐项核查记录。':(monitor.mode==='auto'?'日期来源自动检查。':'目前只自动监测Wiki页面变化，不自动提取新日期。')+(monitor.error?'读取或解析失败，保留上次有效数据。':monitor.message||'')+(monitor.stale?'监测已延迟。':'');
   if(!gameList().some(([id])=>id===g.game_id))continue;
   const p=document.createElement('div');p.className='audit-game';const name=document.createElement('strong');name.textContent=g.name+'（'+(regionLabels[g.server]||'区服待核实')+'）';p.append(name,' · '+m.label+'。'+m.monitor_note);
-  const results=document.createElement('ul');results.className='audit-date-reviews';for(const type of Object.keys(types))results.append(dateRow(g.game_id,type,m));p.append(results);
+  const results=document.createElement('ul');results.className='audit-date-reviews';for(const type of availableTypes(m))results.append(dateRow(g.game_id,type,m));p.append(results);
   for(const url of [...new Set([g.timeline_source?.url,...g.sources].filter(Boolean))]){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=url.includes('gameg.site')?' GameG 主要来源':' Wiki 备选来源';p.append(' · ',a);}
   if(monitor.last_success_at)p.append(' · 读取成功 '+new Date(monitor.last_success_at).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai'}));
   container.append(p);

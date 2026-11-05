@@ -5,10 +5,9 @@ export function regionForLanguage(language) {
   const lang = String(language || '').toLowerCase().split(/[-_]/)[0];
   return lang === 'en' ? 'global' : lang === 'ja' ? 'jp' : 'cn';
 }
-export function gamesForRegion(games, metadata, region, scope = 'all', focus = []) {
+export function gamesForRegion(games, metadata, region) {
   if (!gameRegions.includes(region)) return [];
-  return games.filter(([id]) => metadata[id]?.server === region &&
-    (region !== 'cn' || scope !== 'gameg' || focus.includes(id)));
+  return games.filter(([id]) => metadata[id]?.server === region);
 }
 // Same-origin parent <html lang> changes immediately when the main site language changes.
 // A manual region choice lasts until the language actually changes again.

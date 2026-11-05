@@ -5,11 +5,13 @@ import { catalog, metadata } from '../public/assets/calendar/catalog.js';
 import { readFileSync } from 'node:fs';
 test('complete game dates precede partial dates regardless of event volume; ties remain stable', () => {
  const games=[['empty',''],['one',''],['complete',''],['two',''],['tie','']];
- const metadata={empty:{event_count:0},one:{event_count:100,coverage_types:{banner:'verified'}},complete:{event_count:1,coverage_types:{banner:'verified',livestream:'verified',version_update:'verified'}},two:{coverage_types:{banner:'verified',version_update:'verified'}},tie:{coverage_types:{banner:'verified',version_update:'verified'}}};
+ const dated={label:'已收录日期'};
+ const two={date_summary:{banner:dated,version_update:dated}};
+ const metadata={empty:{},one:{event_count:100,supplemental_banners:[{name:'池'}]},complete:{date_summary:{...two.date_summary,livestream:dated}},two,tie:two};
  assert.deepEqual(orderedGames(games,metadata).map(([id])=>id),['complete','two','tie','one','empty']);
  assert.equal(games[0][0],'empty');
- assert.equal(coverageLabel(metadata.complete),'三类日期已收录');
- assert.match(coverageLabel(metadata.one),/1\/3/);
+ assert.equal(coverageLabel(metadata.complete),'前瞻 · 版本更新 · 卡池');
+ assert.equal(coverageLabel(metadata.one),'卡池');
 });
 test('verified game categories have dated preferred-source evidence in their own server', () => {
  const {events}=JSON.parse(readFileSync('public/assets/calendar/data/events.json','utf8'));
@@ -40,8 +42,7 @@ test('every game type has an explicit review reason and never treats a failed se
 
 test('source-listed dates remain visible and count toward display coverage without becoming verified',()=>{
  const m={coverage_types:{banner:'pending',livestream:'verified',version_update:'pending'},source_records:{banner:[{start:'2026-11-01'}],version_update:[{start:'2026-11-02'}]}};
- assert.match(coverageLabel(m),/三类日期已列出/);
- assert.match(coverageLabel(m),/未确认/);
+ assert.equal(coverageLabel(m),'版本更新 · 卡池');
  assert.deepEqual(orderedGames([['empty',''],['listed','']],{empty:{},listed:m}).map(([id])=>id),['listed','empty']);
  for(const [id] of catalog.games){const meta=metadata[id];if(meta.source_records)for(const records of Object.values(meta.source_records))for(const row of records)assert.ok(row.name&&row.url&&row.start,id);}
 });
